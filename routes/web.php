@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\{
+    HomeController,
+    LkpsController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/lkps', [LkpsController::class, 'index']);
+Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
+Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
