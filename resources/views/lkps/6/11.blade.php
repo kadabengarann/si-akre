@@ -28,7 +28,7 @@
     </div>
     <!-- /.card-body -->
     <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-      <a class="btn btn-info"  href="/lkps/view/521"><i class="fas fa-arrow-circle-left"></i>  Prev</a>
+      <a class="btn btn-info"  href="/lkps/view/531"><i class="fas fa-arrow-circle-left"></i>  Prev</a>
       <a class="btn btn-success" href="/lkps/view/711">Next  <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 

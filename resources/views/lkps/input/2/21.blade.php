@@ -67,13 +67,13 @@
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS-1</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
@@ -97,13 +97,13 @@
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS-1</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
@@ -126,13 +126,13 @@
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS-1</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">
                 </div>
               </div>
-              <div class="row">
+              <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-1 col-form-label">TS</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="inputPassword3" placeholder="">

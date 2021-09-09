@@ -180,6 +180,12 @@
         <p>b. Integrasi Kegiatan Penelitian/PkM dalam Pembelajaran</p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="/lkps/view/531" class="nav-link {{ request()->is('lkps/*/53*') ? 'active' : ''}}">
+        <i class="far fa-circle nav-icon"></i>
+        <p>c. Kepuasan Mahasiswa</p>
+      </a>
+    </li>
   </ul>
 </li>
 <li class="nav-item {{ request()->is('lkps/*/6*') ? 'menu-open' : ''}}">

@@ -21,7 +21,7 @@
         </div>
         <div class="col-12 col-lg-6">
           <p><b>Sub-kriteria : </b>a. Kurikulum</p>
-          <p><b>Tabel : </b>Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran</p>
+          <p><b>Tabel : </b>5.a Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran</p>
         </div>
       </div>
   
@@ -35,86 +35,58 @@
   </div>
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="text-center card-title" style="float: none; font-weight:500">Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran</h3>
+        <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 5.a Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        {{-- <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+        <table id="tbl_list" class="table table-striped table-bordered table-center-text">
           <thead>
               <tr>
-                      <th rowspan="2">Tahun Akademik</th>
-                      <th rowspan="2">Daya Tampung</th>
-                      <th colspan="2">Jumlah Calon Mahasiswa</th>
-                      <th colspan="2">Jumlah Mahasiswa Baru</th>
-                      <th colspan="2">Jumlah Mahasiswa Aktif</th>
+                      <th rowspan="2">No.</th>
+                      <th rowspan="2">Semester</th>
+                      <th rowspan="2">Nama Mata Kuliah</th>
+                      <th rowspan="2">Mata 
+                        Kuliah 
+                        Kompetens</th>
+                      <th colspan="3">Bobot Kredit 
+                        (sks)</th>
+                      <th rowspan="2">Konversi Kredit ke Jam</th>
+                      <th colspan="4">Capaian Pembelajaran</th>
+                      <th rowspan="2">Dokumen Rencana Pembelajaran</th>
+                      <th rowspan="2">Unit Penyelenggara</th>
               </tr>
               <tr>
-                      <th>Pendaftar</th>
-                      <th>Lulus Seleksi</th>
-                      <th>Reguler</th>
-                      <th>Transfer</th>
-                      <th>Reguler</th>
-                      <th>Transfer</th>
+                      <th>Kuliah/ Responsi/
+                        Tutoria</th>
+                      <th>Seminar</th>
+                      <th>Praktikum/ Praktik/
+                        Praktik Lapangan</th>
+                      <th>Sikap</th>
+                      <th>Pengetahuan</th>
+                      <th>Keterampilan 
+                        Umum</th>
+                      <th>Keterampilan 
+                        Umum</th>
               </tr>
               </thead>
           <tbody>
               <tr>
-                <td>
-                  TS-4
-                </td>
-                <td  colspan="7">
-                  No data
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  TS-3
-                </td>
-                <td  colspan="7">
-                  No data
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  TS-2
-                </td>
-                <td  colspan="7">
-                  No data
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  TS-1
-                </td>
-                <td  colspan="7">
-                  No data
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  TS
-                </td>
-                <td  colspan="7">
+                <td  colspan="15">
                   No data
                 </td>
               </tr>
           </tbody>
           <tfoot>
             <tr>
-              <th colspan="2">Jumlah</th>
-              <th>NA = </th>
-              <th>NA = </th>
-              <th>NA = </th>
-              <th>NA = </th>
-              <th colspan="2">NM = </th>
+              <th colspan="4">Jumlah</th>
       </tr>
 
           </tfoot>
-        </table> --}}
+        </table>
     </div>
     
     <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-      <a class="btn btn-primary"  href="/lkps/input/211"><i class="fas fa-plus-circle"></i>  Input data</a>
+      <a class="btn btn-primary"  href="/lkps/input/511"><i class="fas fa-plus-circle"></i>  Input data</a>
     </div>
 
       <!-- /.card-body -->
