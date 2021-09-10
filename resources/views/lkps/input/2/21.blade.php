@@ -26,7 +26,6 @@
           </p>
         </div>
       </div>
-  
     </div>
     <!-- /.card-body -->
     {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
