@@ -101,12 +101,20 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user fa-fw"></i>
+              <p>
+                Profile Program Studi
+              </p>
+            </a>
+          </li>
           <li class="nav-header">MENU</li>
           <li class="nav-item">
             <a href="/lkps" class="nav-link {{ request()->is('lkps') ? 'active' : ''}} {{ request()->is('lkps/*') ? 'nav-gray' : ''}}">
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
-                Lembar Kinerja PS
+                Laporan Kinerja PS
               </p>
             </a>
           </li>
@@ -114,7 +122,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
-                Lembar Evaluasi PS
+                Laporan Evaluasi PS
               </p>
             </a>
           </li>
