@@ -1,6 +1,7 @@
 .bg-login{
     background-color: #fff;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://ft.ulm.ac.id/id/wp-content/uploads/2020/08/FT-Aerial-2020_1800-770p.jpg');
+    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://ft.ulm.ac.id/id/wp-content/uploads/2020/08/FT-Aerial-2020_1800-770p.jpg'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/background.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

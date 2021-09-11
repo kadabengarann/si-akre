@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Dashboard</h1>
+        <h1 class="m-0 font-weight-normal">Dashboard</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -11,36 +11,75 @@
     </div><!-- /.col -->
 @endsection
 @section('content')
-<div class="row">
-    <div class="col-lg-5 col-md-6">
-      <!-- small box -->
-      <div class="small-box bg-info">
-        <div class="inner">
-          <h3 style="font-weight: 400">Laporan Kinerja PS</h3>
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="text-center card-title" style="float: none; font-weight:500">Instrumen Akreditasi Program Studi (IAPS)
+            </h3>
+        </div>
+        <div class="card-body row justify-content-center">
+            <div class="col-lg-3 col-md-4">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3 style="font-weight: 400">LKPS</h3>
 
-          <p>LKPS</p>
-        </div>
-        <div class="icon">
-            <i class="far fa-chart-bar"></i>
-        </div>
-        <a href="/lkps" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-5 col-md-6">
-      <!-- small box -->
-      <div class="small-box bg-primary">
-        <div class="inner">
-          <h3 style="font-weight: 400">Laporan Evaluasi PS</h3>
+                        <p>Laporan Kinerja Program Studi</p>
+                    </div>
+                    <div class="icon">
+                        <i class="far fa-chart-bar"></i>
+                    </div>
+                    <a href="/lkps" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3 style="font-weight: 400">LED</h3>
 
-          <p>LED</p>
+                        <p>Laporan Evaluasi Diri Program Studi</p>
+                    </div>
+                    <div class="icon">
+                        <i class="far fa-chart-bar"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="icon">
-            <i class="far fa-chart-bar"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
     </div>
-</div>
+    {{-- <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="text-center card-title" style="float: none; font-weight:500">Menu Admin Program Studi
+            </h3>
+        </div>
+        <div class="card-body row justify-content-center">
+            <div class="col-lg-3 col-md-4">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3 style="font-weight: 400">Program Studi</h3>
+                        <p>Pengaturan data</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <a href="/dosen/prodi" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <!-- small box -->
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h3 style="font-weight: 400">Profile</h3>
+
+                        <p>Pengaturan akun</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <a href="/profile" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 @endsection

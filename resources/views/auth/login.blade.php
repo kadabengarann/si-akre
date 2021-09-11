@@ -27,7 +27,7 @@
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                           <div class="card-header login-header">
                             <h3 class="text-center font-weight-light">
-                              <img src="https://www.ulm.ac.id/id/wp-content/uploads/2015/05/Logo-Unlam.png" width="150" height="150">  
+                              <img src="{{ asset('img') }}/logo.png" width="130" height="130">  
                             </h3>
                             
                               <h4 class="text-center">Halaman Login</h4>

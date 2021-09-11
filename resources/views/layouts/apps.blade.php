@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini {{ request()->is('/') ? 'sidebar-collapse' : ''}}">
 <div class="wrapper">
 
     @include('layouts.navigation')
