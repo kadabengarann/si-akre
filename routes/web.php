@@ -21,6 +21,9 @@ use App\Http\Controllers\{
 */
 
 
+Route::get('/home', function () {
+    return redirect('/');
+});
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();

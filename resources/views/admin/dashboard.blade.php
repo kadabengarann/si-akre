@@ -31,7 +31,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-university mr-1"></i>
-                                Ilmu Perikanan
+                                Teknik Sipil
                             </h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -52,7 +52,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-university mr-1"></i>
-                                Ilmu Perikanan
+                                Arsitektur 
                             </h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -73,7 +73,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-university mr-1"></i>
-                                Ilmu Perikanan
+                                Teknik Pertambangan
                             </h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
