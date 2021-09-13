@@ -101,33 +101,9 @@
                     </tbody>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus-circle"></i> Input data</a>
-                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="userDropdown">
-                    <div class="dropdown-item">
-                        <ul class="nav nav-treeview d-flex flex-column ">
-                            <li class="nav-item mt-1">
-                                <a class="btn btn-secondary btn-block" href="/lkps/input/111"><i
-                                        class="fas fa-plus-circle"></i> Pendidikan</a>
-
-                            </li>
-                            <li class="nav-item mt-1">
-                                <a class="btn btn-secondary btn-block" href="/lkps/input/112"><i
-                                        class="fas fa-plus-circle"></i> Penelitian</a>
-
-                            </li>
-                            <li class="nav-item mt-1">
-                                <a class="btn btn-secondary" href="/lkps/input/113"><i class="fas fa-plus-circle"></i>
-                                    Pengabdian kepada Masyarakat</a>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+                <a class="btn btn-primary"  href="/lkps/input/111"><i class="fas fa-plus-circle"></i>  Input data</a>
+              </div>
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
