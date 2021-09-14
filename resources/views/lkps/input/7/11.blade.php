@@ -17,11 +17,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Penelitian</p>
+                        <p><b>Kriteria : </b>7. Pengabdian kepada Masyarakat (PkM)</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
-                        <p><b>Tabel : </b>6.a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
+                        <p><b>Sub-kriteria : </b>PkM DTPS yang melibatkan mahasiswa</p>
+                        <p><b>Tabel : </b>7 PkM DTPS yang melibatkan mahasiswa</p>
                     </div>
                 </div>
             </div>
@@ -37,13 +37,11 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 6.a. Penelitian DTPS yang
-                    Melibatkan Mahasiswa
-                </h3>
+                <h3 class="card-title">Tabel 7 PkM DTPS yang melibatkan mahasiswa</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/611">
+            <form class="form-horizontal" action="/lkps/view/711">
                 <div class="card-body">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
@@ -53,7 +51,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Tema
-                            Penelitian
+                            PkM
                             sesuai
                             Roadmap</label>
                         <div class="col-sm-9">
@@ -82,7 +80,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/611" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/711" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>

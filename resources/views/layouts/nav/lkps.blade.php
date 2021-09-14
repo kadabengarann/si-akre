@@ -225,6 +225,12 @@
                 <p>a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/lkps/view/621" class="nav-link {{ request()->is('lkps/*/62*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>b Penelitian DTPS yang menjadi rujukan tema tesis/disertasi</p>
+            </a>
+        </li>
     </ul>
 </li>
 <li class="nav-item {{ request()->is('lkps/*/7*') ? 'menu-open' : '' }}">
@@ -238,8 +244,119 @@
         <li class="nav-item">
             <a href="/lkps/view/711" class="nav-link {{ request()->is('lkps/*/71*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>a. PkM DTPS yang melibatkan mahasiswa</p>
+                <p>PkM DTPS yang melibatkan mahasiswa</p>
             </a>
+        </li>
+    </ul>
+</li>
+<li class="nav-item {{ request()->is('lkps/*/8*') ? 'menu-open' : '' }}  mb-5">
+    <a href="" class="nav-link {{ request()->is('lkps/*/8*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-list-ul"></i>
+        <p>
+            8. Luaran dan Capaian Tridharma
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="/lkps/view/811" class="nav-link {{ request()->is('lkps/*/81*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>a. Capaian Pembelajaran</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/lkps/view/821" class="nav-link {{ request()->is('lkps/*/82*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>b. Prestasi Mahasiswa</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/lkps/view/831" class="nav-link {{ request()->is('lkps/*/83*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>c. Efektivitas dan Produktivitas Pendidikan</p>
+            </a>
+        </li>
+
+        <li class="nav-item {{ request()->is('lkps/*/84*') ? 'menu-open' : '' }}">
+            <a href="" class="nav-link {{ request()->is('lkps/*/84*') ? 'nav-gray' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                    d. Daya Saing Lulusan
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/lkps/view/841" class="nav-link {{ request()->is('lkps/*/841') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.d.1</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lkps/view/842" class="nav-link {{ request()->is('lkps/*/842') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.d.2</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item {{ request()->is('lkps/*/85*') ? 'menu-open' : '' }}">
+            <a href="" class="nav-link {{ request()->is('lkps/*/85*') ? 'nav-gray' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                    e. Kinerja Lulusan
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/lkps/view/851" class="nav-link {{ request()->is('lkps/*/851') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.e.1</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lkps/view/852" class="nav-link {{ request()->is('lkps/*/852') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.e.2</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item {{ request()->is('lkps/*/86*') ? 'menu-open' : '' }}">
+            <a href="" class="nav-link {{ request()->is('lkps/*/86*') ? 'nav-gray' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                    f. Luaran Penelitian dan PkM Mahasiswa
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/lkps/view/861" class="nav-link {{ request()->is('lkps/*/861') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.f.1</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lkps/view/862" class="nav-link {{ request()->is('lkps/*/862') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.f.2</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lkps/view/863" class="nav-link {{ request()->is('lkps/*/863') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.f.3</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lkps/view/864" class="nav-link {{ request()->is('lkps/*/864') ? 'active' : '' }}">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>8.f.4</p>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </li>

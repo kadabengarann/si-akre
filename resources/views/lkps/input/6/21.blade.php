@@ -43,7 +43,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/611">
+            <form class="form-horizontal" action="/lkps/view/621">
                 <div class="card-body">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
@@ -67,7 +67,8 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Kegiatan</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Tesis/
+                            Disertasi</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
@@ -82,7 +83,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/611" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/621" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>

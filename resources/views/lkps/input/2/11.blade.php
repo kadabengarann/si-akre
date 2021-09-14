@@ -12,148 +12,518 @@
     </div><!-- /.col -->
 @endsection
 @section('content')
-<section class="content">
-  <div class="card card-primary card-outline">
-    <div class="card-body">    
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <p><b>Kriteria : </b>2. Mahasiswa</p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <p><b>Sub-kriteria : </b>a. Kualitas Input Mahasiswa</p>
-          <p><b>Tabel : </b>Seleksi Mahasiswa</p>
-        </div>
-      </div>
-  
-    </div>
-    <!-- /.card-body -->
-    {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-      <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i>  Prev</a>
-      <a class="btn btn-success" href="/lkps/view/211">Next  <i class="fas fa-arrow-circle-right"></i></a>
-    </div> --}}
+    <section class="content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <p><b>Kriteria : </b>2. Mahasiswa</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <p><b>Sub-kriteria : </b>a. Kualitas Input Mahasiswa</p>
+                        <p><b>Tabel : </b>Seleksi Mahasiswa</p>
+                    </div>
+                </div>
 
-  </div>
+            </div>
+            <!-- /.card-body -->
+
+        </div>
 
 
-    <!-- /.card -->
-    <div class="card card-info">
-      <div class="card-header">
-        <h3 class="card-title">Seleksi Mahasiswa</h3>
-      </div>
-      <!-- /.card-header -->
-      <!-- form start -->
-      <form class="form-horizontal">
-        <div class="card-body">
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Tahun Akademik</label>
-            <div class="col-sm-4">
-              <select class="form-control " id="subject" name="id_dosen">
-                <option value="" selected disabled hidden>Pilih Tahun Akademik</option>
-                    <option value="4">TS-4</option>
-                    <option value="3">TS-3</option>
-                    <option value="2">TS-2</option>
-                    <option value="1">TS-1</option>
-                    <option value="0">TS</option>
-                  </select>
-                  <div class="invalid-feedback">
-                                                          </div>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Daya Tampung</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="">
-            </div>
-          </div>
-          <hr>
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
-            
-            <div class="col-sm-10">
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-3 col-form-label"></label>              
-              </div>
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Pendaftar</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-              <div class="row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Jumlah  Mahasiswa Baru</label>
-            
-            <div class="col-sm-10">
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-3 col-form-label"></label>              
-              </div>
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Reguler</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-              <div class="row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Transfer</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Jumlah  Mahasiswa Aktif</label>
-            
-            <div class="col-sm-10">
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-3 col-form-label"></label>              
-              </div>
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Reguler</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-              <div class="row">
-                <label for="inputPassword3" class="col-sm-1 col-form-label">Transfer</label>
-                <div class="col-sm-4">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info">Submit</button>
-          <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</button>
-        </div>
-        <!-- /.card-footer -->
-      </form>
-    </div>
-  </section>    
-  @endsection
+        <div class="card card-info card-tabs">
+            <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+                    <li class="pt-2 px-3">
+                        <h3 class="card-title">Seleksi Mahasiswa</h3>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
+                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">TS-4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
+                            aria-controls="custom-tabs-2" aria-selected="false">TS-3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
+                            aria-controls="custom-tabs-3" aria-selected="false">TS-2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-4-tab" data-toggle="pill" href="#custom-tabs-4" role="tab"
+                            aria-controls="custom-tabs-4" aria-selected="false">TS-1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-5-tab" data-toggle="pill" href="#custom-tabs-5" role="tab"
+                            aria-controls="custom-tabs-5" aria-selected="false">TS</a>
+                    </li>
 
-  @section('script')
-  <script>
-    $(function () {
-      //Date range picker with time picker
-    $('#reservationtime').daterangepicker({
-      timePicker: true,
-      timePickerIncrement: 30,
-      locale: {
-        format: 'MM/DD/YYYY hh:mm A'
-      }
-    })
-    })
-  </script>
-  @endsection
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="custom-tabs-two-tabContent">
+                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
+                        aria-labelledby="custom-tabs-1-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-4</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/211">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Baru</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Aktif</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-3</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/211">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Baru</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Aktif</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-2</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/211">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Baru</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Aktif</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-4" role="tabpanel" aria-labelledby="custom-tabs-4-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-1</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/211">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Baru</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Aktif</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-5" role="tabpanel" aria-labelledby="custom-tabs-5-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/211">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon Mahasiswa</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Baru</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa Aktif</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-3 col-form-label"></label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="inputtext3" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/211" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+
+        <!-- /.card -->
+    </section>
+@endsection
+
+@section('script')
+    <script>
+        $(function() {
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({
+                timePicker: true,
+                timePickerIncrement: 30,
+                locale: {
+                    format: 'MM/DD/YYYY hh:mm A'
+                }
+            })
+        })
+    </script>
+@endsection
