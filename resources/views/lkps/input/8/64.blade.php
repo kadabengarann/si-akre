@@ -20,8 +20,8 @@
                         <p><b>Kriteria : </b>8. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
-                        <p><b>Tabel : </b>8.a IPK Lulusan</p>
+                        <p><b>Sub-kriteria : </b>f. Luaran Penelitian dan PkM Mahasiswa</p>
+                        <p><b>Tabel : </b>8.f.4 Luaran penelitian/PkM yang dihasilkan mahasiswa</p>
                     </div>
                 </div>
             </div>
@@ -35,67 +35,180 @@
 
 
         <!-- /.card -->
-        <div class="card card-info">
-            <div class="card-header">
-                <h3 class="card-title">Tabel 8.a IPK Lulusan</h3>
-            </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/811">
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">Indeks Prestasi Komulatif</label>
-                            <label class="col-sm-3 form-label">
-                                :
-                            </label>
+        <div class="card card-info card-tabs">
+            <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+                    <li class="pt-2 px-3">
+                        <h3 class="card-title">Tabel 8.f.4) Luaran penelitian/PkM yang dihasilkan mahasiswa</h3>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
+                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">I</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
+                            aria-controls="custom-tabs-2" aria-selected="false">II</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
+                            aria-controls="custom-tabs-3" aria-selected="false">III</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-4-tab" data-toggle="pill" href="#custom-tabs-4" role="tab"
+                            aria-controls="custom-tabs-4" aria-selected="false">IV</a>
+                    </li>
 
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="custom-tabs-two-tabContent">
+                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
+                        aria-labelledby="custom-tabs-1-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">HKI (Paten, Paten Sederhana)</h3>
+                            <hr>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
+                        <form class="form-horizontal" action="/lkps/view/864">
+                            <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Min.
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Luaran Penelitian dan PKM
                                     </label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Rata-rata</label>
-                                    <div class="col-sm-4">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun</label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Maks.</label>
-                                    <div class="col-sm-4">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Keterrangan</label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/864" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
                     </div>
+                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">HKI (Hak Cipta, Desain Produk Industri, dll)</h3>
+                            <hr>
+                        </div>
+
+                        <form class="form-horizontal" action="/lkps/view/864">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Luaran Penelitian dan PKM
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Keterrangan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/864" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Teknologi Tepat Guna, Produk, Karya Seni,
+                                Rekayasa Sosial</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/864">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Luaran Penelitian dan PKM
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Keterrangan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/864" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-4" role="tabpanel" aria-labelledby="custom-tabs-4-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">Buku Ber-ISBN,Book Chapter</h3>
+                            <hr>
+                        </div>
+                        <form class="form-horizontal" action="/lkps/view/864">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Luaran Penelitian dan PKM
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Keterrangan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/811" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/811" class="btn btn-default float-right">Cancel</a>
-                </div>
-                <!-- /.card-footer -->
-            </form>
+            </div>
+            <!-- /.card -->
         </div>
     </section>
 @endsection

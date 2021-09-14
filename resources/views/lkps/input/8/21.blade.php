@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Kegiatan</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Waktu Perolehan </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>

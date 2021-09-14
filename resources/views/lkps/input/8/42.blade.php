@@ -20,8 +20,8 @@
                         <p><b>Kriteria : </b>8. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
-                        <p><b>Tabel : </b>8.a IPK Lulusan</p>
+                        <p><b>Sub-kriteria : </b>d. Daya Saing Lulusan</p>
+                        <p><b>Tabel : </b>8.d.2 Kesesuaian Bidang Kerja Lulusan </p>
                     </div>
                 </div>
             </div>
@@ -37,11 +37,17 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 8.a IPK Lulusan</h3>
+                <h3 class="card-title">Tabel 8.d.2) Kesesuaian Bidang Kerja Lulusan</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/811">
+            <div class="card-body pb-0">
+                <h3 class="col-form-label text-center">Program Diploma Tiga/Sarjana/Sarjana Terapan/Magister/Magister
+                    Terapan</h3>
+                <hr>
+            </div>
+
+            <form class="form-horizontal" action="/lkps/view/842">
                 <div class="card-body">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
@@ -50,14 +56,24 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang Terlacak</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">Indeks Prestasi Komulatif</label>
+                            <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Lulusan Terlacak
+                                Dengan Tingkat Kesesuaian
+                                Bidang Kerja
+
+                            </label>
                             <label class="col-sm-3 form-label">
                                 :
                             </label>
@@ -67,20 +83,19 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Min.
-                                    </label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label"> Rendah </label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Rata-rata</label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Sedang</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Maks.</label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Tinggi</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
@@ -92,7 +107,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/811" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/842" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>
