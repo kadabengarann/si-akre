@@ -17,57 +17,173 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Pengabdian kepada Masyarakat (PkM)</p>
+                        <p><b>Kriteria : </b>8. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>PkM DTPS yang melibatkan mahasiswa</p>
-                        <p><b>Tabel : </b>7 PkM DTPS yang melibatkan mahasiswa</p>
+                        <p><b>Sub-kriteria : </b>f. Luaran Penelitian dan PkM Mahasiswa</p>
+                        <p><b>Tabel : </b>8.f.4 Luaran penelitian/PkM yang dihasilkan mahasiswa</p>
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
             <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-                <a class="btn btn-info" href="/lkps/view/621"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-                <a class="btn btn-success" href="/lkps/view/811">Next <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn btn-info" href="/lkps/view/863"><i class="fas fa-arrow-circle-left"></i> Prev</a>
+                <a class="btn btn-success" href="#">Next <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 7 PkM DTPS yang melibatkan
-                    mahasiswa</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 8.f.4) Luaran penelitian/PkM
+                    yang dihasilkan mahasiswa</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+                <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama Dosen</th>
-                            <th>Tema
-                                PkM
-                                sesuai
-                                Roadmap</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Judul Kegiatan</th>
+                            <th class="col-1">No.</th>
+                            <th class="col-4">Judul Luaran Penelitian/PkM</th>
                             <th>Tahun</th>
+                            <th>Keterangan</th>
                         </tr>
                     </thead>
+                    <tr>
+                        <th>
+                            I
+                        </th>
+                        <th class="sub-table">
+                            HKI :<br>
+                            c) Paten,<br>
+                            d) Paten Sederhana
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                     <tbody>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="4">
                                 No data
                             </td>
                         </tr>
                     </tbody>
+                    <tr>
+                        <td colspan="2">
+                            <b>Jumlah</b>
+                        </td>
+                        <td>
+                            NA =
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            II
+                        </th>
+                        <th class="sub-table">
+                            HKI :<br>
+                            f) Hak Cipta<br>
+                            g) Desain Produk Industri,<br>
+                            h) Perlindungan Varietas Tanaman (Sertifikat
+                            Perlindungan Varietas Tanaman, Sertifikat
+                            Pelepasan Varietas, Sertifikat Pendaftaran
+                            Varietas),<br>
+                            i) Desain Tata Letak Sirkuit Terpadu,<br>
+                            j) dll
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td colspan="2">
+                            <b>Jumlah</b>
+                        </td>
+                        <td>
+                            NB =
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            III
+                        </th>
+                        <th class="sub-table">
+                            Teknologi Tepat Guna, Produk (Produk
+                            Terstandarisasi, Produk Tersertifikasi), Karya
+                            Seni, Rekayasa Sosial
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td colspan="2">
+                            <b>Jumlah</b>
+                        </td>
+                        <td>
+                            NC =
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            IV
+                        </th>
+                        <th class="sub-table">
+                            Teknologi Tepat Guna, Produk (Produk
+                            Terstandarisasi, Produk Tersertifikasi), Karya
+                            Seni, Rekayasa Sosial
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td colspan="2">
+                            <b>Jumlah</b>
+                        </td>
+                        <td>
+                            ND =
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
                 </table>
             </div>
 
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/711"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/327"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
-</section> @endsection
+    </section>
+@endsection

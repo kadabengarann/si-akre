@@ -17,25 +17,25 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Pengabdian kepada Masyarakat (PkM)</p>
+                        <p><b>Kriteria : </b>8. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>PkM DTPS yang melibatkan mahasiswa</p>
-                        <p><b>Tabel : </b>7 PkM DTPS yang melibatkan mahasiswa</p>
+                        <p><b>Sub-kriteria : </b>f. Luaran Penelitian dan PkM Mahasiswa</p>
+                        <p><b>Tabel : </b>8.f.2 Karya ilmiah mahasiswa yang disitasi</p>
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
             <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-                <a class="btn btn-info" href="/lkps/view/621"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-                <a class="btn btn-success" href="/lkps/view/811">Next <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn btn-info" href="/lkps/view/861"><i class="fas fa-arrow-circle-left"></i> Prev</a>
+                <a class="btn btn-success" href="/lkps/view/863">Next <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 7 PkM DTPS yang melibatkan
-                    mahasiswa</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 8.f.2) Karya ilmiah mahasiswa
+                    yang disitasi</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -43,31 +43,34 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Dosen</th>
-                            <th>Tema
-                                PkM
-                                sesuai
-                                Roadmap</th>
                             <th>Nama Mahasiswa</th>
-                            <th>Judul Kegiatan</th>
-                            <th>Tahun</th>
+                            <th>Judul Artikel yang Disitasi
+                                (Jurnal/Buku, Volume, Tahun,
+                                Nomor, Halaman) </th>
+                            <th>Jumlah Sitasi </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="4">
                                 No data
                             </td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">Jumlah</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/711"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/862"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
-</section> @endsection
+    </section>
+@endsection
