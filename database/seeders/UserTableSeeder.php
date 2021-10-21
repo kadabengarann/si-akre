@@ -17,8 +17,8 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('id_ID');
-        for($x = 1; $x <= 20; $x++){
-  
+        for ($x = 1; $x <= 20; $x++) {
+
             DB::table('users')->insert([
                 'email' => $faker->unique()->safeEmail,
                 'username' => sprintf('DOS%03d', $x),
@@ -28,20 +28,22 @@ class UserTableSeeder extends Seeder
                 'dosen_id' =>  $x
 
             ]);
- 
+        }
+        for ($x = 1; $x <= 7; $x++) {
+            DB::table('users')->insert([
+                'name' => 'admin0' . $x,
+                'email' => 'admin0' . $x . '@admin',
+                'username' => 'admin0' . $x,
+                'password' => bcrypt('admin'),
+                'level' => '2',
+                'dosen_id' =>  20 + $x
+            ]);
         }
         DB::table('users')->insert([
-            'name' => 'admin',
+            'name' => 'SuperAdmin',
             'email' => 'admin@admin',
             'username' => 'admin',
             'password' => bcrypt('admin'),
-            'level' => '2'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'SuperAdmin',
-            'email' => 'suadmin@admin',
-            'username' => 'superadmin',
-            'password' => bcrypt('superadmin'),
             'level' => '1'
         ]);
     }

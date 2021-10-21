@@ -16,19 +16,27 @@ class DosenTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('id_ID');
- 
-        for($x = 1; $x <= 20; $x++){
- 
+
+        for ($x = 1; $x <= 20; $x++) {
+
             DB::table('dosen')->insert([
                 'nama' => $faker->name,
                 'alamat' => $faker->address,
                 'tgl_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'tmp_lahir' => $faker->city,
-                'img_url' =>  $x.'.jpg',
+                'img_url' =>  $x . '.jpg',
                 'prodi_id' =>  $faker->biasedNumberBetween($min = 1, $max = 6, $function = 'sqrt')
             ]);
- 
         }
-
+        for ($x = 1; $x <= 7; $x++) {
+            DB::table('dosen')->insert([
+                'nama' => $faker->name,
+                'alamat' => $faker->address,
+                'tgl_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'tmp_lahir' => $faker->city,
+                'img_url' =>  $x . '.jpg',
+                'prodi_id' =>  $x
+            ]);
+        }
     }
 }
