@@ -34,16 +34,18 @@ Route::get('/dosen/prodi', [AdminProdiController::class, 'index_prodi']);
 Route::group(
     ['middleware' => 'prodi'],
     function () {
-        Route::get('/prodi/detail', [AdminProdiController::class, 'detailProdi'])->name('prodiDetail');
+        Route::get('/prodi/detail/', [AdminProdiController::class, 'detailProdi'])->name('prodiDetail');
         Route::get('/prodi/edit/', [AdminProdiController::class, 'editProdi']);
         Route::post('/prodi/update/', [AdminProdiController::class, 'updateProdi']);
+
+        Route::get('/lkps/', [LkpsController::class, 'index']);
+
+        Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
+        Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
     }
 );
 
 
-Route::get('/lkps', [LkpsController::class, 'index']);
-Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
-Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
 
 
 Route::group(
@@ -57,6 +59,7 @@ Route::group(
         Route::get('/prodi/edit/{id}', [AdminController::class, 'editProdi']);
         Route::post('/prodi/update/{id}', [AdminController::class, 'updateProdi']);
 
+        Route::get('/lkps/', [LkpsController::class, 'index']);
 
         Route::get('/lkps/prodi', [LkpsController::class, 'index']);
         Route::get('/lkps/prodi/view/{id}', [LkpsController::class, 'admin_form']);
