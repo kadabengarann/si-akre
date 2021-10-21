@@ -9,8 +9,12 @@ class Dosen extends Model
 {
     use HasFactory;
     protected $table = 'dosen';
-    public function user(){
-    	return $this->hasOne(User::class);
+    public function user()
+    {
+        return $this->hasOne(User::class);
     }
-
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class);
+    }
 }
