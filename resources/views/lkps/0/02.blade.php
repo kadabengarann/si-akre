@@ -1,36 +1,13 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@section('header')
-    <div class="col-sm-6">
-        <h1 class="m-0">Laporan Kinerja Program Studi</h1>
-    </div><!-- /.col -->
-    <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
-        </ol>
-    </div><!-- /.col -->
-@endsection
+@include('lkps.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
             <div class="card-body">
-                {{-- <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>1. Tata Pamong, Tata Kelola, dan Kerjasama</p>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kerjasama</p>
-                        <p><b>Tabel : </b>Kerjasama Tridharma</p>
-                    </div>
-                </div> --}}
-
             </div>
             <!-- /.card-body -->
-            <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-                <a class="btn btn-info " href="/lkps/view/001"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-                <a class="btn btn-success" href="/lkps/view/111">Next <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+            @include('lkps.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -71,7 +48,7 @@
                     <tfoot>
                         <tr>
                             <th colspan="6">Jumlah</th>
-                            <th ></th>
+                            <th></th>
                         </tr>
                     </tfoot>
                 </table>

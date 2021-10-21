@@ -39,7 +39,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/001">Isi</a>
+                                        <a class="nav-link active"
+                                            href="/lkps/prodi/view/001?id={{ $prodi->id }}">Isi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,7 +55,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/002">Isi</a>
+                                        <a class="nav-link active"
+                                            href="/lkps/prodi/view/002?id={{ $prodi->id }}">Isi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -76,7 +78,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/111">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/111?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -91,7 +94,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/211">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/211?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,7 +110,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/311">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/311?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -121,7 +126,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/411">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/411?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -136,7 +142,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/511">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/511?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -151,7 +158,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/611">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/611?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -166,7 +174,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/711">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/711?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
@@ -181,7 +190,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/811">Isi kriteria</a>
+                                        <a class="nav-link active" href="/lkps/prodi/view/811?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
                                     </li>
                                 </ul>
                             </div>
