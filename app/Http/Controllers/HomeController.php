@@ -33,7 +33,7 @@ class HomeController extends Controller
             ];
             return view('admin.dashboard', $data);
         } elseif (Auth::user()->level == 2) {
-            return view('dosen.dashboard');
+            return view('admin_prodi.dashboard');
         } elseif (Auth::user()->level == 3) {
 
             return view('dosen.dashboard');
