@@ -27,69 +27,31 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-                    <div class="card collapsed-card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-university mr-1"></i>
-                                Teknik Sipil
-                            </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-plus"></i>
-                                </button>
+                    @foreach ($prodi as $p)
+                        <div class="card collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-university mr-1"></i>
+                                    {{ $p->nama }}
+                                </h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        title="Collapse">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row m-1">
+                                    <a href="/lkps?id={{ $p->id }}" class="btn btn-success col-md-4">Laporan Kinerja
+                                        Program Studi</a>
+                                </div>
+                                <div class="row m-1">
+                                    <a href="#" class="btn btn-primary col-md-4">Laporan Evaluasi Diri Program Studi</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div class="row m-1">
-                                <a href="/lkps" class="btn btn-success col-md-4">Laporan Kinerja Program Studi</a>
-                            </div>
-                            <div class="row m-1">
-                                <a href="#" class="btn btn-primary col-md-4">Laporan Evaluasi Diri Program Studi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card collapsed-card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-university mr-1"></i>
-                                Arsitektur 
-                            </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row m-1">
-                                <a href="/lkps" class="btn btn-success col-md-4">Laporan Kinerja Program Studi</a>
-                            </div>
-                            <div class="row m-1">
-                                <a href="#" class="btn btn-primary col-md-4">Laporan Evaluasi Diri Program Studi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card collapsed-card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-university mr-1"></i>
-                                Teknik Pertambangan
-                            </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row m-1">
-                                <a href="/lkps" class="btn btn-success col-md-4">Laporan Kinerja Program Studi</a>
-                            </div>
-                            <div class="row m-1">
-                                <a href="#" class="btn btn-primary col-md-4">Laporan Evaluasi Diri Program Studi</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </section>
             </div>
         </div>
