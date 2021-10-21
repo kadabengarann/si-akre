@@ -41,12 +41,10 @@
                      aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                      <div class="dropdown-item">
-                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                             class="">
-                @csrf
-                <button class=" btn btn-flat"
-                             type="submit">
-                             <i class="fas fa-sign-out-alt"></i> Logout
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
+                             @csrf
+                             <button class=" btn btn-flat" type="submit">
+                                 <i class="fas fa-sign-out-alt"></i> Logout
                              </button>
                          </form>
                      </div>
@@ -61,8 +59,8 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
      <!-- Brand Logo -->
      <a href="/" class="brand-link">
-         <img src="{{ asset('img') }}/logo.png" alt="SI - Akdre Logo"
-             class="brand-image img-circle elevation-3" style="opacity: .8">
+         <img src="{{ asset('img') }}/logo.png" alt="SI - Akdre Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
          <span class="brand-text font-weight-light"><b>SI</b> - Akre</span>
      </a>
 
@@ -74,12 +72,16 @@
                  <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
              </div>
              <div class="info">
-                 @if (Auth::user()->level ==3)
-                 <a href="#" class="d-block">{{ Auth::user()->dosen->nama }}</a>
+                 @if (Auth::user()->level == 3)
+                     <a href="#" class="d-block">{{ Auth::user()->dosen->nama }}</a>
+                     <a class="d-block" disabled>{{ Auth::user()->username }}</a>
+                 @elseif (Auth::user()->level == 2)
+                     <a href="#" class="d-block">{{ Auth::user()->dosen->nama }}</a>
+                     <a class="d-block" disabled>{{ Auth::user()->dosen->prodi->nama }}</a>
                  @else
-                 <a href="#" class="d-block">{{ Auth::user()->username }}</a>
+                     <a href="#" class="d-block">{{ Auth::user()->username }}</a>
+                     <a class="d-block" disabled>Super Admin</a>
                  @endif
-                 <a class="d-block" disabled>{{ Auth::user()->username }}</a>
              </div>
          </div>
 
@@ -103,8 +105,7 @@
                with font-awesome or any other icon font library -->
                  <li class="nav-header">HOME</li>
                  <li class="nav-item">
-                     <a href="/"                                 
-                     class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                     <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
 
                          <i class="nav-icon fas fa-tachometer-alt fa-fw"></i>
                          {{-- <i class="nav-icon fas fa-user fa-fw"></i> --}}
@@ -115,27 +116,10 @@
                  </li>
                  @unless(request()->is('lkps*') || request()->is('lkps*'))
                      @if (Auth::user()->level == 3)
-                         <li class="nav-header">MENU IAPS</li>
-                         <li class="nav-item">
-                             <a href="/lkps"
-                                 class="nav-link {{ request()->is('lkps') ? 'active' : '' }} {{ request()->is('lkps/*') ? 'nav-gray' : '' }}">
-                                 <i class="nav-icon fas fa-chart-bar"></i>
-                                 <p>
-                                     Laporan Kinerja Prodi
-                                 </p>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a href="#" class="nav-link">
-                                 <i class="nav-icon fas fa-chart-bar"></i>
-                                 <p>
-                                     Laporan Evaluasi Diri
-                                 </p>
-                             </a>
-                         </li>
-                     @endif
-
-                     @if (Auth::user()->level == 1 || Auth::user()->level == 2)
+                         @include('layouts.nav.dosen_nav')
+                     @elseif (Auth::user()->level == 2)
+                         @include('layouts.nav.prodi_nav')
+                     @elseif (Auth::user()->level == 1)
                          @include('layouts.nav.admin_nav')
                      @endif
 
