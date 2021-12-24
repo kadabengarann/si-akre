@@ -6,7 +6,7 @@ How to run in local:
 - Create empty database `si_akre_db`
 - Go to the folder application using cd command on your cmd or terminal 
 
-    Run `cd si_akre`
+    Run `cd si-akre`
 - Run `composer install` on your cmd or terminal
 - Copy `.env.example` file to `.env` on the root folder. 
 
