@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <p><b>Program Studi : </b>{{ Auth::user()->dosen->prodi->nama }}</p>
+                                    <p><b>Program Studi : </b>{{ Auth::user()->prodi->nama }}</p>
                                 </div>
                             </div>
                         </div>

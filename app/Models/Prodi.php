@@ -20,4 +20,8 @@ class Prodi extends Model
     {
         return $this->hasMany(Dosen::class);
     }
+    public function isComplete()
+    {
+        return true;
+    }
 }
