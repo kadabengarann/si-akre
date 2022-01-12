@@ -43,7 +43,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function dosen(){
-    	return $this->belongsTo(Dosen::class);
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class);
+    }
+    public function dosen()
+    {
+        return $this->belongsTo(Dosen::class);
+    }
+    public function mhs()
+    {
+        return $this->belongsTo(Mahasiswa::class);
     }
 }

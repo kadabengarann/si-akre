@@ -17,4 +17,12 @@ class Dosen extends Model
     {
         return $this->belongsTo(Prodi::class);
     }
+    public function getDosenID()
+    {
+        return sprintf('D%03d', $this->id);
+    }
+    public function isComplete()
+    {
+        return true;
+    }
 }

@@ -29,6 +29,18 @@ class UserTableSeeder extends Seeder
 
             ]);
         }
+        for ($x = 1; $x <= 20; $x++) {
+
+            DB::table('users')->insert([
+                'email' => $faker->unique()->safeEmail,
+                'username' => sprintf('1910817210%03d', $x),
+                'level' => '4',
+                'password' => bcrypt('mhs'),
+                'remember_token' => Str::random(10),
+                'mhs_id' =>  $x
+
+            ]);
+        }
         for ($x = 1; $x <= 7; $x++) {
             DB::table('users')->insert([
                 'name' => 'admin0' . $x,
@@ -36,7 +48,7 @@ class UserTableSeeder extends Seeder
                 'username' => 'admin0' . $x,
                 'password' => bcrypt('admin'),
                 'level' => '2',
-                'dosen_id' =>  20 + $x
+                'prodi_id' =>  $x
             ]);
         }
         DB::table('users')->insert([
