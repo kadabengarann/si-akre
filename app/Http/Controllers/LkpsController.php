@@ -39,7 +39,7 @@ class LkpsController extends Controller
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
             'prodi' =>
-            Prodi::find(Auth::user()->dosen->prodi->id),
+            Prodi::find(Auth::user()->prodi->id),
         ];
         return view('lkps.' . $id[0] . '.' . $id[1] . $id[2], $data);
     }
