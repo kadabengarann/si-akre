@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
+use App\Models\Dosen;
+use App\Models\Mahasiswa;
 
 
 class HomeController extends Controller
@@ -33,10 +35,26 @@ class HomeController extends Controller
             ];
             return view('admin.dashboard', $data);
         } elseif (Auth::user()->level == 2) {
-            return view('admin_prodi.dashboard');
-        } elseif (Auth::user()->level == 3) {
+            $prodi = new Prodi;
+            $data = [
+                'isComplete' => $prodi->isComplete()
+            ];
 
-            return view('dosen.dashboard');
+            return view('admin_prodi.dashboard', $data);
+        } elseif (Auth::user()->level == 3) {
+            $prodi = new Dosen;
+            $data = [
+                'isComplete' => $prodi->isComplete()
+            ];
+
+            return view('dosen.dashboard', $data);
+        } elseif (Auth::user()->level == 4) {
+            $prodi = new Mahasiswa;
+            $data = [
+                'isComplete' => $prodi->isComplete()
+            ];
+
+            return view('mhs.dashboard', $data);
         }
     }
 }

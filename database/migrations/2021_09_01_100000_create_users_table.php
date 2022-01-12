@@ -21,10 +21,11 @@ class CreateUsersTable extends Migration
             $table->integer('level')->default('2');
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedBigInteger('prodi_id')->nullable();
             $table->unsignedBigInteger('dosen_id')->nullable();
+            $table->unsignedBigInteger('mhs_id')->nullable();
             $table->timestamps();
             $table->foreign('dosen_id')->references('id')->on('dosen')->onDelete('cascade');
-
         });
     }
 

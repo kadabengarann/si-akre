@@ -68,21 +68,47 @@
      <div class="sidebar">
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-             <div class="image d-flex align-items-center">
-                 <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
-             </div>
-             <div class="info">
-                 @if (Auth::user()->level == 3)
-                     <a href="#" class="d-block">{{ Auth::user()->dosen->nama }}</a>
-                     <a class="d-block" disabled>{{ Auth::user()->username }}</a>
-                 @elseif (Auth::user()->level == 2)
-                     <a href="#" class="d-block">{{ Auth::user()->dosen->nama }}</a>
+             @if (Auth::user()->level == 4)
+                 <div class="image d-flex align-items-center">
+                     <img src="{{ url('img/mhs/' . Auth::user()->mhs->img_url) }}" class="img-circle elevation-2"
+                         alt="User Image">
+                 </div>
+                 <div class="info">
+
+                     <a href="/profile" class="d-block">{{ Auth::user()->mhs->nama }}</a>
+                     <a class="d-block" disabled>{{ Auth::user()->mhs->prodi->nama }}</a>
+                 </div>
+
+             @elseif (Auth::user()->level == 3)
+                 <div class="image d-flex align-items-center">
+                     <img src="{{ url('img/dos/' . Auth::user()->dosen->img_url) }}" class="img-circle elevation-2"
+                         alt="User Image">
+                 </div>
+                 <div class="info">
+
+                     <a href="/profile" class="d-block">{{ Auth::user()->dosen->nama }}</a>
                      <a class="d-block" disabled>{{ Auth::user()->dosen->prodi->nama }}</a>
-                 @else
+                 </div>
+             @elseif (Auth::user()->level == 2)
+                 <div class="image d-flex align-items-center">
+                     <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
+                 </div>
+                 <div class="info">
+
+                     <a href="/profile" class="d-block">{{ Auth::user()->prodi->nama }}</a>
+                 </div>
+
+             @else
+                 <div class="image d-flex align-items-center">
+                     <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
+                 </div>
+                 <div class="info">
+
                      <a href="#" class="d-block">{{ Auth::user()->username }}</a>
                      <a class="d-block" disabled>Super Admin</a>
-                 @endif
-             </div>
+                 </div>
+
+             @endif
          </div>
 
          <!-- SidebarSearch Form -->
