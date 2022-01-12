@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\{
     HomeController,
+    UserProfileController,
     LkpsController,
     AdminProdiController,
+    MahasiswaController,
     AdminController
 };
 
@@ -22,9 +24,6 @@ use App\Http\Controllers\{
 */
 
 
-Route::get('/home', function () {
-    return redirect('/');
-});
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -34,18 +33,28 @@ Route::get('/dosen/prodi', [AdminProdiController::class, 'index_prodi']);
 Route::group(
     ['middleware' => 'prodi'],
     function () {
-        Route::get('/prodi/detail/', [AdminProdiController::class, 'detailProdi'])->name('prodiDetail');
-        Route::get('/prodi/edit/', [AdminProdiController::class, 'editProdi']);
-        Route::post('/prodi/update/', [AdminProdiController::class, 'updateProdi']);
+        Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
 
         Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
         Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
     }
 );
+Route::group(
+    ['middleware' => 'dosen'],
+    function () {
+        Route::post('/dosen/profile/update', [AdminProdiController::class, 'updateProfile']);
+    }
+);
+Route::group(
+    ['middleware' => 'mahasiswa'],
+    function () {
+        Route::post('/mhs/profile/update', [MahasiswaController::class, 'updateProfile']);
+    }
+);
+Route::get('/profile', [UserProfileController::class, 'index'])->name('pageProfile');
+Route::get('/profile/edit', [UserProfileController::class, 'editProfile'])->name('pageEditProfile');
 
 Route::get('/lkps/', [LkpsController::class, 'index']);
-
-
 
 Route::group(
     ['middleware' => 'admin'],
