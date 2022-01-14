@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     UserProfileController,
     LkpsController,
     AdminProdiController,
+    DosenController,
     MahasiswaController,
     AdminController
 };
@@ -42,7 +43,7 @@ Route::group(
 Route::group(
     ['middleware' => 'dosen'],
     function () {
-        Route::post('/dosen/profile/update', [AdminProdiController::class, 'updateProfile']);
+        Route::post('/dosen/profile/update', [DosenController::class, 'updateProfile']);
     }
 );
 Route::group(

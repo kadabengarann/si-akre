@@ -11,6 +11,13 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
+        $id_user = auth()->user()->mhs_id;
+
+        $data = [
+            'mhs' => Mahasiswa::find($id_user),
+        ];
+
+
         return view('mhs.dashboard');
     }
     public function profile()
@@ -39,7 +46,7 @@ class MahasiswaController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
-            'address' => 'required',
+            // 'address' => 'required',
             'date' => 'required',
             'birthplace' => 'required',
             'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',

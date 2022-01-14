@@ -21,8 +21,4 @@ class Dosen extends Model
     {
         return sprintf('D%03d', $this->id);
     }
-    public function isComplete()
-    {
-        return true;
-    }
 }
