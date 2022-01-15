@@ -39,6 +39,10 @@
                             <a href="#biodata" data-toggle="tab" class="nav-link m-l active" aria-expanded="true">Biodata
                                 Pribadi</a>
                         </li>
+                        {{-- <li class="nav-item">
+                            <a href="#akun" data-toggle="tab" class="nav-link m-l" aria-expanded="true">Akun</a>
+                        </li> --}}
+
                     </ul>
                     <div class="tab-content">
                         <div class="panel tab-pane wrapper-lg  active" id="biodata">
@@ -83,6 +87,44 @@
                             </div>
 
                         </div>
+                        <div class="panel tab-pane wrapper-lg" id="akun">
+                            <div class="card mb-5">
+
+                                <div class="card-body">
+                                    <form name="frmUserUpdt" method="POST" action="" id="userUpdt">
+                                        <div class="col-xs-5">
+                                            <div class="row mt-2">
+                                                <div class="col-md-7"><label
+                                                        class="labels">Username</label><input name="usrnm"
+                                                        type="text" class="form-control" value="" readonly="readonly">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-7"><label class="labels">Password
+                                                        Lama</label><input name="oldpass" type="password"
+                                                        class="form-control" required></div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-7"><label class="labels">Password
+                                                        Baru</label><input name="newpass" type="password"
+                                                        class="form-control" required></div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-7"><label class="labels">Re-type Password
+                                                        Baru</label><input name="newpass2" type="password"
+                                                        class="form-control" required></div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 text-left">
+                                            <button class="btn btn-success profile-button" name="save_password"
+                                                type="submit" form="userUpdt" type="submit" value="save_password"><i
+                                                    class="fas fa-user-cog"></i> Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
