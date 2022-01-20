@@ -1,6 +1,6 @@
 # SI Akreditasi FT 
 Sebuah demo website SI Akreditasi FT
-
+<!-- commment -->
 How to run in local:
 - Clone your project
 - Create empty database `si_akre_db`
