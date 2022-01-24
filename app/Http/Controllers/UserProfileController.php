@@ -72,4 +72,31 @@ class UserProfileController extends Controller
             return view('mhs.edit_profile', $data);
         }
     }
+    public function editPassword()
+    {
+        if (Auth::user()->level == 2) {
+            $id_user = auth()->user()->prodi_id;
+            $data = [
+                'prodi' => Prodi::find($id_user),
+            ];
+            return view('admin_prodi.edit_profile', $data);
+        } elseif (Auth::user()->level == 3) {
+            $id_user = auth()->user()->dosen_id;
+
+            $data = [
+                'dosen' => Dosen::find($id_user),
+            ];
+
+            return view('dosen.edit_password', $data);
+        } elseif (Auth::user()->level == 4) {
+
+            $id_user = auth()->user()->mhs_id;
+
+            $data = [
+                'mhs' => Mahasiswa::find($id_user),
+            ];
+
+            return view('mhs.edit_profile', $data);
+        }
+    }
 }

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
-
+use App\Models\User;
+use App\Rules\MatchOldPassword;
+use Illuminate\Support\Facades\Hash;
 use File;
+use Illuminate\Support\Facades\Validator;
 
 class DosenController extends Controller
 {
@@ -77,5 +80,20 @@ class DosenController extends Controller
             $dosen->save();
         }
         return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+    }
+    public function updateCredential()
+    {
+        $id = auth()->user()->id;
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'oldpass' => ['required', new MatchOldPassword],
+            'newpass' =>  ['required', 'min:8', 'max:16'],
+            'newpass2' => ['required', 'min:8', 'max:16', 'same:newpass'],
+        ]);
+
+        $user = User::find($id);
+        $user->password = Hash::make(Request()->newpass);
+        $user->save();
+        return redirect()->route('pageProfile')->with('pesan', 'Password changed!');
     }
 }

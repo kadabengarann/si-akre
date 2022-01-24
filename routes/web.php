@@ -44,6 +44,7 @@ Route::group(
     ['middleware' => 'dosen'],
     function () {
         Route::post('/dosen/profile/update', [DosenController::class, 'updateProfile']);
+        Route::post('/dosen/profile/update-credential', [DosenController::class, 'updateCredential']);
     }
 );
 Route::group(
@@ -54,6 +55,7 @@ Route::group(
 );
 Route::get('/profile', [UserProfileController::class, 'index'])->name('pageProfile');
 Route::get('/profile/edit', [UserProfileController::class, 'editProfile'])->name('pageEditProfile');
+Route::get('/profile/edit-password', [UserProfileController::class, 'editPassword'])->name('pageEditPassword');
 
 Route::get('/lkps/', [LkpsController::class, 'index']);
 
