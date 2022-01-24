@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($prodi as $m)
+                    {{-- @foreach ($prodi as $m)
                         <tr>
                             <td>
                                 {{ $m->getProdiID() }}
@@ -54,7 +54,7 @@
                                 </button>
                             </td>
                         </tr>
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
                 <tfoot>
                     <tr>
@@ -97,7 +97,8 @@
     @endforeach
 @endsection
 @push('scripts')
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
+        // console.log($('#tbl_list'));
         $(document).ready(function() {
             $('#tbl_list').DataTable({
                 "aLengthMenu": [
@@ -105,6 +106,7 @@
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
                 paging: true,
+                searching: false,
                 processing: true,
                 serverSide: true,
                 autoWidth: false,
@@ -128,6 +130,6 @@
                 ]
             });
         });
-    </script> --}}
+    </script>
 
 @endpush

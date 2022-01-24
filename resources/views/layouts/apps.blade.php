@@ -55,6 +55,7 @@
 
     <!-- REQUIRED SCRIPTS -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/all.min.js') }}"></script>
     @stack('scripts')
 
 </body>

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
-// use Yajra\Datatables\Datatables;
-use Datatables;
+use Yajra\Datatables\Datatables;
+// use Datatables;
 
 class AdminController extends Controller
 {
@@ -22,30 +22,53 @@ class AdminController extends Controller
             // index_dosen();
         }
     }
+    public function prodi_data(Request $request)
+    {
+        return Datatables::of(Prodi::all())
+            ->addColumn('kode_prodi', function (Prodi $prodi) {
+                return sprintf('PR%03d', $prodi->id);
+            })
+            ->addColumn('action', function (Prodi $prodi) {
+                $btn = '
+                <a class="btn btn-info" href="/prodi/detail/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $prodi->id . '">
+                <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+                ';
+                return $btn;
+            })
+            ->rawColumns(['action'])
+            ->toJson();
+    }
     public function index_prodi(Request $request)
     {
-        // if ($request->ajax()) {
-        //     return Datatables::of(Prodi::all())
-        //         ->addColumn('kode_prodi', function (Prodi $prodi) {
-        //             return sprintf('PR%03d', $prodi->id);
-        //         })
-        //         ->addColumn('action', function (Prodi $prodi) {
-        //             $btn = '
-        //         <a class="btn btn-info" href="/prodi/detail/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
-        //         <a class="btn btn-secondary" href="/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
-        //         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $prodi->id . '">
-        //         <i class="fas fa-trash-alt"></i> Hapus
-        //         </button>
-        //         ';
-        //             return $btn;
-        //         })
-        //         ->rawColumns(['action'])
-        //         ->toJson();
-        // }
+        if ($request->ajax()) {
+            return Datatables::of(Prodi::all())
+                ->addColumn('kode_prodi', function (Prodi $prodi) {
+                    return sprintf('PR%03d', $prodi->id);
+                })
+                ->addColumn('action', function (Prodi $prodi) {
+                    $btn = '
+                <a class="btn btn-info" href="/prodi/detail/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $prodi->id . '">
+                <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+                ';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->toJson();
+        }
         $data = [
             'prodi' => Prodi::get(),
         ];
         return view('admin.prodi.v_prodi', $data);
+    }
+    public function index_audit_log()
+    {
+        return view('admin.audit_log');
     }
     public function detailProdi($id)
     {
