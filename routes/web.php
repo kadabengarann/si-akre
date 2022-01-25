@@ -62,7 +62,11 @@ Route::get('/lkps/', [LkpsController::class, 'index']);
 Route::group(
     ['middleware' => 'admin'],
     function () {
+        Route::get('/admin/iaps', [AdminController::class, 'index_iaps'])->name('auditLog');
+        Route::get('/audit-log', [AdminController::class, 'index_audit_log'])->name('auditLog');
+        Route::get('/audit-log/{id}', [AdminController::class, 'audit_log_detail'])->name('auditLogDetail');
         Route::get('/prodi', [AdminController::class, 'index_prodi'])->name('prodiList');
+        Route::get('/prodi/json', [AdminController::class, 'prodi_data']);
         Route::get('/prodi/detail/{id}', [AdminController::class, 'detailProdi'])->name('prodiDetail');
         Route::get('/prodi/add', [AdminController::class, 'addProdi']);
         Route::post('/prodi/insert', [AdminController::class, 'insertProdi']);

@@ -1,9 +1,19 @@
 <li class="nav-header">ADMIN</li>
 <li class="nav-item">
-    <a href="/" class="nav-link {{ request()->is('h') ? 'active' : '' }} {{ request()->is('h') ? 'nav-gray' : '' }}">
+    <a href="/admin/iaps"
+        class="nav-link {{ request()->is('admin/iaps*') ? 'active' : '' }} {{ request()->is('admin/iaps*') ? 'nav-gray' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>
             Data IAPS Prodi
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/audit-log"
+        class="nav-link {{ request()->is('audit-log*') ? 'active' : '' }} {{ request()->is('audit-log*') ? 'nav-gray' : '' }}">
+        <i class="nav-icon fas fa-history"></i>
+        <p>
+            Log
         </p>
     </a>
 </li>
