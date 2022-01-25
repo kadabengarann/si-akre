@@ -1,10 +1,14 @@
-th, td{
-    text-align: center!important;
-    vertical-align: middle!important;
+th,
+td {
+    text-align: center !important;
+    vertical-align: middle !important;
 }
-.sub-table{
-    text-align: left!important;
+.text-start {
+    text-align: start !important;
 }
-.table-isi{
+.sub-table {
+    text-align: left !important;
+}
+.table-isi {
     background-color: rgba(0, 0, 0, 0.05);
 }

@@ -17,8 +17,8 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.js',
-    'node_modules/admin-lte/dist/js/adminlte.js',
-    'node_modules/bootstrap/dist/js/bootstrap.js',
+    // 'node_modules/admin-lte/dist/js/adminlte.js',
+    // 'node_modules/bootstrap/dist/js/bootstrap.js',
     'node_modules/datatables.net/js/jquery.dataTables.js',
     'node_modules/datatables.net-bs/js/dataTables.bootstrap.js', 
     'node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js',
