@@ -113,6 +113,18 @@ class AdminController extends Controller
         $audit = DB::table('audits')->where('id', '=', $id)->first();
         $user = User::find($audit->user_id);
         $user_role = $roles[$user->level - 1];
+        if ($user->level == 1) {
+            $user_url = '#';
+        } elseif ($user->level == 2) {
+            $user_url = '/manage/prodi/' . $user->id;
+        } elseif ($user->level == 3) {
+            $user_url =
+                '/manage/dosen/' . $user->id;
+        } elseif ($user->level == 4) {
+            $user_url =
+                '/manage/mhs/' . $user->id;
+        }
+        $user_role = $roles[$user->level - 1];
         // $audit = DB::table('audits')->where('id', '=', $id)->first();
         if ($audit->event == 'updated' || $audit->event == 'created') {
             $data_modified = json_decode($audit->new_values);
@@ -127,6 +139,7 @@ class AdminController extends Controller
             'data_modified2' => $data_modified2,
             'user' => $user,
             'user_role' => $user_role,
+            'user_url' => $user_url,
         ];
 
         // return $audit;
