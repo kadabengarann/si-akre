@@ -33,7 +33,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link {{ request()->is('lkps/*/002') ? 'active' : '' }}">
+            <a href="/manage/dosen" class="nav-link {{ request()->is('manage/dosen*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dosen</p>
             </a>

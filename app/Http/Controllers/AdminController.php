@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Mahasiswa;
+use App\Models\Dosen;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Rules\MatchOldPassword;
@@ -438,5 +439,192 @@ class AdminController extends Controller
         $user->password = Hash::make(Request()->new_password);
         $user->save();
         return redirect()->route('mhsDetail', $id)->with('pesan', 'Password changed!');
+    }
+
+
+
+    public function index_dosen(Request $request)
+    {
+        if ($request->ajax()) {
+            return Datatables::of(Dosen::all())
+                // ->addColumn('kode_mhs', function (Dosen $mhs) {
+                //     return strtoupper($mhs->user);
+                // })
+                ->addColumn('action', function (Dosen $dosen) {
+                    $btn = '
+                <a class="btn btn-info" href="/manage/dosen/' . $dosen->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/manage/dosen/edit/' . $dosen->id . '"><i class="far fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $dosen->id . '">
+                <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+                ';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->toJson();
+        }
+        $data = [
+            'dosen' => Dosen::get(),
+        ];
+        return view('admin.dosen.v_dosen', $data);
+    }
+
+    public function detailDosen($id)
+    {
+
+        if (!Dosen::find($id)) {
+            abort(404);
+        }
+
+        $data = [
+            'dosen' => Dosen::find($id),
+        ];
+        return view('admin.dosen.v_dosen_detail', $data);
+    }
+
+    public function addDosen()
+    {
+        $data = [
+            'prodi' => Prodi::all(),
+        ];
+
+        return view('admin.dosen.v_add_dosen', $data);
+    }
+    public function insertDosen()
+    {
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'name' => 'required',
+            'id_prodi' => 'required',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+
+            'password' =>  ['required', 'min:8', 'max:16'],
+            're-password' => ['required', 'min:8', 'max:16', 'same:password'],
+        ]);
+        if (Request()->foto_dos <> "") {
+            $file = Request()->file('foto_dos');
+            $nama_file = time() . Request()->name . "." . $file->extension();
+
+            $tujuan_upload = 'img/dos';
+            $file->move($tujuan_upload, $nama_file);
+            $img_url = $nama_file;
+        } else {
+            $img_url  = 'user.jpg';
+        }
+        $dosen = Dosen::create([
+            'nama' => Request()->name,
+            'nip' => Request()->username,
+            'img_url' =>  $img_url,
+            'prodi_id' => Request()->id_prodi,
+        ]);
+
+        User::create([
+            'username' => Request()->username,
+            'password' => Hash::make(
+                Request()->password
+            ),
+            'level' => 3,
+            'dosen_id' => $dosen->id,
+
+        ]);
+
+        return redirect()->route('dosenList')->with('pesan', 'Added new data !1!1');
+    }
+
+    public function deleteDosen($id)
+    {
+        $dosen = Dosen::find($id);
+        $user = User::where('dosen_id', $id);
+        File::delete('img/dos/' . $dosen->img_url);
+
+        $dosen->delete();
+        $user->delete();
+        return redirect()->route('dosenList')->with('pesan', 'Deleted a data !1!1');
+    }
+    public function editDosen($id)
+    {
+
+        if (!Dosen::find($id)) {
+            abort(404);
+        }
+        $data = [
+            'dosen' => Dosen::find($id),
+            'prodi' => Prodi::all(),
+            // 'user' => Dosen::find($id)->user,
+        ];
+        return view('admin.dosen.v_edit_dosen', $data);
+    }
+
+    public function updateDosen($id)
+    {
+        $dosen = Dosen::find($id);
+        $user = $dosen->user;
+
+        Request()->validate([
+            'username' => 'required|unique:users,username,' . $dosen->user->id . 'max:5|max:16',
+            // 'id_prodi' => 'required',
+            'name' => 'required',
+            'address' => 'required',
+            'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+        ]);
+        if (Request()->foto_dos <> "") {
+            $file = Request()->file('foto_dos');
+            $nama_file = time() . Request()->name . "." . $file->extension();
+
+            $tujuan_upload = 'img/dos';
+            $file->move($tujuan_upload, $nama_file);
+
+            $dosen = Dosen::find($id);
+            File::delete('img/dos/' . $dosen->img_url);
+
+            $dosen->nama = Request()->name;
+            // $dosen->prodi_id = Request()->id_prodi;
+            $dosen->alamat = Request()->address;
+            $dosen->tgl_lahir = Request()->date;
+            $dosen->tmp_lahir = Request()->birthplace;
+            $dosen->img_url = $nama_file;
+            $dosen->save();
+        } else {
+            $dosen->nama = Request()->name;
+            // $dosen->prodi_id = Request()->id_prodi;
+            $dosen->alamat = Request()->address;
+            $dosen->tgl_lahir = Request()->date;
+            $dosen->tmp_lahir = Request()->birthplace;
+            $dosen->save();
+        }
+
+        if (Request()->username != $user->username) {
+            $user->username = Request()->username;
+            $dosen->nip = Request()->username;
+            $user->save();
+        }
+        return redirect()->route('dosenDetail', $id)->with('pesan', 'Updated a data !1!1');
+    }
+    public function editDosenPassword($id)
+    {
+        $data = [
+            'dosen' => Dosen::find($id),
+        ];
+
+        return view('admin.dosen.v_edit_password', $data);
+    }
+    public function updateDosenCredential($id)
+    {
+        $dosen = Dosen::find($id);
+        $user = $dosen->user;
+
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'admin-password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('dosenDetail', $id)->with('pesan', 'Password changed!');
     }
 }

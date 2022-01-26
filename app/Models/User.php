@@ -55,7 +55,7 @@ class User extends Authenticatable implements Auditable
     }
     public function dosen()
     {
-        return $this->belongsTo(Dosen::class);
+        return $this->belongsTo(Dosen::class, 'dosen_id');
     }
     public function mhs()
     {

@@ -6,22 +6,32 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Dosen extends Model implements Auditable
+class Dosen extends Model
 {
+    // use \OwenIt\Auditing\Auditable;
     use HasFactory;
-    use \OwenIt\Auditing\Auditable;
 
     protected $table = 'dosen';
+    protected $fillable = [
+        'nama',
+        'nip',
+        'tgl_lahir',
+        'tmp_lahir',
+        'alamat',
+        'img_url',
+        'prodi_id',
+    ];
+
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'dosen_id');
     }
     public function prodi()
     {
         return $this->belongsTo(Prodi::class);
     }
-    public function getDosenID()
+    public function isComplete()
     {
-        return sprintf('D%03d', $this->id);
+        return true;
     }
 }
