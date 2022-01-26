@@ -7,8 +7,8 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/prodi">Program Studi</a></li>
-            <li class="breadcrumb-item"><a href="/prodi/detail/{{ $prodi->id }}">{{ $prodi->nama }}</a></li>
+            <li class="breadcrumb-item"><a href="/manage/prodi">Program Studi</a></li>
+            <li class="breadcrumb-item"><a href="/manage/prodi/detail/{{ $prodi->id }}">{{ $prodi->nama }}</a></li>
             <li class="breadcrumb-item active">Edit Password</li>
         </ol>
     </div><!-- /.col -->
@@ -17,7 +17,7 @@
 
     <div class="card p-4">
         <form name="frmUserUpdt" method="POST" enctype="multipart/form-data"
-            action="/prodi/update-credential/{{ $prodi->id }}">
+            action="/manage/prodi/update-credential/{{ $prodi->id }}">
             @csrf
             <div class="col-xs-5">
                 {{-- <div class="row mt-2">

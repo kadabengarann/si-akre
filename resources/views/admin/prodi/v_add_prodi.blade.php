@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/prodi">Program Studi</a></li>
+            <li class="breadcrumb-item"><a href="/manage/prodi">Program Studi</a></li>
             <li class="breadcrumb-item active">Tambah data</li>
         </ol>
     </div><!-- /.col -->
@@ -23,7 +23,7 @@
     <!-- Main content -->
 
     <div class="card p-4">
-        <form method="POST" enctype="multipart/form-data" action="/prodi/insert">
+        <form method="POST" enctype="multipart/form-data" action="/manage/prodi/insert">
             @csrf
             <div class="row">
 

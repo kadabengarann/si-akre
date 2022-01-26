@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/prodi">Program Studi</a></li>
+            <li class="breadcrumb-item"><a href="/manage/prodi">Program Studi</a></li>
             <li class="breadcrumb-item active">Edit Detail {{ $prodi->nama }}</li>
         </ol>
     </div><!-- /.col -->
@@ -20,7 +20,7 @@
     @endif<!-- /.container-fluid -->
     <div class="card p-4">
 
-        <form method="POST" enctype="multipart/form-data" action="/prodi/update/{{ $prodi->id }}">
+        <form method="POST" enctype="multipart/form-data" action="/manage/prodi/update/{{ $prodi->id }}">
             @csrf
             <div class="card-body">
                 <div class="form-group row">

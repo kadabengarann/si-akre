@@ -34,27 +34,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($prodi as $m)
-                        <tr>
-                            <td>
-                                {{ $m->getProdiID() }}
-                            </td>
-                            <td>
-                                {{ $m->nama }}
-                            </td>
-
-                            <td>
-                                <a class="btn btn-info" href='/prodi/detail/{{ $m->id }}'><i
-                                        class="far fa-edit"></i> Detail</a>
-                                <a class="btn btn-secondary" href='/prodi/edit/{{ $m->id }}'><i
-                                        class="far fa-edit"></i> Edit</a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#delete{{ $m->id }}">
-                                    <i class="fas fa-trash-alt"></i> Hapus
-                                </button>
-                            </td>
-                        </tr>
-                    @endforeach --}}
                 </tbody>
                 <tfoot>
                     <tr>
@@ -68,7 +47,7 @@
         </div>
         <!-- /.card-body -->
         <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-            <a class="btn btn-primary" href="/prodi/add"><i class="fas fa-user-plus"></i> Tambah Data</a>
+            <a class="btn btn-primary" href="/manage/add-prodi"><i class="fas fa-user-plus"></i> Tambah Data</a>
         </div>
     </div>
 
@@ -88,7 +67,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <a href="/prodi/delete/{{ $data->id }}" class="btn btn-danger">Yes</a>
+                        <a href="/manage/prodi/delete/{{ $data->id }}" class="btn btn-danger">Yes</a>
                     </div>
                 </div>
             </div>
@@ -111,7 +90,7 @@
                 serverSide: true,
                 autoWidth: false,
                 responsive: true,
-                ajax: '{{ url('prodi') }}',
+                ajax: '{{ url('/manage/prodi') }}',
                 columns: [{
                         data: 'kode_prodi',
                         name: 'kode_prodi'

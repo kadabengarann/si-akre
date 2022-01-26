@@ -66,16 +66,16 @@ Route::group(
         Route::get('/audit-log', [AdminController::class, 'index_audit_log'])->name('auditLog');
         Route::get('/audit-log/{id}', [AdminController::class, 'audit_log_detail'])->name('auditLogDetail');
 
-        Route::get('/prodi', [AdminController::class, 'index_prodi'])->name('prodiList');
-        Route::get('/prodi/json', [AdminController::class, 'prodi_data']);
-        Route::get('/prodi/detail/{id}', [AdminController::class, 'detailProdi'])->name('prodiDetail');
-        Route::get('/prodi/add', [AdminController::class, 'addProdi']);
-        Route::post('/prodi/insert', [AdminController::class, 'insertProdi']);
-        Route::get('/prodi/delete/{id}', [AdminController::class, 'deleteProdi']);
-        Route::get('/prodi/edit/{id}', [AdminController::class, 'editProdi']);
-        Route::post('/prodi/update/{id}', [AdminController::class, 'updateProdi']);
-        Route::get('/prodi/edit-password/{id}', [AdminController::class, 'editProdiPassword'])->name('pageProdiEditPassword');
-        Route::post('/prodi/update-credential/{id}', [AdminController::class, 'updateProdiCredential']);
+        Route::get('/manage/prodi', [AdminController::class, 'index_prodi'])->name('prodiList');
+        Route::get('/manage/prodi/json', [AdminController::class, 'prodi_data']);
+        Route::get('/manage/prodi/{id}', [AdminController::class, 'detailProdi'])->name('prodiDetail');
+        Route::get('/manage/add-prodi', [AdminController::class, 'addProdi']);
+        Route::post('/manage/prodi/insert', [AdminController::class, 'insertProdi']);
+        Route::get('/manage/prodi/delete/{id}', [AdminController::class, 'deleteProdi']);
+        Route::get('/manage/prodi/edit/{id}', [AdminController::class, 'editProdi']);
+        Route::post('/manage/prodi/update/{id}', [AdminController::class, 'updateProdi']);
+        Route::get('/manage/prodi/edit-password/{id}', [AdminController::class, 'editProdiPassword'])->name('pageProdiEditPassword');
+        Route::post('/manage/prodi/update-credential/{id}', [AdminController::class, 'updateProdiCredential']);
 
 
         Route::get('/lkps/prodi', [LkpsController::class, 'index']);

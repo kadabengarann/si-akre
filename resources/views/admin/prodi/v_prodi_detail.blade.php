@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/prodi">Program Studi</a></li>
+            <li class="breadcrumb-item"><a href="/manage/prodi">Program Studi</a></li>
             <li class="breadcrumb-item active">{{ $prodi->nama }}</li>
         </ol>
     </div><!-- /.col -->
@@ -209,14 +209,15 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
-                                                <a class="btn btn-secondary" href='/prodi/edit/{{ $prodi->id }}'><i
+                                                <a class="btn btn-secondary"
+                                                    href='/manage/prodi/edit/{{ $prodi->id }}'><i
                                                         class="far fa-edit"></i> Edit Profile</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-warning"
-                                                    href='/prodi/edit-password/{{ $prodi->id }}'><i
+                                                    href='/manage/prodi/edit-password/{{ $prodi->id }}'><i
                                                         class="fas fa-key"></i> Change Password</a>
                                             </div>
                                         </div>

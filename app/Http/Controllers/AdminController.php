@@ -36,8 +36,8 @@ class AdminController extends Controller
             })
             ->addColumn('action', function (Prodi $prodi) {
                 $btn = '
-                <a class="btn btn-info" href="/prodi/detail/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
-                <a class="btn btn-secondary" href="/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
+                <a class="btn btn-info" href="/manage/prodi/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/manage/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $prodi->id . '">
                 <i class="fas fa-trash-alt"></i> Hapus
                 </button>
@@ -64,8 +64,8 @@ class AdminController extends Controller
                 })
                 ->addColumn('action', function (Prodi $prodi) {
                     $btn = '
-                <a class="btn btn-info" href="/prodi/detail/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
-                <a class="btn btn-secondary" href="/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
+                <a class="btn btn-info" href="/manage/prodi/' . $prodi->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/manage/prodi/edit/' . $prodi->id . '"><i class="far fa-edit"></i> Edit</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $prodi->id . '">
                 <i class="fas fa-trash-alt"></i> Hapus
                 </button>
