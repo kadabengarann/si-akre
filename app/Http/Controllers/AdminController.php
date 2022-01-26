@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
+use App\Models\Mahasiswa;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Rules\MatchOldPassword;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Yajra\Datatables\Datatables;
 
 // use Datatables;
+use File;
 
 class AdminController extends Controller
 {
@@ -253,5 +255,188 @@ class AdminController extends Controller
         $user->password = Hash::make(Request()->new_password);
         $user->save();
         return redirect()->route('prodiDetail', $id)->with('pesan', 'Password changed!');
+    }
+
+    public function index_mhs(Request $request)
+    {
+        if ($request->ajax()) {
+            return Datatables::of(Mahasiswa::all())
+                ->addColumn('kode_mhs', function (Mahasiswa $mhs) {
+                    return strtoupper($mhs->user->username);
+                })
+                ->addColumn('action', function (Mahasiswa $mhs) {
+                    $btn = '
+                <a class="btn btn-info" href="/manage/mhs/' . $mhs->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/manage/mhs/edit/' . $mhs->id . '"><i class="far fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $mhs->id . '">
+                <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+                ';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->toJson();
+        }
+        $data = [
+            'mhs' => Mahasiswa::get(),
+        ];
+        return view('admin.mhs.v_mhs', $data);
+    }
+    public function detailMhs($id)
+    {
+
+        if (!Mahasiswa::find($id)) {
+            abort(404);
+        }
+
+        $data = [
+            'mhs' => Mahasiswa::find($id),
+        ];
+        return view('admin.mhs.v_mhs_detail', $data);
+    }
+
+    public function addMhs()
+    {
+        $data = [
+            'prodi' => Prodi::all(),
+        ];
+
+        return view('admin.mhs.v_add_mhs', $data);
+    }
+    public function insertMhs()
+    {
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'name' => 'required',
+            'id_prodi' => 'required',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+
+            'password' =>  ['required', 'min:8', 'max:16'],
+            're-password' => ['required', 'min:8', 'max:16', 'same:password'],
+        ]);
+        if (Request()->foto_mhs <> "") {
+            $file = Request()->file('foto_mhs');
+            $nama_file = time() . Request()->name . "." . $file->extension();
+
+            $tujuan_upload = 'img/mhs';
+            $file->move($tujuan_upload, $nama_file);
+            $img_url = $nama_file;
+        } else {
+            $img_url  = 'user.jpg';
+        }
+        $mhs = Mahasiswa::create([
+            'nama' => Request()->name,
+            'nim' => Request()->username,
+            'img_url' =>  $img_url,
+            'prodi_id' => Request()->id_prodi,
+        ]);
+
+        User::create([
+            'username' => Request()->username,
+            'password' => Hash::make(
+                Request()->password
+            ),
+            'level' => 4,
+            'mhs_id' => $mhs->id,
+
+        ]);
+
+        return redirect()->route('mhsList')->with('pesan', 'Added new data !1!1');
+    }
+
+    public function deleteMhs($id)
+    {
+        $mhs = Mahasiswa::find($id);
+        $user = User::where('mhs_id', $id);
+        File::delete('img/mhs/' . $mhs->img_url);
+
+        $mhs->delete();
+        $user->delete();
+        return redirect()->route('mhsList')->with('pesan', 'Deleted a data !1!1');
+    }
+    public function editMhs($id)
+    {
+
+        if (!Mahasiswa::find($id)) {
+            abort(404);
+        }
+        $data = [
+            'mhs' => Mahasiswa::find($id),
+            'prodi' => Prodi::all(),
+            // 'user' => Mahasiswa::find($id)->user,
+        ];
+        return view('admin.mhs.v_edit_mhs', $data);
+    }
+
+    public function updateMhs($id)
+    {
+        $mhs = Mahasiswa::find($id);
+        $user = $mhs->user;
+
+        Request()->validate([
+            'username' => 'required|unique:users,username,' . $mhs->user->id . 'max:5|max:16',
+            'name' => 'required',
+            'address' => 'required',
+            'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+        ]);
+        if (Request()->foto_mhs <> "") {
+            $file = Request()->file('foto_mhs');
+            $nama_file = time() . Request()->name . "." . $file->extension();
+
+            $tujuan_upload = 'img/mhs';
+            $file->move($tujuan_upload, $nama_file);
+
+            $mhs = Mahasiswa::find($id);
+            File::delete('img/mhs/' . $mhs->img_url);
+
+            $mhs->nama = Request()->name;
+            $mhs->prodi_id = Request()->id_prodi;
+            $mhs->alamat = Request()->address;
+            $mhs->tgl_lahir = Request()->date;
+            $mhs->tmp_lahir = Request()->birthplace;
+            $mhs->img_url = $nama_file;
+            $mhs->save();
+        } else {
+            $mhs->nama = Request()->name;
+            $mhs->prodi_id = Request()->id_prodi;
+
+            $mhs->alamat = Request()->address;
+            $mhs->tgl_lahir = Request()->date;
+            $mhs->tmp_lahir = Request()->birthplace;
+            $mhs->save();
+        }
+
+        if (Request()->username != $user->username) {
+            $user->username = Request()->username;
+            $user->save();
+        }
+        return redirect()->route('mhsDetail', $id)->with('pesan', 'Updated a data !1!1');
+    }
+    public function editMhsPassword($id)
+    {
+        $data = [
+            'mhs' => Mahasiswa::find($id),
+        ];
+
+        return view('admin.mhs.v_edit_password', $data);
+    }
+    public function updateMhsCredential($id)
+    {
+        $mhs = Mahasiswa::find($id);
+        $user = $mhs->user;
+
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'admin-password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('mhsDetail', $id)->with('pesan', 'Password changed!');
     }
 }

@@ -77,6 +77,16 @@ Route::group(
         Route::get('/manage/prodi/edit-password/{id}', [AdminController::class, 'editProdiPassword'])->name('pageProdiEditPassword');
         Route::post('/manage/prodi/update-credential/{id}', [AdminController::class, 'updateProdiCredential']);
 
+        Route::get('/manage/mhs', [AdminController::class, 'index_mhs'])->name('mhsList');
+        // Route::get('/manage/mhs/json', [AdminController::class, 'mhs_data']);
+        Route::get('/manage/mhs/{id}', [AdminController::class, 'detailMhs'])->name('mhsDetail');
+        Route::get('/manage/add-mhs', [AdminController::class, 'addMhs']);
+        Route::post('/manage/mhs/insert', [AdminController::class, 'insertMhs']);
+        Route::get('/manage/mhs/delete/{id}', [AdminController::class, 'deleteMhs']);
+        Route::get('/manage/mhs/edit/{id}', [AdminController::class, 'editMhs']);
+        Route::post('/manage/mhs/update/{id}', [AdminController::class, 'updateMhs']);
+        Route::get('/manage/mhs/edit-password/{id}', [AdminController::class, 'editMhsPassword'])->name('pageMhsEditPassword');
+        Route::post('/manage/mhs/update-credential/{id}', [AdminController::class, 'updateMhsCredential']);
 
         Route::get('/lkps/prodi', [LkpsController::class, 'index']);
         Route::get('/lkps/prodi/view/{id}', [LkpsController::class, 'admin_form']);

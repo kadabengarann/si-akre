@@ -24,6 +24,7 @@ class User extends Authenticatable implements Auditable
         'email',
         'username',
         'password',
+        'level',
         'prodi_id',
         'dosen_id',
         'mhs_id',
@@ -58,6 +59,6 @@ class User extends Authenticatable implements Auditable
     }
     public function mhs()
     {
-        return $this->belongsTo(Mahasiswa::class);
+        return $this->belongsTo(Mahasiswa::class, 'mhs_id');
     }
 }

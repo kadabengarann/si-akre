@@ -18,8 +18,8 @@
     </a>
 </li>
 <li class="nav-header">MANAGE</li>
-<li class="nav-item {{ request()->is('prodi*') || request()->is('user*') ? 'menu-open' : '' }}">
-    <a href="" class="nav-link {{ request()->is('prodi*') || request()->is('user*') ? 'active' : '' }}">
+<li class="nav-item {{ request()->is('manage*') ? 'menu-open' : '' }}">
+    <a href="" class="nav-link {{ request()->is('manage*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user"></i>
         <p>User
             <i class="right fas fa-angle-left"></i>
@@ -27,7 +27,7 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="#" class="nav-link {{ request()->is('lkps/*/001') ? 'active' : '' }}">
+            <a href="/manage/mhs" class="nav-link {{ request()->is('manage/mhs*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Mahasiswa</p>
             </a>
@@ -39,7 +39,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/prodi" class="nav-link {{ request()->is('prodi*') ? 'active' : '' }}">
+            <a href="/manage/prodi"
+                class="nav-link {{ request()->is('manage/prodi*') || request()->is('manage/add-prodi') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Prodi</p>
             </a>
