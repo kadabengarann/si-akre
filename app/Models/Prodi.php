@@ -19,6 +19,11 @@ class Prodi extends Model implements Auditable
     {
         return sprintf('PR%03d', $this->id);
     }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
     public function dosen()
     {
         return $this->hasMany(Dosen::class);

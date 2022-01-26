@@ -17,10 +17,11 @@
         </p>
     </a>
 </li>
+<li class="nav-header">MANAGE</li>
 <li class="nav-item {{ request()->is('prodi*') || request()->is('user*') ? 'menu-open' : '' }}">
     <a href="" class="nav-link {{ request()->is('prodi*') || request()->is('user*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-cog"></i>
-        <p>Pengaturan
+        <i class="nav-icon fas fa-user"></i>
+        <p>User
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>
@@ -28,13 +29,13 @@
         <li class="nav-item">
             <a href="#" class="nav-link {{ request()->is('lkps/*/001') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>User</p>
+                <p>Mahasiswa</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link {{ request()->is('lkps/*/002') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Admin</p>
+                <p>Dosen</p>
             </a>
         </li>
         <li class="nav-item">

@@ -15,10 +15,10 @@ class CreateDosenTable extends Migration
     {
         Schema::create('dosen', function (Blueprint $table) {
             $table->id();
-		    $table->string('nama')->nullable();
+            $table->string('nama')->nullable();
             $table->date('tgl_lahir')->nullable();
-            $table->string('tmp_lahir')->nullable();    
-		    $table->text('alamat')->nullable();
+            $table->string('tmp_lahir')->nullable();
+            $table->text('alamat')->nullable();
             $table->string('img_url')->nullable();
             $table->unsignedBigInteger('prodi_id')->nullable();
             $table->timestamps();

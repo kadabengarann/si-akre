@@ -33,7 +33,7 @@
                             <h4 class="text-right">Data Program Studi</h4>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <label class="labels">Jenis Program</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
                                     name="jenis">
@@ -42,10 +42,11 @@
                                         {{ $message }}
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-12">
                                 <label class="labels">Nama Program Studi</label><input type="text"
-                                    class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name">
+                                    class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name"
+                                    value="{{ old('name') }}">
                                 <div class="invalid-feedback">
                                     @error('name')
                                         {{ $message }}
@@ -53,6 +54,40 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                        <div class="row mt-2">
+                            <div class="col-md-12">
+                                <label class="labels">Username akun</label><input type="text"
+                                    class="form-control @error('username') is-invalid @enderror" placeholder="Username"
+                                    name="username" value="{{ old('username') }}">
+                                <div class="invalid-feedback">
+                                    @error('username')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Password</label><input type="password"
+                                    class="form-control @error('password') is-invalid @enderror" placeholder="Password"
+                                    name="password" value="{{ old('password') }}">
+                                <div class="invalid-feedback">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Konfirmasi Password</label><input type="password"
+                                    class="form-control @error('re-password') is-invalid @enderror" placeholder="Password"
+                                    name="re-password" value="{{ old('re-password') }}">
+                                <div class="invalid-feedback">
+                                    @error('re-password')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -68,6 +103,6 @@
             </div>
         </form>
     </div>
-    </div>
+
 
 @endsection

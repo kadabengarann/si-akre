@@ -43,9 +43,8 @@ class UserTableSeeder extends Seeder
         }
         for ($x = 1; $x <= 7; $x++) {
             DB::table('users')->insert([
-                'name' => 'admin0' . $x,
                 'email' => 'admin0' . $x . '@admin',
-                'username' => 'admin0' . $x,
+                'username' => sprintf('pr%03d', $x),
                 'password' => bcrypt('admin'),
                 'level' => '2',
                 'prodi_id' =>  $x

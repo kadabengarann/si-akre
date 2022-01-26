@@ -65,6 +65,7 @@ Route::group(
         Route::get('/admin/iaps', [AdminController::class, 'index_iaps'])->name('auditLog');
         Route::get('/audit-log', [AdminController::class, 'index_audit_log'])->name('auditLog');
         Route::get('/audit-log/{id}', [AdminController::class, 'audit_log_detail'])->name('auditLogDetail');
+
         Route::get('/prodi', [AdminController::class, 'index_prodi'])->name('prodiList');
         Route::get('/prodi/json', [AdminController::class, 'prodi_data']);
         Route::get('/prodi/detail/{id}', [AdminController::class, 'detailProdi'])->name('prodiDetail');
@@ -73,6 +74,8 @@ Route::group(
         Route::get('/prodi/delete/{id}', [AdminController::class, 'deleteProdi']);
         Route::get('/prodi/edit/{id}', [AdminController::class, 'editProdi']);
         Route::post('/prodi/update/{id}', [AdminController::class, 'updateProdi']);
+        Route::get('/prodi/edit-password/{id}', [AdminController::class, 'editProdiPassword'])->name('pageProdiEditPassword');
+        Route::post('/prodi/update-credential/{id}', [AdminController::class, 'updateProdiCredential']);
 
 
         Route::get('/lkps/prodi', [LkpsController::class, 'index']);

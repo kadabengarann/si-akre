@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Rules\MatchOldPassword;
+use Illuminate\Support\Facades\Hash;
+
 use Yajra\Datatables\Datatables;
+
 // use Datatables;
 
 class AdminController extends Controller
@@ -56,7 +60,7 @@ class AdminController extends Controller
         if ($request->ajax()) {
             return Datatables::of(Prodi::all())
                 ->addColumn('kode_prodi', function (Prodi $prodi) {
-                    return sprintf('PR%03d', $prodi->id);
+                    return strtoupper($prodi->user->username);
                 })
                 ->addColumn('action', function (Prodi $prodi) {
                     $btn = '
@@ -147,10 +151,22 @@ class AdminController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'password' =>  ['required', 'min:8', 'max:16'],
+            're-password' => ['required', 'min:8', 'max:16', 'same:password'],
         ]);
 
-        Prodi::create([
+        $prodi = Prodi::create([
             'nama' => Request()->name,
+        ]);
+
+        User::create([
+            'username' => Request()->username,
+            'password' => Hash::make(
+                Request()->password
+            ),
+            'level' => 2,
+            'prodi_id' => $prodi->id,
         ]);
 
         return redirect()->route('prodiList')->with('pesan', 'Added new data !1!1');
@@ -158,8 +174,10 @@ class AdminController extends Controller
 
     public function deleteProdi($id)
     {
-        $dosen = Prodi::find($id);
-        $dosen->delete();
+        $prodi = Prodi::find($id);
+        $user = User::where('prodi_id', $id);
+        $prodi->delete();
+        $user->delete();
         return redirect()->route('prodiList')->with('pesan', 'Deleted a data !1!1');
     }
     public function editProdi($id)
@@ -170,20 +188,70 @@ class AdminController extends Controller
         }
         $data = [
             'prodi' => Prodi::find($id),
+            // 'user' => Prodi::find($id)->user,
         ];
         return view('admin.prodi.v_edit_prodi', $data);
     }
 
     public function updateProdi($id)
     {
+        $prodi = Prodi::find($id);
+        $user = $prodi->user;
+
         Request()->validate([
-            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'username' => 'required|unique:users,username,' . $prodi->user->id . 'max:5|max:10',
             'name' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'website' => 'required',
+            // 'no_sk_pembukaan' => 'required',
+            // 'tgl_sk_pembukaan' => 'required',
+            // 'pejabat_sk_pembukaan' => 'required',
+            // 'thn_menerima_mhs' => 'required',
+            // 'akreditasi' => 'required',
+            // 'no_sk_ban_pt' => 'required',
         ]);
 
-        $dosen = Prodi::find($id);
-        $dosen->nama = Request()->name;
-        $dosen->save();
+        $prodi->nama = Request()->name;
+        $prodi->alamat = Request()->alamat;
+        $prodi->email = Request()->email;
+        $prodi->website = Request()->website;
+        $prodi->no_sk_pembukaan = Request()->no_sk_pembukaan;
+        $prodi->tgl_sk_pembukaan = Request()->tgl_sk_pembukaan;
+        $prodi->pejabat_sk_pembukaan = Request()->pejabat_sk_pembukaan;
+        $prodi->thn_menerima_mhs = Request()->thn_menerima_mhs;
+        $prodi->akreditasi = Request()->akreditasi;
+        $prodi->no_sk_ban_pt = Request()->no_sk_ban_pt;
+        $prodi->save();
+
+        if (Request()->username != $user->username) {
+            $user->username = Request()->username;
+            $user->save();
+        }
         return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !1!1');
+    }
+    public function editProdiPassword($id)
+    {
+        $data = [
+            'prodi' => Prodi::find($id),
+        ];
+
+        return view('admin.prodi.v_edit_password', $data);
+    }
+    public function updateProdiCredential($id)
+    {
+        $prodi = Prodi::find($id);
+        $user = $prodi->user;
+
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'admin-password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('prodiDetail', $id)->with('pesan', 'Password changed!');
     }
 }
