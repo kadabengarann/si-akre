@@ -7,12 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>2. Mahasiswa</p>
+                        <p><b>Kriteria : </b>3. Mahasiswa</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>b. Mahasiswa Asing</p>
-                        <p><b>Tabel : </b>Mahasiswa Asing (Foreign Student)
-                        </p>
+                        <p><b>Sub-kriteria : </b>b. Layanan dan Kualitas Layanan Kepada mahasiswa</p>
+                        <p><b>Tabel : </b>Layanan dan Kualitas Layanan Kepada mahasiswa</p>
                     </div>
                 </div>
 
@@ -23,60 +22,142 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Mahasiswa Asing (Foreign Student)
-                </h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Layanan dan Kualitas Layanan Kepada
+                    mahasiswa</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+                <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th rowspan="2">No</th>
-                            <th rowspan="2">Program Studi</th>
-                            <th colspan="3">Jumlah Mahasiswa Aktif</th>
-                            <th colspan="3">Jumlah Mahasiswa Asing Penuh Waktu (Full-time)</th>
-                            <th colspan="3">Jumlah Mahasiswa Asing Paruh Waktu (Part-time)</th>
+                            <th class="mt-1 mb-1">No</th>
+                            <th class="mt-1 mb-1">Jenis Layanan</th>
+                            <th class="mt-1 mb-1">Bentuk
+                                Layanan
+                            </th>
+                            <th class="mt-1 mb-1">Pelaksanaan (waktu
+                                pelaksanaan)
+                            </th>
+                            <th class="mt-1 mb-1">Bukti (daftar
+                                peserta, laporan
+                                kegiatan)</th>
+                            <th class="mt-1 mb-1">Keterangan
+                            </th>
+
+
                         </tr>
                         <tr>
-                            <th>TS-2</th>
-                            <th>TS-1</th>
-                            <th>TS</th>
-                            <th>TS-2</th>
-                            <th>TS-1</th>
-                            <th>TS</th>
-                            <th>TS-2</th>
-                            <th>TS-1</th>
-                            <th>TS</th>
                         </tr>
                     </thead>
+                    <tr>
+                        <th class="sub-table">
+
+                        </th>
+                        <th class="sub-table">
+                            Bimbingan dan Konseling
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
                     <tbody>
-                        <tr>
-                            <td colspan="11">
+                        <tr class="table-isi">
+                            <td colspan="10">
                                 No data
                             </td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colspan="2">Jumlah</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                    <tr>
+                        <th class="sub-table">
 
-                    </tfoot>
+                        </th>
+                        <th class="sub-table">
+                            Minat dan Bakat (ekstra
+                            kulikuler)
+
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="10">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <th class="sub-table">
+
+                        </th>
+                        <th class="sub-table">
+                            Pembinaan Soft Skill
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="10">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <th class="sub-table">
+
+                        </th>
+                        <th class="sub-table">
+                            Beasiswa
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="10">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <th class="sub-table">
+
+                        </th>
+                        <th class="sub-table">
+                            Kesehatan
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="10">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <th class="sub-table">
+
+                        </th>
+                        <th class="sub-table">
+                            Karir
+                        </th>
+                        <th class="sub-table" colspan="9">
+                        </th>
+                    </tr>
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="10">
+                                No data
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
                 <a class="btn btn-primary" href="/lkps/input/221"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
-
             <!-- /.card-body -->
         </div>
         <!-- /.card -->

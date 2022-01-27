@@ -7,11 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>1. Tata Pamong, Tata Kelola, dan Kerjasama</p>
+                        <p><b>Kriteria : </b>2. Tata Pamong, Tata Kelola, dan Kerjasama</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Kerjasama</p>
-                        <p><b>Tabel : </b>Kerjasama Tridharma</p>
+                        <p><b>Tabel : </b>Kerjasama Pendidikan, Penelitian dan PkM</p>
                     </div>
                 </div>
 
@@ -22,7 +22,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Kerjasama Tridharma</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Kerjasama Pendidikan, Penelitian dan
+                    PkM</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -42,6 +43,10 @@
                                 Durasi</th>
                             <th rowspan="2">Bukti
                                 Kerjasama</th>
+                            <th rowspan="2">Tahun
+                                Berakhirnya
+                                Kerjasama
+                                (YYYY) </th>
 
                         </tr>
                         <tr>
@@ -51,37 +56,37 @@
                         </tr>
                     </thead>
                     <tr>
-                        <th class="sub-table" colspan="9">
-                            Pendidikan
+                        <th class="sub-table" colspan="10">
+                            Kerjasama Pendidikan
                         </th>
                     </tr>
                     <tbody>
                         <tr class="table-isi">
-                            <td colspan="9">
+                            <td colspan="10">
                                 No data
                             </td>
                         </tr>
                     </tbody>
                     <tr>
-                        <th class="sub-table" colspan="9">
-                            Penelitian
+                        <th class="sub-table" colspan="10">
+                            Kerjasama Penelitian
                         </th>
                     </tr>
                     <tbody>
                         <tr class="table-isi">
-                            <td colspan="9">
+                            <td colspan="10">
                                 No data
                             </td>
                         </tr>
                     </tbody>
                     <tr>
-                        <th class="sub-table" colspan="9">
-                            Pengabdian kepada Masyarakat
+                        <th class="sub-table" colspan="10">
+                            Kerjasama Pengabdian Masyarakat
                         </th>
                     </tr>
                     <tbody>
                         <tr class="table-isi">
-                            <td colspan="9">
+                            <td colspan="10">
                                 No data
                             </td>
                         </tr>

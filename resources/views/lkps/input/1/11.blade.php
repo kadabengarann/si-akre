@@ -17,11 +17,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>1. Tata Pamong, Tata Kelola, dan Kerjasama</p>
+                        <p><b>Kriteria : </b>2. Tata Pamong, Tata Kelola, dan Kerjasama</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Kerjasama</p>
-                        <p><b>Tabel : </b>1 Kerjasama Tridharma</p>
+                        <p><b>Tabel : </b>1 Kerjasama Pendidikan, Penelitian dan PkM</p>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
             <div class="card-header p-0 pt-1">
                 <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
                     <li class="pt-2 px-3">
-                        <h3 class="card-title">Kerjasama Tridharma</h3>
+                        <h3 class="card-title">Kerjasama </h3>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"

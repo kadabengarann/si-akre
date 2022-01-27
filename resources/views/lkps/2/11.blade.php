@@ -7,11 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>2. Mahasiswa</p>
+                        <p><b>Kriteria : </b>3. Mahasiswa</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kualitas Input Mahasiswa</p>
-                        <p><b>Tabel : </b>Seleksi Mahasiswa</p>
+                        <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p>
+                        <p><b>Tabel : </b>Jumlah Calon Mahasiswa Baru</p>
                     </div>
                 </div>
 

@@ -26,7 +26,7 @@
     <a href="" class="nav-link {{ request()->is('lkps/*/1*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-list-ul"></i>
         <p>
-            1. Tata Pamong, Tata Kelola, dan Kerjasama
+            2. Tata Pamong, Tata Kelola, dan Kerjasama
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>
@@ -43,7 +43,7 @@
     <a href="" class="nav-link {{ request()->is('lkps/*/2*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-list-ul"></i>
         <p>
-            2. Mahasiswa
+            3. Mahasiswa
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>
@@ -51,13 +51,19 @@
         <li class="nav-item">
             <a href="/lkps/view/211" class="nav-link {{ request()->is('lkps/*/21*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>a. Kualitas Input Mahasiswa</p>
+                <p>a. Jumlah Calon Mahasiswa Baru</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="/lkps/view/221" class="nav-link {{ request()->is('lkps/*/22*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>b. Mahasiswa Asing</p>
+                <p>b. Layanan dan Kualitas Layanan Kepada mahasiswa</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/lkps/view/231" class="nav-link {{ request()->is('lkps/*/23*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>c. Kegiatan Mahasiswa </p>
             </a>
         </li>
     </ul>

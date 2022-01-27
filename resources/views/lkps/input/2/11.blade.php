@@ -17,11 +17,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>2. Mahasiswa</p>
+                        <p><b>Kriteria : </b>3. Mahasiswa</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kualitas Input Mahasiswa</p>
-                        <p><b>Tabel : </b>Seleksi Mahasiswa</p>
+                        <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p>
+                        <p><b>Tabel : </b>Jumlah Calon Mahasiswa Baru</p>
                     </div>
                 </div>
 
@@ -85,13 +85,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Pendaftar</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Lulus Sleksi</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -107,13 +107,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -129,13 +129,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -173,13 +173,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Pendaftar</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Lulus Sleksi</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -195,13 +195,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -217,13 +217,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -261,13 +261,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Pendaftar</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Lulus Sleksi</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -283,13 +283,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -305,13 +305,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -349,13 +349,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Pendaftar</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Lulus Sleksi</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -371,13 +371,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -393,13 +393,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -437,13 +437,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Pendaftar</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Pendaftar</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Lulus Sleksi</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Lulus Sleksi</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -459,13 +459,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
@@ -481,13 +481,13 @@
                                             <label for="inputtext3" class="col-sm-3 col-form-label"></label>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Reguler</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Reguler</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <label for="inputtext3" class="col-sm-1 col-form-label">Transfer</label>
+                                            <label for="inputtext3" class="col-sm-2 col-form-label">Transfer</label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control" id="inputtext3" placeholder="">
                                             </div>
