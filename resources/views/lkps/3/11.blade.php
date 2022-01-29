@@ -7,12 +7,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>3. Sumber Daya Manusia</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
-                        <p><b>Tabel : </b>Dosen Tetap Perguruan Tinggi yang ditugaskan sebagai pengampu mata kuliah di
-                            Program Studi yang diakreditasi</p>
+                        <p><b>Tabel : </b>4.2. Daftar Dosen Tetap Perguruan Tinggi yang ditugaskan sebagai pengampu mata kuliah dengan bidang keahlian yang sesuai dengan 
+kompetensi inti program studi yang diakreditasi.</p>
                     </div>
                 </div>
 
@@ -23,8 +23,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Dosen Tetap Perguruan Tinggi yang
-                    ditugaskan sebagai pengampu mata kuliah di Program Studi yang diakreditasi</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Daftar Dosen Tetap Perguruan Tinggi yang ditugaskan sebagai pengampu mata kuliah dengan bidang keahlian yang sesuai dengan 
+kompetensi inti program studi yang diakreditasi.
+</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -34,21 +35,30 @@
                             <th rowspan="2">No.</th>
                             <th rowspan="2">Nama Dosen</th>
                             <th rowspan="2">NIDN/ NIDK</th>
-                            <th colspan="2">Pendidikan Pasca Sarjana</th>
-                            <th rowspan="2">Bidang Keahlian</th>
-                            <th rowspan="2">Kesesuaian dengan Kompetensi Inti PS</th>
+                            <th rowspan="2">Tanggal Lahir (dd/mm/yyyy)</th>
                             <th rowspan="2">Jabatan Akademik</th>
-                            <th rowspan="2">Sertifikat Pendidik Profesional</th>
-                            <th rowspan="2">Sertifikat Kompetensi/ Profesi/ Industr</th>
-                            <th rowspan="2">Mata Kuliah yang Diampu pada PS yang Diakreditasi</th>
-                            <th rowspan="2">Kesesuaian Bidang Keahlian dengan Mata Kuliah yang Diampu</th>
-                            <th rowspan="2">Mata Kuliah yang Diampu pada PS Lain</th>
+                            <th rowspan="2">Sertifikasi Dosen (Ya/Tidak)</th>
+                            <th colspan="3">Pendidikan S1</th>
+                            <th colspan="3">Pendidikan S2</th>
+                            <th colspan="3">Pendidikan S3</th>
+                
                         </tr>
                         <tr>
-                            <th>Magister/ Magister Terapan/ Spesialis</th>
-                            <th>Doktor/ Doktor Terapan/ Spesialis</th>
+                            <th>Gelar</th>
+                            <th>PT Asal</th>
+                            <th>Bidang Keahlian</th>
+                            <th>Gelar</th>
+                            <th>PT Asal</th>
+                            <th>Bidang Keahlian</th>
+                            <th>Gelar</th>
+                            <th>PT Asal</th>
+                            <th>Bidang Keahlian</th>
                         </tr>
+                        
+                       
+                       
                     </thead>
+                    
                     <tbody>
                         <tr>
                             <td colspan="13">
@@ -57,21 +67,7 @@
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <th>&Sigma;</th>
-                            <th>NDT = </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>NDTS = </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                      
 
                     </tfoot>
                 </table>
