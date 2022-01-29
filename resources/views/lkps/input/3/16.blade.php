@@ -22,7 +22,7 @@
                 <div class="col-12 col-lg-6">
                     <p><b>Sub-kriteria : </b>a. Profil Dosen
                     </p>
-                    <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
+                    <p><b>Tabel : </b>4.8. Peningkatan Kemampuan DTPS melalui program Tugas Belajar dalam bidang Infokom ( isian hanya untuk dosen yang sedang/belum selesai tugas belajar)
                     </p>
                 </div>
             </div>
@@ -39,12 +39,11 @@
     <!-- /.card -->
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Tabel 4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
-            </h3>
+            <h3 class="card-title">Tabel 4.8. Peningkatan Kemampuan DTPS melalui program Tugas Belajar dalam bidang Infokom ( isian hanya untuk dosen yang sedang/belum selesai tugas belajar)</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" action="/lkps/view/314">
+        <form class="form-horizontal" action="/lkps/view/315">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
@@ -53,37 +52,48 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/NIDK</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jenjang Tugas Belajar</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Perguruan Tinggi ( tempat tugas belajar)
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                    </div>
+                </div>
+
+                 
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Program Studi
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                    </div>
+                </div>
+                 
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Akreditasi PS ( tempat tugas belajar)
+                    </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Studi Pendidikan Terakhir</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Masuk
+                    </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Matakuliah yang diampu</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                    </div>
-                </div>
-               
-                    </div>
-                </div>
+             
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-info">Submit</button>
-                <a href="/lkps/view/314" class="btn btn-default float-right">Cancel</button>
+                <a href="/lkps/view/315" class="btn btn-default float-right">Cancel</button>
             </div>
             <!-- /.card-footer -->
         </form>

@@ -7,12 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>3. Sumber Daya Manusia</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
-                        <p><b>Tabel : </b> Dosen Tidak Tetap yang ditugaskan sebagai pengampu mata kuliah di Program Studi
-                            yang Diakreditasi</p>
+                        <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir</p>
                     </div>
                 </div>
 
@@ -23,8 +22,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500"> Dosen Tidak Tetap yang ditugaskan
-                    sebagai pengampu mata kuliah di Program Studi yang Diakreditasi</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -34,13 +32,10 @@
                             <th>No.</th>
                             <th>Nama Dosen</th>
                             <th>NIDN/ NIDK</th>
-                            <th>Pendidikan Pasca Sarjana</th>
-                            <th>Bidang Keahlian</th>
-                            <th>Jabatan Akademik</th>
-                            <th>Sertifikat Pendidik Profesional</th>
-                            <th>Mata Kuliah yang Diampu pada PS yang Diakreditasi</th>
-                            <th>Kesesuaian Bidang Keahlian dengan Mata Kuliah yang Diampu</th>
-                            <th>Jabatan Akademik</th>
+                            <th>Jabatan Fungsional</th>
+                            <th>Bidang Studi Pendidikan Terakhir</th>
+                            <th>Matakuliah yang diampu</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -52,18 +47,7 @@
                     </tbody>
 
                     <tfoot>
-                        <tr>
-                            <th>&Sigma;</th>
-                            <th>NDT = </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                       
                     </tfoot>
                 </table>
             </div>

@@ -17,11 +17,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Penelitian</p>
+                        <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
-                        <p><b>Tabel : </b>7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS</p>
+                        <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
+                        <p><b>Tabel : </b> 9.23 Prestasi Mahasiswa Program Kreatifitas Mahasiswa (PKM)
+</p>
                     </div>
                 </div>
             </div>
@@ -37,66 +38,76 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS
-                </h3>
+                <h3 class="card-title">Tabel 9.23 Prestasi Mahasiswa Program Kreatifitas Mahasiswa (PKM)
+</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/611">
+            <form class="form-horizontal" action="/lkps/view/811">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama mahasiswa</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/K</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Penghargaan hibah kegiatan 
+Program Kreatifitas Mahasiswa 
+(PKM) dari</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+            </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tingkat 
+lokal
+</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+            </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tingkat 
+nasional</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+            </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tingkat 
+internasional</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional (Jafung) Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Dana tingkat 
+lokal</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Penelitian</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Dana tingkat 
+nasional</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Ketua</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Dana Tingkat 
+internasional</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul TA Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Kajian</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                  
+                 
+               
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/611" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/811" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>

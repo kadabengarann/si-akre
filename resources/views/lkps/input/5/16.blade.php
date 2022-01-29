@@ -17,12 +17,12 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
+                    <p><b>Kriteria : </b>6. Pendidikan</p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p><b>Sub-kriteria : </b>a. Profil Dosen
+                    <p><b>Sub-kriteria : </b>a. Kurikulum
                     </p>
-                    <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
+                    <p><b>Tabel : </b>6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen
                     </p>
                 </div>
             </div>
@@ -39,51 +39,38 @@
     <!-- /.card -->
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Tabel 4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
+            <h3 class="card-title">6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen
             </h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" action="/lkps/view/314">
+        <form class="form-horizontal" action="/lkps/view/511">
             <div class="card-body">
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Matakuliah</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/NIDK</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tim Pengampu<sup>1)</sup></label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Studi Pendidikan Terakhir</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Matakuliah yang diampu</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tim Penilai<sup>2)</sup></label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                
-                    </div>
-                </div>
-            </div>
+                
+           
             <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-info">Submit</button>
-                <a href="/lkps/view/314" class="btn btn-default float-right">Cancel</button>
+                <a href="/lkps/view/511" class="btn btn-default float-right">Cancel</button>
             </div>
             <!-- /.card-footer -->
         </form>

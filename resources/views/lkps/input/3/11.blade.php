@@ -22,8 +22,7 @@
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen
                         </p>
-                        <p><b>Tabel : </b>Dosen Tetap Perguruan Tinggi yang ditugaskan sebagai pengampu mata kuliah di
-                            Program Studi yang diakreditasi
+                        <p><b>Tabel : </b>4.2. Daftar Dosen Tetap Perguruan Tinggi yang ditugaskan sebagai pengampu mata kuliah dengan bidang keahlian yang sesuai dengan kompetensi inti program studi yang diakreditasi.
                         </p>
                     </div>
                 </div>
@@ -62,38 +61,26 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-3 col-form-label">Pendidikan Pasca Sarjana </label>
-                        <div class="col-sm-9 d-flex flex-column justify-content-center">
-                            <div class="custom-control custom-radio">
-                                <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
-                                <label for="customRadio1" class="custom-control-label">Magister/Magister Terapan/
-                                    Spesialis</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
-                                <label for="customRadio2" class="custom-control-label">Doktor/Doktor Terapan/
-                                    Spesialis</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Keahlian</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tanggal Lahir (dd/mm/yyyy)</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        
+                    <!-- <div class="form-group row"> -->
+                        <!-- <label for="inputPassword3" class="col-sm-3 col-form-label">Tanggal Lahir (dd/mm/yyyy)</label> -->
+                        <!-- <div class="col-sm-9 d-flex flex-column justify-content-center"> -->
+                            
+                        <!-- <div class="custom-control custom-radio"> -->
+                                <!-- <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio"> -->
+                                <!-- <label for="customRadio1" class="custom-control-label">Magister/Magister Terapan/ -->
+                                    <!-- Spesialis</label> -->
+                            <!-- </div> -->
+                            <!-- <div class="custom-control custom-radio"> -->
+                                <!-- <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio"> -->
+                                <!-- <label for="customRadio2" class="custom-control-label">Doktor/Doktor Terapan/ -->
+                                    <!-- Spesialis</label> -->
+                            
                         </div>
                     </div>
-
-                    <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-3 col-form-label">Kesesuaian dengan
-                            Kompetensi Inti PS</label>
-                        <div class="col-sm-9 custom-checkbox d-flex align-items-center ">
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="customCheckbox2">
-                                <label for="customCheckbox2" class="custom-control-label">Ya</label>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Akademik</label>
                         <div class="col-sm-9">
@@ -102,32 +89,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Sertifikat Pendidik Profesional</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Sertifikat Kompetensi/
-                            Profesi Industri
-                        </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Mata Kuliah yang Diampu
-                            pada PS yang Diakreditasi</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-3 col-form-label">Kesesuaian Bidang Keahlian
-                            dengan Mata Kuliah yang
-                            diampu</label>
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Sertifikasi Dosen (Ya/Tidak)</label>
                         <div class="col-sm-9 custom-checkbox d-flex align-items-center ">
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="customCheckbox2">
@@ -135,14 +97,113 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Mata Kuliah yang Diampu
-                            pada PS lain</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
+
+                    <div class="form-group">
+            <div class="row">
+              <label for="inputPassword3" class="col-sm-3 form-label">
+              Pendidikan S1
+                </label>  
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9">
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Gelar</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
                 </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">PT Asal</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Bidang Keahlian</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+            </div>
+            </div>
+
+
+                <div class="form-group">
+            <div class="row">
+              <label for="inputPassword3" class="col-sm-3 form-label">
+              Pendidikan S2
+                </label>  
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9">
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Gelar</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">PT Asal</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Bidang Keahlian</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+            </div>
+            </div>
+
+                <div class="form-group">
+            <div class="row">
+              <label for="inputPassword3" class="col-sm-3 form-label">
+              Pendidikan S3
+                </label>  
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9">
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Gelar</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">PT Asal</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Bidang Keahlian</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                  </div>
+                </div>
+               
+                </div>
+              </div>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+               
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
