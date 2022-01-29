@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>9.23 Prestasi Mahasiswa Program Kreatifitas Mahasiswa (PKM)</p>
+                        <p><b>Tabel : </b>5.6. Sumber Pustaka berupa Jurnal Ilmiah dalam bidang Infokom</p>
                     </div>
                 </div>
 
@@ -21,8 +21,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Prestasi Mahasiswa Program
-                    Kreatifitas Mahasiswa (PKM)</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pustaka berupa Jurnal Ilmiah
+                    dalam bidang Infokom</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -30,36 +30,23 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama mahasiswa
-
+                            <th>Nama Jurnal
                             </th>
-                            <th>Penghargaan hibah kegiatan Program Kreatifitas Mahasiswa (PKM) dari
-
+                            <th>Langganan/ tidak langganan
                             </th>
-                            <th>Tingkat lokal
-
+                            <th>Mulai langganan
                             </th>
-                            <th>Tingkat nasional
-
+                            <th>Akhir langganan
                             </th>
-                            <th>Tingkat internasional
-
+                            <th>Versi (online/Cetak)
                             </th>
-                            <th>Dana tingkat lokal
-
+                            <th>Internasional/ Nasional
                             </th>
-                            <th>Dana tingkat nasional
-
-                            </th>
-                            <th>Dana tingkat internasional
-
-                            </th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="9">
+                            <td colspan="7">
                                 No data
                             </td>
                         </tr>

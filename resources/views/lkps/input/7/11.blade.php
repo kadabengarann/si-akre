@@ -17,11 +17,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Pengabdian kepada Masyarakat (PkM)</p>
+                        <p><b>Kriteria : </b>8. Pengabdian Kepada Masyarakat</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>PkM DTPS yang melibatkan mahasiswa</p>
-                        <p><b>Tabel : </b>7 PkM DTPS yang melibatkan mahasiswa</p>
+                        <p><b>Tabel : </b>8.1. Pengabdian kepada Masyarakat yang melibatkan mahasiswa pada 3 tahun terakhir
+                        </p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 7 PkM DTPS yang melibatkan mahasiswa</h3>
+                <h3 class="card-title">Pengabdian kepada Masyarakat yang melibatkan mahasiswa pada 3 tahun terakhir</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -50,32 +50,105 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tema
-                            PkM
-                            sesuai
-                            Roadmap</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/K </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul PkM</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Kegiatan</label>
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Relevansi dengan Infokom</label>
+                        <div class="col-sm-9 custom-checkbox d-flex align-items-center ">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="customCheckbox2">
+                                <label for="customCheckbox2" class="custom-control-label">Ya</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Ketua</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun</label>
-                        <div class="col-sm-1">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa yang dilibatkan</label>
+                        <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Dana (Rp.)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputtext3" class="col-sm-3 col-form-label">Sumber Dana</label>
+                        <div class="col-sm-9">
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                <label for="customRadio1" class="custom-control-label">Institusi Internasional</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                <label for="customRadio2" class="custom-control-label">Institusi Internasional</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio3" name="customRadio">
+                                <label for="customRadio3" class="custom-control-label">Institusi Lokal</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio4" name="customRadio">
+                                <label for="customRadio4" class="custom-control-label">Institusi Sendiri</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="inputPassword3" class="col-sm-3 form-label">Mitra</label>
+                            <label class="col-sm-3 form-label">
+                                :
+                            </label>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Nama Mitra
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Apakah ada pengukuran
+                                        Kepuasan Mitra?</label>
+                                    <div class="col-sm-4">
+                                        <div class="custom-control custom-checkbox">
+                                            <input class="custom-control-input" type="checkbox" id="customCheckbox2">
+                                            <label for="customCheckbox2" class="custom-control-label">Ya</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Tindak Lanjut
+                                        Evaluasi</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

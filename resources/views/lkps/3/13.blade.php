@@ -7,11 +7,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>3. Sumber Daya Manusia</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
-                        <p><b>Tabel : </b>Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi</p>
+                        <p><b>Tabel : </b>4.4. Rata-rata beban DTPS per semester, pada TS
+                        </p>
                     </div>
                 </div>
 
@@ -22,36 +23,35 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Ekuivalen Waktu Mengajar Penuh
-                    (EWMP) Dosen Tetap Perguruan Tinggi</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Rata-rata beban DTPS per semester,
+                    pada TS</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th rowspan="3">No.</th>
-                            <th rowspan="3">Nama Dosen (DT)</th>
-                            <th rowspan="3">DTPS</th>
-                            <th colspan="6">Ekuivalen Waktu Mengajar Penuh (EWMP) pada saat TS dalam satuan kredit semester
-                                (sks)</th>
-                            <th rowspan="3">Jumlah (sks)</th>
-                            <th rowspan="3">Rata-rata
-                                per
-                                Semester
-                                (sks)
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">Nama Dosen Tetap</th>
+                            <th colspan="3">SKS Pengajaran<sup>1)</sup> Pada</th>
+
+                            <th rowspan="2">SKS
+                                Penelitian<sup>2)</sup></th>
+                            <th rowspan="2">SKS
+                                Pengabdian
+                                pada Masy<sup>2)</sup></th>
+                            <th colspan="2">SKS Manajemen<sup>3)</sup></th>
+
+                            <th rowspan="2">Jumlah (sks)</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">PS Sendiri </th>
+                            <th rowspan="2">PS Lain,
+                                PT Sendiri
                             </th>
-                        </tr>
-                        <tr>
-                            <th colspan="3">Pendidikan: Pembelajaran dan Pembimbingan</th>
-                            <th rowspan="2">Penelitian</th>
-                            <th rowspan="2">PkM</th>
-                            <th rowspan="2">Tugas Tambahan dan/atau Penunjang</th>
-                        </tr>
-                        <tr>
-                            <th>PS yang Diakreditasi</th>
-                            <th>PS Lain di dalam PT</th>
-                            <th>PS Lain di luar PT</th>
+                            <th rowspan="2">PT Lain</th>
+                            <th rowspan="2">PT Sendiri </th>
+                            <th rowspan="2">PT Lain</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,14 +63,26 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="9" class="text-right">Rata-rata DT</th>
-                            <th></th>
-                            <th></th>
+                            <th colspan="2" class="text-right">Jumlah *</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
                         </tr>
                         <tr>
-                            <th colspan="9" class="text-right">Rata-rata DTPS</th>
-                            <th></th>
-                            <th></th>
+                            <th colspan="2" class="text-right">Rata-rata **</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
+                            <th>0</th>
                         </tr>
                     </tfoot>
                 </table>

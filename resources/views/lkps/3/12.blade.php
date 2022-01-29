@@ -7,11 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>3. Sumber Daya Manusia</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
-                        <p><b>Tabel : </b>Dosen Pembimbing Utama Tugas Akhir</p>
+                        <p><b>Tabel : </b>4.3. Dosen Pembimbing Utama Tugas Akhir</p>
                     </div>
                 </div>
 
@@ -22,7 +22,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Dosen Pembimbing Utama Tugas Akhir
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Dosen Pembimbing Utama Tugas
+                    Akhir
                 </h3>
             </div>
             <!-- /.card-header -->

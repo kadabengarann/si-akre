@@ -7,11 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Pengabdian kepada Masyarakat (PkM)</p>
+                        <p><b>Kriteria : </b>8. Pengabdian Kepada Masyarakat</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>PkM DTPS yang melibatkan mahasiswa</p>
-                        <p><b>Tabel : </b>7 PkM DTPS yang melibatkan mahasiswa</p>
+                        <p><b>Tabel : </b> 8.1. Pengabdian kepada Masyarakat yang melibatkan mahasiswa pada 3 tahun terakhir
+                        </p>
                     </div>
                 </div>
 
@@ -29,20 +29,45 @@
                 <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama Dosen</th>
-                            <th>Tema
-                                PkM
-                                sesuai
-                                Roadmap</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Judul Kegiatan</th>
-                            <th>Tahun</th>
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">Nama Dosen</th>
+                            <th rowspan="2">NIDN/K
+                            </th>
+                            <th rowspan="2">Judul PkM
+                            </th>
+                            <th rowspan="2">Relevansi dengan Infokom
+                            </th>
+                            <th rowspan="2">Ketua
+                            </th>
+                            <th rowspan="2">Nama Mahasiswa yang dilibatkan
+                            </th>
+                            <th rowspan="2">Jumlah Dana (Rp.)
+                            </th>
+                            <th colspan="4">Sumber Dana
+                            </th>
+                            <th colspan="3">Mitra
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Institusi Internasional
+                            </th>
+                            <th>Istitusi Nasional
+                            </th>
+                            <th>Institusi Lokal
+                            </th>
+                            <th>Institusi Sendiri
+                            </th>
+                            <th>Nama Mitra
+                            </th>
+                            <th>Apakah ada pengukuran Kepuasan Mitra?
+                            </th>
+                            <th>Tindak Lanjut Evaluasi
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="16">
                                 No data
                             </td>
                         </tr>

@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>e. Kinerja Lulusan</p>
-                        <p><b>Tabel : </b>8.e.2 Kepuasan Pengguna </p>
+                        <p><b>Tabel : </b>9.10. Kepuasan Pengguna Lulusan </p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 8.e.2) Kepuasan Pengguna</h3>
+                <h3 class="card-title">Kepuasan Pengguna Lulusan</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
