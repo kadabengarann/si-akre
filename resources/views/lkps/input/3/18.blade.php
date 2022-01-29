@@ -22,7 +22,7 @@
                 <div class="col-12 col-lg-6">
                     <p><b>Sub-kriteria : </b>a. Profil Dosen
                     </p>
-                    <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
+                    <p><b>Tabel : </b>4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir
                     </p>
                 </div>
             </div>
@@ -39,51 +39,56 @@
     <!-- /.card -->
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Tabel 4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun terakhir
-            </h3>
+            <h3 class="card-title">Tabel 4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" action="/lkps/view/314">
+        <form class="form-horizontal" action="/lkps/view/315">
             <div class="card-body">
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tenaga Kependidikan</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/NIDK</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan (pustakawan dll)</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Studi lanjut/Pelatihan/Seminar/Workshop
+                    </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
+
+                 
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Studi Pendidikan Terakhir</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Tanggal Pelaksanaan
+                    </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
+                 
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Matakuliah yang diampu</label>
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti (sertifikat,surat tugas,dll)
+                    </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                     </div>
                 </div>
                
-                    </div>
                 </div>
+             
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-info">Submit</button>
-                <a href="/lkps/view/314" class="btn btn-default float-right">Cancel</button>
+                <a href="/lkps/view/315" class="btn btn-default float-right">Cancel</button>
             </div>
             <!-- /.card-footer -->
         </form>

@@ -17,11 +17,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>8. Luaran dan Capaian Tridharma</p>
+                        <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>b. Prestasi Mahasiswa</p>
-                        <p><b>Tabel : </b>8.b.1 Prestasi Akademik</p>
+                        <p><b>Tabel : </b>9.18. Sertifikasi Profesi Bidang Infokom untuk Lulusan pada TS</p>
                     </div>
                 </div>
             </div>
@@ -37,65 +37,33 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 8.b.1 Prestasi Akademik</h3>
+                <h3 class="card-title">Tabel 9.18. Sertifikasi Profesi Bidang Infokom untuk Lulusan pada TS</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
             <form class="form-horizontal" action="/lkps/view/821">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Kegiatan</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Sertifikasi Profesi</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Waktu Perolehan </label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Lembaga yang 
+menerbitkan sertifikat</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">Tingkat</label>
-                            <label class="col-sm-3 form-label">
-                                :
-                            </label>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Lokal/Wilayah
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Nasional</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Internasional </label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Prestasi yang Dicapai</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah lulusan pada TS 
+yang memperoleh sertifikat</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
-
-                </div>
+                   
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
