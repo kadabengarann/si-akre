@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>6.18. Pelaksanaan Perbaikan Sistem Pembelajaran selama 3 tahun terakhir</p>
+                        <p><b>Tabel : </b>5.9. Lisensi/ Open source Software</p>
                     </div>
                 </div>
 
@@ -21,108 +21,40 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Pelaksanaan Perbaikan Sistem
-                    Pembelajaran selama 3 tahun terakhir</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pendanaan Program Studi pada
+                    TS</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th class="mt-1 mb-1">No</th>
-                            <th class="mt-1 mb-1">Jenis Perbaikan
-
-                            </th>
-                            <th class="mt-1 mb-1">Sumber umpan balik (Dosen/ mahasiswa/ Alumni / Pengguna lulusan)
-
-                            </th>
-                            <th class="mt-1 mb-1">Cara Perbaikan
-                            </th>
-                            <th class="mt-1 mb-1">Dampak Perbaikan
-                            </th>
-                            <th class="mt-1 mb-1">Keterangan
-                            </th>
-                            <th class="mt-1 mb-1">Bukti
-                            </th>
+                            <th>No.</th>
+                            <th>Jenis/ nama Software</th>
+                            <th>Lisensi/ Open source</th>
+                            <th>kode Lisensi</th>
+                            <th>Penggunaan (PBM, Administrasi, Penelitian)</th>
                         </tr>
-                        <tr>
+
+
+                    <tbody>
+                        <tr class="table-isi">
+                            <td colspan="9">
+                                No data
+                            </td>
+                            </td>
                         </tr>
+                    </tbody>
                     </thead>
                     <tr>
-                        <th class="sub-table">
-                            a
-                        </th>
-                        <th class="sub-table">
-                            Materi
 
-                        </th>
-                        <th class="sub-table" colspan="9">
-                        </th>
-                    </tr>
-                    <tbody>
-                        <tr class="table-isi">
-                            <td colspan="10">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            b
-                        </th>
-                        <th class="sub-table">
-                            Metode Pembelajaran
-                        </th>
-                        <th class="sub-table" colspan="9">
-                        </th>
-                    </tr>
-                    <tbody>
-                        <tr class="table-isi">
-                            <td colspan="10">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            c
-                        </th>
-                        <th class="sub-table">
-                            Penggunaan Teknologi Pembelajaran
-                        </th>
-                        <th class="sub-table" colspan="9">
-                        </th>
-                    </tr>
-                    <tbody>
-                        <tr class="table-isi">
-                            <td colspan="10">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            d
-                        </th>
-                        <th class="sub-table">
-                            Cara-Cara Evaluasi
-                        </th>
-                        <th class="sub-table" colspan="9">
-                        </th>
-                    </tr>
-                    <tbody>
-                        <tr class="table-isi">
-                            <td colspan="10">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-
+                        </tfoot>
                 </table>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/221"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/418"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
+
             <!-- /.card-body -->
         </div>
         <!-- /.card -->

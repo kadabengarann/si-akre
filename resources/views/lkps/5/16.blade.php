@@ -7,11 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kurikulum</p>
-                        <p><b>Tabel : </b>6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen</p>
+                        <p><b>Tabel : </b>5.6. Sumber Pustaka berupa Jurnal Ilmiah dalam bidang Infokom</p>
                     </div>
                 </div>
 
@@ -22,7 +21,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pustaka berupa Jurnal Ilmiah
+                    dalam bidang Infokom</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -30,30 +30,34 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Matakuliah</th>
-                            <th>Nama Tim Pengampu<sup>1)</sup> </th>
-                            <th>Nama Tim Penilai<sup>2)</sup></th>
+                            <th>Nama Jurnal
+                            </th>
+                            <th>Langganan/ tidak langganan
+                            </th>
+                            <th>Mulai langganan
+                            </th>
+                            <th>Akhir langganan
+                            </th>
+                            <th>Versi (online/Cetak)
+                            </th>
+                            <th>Internasional/ Nasional
+                            </th>
                         </tr>
-                        <tr>
-                            
-                    </tr>    
-
-                        </thead>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td colspan="15">
+                            <td colspan="7">
                                 No data
                             </td>
-                           
                         </tr>
                     </tbody>
-                  
-                     
+                    <tfoot>
+
+                    </tfoot>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/511"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/516"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

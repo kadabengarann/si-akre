@@ -7,10 +7,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>5.9. Lisensi/ Open source Software</p>
+                        <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
+                        <p><b>Tabel : </b>4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan
+                            Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir
+                        </p>
                     </div>
                 </div>
 
@@ -21,37 +24,37 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pendanaan Program Studi pada TS</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Upaya yang telah dilakukan UPPS dalam
+                    Meningkatkan Kualifikasi dan
+                    Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-bordered table-center-text">
+                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Jenis/ nama Software</th>
-                            <th>Lisensi/ Open source</th>
-                            <th>kode Lisensi</th>
-                            <th>Penggunaan (PBM, Administrasi, Penelitian)</th>
+                            <th>Nama Tenaga Kependidikan</th>
+                            <th>Jabatan (pustakawan dll)</th>
+                            <th>Nama Studi lanjut/Pelatihan/Seminar/Workshop</th>
+                            <th>Tanggal Pelaksanaan</th>
+                            <th>Bukti (sertifikat,surat tugas,dll)</sup> </th>
+
                         </tr>
-                                              
-                    
+                    </thead>
                     <tbody>
-                           <tr class="table-isi">
+                        <tr>
                             <td colspan="9">
                                 No data
                             </td>
-                            </td>
                         </tr>
                     </tbody>
-                    </thead> 
-                       <tr>
-                         
-                    </tfoot>
+
                 </table>
             </div>
+
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/411"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/418"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

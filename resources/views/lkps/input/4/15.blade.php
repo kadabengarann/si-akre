@@ -17,10 +17,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>5.5. Fasilitas Laboratorium untuk Keahlian Infokom
+                        <p><b>Sub-kriteria : </b>a. Profil Dosen
+                        </p>
+                        <p><b>Tabel : </b>4.6. Profesionalisme Dosen
                         </p>
                     </div>
                 </div>
@@ -28,7 +30,7 @@
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/211">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/415">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -37,53 +39,121 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Fasilitas Laboratorium untuk Keahlian Infokom
-                </h3>
+                <h3 class="card-title">Tabel 4.6. Profesionalisme Dosen</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/521">
+            <form class="form-horizontal" action="/lkps/view/415">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Laboratorium</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen Tetap</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Fasilitas Hardware</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Asosiasi Keanggotaan Bidang
+                            Infokom</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Fasilitas Software</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Mata kuliah Praktikum yang
-                            diselenggarakan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Topik Riset yang dilakukan pada lab
-                            tsb</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nomor Anggota
+                        </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
 
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/521" class="btn btn-default float-right">Cancel</a>
-                </div>
-                <!-- /.card-footer -->
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="inputPassword3" class="col-sm-3 form-label">
+                                Tingkat
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nasional</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Internasional</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti Keanggotaan<sup>1)</sup>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="inputPassword3" class="col-sm-3 form-label">
+                                    Sertifikasi Profesi
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9">
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Sertifikasi</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Tingkat
+                                            (Nasional/Internasional)</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti
+                                    Pemilihan<sup>1)</sup></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <a href="/lkps/view/415" class="btn btn-default float-right">Cancel</button>
+                        </div>
+                        <!-- /.card-footer -->
             </form>
         </div>
     </section>

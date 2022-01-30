@@ -7,10 +7,14 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>5.6. Sumber Pustaka berupa Jurnal Ilmiah dalam bidang Infokom</p>
+                        <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
+                        <p><b>Tabel : </b>4.8. Peningkatan Kemampuan DTPS melalui program Tugas Belajar dalam bidang Infokom
+                            ( isian hanya untuk dosen
+                            yang sedang/belum selesai tugas belajar)
+                        </p>
                     </div>
                 </div>
 
@@ -21,8 +25,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pustaka berupa Jurnal Ilmiah
-                    dalam bidang Infokom</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Peningkatan Kemampuan DTPS melalui
+                    program Tugas Belajar dalam bidang Infokom ( isian hanya untuk dosen
+                    yang sedang/belum selesai tugas belajar)</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -30,34 +35,28 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Jurnal
-                            </th>
-                            <th>Langganan/ tidak langganan
-                            </th>
-                            <th>Mulai langganan
-                            </th>
-                            <th>Akhir langganan
-                            </th>
-                            <th>Versi (online/Cetak)
-                            </th>
-                            <th>Internasional/ Nasional
-                            </th>
+                            <th>Nama Dosen</th>
+                            <th>Jenjang Tugas Belajar</th>
+                            <th>Nama Perguruan Tinggi ( tempat tugas belajar)</th>
+                            <th>Program Studi</th>
+                            <th>Akreditasi PS ( tempat tugas belajar)</sup> </th>
+                            <th>Tahun Masuk</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="7">
+                            <td colspan="9">
                                 No data
                             </td>
                         </tr>
                     </tbody>
-                    <tfoot>
 
-                    </tfoot>
                 </table>
             </div>
+
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/411"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/416"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

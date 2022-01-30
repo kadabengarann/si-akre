@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>6.9. Pelaksanaan Matakuliah Daring dan Luring
+                        <p><b>Tabel : </b>5.4. Kecukupan, Aksesibilitas dan Mutu Sarana, Prasarana
                         </p>
                     </div>
                 </div>
@@ -22,8 +22,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Pelaksanaan Matakuliah Daring
-                    dan Luring</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Kecukupan, Aksesibilitas dan Mutu
+                    Sarana, Prasarana
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -31,15 +32,17 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama matakuliah
+                            <th>Nama Prasarana (ruang klas, ruang
+                                perpustakaan, ruang dosen, ruang
+                                himpunan, kantor admin dll selain
+                                lab)
                             </th>
-                            <th>sks
+                            <th>Kepemilikan (milik sendiri/sewa)
+
                             </th>
-                            <th>Jumlah pertemuan daring
+                            <th>Nama Sarana utama (di ruang klas, ruang perpustakaan dll selain lab)
                             </th>
-                            <th>Jumlah pertemuan luring
-                            </th>
-                            <th>Bukti RPS
+                            <th>Kepemilikan (milik sendiri/sewa)
                             </th>
                         </tr>
                     </thead>
@@ -56,7 +59,7 @@
                 </table>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/411"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/514"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

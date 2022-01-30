@@ -17,18 +17,21 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Penelitian</p>
+                        <p><b>Kriteria : </b>6. Pendidikan</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
-                        <p><b>Tabel : </b>7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS</p>
+                        <p><b>Sub-kriteria : </b>a. Kurikulum
+                        </p>
+                        <p><b>Tabel : </b>6.3. Matakuliah Pilihan (MBKM) yang harus ditempuh dan matakuliah pilihan yang
+                            disajikan
+                        </p>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/211">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/611">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -37,7 +40,8 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS
+                <h3 class="card-title">6.3. Matakuliah Pilihan (MBKM) yang harus ditempuh dan matakuliah pilihan yang
+                    disajikan
                 </h3>
             </div>
             <!-- /.card-header -->
@@ -45,58 +49,48 @@
             <form class="form-horizontal" action="/lkps/view/611">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Semester</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/K</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Kode MK</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional (Jafung) Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mata Kuliah (pilihan)</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Penelitian</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">sks
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Unit/Jur/Fak Penyelenggara</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Ketua</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">CPL</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul TA Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Kajian</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                  
+                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/611" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/611" class="btn btn-default float-right">Cancel</button>
                 </div>
                 <!-- /.card-footer -->
             </form>

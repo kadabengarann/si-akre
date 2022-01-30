@@ -7,11 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kurikulum</p>
-                        <p><b>Tabel : </b>6.7. Matakuliah Praktikum, Pelaksanaannya dan Kualitas modul Praktikum.</p>
+                        <p><b>Tabel : </b>5.3. Pendayagunaan Sarana Utama Laboratorium</p>
                     </div>
                 </div>
 
@@ -22,38 +21,39 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Matakuliah Praktikum, Pelaksanaannya dan Kualitas modul Praktikum.</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pendanaan Program Studi pada
+                    TS</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+                <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Praktikum</th>
-                            <th>sks</th>
-                            <th>Total Jam Pelaksanaan/Semester</th>
-                            <th>Modul dan Isinya</th>
-                            <th>Software Pendukung</th>
-                            <th>Hardware yang digunakan</th>
-                            <th>Nama Lab</th>
-                     
-</tr>
-                    </thead>
+                            <th>Nama Laboratorium</th>
+                            <th>Daya Tampung</th>
+                            <th>Luas Ruang (m2)</th>
+                            <th>Jumlah Mahasiswa yang Dilayani Lab</th>
+                            <th>Jam Layanan laboratorium</th>
+                        </tr>
+
+
                     <tbody>
-                        <tr>
-                            <td colspan="15">
+                        <tr class="table-isi">
+                            <td colspan="9">
                                 No data
+                            </td>
                             </td>
                         </tr>
                     </tbody>
-                  
-                     
+                    </thead>
+                    <tr>
+
+                        </tfoot>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/511"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/513"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

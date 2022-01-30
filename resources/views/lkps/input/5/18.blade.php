@@ -17,17 +17,18 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>6.18. Pelaksanaan Perbaikan Sistem Pembelajaran selama 3 tahun terakhir</p>
+                        <p><b>Tabel : </b> 5.9. Lisensi/ Open source Software
+                        </p>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/211">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/518">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -36,49 +37,51 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Pelaksanaan Perbaikan Sistem Pembelajaran selama 3 tahun terakhir</h3>
+                <h3 class="card-title">Tabel 5.9. Lisensi/ Open source Software
+                </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-
-            <form class="form-horizontal" action="/lkps/view/841">
+            <form class="form-horizontal" action="/lkps/view/518">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jenis Perbaikan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Sumber umpan balik (Dosen/ mahasiswa/
-                            Alumni / Pengguna lulusan)</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Cara Perbaikan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Keterangan </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jenis/ nama Software</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                 </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Lisensi/ Open source</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">kode Lisensi</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Penggunaan (PBM, Administrasi,
+                            Penelitian)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/841" class="btn btn-default float-right">Cancel</a>
+                    <a href="/lkps/view/518" class="btn btn-default float-right">Cancel</button>
                 </div>
                 <!-- /.card-footer -->
             </form>

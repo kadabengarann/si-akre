@@ -7,12 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kurikulum</p>
-                        <p><b>Tabel : </b>6.3. Matakuliah Pilihan (MBKM) yang harus ditempuh dan matakuliah pilihan 
-yang disajikan</p>
+                        <p><b>Tabel : </b> 5.1 Sumber Pendanaan Program Studi pada TS</p>
                     </div>
                 </div>
 
@@ -23,36 +21,72 @@ yang disajikan</p>
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Matakuliah Pilihan (MBKM) yang harus ditempuh dan matakuliah pilihan 
-yang disajikan</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pendanaan Program Studi pada
+                    TS</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+                <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Semester</th>
-                            <th> Kode MK</th>
-                            <th>Nama Mata Kuliah (pilihan) </th>
-                            <th>sks</th>
-                            <th>Unit/Jur/Fak Penyelenggara </th>
-                            <th>CPL</th>
-                     
-</tr>
+                            <th>Sumber Dana</th>
+                            <th>Jumlah (dalam Juta rupiah)</th>
+                            <th>Bukti</th>
+                            <th>Keterangan</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="15">
-                                No data
-                            </td>
+                            <td>1</td>
+                            <td class="text-left" colspan="1">Dana dari SPP Mahasiswa</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
                         </tr>
-                    </tbody>
-                  
-                     
+                        <tr>
+                            <td>2</td>
+                            <td class="text-left" colspan="1">Dana dari Yayasan</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="text-left" colspan="1"> Dana dari luar SPP, non Yayasan</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td class="text-left">a.</td>
+                            <td class="text-left"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="text-left">b.</td>
+                            <td class="text-left"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="text-left">c.</td>
+                            <td class="text-left"></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                        </tfoot>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
                 <a class="btn btn-primary" href="/lkps/input/511"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>

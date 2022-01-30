@@ -7,11 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan</p>
+                        <p><b>Kriteria : </b>5. Keuangan, Sarana, dan Prasarana</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>6.10. Pengajaran yang dikaitkan dengan Penelitian dan Pengabdian kepada Masyarakat
-                            Dosen (DTPS) dalam 3 tahun terakhir</p>
+                        <p><b>Tabel : </b>5.5. Fasilitas Laboratorium untuk Keahlian Infokom
+                        </p>
                     </div>
                 </div>
 
@@ -22,8 +22,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Pengajaran yang dikaitkan dengan
-                    Penelitian dan Pengabdian kepada Masyarakat Dosen (DTPS) dalam 3 tahun terakhir</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Fasilitas Laboratorium untuk
+                    Keahlian Infokom
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -31,15 +32,16 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tahun
+                            <th>Nama Laboratorium
+
                             </th>
-                            <th>Judul Penelitian Dosen
+                            <th>Fasilitas Hardware
                             </th>
-                            <th>Nama matakuliah dan Bab materi pembelajaran yang menggunakan hasil penelitian tersebut
+                            <th>Fasilitas Software
                             </th>
-                            <th>Judul PkM Dosen
+                            <th>Mata kuliah Praktikum yang diselenggarakan
                             </th>
-                            <th>Nama matakuliah dan bab materi pembelajaran yang menggunakan hasil PkM tersebut
+                            <th>Topik Riset yang dilakukan pada lab tsb
                             </th>
                         </tr>
                     </thead>
@@ -56,7 +58,7 @@
                 </table>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/411"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/515"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

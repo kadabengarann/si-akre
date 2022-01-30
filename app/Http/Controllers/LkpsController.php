@@ -137,7 +137,10 @@ class LkpsController extends Controller
         $ks += 1;
         $loop = 0;
         for ($i = $is; $i <= 9; $i++) {
-            for ($j = $js; $j <= 9; $j++) {
+            for ($j = 0; $j <= 9; $j++) {
+                if ($loop == 0) {
+                    $j = $js;
+                }
                 for ($k = 0; $k <= 9; $k++) {
                     if ($loop == 0) {
                         $k = $ks;
