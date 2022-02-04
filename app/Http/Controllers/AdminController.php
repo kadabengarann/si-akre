@@ -8,6 +8,8 @@ use App\Models\Prodi;
 use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\User;
+use App\Models\Permission;
+
 use Illuminate\Support\Facades\DB;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
@@ -145,6 +147,81 @@ class AdminController extends Controller
         // return $audit;
         return view('admin.audit_log_detail', $data);
     }
+
+    public function index_form_access()
+    {
+
+        $data = [
+            'permission' => Permission::get(),
+
+        ];
+
+        // return Permission::get();
+        return view('admin.form_access', $data);
+    }
+    public function next_form($id)
+    {
+        $id = strval($id);
+        $is = $id[0];
+        $js = $id[1];
+        $ks = $id[2];
+        $ks += 1;
+        $loop = 0;
+        for ($i = $is; $i <= 9; $i++) {
+            for ($j = 0; $j <= 9; $j++) {
+                if ($loop == 0) {
+                    $j = $js;
+                }
+                for ($k = 0; $k <= 9; $k++) {
+                    if ($loop == 0) {
+                        $k = $ks;
+                    }
+
+                    if (view()->exists('lkps.' . $i . '.' . $j . $k)) {
+                        $id[0] = $i;
+                        $id[1] = $j;
+                        $id[2] = $k;
+
+                        return $id;
+                    }
+                    $loop++;
+                }
+            }
+        }
+        return 0;
+    }
+    public function update_form_access(Request $request)
+    {
+        $initial = array(1, 2);
+        $startForm = 211;
+        while (true) {
+            $perm = Permission::find($startForm);
+            $accessList  = ($request->input('form' . $startForm)) ? $request->input('form' . $startForm) : array();
+            $perm->access = json_encode(
+                array_merge(
+                    $initial,
+                    $accessList
+                )
+            );
+            $perm->save();
+            if ($this->next_form($startForm) == 0) {
+                break;
+            }
+            $startForm = $this->next_form($startForm);
+        }
+        // $perm = Permission::find($startForm);
+        // $accessList  = ($request->input('form211')) ? $request->input('form211') : array();
+        // $perm->access = json_encode(
+        //     array_merge(
+        //         $initial,
+        //         $accessList
+        //     )
+        // );
+        // $perm->save();
+
+        return redirect()->route('formAccess')->with('pesan', 'Perubahan tersimpan');
+    }
+
     public function detailProdi($id)
     {
 

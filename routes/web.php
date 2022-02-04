@@ -62,9 +62,12 @@ Route::get('/lkps/', [LkpsController::class, 'index']);
 Route::group(
     ['middleware' => 'admin'],
     function () {
-        Route::get('/admin/iaps', [AdminController::class, 'index_iaps'])->name('auditLog');
+        Route::get('/admin/iaps', [AdminController::class, 'index_iaps']);
         Route::get('/audit-log', [AdminController::class, 'index_audit_log'])->name('auditLog');
         Route::get('/audit-log/{id}', [AdminController::class, 'audit_log_detail'])->name('auditLogDetail');
+
+        Route::get('/form-access', [AdminController::class, 'index_form_access'])->name('formAccess');
+        Route::post('/form-access/update', [AdminController::class, 'update_form_access']);
 
         Route::get('/manage/prodi', [AdminController::class, 'index_prodi'])->name('prodiList');
         Route::get('/manage/prodi/json', [AdminController::class, 'prodi_data']);

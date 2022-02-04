@@ -141,7 +141,9 @@
                      </a>
                  </li>
                  @unless(request()->is('lkps*') || request()->is('lkps*'))
-                     @if (Auth::user()->level == 3)
+                     @if (Auth::user()->level == 4)
+                         @include('layouts.nav.mhs_nav')
+                     @elseif (Auth::user()->level == 3)
                          @include('layouts.nav.dosen_nav')
                      @elseif (Auth::user()->level == 2)
                          @include('layouts.nav.prodi_nav')
