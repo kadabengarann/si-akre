@@ -8,7 +8,7 @@
         </p>
     </a>
 </li>
-{{-- <li class="nav-item">
+<li class="nav-item">
     <a href="/lkps"
         class="nav-link {{ request()->is('lkps') ? 'active' : '' }} {{ request()->is('lkps') ? 'nav-gray' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
@@ -16,4 +16,4 @@
             Isi Form
         </p>
     </a>
-</li> --}}
+</li>

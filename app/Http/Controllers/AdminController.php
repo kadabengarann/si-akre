@@ -195,15 +195,29 @@ class AdminController extends Controller
         $initial = array(1, 2);
         $startForm = 211;
         while (true) {
-            $perm = Permission::find($startForm);
             $accessList  = ($request->input('form' . $startForm)) ? $request->input('form' . $startForm) : array();
-            $perm->access = json_encode(
-                array_merge(
-                    $initial,
-                    $accessList
-                )
-            );
-            $perm->save();
+
+            if (Permission::find($startForm)) {
+                $perm = Permission::find($startForm);
+                $perm->access = json_encode(
+                    array_merge(
+                        $initial,
+                        $accessList
+                    )
+                );
+                $perm->save();
+            } else {
+                Permission::create([
+                    'id' => $startForm,
+                    'access' => json_encode(
+                        array_merge(
+                            $initial,
+                            $accessList
+                        )
+                    ),
+                ]);
+            }
+
             if ($this->next_form($startForm) == 0) {
                 break;
             }

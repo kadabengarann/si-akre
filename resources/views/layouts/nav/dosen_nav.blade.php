@@ -8,3 +8,12 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="/lkps"
+        class="nav-link {{ request()->is('lkps') ? 'active' : '' }} {{ request()->is('lkps') ? 'nav-gray' : '' }}">
+        <i class="nav-icon fas fa-chart-bar"></i>
+        <p>
+            Isi Form
+        </p>
+    </a>
+</li>

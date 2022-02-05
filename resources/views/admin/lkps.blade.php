@@ -73,23 +73,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                1. Tata Pamong, Tata Kelola, dan Kerjasama
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/prodi/view/111?id={{ $prodi->id }}">Isi
-                                            kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                2. Mahasiswa
+                                2. Tata Pamong, Tata Kelola, dan Kerjasama
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -105,7 +89,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                3. Sumber Daya Manusia
+                                3. Mahasiswa
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -121,7 +105,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                4. Keuangan, Sarana, dan Prasarana
+                                4. Sumber Daya Manusia
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -153,7 +137,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                6. Penelitian
+                                6. Pendidikan
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -169,7 +153,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                7. Pengabdian kepada Masyarakat (PkM)
+                                7. Penelitian
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -185,12 +169,28 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
-                                8. Luaran dan Capaian Tridharma
+                                8. Pengabdian kepada Masyarakat (PkM)
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
                                         <a class="nav-link active" href="/lkps/prodi/view/811?id={{ $prodi->id }}">Isi
+                                            kriteria</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-list-ul mr-1"></i>
+                                9. Luaran dan Capaian Tridharma
+                            </h3>
+                            <div class="card-tools">
+                                <ul class="nav nav-pills ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="/lkps/prodi/view/911?id={{ $prodi->id }}">Isi
                                             kriteria</a>
                                     </li>
                                 </ul>

@@ -21,6 +21,10 @@ class Dosen extends Model implements Auditable
         'img_url',
         'prodi_id',
     ];
+    public function getDosenID()
+    {
+        return sprintf('DOS%03d', $this->id);
+    }
 
     public function user()
     {

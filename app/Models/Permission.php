@@ -14,7 +14,7 @@ class Permission extends Model
         'access' => 'array'
     ];
     protected $fillable = [
-        'table_code',
+        'id',
         'access',
     ];
 }

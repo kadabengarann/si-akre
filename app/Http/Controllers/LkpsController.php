@@ -23,7 +23,8 @@ class LkpsController extends Controller
                 'prodi' =>
                 Prodi::find(
                     $request->query('id')
-                ),            'tables' => $this->allowedTable(),
+                ),
+                'tables' => $this->allowedTable(),
 
             ];
             if (null == $request->query('id')) {
@@ -31,13 +32,32 @@ class LkpsController extends Controller
             }
 
             return view('admin.lkps', $data);
+        } elseif (Auth::user()->level == 2) {
+            $data = [
+                'tables' => $this->allowedTable(),
+
+            ];
+
+            return view('admin_prodi.lkps', $data);
+        } elseif (Auth::user()->level == 3) {
+            $data = [
+                'prodi' =>
+                Prodi::find(Auth::user()->dosen->prodi_id),
+                'tables' => $this->allowedTable(),
+
+            ];
+
+            return view('v_user_lkps', $data);
+        } elseif (Auth::user()->level == 4) {
+            $data = [
+                'prodi' =>
+                Prodi::find(Auth::user()->mhs->prodi_id),
+                'tables' => $this->allowedTable(),
+
+            ];
+
+            return view('v_user_lkps', $data);
         }
-        $data = [
-            'tables' => $this->allowedTable(),
-
-        ];
-
-        return view('admin_prodi.lkps', $data);
     }
 
     public function allowedTable()
@@ -82,7 +102,7 @@ class LkpsController extends Controller
             # code...
             return view('lkps.' . $id[0] . '.' . $id[1] . $id[2], $data);
         } else {
-            return view('welcome');
+            return redirect('/lkps');
         }
     }
 
@@ -120,17 +140,25 @@ class LkpsController extends Controller
 
     public function input($id, Request $request)
     {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+
         $data = [
+            'tables' => $this->allowedTable(),
             'prodi' =>
             Prodi::find(
                 $request->query('id')
             ),
 
         ];
-        if ($id < 111) {
-            return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
         }
-        return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
     }
 
     public function prev_num($id)
