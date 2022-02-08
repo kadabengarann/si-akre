@@ -47,3 +47,13 @@
         </li>
     </ul>
 </li>
+<li class="nav-item">
+    <a href="/form-access"
+        class="nav-link {{ request()->is('form-access*') ? 'active' : '' }} {{ request()->is('form-access*') ? 'nav-gray' : '' }}">
+
+        <i class="nav-icon fas fa-user-lock"></i>
+        <p>
+            Form Access
+        </p>
+    </a>
+</li>
