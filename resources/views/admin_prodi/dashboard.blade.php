@@ -14,10 +14,167 @@
             <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
-                Profil tidak lengkap, silahkan <a href="/profile">klik disini</a>
+                Profil tidak lengkap, silahkan <a href="/profile">klik disini</a>    
+            </div>
+            <!-- Button trigger modal -->
+            <button id="clicked" type="button" hidden data-backdrop="static" data-keyboard="false" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
+  
+            <!-- Modal -->
+            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    </div>
+                    <div class="modal-body"> 
+                        <form class="form-horizontal col-xl-10" method="POST" enctype="multipart/form-data"
+                        action="/prodi/profile/update">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Program Studi</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                    value="{{ $prodi->nama }}" placeholder="nama" name="nama">
+                                <div class="invalid-feedback">
+                                    @error('nama')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Alamat
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('alamat') is-invalid @enderror"
+                                    value="{{ $prodi->alamat }}" placeholder="Alamat" name="alamat">
+                                <div class="invalid-feedback">
+                                    @error('alamat')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">E-Mail
+                            </label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ $prodi->email }}" placeholder="Alamat" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Website </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('website') is-invalid @enderror"
+                                    value="{{ $prodi->website }}" placeholder="Alamat" name="website">
+                                <div class="invalid-feedback">
+                                    @error('website')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Nomor SK Pembukaan PS</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('no_sk_pembukaan') is-invalid @enderror"
+                                    value="{{ $prodi->no_sk_pembukaan }}" placeholder="Nomor SK Pembukaan PS"
+                                    name="no_sk_pembukaan">
+                                <div class="invalid-feedback">
+                                    @error('no_sk_pembukaan')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Tanggal SK Pembukaan PS</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control @error('tgl_sk_pembukaan') is-invalid @enderror"
+                                    value="{{ $prodi->tgl_sk_pembukaan }}" placeholder="Tanggal SK Pembukaan PS"
+                                    name="tgl_sk_pembukaan">
+                                <div class="invalid-feedback">
+                                    @error('tgl_sk_pembukaan')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Pejabat Penandatangan
+                                SK Pembukaan PS </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('pejabat_sk_pembukaan') is-invalid @enderror"
+                                    value="{{ $prodi->pejabat_sk_pembukaan }}" placeholder="Pejabat Penandatangan
+                                                        SK Pembukaan PS" name="pejabat_sk_pembukaan">
+                                <div class="invalid-feedback">
+                                    @error('pejabat_sk_pembukaan')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Pertama Kali
+                                Menerima Mahasiswa</label>
+                            <div class="col-sm-9">
+                                {{-- <input type="number" min="1900" max="2999" step="1" class="form-control"
+                                    @error('thn_menerima_mhs') is-invalid @enderror placeholder="Tahun Pertama Kali"
+                                    value="{{ $prodi->thn_menerima_mhs }}" name="thn_menerima_mhs"> --}}
+                                <input type="number" min="1900" max="2999" step="1"
+                                    class="form-control @error('thn_menerima_mhs') is-invalid @enderror"
+                                    value="{{ $prodi->thn_menerima_mhs }}" placeholder="Tahun Pertama Kali
+                                                            Menerima Mahasiswa" name="thn_menerima_mhs">
+                                <div class="invalid-feedback">
+                                    @error('thn_menerima_mhs')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Peringkat Terbaru
+                                Akreditasi PS </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('akreditasi') is-invalid @enderror"
+                                    value="{{ $prodi->akreditasi }}" placeholder="Peringkat Terbaru
+                                                                Akreditasi PS" name="akreditasi">
+                                <div class="invalid-feedback">
+                                    @error('akreditasi')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Nomor SK BAN-PT </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control @error('no_sk_ban_pt') is-invalid @enderror"
+                                    value="{{ $prodi->no_sk_ban_pt }}" placeholder="Nomor SK BAN-PT" name="no_sk_ban_pt">
+                                <div class="invalid-feedback">
+                                    @error('no_sk_ban_pt')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+                </div>
+                </div>
             </div>
         @endif<!-- /.container-fluid -->
-
     </div><!-- /.col -->
 
 @endsection
@@ -95,3 +252,8 @@
         </div>
     </div> --}}
 @endsection
+@push('scripts')
+<script type="text/javascript">
+    document.getElementById("clicked").click();
+</script>
+@endpush
