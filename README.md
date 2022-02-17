@@ -2,6 +2,7 @@
 Sebuah demo website SI Akreditasi FT
 <!-- commment -->
 How to run in local:
+
 - Clone your project
 - Create empty database `si_akre_db`
 - Go to the folder application using cd command on your cmd or terminal 
