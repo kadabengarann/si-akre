@@ -12,3 +12,27 @@ td {
 .table-isi {
     background-color: rgba(0, 0, 0, 0.05);
 }
+.p_indi {
+    width: 15em !important;
+}
+.p_elem {
+    width: 13em !important;
+}
+.alasan_pen {
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+    cursor: pointer;
+}
+.alasan_pen:hover {
+    background-color: rgb(223, 223, 223);
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

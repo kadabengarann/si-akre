@@ -29,12 +29,12 @@
                     <thead>
                         <tr>
                             <th>No Butir</th>
-                            <th>Elemen</th>
+                            <th class="p_elem">Elemen</th>
                             <th>Lokasi
                             </th>
-                            <th>Indikator
+                            <th class="p_indi">Indikator
                             </th>
-                            <th>Alasan Penilaian
+                            <th class="p_indi">Alasan Penilaian
                             </th>
                             <th>Perhitungan
 
@@ -57,9 +57,15 @@
                             <td>Konsistensi dengan hasil analisis SWOT dan/atau analisis lain serta rencana pengembangan ke
                                 depan.
                             </td>
-                            <td colspan="3">
-                                No data
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>
+                            <td></td>
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="42">
+                                42 </td>
                             <td>6</td>
                         </tr>
                         <tr>
@@ -73,19 +79,130 @@
                                 informasi yang disampaikan pada masing-masing kriteria, serta menunjukkan iklim yang
                                 kondusif untuk pengembangan dan reputasi sebagai rujukan di bidang keilmuannya.
                             </td>
-                            <td colspan="3">
-                                No data
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>
+                            <td></td>
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="42">
+                                42 </td>
+
                             <td>6</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            {{-- <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/311"><i class="fas fa-plus-circle"></i> Input data</a>
-            </div> --}}
-
-            <!-- /.card-body -->
         </div>
         <!-- /.card -->
-</section> @endsection
+    </section>
+    <div class="modal fade" id="text_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Alasan penilaian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="/penilaian/101">
+
+                    <div class="modal-body">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan alasan penilaian
+                                </label>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            class="form-control @error('textPenilaian') is-invalid @enderror"
+                                            name="textPenilaian">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
+                                        <div class="invalid-feedback">
+                                            @error('textPenilaian')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="skor_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Skor Penilaian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="/penilaian/101">
+
+                    <div class="modal-body">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-12 col-form-label">Berikan skor
+                                </label>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <input id="input_skor" required type="number" min="0" max="100"
+                                                name="skorPenilaian" class="fieldInsertInput form-control rupiah"
+                                                placeholder="0" @error('skorPenilaian') is-invalid @enderror" value="">
+                                        </div> </textarea>
+                                        <div class="invalid-feedback">
+                                            @error('skorPenilaian')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@push('scripts')
+    <script>
+        $(".input_skor_trigg").click(function() {
+            var text = $(this).data('skor');
+            console.log($('#skor_penilaian').find('.modal-body input'));
+            console.log(parseInt(text));
+            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
+        });
+        $(".input_alasan_trigg").click(function() {
+            var text = $(this).data('penilaian');
+            console.log($('#text_penilaian').find('.modal-body textarea'));
+            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
+        });
+    </script>
+@endpush
