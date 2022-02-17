@@ -2,193 +2,471 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Laporan Kinerja Program Studi</h1>
+        <h1 class="m-0">Penilaian Kinerja Program Studi</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
+            <li class="breadcrumb-item active">Penilaian Kinerja Program Studi</li>
         </ol>
     </div><!-- /.col -->
 @endsection
 @section('content')
-    <div class="card card-solid">
-        <div class="card-body pb-0">
-            <div class="row justify-content-center">
-                <section class="col-lg-9 connectedSortable">
-                    <!-- Custom tabs (Charts with tabs)-->
-                    <div class="card card-primary card-outline">
-                        <div class="card-body box-profile">
-                            <h3 class="profile-username text-center">IDENTITAS</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <p><b>Program Studi : </b>{{ Auth::user()->prodi->nama }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                Identitas Pengusul
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/001">Isi</a>
-                                    </li>
-                                </ul>
-                            </div>
+    <div class="row justify-content-center">
+        <section class="col-lg-12 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                    <h3 class="profile-username text-center">IDENTITAS</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <p><b>Program Studi : </b>{{ Auth::user()->prodi->nama }}</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                Daftar Program Studi di Unit Pengelola Program Studi (UPPS)
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/002">Isi</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-body box-profile">
-                            <h3 class="profile-username text-center">Kriteria kinerja</h3>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                1. Tata Pamong, Tata Kelola, dan Kerjasama
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/111">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                2. Mahasiswa
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/211">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                3. Sumber Daya Manusia
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/311">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                4. Keuangan, Sarana, dan Prasarana
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/411">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                5. Keuangan, Sarana, dan Prasarana
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/511">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                6. Penelitian
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/611">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                7. Pengabdian kepada Masyarakat (PkM)
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/711">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                8. Luaran dan Capaian Tridharma
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/811">Isi kriteria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
+                <!-- /.card-body -->
             </div>
-        </div>
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <h3 class="text-center card-title" style="float: none; font-weight:500">Penilaian Kinerja
+                        Program Studi</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="tbl_list" class="table table-bordered table-center-text">
+                        <thead>
+                            <tr>
+                                <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
+                                <th class="mt-1 mb-1">Skor Maksimal
+                                </th>
+                                <th class="mt-1 mb-1">"Nilai Hasil
+                                    R-2"
+
+                                </th>
+                                <th class="mt-1 mb-1">"Nilai Hasil
+                                    R-1"
+                                </th>
+                                <th class="mt-1 mb-1">Skor R-1
+                                </th>
+                                <th class="mt-1 mb-1">Skor R-1
+                                </th>
+                                <th class="mt-1 mb-1">Jml butir
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+
+
+                            </tr>
+                            <tr>
+                                <th class="mt-1 mb-1 text-start" colspan="2">
+                                    INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
+                                </th>
+                                <th colspan="7">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    A
+                                </td>
+                                <td class="text-start">
+                                    KONDISI EKSTERNAL
+                                </td>
+                                <td>
+                                    6(1,5%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/101"><i class="fas fa-pen"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    B
+                                </td>
+                                <td class="text-start">
+                                    PROFIL UNIT PENGELOLA PROGRAM STUDI
+                                </td>
+                                <td>
+                                    6(1,5%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/101"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    C
+                                </td>
+                                <td class="text-start">
+                                    1. VISI, MISI, TUJUAN DAN STRATEGI
+                                </td>
+                                <td>
+                                    6(1,5%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/301"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td class="text-start">
+                                    2. TATA PAMONG, TATA KELOLA, DAN KERJASAMA
+                                </td>
+                                <td>
+                                    24 (6%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    7
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/302"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    3. MAHASISWA
+                                </td>
+                                <td>
+                                    18 (4,5%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    7
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/303"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    4. SUMBER DAYA MANUSIA
+                                </td>
+                                <td>
+                                    31 (7,8%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    11
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/304"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    5. KEUANGAN, SARANA DAN PRASARANA
+                                </td>
+                                <td>
+                                    22 (5,5%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    10
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/305"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    6. PENDIDIKAN
+                                </td>
+                                <td>
+                                    32 (8%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    12
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/306"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    7. PENELITIAN
+                                </td>
+                                <td>
+                                    13 (3,3 %)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    5
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/307"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    8. PENGABDIAN KEPADA MASYARAKAT
+                                </td>
+                                <td>
+                                    17 (4,3%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    7
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/308"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td class="text-start">
+                                    9. LUARAN DAN CAPAIAN TRIDHARMA
+                                </td>
+                                <td>
+                                    188 (47%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    26
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/309"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    D </td>
+                                <td class="text-start">
+                                    SUPLEMEN PROGRAM STUDI
+                                </td>
+                                <td>
+                                    25(6,3%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    5
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/401"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    E
+                                </td>
+                                <td class="text-start">
+                                    ANALISIS DAN PENETAPAN PROGRAM PENGEMBANGAN
+                                </td>
+                                <td>
+                                    12(3%)
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="/penilaian/501"><i class="fas fa-pen"></i></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                </td>
+                                <td>
+                                    400 (100%)
+                                </td>
+                                <td colspan="4"></td>
+                                <td>
+                                    99
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </section>
     </div>
 @endsection
