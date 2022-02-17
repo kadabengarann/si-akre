@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             ProdiTableSeeder::class,
             DosenTableSeeder::class,
             MahasiswaSeeder::class,
-            UserTableSeeder::class
+            UserTableSeeder::class,
+            PermissionSeeder::class
         ]);
     }
 }
