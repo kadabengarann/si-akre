@@ -97,12 +97,12 @@
                             </td>{{-- ELEMEN --}}
                             <td><a href="/lkps/view/502">LK PS 5.2</a>
                             </td>{{-- LOKASI --}}
-                            <td>"Aksesibilitas data dalam sistem informasi. Skor butir ini didasarkan pada hasil penilaian
+                            <td>Aksesibilitas data dalam sistem informasi. Skor butir ini didasarkan pada hasil penilaian
                                 11 jenis data. Untuk setiap jenis data, skor didasarkan atas aturan berikut:
                                 <br>Skor = 1: Data ditangani secara manual
                                 <br>2: Data itangani dengan komputer tanpa jaringan
                                 <br>3: Data ditangani dengan komputer, serta dapat diakses melalui jaringan lokal (LAN)
-                                <br>4: Data ditangani dengan komputer, serta dapat diakses melalui jaringan luas (WAN)"
+                                <br>4: Data ditangani dengan komputer, serta dapat diakses melalui jaringan luas (WAN)
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -144,7 +144,7 @@
                             </td>{{-- ELEMEN --}}
                             <td><a href="/lkps/view/503">LK PS 5.3</a>
                             </td>{{-- LOKASI --}}
-                            <td>"Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan dengan
+                            <td>Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan dengan
                                 mempertimbangkan jumlah mahasiswa.
                                 <br>NK = skor untuk ketersedian sarana utama
                                 <br>NT = skor untuk keterawatan
@@ -152,7 +152,7 @@
                                 <br>4: sangat memadai (untuk NK), atau sangat terawat (untuk NT), atau sangat layak (NL).
                                 <br>3 : memadai (untuk NK) atau terawat (untuk NT), atau layak (untuk NL).
                                 <br>2: cukup (untuk NK,NT,NL)
-                                <br>1: untuk kurang (untuk NK,NT,NL) ."
+                                <br>1: untuk kurang (untuk NK,NT,NL).
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -173,7 +173,7 @@
                             </td>{{-- ELEMEN --}}
                             <td><a href="/lkps/view/504">LK PS 5.4</a>
                             </td>{{-- LOKASI --}}
-                            <td>"Ketersediaan dan kelengkapan jenis prasarana, sarana serta dana yang memungkinkan
+                            <td>Ketersediaan dan kelengkapan jenis prasarana, sarana serta dana yang memungkinkan
                                 terciptanya interaksi akademik antara sivitas akademika (misalnya tempat olah raga, ruang
                                 bersama, ruang himpunan mahasiswa, poliklinik, ruang dosen , kantor,ruang kelas, ruang
                                 laboratorium, ruang perpustakaan )
@@ -190,7 +190,7 @@
                                 ND).
                                 <br>3 : lengkap (unt NP), atau memadai (untuk ND),
                                 <br>2: cukup (untuk NK,NM,NL), sewa (untuk NM)
-                                <br>1: kurang (untuk NK,NM,NL) ."
+                                <br>1: kurang (untuk NK,NM,NL) .
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -211,15 +211,13 @@
                             </td>{{-- ELEMEN --}}
                             <td><a href="/lkps/view/505">LK PS 5.5</a>
                             </td>{{-- LOKASI --}}
-                            <td>Kesesuaian laboratorium dengan bidang peminatan/ keahlian Infokom. Nisbah kesesuaian 100 %
+                            <td class="no_click_field">Kesesuaian laboratorium dengan bidang peminatan/ keahlian Infokom. Nisbah kesesuaian 100 %
                                 maka skor = 4, nisbah = 0% maka skor = 0.
                             </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="">
+                            <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="">
+                            <td class="no_click_field"></td> {{-- PERHITUNGAN --}}
+                            <td class="no_click_field">
                             </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
@@ -269,10 +267,10 @@
                             </td>{{-- ELEMEN --}}
                             <td><a href="/lkps/view/507">LK PS 5.7</a>
                             </td>{{-- LOKASI --}}
-                            <td>"Bahan pustaka berupa buku teks (bukan buku kopian) dan lain-lain dalam bidang infokom
+                            <td>Bahan pustaka berupa buku teks (bukan buku kopian) dan lain-lain dalam bidang infokom
                                 (bukan buku praktis), termasuk e-book.
                                 <br>
-                                <br>J = jumlah judul buku yang berbeda (bukan jumlah exemplar /copy)"
+                                <br>J = jumlah judul buku yang berbeda (bukan jumlah exemplar /copy)
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
