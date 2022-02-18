@@ -10,7 +10,8 @@
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>9.14. Penjaringan Umpan Balik terkait Pelaksanaan Tri Dharma Perguruan Tinggi
+                        <p><b>Tabel : </b>9.3. Prestasi Mahasiswa dalam Mendapatkan penghargaan Hibah Kompetitif di
+                            Bidang Infokom
                         </p>
                     </div>
                 </div>
@@ -21,8 +22,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Penjaringan Umpan Balik terkait
-                    Pelaksanaan Tri Dharma Perguruan Tinggi
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Prestasi Mahasiswa dalam
+                    Mendapatkan penghargaan Hibah Kompetitif di
+                    Bidang Infokom
                 </h3>
             </div>
             <!-- /.card-header -->
@@ -30,83 +32,77 @@
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th class="col-4">Sumber Umpan Balik
+                            <th class="col-1">No.</th>
+                            <th class="col-4">Tahun
                             </th>
-                            <th>Isi Umpan Balik
+                            <th>Jumlah Mhs Aktif</th>
+                            <th>Jenis Hibah
+                            </th>
+                            <th>Tahun</th>
+                            <th>Pendanaan Program (Rp.)
 
                             </th>
-                            <th>Cara memperoleh umpan balik
-
-
-                            </th>
-                            <th>Jenis Tindak Lanjut
+                            <th>Sumber Dana
 
                             </th>
-                            <th>Waktu (tgl/Bln/Thn)
+                            <th>Tingkat Nasional/ Internasional
 
-                            </th>
-                            <th>Bukti
-
-                            </th>
-                            <th>Keterangan
-
-                            </th>
-                            <th>Bukti
-                            </th>
-                            <th>Keterangan
                             </th>
                         </tr>
                     </thead>
                     <tr>
-                        <th class="sub-table">
-                            1. Dosen
-                        </th>
-                    </tr>
-                    <tbody>
-                        <td></td>
-
-                        <td colspan="9" class="table-isi">
-                            No data
-                        </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            2. Mahasiswa
+                        <th>
 
                         </th>
+                        <th class="sub-table">
+                            TS-2
+                        </th>
+                        <td class="table-isi">0 </td>
                     </tr>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td></td>
-
-                            <td colspan="9" class="table-isi">
+                            <td></td>
+                            <td colspan="6" class="table-isi">
                                 No data
                             </td>
                         </tr>
                     </tbody>
                     <tr>
-                        <th class="sub-table">
-                            3. Alumni
+                        <th>
+
                         </th>
+                        <th class="sub-table">
+                            TS-12
+                        </th>
+                        <td class="table-isi">0 </td>
                     </tr>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td></td>
-                            <td colspan="9" class="table-isi">
+                            <td></td>
+                            <td colspan="6" class="table-isi">
                                 No data
                             </td>
                         </tr>
                     </tbody>
                     <tr>
+                        <th>
+
+                        </th>
                         <th class="sub-table">
-                            4. Pengguna Lulusan</th>
+                            TS
+                        </th>
+                        <td class="table-isi">0 </td>
                     </tr>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td></td>
-
-                            <td colspan="9" class="table-isi">
+                            <td></td>
+                            <td colspan="6" class="table-isi">
                                 No data
                             </td>
                         </tr>
@@ -116,7 +112,7 @@
             </div>
 
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/918"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/912"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->

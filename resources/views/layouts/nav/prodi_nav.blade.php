@@ -16,6 +16,17 @@
         </p>
     </a>
 </li>
+
+
+<li class="nav-item">
+    <a href="/penilaian"
+        class="nav-link {{ request()->is('penilaian') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-pen"></i>
+        <p>
+            Penilaian Matriks
+        </p>
+    </a>
+</li>
 <li class="nav-header">ADMIN</li>
 <li class="nav-item {{ request()->is('lkps/*/0*') ? 'menu-open' : '' }}">
     <a href="" class="nav-link {{ request()->is('lkps/*/0*') ? 'active' : '' }}">
