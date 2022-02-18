@@ -21,7 +21,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 6.a. Penelitian DTPS yang
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS
                     Melibatkan Mahasiswa</h3>
             </div>
             <!-- /.card-header -->
