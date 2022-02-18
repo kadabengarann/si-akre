@@ -74,7 +74,7 @@
                             </td>
                             <td class="text-start">Perolehan dana dari mahasiswa
                             </td>{{-- ELEMEN --}}
-                            <td> <a href="/lkps/view/511"> LK PS 5.1</a>
+                            <td> <a href="/lkps/view/501"> LK PS 5.1</a>
                             </td>{{-- LOKASI --}}
                             <td>Perhitungan nisbah (%) perolehan dana dari mahasiswa terhadap total dana penerimaan.
                             </td>{{-- INDIKATOR --}}
@@ -95,7 +95,7 @@
                             </td>
                             <td class="text-start">Aksesibilitas data dalam sistem informasi
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/512">LK PS 5.2</a>
+                            <td><a href="/lkps/view/502">LK PS 5.2</a>
                             </td>{{-- LOKASI --}}
                             <td>"Aksesibilitas data dalam sistem informasi. Skor butir ini didasarkan pada hasil penilaian
                                 11 jenis data. Untuk setiap jenis data, skor didasarkan atas aturan berikut:
@@ -142,7 +142,7 @@
                             <td class="text-start">Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan
                                 dengan mempertimbangkan jumlah mahasiswa.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/513">LK PS 5.3</a>
+                            <td><a href="/lkps/view/503">LK PS 5.3</a>
                             </td>{{-- LOKASI --}}
                             <td>"Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan dengan
                                 mempertimbangkan jumlah mahasiswa.
@@ -171,7 +171,7 @@
                             </td>
                             <td class="text-start">Kecukupan, Aksesibilitas dan Mutu Sarana, Prasarana
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/514">LK PS 5.4</a>
+                            <td><a href="/lkps/view/504">LK PS 5.4</a>
                             </td>{{-- LOKASI --}}
                             <td>"Ketersediaan dan kelengkapan jenis prasarana, sarana serta dana yang memungkinkan
                                 terciptanya interaksi akademik antara sivitas akademika (misalnya tempat olah raga, ruang
@@ -209,7 +209,7 @@
                             </td>
                             <td class="text-start">Fasilitas Laboratorium untuk keahlian Infokom.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/515">LK PS 5.5</a>
+                            <td><a href="/lkps/view/505">LK PS 5.5</a>
                             </td>{{-- LOKASI --}}
                             <td>Kesesuaian laboratorium dengan bidang peminatan/ keahlian Infokom. Nisbah kesesuaian 100 %
                                 maka skor = 4, nisbah = 0% maka skor = 0.
@@ -229,7 +229,7 @@
                             </td>
                             <td class="text-start">A. Sumber pustaka berupa jurnal Internasional bidang Infokom
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/516">LK PS 5.6</a>
+                            <td><a href="/lkps/view/506">LK PS 5.6</a>
                             </td>{{-- LOKASI --}}
                             <td>Bahan pustaka berupa jurnal ilmiah bidang ilmu IT internasional yang dilanggan (Jint).
                             </td>{{-- INDIKATOR --}}
@@ -267,7 +267,7 @@
                             <td class="text-start">C. Sumber pustaka berupa buku teks dan lain-lain dalam bidang
                                 Infokom.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/517">LK PS 5.7</a>
+                            <td><a href="/lkps/view/507">LK PS 5.7</a>
                             </td>{{-- LOKASI --}}
                             <td>"Bahan pustaka berupa buku teks (bukan buku kopian) dan lain-lain dalam bidang infokom
                                 (bukan buku praktis), termasuk e-book.
@@ -290,7 +290,7 @@
                             </td>
                             <td class="text-start">Lisensi/Open-source software.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/519">LK PS 5.9</a>
+                            <td><a href="/lkps/view/509">LK PS 5.9</a>
                             </td>{{-- LOKASI --}}
                             <td>"Keberadaan lisensi software/ Open-source yang digunakan di laboratorium dan keperluan di
                                 lingkungan Program Studi.
@@ -359,7 +359,7 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                             class="form-control @error('textPenilaian') is-invalid @enderror"
                                             name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        {{ $prodi->alamat }}</textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
                                         <div class="invalid-feedback">
                                             @error('textPenilaian')
                                                 {{ $message }}
