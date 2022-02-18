@@ -21,8 +21,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Sumber Pendanaan Program Studi pada
-                    TS</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Lisensi/ Open source Software</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
