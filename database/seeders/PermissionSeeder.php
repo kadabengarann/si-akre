@@ -20,7 +20,6 @@ class PermissionSeeder extends Seeder
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
-
         DB::table('permission')->insert([
             'id' => '102',
             'access' => '"[1,2]"',
@@ -37,6 +36,13 @@ class PermissionSeeder extends Seeder
 
         DB::table('permission')->insert([
             'id' => '205',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '211',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
@@ -211,7 +217,7 @@ class PermissionSeeder extends Seeder
         ]);
 
         DB::table('permission')->insert([
-            'id' => '611',
+            'id' => '612',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
@@ -303,6 +309,27 @@ class PermissionSeeder extends Seeder
 
         DB::table('permission')->insert([
             'id' => '915',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '918',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '919',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '923',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
