@@ -16,6 +16,10 @@
     @if (request()->is('penilaian/*'))
         <link href="{{ asset('css/penilaian.css') }}" rel="stylesheet">
     @endif
+
+    @if (request()->is('lkps/*'))
+        <link href="{{ asset('css/lkps.css') }}" rel="stylesheet">
+    @endif
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 

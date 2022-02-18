@@ -67,126 +67,150 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                1. Tata Pamong, Tata Kelola, dan Kerjasama
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/111">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @if (array_key_exists(2, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    2. Tata Pamong, Tata Kelola, dan Kerjasama
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[2][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                2. Mahasiswa
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/211">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(3, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    3. Mahasiswa
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[3][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                3. Sumber Daya Manusia
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/311">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(4, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    4. Sumber Daya Manusia
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[4][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                4. Keuangan, Sarana, dan Prasarana
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/411">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(5, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    5. Keuangan, Sarana, dan Prasarana
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[5][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                5. Keuangan, Sarana, dan Prasarana
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/511">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(6, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    6. Pendidikan
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[6][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                6. Penelitian
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/611">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(7, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    7. Penelitian
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[7][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                7. Pengabdian kepada Masyarakat (PkM)
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/711">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(8, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    8. Pengabdian kepada Masyarakat (PkM)
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[8][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                8. Luaran dan Capaian Tridharma
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/811">Isi kriteria</a>
-                                    </li>
-                                </ul>
+                    @endif
+                    @if (array_key_exists(9, $tables))
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-list-ul mr-1"></i>
+                                    9. Luaran dan Capaian Tridharma
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="nav nav-pills ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/lkps/view/{{ $tables[9][0] }}">Isi
+                                                kriteria</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </section>
             </div>
         </div>
