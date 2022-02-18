@@ -36,140 +36,175 @@ class PermissionSeeder extends Seeder
         ]);
 
         DB::table('permission')->insert([
-            'id' => '211',
+            'id' => '205',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '311',
+            'id' => '301',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '312',
+            'id' => '304',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '313',
+            'id' => '305',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '411',
+            'id' => '402',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '412',
+            'id' => '403',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '413',
+            'id' => '404',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '414',
+            'id' => '405',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '415',
+            'id' => '406',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '416',
+            'id' => '408',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '417',
+            'id' => '409',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '418',
+            'id' => '410',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '511',
+            'id' => '501',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '512',
+            'id' => '502',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '513',
+            'id' => '503',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '514',
+            'id' => '504',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '515',
+            'id' => '505',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '516',
+            'id' => '506',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '517',
+            'id' => '507',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '518',
+            'id' => '509',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '603',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '606',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '607',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '609',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '610',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
@@ -183,42 +218,7 @@ class PermissionSeeder extends Seeder
         ]);
 
         DB::table('permission')->insert([
-            'id' => '612',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '613',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '614',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '615',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
             'id' => '616',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '617',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
@@ -232,14 +232,49 @@ class PermissionSeeder extends Seeder
         ]);
 
         DB::table('permission')->insert([
-            'id' => '711',
+            'id' => '701',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
         ]);
 
         DB::table('permission')->insert([
-            'id' => '811',
+            'id' => '801',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '902',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '903',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '905',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '906',
+            'access' => '"[1,2]"',
+            'created_at' => NULL,
+            'updated_at' => NULL
+        ]);
+
+        DB::table('permission')->insert([
+            'id' => '910',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
@@ -260,13 +295,6 @@ class PermissionSeeder extends Seeder
         ]);
 
         DB::table('permission')->insert([
-            'id' => '913',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
             'id' => '914',
             'access' => '"[1,2]"',
             'created_at' => NULL,
@@ -275,34 +303,6 @@ class PermissionSeeder extends Seeder
 
         DB::table('permission')->insert([
             'id' => '915',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '916',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '917',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '918',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
-
-        DB::table('permission')->insert([
-            'id' => '919',
             'access' => '"[1,2]"',
             'created_at' => NULL,
             'updated_at' => NULL
