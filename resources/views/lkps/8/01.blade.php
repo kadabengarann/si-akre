@@ -21,7 +21,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Tabel 7 PkM DTPS yang melibatkan
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Pengabdian kepada Masyarakat yang melibatkan mahasiswa pada 3 tahun terakhir
                     mahasiswa</h3>
             </div>
             <!-- /.card-header -->

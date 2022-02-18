@@ -10,8 +10,7 @@
                         <p><b>Kriteria : </b>6. Pendidikan</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kurikulum</p>
-                        <p><b>Tabel : </b>6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen</p>
+                        <p><b>Tabel : </b>6.16. Tugas Akhir Mahasiswa pada tahun TS</p>
                     </div>
                 </div>
 
@@ -22,8 +21,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Penilaian Matakuliah yang diampu oleh
-                    lebih dari 1 dosen</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Tugas Akhir Mahasiswa pada tahun TS
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -31,30 +30,35 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Matakuliah</th>
-                            <th>Nama Tim Pengampu<sup>1)</sup> </th>
-                            <th>Nama Tim Penilai<sup>2)</sup></th>
-                        </tr>
-                        <tr>
+                            <th>Judul Tugas Akhir
 
+                            </th>
+                            <th>Relevansi dengan bidang Prodi
+                            </th>
+                            <th>Nama Mahasiswa
+                            </th>
+                            <th>Nama Pembimbing
+                            </th>
+                            <th>Nama Penguji selain Pembimbing
+                            </th>
+                            <th>Rumpun ilmu penguji
+                            </th>
                         </tr>
-
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="15">
+                            <td colspan="7">
                                 No data
                             </td>
-
                         </tr>
                     </tbody>
+                    <tfoot>
 
-
+                    </tfoot>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/616"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/617"><i class="fas fa-plus-circle"></i> Input data</a>
             </div>
 
             <!-- /.card-body -->
