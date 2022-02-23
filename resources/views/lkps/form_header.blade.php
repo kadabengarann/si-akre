@@ -8,5 +8,5 @@
               <li class="breadcrumb-item active">Laporan Kinerja Program Studi {{ $prodi->nama }}</li>
           </ol>
       </div><!-- /.col -->
-      @include('lkps.form_back_float')
+      @include('lkps.form_button_float')
   @endsection

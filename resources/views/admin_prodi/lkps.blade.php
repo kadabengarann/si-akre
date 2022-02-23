@@ -39,7 +39,7 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/001">Isi</a>
+                                        <a class="nav-link active" href="/lkps/view/101">Isi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,7 +54,7 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/002">Isi</a>
+                                        <a class="nav-link active" href="/lkps/view/102">Isi</a>
                                     </li>
                                 </ul>
                             </div>
