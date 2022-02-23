@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>Suplemen PS Sarjana TI</p>
+                        <p><b>Matriks : </b>D. Suplemen PS Sarjana TI</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
@@ -131,12 +131,16 @@ Informasi
                                                         </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                               
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?   
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
-                                 </td>{{-- SKOR --}}
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -212,12 +216,16 @@ Informasi
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?    
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
-                                </td>{{-- SKOR --}}
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -312,12 +320,16 @@ Informasi.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?   
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
-                                 </td>{{-- SKOR --}}
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -400,12 +412,16 @@ Informasi.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                              
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
-                                 </td>{{-- SKOR --}}
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
                             <td></td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -493,12 +509,16 @@ kepada Masyarakat
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?   
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
-                                 </td>{{-- SKOR --}}
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
                         

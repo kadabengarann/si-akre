@@ -20,9 +20,7 @@
                         <p><b>Kriteria : </b>6. Pendidikan</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Kurikulum
-                        </p>
-                        <p><b>Tabel : </b>6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen
+                        <p><b>Tabel : </b>6.16. Tugas Akhir Mahasiswa pada tahun TS
                         </p>
                     </div>
                 </div>
@@ -39,7 +37,7 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen
+                <h3 class="card-title">Tugas Akhir Mahasiswa pada tahun TS
                 </h3>
             </div>
             <!-- /.card-header -->
@@ -47,19 +45,37 @@
             <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Matakuliah</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Tugas Akhir </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tim Pengampu<sup>1)</sup></label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Relevansi dengan bidang Prodi</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tim Penilai<sup>2)</sup></label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Pembimbing</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Penguji selain Pembimbing</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rumpun ilmu penguji</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
@@ -67,12 +83,13 @@
 
 
 
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-info">Submit</button>
-                        <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</button>
-                    </div>
-                    <!-- /.card-footer -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                </div>
+                <!-- /.card-footer -->
             </form>
         </div>
     </section>

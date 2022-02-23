@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>1. VISI, MISI, TUJUAN DAN STRATEGI
+                        <p><b>Matriks : </b>C.1. VISI, MISI, TUJUAN DAN STRATEGI
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">
