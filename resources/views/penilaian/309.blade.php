@@ -72,7 +72,7 @@
                             </td>
                             <td class="text-start">Rata-rata Indeks Prestasi Kumulatif (RIPK) selama tiga tahun terakhir
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.2</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/902">LKPS 9.2</a></td>{{-- LOKASI --}}
                             <td>A. Jika RIPK >=3.15 maka skor 4. Jika RIPK < 2.0 maka skor = 1.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -90,7 +90,7 @@
                             </td>
                             <td class="text-start">Prestasi mahasiswa dalam mendapatkan penghargaan hibah kompetitif di Bidang Infokom tingkat Nasional (mis. Program Kreativitas Mahasiswa, PIMNAS, dan lain-lain)
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.3</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/903">LK PS 9.3</a></td>{{-- LOKASI --}}
                             <td>saat TS 1000-1500 maka n = 3 Untuk Program Studi dengan jumlah mahasiswa aktif saat TS > 1500 maka n = 4 Adapun yg dihitung adalah banyaknya prestasi mahasiswa (perorangan maupun kelompok) sebagai 
 juara 1, 2, atau 3 dalam 3 
 tahun terakhir dalam 
@@ -123,7 +123,7 @@ infokom.
                             </td>
                             <td class="text-start">Prestasi mahasiswa dalam mendapatkan penghargaan hibah kompetitif tingkat Internasional
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.3</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/903">LK PS 9.3</a></td>{{-- LOKASI --}}
                             <td>mhs aktif saat ini 1000-1500 maka n = 3
 Untuk Program Studi dengan jumlah mhs aktif saat ini > 1500 maka n = 4
 Adapun yg dihitung adalah banyaknya prestasi mhs (perorangan maupun 
@@ -154,7 +154,7 @@ Internasional bidang infokom.
 Penilaian didasarkan atas jumlah penghargaan dibagi jumlah 
 mhs.
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.5</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/905">LK PS 9.5</a></td>{{-- LOKASI --}}
                             <td>Untuk Program Studi dengan jumlah mhs aktif saat ini < 500 maka n = 0.5 Untuk Program Studi dengan jumlah mhs aktif saat ini 500- 1000 maka n = 1 Untuk Program Studi dengan jumlah mhs aktif saat ini 1000-1500 maka n = 1.5 Untuk Program Studi dengan jumlah mhs aktif saat ini > 1500 maka n = 2 Yang dihitung adalah banyaknya prestasi mhs (perorangan maupun kelompok) sebagai juara 1, 2, 
                            atau 3 dalam 3 tahun terakhir 
                            dalam lomba internasional.
@@ -183,7 +183,7 @@ mhs.
                             </td>
                             <td class="text-start">Persentase kelulusan tepat waktu (KTW)
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.6</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/906">LK PS 9.6</a></td>{{-- LOKASI --}}
                             <td>Untuk prodi yang beroperasi kurang dari 4 tahun dan belum mempunyai lulusan maka nilai = 2. Selain itu mengikuti rumus berikut ini. Jika kelulusan tepat waktu >= 60% skor 4. Jika 0% skor 0.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -201,7 +201,7 @@ mhs.
                             </td>
                             <td class="text-start">Persentase mahasiswa yang tidak berhasil menyelesaikan studi sampai batas akhir studi (TBMS)
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.6</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/906">LK PS 9.6</a></td>{{-- LOKASI --}}
                             <td>Persentase mahasiswa TBMS <= 10% skor 4. Jika lebih dari 40% skor 0.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -255,7 +255,7 @@ mhs.
                             </td>
                             <td class="text-start">Kepuasaan pengguna lulusan (jumlah responden yg memberi penilaian harus memenuhi jumlah minimal tertentu).
                             </td>{{-- ELEMEN --}}
-                            <td>LK PS 9.10</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/910">LK PS 9.10</a></td>{{-- LOKASI --}}
                             <td>jumlah lulusan dalam 3 th terakhir 200 - 300 --> jumlah responden minimal 10 perusahaan / pengguna lulusan Untuk Program Studi dengan jumlah lulusan dalam 3 th terakhir > 300 --> jumlah responden minimal 15 perusahaan / pengguna lulusan 
 
 <BR>Ada 7 jenis kompetensi yg 
@@ -295,7 +295,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">RMT (Rata-rata masa tunggu lulusan untuk bekerja). Jika Program Studi kedinasan yang lulusannya semua sudah bekerja saat kuliah, masa tunggu diisi nol. 
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.11</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/911">LKPS 9.11</a></td>{{-- LOKASI --}}
                             <td>Untuk prodi yang beroperasi kurang dari 4 tahun dan belum mempunyai lulusan maka nilai = 2. Bagi Prodi kedinasan skor = 4. Selain itu mengikuti rumus berikut ini. skor 4 jika RMT <= 1 bulan , skor 2 jika RMT >=18 bulan.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -313,7 +313,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">Persentase kesesuaian bidang kerja dengan bidang studi (keahlian) lulusan. Kisaran kesesuaian 0- 100%.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.12</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/912">LKPS 9.12</a></td>{{-- LOKASI --}}
                             <td>PBS = persentase kesesuaian bidang kerja dengan bidang studi (keahlian) lulusan. Jika PBS ≥ 70%, maka skor = 4. Jika PBS < 70% dan >=20%, maka skor sesuai rumus, dan jika PBS < 20% maka skor = 2.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -331,7 +331,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">Jumlah lulusan yang bekerja di badan usaha tingkat multinasional/ internasional, nasional/ berwirausaha yang berizin/ badan usaha tingkat wilayah/ lokal/ berwirausaha tidak berizin (3 tahun terakhir). pa = persentase jumlah lulusan yg di badan usaha / instansi tingkat multinasional/ internasional, pb = persentase jumlah lulusan yg di badan usaha / instansi tingkat nasional (dalam negeri) pc = persentase jumlah lulusan yg berwirausaha
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.12</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/912">LKPS 9.12</a></td>{{-- LOKASI --}}
                             <td>skor 4 jika lulusan yg bekerja di badan usaha di tingkat internasional min 1% atau nasional+wirausaha 10%. Skor 2 jika tdk ada lulusan yg bekerja atau wirausaha.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -349,7 +349,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">Penjaringan umpan balik untuk peningkatan mutu program studi. Ada sumber umpan balik, cara memperoleh umpan balik, tindak lanjut dari umpan balik, waktu, bukti, keterangan. Ada dokumen resmi umpan balik.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.14</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/914">LKPS 9.14</a></td>{{-- LOKASI --}}
                             <td>Umpan balik harus memenuhi aspek-aspek sebagai berikut : A. dari alumni B. dari pengguna alumni C. menggunakan sistem informasi, D. ditindaklanjuti secara berkelanjutan. --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -366,7 +366,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">Persentase jumlah penelitian TA mahasiswa di Program Studi yang diadopsi dan dimanfaatkan langsung oleh masyarakat
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.15</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/915">LKPS 9.15</a></td>{{-- LOKASI --}}
                             <td>Persentase jumlah penelitian TA mahasiswa di Program Studi yang berpotensi untuk diadopsi dan dimanfaatkan langsung oleh masyarakat. 
 <br>skor=4 Jika 50% penelitian TA mahasiswa berpotensi untuk diadopsi dan dimanfaatkan langsung oleh masyarakat.
                             </td>{{-- INDIKATOR --}}
@@ -385,7 +385,7 @@ menyatakan sangat baik,
                             </td>
                             <td class="text-start">Hasil skripsi/ TA mahasiswa yang relevan dengan CPL Program Studi.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.15</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/915">LKPS 9.15</a></td>{{-- LOKASI --}}
                             <td>Hasil skripsi/ TA mahasiswa. Persentase karya skripsi/ TA mahasiswa yang relevan dengan CPL Program Studi. 
 Skor 4 jika 75% TA relevan dengan CPL Program Studi
                             </td>{{-- INDIKATOR --}}
@@ -404,7 +404,7 @@ Skor 4 jika 75% TA relevan dengan CPL Program Studi
                             </td>
                             <td class="text-start">Sertifikasi profesi Bidang Infokom untuk lulusan.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.18</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/918">LKPS 9.18</a></td>{{-- LOKASI --}}
                             <td>memiliki minimal satu buah sertifikasi profesi Bidang Infokom terhadap jumlah lulusan.Jika nisbah >= 10%, maka 
 skor 4. Jika nisbah = 0% skor 0. 
 Asesor dapat memberikan tambahan atau pengurangan skor maksimum sebesar 1 
@@ -426,7 +426,7 @@ kualifikasi, dan sebagainya dari sertifikat dan lembaga penerbit sertifikat.
                             </td>
                             <td class="text-start">Karya-karya mahasiswa mandiri atau bersama dosen yang telah memperoleh perlindungan Hak atas Kekayaan Intelektual (HaKI) dalam tiga tahun terakhir.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.19</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/919">LKPS 9.19</a></td>{{-- LOKASI --}}
                             <td>Dalam 3 tahun terakhir, 
 <br>a = jumlah karya buku Infokom ber ISBN yg ditulis mahasiswa/ dosen DTPS. 
 <br>b = jumlah karya Hak Cipta yang telah keluar sertifikatnya, 
@@ -469,7 +469,7 @@ kualifikasi, dan sebagainya dari sertifikat dan lembaga penerbit sertifikat.
                             </td>
                             <td class="text-start">Hasil pengabdian kepada masyarakat yang relevan dengan bidang infokom.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 8.1</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/801">LKPS 8.1</a></td>{{-- LOKASI --}}
                             <td>Persentase (P) jumlah PkM yang relevan dengan infokom dibandingkan dengan seluruh PkM.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
@@ -487,7 +487,7 @@ kualifikasi, dan sebagainya dari sertifikat dan lembaga penerbit sertifikat.
                             </td>
                             <td class="text-start">Jumlah prestasi mahasiswa dalam mendapatkan penghargaan hibah kegiatan Program Kreativitas Mahasiswa (PKM) dari tingkat lokal, nasional, internasional. Catatan: selama tiga tahun terakhir
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.23</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/923">LKPS 9.23</a></td>{{-- LOKASI --}}
                             <td>Jumlah prestasi dalam mendapatkan penghargaan hibah kegiatan Program Kreativitas Mahasiswa (PKM) dari tingkat lokal, nasional, internasional. Catatan: selama tiga tahun terakhir. 
 <br>a = banyaknya hibah kegiatan PkM yang berasal dari institusi / lembaga internasional. 
 <br>b = banyaknya hibah kegiatan PkM yang berasal dari institusi / lembaga nasional 
@@ -525,7 +525,7 @@ rumus.
                             <td class="text-start">Prestasi mahasiswa dalam mendapatkan penghargaan hibah pendanaan kegiatan pengabdian kepada masyarakat dari tingkat lokal, dan nasional. 
 Catatan: selama tiga tahun terakhir. a,b,c,d dalam jutaan rupiah, dalam 3 tahun terakhir
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 9.23</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/923">LKPS 9.23</a></td>{{-- LOKASI --}}
                             <td>Jumlah dana yang diperoleh dari kegiatan pengabdian kepada masyarakat dengan kriteria sebagai berikut: a = jumlah dana hibah kegiatan PkM dengan pendanaan dari institusi / lembaga internasional. b = jumlah dana hibah kegiatan PkM dengan pendanaan dari institusi / lembaga nasional c = jumlah dana hibah kegiatan PkM dengan pendanaan dari institusi /  lembaga lokal.
 d = jumlah dana hibah kegiatan PkM dengan pendanaan dari PT sendiri
 n = Jumlah DTPS
@@ -550,7 +550,7 @@ rumus.
                             </td>
                             <td class="text-start">Jumlah mitra dari institusi lain dalam kegiatan PkM dan tingkat kepuasan serta kebermanfaata n kegiatannya bagi mitra.
                             </td>{{-- ELEMEN --}}
-                            <td>LKPS 8.1</td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/801">LKPS 8.1</a></td>{{-- LOKASI --}}
                             <td>Penilaian kemitraan kegiatan PkM dilihat dari unsur: 
 <br>a) banyaknya mitra dari institusi lain, 
 <br>b) kebermanfaatan kerjasama bagi mitra 
