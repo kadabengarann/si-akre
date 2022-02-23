@@ -17,10 +17,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>4. Keuangan, Sarana, dan Prasarana</p>
+                        <p><b>Kriteria : </b>6. Pendidikan</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>4 Penggunaan Dana
+                        <p><b>Tabel : </b>6.6. MBKM yang dilaksanakan pada tahun TS
                         </p>
                     </div>
                 </div>
@@ -37,23 +37,17 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 4 Penggunaan Dana
+                <h3 class="card-title">MBKM yang dilaksanakan pada tahun TS
                 </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
             <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jenis Penggunaan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <div class="row">
                             <label for="inputPassword3" class="col-sm-3 form-label">
-                                Unit Pengelola Program Studi (Rupiah)</label>
+                                Jumlah Mahasiswa yang mengikuti jenis MBKM</label>
                             <label class="col-sm-3 form-label">
                                 :
                             </label>
@@ -63,68 +57,57 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS-2</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Pertukaran Pelajar</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS-1</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Magang/Praktik Kerja</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Asistensi Mengajar di Satuan
+                                        Pendidikan</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Rata-rata</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Penelitian/Riset</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">
-                                Program Studi (Rupiah)</label>
-                            <label class="col-sm-3 form-label">
-                                :
-                            </label>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Proyek Kemanusiaan</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Kegiatan Wirausaha</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Studi/Proyek
+                                        Independen</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Membangun Desa/Kuliah Kerja
+                                        Nyata Tematik</label>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS-2</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS-1</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">TS</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Rata-rata</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +115,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</button>
+                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>
