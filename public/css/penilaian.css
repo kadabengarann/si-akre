@@ -89,3 +89,12 @@ tr td:nth-last-child(8) {
 
     text-align: center !important;
 }
+.alasan_pen {
+    position: relative;
+}
+.alasan_pen .edit_mark {
+    color: #999;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
