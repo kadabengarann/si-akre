@@ -21,7 +21,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Keterlibatan Mahasiswa yang melakukan
+                    TA dalam Penelitian Dosen pada TS
                     Melibatkan Mahasiswa</h3>
             </div>
             <!-- /.card-header -->
@@ -51,7 +52,8 @@
             </div>
 
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/711"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/{{ $idTable }}"><i class="fas fa-plus-circle"></i> Input
+                    data</a>
             </div>
 
             <!-- /.card-body -->

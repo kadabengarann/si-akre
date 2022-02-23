@@ -73,7 +73,7 @@
                             <h3 class="col-form-label text-center m-0 p-0">Bimbingan dan Konseling</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -114,7 +114,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -125,7 +125,7 @@
                                 kulikuler)</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -166,7 +166,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -176,7 +176,7 @@
                             <h3 class="col-form-label text-center m-0 p-0">Pembinaan Soft Skill</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -217,7 +217,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -227,7 +227,7 @@
                             <h3 class="col-form-label text-center m-0 p-0">Beasiswa</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -268,7 +268,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -278,7 +278,7 @@
                             <h3 class="col-form-label text-center m-0 p-0"> Kesehatan</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -319,7 +319,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -329,7 +329,7 @@
                             <h3 class="col-form-label text-center m-0 p-0">Karir</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/321">
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputtext3" class="col-sm-2 col-form-label">Bentuk Layanan</label>
@@ -370,7 +370,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/321" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>

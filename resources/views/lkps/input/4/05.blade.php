@@ -17,18 +17,21 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>7. Penelitian</p>
+                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Penelitian DTPS yang Melibatkan Mahasiswa</p>
-                        <p><b>Tabel : </b>7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada TS</p>
+                        <p><b>Sub-kriteria : </b>a. Profil Dosen
+                        </p>
+                        <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun
+                            terakhir
+                        </p>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/711">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/{{ $idTable }}">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -37,13 +40,13 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 7.1. Keterlibatan Mahasiswa yang melakukan TA dalam Penelitian Dosen pada
-                    TS
+                <h3 class="card-title">Tabel 4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun
+                    terakhir
                 </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/711">
+            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
@@ -52,55 +55,40 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/K</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/NIDK</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional (Jafung) Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul Penelitian</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Studi Pendidikan Terakhir</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Ketua</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul TA Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Kajian</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Matakuliah yang diampu</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
 
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-info">Submit</button>
-                        <a href="/lkps/view/711" class="btn btn-default float-right">Cancel</a>
-                    </div>
-                    <!-- /.card-footer -->
-            </form>
+                </div>
+        </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-info">Submit</button>
+            <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</button>
+        </div>
+        <!-- /.card-footer -->
+        </form>
         </div>
     </section>
 @endsection

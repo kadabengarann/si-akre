@@ -22,8 +22,8 @@
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen
                         </p>
-                        <p><b>Tabel : </b>4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun
-                            terakhir
+                        <p><b>Tabel : </b>4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan
+                            Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir
                         </p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/414">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/{{ $idTable }}">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -40,52 +40,58 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 4.5. Kesesuaian Keahlian DTPS dengan matakuliah yang diajarkan pada 3 tahun
-                    terakhir
-                </h3>
+                <h3 class="card-title">Tabel 4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan
+                    Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/414">
+            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tenaga Kependidikan</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">NIDN/NIDK</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan (pustakawan dll)</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan Fungsional</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Studi
+                            lanjut/Pelatihan/Seminar/Workshop
+                        </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
+
+
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bidang Studi Pendidikan Terakhir</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tanggal Pelaksanaan
+                        </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
+
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Matakuliah yang diampu</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti (sertifikat,surat tugas,dll)
+                        </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
 
                 </div>
-        </div>
+
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
             <button type="submit" class="btn btn-info">Submit</button>
-            <a href="/lkps/view/414" class="btn btn-default float-right">Cancel</button>
+            <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</button>
         </div>
         <!-- /.card-footer -->
         </form>

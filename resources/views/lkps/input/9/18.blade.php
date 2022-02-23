@@ -17,21 +17,18 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>4. Sumber Daya Manusia</p>
+                        <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Sub-kriteria : </b>a. Profil Dosen
-                        </p>
-                        <p><b>Tabel : </b>4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan
-                            Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir
-                        </p>
+                        <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
+                        <p><b>Tabel : </b> 9.18. Sertifikasi Profesi Bidang Infokom untuk Lulusan pada TS</p>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/418">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/{{ $idTable }}">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -40,61 +37,50 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 4.10. Upaya yang telah dilakukan UPPS dalam Meningkatkan Kualifikasi dan
-                    Kompetensi Tenaga Kependidikan dalam 3 tahun terakhir</h3>
+                <h3 class="card-title">Tabel 9.18. Sertifikasi Profesi Bidang Infokom untuk Lulusan pada TS</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/418">
+            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Tenaga Kependidikan</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Judul TA</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jabatan (pustakawan dll)</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Kegunaan untuk
+                            keperluan masyarakat</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Studi
-                            lanjut/Pelatihan/Seminar/Workshop
-                        </label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Potensial
+                            pengguna karya
+                            TA</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
-
-
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tanggal Pelaksanaan
-                        </label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Capaian
+                            Pembelajaran
+                            Lulusan (CPL)</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti (sertifikat,surat tugas,dll)
-                        </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
+
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-info">Submit</button>
+                        <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
                     </div>
-
-                </div>
-
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            <button type="submit" class="btn btn-info">Submit</button>
-            <a href="/lkps/view/418" class="btn btn-default float-right">Cancel</button>
-        </div>
-        <!-- /.card-footer -->
-        </form>
+                    <!-- /.card-footer -->
+            </form>
         </div>
     </section>
 @endsection

@@ -94,6 +94,7 @@ class LkpsController extends Controller
             'tables' => $this->allowedTable(),
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
+            'idTable' => $id,
             'prodi' => $prodi,
             'permit' => $form
         ];
@@ -145,6 +146,7 @@ class LkpsController extends Controller
 
         $data = [
             'tables' => $this->allowedTable(),
+            'idTable' => $id,
             'prodi' =>
             Prodi::find(
                 $request->query('id')
