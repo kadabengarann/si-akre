@@ -41,12 +41,6 @@ class PermissionSeeder extends Seeder
             'updated_at' => NULL
         ]);
 
-        DB::table('permission')->insert([
-            'id' => '211',
-            'access' => '"[1,2]"',
-            'created_at' => NULL,
-            'updated_at' => NULL
-        ]);
 
         DB::table('permission')->insert([
             'id' => '301',
