@@ -71,7 +71,8 @@ class HomeController extends Controller
             }
             $prodi = new Prodi;
             $data = [
-                'isComplete' => $isComplete
+                'isComplete' => $isComplete,
+                'prodi' => Prodi::find($id_user),
             ];
 
             return view('admin_prodi.dashboard', $data);
