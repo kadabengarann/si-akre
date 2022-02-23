@@ -90,10 +90,18 @@ class LkpsController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
+        $formPenilaian  = null;
+        if ($id[0] != 1 && $id[0] != 2) {
+            $formPenilaian = '30' . $id[0];
+        }
+
+
         $data = [
             'tables' => $this->allowedTable(),
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
+            'idTable' => $id,
+            'idTablePenilaian' => $formPenilaian,
             'prodi' => $prodi,
             'permit' => $form
         ];
@@ -108,34 +116,52 @@ class LkpsController extends Controller
 
     public function admin_input($id, Request $request)
     {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+
         $data = [
+            'tables' => $this->allowedTable(),
+            'idTable' => $id,
             'prodi' =>
             Prodi::find(
                 $request->query('id')
             ),
 
         ];
-
-        if ($id < 111) {
-            return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps?id=' . $request->query('id'));
         }
-        return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
     }
     public function admin_form($id, Request $request)
     {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $tables = $this->allowedTable();
+        if (Auth::user()->level == 1) {
+            $prodi = Prodi::find($request->query('id'));
+        }
         $data = [
+            'tables' => $this->allowedTable(),
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
+            'idTable' => $id,
             'prodi' =>
-            Prodi::find(
-                $request->query('id')
-            ),
+            $prodi,
+            'permit' => $form,
 
         ];
-        if (null == $request->query('id')) {
-            return redirect('/');
+        // return $tables;
+        if (in_array(Auth::user()->level, $permit)) {
+            # code...
+            return view('lkps.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
         }
-        return view('lkps.' . $id[0] . '.' . $id[1] . $id[2], $data);
     }
 
     public function input($id, Request $request)
@@ -145,6 +171,7 @@ class LkpsController extends Controller
 
         $data = [
             'tables' => $this->allowedTable(),
+            'idTable' => $id,
             'prodi' =>
             Prodi::find(
                 $request->query('id')

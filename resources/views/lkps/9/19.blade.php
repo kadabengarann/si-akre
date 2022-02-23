@@ -10,7 +10,8 @@
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>9.15 Adopsi Tugas Akhir (TA) dalam Masyarakat</p>
+                        <p><b>Tabel : </b>9.19 Karya Mahasiswa dan/atau Dosen yang memperoleh HaKI, dalam 3 tahun
+                            terakhir</p>
                     </div>
                 </div>
 
@@ -21,8 +22,9 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Adopsi Tugas Akhir (TA) dalam
-                    Masyarakat</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Karya Mahasiswa dan/atau Dosen yang
+                    memperoleh HaKI, dalam 3 tahun
+                    terakhir</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -57,7 +59,8 @@
                 </table>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/919"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/{{ $idTable }}"><i class="fas fa-plus-circle"></i> Input
+                    data</a>
             </div>
 
             <!-- /.card-body -->

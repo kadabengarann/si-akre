@@ -10,117 +10,58 @@
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>9.14. Penjaringan Umpan Balik terkait Pelaksanaan Tri Dharma Perguruan Tinggi
-                        </p>
+                        <p><b>Tabel : </b>9.18. Sertifikasi Profesi Bidang Infokom untuk Lulusan pada TS</p>
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
             @include('lkps.form_nav')
+
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Penjaringan Umpan Balik terkait
-                    Pelaksanaan Tri Dharma Perguruan Tinggi
-                </h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Sertifikasi Profesi Bidang Infokom
+                    untuk Lulusan pada TS</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-bordered table-center-text">
+                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th class="col-4">Sumber Umpan Balik
-                            </th>
-                            <th>Isi Umpan Balik
+                            <th>No.</th>
+                            <th>Judul TA
 
                             </th>
-                            <th>Cara memperoleh umpan balik
-
-
-                            </th>
-                            <th>Jenis Tindak Lanjut
+                            <th>Kegunaan untuk keperluan masyarakat
 
                             </th>
-                            <th>Waktu (tgl/Bln/Thn)
+                            <th>Potensial pengguna karya TA
 
                             </th>
-                            <th>Bukti
+                            <th>Capaian Pembelajaran Lulusan (CPL)
 
-                            </th>
-                            <th>Keterangan
-
-                            </th>
-                            <th>Bukti
-                            </th>
-                            <th>Keterangan
                             </th>
                         </tr>
                     </thead>
-                    <tr>
-                        <th class="sub-table">
-                            1. Dosen
-                        </th>
-                    </tr>
-                    <tbody>
-                        <td></td>
-
-                        <td colspan="9" class="table-isi">
-                            No data
-                        </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            2. Mahasiswa
-
-                        </th>
-                    </tr>
                     <tbody>
                         <tr>
-                            <td></td>
-
-                            <td colspan="9" class="table-isi">
+                            <td colspan="7">
                                 No data
                             </td>
                         </tr>
                     </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            3. Alumni
-                        </th>
-                    </tr>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td colspan="9" class="table-isi">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <th class="sub-table">
-                            4. Pengguna Lulusan</th>
-                    </tr>
-                    <tbody>
-                        <tr>
-                            <td></td>
+                    <tfoot>
 
-                            <td colspan="9" class="table-isi">
-                                No data
-                            </td>
-                        </tr>
-                    </tbody>
-
+                    </tfoot>
                 </table>
             </div>
-
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/918"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/{{ $idTable }}"><i class="fas fa-plus-circle"></i> Input
+                    data</a>
             </div>
 
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
-    </section>
-@endsection
+</section> @endsection

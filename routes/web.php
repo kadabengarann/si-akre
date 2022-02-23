@@ -38,6 +38,8 @@ Route::group(
 
         Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
         Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
+        Route::get('/penilaian', [AdminProdiController::class, 'index_penilaian']);
+        Route::get('/penilaian/{id}', [AdminProdiController::class, 'form_penilaian']);
     }
 );
 Route::group(

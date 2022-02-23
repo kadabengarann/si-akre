@@ -21,14 +21,14 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
-                        <p><b>Tabel : </b>9.6. Kelulusan Tepat Waktu</p>
+                        <p><b>Tabel : </b> 9.14. Penjaringan Umpan Balik terkait Pelaksanaan Tri Dharma Perguruan Tinggi</p>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
             {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
             <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/914">Next <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn btn-success" href="/lkps/view/{{ $idTable }}">Next <i class="fas fa-arrow-circle-right"></i></a>
         </div> --}}
 
         </div>
@@ -37,28 +37,46 @@
         <!-- /.card -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Tabel 9.6. Kelulusan Tepat Waktu</h3>
+                <h3 class="card-title">Tabel 9.14. Penjaringan Umpan Balik terkait Pelaksanaan Tri Dharma Perguruan
+                    Tinggi</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/914">
+            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Masuk</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa Diterima</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang Terlacak</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang Infokom</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang NON Infokom</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Mahasiswa yang lulus pada
-                            </label>
+                            <label for="inputPassword3" class="col-sm-3 form-label">Lingkup tempat kerja</label>
                             <label class="col-sm-3 form-label">
                                 :
                             </label>
@@ -75,78 +93,41 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-5</label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Multinasional/
+                                        Internasional</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-4</label>
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Nasional</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-3
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-2</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-1</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan s.d. Akhir TS</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-3 col-form-label">Rata-rata Masa Studi</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah mhs. Yang masih aktif</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="">
                             </div>
 
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Wirausaha</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                 </div>
         </div>
+        </div>
+
         <!-- /.card-body -->
         <div class="card-footer">
             <button type="submit" class="btn btn-info">Submit</button>
-            <a href="/lkps/view/914" class="btn btn-default float-right">Cancel</a>
+            <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
         </div>
         <!-- /.card-footer -->
         </form>

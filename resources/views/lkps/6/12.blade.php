@@ -7,10 +7,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Kriteria : </b>6. Pendidikan </p>
+                        <p><b>Kriteria : </b>6. Pendidikan</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>6.6. MBKM yang dilaksanakan pada tahun TS</p>
+                        <p><b>Sub-kriteria : </b>a. Kurikulum</p>
+                        <p><b>Tabel : </b>6.12. Penilaian Matakuliah yang diampu oleh lebih dari 1 dosen</p>
                     </div>
                 </div>
 
@@ -21,80 +22,40 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">MBKM yang dilaksanakan pada tahun TS
-                </h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Penilaian Matakuliah yang diampu oleh
+                    lebih dari 1 dosen</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-bordered table-center-text">
+                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Jenis mbkm
-                            </th>
-                            <th>Jumlah Mahasiswa yang mengikuti
-                            </th>
+                            <th>Nama Matakuliah</th>
+                            <th>Nama Tim Pengampu<sup>1)</sup> </th>
+                            <th>Nama Tim Penilai<sup>2)</sup></th>
                         </tr>
+                        <tr>
+
+                        </tr>
+
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td class="text-left">Pertukaran Pelajar
+                            <td colspan="15">
+                                No data
                             </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td class="text-left">Magang/Praktik Kerja
 
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td class="text-left">Asistensi Mengajar di Satuan Pendidikan
-
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td class="text-left">Penelitian/Riset
-
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td class="text-left">Proyek Kemanusiaan
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td class="text-left">Kegiatan Wirausaha
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td class="text-left">Studi/Proyek Independen
-                            </td>
-                            <td class="table-isi">0</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td class="text-left">Membangun Desa/Kuliah Kerja Nyata Tematik
-                            </td>
-                            <td class="table-isi">0</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                    </tfoot>
+
+
                 </table>
             </div>
+
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/612"><i class="fas fa-plus-circle"></i> Input data</a>
+                <a class="btn btn-primary" href="/lkps/input/{{ $idTable }}"><i class="fas fa-plus-circle"></i> Input
+                    data</a>
             </div>
 
             <!-- /.card-body -->

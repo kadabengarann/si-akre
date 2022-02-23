@@ -1,9 +1,7 @@
 @if (array_key_exists(1, $tables))
-
 @endif
 <li class="nav-header">LKPS</li>
 @if (Auth::user()->level == 1 || Auth::user()->level == 2)
-
     <li class="nav-item {{ request()->is('lkps/*/1*') ? 'menu-open' : '' }}">
         <a href="" class="nav-link {{ request()->is('lkps/*/1*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-list-ul"></i>
@@ -43,10 +41,9 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/21*') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>a</p>
+                        <p>2. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
-
             @endforeach
         </ul>
     </li>
@@ -67,7 +64,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>3. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>3. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -90,7 +87,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>4. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>4. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -112,7 +109,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>5. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>5. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -134,7 +131,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>6. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>6. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -156,7 +153,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>7. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>7. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -178,7 +175,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>8. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>8. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach
@@ -201,7 +198,7 @@
                     <a href="/lkps/view/{{ $n }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>9. {{ chr(str_pad(96 + (int) strval($n)[2], 3, '0', STR_PAD_LEFT)) }}</p>
+                        <p>9. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
                     </a>
                 </li>
             @endforeach

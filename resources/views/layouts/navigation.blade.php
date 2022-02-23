@@ -107,7 +107,6 @@
                      <a href="#" class="d-block">{{ Auth::user()->username }}</a>
                      <a class="d-block" disabled>Super Admin</a>
                  </div>
-
              @endif
          </div>
 
@@ -140,7 +139,7 @@
                          </p>
                      </a>
                  </li>
-                 @unless(request()->is('lkps*') || request()->is('lkps*'))
+                 @unless(request()->is('lkps/*') || request()->is('penilaian/*'))
                      @if (Auth::user()->level == 4)
                          @include('layouts.nav.mhs_nav')
                      @elseif (Auth::user()->level == 3)
@@ -153,8 +152,11 @@
 
                  @endunless
 
-                 @if (request()->is('lkps', 'lkps/*'))
+                 @if (request()->is('lkps/*'))
                      @include('layouts.nav.lkps')
+                 @endif
+                 @if (request()->is('penilaian/*'))
+                     @include('layouts.nav.penilaian')
                  @endif
 
              </ul>
