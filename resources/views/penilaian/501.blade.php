@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>Analisis dan Penetapan Program</p>
+                        <p><b>Matriks : </b>E. Analisis dan Penetapan Program</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <!-- {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}} -->

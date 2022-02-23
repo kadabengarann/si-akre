@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>4. SUMBER DAYA MANUSIA
+                        <p><b>Matriks : </b>C.4. SUMBER DAYA MANUSIA
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">

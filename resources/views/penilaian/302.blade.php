@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>2. TATA PAMONG, TATA KELOLA, DAN KERJASAMA
+                        <p><b>Matriks : </b>C.2. TATA PAMONG, TATA KELOLA, DAN KERJASAMA
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">
