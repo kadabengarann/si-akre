@@ -59,12 +59,14 @@
                             </td>
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
                                 debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>
                             <td></td>
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
+                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
+
                                 42 </td>
                             <td>6</td>
                         </tr>
@@ -81,12 +83,14 @@
                             </td>
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
                                 debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>
                             <td></td>
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
+                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
+
                                 42 </td>
 
                             <td>6</td>
@@ -120,7 +124,7 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                             class="form-control @error('textPenilaian') is-invalid @enderror"
                                             name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
                                         <div class="invalid-feedback">
                                             @error('textPenilaian')
                                                 {{ $message }}
