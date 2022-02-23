@@ -47,14 +47,14 @@
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3 style="font-weight: 400">LED</h3>
+                        <h3 style="font-weight: 400">Penilaian Matriks</h3>
 
-                        <p>Laporan Evaluasi Diri Program Studi</p>
+                        <p>Isi Penilaian Matriks</p>
                     </div>
                     <div class="icon">
-                        <i class="far fa-chart-bar"></i>
+                        <i class="nav-icon fas fa-pen"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/penilaian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
