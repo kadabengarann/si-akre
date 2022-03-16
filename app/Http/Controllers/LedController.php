@@ -43,7 +43,7 @@ class LedController extends Controller
         // $permit = json_decode($form->access, true);
         // $tables = $this->allowedTable();
         $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
-        $ledValuesNav = json_decode(file_get_contents(storage_path() . "/led-nav.json"), true);
+        // $ledValuesNav = json_decode(file_get_contents(storage_path() . "/led-nav.json"), true);
 
         if (Auth::user()->level == 1) {
             $prodi = Prodi::find(7);
@@ -77,7 +77,7 @@ class LedController extends Controller
             'multi_value' => $multi_value,
             'idTable' => $id,
             'tableValue' => $tableValue,
-            'led_nav' => $ledValuesNav,
+            // 'led_nav' => $ledValuesNav,
             'prodi' => $prodi,
             // 'permit' => $form
         ];
