@@ -1,29 +1,27 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>C.3. MAHASISWA
-                        </p>
+                        <p><b>Matriks : </b>E. Analisis dan Penetapan Program</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
+                        <!-- {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}} -->
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">MAHASISWA
-                </h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Analisis dan Penetapan Program</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -51,18 +49,22 @@
                     <tbody>
                         <tr>
                             <td>
-                                13
+                                94
                             </td>
-                            <td class="text-start">Kebijakan yang ditetapkan perguruan tinggi terkait kemahasiswaan
+                            <td class="text-start">Analisis
+                                Capaian Kinerja
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Deskripsi dokumen formal kebijakan yang mencakup aspek:
-                                <br> a) Metoda rekrutmen dan sistem seleksi
-                                <br>b) Layanan kemahasiswaan yang dapat diberikan dalam bentuk: kegiatan pengembangan
-                                kemampuan
-                                penalaran, minat dan bakat, kegiatan bimbingan karir dan kewirausahaan, serta kegiatan
-                                peningkatan kesejahteraan (bimbingan dan konseling, beasiswa,
-                                dan kesehatan)
+                            <td>Kelengkapan, keluasan,
+                                kedalaman, ketepatan, dan
+                                ketajaman analisis untuk
+                                mengidentifikasi akar masalah
+                                yang didukung oleh
+                                data/informasi yang andal dan
+                                memadai serta konsisten
+                                dengan hasil analisis yang
+                                disampaikan pada setiap
+                                kriteria
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -76,20 +78,31 @@
                                 <i class="edit_mark fas fa-pen"></i>
                                 42
                             </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
+                            <td>3</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td>
-                                14
+                                95
                             </td>
-                            <td class="text-start">Kualitas Input Mahasiswa
+                            <td class="text-start">Analisis SWOT
+                                atau Analisis
+                                Lain yang
+                                Relevan
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/301">LKPS 3.1</a></td>{{-- LOKASI --}}
-                            <td> Efektivitas implementasi sistem rekrutmen dan seleksi calon mahasiswa. untuk menghasilkan
-                                calon mahasiswa yang bermutu yang diukur dari keketatan seleksi.
-                                Nisbah jumlah mahasiswa yang lulus seleksi dalam 5 tahun terakhir dengan calon mahasiswa
-                                yang ikut
-                                seleksi.
+                            <td></td>{{-- LOKASI --}}
+                            <td>Kekuatan atau faktor
+                                pendorong, kelemahan atau
+                                faktor penghambat, peluang
+                                dan ancaman yang dihadapi
+                                dalam keterkaitannya dengan
+                                hasil analisis capaian kinerja.
+                                Hasil identifikasi tersebut
+                                dianalisis untuk menentukan
+                                posisi UPPS dan program studi
+                                yang diakreditasi, serta
+                                menjadi dasar untuk mendapatkan alternatif solusi
+                                dan menetapkan program
+                                pengembangan.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -103,137 +116,30 @@
                                 <i class="edit_mark fas fa-pen"></i>
                                 42
                             </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
+                            <td>3</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td>
-                                15
+                                96
                             </td>
-                            <td class="text-start">Upaya Peningkatan Animo.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/301">LKPS 3.1</a></td>{{-- LOKASI --}}
-                            <td>Efektivitas implementasi sistem rekrutmen dan seleksi calon mahasiswa. untuk menghasilkan
-                                calon mahasiswa yang bermutu yang diukur dari
-                                nisbah (%) mahasiswa baru reguler yang melakukan registrasi terhadap calon mahasiswa baru
-                                reguler yang lulus seleksi.
-                                Jika nisbah >= 75% skor =
-                                4. Jika nisbah <=25% skor 0.</td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos accusamus illum ab vel
-                                omnis, id cumque sunt adipisci? Ut?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                16
-                            </td>
-                            <td class="text-start">Jenis Layanan dan kualitas layanan kepada mahasiswa.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/304">LKPS 3.4</a></td>{{-- LOKASI --}}
-                            <td>Ketersediaan layanan kepada mahasiswa antara lain:
-                                <br> a) Bimbingan dan konseling,
-                                <br>b) Minat dan bakat (ekstra kurikuler),
-                                <br>c) Pembinaan soft skill,
-                                <br>d) Layanan beasiswa,
-                                <br>e) Layanan kesehatan,
-                                <br>f) Layanan karir
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis unde velit
-                                voluptatibus quas quam. Repellat a sequi sapiente dicta placeat.
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                10
-                            </td>
-                            <td class="text-start">Unit Kegiatan Mahasiswa.
-                            <td><a href="/lkps/view/305">LKPS 3.5</a></td>{{-- LOKASI --}}
-                            <td class="no_click_field">"Unit kegiatan mahasiswa (UKM) dan kebermanfaatannya bagi mahasiswa
-                                di bidang INFOKOM yang
-                                dikelola oleh dosen yg sesuai bidang ilmu.
-                                <br> A. Jumlah UKM bidang INFOKOM yang dikelola oleh dosen sesuai bidang ilmu"
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field ">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field" rowspan="2">Nilai = (A+2B)/3 </td> {{-- PERHITUNGAN --}}
-                            <td rowspan="2" class="no_click_field ">
-                            </td>{{-- SKOR --}}
-                            <td rowspan="2"></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-
-                            </td>
-                            <td class="text-start"></td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">B. Pelaksanaan, dan Kebermanfaatan UKM bidang INFOKOM bagi mahasiswa
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-
-                            </td>{{-- ALASAN PENILAIAN --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                18
-                            </td>
-                            <td class="text-start">Keaktifan mahasiswa dalam unit kegiatan
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/305">LK PS 3.5.a 3.5.b
-                                </a></td>{{-- LOKASI --}}
-                            <td>Keaktifan mahasiswa dalam mengikuti kegiatan kemahasiswaan, dihitung dari nisbah (%)
-                                rata-rata jumlah mahasiswa yg aktif di setiap unit kegiatan terhadap jumlah total mahasiswa
-                                program studi. Jika nisbah >= 10 %, maka skor 4
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione eaque doloremque sunt
-                                quidem odit provident quae distinctio, ea est dignissimos?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                19
-                            </td>
-                            <td class="text-start">Siklus Penjaminan Mutu (PPEPP)
-                                berjalan dengan
-                                efektif
+                            <td class="text-start">Strategi
+                                Pengembangan
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
-                                dijalankan dengan baik.
+                            <td>Kemampuan UPPS dalam
+                                menetapkan strategi dan
+                                program pengembangan
+                                berdasarkan prioritas sesuai dengan kapasitas, kebutuhan,
+                                dan VMT UPPS secara
+                                keseluruhan, terutama
+                                pengembangan program studi
+                                yang diakreditasi.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione eaque doloremque sunt
-                                quidem odit provident quae distinctio, ea est dignissimos?
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
@@ -241,8 +147,41 @@
                                 <i class="edit_mark fas fa-pen"></i>
                                 42
                             </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
+                            <td>3</td>{{-- BOBOT --}}
                         </tr>
+                        <tr>
+                            <td>
+                                97
+                            </td>
+                            <td class="text-start">Program
+                                Keberlanjutan
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Program pengembangan dan
+                                praktik baik yang dihasilkan
+                                dapat dijamin
+                                keberlangsunganny. Jelaskan
+                                pula jaminan ketersediaan
+                                sumberdaya untuk
+                                mendukung pelaksanaan
+                                program termasuk rencana penjaminan mutu yang
+                                berkelanjutan.
+                            </td>{{-- INDIKATOR --}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            </td>{{-- ALASAN PENILAIAN --}}
+                            <td></td> {{-- PERHITUNGAN --}}
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="42">
+                                <i class="edit_mark fas fa-pen"></i>
+                                42
+                            </td>{{-- SKOR --}}
+                            <td>3</td>{{-- BOBOT --}}
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -259,7 +198,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/303">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -272,7 +211,7 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                             class="form-control @error('textPenilaian') is-invalid @enderror"
                                             name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
                                         <div class="invalid-feedback">
                                             @error('textPenilaian')
                                                 {{ $message }}
@@ -304,7 +243,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/303">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -340,6 +279,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @push('scripts')

@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -264,7 +264,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -309,7 +309,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">

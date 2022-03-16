@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -17,7 +17,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -55,7 +55,8 @@
                             </td>
                             <td class="text-start">A. Syarat perlu dosen tetap yang ditugaskan di program studi.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/402">LK PS 4.2
+                            <td><a href="/lkps/view/402{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    4.2
                                 </a></td>{{-- LOKASI --}}
                             <td class="no_click_field">Jumlah dosen tetap Perguruan Tinggi yang mengajar di program studi
                                 yang sesuai dengan bidang
@@ -73,7 +74,8 @@
                                 INFOKOM atau S3 non INFOKOM tetapi memiliki track record penelitian kompetitif di tingkat
                                 Nasional selama 5 tahun terakhir bidang infokom (sebagai Ketua Peneliti)
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/402">LK PS 4.2
+                            <td><a href="/lkps/view/402{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    4.2
                                 </a></td>{{-- LOKASI --}}
                             <td class="no_click_field"> Jika PS3 ≥ 50 %, maka skor = 4.
                                 PS3 = Persentase dosen tetap yang berpendidikan S3 bidang INFOKOM atau S3 non INFOKOM tetapi
@@ -92,7 +94,8 @@
                             </td>
                             <td class="text-start">Beban DTPS Sebagai Pembimbin g utama Skripsi/ Tugas Akhir
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/403">LKPS 4.3</a></td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/403{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    4.3</a></td>{{-- LOKASI --}}
                             <td>Jumlah mahasiswa bimbingan dari DTPS pembimbing utama pada seluruh Program Studi Jika RMB <=
                                     6, skor=4 RMB=rata2 jumlah mahasiswa bimbingan dari DTPS pembimbing utama pada seluruh
                                     Program Studi </td>{{-- INDIKATOR --}}
@@ -116,7 +119,8 @@
                             </td>
                             <td class="text-start">Beban Dosen Tetap Program Studi (EWMP)
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/404">LK PS 4.4
+                            <td><a href="/lkps/view/404{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    4.4
                                 </a></td>{{-- LOKASI --}}
                             <td>Rata-rata beban dosen tetap PS per semester, atau rata-rata EWMP (Ekuivalensi Waktu Mengajar
                                 Penuh meliputi tugas tridarma dan tugas manajemen lain)
@@ -140,7 +144,8 @@
                                 23
                             </td>
                             <td class="text-start">A. Kesesuaian Mata Kuliah dan Keahlian Dosen
-                            <td><a href="/lkps/view/405">LKPS 4.5</a></td>{{-- LOKASI --}}
+                            <td><a href="/lkps/view/405{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    4.5</a></td>{{-- LOKASI --}}
                             <td class="no_click_field">A. Dosen tetap (DTPS) yang memiliki jabatan Lektor, Lektor Kepala
                                 dan Guru Besar yang bidang keahliannya sesuai dengan kompetensi PS, Jika P ≥ 60%, maka skor
                                 =
@@ -180,7 +185,7 @@
                             </td>
                             <td class="text-start">Profesionalisme Dosen
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/406">LKPS 4.6
+                            <td><a href="/lkps/view/406{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS 4.6
                                 </a></td>{{-- LOKASI --}}
                             <td>Keanggotaan dosen tetap (DTPS) dalam organisasi profesi bidang ilmu Infokom di tingkat
                                 nasional dan/atau tingkat internasional. Persentase (Pa) dosen tetap (DTPS) menjadi anggota
@@ -207,7 +212,7 @@
                             <td class="text-start">Dosen tetap (DTPS)
                                 memiliki minimal 1 sertifikasi profesi tingkat nasional/ Internasional
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/406">LKPS 4.6
+                            <td><a href="/lkps/view/406{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS 4.6
                                 </a></td>{{-- LOKASI --}}
                             <td>Persentase (Pb) dosen tetap (DTPS) memiliki minimal 1 sertifikasi profesi tingkat nasional/
                                 Internasional
@@ -267,7 +272,7 @@
                                 melalui program tugas belajar dalam bidang yang sesuai dengan bidang Infokom atau
                                 serumpun.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/408">LKPS 4.8
+                            <td><a href="/lkps/view/408{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS 4.8
                                 </a></td>{{-- LOKASI --}}
                             <td>Jika DTPS berjenjang S3 >= 50%, maka skor= 4, selain itu jika P >= 20% maka skor=4
                                 <br> P = persentase dosen tetap (DTPS) yang tugas belajar jenjang S3.
@@ -294,7 +299,7 @@
                                 , jumlah dan kualifikasiny
                                 a
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/409">LKPS 4.9
+                            <td><a href="/lkps/view/409{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS 4.9
                                 </a></td>{{-- LOKASI --}}
                             <td class="no_click_field">Tenaga administrasi, jumlah dan kualifikasinya. Catatan: skor
                                 dihitung dengan rumus
@@ -321,7 +326,7 @@
                             <td class="text-start">B. Tenaga teknisi, jumlah dan kualifikasiny
                                 a
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/409">LKPS 4.9
+                            <td><a href="/lkps/view/409{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS 4.9
                                 </a></td>{{-- LOKASI --}}
                             <td class="no_click_field">"Kualifikasi pendidikan teknisi di laboratorium. SK = (4 T1 + 3 T2 +
                                 2T3)/3/jumlah teknisi T1 = jumlah tenaga teknisi
@@ -337,7 +342,8 @@
 
                             <td class="text-start">C. Pustakawan dan kualifikasinya.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/409">LKPS 4.9
+                            <td><a href="/lkps/view/409{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    4.9
                                 </a></td>{{-- LOKASI --}}
                             <td class="no_click_field">Memiliki minimal 1 tenaga perpustakaan yang berijasah minimal Sarjana
                                 ilmu perpustakaan untuk melayani PS. Nilai = (A+B+C)/3
@@ -354,7 +360,8 @@
                             <td class="text-start">Upaya yang telah dilakukan UPPS untuk meningkatk an kualifikasi dan
                                 kompetensi tenaga kependidika n dalam 3 tahun terakhir
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/410">LKPS 4.10
+                            <td><a href="/lkps/view/410{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    4.10
                                 </a></td>{{-- LOKASI --}}
                             <td>Persentase (P) jumlah tenaga kependidikan yang mengikuti program pengembangan dalam 3 tahun
                                 terakhir
@@ -414,7 +421,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/304">
+                <form class="form-horizontal" action="/matriks/304">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -459,7 +466,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/304">
+                <form class="form-horizontal" action="/matriks/304">
 
                     <div class="modal-body">
                         <div class="card-body">

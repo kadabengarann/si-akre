@@ -137,7 +137,7 @@
                          </p>
                      </a>
                  </li>
-                 @unless(request()->is('lkps/*') || request()->is('led/*') || request()->is('penilaian/*'))
+                 @unless(request()->is('lkps/*') || request()->is('led/*') || request()->is('matriks/*'))
                      @if (Auth::user()->level == 4)
                          @include('layouts.nav.mhs_nav')
                      @elseif (Auth::user()->level == 3)
@@ -156,8 +156,8 @@
                  @if (request()->is('led/*'))
                      @include('layouts.nav.led')
                  @endif
-                 @if (request()->is('penilaian/*'))
-                     @include('layouts.nav.penilaian')
+                 @if (request()->is('matriks/*'))
+                     @include('layouts.nav.matriks')
                  @endif
 
              </ul>

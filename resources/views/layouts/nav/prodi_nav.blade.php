@@ -19,10 +19,10 @@
 
 
 <li class="nav-item">
-    <a href="/penilaian" class="nav-link {{ request()->is('penilaian') ? 'active' : '' }}">
+    <a href="/matriks" class="nav-link {{ request()->is('matriks') ? 'active' : '' }}">
         <i class="nav-icon fas fa-pen"></i>
         <p>
-            Penilaian Matriks
+            Matriks Penilaian
         </p>
     </a>
 </li>

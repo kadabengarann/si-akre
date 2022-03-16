@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -52,88 +52,88 @@
                                 89
                             </td>
                             <td class="text-start">Mata Kuliah
-Inti/Khas Teknologi
-Informasi
+                                Inti/Khas Teknologi
+                                Informasi
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
                             <td>Program Studi menguraikan
-                            struktur kurikulum yang
-                            memuat mata kuliah inti
-                            Teknologi Informasi yang
-                            mencakup:
-                            <br>(1) Dasar-dasar Perangkat
-                            Lunak: strategi
-                            penyelesaian masalah,
-                            praktek pemrograman
-                            aplikasi modern,
-                            pengembangan dan prinsip
-                            algoritma dll.,
-                            <br>(2) Manajemen informasi:
-                            basis data tujuan khusus,
-                            dan pengelolaan
-                            lingkungan basis data dll.,
-                            <br>(3) Teknologi Platform:
-                            infrastruktur komputasi,
-                            arsitektur dan organisasi,
-                            lingkungan eksekusi
-                            aplikasi, sistem operasi dll.,
-                            <br>(4) Paradigma Sistem:
-                            arsitektur sistem, analisis
-                            kinerja dll.
-                            <br>(5) Teknologi Sistem
-                            Terintegrasi: pemrograman
-                            integrative, komunikasi
-                            antar sistem dll.
-                            <br>(6) Jaringan: Dasar jaringan,
-                            layanan jaringan aplikasi,
-                            routing, switching, internet
-                            dll.
-                            <br>(7) Sistem Web dan Seluler
-                            (Mobile): konsep aplikasi,
-                            kerangka pengembangan,
-                            software social dll.,
-                            <br>(8) desain user experience:
-                            Aspek domain aplikasi
-                            Pengalaman pengguna
-                            yang afektif Evaluasi yang
-                            berpusat pada manusia
-                            Teknologi pendukung dan
-                            aksesibilitas Advokasi
-                            pengguna,
-                            <br>(9) Prinsip Keamanan Siber:
-                            kriptografi, dasar-dasar 
-                            Matrik Penilaian Akreditasi Program Studi Sarjana LAM-INFOKOM – 2021 66
-                            malware dll.,
-                            <br>(10) Praktek professional
-                            global: tanggung jawab dan
-                            isu-isu professional, prinsip
-                            manajemen proyek,
-                            manajemen sumber daya
-                            dan tata ebagi TI, prinsip
-                            sistem informasi, isu etika,
-                            hukum, & privasi
-                            <br>(11) proyek utama (major
-                            projects): integrasi dan
-                            penerapan pengetahuan
-                            dan keterampilan yang
-                            diperoleh dari tugas-tugas
-                            mata kuliah sebelumnya.
-                            <br>(12) Minimal 30 sks
-                            dan dilengkapi RPS yang
-                            memuat CPMK yang sesuai
-                            dengan CPL
-                            Skor 4 jika Program Studi
-                            menguraikan struktur
-                            kurikulum yang memuat
-                            mata-kuliah inti Teknologi
-                            Informasi yang mencakup
-                            12 aspek. 
-                                                        </td>{{-- INDIKATOR --}}
+                                struktur kurikulum yang
+                                memuat mata kuliah inti
+                                Teknologi Informasi yang
+                                mencakup:
+                                <br>(1) Dasar-dasar Perangkat
+                                Lunak: strategi
+                                penyelesaian masalah,
+                                praktek pemrograman
+                                aplikasi modern,
+                                pengembangan dan prinsip
+                                algoritma dll.,
+                                <br>(2) Manajemen informasi:
+                                basis data tujuan khusus,
+                                dan pengelolaan
+                                lingkungan basis data dll.,
+                                <br>(3) Teknologi Platform:
+                                infrastruktur komputasi,
+                                arsitektur dan organisasi,
+                                lingkungan eksekusi
+                                aplikasi, sistem operasi dll.,
+                                <br>(4) Paradigma Sistem:
+                                arsitektur sistem, analisis
+                                kinerja dll.
+                                <br>(5) Teknologi Sistem
+                                Terintegrasi: pemrograman
+                                integrative, komunikasi
+                                antar sistem dll.
+                                <br>(6) Jaringan: Dasar jaringan,
+                                layanan jaringan aplikasi,
+                                routing, switching, internet
+                                dll.
+                                <br>(7) Sistem Web dan Seluler
+                                (Mobile): konsep aplikasi,
+                                kerangka pengembangan,
+                                software social dll.,
+                                <br>(8) desain user experience:
+                                Aspek domain aplikasi
+                                Pengalaman pengguna
+                                yang afektif Evaluasi yang
+                                berpusat pada manusia
+                                Teknologi pendukung dan
+                                aksesibilitas Advokasi
+                                pengguna,
+                                <br>(9) Prinsip Keamanan Siber:
+                                kriptografi, dasar-dasar
+                                Matrik Penilaian Akreditasi Program Studi Sarjana LAM-INFOKOM – 2021 66
+                                malware dll.,
+                                <br>(10) Praktek professional
+                                global: tanggung jawab dan
+                                isu-isu professional, prinsip
+                                manajemen proyek,
+                                manajemen sumber daya
+                                dan tata ebagi TI, prinsip
+                                sistem informasi, isu etika,
+                                hukum, & privasi
+                                <br>(11) proyek utama (major
+                                projects): integrasi dan
+                                penerapan pengetahuan
+                                dan keterampilan yang
+                                diperoleh dari tugas-tugas
+                                mata kuliah sebelumnya.
+                                <br>(12) Minimal 30 sks
+                                dan dilengkapi RPS yang
+                                memuat CPMK yang sesuai
+                                dengan CPL
+                                Skor 4 jika Program Studi
+                                menguraikan struktur
+                                kurikulum yang memuat
+                                mata-kuliah inti Teknologi
+                                Informasi yang mencakup
+                                12 aspek.
+                            </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?   
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
@@ -148,77 +148,77 @@ Informasi
                                 90
                             </td>
                             <td class="text-start">Mata kuliah Pilihan
-Domain Spesifik
-dan Lingkungan
-Teknologi
-Informasi
+                                Domain Spesifik
+                                dan Lingkungan
+                                Teknologi
+                                Informasi
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
                             <td>Program Studi menguraikan
-                            struktur kurikulum yang
-                            memuat daftar mata kuliah
-                            pilihan domain Teknologi
-                            Informasi yang mencakup:
-                            <br>(1) bidang kompetensi:
-                            Aplikasi seluler (mobile),
-                            Struktur
-                            kurikulum
-                            terkait daftar
-                            mata kuliah
-                            pilihan
-                            memenuhi 2
-                            aspek dan
-                            Struktur
-                            kurikulum
-                            terkait daftar
-                            mata kuliah
-                            pilihan
-                            memenuhi 2
-                            aspek dan
-                            Struktur
-                            kurikulum
-                            terkait daftar
-                            mata kuliah
-                            pilihan
-                            memenuhi 2
-                            aspek dan
-                            Struktur
-                            kurikulum
-                            terkait daftar
-                            mata kuliah
-                            pilihan
-                            memenuhi 2
-                            aspek dan
-                            Struktur
-                            kurikulum
-                            terkait daftar
-                            mata kuliah
-                            pilihan kurang
-                            dari 18 sks
-                            Matrik Penilaian Akreditasi Program Studi Sarjana LAM-INFOKOM – 2021 67
-                            komputasi awan, Internet
-                            of Things, skalabilitas dan
-                            analitik data, sistem dan
-                            layanan virtual, dan
-                            Software Development and
-                            Management, Tantangan
-                            baru di Keamanan Siber.
-                            <br>(2) Total 18 sks
-                            dan dilengkapi RPS yang
-                            memuat CPMK yang
-                            relevan dengan CPL.
-                            Skor 4 jika UPPS
-                            menguraikan struktur
-                            kurikulum yang memuat
-                            daftar mata kuliah pilihan
-                            domain Teknologi Informasi
-                            yang mencakup 2 aspek. 
+                                struktur kurikulum yang
+                                memuat daftar mata kuliah
+                                pilihan domain Teknologi
+                                Informasi yang mencakup:
+                                <br>(1) bidang kompetensi:
+                                Aplikasi seluler (mobile),
+                                Struktur
+                                kurikulum
+                                terkait daftar
+                                mata kuliah
+                                pilihan
+                                memenuhi 2
+                                aspek dan
+                                Struktur
+                                kurikulum
+                                terkait daftar
+                                mata kuliah
+                                pilihan
+                                memenuhi 2
+                                aspek dan
+                                Struktur
+                                kurikulum
+                                terkait daftar
+                                mata kuliah
+                                pilihan
+                                memenuhi 2
+                                aspek dan
+                                Struktur
+                                kurikulum
+                                terkait daftar
+                                mata kuliah
+                                pilihan
+                                memenuhi 2
+                                aspek dan
+                                Struktur
+                                kurikulum
+                                terkait daftar
+                                mata kuliah
+                                pilihan kurang
+                                dari 18 sks
+                                Matrik Penilaian Akreditasi Program Studi Sarjana LAM-INFOKOM – 2021 67
+                                komputasi awan, Internet
+                                of Things, skalabilitas dan
+                                analitik data, sistem dan
+                                layanan virtual, dan
+                                Software Development and
+                                Management, Tantangan
+                                baru di Keamanan Siber.
+                                <br>(2) Total 18 sks
+                                dan dilengkapi RPS yang
+                                memuat CPMK yang
+                                relevan dengan CPL.
+                                Skor 4 jika UPPS
+                                menguraikan struktur
+                                kurikulum yang memuat
+                                daftar mata kuliah pilihan
+                                domain Teknologi Informasi
+                                yang mencakup 2 aspek.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?    
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
@@ -233,11 +233,11 @@ Informasi
                                 91
                             </td>
                             <td class="text-start">Mata kuliah terkait
-Matematika dan
-Ilmu Dasar yang
-Relevan dengan
-Bidang Teknologi
-Informasi.
+                                Matematika dan
+                                Ilmu Dasar yang
+                                Relevan dengan
+                                Bidang Teknologi
+                                Informasi.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
                             <td>Program Studi menguraikan
@@ -316,13 +316,13 @@ Informasi.
                                 kurikulum yang memuat
                                 mata-kuliah terkait analisis
                                 atau metode kuantitatif
-                                yang mencakup 2 aspek. 
+                                yang mencakup 2 aspek.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?   
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
@@ -337,11 +337,11 @@ Informasi.
                                 92
                             </td>
                             <td class="text-start">Proyek utama
-(Capstone project)
-yang Relevan
-dengan Bidang
-Teknologi
-Informasi.
+                                (Capstone project)
+                                yang Relevan
+                                dengan Bidang
+                                Teknologi
+                                Informasi.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
                             <td>Program Studi menguraikan
@@ -408,7 +408,7 @@ Informasi.
                                 bukti
                                 Matrik Penilaian Akreditasi Program Studi Sarjana LAM-INFOKOM – 2021 69
                                 mata kuliah sebelumnya
-                                yang mencakup 3 aspek. 
+                                yang mencakup 3 aspek.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -429,10 +429,10 @@ Informasi.
                                 93
                             </td>
                             <td class="text-start">Pengembangan
-Teknologi
-Informasi Dalam
-Rangka Pengabdian
-kepada Masyarakat
+                                Teknologi
+                                Informasi Dalam
+                                Rangka Pengabdian
+                                kepada Masyarakat
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
                             <td>Program Studi menguraikan
@@ -511,7 +511,7 @@ kepada Masyarakat
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?   
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
@@ -521,7 +521,7 @@ kepada Masyarakat
                             </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
-                        
+
 
                     </tbody>
                 </table>
@@ -539,7 +539,7 @@ kepada Masyarakat
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -584,7 +584,7 @@ kepada Masyarakat
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">

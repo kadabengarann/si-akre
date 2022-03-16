@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -51,26 +51,27 @@
                             <td>
                                 53
                             </td>
-                            <td class="text-start">Keberadaan lembaga  penelitian, peta jalan  penelitian dan standar  penelitian.
+                            <td class="text-start">Keberadaan lembaga penelitian, peta jalan penelitian dan standar
+                                penelitian.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Keberadaan lembaga  
-                                <br>penelitian formal: 
-                                <br>a) Memiliki lembaga formal  di tingkat PT dan/atau  
-                                <br>UPPS, skor antara 1-4 
-                                <br>b) memiliki peta jalan  
-                                <br>penelitian, skor antara 1-4 c) memiliki standar  
-                                <br>penelitian, skor antara 1-4 
-                                <br>Skor 
-                                <br>4 : sangat tersistem (untuk  a), sangat jelas (untuk b)  , atau sangat lengkap  
-                                <br>(untuk c),  
-                                <br>3 : tersistem (untuk a), jelas  (untuk b), atau lengkap  (untuk c), 
-                                <br>2 : cukup tersistem (untuk  a), cukup jelas (untuk b),  atau cukup lengkap (untuk  c) 
-                                <br>1 : kurang tersistem (untuk  a), kurang jelas (untuk b),  atau kurang lengkap (untuk  c) 
+                            <td class="no_click_field">Keberadaan lembaga
+                                <br>penelitian formal:
+                                <br>a) Memiliki lembaga formal di tingkat PT dan/atau
+                                <br>UPPS, skor antara 1-4
+                                <br>b) memiliki peta jalan
+                                <br>penelitian, skor antara 1-4 c) memiliki standar
+                                <br>penelitian, skor antara 1-4
+                                <br>Skor
+                                <br>4 : sangat tersistem (untuk a), sangat jelas (untuk b) , atau sangat lengkap
+                                <br>(untuk c),
+                                <br>3 : tersistem (untuk a), jelas (untuk b), atau lengkap (untuk c),
+                                <br>2 : cukup tersistem (untuk a), cukup jelas (untuk b), atau cukup lengkap (untuk c)
+                                <br>1 : kurang tersistem (untuk a), kurang jelas (untuk b), atau kurang lengkap (untuk c)
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor = (skor a+ skor b + skor  c)/3
+                            <td class="no_click_field">Skor = (skor a+ skor b + skor c)/3
                             </td> {{-- PERHITUNGAN --}}
                             <td class="no_click_field">
                             </td>{{-- SKOR --}}
@@ -83,19 +84,19 @@
                             <td class="text-start">Perencanaan, pelaksanaan, pemantauan, dan pelaporan penelitian
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Dokumen penelitian yang  lengkap berisi unsur:  
-                                <br>a) Perencanaan  
-                                <br>b) Pelaksanaan,  
-                                <br>c) Pemantauan dan  
-                                <br>d) Pelaporan. 
-                                <br>Skor a),b),c) d) sangat  
-                                <br>lengkap =4, lengkap = 3,  cukup = 2, kurang = 1, tidak  ada = 0. 
+                            <td class="no_click_field">Dokumen penelitian yang lengkap berisi unsur:
+                                <br>a) Perencanaan
+                                <br>b) Pelaksanaan,
+                                <br>c) Pemantauan dan
+                                <br>d) Pelaporan.
+                                <br>Skor a),b),c) d) sangat
+                                <br>lengkap =4, lengkap = 3, cukup = 2, kurang = 1, tidak ada = 0.
                                 <br>
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor = rerata dari skor  
-                                a),b),c) dan d)                                
+                            <td class="no_click_field">Skor = rerata dari skor
+                                a),b),c) dan d)
                             </td> {{-- PERHITUNGAN --}}
                             <td class="no_click_field">
                             </td>{{-- SKOR --}}
@@ -105,14 +106,16 @@
                             <td>
                                 55
                             </td>
-                            <td class="text-start">Monitoring dan evaluasi  penelitian dosen yang  melibatkan reviewer  yang kompeten pada  bidang infokom.
+                            <td class="text-start">Monitoring dan evaluasi penelitian dosen yang melibatkan reviewer
+                                yang kompeten pada bidang infokom.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Monitoring dan evaluasi kegiatan penelitian melibatkan reviewer yang kompeten pada bidang Infokom. 
+                            <td class="no_click_field">Monitoring dan evaluasi kegiatan penelitian melibatkan reviewer yang
+                                kompeten pada bidang Infokom.
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor = (skor A + Skor B + Skor C + Skor D)/4                                
+                            <td class="no_click_field">Skor = (skor A + Skor B + Skor C + Skor D)/4
                             </td> {{-- PERHITUNGAN --}}
                             <td class="no_click_field">
                             </td>{{-- SKOR --}}
@@ -122,13 +125,16 @@
                             <td>
                                 56
                             </td>
-                            <td class="text-start">A. Keterlibatan mahasiswa yang melakukan tugas akhir dalam penelitian dosen
+                            <td class="text-start">A. Keterlibatan mahasiswa yang melakukan tugas akhir dalam penelitian
+                                dosen
                                 <br>B. Penelitian Dosen
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/701">LKPS 7.1</a>
+                            <td><a href="/lkps/view/701{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    7.1</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Cara memberi skor dilakukan dengan menghitung sebagai berikut:
-                                <br>nisbah (%) jumlah mahasiswa TA yang terlibat dalam penelitian dosen terhadap jumlah mahasiswa TA
+                                <br>nisbah (%) jumlah mahasiswa TA yang terlibat dalam penelitian dosen terhadap jumlah
+                                mahasiswa TA
                                 Jika nisbah ≥ 10%, maka
                                 skor = 4, jika nisbah = 0%,
                                 maka skor = 0, diantaranya
@@ -143,7 +149,7 @@
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td class="no_click_field">Skor=4-4*(10%-nisbah)/10%
                                 <br>Skor=4-4*(3-PD)/3
-                                <br>Nilai akhir = (skor A+2* skor B)/3                                
+                                <br>Nilai akhir = (skor A+2* skor B)/3
                             </td> {{-- PERHITUNGAN --}}
                             <td class="no_click_field">
                             </td>{{-- SKOR --}}
@@ -156,7 +162,8 @@
                             <td class="text-start">Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP dijalankan dengan baik.                                
+                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
+                                dijalankan dengan baik.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -168,7 +175,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>4</td>{{-- BOBOT --}}
                         </tr>
                     </tbody>
@@ -187,7 +195,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -232,7 +240,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">

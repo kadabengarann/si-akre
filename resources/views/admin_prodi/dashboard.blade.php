@@ -119,7 +119,8 @@
                                         <input type="text"
                                             class="form-control @error('pejabat_sk_pembukaan') is-invalid @enderror"
                                             value="{{ $prodi->pejabat_sk_pembukaan }}" placeholder="Pejabat Penandatangan
-                                                                            SK Pembukaan PS" name="pejabat_sk_pembukaan">
+                                                                                SK Pembukaan PS"
+                                            name="pejabat_sk_pembukaan">
                                         <div class="invalid-feedback">
                                             @error('pejabat_sk_pembukaan')
                                                 {{ $message }}
@@ -137,7 +138,7 @@
                                         <input type="number" min="1900" max="2999" step="1"
                                             class="form-control @error('thn_menerima_mhs') is-invalid @enderror"
                                             value="{{ $prodi->thn_menerima_mhs }}" placeholder="Tahun Pertama Kali
-                                                                                Menerima Mahasiswa"
+                                                                                    Menerima Mahasiswa"
                                             name="thn_menerima_mhs">
                                         <div class="invalid-feedback">
                                             @error('thn_menerima_mhs')
@@ -152,7 +153,7 @@
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control @error('akreditasi') is-invalid @enderror"
                                             value="{{ $prodi->akreditasi }}" placeholder="Peringkat Terbaru
-                                                                                    Akreditasi PS" name="akreditasi">
+                                                                                        Akreditasi PS" name="akreditasi">
                                         <div class="invalid-feedback">
                                             @error('akreditasi')
                                                 {{ $message }}
@@ -226,14 +227,14 @@
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3 style="font-weight: 400">Penilaian Matriks</h3>
+                        <h3 style="font-weight: 400">Matriks Penilaian</h3>
 
-                        <p>Isi Penilaian Matriks</p>
+                        <p>Isi Matriks Penilaian</p>
                     </div>
                     <div class="icon">
                         <i class="nav-icon fas fa-pen"></i>
                     </div>
-                    <a href="/penilaian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/matriks" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>

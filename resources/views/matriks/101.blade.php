@@ -1,14 +1,13 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>C.1. VISI, MISI, TUJUAN DAN STRATEGI
-                        </p>
+                        <p><b>Matriks : </b>KONDISI EKSTERNAL DAN PROFIL</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
@@ -17,12 +16,12 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">PENDIDIKAN</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">KONDISI EKSTERNAL DAN PROFIL</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -50,82 +49,51 @@
                     <tbody>
                         <tr>
                             <td>
-                                3
+                                1
                             </td>
-                            <td class="text-start">Visi, misi, tujuan, dan strategi UPPS yang dirumuskan dan
-                                didokumentasikan
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Visi, misi, tujuan, strategi UPPS dirumuskan dan didokumentasikan dengan memenuhi 3 aspek
-                                berikut
-                                <br>a ) kesesuaian VMTS UPPS dengan Visi Perguruan Tinggi. <br>b) memayungi visi keilmuan
-                                program studi <br>c) melibatkan pemangku kepentingan internal dan eksternal.
-
-                            </td>{{-- INDIKATOR --}}
+                            <td class="text-start">A. Kondisi Eksternal
+                            </td>
+                            <td></td>
+                            <td>Konsistensi dengan hasil analisis SWOT dan/atau analisis lain serta rencana pengembangan ke
+                                depan.
+                            </td>
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
                                 debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
+                            </td>
+                            <td></td>
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42"> <i class="edit_mark fas fa-pen"></i>
 
-                                42 </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
+                                42 </td>
+                            <td>6</td>
                         </tr>
                         <tr>
                             <td>
-                                4
+                                2
                             </td>
-                            <td class="text-start">"Strategi pencapaian, visi, misi
-                                dan tujuan UPPS"
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>memenuhi 3 aspek berikut:
-                                <br>a) dengan tahapan waktu yang jelas dan realistik
-                                <br>b) didukung dokumen yang lengkap.
-                                <br>c) terkait dengan
-                                pencapaian visi misi.
-                            </td>{{-- INDIKATOR --}}
+                            <td class="text-start">B. Profil Unit Pengelola Program Studi
+                            </td>
+                            <td></td>
+                            <td>Keserbacakupan informasi dalam profil dan konsistensi antara profil dengan data dan
+                                informasi yang disampaikan pada masing-masing kriteria, serta menunjukkan iklim yang
+                                kondusif untuk pengembangan dan reputasi sebagai rujukan di bidang keilmuannya.
+                            </td>
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
                                 debitis labore laudantium praesentium officia quasi sint magni earum?
                             </td>
-                            {{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
+                            <td></td>
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42"> <i class="edit_mark fas fa-pen"></i>
 
-                                42 </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                5
-                            </td>
-                            <td class="text-start">"Siklus Penjaminan Mutu (PPEPP)
-                                berjalan dengan efektif"
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
-                                dijalankan dengan baik.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
+                                42 </td>
 
-                                42 </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
+                            <td>6</td>
                         </tr>
                     </tbody>
                 </table>
@@ -143,7 +111,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/301">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -156,7 +124,7 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                             class="form-control @error('textPenilaian') is-invalid @enderror"
                                             name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        {{ $prodi->alamat }}</textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
                                         <div class="invalid-feedback">
                                             @error('textPenilaian')
                                                 {{ $message }}
@@ -188,7 +156,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/301">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
