@@ -1,25 +1,52 @@
 {
-"led":[
-	{
-        "id":111,
-        "bab_title" :"I. PENDAHULUAN",
-        "sub_bab" : "A. Dasar Penyusunan",
-        "sub_kriteria":null,
-		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
-	},
-	{
-        "id":121,
-        "bab_title" :"I. PENDAHULUAN",
-        "sub_bab" : "B. TIM PENYUSUN DAN TANGGUNGJAWABNYA",
-        "sub_kriteria":null,
-		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
-	},
-	{
-        "id":131,
-        "bab_title" :"I. PENDAHULUAN",
-        "sub_bab" : "C",
-        "sub_kriteria":null,
-		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
-	}
- ]
+    "led": [
+        {
+            "id": 110,
+            "bab_title": "I. PENDAHULUAN",
+            "sub_bab": "A. Dasar Penyusunan",
+            "sub_kriteria": null,
+            "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+        },
+        {
+            "id": 120,
+            "bab_title": "I. PENDAHULUAN",
+            "sub_bab": "B. TIM PENYUSUN DAN TANGGUNGJAWABNYA",
+            "sub_kriteria": null,
+            "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi.",
+            "multi_input": true,
+            "multi_input_value": [
+                {
+                    "id": 1201,
+                    "title": "1. Sejarah Unit Pengelola Program Studi",
+                    "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+                },
+                {
+                    "id": 1202,
+                    "title": "2. Sub 2",
+                    "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "bab_title": "I. PENDAHULUAN",
+            "sub_bab": "C",
+            "sub_kriteria": null,
+            "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+        },
+        {
+            "id": 231,
+            "bab_title": "I. PENDAHULUAN",
+            "sub_bab": "C",
+            "sub_kriteria": null,
+            "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+        },
+        {
+            "id": 232,
+            "bab_title": "I. PENDAHULUAN",
+            "sub_bab": "C",
+            "sub_kriteria": null,
+            "keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+        }
+    ]
 }

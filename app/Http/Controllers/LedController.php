@@ -24,17 +24,17 @@ class LedController extends Controller
                 Prodi::find(
                     $request->query('id')
                 ),
-                'tables' => $this->allowedTable(),
+                // 'tables' => $this->allowedTable(),
 
             ];
-            if (null == $request->query('id')) {
-                return redirect('/');
-            }
+            // if (null == $request->query('id')) {
+            //     return redirect('/');
+            // }
 
-            return view('admin.lkps', $data);
+            return view('led.index');
         } elseif (Auth::user()->level == 2) {
 
-            return view('admin_prodi.led');
+            return view('led.index');
         }
     }
     public function form($id)
@@ -43,6 +43,7 @@ class LedController extends Controller
         // $permit = json_decode($form->access, true);
         // $tables = $this->allowedTable();
         $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
+        $ledValuesNav = json_decode(file_get_contents(storage_path() . "/led-nav.json"), true);
 
         if (Auth::user()->level == 1) {
             $prodi = Prodi::find(7);
@@ -57,18 +58,33 @@ class LedController extends Controller
         }
 
         $tableValue = $this->getInfo($id, $ledValues['led']);
+        $multi_value = array();
+        if (isset($tableValue['multi_input'])) {
+            foreach ($tableValue['multi_input_value'] as
+                $index => $key) {
+                if (Led::find($key['id'] . $prodi->id)) {
+                    array_push($multi_value, Led::find($key['id'] . $prodi->id));
+                } else {
+                    array_push($multi_value, null);
+                }
+            }
+        }
         $data = [
             'tables' => $ledValues['led'],
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
             'value' => Led::find($id . $prodi->id),
+            'multi_value' => $multi_value,
             'idTable' => $id,
             'tableValue' => $tableValue,
+            'led_nav' => $ledValuesNav,
             'prodi' => $prodi,
             // 'permit' => $form
         ];
 
         if ($tableValue) {
+            // return  $multi_value;
+            // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
             return view('led.base', $data);
         } else {
             return redirect('/led');
@@ -80,6 +96,13 @@ class LedController extends Controller
             if ($json['id'] == $id) {
                 return $json;
             }
+        }
+        return null;
+    }
+    private function testGetInfo($id, $json)
+    {
+        if ($json[$id[0] - 1]['bab_value'][$id[1] - 1]) {
+            # code...
         }
         return null;
     }
