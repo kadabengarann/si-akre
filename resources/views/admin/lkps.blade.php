@@ -39,8 +39,7 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active"
-                                            href="/lkps/prodi/view/101?id={{ $prodi->id }}">Isi</a>
+                                        <a class="nav-link active" href="/lkps/view/101">Isi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -55,8 +54,7 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active"
-                                            href="/lkps/prodi/view/102?id={{ $prodi->id }}">Isi</a>
+                                        <a class="nav-link active" href="/lkps/view/102">Isi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,7 +78,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[2][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[2][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -99,7 +97,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[3][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[3][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -118,7 +116,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[4][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[4][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -137,7 +135,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[5][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[5][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -156,7 +154,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[6][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[6][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -175,7 +173,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[7][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[7][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -194,7 +192,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[8][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[8][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -213,7 +211,7 @@
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link active"
-                                                href="/lkps/prodi/view/{{ $tables[9][0] }}?id={{ $prodi->id }}">Isi
+                                                href="/lkps/view/{{ $tables[9][0] }}?id={{ $prodi->id }}">Isi
                                                 kriteria</a>
                                         </li>
                                     </ul>
@@ -221,7 +219,6 @@
                             </div>
                         </div>
                     @endif
-
                 </section>
             </div>
         </div>

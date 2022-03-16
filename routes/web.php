@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     UserProfileController,
     LkpsController,
     LedController,
+    MatriksController,
     AdminProdiController,
     DosenController,
     MahasiswaController,
@@ -31,9 +32,6 @@ Route::name('prodi')
     ->middleware('prodi')
     ->group(function () {
         Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
-
-        Route::get('/penilaian', [AdminProdiController::class, 'index_penilaian']);
-        Route::get('/penilaian/{id}', [AdminProdiController::class, 'form_penilaian']);
     });
 Route::get('/lkps/', [LkpsController::class, 'index']);
 
@@ -45,9 +43,16 @@ Route::name('led')
         Route::get('/', [LedController::class, 'index']);
         Route::get('/{id}', [LedController::class, 'form'])->name('viewLed');
     });
+Route::name('matriks')
+    ->prefix('matriks')
+    ->middleware('level:1,2')
+    ->group(function () {
+        Route::post('/update', [MatriksController::class, 'updateLed']);
+        Route::get('/', [MatriksController::class, 'index']);
+        Route::get('/{id}', [MatriksController::class, 'form'])->name('viewLed');
+    });
 Route::name('lkps')
     ->prefix('lkps')
-    ->middleware('level:2,3,4')
     ->group(function () {
         Route::get('/view/{id}', [LkpsController::class, 'form']);
         Route::get('/input/{id}', [LkpsController::class, 'input']);
@@ -123,5 +128,11 @@ Route::name('admin')
             Route::get('/lkps/prodi', [LkpsController::class, 'index']);
             Route::get('/lkps/prodi/view/{id}', [LkpsController::class, 'admin_form']);
             Route::get('/lkps/prodi/input/{id}', [LkpsController::class, 'admin_input']);
+            // Route::prefix('led')
+            //     ->group(function () {
+            //         Route::post('/update', [LedController::class, 'updateLed']);
+            //         Route::get('/', [LedController::class, 'index']);
+            //         Route::get('/{id}', [LedController::class, 'form'])->name('viewLed');
+            //     });
         }
     );

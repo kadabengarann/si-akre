@@ -28,7 +28,7 @@ class LkpsController extends Controller
 
             ];
             if (null == $request->query('id')) {
-                return redirect('/');
+                return redirect('/admin/iaps');
             }
 
             return view('admin.lkps', $data);
@@ -76,13 +76,22 @@ class LkpsController extends Controller
         }
         return $tables;
     }
-    public function form($id)
+    public function form($id, Request $request)
     {
+
+        // return Permission::find($id);
         $form = Permission::find($id);
         $permit = json_decode($form->access, true);
         $tables = $this->allowedTable();
         if (Auth::user()->level == 1) {
-            $prodi = Prodi::find(7);
+            if (null == $request->query('id')) {
+                return redirect('/admin/iaps');
+            }
+
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
         } elseif (Auth::user()->level == 3) {
@@ -90,9 +99,9 @@ class LkpsController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
-        $formPenilaian  = null;
+        $formMatriks  = null;
         if ($id[0] != 1 && $id[0] != 2) {
-            $formPenilaian = '30' . $id[0];
+            $formMatriks = '30' . $id[0];
         }
 
 
@@ -101,7 +110,7 @@ class LkpsController extends Controller
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
             'idTable' => $id,
-            'idTablePenilaian' => $formPenilaian,
+            'idTableMatriks' => $formMatriks,
             'prodi' => $prodi,
             'permit' => $form
         ];
