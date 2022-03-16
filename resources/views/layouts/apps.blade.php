@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     @if (request()->is('penilaian/*'))
         <link href="{{ asset('css/penilaian.css') }}" rel="stylesheet">
     @endif
@@ -68,4 +68,5 @@
 
 
 </body>
+
 </html>

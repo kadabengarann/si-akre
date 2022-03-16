@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Prodi
+class Level
 {
     /**
      * Handle an incoming request.
@@ -14,12 +14,14 @@ class Prodi
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $role1, $role2)
     {
-        if (auth()->user()->level == 2) {
+        if (
+            $request->user()->level == $role1 ||
+            $request->user()->level == $role2
+        ) {
             return $next($request);
         }
-
         return redirect('/');
     }
 }
