@@ -1,0 +1,25 @@
+{
+"led":[
+	{
+        "id":111,
+        "bab_title" :"I. PENDAHULUAN",
+        "sub_bab" : "A. Dasar Penyusunan",
+        "sub_kriteria":null,
+		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+	},
+	{
+        "id":121,
+        "bab_title" :"I. PENDAHULUAN",
+        "sub_bab" : "B. TIM PENYUSUN DAN TANGGUNGJAWABNYA",
+        "sub_kriteria":null,
+		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+	},
+	{
+        "id":131,
+        "bab_title" :"I. PENDAHULUAN",
+        "sub_bab" : "C",
+        "sub_kriteria":null,
+		"keterangan": "Bagian ini menjelaskan kebijakan tentang penyusunan evaluasi diri di perguruan tinggi dan tujuan penyusunan LED. Pada bagian ini, UPPS perlu dan harus menunjukkan keterkaitan LED dengan rencana pengembangan perguruan tinggi."
+	}
+ ]
+}

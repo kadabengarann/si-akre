@@ -32,8 +32,6 @@ Route::name('prodi')
     ->group(function () {
         Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
 
-        Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
-        Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
         Route::get('/penilaian', [AdminProdiController::class, 'index_penilaian']);
         Route::get('/penilaian/{id}', [AdminProdiController::class, 'form_penilaian']);
     });
@@ -43,32 +41,41 @@ Route::name('led')
     ->prefix('led')
     ->middleware('level:1,2')
     ->group(function () {
+        Route::post('/update', [LedController::class, 'updateLed']);
         Route::get('/', [LedController::class, 'index']);
-        Route::get('/{id}', [LedController::class, 'form']);
-        // Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
-        // Route::get('/penilaian', [AdminProdiController::class, 'index_penilaian']);
-        // Route::get('/penilaian/{id}', [AdminProdiController::class, 'form_penilaian']);
+        Route::get('/{id}', [LedController::class, 'form'])->name('viewLed');
     });
+Route::name('lkps')
+    ->prefix('lkps')
+    ->middleware('level:2,3,4')
+    ->group(function () {
+        Route::get('/view/{id}', [LkpsController::class, 'form']);
+        Route::get('/input/{id}', [LkpsController::class, 'input']);
+        Route::get('/', [LkpsController::class, 'index']);
+    });
+
 Route::get('/profile', [UserProfileController::class, 'index'])->name('pageProfile');
-/*
-
-Route::group(
-    ['middleware' => 'prodi'],
-    function () {
-        Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
-
-        Route::get('/lkps/view/{id}', [LkpsController::class, 'form']);
-        Route::get('/lkps/input/{id}', [LkpsController::class, 'input']);
-        Route::get('/penilaian', [AdminProdiController::class, 'index_penilaian']);
-        Route::get('/penilaian/{id}', [AdminProdiController::class, 'form_penilaian']);
-    }
-);*/
+Route::get('/profile/edit', [UserProfileController::class, 'editProfile'])->name('pageEditProfile');
+Route::get('/profile/edit-password', [UserProfileController::class, 'editPassword'])->name('pageEditPassword');
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dosen/prodi', [AdminProdiController::class, 'index_prodi']);
 
+Route::group(
+    ['middleware' => 'dosen'],
+    function () {
+        Route::post('/dosen/profile/update', [DosenController::class, 'updateProfile']);
+        Route::post('/dosen/profile/update-credential', [DosenController::class, 'updateCredential']);
+    }
+);
+Route::group(
+    ['middleware' => 'mahasiswa'],
+    function () {
+        Route::post('/mhs/profile/update', [MahasiswaController::class, 'updateProfile']);
+    }
+);
 Route::name('admin')
     ->middleware('admin')
     ->group(
@@ -118,6 +125,3 @@ Route::name('admin')
             Route::get('/lkps/prodi/input/{id}', [LkpsController::class, 'admin_input']);
         }
     );
-
-
-// Route::get('/lkps{id}', [LkpsController::class, 'lkps']);

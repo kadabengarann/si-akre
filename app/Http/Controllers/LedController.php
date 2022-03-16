@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use App\Models\Prodi;
+use App\Models\Led;
+
 use Illuminate\Http\Request;
 
 class LedController extends Controller
@@ -39,6 +42,8 @@ class LedController extends Controller
         // $form = Permission::find($id);
         // $permit = json_decode($form->access, true);
         // $tables = $this->allowedTable();
+        $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
+
         if (Auth::user()->level == 1) {
             $prodi = Prodi::find(7);
         } elseif (Auth::user()->level == 2) {
@@ -51,27 +56,37 @@ class LedController extends Controller
             $formPenilaian = '30' . $id[0];
         }
 
-
+        $tableValue = $this->getInfo($id, $ledValues['led']);
         $data = [
-            // 'tables' => $this->allowedTable(),
+            'tables' => $ledValues['led'],
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
+            'value' => Led::find($id . $prodi->id),
             'idTable' => $id,
-            'idTablePenilaian' => $formPenilaian,
+            'tableValue' => $tableValue,
             'prodi' => $prodi,
             // 'permit' => $form
         ];
-        // return $tables;
-        $table_path = 'led.' . $id[0] . '.' . $id[1] . $id[2];
-        if (view()->exists($table_path)) {
-            return view($table_path, $data);
+
+        if ($tableValue) {
+            return view('led.base', $data);
         } else {
             return redirect('/led');
         }
     }
-
+    private function getInfo($id, $array)
+    {
+        foreach ($array as $index => $json) {
+            if ($json['id'] == $id) {
+                return $json;
+            }
+        }
+        return null;
+    }
     public function prev_num($id)
     {
+        $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
+
         $is = $id[0];
         $js = $id[1];
         $ks = $id[2];
@@ -91,12 +106,9 @@ class LedController extends Controller
                     if ($loop == 0) {
                         $k = $ks;
                     }
-                    if (view()->exists('led.' . $i . '.' . $j . $k)) {
-                        $id[0] = $i;
-                        $id[1] = $j;
-                        $id[2] = $k;
-
-                        return $id;
+                    $idTemp = $i . $j . $k;
+                    if ($this->getInfo($idTemp, $ledValues['led'])) {
+                        return $idTemp;
                     }
                     $loop++;
                 }
@@ -109,6 +121,7 @@ class LedController extends Controller
 
     public function next_num($id)
     {
+        $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
 
         $is = $id[0];
         $js = $id[1];
@@ -125,16 +138,36 @@ class LedController extends Controller
                         $k = $ks;
                     }
 
-                    if (view()->exists('lkps.' . $i . '.' . $j . $k)) {
-                        $id[0] = $i;
-                        $id[1] = $j;
-                        $id[2] = $k;
-                        return $id;
+                    $idTemp = $i . $j . $k;
+                    if ($this->getInfo($idTemp, $ledValues['led'])) {
+                        return $idTemp;
                     }
                     $loop++;
                 }
             }
         }
         return 0;
+    }
+    public function updateLed(Request $request)
+    {
+        // $this->validate($request, [
+        //     'value_text' => 'required',
+        // ]);
+        if (Led::find($request->id)) {
+            $led = Led::find($request->id);
+            $led->value = $request->value_text;
+            $led->save();
+        } else {
+            $data = array_merge(
+
+                [
+                    'id' => $request->id,
+                    'value' => $request->value_text,
+                ]
+            );
+            Led::create($data);
+        }
+        return back();
+        // return view('admin_prodi.led');
     }
 }

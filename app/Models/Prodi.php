@@ -28,6 +28,10 @@ class Prodi extends Model implements Auditable
     {
         return $this->hasMany(Dosen::class);
     }
+    public function led()
+    {
+        return $this->hasMany(Led::class);
+    }
     public function isComplete()
     {
         return true;

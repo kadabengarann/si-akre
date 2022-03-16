@@ -8,14 +8,14 @@
         </p>
     </a>
 </li>
-{{-- <li class="nav-item">
-    <a href="#" class="nav-link">
+<li class="nav-item">
+    <a href="/led" class="nav-link">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>
             Laporan Evaluasi Diri
         </p>
     </a>
-</li> --}}
+</li>
 
 
 <li class="nav-item">
