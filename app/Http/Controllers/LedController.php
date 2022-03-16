@@ -27,14 +27,17 @@ class LedController extends Controller
                 // 'tables' => $this->allowedTable(),
 
             ];
-            // if (null == $request->query('id')) {
-            //     return redirect('/');
-            // }
+            if (null == $request->query('id')) {
+                return redirect('/admin/iaps');
+            }
 
-            return view('led.index');
+            return view('led.index', $data);
         } elseif (Auth::user()->level == 2) {
-
-            return view('led.index');
+            $prodi = Prodi::find(Auth::user()->prodi->id);
+            $data = [
+                'prodi' => $prodi,
+            ];
+            return view('led.index', $data);
         }
     }
     public function form($id)
@@ -83,6 +86,7 @@ class LedController extends Controller
         ];
 
         if ($tableValue) {
+            // return $prodi;
             // return  $multi_value;
             // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
             return view('led.base', $data);
