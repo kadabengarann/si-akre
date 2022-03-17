@@ -40,7 +40,7 @@ class LedController extends Controller
             return view('led.index', $data);
         }
     }
-    public function form($id)
+    public function form($id, Request $request)
     {
         // $form = Permission::find($id);
         // $permit = json_decode($form->access, true);
@@ -49,7 +49,13 @@ class LedController extends Controller
         // $ledValuesNav = json_decode(file_get_contents(storage_path() . "/led-nav.json"), true);
 
         if (Auth::user()->level == 1) {
-            $prodi = Prodi::find(7);
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
+            if (null == $request->query('id')) {
+                return redirect('/admin/iaps');
+            }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
         } elseif (Auth::user()->level == 3) {

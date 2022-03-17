@@ -28,12 +28,29 @@ use App\Http\Controllers\{
 
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::name('prodi')
     ->middleware('prodi')
     ->group(function () {
         Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
     });
-Route::get('/lkps/', [LkpsController::class, 'index']);
+Route::middleware('dosen')
+    ->prefix('dosen')
+    ->group(
+        function () {
+            Route::post('/profile/update', [DosenController::class, 'updateProfile']);
+            Route::post('/profile/update-credential', [DosenController::class, 'updateCredential']);
+        }
+    );
+Route::middleware('mahasiswa')
+    ->prefix('mhs')
+    ->group(
+        function () {
+            Route::post('/profile/update', [MahasiswaController::class, 'updateProfile']);
+        }
+    );
+
 
 Route::name('led')
     ->prefix('led')
@@ -64,25 +81,10 @@ Route::get('/profile/edit', [UserProfileController::class, 'editProfile'])->name
 Route::get('/profile/edit-password', [UserProfileController::class, 'editPassword'])->name('pageEditPassword');
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dosen/prodi', [AdminProdiController::class, 'index_prodi']);
 
-Route::group(
-    ['middleware' => 'dosen'],
-    function () {
-        Route::post('/dosen/profile/update', [DosenController::class, 'updateProfile']);
-        Route::post('/dosen/profile/update-credential', [DosenController::class, 'updateCredential']);
-    }
-);
-Route::group(
-    ['middleware' => 'mahasiswa'],
-    function () {
-        Route::post('/mhs/profile/update', [MahasiswaController::class, 'updateProfile']);
-    }
-);
-Route::name('admin')
-    ->middleware('admin')
+Route::middleware('admin')
     ->group(
         function () {
             Route::get('/admin/iaps', [AdminController::class, 'index_iaps']);

@@ -38,7 +38,7 @@
             <div class="card-body">
                 <div class="callout callout-warning">
                     <p>
-                        {{ $tableValue['keterangan'] }}
+                        {!! $tableValue['keterangan'] !!}
                     </p>
                 </div>
 

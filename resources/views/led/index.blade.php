@@ -58,7 +58,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/110">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/110{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -74,7 +75,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/120">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/120{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -90,7 +92,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/130">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/130{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -121,7 +124,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/210">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/210{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -137,7 +141,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/220">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/220{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -167,7 +172,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/231">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/231{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -183,7 +189,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -198,7 +205,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -213,7 +221,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -228,7 +237,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -243,7 +253,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -258,7 +269,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -273,7 +285,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -288,7 +301,8 @@
                                                     <div class="card-tools">
                                                         <ul class="nav nav-pills ml-auto">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" href="/led/232">Isi</a>
+                                                                <a class="nav-link active"
+                                                                    href="/led/232{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -309,7 +323,8 @@
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="/led/240">Isi</a>
+                                                    <a class="nav-link active"
+                                                        href="/led/240{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -327,7 +342,8 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="/led/300">Isi</a>
+                                        <a class="nav-link active"
+                                            href="/led/300{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                     </li>
                                 </ul>
                             </div>
