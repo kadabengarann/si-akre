@@ -59,7 +59,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/110{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/111{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -76,7 +76,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/120{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/121{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -93,7 +93,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/130{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/131{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -125,7 +125,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/210{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/211{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -142,7 +142,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/220{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/221{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -324,7 +324,7 @@
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/240{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/241{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>

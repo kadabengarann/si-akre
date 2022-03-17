@@ -10,20 +10,20 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="/led/110" class="nav-link {{ request()->is('led/11*') ? 'active' : '' }}">
+                <a href="/led/111" class="nav-link {{ request()->is('led/11*') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>A. Dasar Penyusunan</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/led/120" class="nav-link {{ request()->is('led/12*') ? 'active' : '' }}">
+                <a href="/led/121" class="nav-link {{ request()->is('led/12*') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>B. Tim Penyusun dan Tanggungjawabnya
                     </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/led/130" class="nav-link {{ request()->is('led/13*') ? 'active' : '' }}">
+                <a href="/led/131" class="nav-link {{ request()->is('led/13*') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>C. Mekanisme Kerja Penyusunan Evaluasi Diri
                     </p>
@@ -41,13 +41,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="/led/210" class="nav-link {{ request()->is('led/21*') ? 'active' : '' }}">
+                <a href="/led/211" class="nav-link {{ request()->is('led/21*') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>A. Kondisi Eksternal</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/led/120" class="nav-link {{ request()->is('led/12*') ? 'active' : '' }}">
+                <a href="/led/221" class="nav-link {{ request()->is('led/22*') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>B. Profil Unit Pengelola Program Studi
                     </p>
