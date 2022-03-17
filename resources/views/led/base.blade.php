@@ -49,7 +49,7 @@
                         </h4>
                         <div class="callout callout-secondary">
                             <p>
-                                {{ $n['keterangan'] }}
+                                {!! $n['keterangan'] !!}
                             </p>
                         </div>
                         <form action="/led/update" method="POST" enctype="multipart/form-data">
