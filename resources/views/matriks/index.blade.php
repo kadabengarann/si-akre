@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-lg-6">
-                            <p><b>Program Studi : </b>{{ Auth::user()->prodi->nama }}</p>
+                            <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,9 @@
                                     1
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/101"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -125,7 +127,9 @@
                                     1
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/101"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -155,7 +159,9 @@
                                     3
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/301"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/301{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -185,7 +191,9 @@
                                     7
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/302"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/302{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -214,7 +222,9 @@
                                     7
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/303"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/303{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -243,7 +253,9 @@
                                     11
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/304"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/304{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -272,7 +284,9 @@
                                     10
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/305"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/305{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -301,7 +315,9 @@
                                     12
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/306"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/306{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -330,7 +346,9 @@
                                     5
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/307"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/307{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -359,7 +377,9 @@
                                     7
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/308"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/308{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -388,7 +408,9 @@
                                     26
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/309"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/309{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -417,7 +439,9 @@
                                     5
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/401"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/401{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
@@ -447,7 +471,9 @@
                                     4
                                 </td>
                                 <td>
-                                    <a class="btn btn-info" href="/penilaian/501"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-info"
+                                        href="/matriks/501{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                            class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>

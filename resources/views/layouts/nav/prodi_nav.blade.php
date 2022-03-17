@@ -8,21 +8,21 @@
         </p>
     </a>
 </li>
-{{-- <li class="nav-item">
-    <a href="#" class="nav-link">
+<li class="nav-item">
+    <a href="/led" class="nav-link">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>
             Laporan Evaluasi Diri
         </p>
     </a>
-</li> --}}
+</li>
 
 
 <li class="nav-item">
-    <a href="/penilaian" class="nav-link {{ request()->is('penilaian') ? 'active' : '' }}">
+    <a href="/matriks" class="nav-link {{ request()->is('matriks') ? 'active' : '' }}">
         <i class="nav-icon fas fa-pen"></i>
         <p>
-            Penilaian Matriks
+            Matriks Penilaian
         </p>
     </a>
 </li>

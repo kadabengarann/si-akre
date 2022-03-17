@@ -1,27 +1,30 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>E. Analisis dan Penetapan Program</p>
+                        <p><b>Matriks : </b>C.2. TATA PAMONG, TATA KELOLA, DAN KERJASAMA
+                        </p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <!-- {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}} -->
+                        {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Analisis dan Penetapan Program</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">TATA PAMONG, TATA KELOLA, DAN
+                    KERJASAMA
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -49,60 +52,18 @@
                     <tbody>
                         <tr>
                             <td>
-                                94
+                                6
                             </td>
-                            <td class="text-start">Analisis
-Capaian Kinerja
+                            <td class="text-start">Keberadaan sistem tata pamong yang menjamin penyelengg araan UPPS
+                                yang baik.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kelengkapan, keluasan,
-kedalaman, ketepatan, dan
-ketajaman analisis untuk
-mengidentifikasi akar masalah
-yang didukung oleh
-data/informasi yang andal dan
-memadai serta konsisten
-dengan hasil analisis yang
-disampaikan pada setiap
-kriteria
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum? 
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                95
-                            </td>
-                            <td class="text-start">Analisis SWOT
-atau Analisis
-Lain yang
-Relevan
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Kekuatan atau faktor
-pendorong, kelemahan atau
-faktor penghambat, peluang
-dan ancaman yang dihadapi
-dalam keterkaitannya dengan
-hasil analisis capaian kinerja.
-Hasil identifikasi tersebut
-dianalisis untuk menentukan
-posisi UPPS dan program studi
-yang diakreditasi, serta
-menjadi dasar untuk mendapatkan alternatif solusi
-dan menetapkan program
-pengembangan.
+                            <td>Keberadaan sistem tata pamong yang menjamin penyelenggaraan UPPS yang memenuhi aspek- aspek:
+                                <br> a) kredibel,
+                                <br>b) transparan,
+                                <br>c) akuntabel,
+                                <br>d) bertanggung jawab, dan
+                                <br>e) adil.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -112,28 +73,22 @@ pengembangan.
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
+                                data-skor="">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42
                             </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td></td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td>
-                                96
+                                7
                             </td>
-                            <td class="text-start">Strategi
-Pengembangan
+                            <td class="text-start">Peran UPPS dalam kepemimpinan yang efektif
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kemampuan UPPS dalam
-menetapkan strategi dan
-program pengembangan
-berdasarkan prioritas sesuai dengan kapasitas, kebutuhan,
-dan VMT UPPS secara
-keseluruhan, terutama
-pengembangan program studi
-yang diakreditasi.
+                            <td> Kepemimpinan UPPS memiliki karakteristik yang kuat dalam 3 kepemimpinan:
+                                <br> a) kepemimpinan operasional,
+                                <br>b) kepemimpinan organisasi,
+                                <br>c) kepemimpinan publik
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -143,29 +98,24 @@ yang diakreditasi.
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
+                                data-skor="">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42
                             </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td></td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td>
-                                97
+                                8
                             </td>
-                            <td class="text-start">Program
-Keberlanjutan
+                            <td class="text-start">Sistem pengelolaan fungsional dan operasional UPPS
+                                mencakup: planning, organizing, staffing, leading, controlling yang efektif dilaksanaka n.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Program pengembangan dan
-praktik baik yang dihasilkan
-dapat dijamin
-keberlangsunganny. Jelaskan
-pula jaminan ketersediaan
-sumberdaya untuk
-mendukung pelaksanaan
-program termasuk rencana penjaminan mutu yang
-berkelanjutan.
+                            <td>Sistem pengelolaan fungsional dan operasional UPPS berjalan
+                                <br>a) sesuai dengan SOP,
+                                <br>b) minimal didukung 6 dokumen yg memuat Struktur Organisasi, Tupoksi, Renop, Renstra,
+                                Aturan
+                                Kepegawaian, Dokumen Hasil Audit dari SPMI terhadap PS.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -175,13 +125,128 @@ berkelanjutan.
                             </td>{{-- ALASAN PENILAIAN --}}
                             <td></td> {{-- PERHITUNGAN --}}
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
+                                data-skor="">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42
                             </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td></td>{{-- BOBOT --}}
                         </tr>
-                       
+                        <tr>
+                            <td>
+                                9
+                            </td>
+                            <td class="text-start">Keterlaksan aan Sistem Penjaminan Mutu Internal (akademik dan non
+                                akademik) .</td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Keterlaksanaan Sistem Penjaminan Mutu Internal (akademik dan
+                                non akademik) di kriteria 2 sampai 9, yang dibuktikan dengan keberadaan 5 aspek:
+                                <br>a) dokumen legal
+                                pembentukan unsur pelaksana penjaminan mutu.
+                                <br>b) ketersediaan dokumen SPMI: kebijakan SPMI, manual SPMI, standar SPMI, dan formulir
+                                SPMI.
+                                <br>c) terlaksananya siklus penjaminan mutu (siklus PPEPP)
+                                <br>d) bukti sahih efektivitas pelaksanaan penjaminan mutu
+                                <br>e) memiliki ekternal bechmarking dalam peningkatan mutu.
+                            </td>{{-- INDIKATOR --}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            </td>{{-- ALASAN PENILAIAN --}}
+                            <td></td> {{-- PERHITUNGAN --}}
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="">
+                                <i class="edit_mark fas fa-pen"></i>
+                            </td>{{-- SKOR --}}
+                            <td></td>{{-- BOBOT --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                10
+                            </td>
+                            <td class="text-start">Kerjasama pendidikan, penelitian, dan PkM yang relevan dengan program
+                                studi
+                                dan dikelola oleh UPPS dalam 3 tahun terakhir.</td>{{-- ELEMEN --}}
+                            <td><a href="/lkps/view/205{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    2.5</a></td>{{-- LOKASI --}}
+                            <td>Jumlah kerjasama pendidikan, penelitian, dan PkM yang relevan dengan program studi dan
+                                dikelola oleh UPPS dalam 3 tahun terakhir.
+                                <br> Perhitungan skor sebagai berikut:
+                                <br>RK = ((a x N1) + (b x N2) + (c x N3)) / NDTPS
+                                <br> Bobot: a = 3 , b = 2 , c = 1 N1 = Jumlah kerjasama pendidikan.
+                                <br>N2 = Jumlah kerjasama penelitian. N3 = Jumlah kerjasama PkM.
+                                <br>NDTPS = Jumlah dosen tetap yang ditugaskan sebagai pengampu mata kuliah dengan bidang
+                                keahlian yang sesuai dengan kompetensi inti program studi yang
+                                diakreditasi.
+                            </td>{{-- INDIKATOR --}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            </td>{{-- ALASAN PENILAIAN --}}
+                            <td></td> {{-- PERHITUNGAN --}}
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="">
+                                <i class="edit_mark fas fa-pen"></i>
+                            </td>{{-- SKOR --}}
+                            <td></td>{{-- BOBOT --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                11
+                            </td>
+                            <td class="text-start">Kerjasama tingkat internasion al, nasional, wilayah/lok al yang
+                                relevan dengan program studi dan dikelola oleh
+                                UPPS dalam 3 tahun terakhir.</td>{{-- ELEMEN --}}
+                            <td><a href="/lkps/view/205{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    2.5</a></td>{{-- LOKASI --}}
+                            <td>Kerjasama tingkat internasional, nasional, wilayah/lokal yang relevan dengan program studi
+                                dan dikelola oleh UPPS dalam 3 tahun terakhir.
+                                <br>R = ((a x NI) + (b x NN) + (c x N3)) / NDTPS
+                                <br>Bobot: a = 3 , b = 2 , c = 1 NI = Jumlah kerjasama di tingkat internasional
+                                <br> NN = Jumlah kerjasama tingkat nasional.
+                                <br>NW = Jumlah kerjasama PkM tingkat wilayah/lokal NDTPS = Jumlah dosen tetap yang
+                                ditugaskan
+                                sebagai pengampu mata
+                                kuliah dengan bidang keahlian yang sesuai dengan kompetensi inti
+                                program studi yang diakreditasi.
+                            </td>{{-- INDIKATOR --}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            </td>{{-- ALASAN PENILAIAN --}}
+                            <td></td> {{-- PERHITUNGAN --}}
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="">
+                                <i class="edit_mark fas fa-pen"></i>
+                            </td>{{-- SKOR --}}
+                            <td></td>{{-- BOBOT --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                12
+                            </td>
+                            <td class="text-start">Siklus Penjaminan Mutu (PPEPP)
+                                berjalan dengan efektif</td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
+                                dijalankan dengan baik.</td>{{-- INDIKATOR --}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
+                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            </td>{{-- ALASAN PENILAIAN --}}
+                            <td></td> {{-- PERHITUNGAN --}}
+                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
+                                data-skor="">
+                                <i class="edit_mark fas fa-pen"></i>
+                            </td>{{-- SKOR --}}
+                            <td></td>{{-- BOBOT --}}
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -198,7 +263,7 @@ berkelanjutan.
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/302">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -211,7 +276,7 @@ berkelanjutan.
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                             class="form-control @error('textPenilaian') is-invalid @enderror"
                                             name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
                                         <div class="invalid-feedback">
                                             @error('textPenilaian')
                                                 {{ $message }}
@@ -243,7 +308,7 @@ berkelanjutan.
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/302">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -279,7 +344,6 @@ berkelanjutan.
             </div>
         </div>
     </div>
-
 @endsection
 
 @push('scripts')

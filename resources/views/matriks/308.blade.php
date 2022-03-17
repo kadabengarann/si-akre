@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -54,7 +54,8 @@
                             <td class="text-start">"Keberadaan lembaga pengabdian kepada masyarakat
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Perguruan Tinggi memiliki unit Lembaga Pengabdian kepada Masyarakat yang mengelola kegiatan pengabdian kepada masyarakat.
+                            <td>Perguruan Tinggi memiliki unit Lembaga Pengabdian kepada Masyarakat yang mengelola kegiatan
+                                pengabdian kepada masyarakat.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -66,7 +67,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -103,9 +105,10 @@
                             <td class="text-start">A. Pelaksanaan PkM
                                 Dosen dan Mahasiswa
                                 <br>B. Pelaksanaan PkM
-                                Dosen, pada TS sd TS -2                                
+                                Dosen, pada TS sd TS -2
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801">LKPS 8.1</a>
+                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    8.1</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">A. Nisbah PkM yg
                                 melibatkan mahasiswa
@@ -113,7 +116,7 @@
                                 <br>B. Jumlah PkM dosen
                                 PkMD= jumlah dosen DTPS
                                 yang melaksanakan PkM /
-                                jumlah dosen DTPS                                
+                                jumlah dosen DTPS
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
@@ -133,7 +136,8 @@
                                 jumlah mahasiswa aktif
                                 pada TS.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801">LKPS 8.1</a>
+                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    8.1</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Jika nisbah = 2,5% maka
                                 skor 4. Jika nisbah = 0%
@@ -141,7 +145,7 @@
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor=4-4*(2.5%-nisbah)/2.5%                                
+                            <td class="no_click_field">Skor=4-4*(2.5%-nisbah)/2.5%
                             </td> {{-- PERHITUNGAN --}}
                             <td class="no_click_field">
                             </td>{{-- SKOR --}}
@@ -157,7 +161,8 @@
                                 berdasarkan sumber
                                 dana PkM.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801">LKPS 8.1</a>
+                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    8.1</a>
                             </td>{{-- LOKASI --}}
                             <td>Penilaian dilakukan dengan
                                 penghitungan berikut:
@@ -172,7 +177,7 @@
                                 <br>nc = Jumlah kegiatan PkM
                                 dengan biaya dari PT/sendiri
                                 yang sesuai bidang ilmu,
-                                <br>n = Jumlah DTPS                              
+                                <br>n = Jumlah DTPS
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -184,7 +189,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -213,7 +219,7 @@
                                 <br>c) Reviewer memenuhi
                                 syarat sebagai reviewer
                                 bidang INFOKOM
-                                
+
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
@@ -230,7 +236,8 @@
                                 (PPEPP) berjalan dengan
                                 efektif
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/906">LKPS 9.6</a>
+                            <td><a href="/lkps/view/906{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    9.6</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Siklus Penjaminan Mutu
                                 (PPEPP) berjalan dengan
@@ -261,7 +268,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -306,7 +313,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">

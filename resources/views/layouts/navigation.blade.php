@@ -78,7 +78,6 @@
                      <a href="/profile" class="d-block">{{ Auth::user()->mhs->nama }}</a>
                      <a class="d-block" disabled>{{ Auth::user()->mhs->prodi->nama }}</a>
                  </div>
-
              @elseif (Auth::user()->level == 3)
                  <div class="image d-flex align-items-center">
                      <img src="{{ url('img/dos/' . Auth::user()->dosen->img_url) }}" class="img-circle elevation-2"
@@ -97,7 +96,6 @@
 
                      <a href="/profile" class="d-block">{{ Auth::user()->prodi->nama }}</a>
                  </div>
-
              @else
                  <div class="image d-flex align-items-center">
                      <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
@@ -139,7 +137,7 @@
                          </p>
                      </a>
                  </li>
-                 @unless(request()->is('lkps/*') || request()->is('penilaian/*'))
+                 @unless(request()->is('lkps/*') || request()->is('led/*') || request()->is('matriks/*'))
                      @if (Auth::user()->level == 4)
                          @include('layouts.nav.mhs_nav')
                      @elseif (Auth::user()->level == 3)
@@ -155,8 +153,11 @@
                  @if (request()->is('lkps/*'))
                      @include('layouts.nav.lkps')
                  @endif
-                 @if (request()->is('penilaian/*'))
-                     @include('layouts.nav.penilaian')
+                 @if (request()->is('led/*'))
+                     @include('layouts.nav.led')
+                 @endif
+                 @if (request()->is('matriks/*'))
+                     @include('layouts.nav.matriks')
                  @endif
 
              </ul>

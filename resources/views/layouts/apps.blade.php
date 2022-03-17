@@ -12,13 +12,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-    @if (request()->is('penilaian/*'))
-        <link href="{{ asset('css/penilaian.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    @if (request()->is('matriks/*'))
+        <link href="{{ asset('css/matriks.css') }}" rel="stylesheet">
     @endif
 
     @if (request()->is('lkps/*'))
         <link href="{{ asset('css/lkps.css') }}" rel="stylesheet">
+    @endif
+    @if (request()->is('led/*'))
+        <link href="{{ asset('css/led.css') }}" rel="stylesheet">
     @endif
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
@@ -68,4 +71,5 @@
 
 
 </body>
+
 </html>

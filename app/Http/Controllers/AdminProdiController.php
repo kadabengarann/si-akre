@@ -11,10 +11,10 @@ use File;
 
 class AdminProdiController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index_prodi()
     {
@@ -91,7 +91,7 @@ class AdminProdiController extends Controller
 
     public function index_penilaian()
     {
-        return view('penilaian.index');
+        return view('matriks.index');
     }
     public function form_penilaian($id)
     {
@@ -110,7 +110,7 @@ class AdminProdiController extends Controller
             'prodi' => $prodi
         ];
         // return $tables;
-        return view('penilaian.' . $id[0]  . $id[1] . $id[2], $data);
+        return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
     }
     public function prev_num($id)
     {
@@ -133,7 +133,7 @@ class AdminProdiController extends Controller
                     if ($loop == 0) {
                         $k = $ks;
                     }
-                    if (view()->exists('penilaian.' . $i  . $j . $k)) {
+                    if (view()->exists('matriks.' . $i  . $j . $k)) {
                         $id[0] = $i;
                         $id[1] = $j;
                         $id[2] = $k;
@@ -167,7 +167,7 @@ class AdminProdiController extends Controller
                         $k = $ks;
                     }
 
-                    if (view()->exists('penilaian.' . $i  . $j . $k)) {
+                    if (view()->exists('matriks.' . $i  . $j . $k)) {
                         $id[0] = $i;
                         $id[1] = $j;
                         $id[2] = $k;

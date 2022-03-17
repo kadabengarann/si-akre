@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -75,7 +75,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td rowspan="5">5</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -106,13 +107,15 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td class="text-start">C. Ketersediaan dan kelengkapan dokumen Rencana Pembelajaran Semester
                                 (RPS)
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/603">LK PS 6.3</a>
+                            <td><a href="/lkps/view/603{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.3</a>
                             </td>{{-- LOKASI --}}
                             <td>RPS memuat 9 aspek berikut:
                                 <br>a. nama Program Studi, nama dan kode mata kuliah, semester, sks, nama Dosen pengampu;
@@ -137,7 +140,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td class="text-start">D. Penyusunan materi kuliah.
@@ -159,7 +163,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td class="text-start">E. Peninjauan Kurikulum.
@@ -182,7 +187,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td rowspan="2">
@@ -191,7 +197,8 @@
                             <td class="text-start">A. Pelaksanaan pengambilan mata kuliah dalam bentuk kegiatan merdeka
                                 belajar kampus merdeka
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/603">LK PS 6.3</a>
+                            <td><a href="/lkps/view/603{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.3</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Nisbah (%) SKS mata kuliah dalam bentuk kegiatan merdeka belajar
                                 kampus merdeka dan jumlah
@@ -210,7 +217,8 @@
                             <td class="text-start">B. Jumlah mahasiswa yang mengikuti kegiatan merdeka belajar kampus
                                 merdeka
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/606">LK PS 6.6</a>
+                            <td><a href="/lkps/view/606{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.6</a>
                             </td>{{-- LOKASI --}}
                             <td>Nisbah (%) jumlah mahasiswa yang mengikuti kegiatan merdeka belajar kampus merdeka terhadap
                                 jumlah mahasiswa Program Studi.
@@ -225,7 +233,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td>
@@ -233,7 +242,8 @@
                             </td>
                             <td class="text-start">Kegiatan Praktikum
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/607">LK PS 6.7</a>
+                            <td><a href="/lkps/view/607{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.7</a>
                             </td>{{-- LOKASI --}}
                             <td>Substansi mata kuliah praktikum dan pelaksanaan praktikum, beserta kualitas modul
                                 praktikumnya sejalan dengan mata kuliahnya.
@@ -255,7 +265,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -282,13 +293,15 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td></td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td class="text-start">B. Pelaksanaan Mata kuliah blended learning
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/609">LK PS 6.9</a>
+                            <td><a href="/lkps/view/609{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.9</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Matakuliah yang penyelenggaraannya kombinasi secara daring dan
                                 luring(blended).
@@ -309,7 +322,8 @@
                             </td>
                             <td class="text-start">A. Evaluasi Pembelajaran
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/612">LK PS 6.12</a>
+                            <td><a href="/lkps/view/612{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    6.12</a>
                             </td>{{-- LOKASI --}}
                             <td>Keterlibatan anggota tim pengampu (team teaching) dalam proses penilaian matakuliah.
                                 Skor 4 jika penilaian Matakuliah melibatkan 100% tim pengampu.
@@ -326,7 +340,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td rowspan="2">2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -347,7 +362,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td>
@@ -376,7 +392,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>3</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -399,13 +416,15 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td rowspan="2">2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
                             <td class="text-start">B. Penilaian Skripsi/ Tugas Akhir.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/616">LKPS 6.16</a>
+                            <td><a href="/lkps/view/616{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    6.16</a>
                             </td>{{-- LOKASI --}}
                             <td class="no_click_field">Ujian Skripsi/ Tugas Akhir mahasiswa melibatkan dosen yang
                                 berkompetensi pada bidang kegiatan yang dilakukan. Baik untuk TA reguler maupun konversi
@@ -464,16 +483,18 @@
                             </td>
                             <td class="text-start">Pelaksanaan perbaikan sistem pembelajaran.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/618">LKPS 6.18
-                            </a></td>{{-- LOKASI --}}
-                            <td>Pelaksanaan perbaikan sistem pembelajaran yang telah dilakukan selama tiga tahun terakhir berkaitan dengan aspek:
+                            <td><a href="/lkps/view/618{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    6.18
+                                </a></td>{{-- LOKASI --}}
+                            <td>Pelaksanaan perbaikan sistem pembelajaran yang telah dilakukan selama tiga tahun terakhir
+                                berkaitan dengan aspek:
                                 <br>(a) Materi pembelajaran,
                                 <br>(b) Metode pembelajaran,
                                 <br>(c) Penggunaan teknologi pembelajaran,
                                 <br>(d) Cara-cara evaluasi.
                                 <br>(e) Perolehan umpan balik dari
                                 <br>
-                                <br>Dosen dan mahasiswa (f) Perolehan umpan balik dari alumni dan pengguna lulusan                                
+                                <br>Dosen dan mahasiswa (f) Perolehan umpan balik dari alumni dan pengguna lulusan
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -485,7 +506,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -494,11 +516,13 @@
                             </td>
                             <td class="text-start">A. Integrasi hasil penelitian untuk proses pembelajaran
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/610">LKPS 6.10</a>
+                            <td><a href="/lkps/view/610{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
+                                    6.10</a>
                             </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Nisbah (%) jumlah hasil penelitian yg digunakan dalam pembelajaran terhadap jumlah seluruh penelitian
-                                <br>Skor 4 jika nisbah >= 10%. 
-                                <br>Skor 2 jika nisbah = 0%                                
+                            <td class="no_click_field">Nisbah (%) jumlah hasil penelitian yg digunakan dalam pembelajaran
+                                terhadap jumlah seluruh penelitian
+                                <br>Skor 4 jika nisbah >= 10%.
+                                <br>Skor 2 jika nisbah = 0%
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
                             </td>{{-- ALASAN PENILAIAN --}}
@@ -511,8 +535,9 @@
                             <td class="text-start">B. Integrasi hasil Pengabdian kepada Masyarakat (PkM)
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Nisbah (%) jumlah hasil PkM yg digunakan dalam pembelajaran terhadap jumlah seluruh PkM 
-                                <br>Skor 4 jika nisbah >= 5%. 
+                            <td class="no_click_field">Nisbah (%) jumlah hasil PkM yg digunakan dalam pembelajaran terhadap
+                                jumlah seluruh PkM
+                                <br>Skor 4 jika nisbah >= 5%.
                                 <br>Skor 2 jika nisbah = 0%
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
@@ -533,7 +558,7 @@
                                 <br>a) otonomi keilmuan,
                                 <br>b) kebebasan akademik,
                                 <br>c) kebebasan mimbar akademik,
-                                <br>d) kemitraan dosen-mahasiswa 
+                                <br>d) kemitraan dosen-mahasiswa
                                 <br>e) dilaksanakan secara konsisten.
                                 <br>
                                 <br>Skor 4 jika Kebijakan tertulis tentang suasana akademik mencakup:
@@ -541,7 +566,7 @@
                                 <br>b) kebebasan akademik,
                                 <br>c) kebebasan mimbar akademik,
                                 <br>d) kemitraan dosen-mahasiswa, dan
-                                <br>e) dilaksanakan secara konsisten. 
+                                <br>e) dilaksanakan secara konsisten.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -553,7 +578,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -563,7 +589,8 @@
                             <td class="text-start">Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP dijalankan dengan baik.
+                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
+                                dijalankan dengan baik.
                             </td>{{-- INDIKATOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
@@ -575,7 +602,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>5</td>{{-- BOBOT --}}
                         </tr>
                     </tbody>
@@ -594,7 +622,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -639,7 +667,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">

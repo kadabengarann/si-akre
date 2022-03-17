@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
-@include('penilaian.form_header')
+@include('matriks.form_header')
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline">
@@ -16,7 +16,7 @@
 
             </div>
             <!-- /.card-body -->
-            @include('penilaian.form_nav')
+            @include('matriks.form_nav')
 
         </div>
         <div class="card card-primary card-outline">
@@ -67,7 +67,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -76,7 +77,8 @@
                             </td>
                             <td class="text-start">Perolehan dana dari mahasiswa
                             </td>{{-- ELEMEN --}}
-                            <td> <a href="/lkps/view/501"> LK PS 5.1</a>
+                            <td> <a href="/lkps/view/501{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"> LK PS
+                                    5.1</a>
                             </td>{{-- LOKASI --}}
                             <td>Perhitungan nisbah (%) perolehan dana dari mahasiswa terhadap total dana penerimaan.
                             </td>{{-- INDIKATOR --}}
@@ -90,7 +92,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -99,7 +102,8 @@
                             </td>
                             <td class="text-start">Aksesibilitas data dalam sistem informasi
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/502">LK PS 5.2</a>
+                            <td><a href="/lkps/view/502{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.2</a>
                             </td>{{-- LOKASI --}}
                             <td>Aksesibilitas data dalam sistem informasi. Skor butir ini didasarkan pada hasil penilaian
                                 11 jenis data. Untuk setiap jenis data, skor didasarkan atas aturan berikut:
@@ -118,7 +122,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -140,7 +145,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -150,7 +156,8 @@
                             <td class="text-start">Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan
                                 dengan mempertimbangkan jumlah mahasiswa.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/503">LK PS 5.3</a>
+                            <td><a href="/lkps/view/503{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.3</a>
                             </td>{{-- LOKASI --}}
                             <td>Pendayagunaan sarana utama laboratorium, beserta kelayakan penggunaan dengan
                                 mempertimbangkan jumlah mahasiswa.
@@ -172,7 +179,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -181,7 +189,8 @@
                             </td>
                             <td class="text-start">Kecukupan, Aksesibilitas dan Mutu Sarana, Prasarana
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/504">LK PS 5.4</a>
+                            <td><a href="/lkps/view/504{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.4</a>
                             </td>{{-- LOKASI --}}
                             <td>Ketersediaan dan kelengkapan jenis prasarana, sarana serta dana yang memungkinkan
                                 terciptanya interaksi akademik antara sivitas akademika (misalnya tempat olah raga, ruang
@@ -212,7 +221,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>2</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -221,9 +231,11 @@
                             </td>
                             <td class="text-start">Fasilitas Laboratorium untuk keahlian Infokom.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/505">LK PS 5.5</a>
+                            <td><a href="/lkps/view/505{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.5</a>
                             </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Kesesuaian laboratorium dengan bidang peminatan/ keahlian Infokom. Nisbah kesesuaian 100 %
+                            <td class="no_click_field">Kesesuaian laboratorium dengan bidang peminatan/ keahlian Infokom.
+                                Nisbah kesesuaian 100 %
                                 maka skor = 4, nisbah = 0% maka skor = 0.
                             </td>{{-- INDIKATOR --}}
                             <td class="no_click_field">
@@ -239,7 +251,8 @@
                             </td>
                             <td class="text-start">A. Sumber pustaka berupa jurnal Internasional bidang Infokom
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/506">LK PS 5.6</a>
+                            <td><a href="/lkps/view/506{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.6</a>
                             </td>{{-- LOKASI --}}
                             <td>Bahan pustaka berupa jurnal ilmiah bidang ilmu IT internasional yang dilanggan (Jint).
                             </td>{{-- INDIKATOR --}}
@@ -253,7 +266,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td rowspan="3">3</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -275,13 +289,15 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td class="text-start">C. Sumber pustaka berupa buku teks dan lain-lain dalam bidang
                                 Infokom.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/507">LK PS 5.7</a>
+                            <td><a href="/lkps/view/507{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.7</a>
                             </td>{{-- LOKASI --}}
                             <td>Bahan pustaka berupa buku teks (bukan buku kopian) dan lain-lain dalam bidang infokom
                                 (bukan buku praktis), termasuk e-book.
@@ -298,7 +314,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                         </tr>
                         <tr>
                             <td>
@@ -306,7 +323,8 @@
                             </td>
                             <td class="text-start">Lisensi/Open-source software.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/509">LK PS 5.9</a>
+                            <td><a href="/lkps/view/509{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
+                                    5.9</a>
                             </td>{{-- LOKASI --}}
                             <td>"Keberadaan lisensi software/ Open-source yang digunakan di laboratorium dan keperluan di
                                 lingkungan Program Studi.
@@ -324,7 +342,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>1</td>{{-- BOBOT --}}
                         </tr>
                         <tr>
@@ -347,7 +366,8 @@
                             <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
                                 data-skor="42">
                                 <i class="edit_mark fas fa-pen"></i>
-                                42 </td>{{-- SKOR --}}
+                                42
+                            </td>{{-- SKOR --}}
                             <td>4</td>{{-- BOBOT --}}
                         </tr>
                     </tbody>
@@ -366,7 +386,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/matriks/101">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -411,7 +431,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/305">
+                <form class="form-horizontal" action="/matriks/305">
 
                     <div class="modal-body">
                         <div class="card-body">
