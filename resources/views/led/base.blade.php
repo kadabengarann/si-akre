@@ -54,6 +54,8 @@
                         </div>
                         <form action="/led/update" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <input name="prod_id" type="hidden" value="{{ $prodi->id }}">
+                            <input name="table_id" type="hidden" value="{{ $n['id'] }}">
                             <input name="id" type="hidden" value="{{ $n['id'] . $prodi->id }}">
                             <br>
                             <button id="edit_btn{{ $loop->iteration }}" class="btn btn-primary"
@@ -87,6 +89,9 @@
                 @else
                     <form action="/led/update" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input name="prod_id" type="hidden" value="{{ $prodi->id }}">
+                        <input name="table_id" type="hidden" value="{{ $idTable }}">
+
                         <input name="id" type="hidden" value="{{ $idTable . $prodi->id }}">
                         <br>
                         <button id="edit_btn" class="btn btn-primary" onclick="edit()" type="button">

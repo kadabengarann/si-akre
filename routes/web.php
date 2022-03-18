@@ -52,8 +52,7 @@ Route::middleware('mahasiswa')
     );
 
 
-Route::name('led')
-    ->prefix('led')
+Route::prefix('led')
     ->middleware('level:1,2')
     ->group(function () {
         Route::post('/update', [LedController::class, 'updateLed']);
