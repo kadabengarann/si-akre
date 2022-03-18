@@ -28,73 +28,101 @@
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No Butir</th>
-                            <th class="p_elem">Elemen</th>
-                            <th>Lokasi
+                            <th rowspan="2">No Butir</th>
+                            <th rowspan="2" class="p_elem">Elemen</th>
+                            <th rowspan="2">Lokasi
                             </th>
-                            <th class="p_indi">Indikator
+                            <th rowspan="2" class="p_indi">Deskriptor
                             </th>
-                            <th class="p_indi">Alasan Penilaian
+                            <th colspan="4" class="p_indi">Alasan Penilaian
                             </th>
-                            <th>Perhitungan
-
+                            <th rowspan="2">Nilai
                             </th>
-                            <th>Skor
-
+                            <th rowspan="2">Bobot
                             </th>
-                            <th>BOBOT
+                            <th rowspan="2">Skor
                             </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr><td colspan="11">1.2 pelaksanaan</td></tr>
                         <tr>
                             <td>
                                 1
-                            </td>
+                            </td>{{-- NO BUTIR --}}
                             <td class="text-start">A. Kondisi Eksternal
-                            </td>
-                            <td></td>
-                            <td>Konsistensi dengan hasil analisis SWOT dan/atau analisis lain serta rencana pengembangan ke
-                                depan.
-                            </td>
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Kemampuan UPPS dalam menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS.
+                            </td>{{-- DESKRIPTOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>
-                            <td></td>
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
-
-                                42 </td>
-                            <td>6</td>
+                                4
+                            </td>{{-- ALASAN PENILAIAN 4--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                3
+                            </td>{{-- ALASAN PENILAIAN 3--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                2
+                            </td>{{-- ALASAN PENILAIAN 2--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                1
+                            </td>{{-- ALASAN PENILAIAN 1--}}
+                            <td></td>{{-- NILAI --}}
+                            <td>6</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian"
+                                data-skor="24">
+                            24 </td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
                                 2
-                            </td>
-                            <td class="text-start">B. Profil Unit Pengelola Program Studi
-                            </td>
-                            <td></td>
-                            <td>Keserbacakupan informasi dalam profil dan konsistensi antara profil dengan data dan
-                                informasi yang disampaikan pada masing-masing kriteria, serta menunjukkan iklim yang
-                                kondusif untuk pengembangan dan reputasi sebagai rujukan di bidang keilmuannya.
-                            </td>
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">B. Profil Unit Pengelola Program Studi / Analisis Internal                                
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Kemampuan UPPS dan PS dalam menyajikan seluruh informasi secara ringkas, komprehensif, serta konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.
+                            </td>{{-- DESKRIPTOR --}}
                             <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
                                 data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
                                 <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>
-                            <td></td>
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
-
-                                42 </td>
-
-                            <td>6</td>
+                                4
+                            </td>{{-- ALASAN PENILAIAN 4--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                3
+                            </td>{{-- ALASAN PENILAIAN 3--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                2
+                            </td>{{-- ALASAN PENILAIAN 2--}}
+                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
+                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
+                                <i class="edit_mark fas fa-pen"></i>
+                                1
+                            </td>{{-- ALASAN PENILAIAN 1--}}
+                            <td></td>{{-- NILAI --}}
+                            <td>6</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian"
+                                data-skor="24">
+                            24 </td>{{-- SKOR MAKS --}}
                         </tr>
+                        
                     </tbody>
                 </table>
             </div>
