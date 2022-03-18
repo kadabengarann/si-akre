@@ -133,22 +133,162 @@
                                 </div>
                             </div>
                             <div class="row m-1 ">
-                                <div class="card m-0 col-12">
+                                <div class="card m-0 col-12 collapsed-card">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            B. Profil Unit Pengelola Program Studi
+                                            B. Profil Unit Pengelola Program Studi dan Program Studi yang Diakreditasi
                                         </h3>
                                         <div class="card-tools">
-                                            <ul class="nav nav-pills ml-auto">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active"
-                                                        href="/led/221{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
-                                                </li>
-                                            </ul>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                                title="Collapse">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
                                         </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        1. Sejarah Unit Pengelola Program Studi
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/221{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        2. Visi, Misi, Tujuan, Strategi, dan Tata Nilai
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/222{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        3. Organisasi dan Tata Kerja
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/223{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        4. Mahasiswa dan Lulusan
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/224{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        5. Dosen dan Tenaga Kependidikan
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/225{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        6. Keuangan, Sarana, dan Prasarana
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/226{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        7. Sistem Penjaminan Mutu
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/227{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        8. Kinerja Unit Pengelola Program Studi dan Program Studi yang
+                                                        Diakreditasi
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/228{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row m-1 ">
                                 <div class="card m-0 col-12 collapsed-card">
                                     <div class="card-header">
@@ -313,18 +453,154 @@
                                 </div>
                             </div>
                             <div class="row m-1 ">
+                                <div class="card m-0 col-12 collapsed-card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            D. Suplemen Program Studi
+                                        </h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                                title="Collapse">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        1. Kriteria Pendidikan
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/241{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        2. Kriteria Pengabdian kepada Masyarakat
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/242{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-1 ">
+                                <div class="card m-0 col-12 collapsed-card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            E. Analisis Dan Penetapan Program Pengembangan Unit Pengelola Program Studi
+                                            Terkait Program Studi Yang Diakreditasi
+                                        </h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                                title="Collapse">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        1. Analisis Capaian Kinerja
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/251{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        2. Analisis SWOT atau Analisis Lain yang Relevan
+                                                    </h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/252{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        3. Strategi Pengembangan</h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/253{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-1 ">
+                                            <div class="card m-0 col-12">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        4. Program Keberlanjutan</h3>
+                                                    <div class="card-tools">
+                                                        <ul class="nav nav-pills ml-auto">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    href="/led/254{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-1 ">
                                 <div class="card m-0 col-12">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            D. Analisis dan Penetapan Program
-                                            Pengembangan Unit Pengelola Program Studi dan
-                                            Program Studi
+                                            F. Penutup
                                         </h3>
                                         <div class="card-tools">
                                             <ul class="nav nav-pills ml-auto">
                                                 <li class="nav-item">
                                                     <a class="nav-link active"
-                                                        href="/led/241{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
+                                                        href="/led/261{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -333,23 +609,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                III. Penutup
-                            </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active"
-                                            href="/led/300{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">Isi</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
             </div>
         </div>
     </div>
