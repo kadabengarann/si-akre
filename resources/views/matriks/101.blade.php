@@ -51,7 +51,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td colspan="11">1.2 pelaksanaan</td></tr>
+
                         <tr>
                             <td>
                                 1
@@ -59,70 +59,79 @@
                             <td class="text-start">A. Kondisi Eksternal
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kemampuan UPPS dalam menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS.
+                            <td>Kemampuan UPPS dalam menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro
+                                yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS.
                             </td>{{-- DESKRIPTOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                4
-                            </td>{{-- ALASAN PENILAIAN 4--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                3
-                            </td>{{-- ALASAN PENILAIAN 3--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                2
-                            </td>{{-- ALASAN PENILAIAN 2--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                1
-                            </td>{{-- ALASAN PENILAIAN 1--}}
-                            <td></td>{{-- NILAI --}}
-                            <td>6</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian"
-                                data-skor="24">
-                            24 </td>{{-- SKOR MAKS --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai111" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai111" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai111" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai111" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="24">
+                                24 </td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
                                 2
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">B. Profil Unit Pengelola Program Studi / Analisis Internal                                
+                            <td class="text-start">B. Profil Unit Pengelola Program Studi / Analisis Internal
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kemampuan UPPS dan PS dalam menyajikan seluruh informasi secara ringkas, komprehensif, serta konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.
+                            <td>Kemampuan UPPS dan PS dalam menyajikan seluruh informasi secara ringkas, komprehensif, serta
+                                konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.
                             </td>{{-- DESKRIPTOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                4
-                            </td>{{-- ALASAN PENILAIAN 4--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                3
-                            </td>{{-- ALASAN PENILAIAN 3--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                2
-                            </td>{{-- ALASAN PENILAIAN 2--}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                1
-                            </td>{{-- ALASAN PENILAIAN 1--}}
-                            <td></td>{{-- NILAI --}}
-                            <td>6</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian"
-                                data-skor="24">
-                            24 </td>{{-- SKOR MAKS --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai211" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai211" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai211" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai211" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Hint text </span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="24">
+                                24 </td>{{-- SKOR MAKS --}}
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
@@ -223,18 +232,4 @@
 
 @endsection
 
-@push('scripts')
-    <script>
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
-    </script>
-@endpush
+@include('matriks.scripts')
