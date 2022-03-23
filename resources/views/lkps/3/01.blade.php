@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p>
-                        <p><b>Tabel : </b>Jumlah Calon Mahasiswa Baru</p>
+                        <p><b>Tabel : </b>Tabel. 3.1. Jumlah Calon Mahasiswa Baru</p>
                     </div>
                 </div>
 
