@@ -30,17 +30,18 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Nama Laboratorium</th>
+                            <th>Sarana/ Prasarana</th>
                             <th>Daya Tampung</th>
                             <th>Luas Ruang (m2)</th>
                             <th>Jumlah Mahasiswa yang Dilayani Lab</th>
-                            <th>Jam Layanan laboratorium</th>
+                            <th>Jam Layanan</th>
+                            <th>Perangkat yang Dimiliki</th>
                         </tr>
 
 
                     <tbody>
                         <tr class="table-isi">
-                            <td colspan="9">
+                            <td colspan="10">
                                 No data
                             </td>
                             </td>

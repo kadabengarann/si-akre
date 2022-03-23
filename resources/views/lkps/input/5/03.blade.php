@@ -45,7 +45,7 @@
             <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Laboratorium</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Sarana/ Prasarana</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
@@ -77,19 +77,26 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jam Layanan laboratorium</label>
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jam Layanan</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
-
-
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-info">Submit</button>
-                        <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</button>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Perangkat yang Dimiliki</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
                     </div>
-                    <!-- /.card-footer -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                </div>
+                <!-- /.card-footer -->
             </form>
         </div>
     </section>

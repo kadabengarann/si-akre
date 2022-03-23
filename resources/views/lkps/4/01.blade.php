@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen</p>
-                        <p><b>Tabel : </b>4.4. Rata-rata beban DTPS per semester, pada TS
+                        <p><b>Tabel : </b>4.1. Rata-rata beban DTPS per semester, pada TS
                         </p>
                     </div>
                 </div>
@@ -41,8 +41,6 @@
                                 Pengabdian
                                 pada Masy<sup>2)</sup></th>
                             <th colspan="2">SKS Manajemen<sup>3)</sup></th>
-
-                            <th rowspan="2">Jumlah (sks)</th>
                         </tr>
                         <tr>
                             <th rowspan="2">PS Sendiri </th>
@@ -71,11 +69,9 @@
                             <th>0</th>
                             <th>0</th>
                             <th>0</th>
-                            <th>0</th>
                         </tr>
                         <tr>
                             <th colspan="2" class="text-right">Rata-rata **</th>
-                            <th>0</th>
                             <th>0</th>
                             <th>0</th>
                             <th>0</th>

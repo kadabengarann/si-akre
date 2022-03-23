@@ -78,8 +78,7 @@
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[2][0] }}">Isi
-                                                kriteria</a>
+                                           
                                         </li>
                                     </ul>
                                 </div>
@@ -154,8 +153,7 @@
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[6][0] }}">Isi
-                                                kriteria</a>
+                                            
                                         </li>
                                     </ul>
                                 </div>
@@ -173,8 +171,7 @@
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[7][0] }}">Isi
-                                                kriteria</a>
+                                            
                                         </li>
                                     </ul>
                                 </div>
@@ -192,8 +189,7 @@
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[8][0] }}">Isi
-                                                kriteria</a>
+                                            
                                         </li>
                                     </ul>
                                 </div>

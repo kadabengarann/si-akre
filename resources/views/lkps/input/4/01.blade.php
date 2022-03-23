@@ -22,7 +22,7 @@
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Profil Dosen
                         </p>
-                        <p><b>Tabel : </b>4.4. Rata-rata beban DTPS per semester, pada TS
+                        <p><b>Tabel : </b>4.1. Rata-rata beban DTPS per semester, pada TS
                         </p>
                     </div>
                 </div>
@@ -133,14 +133,6 @@
                                     <input type="text" class="form-control" id="inputPassword3" placeholder="">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <hr>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah (sks)</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
                         </div>
                     </div>
                 </div>

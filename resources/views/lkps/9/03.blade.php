@@ -10,9 +10,7 @@
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p><b>Tabel : </b>9.3. Prestasi Mahasiswa dalam Mendapatkan penghargaan Hibah Kompetitif di
-                            Bidang Infokom
-                        </p>
+                        <p><b>Tabel : </b>9.3. Kepuasan Pengguna Lulusan</p>
                     </div>
                 </div>
 
@@ -22,9 +20,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Prestasi Mahasiswa dalam
-                    Mendapatkan penghargaan Hibah Kompetitif di
-                    Bidang Infokom
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Kepuasan Pengguna Lulusan
                 </h3>
             </div>
             <!-- /.card-header -->
@@ -32,82 +28,83 @@
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th class="col-1">No.</th>
-                            <th class="col-4">Tahun
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">Jenis Kemampuan</th>
+                            <th colspan="4">Tingkat Kepuasan Pengguna
+                                (%)</th>
+                            <th rowspan="2">Rencana Tindak
+                                Lanjut oleh UPPS/PS
                             </th>
-                            <th>Jumlah Mhs Aktif</th>
-                            <th>Jenis Hibah
-                            </th>
-                            <th>Tahun</th>
-                            <th>Pendanaan Program (Rp.)
-
-                            </th>
-                            <th>Sumber Dana
-
-                            </th>
-                            <th>Tingkat Nasional/ Internasional
-
-                            </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <th>
-
-                        </th>
-                        <th class="sub-table">
-                            TS-2
-                        </th>
-                        <td class="table-isi">0 </td>
-                    </tr>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td colspan="6" class="table-isi">
+                            <td>
+                                1
+                            </td>
+                            <td class="text-left">
+                                Kerjasama Tim
+
+                            </td>
+                            <td colspan="5" rowspan="7">
                                 No data
                             </td>
                         </tr>
-                    </tbody>
-                    <tr>
-                        <th>
-
-                        </th>
-                        <th class="sub-table">
-                            TS-12
-                        </th>
-                        <td class="table-isi">0 </td>
-                    </tr>
-                    <tbody>
                         <tr>
-                            <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td colspan="6" class="table-isi">
-                                No data
+                            <td>
+                                2
+                            </td>
+                            <td class="text-left">Keahlian di bidang TI
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td class="text-left">Kemampuan berbahasa asing (Inggris)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td class="text-left">Kemampuan berkomunikasi
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td class="text-left">Pengembangan diri
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                6
+                            </td>
+                            <td class="text-left">Kepemimpinan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                7
+                            </td>
+                            <td class="text-left">
+                                Etos Kerja
                             </td>
                         </tr>
                     </tbody>
-                    <tr>
-                        <th>
-
-                        </th>
-                        <th class="sub-table">
-                            TS
-                        </th>
-                        <td class="table-isi">0 </td>
-                    </tr>
-                    <tbody>
+                    <tfoot>
                         <tr>
-                            <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td colspan="6" class="table-isi">
-                                No data
-                            </td>
+                            <th colspan="2">Jumlah</th>
                         </tr>
-                    </tbody>
-
+                    </tfoot>
                 </table>
             </div>
 

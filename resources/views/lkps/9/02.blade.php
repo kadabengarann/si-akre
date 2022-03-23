@@ -11,7 +11,8 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
-                        <p><b>Tabel : </b>9.2 IPK Lulusan</p>
+                        <p><b>Tabel : </b>9.2. Kelulusan Tepat Waktu
+                        </p>
                     </div>
                 </div>
 
@@ -28,15 +29,24 @@
                 <table id="tbl_list" class="table table-striped table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th rowspan="2">No.</th>
-                            <th rowspan="2">Tahun Lulus</th>
-                            <th rowspan="2">Jumlah Lulusan</th>
-                            <th colspan="3">Indeks Prestasi Kumulatif (IPK) </th>
+                            <th rowspan="2">Tahun Masuk</th>
+                            <th rowspan="2">Jumlah Mahasiswa Diterima</th>
+                            <th colspan="7">Jumlah Mahasiswa yang lulus pada</th>
+                            <th rowspan="2">Jumlah Lulusan s.d. Akhir TS</th>
+                            <th rowspan="2">Rata-rata Masa Studi</th>
+                            <th rowspan="2">Jumlah mhs. Yang masih aktif </th>
+
+
                         </tr>
                         <tr>
-                            <th>Min.</th>
-                            <th>Rata-rata</th>
-                            <th>Maks</th>
+                            <th>Akhir TS-6</th>
+                            <th>Akhir TS-5</th>
+                            <th>Akhir TS-4</th>
+                            <th>Akhir TS-3</th>
+                            <th>Akhir TS-2</th>
+                            <th>Akhir TS-1</th>
+                            <th>Akhir TS</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -47,42 +57,43 @@
                             <td>4</td>
                             <td>5</td>
                             <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+
 
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>
-                                TS-2
+                            <td>TS-6</td>
+                            <td colspan="12">
+                                No data
                             </td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
 
-                            <td>0</td>
+
 
                         </tr>
                         <tr>
-                            <td>2</td>
+                            <td>TS-5</td>
 
-                            <td>
-                                TS-1
+                            <td colspan="12">
+                                No data
                             </td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
 
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>
-                                TS
+                            <td>TS-4</td>
+                            <td colspan="12">
+                                No data
                             </td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-
+                        </tr>
+                        <tr>
+                            <td>TS-3</td>
+                            <td colspan="12">
+                                No data
+                            </td>
                         </tr>
                     </tbody>
                 </table>
