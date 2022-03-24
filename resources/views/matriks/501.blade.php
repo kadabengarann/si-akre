@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>E. Analisis dan Penetapan Program</p>
+                        <p><b>Matriks : </b>E.ANALISIS DAN PENETAPAN PROGRAM PENGEMBANGAN</p> {{-- Judul --}}
                     </div>
                     <div class="col-12 col-lg-6">
-                        <!-- {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}} -->
+                        {{-- <p><b>Sub-kriteria : </b></p> --}}
                     </div>
                 </div>
 
@@ -21,165 +21,189 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">Analisis dan Penetapan Program</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">ANALISIS DAN PENETAPAN PROGRAM PENGEMBANGAN</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No Butir</th>
-                            <th class="p_elem">Elemen</th>
-                            <th>Lokasi
+                            <th rowspan="2">No Butir</th>
+                            <th rowspan="2" class="p_elem">Elemen</th>
+                            <th rowspan="2">Lokasi
                             </th>
-                            <th class="p_indi">Indikator
+                            <th rowspan="2" class="p_indi">Deskriptor
                             </th>
-                            <th class="p_indi">Alasan Penilaian
+                            <th colspan="4" class="p_indi">Alasan Penilaian
                             </th>
-                            <th>Perhitungan
-
+                            <th rowspan="2">Nilai
                             </th>
-                            <th>Skor
-
+                            <th rowspan="2">Bobot
                             </th>
-                            <th>BOBOT
+                            <th rowspan="2">Skor
                             </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr>
                             <td>
-                                94
-                            </td>
-                            <td class="text-start">Analisis
-                                Capaian Kinerja
+                                129
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">Kelengkapan, keluasan, kedalaman, ketepatan, dan ketajaman analisis untuk mengidentifikasi akar masalah
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kelengkapan, keluasan,
-                                kedalaman, ketepatan, dan
-                                ketajaman analisis untuk
-                                mengidentifikasi akar masalah
-                                yang didukung oleh
-                                data/informasi yang andal dan
-                                memadai serta konsisten
-                                dengan hasil analisis yang
-                                disampaikan pada setiap
-                                kriteria
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td>Analisis SWOT atau Analisis Lain yang Relevan Kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman yang dihadapi dalam keterkaitannya dengan hasil analisis capaian kinerja. Hasil identifikasi tersebut dianalisis untuk menentukan posisi UPPS dan program studi yang diakreditasi, serta menjadi dasar untuk mendapatkan alternatif solusi dan menetapkan program pengembangan.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai511" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS telah melakukan analisis capaian kinerja yang: 1) analisisnya didukung oleh data/informasi yang relevan (merujuk pada pencapaian standar mutu perguruan tinggi) dan berkualitas (andal dan memadai) yang didukung oleh keberadaan pangkalan data institusi yang terintegrasi. 2) konsisten dengan seluruh kriteria yang diuraikan sebelumnya, 3) analisisnya dilakukan secara komprehensif, tepat, dan tajam untuk mengidentifikasi akar masalah di UPPS. 4) hasilnyadipublikasikan kepada para pemangku kepentingan internal dan eksternal serta mudah diakses.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai511" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS telah melakukan analisis capaian kinerja yang: 1) analisisnya didukung oleh data/informasi yang relevan (merujuk pada pencapaian standar mutu perguruan tinggi) dan berkualitas (andal dan memadai) yang didukung oleh keberadaan pangkalan data institusi yang belum terintegrasi. 2) konsisten dengan sebagian besar (7 s.d. 8) kriteria yang diuraikan sebelumnya, 3) analisisnya dilakukan secara komprehensif dan tepat untuk mengidentifikasi akar masalah di UPPS. 4) hasilnya dipublikasikan kepada para pemangku kepentingan internal serta mudah diakses.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai511" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS telah melakukan analisis capaian kinerja yang: 1) analisisnya didukung oleh data/informasi yang relevan (merujuk pada pencapaian standar mutu perguruan tinggi) dan berkualitas (andal dan memadai). 2) konsisten dengan sebagian (5 s.d. 6) kriteria yang diuraikan sebelumnya, 3) analisisnya dilakukan secara komprehensif untuk mengidentifikasi akar masalah di UPPS. 4) hasilnya dipublikasikan kepada para pemangku kepentingan internal.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai511" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS telah melakukan analisis capaian kinerja yang: 1) analisisnya tidak sepenuhnya didukung oleh data/informasi yang relevan (merujuk pada pencapaian standar standar mutu perguruan tinggi) dan berkualitas (andal dan memadai). 2) konsisten dengan sebagian kecil (kurang dari 5) kriteria yang diuraikan sebelumnya, 3) analisisnya dilakukan tidak secara komprehensif untuk mengidentifikasi akar masalah di UPPS. 4) hasilnya tidak dipublikasikan.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
-                                95
-                            </td>
-                            <td class="text-start">Analisis SWOT
-                                atau Analisis
-                                Lain yang
-                                Relevan
+                                130
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">Kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kekuatan atau faktor
-                                pendorong, kelemahan atau
-                                faktor penghambat, peluang
-                                dan ancaman yang dihadapi
-                                dalam keterkaitannya dengan
-                                hasil analisis capaian kinerja.
-                                Hasil identifikasi tersebut
-                                dianalisis untuk menentukan
-                                posisi UPPS dan program studi
-                                yang diakreditasi, serta
-                                menjadi dasar untuk mendapatkan alternatif solusi
-                                dan menetapkan program
-                                pengembangan.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td>B. Ketersediaan dokumen pengelolaan penelitian yang lengkap.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai512" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS melakukan analisis SWOT atau analisis lain yang relevan, serta memenuhi aspek- aspek sebagai berikut: 1) melakukan identifikasi kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman yang dihadapi UPPS dilakukan secara tepat, 2) memiliki keterkaitan dengan hasil analisis capaian kinerja, 3) merumuskan strategi pengembangan UPPS yang berkesesuaian, dan 4) menghasilkan program-program pengembangan alternatif yang tepat.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai512" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS melakukan analisis SWOT atau analisis lain yang relevan, serta memenuhi aspek- aspek sebagai berikut: 1) melakukan identifikasi kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman yang dihadapi UPPS dilakukan secara tepat, 2) memiliki keterkaitan dengan hasil analisis capaian kinerja, dan 3) merumuskan strategi pengembangan UPPS yang berkesesuaian.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai512" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS melakukan analisis SWOT atau analisis lain yang relevan, serta memenuhi aspek- aspek sebagai berikut: 1) melakukan identifikasi kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman yang dihadapi UPPS dilakukan secara tepat, dan 2) memiliki keterkaitan dengan hasil analisis capaian kinerja.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai512" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS melakukan analisis SWOT atau analisis lain yang memenuhi aspek- aspek sebagai berikut:  1) melakukan identifikasi kekuatan atau faktor pendorong, kelemahan atau faktor penghambat, peluang dan ancaman yang dihadapi UPPS, dan 2) memiliki keterkaitan dengan hasil analisis capaian kinerja, namun tidak terstruktur dan tidak sistematis.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
-                                96
-                            </td>
-                            <td class="text-start">Strategi
-                                Pengembangan
+                                131
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">Kemampuan UPPS dalam menetapkan strategi dan programpengembangan berdasarkan prioritas.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kemampuan UPPS dalam
-                                menetapkan strategi dan
-                                program pengembangan
-                                berdasarkan prioritas sesuai dengan kapasitas, kebutuhan,
-                                dan VMT UPPS secara
-                                keseluruhan, terutama
-                                pengembangan program studi
-                                yang diakreditasi.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td>Strategi Pengembangan Kemampuan UPPS dalam menetapkan strategi dan program pengembangan berdasarkan prioritas sesuai dengan kapasitas, kebutuhan, dan VMT UPPS secara keseluruhan, terutama pengembangan program studi yang diakreditasi.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai513" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS menetapkan prioritas program pengembangan berdasarkan hasil analisis SWOT atau analisis lainnya yang mempertimbangkan secara komprehensif: 1) kapasitas UPPS, 2) kebutuhan UPPS dan PS di masa depan, 3) rencana strategis UPPS yang berlaku, 4) aspirasi dari pemangku kepentingan internal dan eksternal, dan 5) program yang menjamin keberlanjutan.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai513" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS menetapkan prioritas program pengembangan berdasarkan hasil analisis SWOT atau analisis lainnya yang mempertimbangkan secara komprehensif: 1) kapasitas UPPS, 2) kebutuhan UPPS dan PS di masa depan, 3) rencana strategis UPPS yang berlaku, dan 4) aspirasi dari pemangku kepentingan internal.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai513" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS menetapkan prioritas program pengembangan berdasarkan hasil analisis SWOT atau analisis lainnya yang mempertimbangkan secara komprehensif: 1) kapasitas UPPS, 2) kebutuhan UPPS dan PS di masa depan, dan 3) rencana strategis UPPS yang berlaku.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai513" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS menetapkan prioritas program pengembangan namun belum mempertimbangan secara komprehensif: 1) kapasitas UPPS, 2) kebutuhan UPPS dan PS, dan 3) rencana strategis UPPS yang berlaku.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
-                                97
-                            </td>
-                            <td class="text-start">Program
-                                Keberlanjutan
+                                132
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">Program pengembangan dan praktik baik yang dihasilkan dapat dijamin keberlangsungannya.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Program pengembangan dan
-                                praktik baik yang dihasilkan
-                                dapat dijamin
-                                keberlangsunganny. Jelaskan
-                                pula jaminan ketersediaan
-                                sumberdaya untuk
-                                mendukung pelaksanaan
-                                program termasuk rencana penjaminan mutu yang
-                                berkelanjutan.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
+                            <td>Program Keberlanjutan Program pengembangan dan praktik baik yang dihasilkan dapat dijamin keberlangsungannya. Tersedia penjelasan mencakup jaminan ketersediaan sumberdaya untuk mendukung pelaksanaan program termasuk rencana penjaminan mutu yang berkelanjutan.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai514" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS memiliki kebijakan dan upaya yang diturunkan ke dalam berbagai peraturan untuk menjamin keberlanjutan program yang mencakup: 1) alokasi sumber daya, 2) kemampuan melaksanakan, 3) rencana penjaminan mutu yang berkelanjutan, dan 4) keberadaan dukungan stakeholders eksternal.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai514" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS memiliki kebijakan dan upaya yang diturunkan ke dalam berbagai peraturan untuk menjamin keberlanjutan program yang mencakup: 1) alokasi sumber daya, 2) kemampuan melaksanakan, dan 3) rencana penjaminan mutu yang berkelanjutan.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai514" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS memiliki kebijakan dan upaya untuk menjamin keberlanjutan program yang mencakup: 1) alokasi sumber daya, 2) kemampuan melaksanakan, dan 3) rencana penjaminan mutu yang berkelanjutan.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai514" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS memiliki kebijakan dan upaya namun belum cukup untuk menjamin keberlanjutan program.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
                         </tr>
 
                     </tbody>
@@ -188,112 +212,7 @@
         </div>
         <!-- /.card -->
     </section>
-    <div class="modal fade" id="text_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Alasan penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/101">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan alasan penilaian
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            class="form-control @error('textPenilaian') is-invalid @enderror"
-                                            name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
-                                        <div class="invalid-feedback">
-                                            @error('textPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="skor_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Skor Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/305">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Berikan skor
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input id="input_skor" required type="number" min="0" max="100"
-                                                name="skorPenilaian" class="fieldInsertInput form-control rupiah"
-                                                placeholder="0" @error('skorPenilaian') is-invalid @enderror" value="">
-                                        </div> </textarea>
-                                        <div class="invalid-feedback">
-                                            @error('skorPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
 
 @endsection
 
-@push('scripts')
-    <script>
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
-    </script>
-@endpush
+@include('matriks.scripts')

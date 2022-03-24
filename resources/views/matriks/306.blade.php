@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>C.6. PENDIDIKAN</p>
+                        <p><b>Matriks : </b>C.6. PENDIDIKAN</p> {{-- Judul --}}
                     </div>
                     <div class="col-12 col-lg-6">
-                        {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
+                        {{-- <p><b>Sub-kriteria : </b></p> --}}
                     </div>
                 </div>
 
@@ -21,703 +21,650 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">PENDIDIKAN</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">6. PENDIDIKAN</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No Butir</th>
-                            <th class="p_elem">Elemen</th>
-                            <th>Lokasi
+                            <th rowspan="2">No Butir</th>
+                            <th rowspan="2" class="p_elem">Elemen</th>
+                            <th rowspan="2">Lokasi
                             </th>
-                            <th class="p_indi">Indikator
+                            <th rowspan="2" class="p_indi">Deskriptor
                             </th>
-                            <th class="p_indi">Alasan Penilaian
+                            <th colspan="4" class="p_indi">Alasan Penilaian
                             </th>
-                            <th>Perhitungan
-
+                            <th rowspan="2">Nilai
                             </th>
-                            <th>Skor
-
+                            <th rowspan="2">Bobot
                             </th>
-                            <th>BOBOT
+                            <th rowspan="2">Skor
                             </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td rowspan="5">
-                                41
-                            </td>
-                            <td class="text-start">A. Perumusan kurikulum Program Studi
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Kelengkapan perumusan kurikulum berdasarkan KKNI/OBE/SKKNI, dan dilengkapi dengan Deskripsi
-                                matakuliah, Silabus, RPS, CP.
-                                <br>
-                                <br>Skor 4 jika, kurikulum memuat 5 parameter:
-                                <br>a) mengacu pada naskah akademik KKNI/OBE/SKKNI.
-                                <br>b) sejalan dengan visi misi tujuan PS,
-                                <br>c) memuat keterampilan TI yang relevan,
-                                <br>d) ditunjang dengan matakuliah sesuai dengan keterampilan, sikap dan pengetahuan yang
-                                disebutkan.
-                                <br>e) ditunjang dengan matakuliah yang terkini
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td rowspan="5">5</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Substansi Mata kuliah Bidang Infokom yang mengacu pada capaian
-                                pembelajaran (CPL)
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Muatan MK sesuai bidang ilmu, dan menggunakan bahan ajar (metode, referensi) terkini.
-                                <br>
-                                <br>S = kesesuaian matakuliah dengan bidang ilmu infokom
-                                <br>4 : bila mata kuliah (MK) sangat sesuai
-                                <br>3 : bila MK sesuai bidang ilmu
-                                <br>2 : bila MK cukup sesuai
-                                <br>1 : bila MK kurang sesuai dengan bidang Infokom.
-                                <br>
-                                <br>Isikan K = kenikian bahan ajar
-                                <br>4 : terkini
-                                <br>3 : cukup terkini
-                                <br>2 : tidak terkini
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">C. Ketersediaan dan kelengkapan dokumen Rencana Pembelajaran Semester
-                                (RPS)
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/603{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.3</a>
-                            </td>{{-- LOKASI --}}
-                            <td>RPS memuat 9 aspek berikut:
-                                <br>a. nama Program Studi, nama dan kode mata kuliah, semester, sks, nama Dosen pengampu;
-                                <br>b. capaian Pembelajaran lulusan yang dibebankan pada mata kuliah;
-                                <br>c. kemampuan akhir yang direncanakan pada tiap tahap Pembelajaran untuk memenuhi capaian
-                                Pembelajaran lulusan;
-                                <br>d. bahan kajian yang terkait dengan kemampuan yang akan dicapai;
-                                <br>e. metode Pembelajaran;
-                                <br>f. waktu yang disediakan untuk mencapai kemampuan pada tiap tahap Pembelajaran;
-                                <br>g. pengalaman belajar mahasiswa yang diwujudkan dalam deskripsi tugas yang harus
-                                dikerjakan oleh mahasiswa selama satu semester;
-                                <br>h. kriteria, indikator, dan bobot penilaian; dan
-                                <br>i. daftar referensi yang digunakan.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">D. Penyusunan materi kuliah.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Materi kuliah disusun dengan memperhatikan aspek berikut:
-                                <br>a) capaian pembelajaran lulusan (CPL),
-                                <br>b) disusun oleh kelompok dosen
-                                <br>c) memperhatikan keunikan dan keunggulan program studi.
-                                <br>d) masukan dari pemangku kepentingan eksternal
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">E. Peninjauan Kurikulum.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Pelaksanaan peninjauan kurikulum sudah memasukkan 5 aspek berikut :
-                                <br>a) keterlibatan pihak external dan internal,
-                                <br>b) kesesuaian dengan visi keilmuan program studi,
-                                <br>c) memperhitungkan CP,
-                                <br>d) kesesuaian dengan kemajuan Iptek Bidang Infokom,
-                                <br>e) kesesuaian dengan kebutuhan DU/DI.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                42
-                            </td>
-                            <td class="text-start">A. Pelaksanaan pengambilan mata kuliah dalam bentuk kegiatan merdeka
-                                belajar kampus merdeka
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/603{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.3</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Nisbah (%) SKS mata kuliah dalam bentuk kegiatan merdeka belajar
-                                kampus merdeka dan jumlah
-                                SKS seluruh Mata Kuliah.
-                                <br>Skor 4 jika nisbah >=30% dan
-                                <br>skor = 2 jika nisbah = 15%,
-                                <br>tidak ada skor 1 dan 0.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field"></td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field"></td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td rowspan="2">3</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Jumlah mahasiswa yang mengikuti kegiatan merdeka belajar kampus
-                                merdeka
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/606{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.6</a>
-                            </td>{{-- LOKASI --}}
-                            <td>Nisbah (%) jumlah mahasiswa yang mengikuti kegiatan merdeka belajar kampus merdeka terhadap
-                                jumlah mahasiswa Program Studi.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
+
                         <tr>
                             <td>
-                                43
-                            </td>
-                            <td class="text-start">Kegiatan Praktikum
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/607{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.7</a>
-                            </td>{{-- LOKASI --}}
-                            <td>Substansi mata kuliah praktikum dan pelaksanaan praktikum, beserta kualitas modul
-                                praktikumnya sejalan dengan mata kuliahnya.
-                                <br>Skor = 4 jika substansi praktikum memenuhi 6 komponen, masing-masing diberi skor (0-4):
-                                <br>a) setiap praktikum mempunyai buku modul dan isinya memadai
-                                <br>b) pelaksanaan praktikum di laboratorium yang sesuai dengan kualitas dan jumlahnya
-                                <br>c) kualitas modul praktikum baik
-                                <br>d) jam pelaksanaan praktikum di laboratorium sesuai ketentuan
-                                <br>e) praktikum didukung perangkat keras dan perangkat lunak yang memadai
-                                <br>f) praktikum dilaksanakan di laboratorium milik sendiri
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                44
-                            </td>
-                            <td class="text-start">A. Sistem Pembelajaran menggunakan E-learning
+                                5
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">6.1 [PENETAPAN] A. Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan pendidikan.                                
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Pembelajaran menggunakan Sistem e-learning yang memiliki fasilitas:
-                                <br>a) upload download materi
-                                <br>b) digital content
-                                <br>c) forum diskusi
-                                <br>d) evaluasi pembelajaran
-                                <br>e) RPS
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Pelaksanaan Mata kuliah blended learning
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/609{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.9</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Matakuliah yang penyelenggaraannya kombinasi secara daring dan
-                                luring(blended).
-                                <br>A = jumlah MK yang diselenggarakan secara daring dan luring (Blended)
-                                <br>B = Total matakuliah
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">nisbah = A/B*100%
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                45
+                            <td>6.1 [PENETAPAN] Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan pendidikan/pembelajaran yang mencakup: A. Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI.                                
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai361" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
-                            <td class="text-start">A. Evaluasi Pembelajaran
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/612{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LK PS
-                                    6.12</a>
-                            </td>{{-- LOKASI --}}
-                            <td>Keterlibatan anggota tim pengampu (team teaching) dalam proses penilaian matakuliah.
-                                Skor 4 jika penilaian Matakuliah melibatkan 100% tim pengampu.
-                                P= Persentase tim pengampu yang terlibat sebagai tim penilai untuk matakuliah tim teaching.
-                                Jika tidak ada team teaching, maka skor=4
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td rowspan="2">2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Transparansi evaluasi pembelajaran.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Transparansi hasil evaluasi pembelajaran, disosialisasikan, dan dilaksanakan dengan
-                                keterbukaan penilaian pembelajaran (nilai diumumkan melalui istem Informasi). Ada kebijakan
-                                yang memuat transparansi hasil evaluasi pembelajaran dan disosialisasikan.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                46
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai361" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI disertai bukti yang sahih dan lengkap.</span>
                             </td>
-                            <td class="text-start">Pembimbingan Akademik.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Pelaksanaan Pembimbingan Akademik (PA) melalui pertemuan langsung dan/ atau lewat SI
-                                Akademik, dengan mempertimbangkan intensitas/tingkat penggunaan SI Akademik di Program Studi
-                                tersebut.
-                                <br>Skor 4 jika pembimbingan memenuhi 5 kriteria :
-                                <br>a) dilakukan seluruhnya oleh dosen PA
-                                <br>b)tersedia buku panduan PA,
-                                <br>c) Pelaksanaan sesuai panduan PA,
-                                <br>d) PA terekam secara kontinu
-                                <br>e) PA menggunakan Sistem Informasi Akademik.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                47
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai361" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
-                            <td class="text-start">A. Panduan Skripsi/ Tugas Akhir.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Ketersediaan panduan skripsi/tugas akhir, sosialisasi, dan pelaksanaan yang memanfaatkan
-                                Sistem Informasi.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td rowspan="2">2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Penilaian Skripsi/ Tugas Akhir.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/616{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    6.16</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Ujian Skripsi/ Tugas Akhir mahasiswa melibatkan dosen yang
-                                berkompetensi pada bidang kegiatan yang dilakukan. Baik untuk TA reguler maupun konversi
-                                dari MBKM.
-                                <br>
-                                <br>A. Keterlibatkan dosen yang berkompetensi sesuai bidang kegiatan (TA) mahasiswa sebagai
-                                dosen penguji.
-                                <br>NP= dosen penguji yang berkompetensi (non pembimbing)
-                                <br>Skor = 4 jika NP > 2, else NP+1
-                                <br>
-                                <br>B. Ujian TA memenuhi aspek:
-                                <br>a) ada bukti melibatkan dosen penguji yang berkompentensi (bukan pembimbing)
-                                <br>b) kompetensi dosen penguji sesuai dengan bidang kegiatan (TA) yang dilakukan mahasiswa.
-                                <br>c) ada sejumlah dosen penguji (bukan pembimbing)
-                                <br>d) Relevansi topik TA dengan program studinya
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">(Skor A + skor B)/2
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                48
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai361" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
-                            <td class="text-start">Pelaksanaan monitoring dan evaluasi pembelajaran.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Pelaksanaan pembelajaran memiliki mekanisme untuk memonitor,
-                                mengkaji, dan memperbaiki
-                                setiap semester tentang:
-                                <br>(a) kehadiran mahasiswa, skor antara 1-4
-                                <br>(b) kehadiran dosen, skor antara 1-4.
-                                <br>(c) materi kuliah, skor antara 1-4.
-                                <br>
-                                <br>Penghitungan skor untuk setiap butir sebagai berikut:
-                                <br>1: Tidak ada monitoring
-                                <br>2: Ada monitoring tetapi tidak ada evaluasi
-                                <br>3: Ada monitoring, evaluasi tetapi tidak ada tindak lanjut
-                                <br>4: Ada monitoring, evaluasi dan ada tindak lanjut.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">( (skor a) +(skor b) + (skor c)) / 3
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td></td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                49
-                            </td>
-                            <td class="text-start">Pelaksanaan perbaikan sistem pembelajaran.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/618{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    6.18
-                                </a></td>{{-- LOKASI --}}
-                            <td>Pelaksanaan perbaikan sistem pembelajaran yang telah dilakukan selama tiga tahun terakhir
-                                berkaitan dengan aspek:
-                                <br>(a) Materi pembelajaran,
-                                <br>(b) Metode pembelajaran,
-                                <br>(c) Penggunaan teknologi pembelajaran,
-                                <br>(d) Cara-cara evaluasi.
-                                <br>(e) Perolehan umpan balik dari
-                                <br>
-                                <br>Dosen dan mahasiswa (f) Perolehan umpan balik dari alumni dan pengguna lulusan
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                50
-                            </td>
-                            <td class="text-start">A. Integrasi hasil penelitian untuk proses pembelajaran
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/610{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    6.10</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Nisbah (%) jumlah hasil penelitian yg digunakan dalam pembelajaran
-                                terhadap jumlah seluruh penelitian
-                                <br>Skor 4 jika nisbah >= 10%.
-                                <br>Skor 2 jika nisbah = 0%
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field"></td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td rowspan="2">2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td class="text-start">B. Integrasi hasil Pengabdian kepada Masyarakat (PkM)
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Nisbah (%) jumlah hasil PkM yg digunakan dalam pembelajaran terhadap
-                                jumlah seluruh PkM
-                                <br>Skor 4 jika nisbah >= 5%.
-                                <br>Skor 2 jika nisbah = 0%
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
                                 51
-                            </td>
-                            <td class="text-start">Kebijakan tentang suasana akademik.
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">B. Ketersediaan Struktur Kurikulum berbasisKKNI/OBE/SKKNI sesuai dengan Profil Lulusan CPL, CPMK, RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Kebijakan tertulis tentang suasana akademik mencakup informasi:
-                                <br>a) otonomi keilmuan,
-                                <br>b) kebebasan akademik,
-                                <br>c) kebebasan mimbar akademik,
-                                <br>d) kemitraan dosen-mahasiswa
-                                <br>e) dilaksanakan secara konsisten.
-                                <br>
-                                <br>Skor 4 jika Kebijakan tertulis tentang suasana akademik mencakup:
-                                <br>a) otonomi keilmuan,
-                                <br>b) kebebasan akademik,
-                                <br>c) kebebasan mimbar akademik,
-                                <br>d) kemitraan dosen-mahasiswa, dan
-                                <br>e) dilaksanakan secara konsisten.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
+                            <td>B. Ketersediaan Struktur Kurikulum berbasis KKNI/OBE/SKKNI sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), Capaian Pembelajaran Mata Kuliah (CPMK), RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai362" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya Struktur Kurikulum berbasis KKNI/OBE/SKKNI sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), Capaian Pembelajaran Mata Kuliah (CPMK), RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai362" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya Struktur Kurikulum berbasis KKNI/OBE/SKKNI sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), Capaian Pembelajaran Mata Kuliah (CPMK), RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran disertai bukti yang sahih dan lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai362" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya Struktur Kurikulum berbasis KKNI/OBE/SKKNI sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), Capaian Pembelajaran Mata Kuliah (CPMK), RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai362" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya Struktur Kurikulum berbasis KKNI/OBE/SKKNI sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), Capaian Pembelajaran Mata Kuliah (CPMK), RPS, Struktur Mata Kuliah dan Asesmen Pembelajaran disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
                                 52
-                            </td>
-                            <td class="text-start">Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">C. Ketersediaan kebijakan terkait penciptaan suasana akademik.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>Siklus Penjaminan Mutu (PPEPP) berjalan dengan efektif apabila semua tahapan PPEPP
-                                dijalankan dengan baik.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>5</td>{{-- BOBOT --}}
+                            <td>C. Ketersediaan kebijakan terkait penciptaan suasana akademik meliputi: 
+                                (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; 
+                                (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; 
+                                (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; 
+                                (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal.                                
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai363" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya kebijakan terkait penciptaan suasana akademik meliputi: 
+                                    (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; 
+                                    (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; 
+                                    (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; 
+                                    (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai363" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya kebijakan terkait penciptaan suasana akademik meliputi: 
+                                    (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; 
+                                    (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; 
+                                    (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; 
+                                    (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, disertai bukti yang sahih dan lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai363" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya kebijakan terkait penciptaan suasana akademik meliputi: 
+                                    (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; 
+                                    (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; 
+                                    (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; 
+                                    (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai363" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya kebijakan terkait penciptaan suasana akademik meliputi: 
+                                    (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; 
+                                    (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; 
+                                    (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; 
+                                    (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal,disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
                         </tr>
+                        <tr>
+                            <td>
+                                53
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">D. Ketersediaan mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>D. Ketersediaan mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai364" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai364" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai364" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai364" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                54
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">E. Ketersediaan mekanisme proses evaluasi dan pemutakhiran kurikulum.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>E. Ketersediaan mekanisme proses evaluasi dan pemutakhiran kurikulum.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai365" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai365" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai365" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai365" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                55
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">F. Mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>F. Mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai366" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai366" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai366" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai366" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                56
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">6.2 [PELAKSANAAN] A. Keterlaksanaan proses pembelajaran sesuai Profil Lulusan, CPL sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI.                                
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>6.2 [PELAKSANAAN] Keterlaksanaan kebijakan dan standar yang berkaitan dengan pendidikan/pembelajaran yang mencakup: A. Keterlaksanaan proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI.       
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai367" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara sangat efektif disertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai367" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara efektif disertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai367" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara cukup efektif disertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai367" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara kurang efektif disertai bukti sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                57
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">B. Keterlaksanaan proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>B. Keterlaksanaan proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI , sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai368" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara sangat efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai368" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai368" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara cukup efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai368" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara kurang efektif disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="12">
+                                12</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                58
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">C. Keterlaksanaan suasana akademik.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>C. Keterlaksanaan suasana akademik meliputi : (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai369" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara sangat efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai369" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai369" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara cukup efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai369" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara kurang efektif disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                59
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">D. Keterlaksanaan integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>D. Keterlaksanaan integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3610" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara sangat efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3610" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3610" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara cukup efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3610" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara kurang efektif disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                60
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">E. Proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>E. Proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3611" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara sangat efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3611" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3611" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara cukup efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3611" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara kurang efektif disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                61
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">F. Keterlaksanaan mekanisme proses penyelesaian tugas akhir.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>F. Keterlaksanaan mekanisme proses penyelesaian tugas akhir.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3612" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara sangat efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3612" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3612" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara cukup efektif disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3612" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir, secara kurang efektif disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                62
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">6.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) terkait pendidikan.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>6.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3613" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan sangat efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3613" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3613" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan cukup efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3613" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan kurang efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="24">
+                                24</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                63
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">6.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) terkait pendidikan.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>6.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3614" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang sangat lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3614" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3614" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3614" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang kurang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                64
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">6.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi terkait pendidikan.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>6.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3615" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara sangat efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3615" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara efektif (peningkatan,penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3615" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara cukup efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3615" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara kurang efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran disertai bukti yang sahih.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
         <!-- /.card -->
     </section>
-    <div class="modal fade" id="text_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Alasan penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/101">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan alasan penilaian
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            class="form-control @error('textPenilaian') is-invalid @enderror"
-                                            name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
-                                        <div class="invalid-feedback">
-                                            @error('textPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="skor_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Skor Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/305">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Berikan skor
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input id="input_skor" required type="number" min="0" max="100"
-                                                name="skorPenilaian" class="fieldInsertInput form-control rupiah"
-                                                placeholder="0" @error('skorPenilaian') is-invalid @enderror" value="">
-                                        </div> </textarea>
-                                        <div class="invalid-feedback">
-                                            @error('skorPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
 
 @endsection
 
-@push('scripts')
-    <script>
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
-    </script>
-@endpush
+@include('matriks.scripts')
