@@ -38,7 +38,7 @@
                         break;
                 }
 
-                score *= bobot
+                score *= bobot / 4
                 nilai.text(score)
             }
 
