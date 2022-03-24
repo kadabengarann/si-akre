@@ -7,10 +7,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>C.8. PENGABDIAN KEPADA MASYARAKAT</p>
+                        <p><b>Matriks : </b>C.8. PENGABDIAN KEPADA MASYARAKAT</p> {{-- Judul --}}
                     </div>
                     <div class="col-12 col-lg-6">
-                        {{-- <p><b>Sub-kriteria : </b>a. Jumlah Calon Mahasiswa Baru</p> --}}
+                        {{-- <p><b>Sub-kriteria : </b></p> --}}
                     </div>
                 </div>
 
@@ -21,349 +21,465 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">PENGABDIAN KEPADA MASYARAKAT</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">8. PENGABDIAN KEPADA MASYARAKAT</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No Butir</th>
-                            <th class="p_elem">Elemen</th>
-                            <th>Lokasi
+                            <th rowspan="2">No Butir</th>
+                            <th rowspan="2" class="p_elem">Elemen</th>
+                            <th rowspan="2">Lokasi
                             </th>
-                            <th class="p_indi">Indikator
+                            <th rowspan="2" class="p_indi">Deskriptor
                             </th>
-                            <th class="p_indi">Alasan Penilaian
+                            <th colspan="4" class="p_indi">Alasan Penilaian
                             </th>
-                            <th>Perhitungan
-
+                            <th rowspan="2">Nilai
                             </th>
-                            <th>Skor
-
+                            <th rowspan="2">Bobot
                             </th>
-                            <th>BOBOT
+                            <th rowspan="2">Skor
                             </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                58
-                            </td>
-                            <td class="text-start">"Keberadaan lembaga pengabdian kepada masyarakat
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>Perguruan Tinggi memiliki unit Lembaga Pengabdian kepada Masyarakat yang mengelola kegiatan
-                                pengabdian kepada masyarakat.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                59
-                            </td>
-                            <td class="text-start">Perencanaan, pelaksanaan, pemantauan, dan pelaporan PkM.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Dokumen PkM yang lengkap
-                                berisi unsur:
-                                <br>a) Perencanaan
-                                <br>b) Pelaksanaan,
-                                <br>c) Pemantauan dan
-                                <br>d) Pelaporan
-                                Skor a),b),c) d) sangat
-                                lengkap =4, lengkap = 3,
-                                cukup = 2, kurang = 1, tidak
-                                ada = 0.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor = rerata dari skor
-                                a),b),c) dan d)
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                60
-                            </td>
-                            <td class="text-start">A. Pelaksanaan PkM
-                                Dosen dan Mahasiswa
-                                <br>B. Pelaksanaan PkM
-                                Dosen, pada TS sd TS -2
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    8.1</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">A. Nisbah PkM yg
-                                melibatkan mahasiswa
-                                (tertulis dalam proposal).
-                                <br>B. Jumlah PkM dosen
-                                PkMD= jumlah dosen DTPS
-                                yang melaksanakan PkM /
-                                jumlah dosen DTPS
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Nilai = (skor A+ 2 skor B)/3
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                61
-                            </td>
-                            <td class="text-start">nisbah (%) jumlah
-                                mahasiswa yg terlibat
-                                dalam kegiatan PkM thd
-                                jumlah mahasiswa aktif
-                                pada TS.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    8.1</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Jika nisbah = 2,5% maka
-                                skor 4. Jika nisbah = 0%
-                                maka skor 0.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field">Skor=4-4*(2.5%-nisbah)/2.5%
-                            </td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td>3</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                62
-                            </td>
-                            <td class="text-start">Jumlah kegiatan
-                                pengabdian kepada
-                                masyarakat (PkM)
-                                berdasarkan sumber
-                                dana PkM.
-                            </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/801{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    8.1</a>
-                            </td>{{-- LOKASI --}}
-                            <td>Penilaian dilakukan dengan
-                                penghitungan berikut:
-                                <br>NK = (4*na+2*nb+nc)/n ,
-                                dimana na = Jumlah
-                                kegiatan PkM dengan biaya
-                                luar negeri yang sesuai
-                                bidang ilmu.
-                                <br>nb = Jumlah kegiatan PkM
-                                dengan biaya luar PT yang
-                                sesuai bidang ilmu,
-                                <br>nc = Jumlah kegiatan PkM
-                                dengan biaya dari PT/sendiri
-                                yang sesuai bidang ilmu,
-                                <br>n = Jumlah DTPS
-                            </td>{{-- INDIKATOR --}}
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td></td> {{-- PERHITUNGAN --}}
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42">
-                                <i class="edit_mark fas fa-pen"></i>
-                                42
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
-                        </tr>
-                        <tr>
-                            <td>
-                                63
-                            </td>
-                            <td class="text-start">Monitoring dan evaluasi
-                                pengabdian kepada
-                                masyarakat oleh dosen
-                                melibatkan reviewer
-                                yang memenuhi syarat
-                                sebagai reviewer
-                                pengabdian kepada
-                                masyarakat bidang
-                                INFOKOM. Reviewer
-                                minimal ditetapkan oleh
-                                pimpinan institusi.
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td class="no_click_field">Kegiatan PKM di-review
-                                oleh reviewer yang
-                                kompeten pada bidangnya.
-                                Hal ini ditunjukkan oleh:
-                                <br>a) Ada bukti monev
-                                <br>b) Melibatkan reviewer
-                                <br>c) Reviewer memenuhi
-                                syarat sebagai reviewer
-                                bidang INFOKOM
 
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field"></td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td>2</td>{{-- BOBOT --}}
+                        <tr>
+                            <td>
+                                76
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">8.1 [PENETAPAN] A. Ketersediaan peraturan terkait keberadaan lembaga pengelola PkM DTPR dan mahasiswa.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>8.1 [PENETAPAN] Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan kegiatan PkM DTPR yang mencakup: A. Peraturan terkait keberadaan lembaga/ unit pengelola PkM, baik berdiri sendiri atau bergabung dalam lembaga lain, yang dilengkapi Rencana Induk Pengabdian Masyarakat (PkM) atau peta jalan PkM yang memayungi tema PkM DTPR dan penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat, dan dilengkapi dengan standar PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai381" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya peraturanterkait keberadaan lembaga/ unit pengelola PkM, baik berdiri sendiri atau bergabung dalam lembaga lain, yang dilengkapi Rencana Induk Pengabdian Masyarakat (PkM) atau peta jalan PkM yang memayungi tema PkM DTPR, serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat, dan dilengkapi dengan
+standar PkM disertai bukti yang sahih dan sangat lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai381" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">lembaga/ unit pengelola PkM, baik berdiri sendiri atau bergabung dalam lembaga lain, yang dilengkapi Rencana Induk Pengabdian Masyarakat (PkM) atau peta jalan PkM yang memayungi tema PkM DTPR, serta penerapan keilmuan untuk menyelesaikan  permasalahan industri atau masyarakat, dan dilengkapi dengan standar PkM disertai bukti yang sahih dan lengkap. </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai381" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">lembaga/ unit pengelola PkM, baik berdiri sendiri atau bergabung dalam lembaga lain, yang dilengkapi Rencana Induk Pengabdian Masyarakat (PkM) atau peta jalan PkM yang memayungi tema PkM DTPR, serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat, dan dilengkapi dengan standar PkM disertai bukti yang sahih dan cukup lengkap.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai381" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya peraturan terkait keberadaan lembaga/ unit pengelola PkM, baik berdiri sendiri atau bergabung dalam lembaga lain, yang dilengkapi Rencana  Induk Pengabdian Masyarakat (PkM) atau peta jalan PkM yang memayungi tema PkM DTPR, serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat, dan dilengkapi dengan standar PkM disertai bukti yang sahih dan kurang lengkap.</span>
+                            </td>
+
+                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="2">
+                                2</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
-                                64
-                            </td>
-                            <td class="text-start">Siklus Penjaminan Mutu
-                                (PPEPP) berjalan dengan
-                                efektif
+                                77
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start"> B. Ketersediaan dokumen pengelolaan PkM yang lengkap.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/906{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">LKPS
-                                    9.6</a>
-                            </td>{{-- LOKASI --}}
-                            <td class="no_click_field">Siklus Penjaminan Mutu
-                                (PPEPP) berjalan dengan
-                                efektif apabila semua
-                                tahapan PPEPP dijalankan
-                                dengan baik.
-                            </td>{{-- INDIKATOR --}}
-                            <td class="no_click_field">
-                            </td>{{-- ALASAN PENILAIAN --}}
-                            <td class="no_click_field"></td> {{-- PERHITUNGAN --}}
-                            <td class="no_click_field">
-                            </td>{{-- SKOR --}}
-                            <td>4</td>{{-- BOBOT --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>B. Ketersediaan dokumen pengelolaan PkM yang lengkap.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai382" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen pengelolaan PkM disertai bukti yang sangat lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai382" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen pengelolaan PkM disertai bukti yang lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai382" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen pengelolaan PkM disertai bukti yang cukup lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai382" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen pengelolaan PkM disertai bukti yang kurang lengkap dan sahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="2">
+                                2</td>{{-- SKOR MAKS --}}
                         </tr>
+                        <tr>
+                            <td>
+                                78
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">C. Rumusan visi keilmuan PS.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>C. Ketersediaan mekanisme pelaksanaan PkM DTPR dan mahasiswa sesuai dengan agenda PkM DTPR yang merujuk kepada peta jalan PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai383" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianyamekanismepelaksanaan PkMDTPR dan mahasiswasesuai dengan agendaPkM DTPR yangmerujuk kepada petajalan PkM disertaibukti yang sangatlengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai383" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianyamekanismepelaksanaan PkMDTPR dan mahasiswasesuai dengan agendaPkM DTPR yangmerujuk kepada petajalan PkM disertaibukti yang lengkap dansahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai383" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianyamekanismepelaksanaan PkMDTPR dan mahasiswasesuai dengan agendaPkM DTPR yangmerujuk kepada petajalan PkM disertaibukti yang cukuplengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai383" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianyamekanismepelaksanaan PkMDTPR dan mahasiswasesuai dengan agendaPkM DTPR yangmerujuk kepada petajalan PkM disertaibukti yang kuranglengkap dan sahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="2">
+                                2</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                79
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">D. Ketersediaan mekanisme monitoring kesesuaian PkM DTPR dan mahasiswa.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>D. Ketersediaan mekanisme monitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil evaluasi untuk perbaikan relevansi PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai384" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya mekanis memonitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil evaluasi untuk perbaikan relevansi PkM, disertai dengan dokumen yang sangat lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai384" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme monitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil evaluasi untuk perbaikan relevansi PkM, disertai dengan dokumen yang lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai384" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme monitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil evaluasi untuk perbaikan relevansi PkM, disertai dengan dokumen yang cukup lengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai384" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya mekanisme monitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil evaluasi untuk perbaikan relevansi PkM, disertai dengan dokumen yang kurang lengkap dan sahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="2">
+                                2</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                80
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">8.2 [PELAKSANAAN] A. Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan kegiatan PkM DTPR dan mahasiswa terkait proses pengelolaan lembaga PkM.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>8.2 [PELAKSANAAN] Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan kegiatan PkM DTPR yang mencakup: A. Proses pengelolaan lembaga PkM dalam mengelola PkM DTPR dan mahasiswa serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat yang relevan dengan peta jalan PkM, dan kesesuaiannya dengan standar PkM.
+                            </td>{{-- DESKRIPTOR --}} 
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai385" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pengelolaan lembaga PkM dalam mengelola PkM DTPR dan mahasiswa serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat yang relevan dengan peta jalan PkM, dan kesesuaiannya dengan standar PkM secara sangat efektif dan disertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai385" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses pengelolaan lembaga PkM dalam mengelola PkM DTPR dan mahasiswa serta penerapan keilmuan untuk menyelesaikan permasalahan industri atau masyarakat yang relevan dengan peta jalan PkM, dan kesesuaiannya dengan standar PkM secara efektif dan disertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai385" value="2">
+                                    <span class="caption">2</span></label> 
+                                <span class="tooltiptext">Terlaksananya prosespengelolaan lembagaPkM dalam mengelolaPkM DTPR danmahasiswa sertapenerapan keilmuanuntuk menyelesaikanpermasalahan industriatau masyarakat yangrelevan dengan petajalan PkM, dankesesuaiannya denganstandar PkM secaracukup efektif dandisertai bukti sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai385" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya prosespengelolaan lembagaPkM dalam mengelolaPkM DTPR danmahasiswa sertapenerapan keilmuanuntuk menyelesaikanpermasalahan industriatau masyarakat yangrelevan dengan petajalan PkM, dankesesuaiannya denganstandar PkM secarakurang efektif dandisertai bukti sahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                81
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">B. Keterlaksanaan pengelolaan PkM dengan dokumen yang lengkap.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>B. Keterlaksanaan pengelolaan PkM dengan dokumen yang lengkap, mulai dari call for proposal hingga laporan akhir.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai386" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya pengelolaan PkM dengan dokumen yang sangat lengkap dan sahih, mulai dari call for proposal hingga laporan akhir.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai386" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya pengelolaan PkM dengan dokumen yang lengkap dan sahih, mulai dari call for proposal hingga laporan akhir.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai386" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya pengelolaan PkM dengan dokumen yang cukup lengkap dan sahih, mulai dari call for proposal hingga laporan akhir.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai386" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya pengelolaan PkM dengan dokumen yang kurang lengkap dan sahih, mulai dari call for proposal hingga laporan akhir.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                82
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">C. Keterlaksanaan PkM DTPR dan mahasiswa sesuai dengan agenda PkM DTPR.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>C. Keterlaksanaan PkM DTPR dan mahasiswa sesuai dengan agenda PkM DTPR yang merujuk kepada peta jalan PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai387" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananyakegiatan PkM DTPRdan mahasiswa sesuaidengan agenda PkMDTPR yang merujukkepada peta jalanPkM, yang dilengkapidengan dokumen yangsangat lengkap dansahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai387" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananyakegiatan PkM DTPRdan mahasiswa sesuaidengan agenda PkMDTPR yang merujukkepada peta jalanPkM, yang dilengkapidengan dokumen yanglengkap dan sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai387" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananyakegiatan PkM DTPRdan mahasiswa sesuaidengan agenda PkMDTPR yang merujukkepada peta jalanPkM, yang dilengkapidengan dokumen yangcukup lengkap dansahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai387" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananyakegiatan PkM DTPRdan mahasiswa sesuaidengan agenda PkMDTPR yang merujukkepada peta jalanPkM, yang dilengkapidengan dokumen yangkurang lengkap dansahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                83
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">D. Keterlaksanaan monitoring kesesuaian PkM DTPR dan mahasiswa.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>D. Keterlaksanaan monitoring kesesuaian PkM DTPR dan mahasiswa dengan peta jalan, dan penggunaan hasil monitoring untuk perbaikan relevansi PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai388" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananyamonitoring kesesuaianPkM DTPR danmahasiswa denganpeta jalan, danpenggunaan hasilmonitoring untukperbaikan relevansiPkM secara sangatefektif.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai388" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananyamonitoring kesesuaianPkM DTPR danmahasiswa denganpeta jalan, danpenggunaan hasilmonitoring untukperbaikan relevansiPkM secara efektif.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai388" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananyamonitoring kesesuaianPkM DTPR danmahasiswa denganpeta jalan, danpenggunaan hasilmonitoring untukperbaikan relevansiPkM secara cukupefektif.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai388" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananyamonitoring kesesuaianPkM DTPR danmahasiswa denganpeta jalan, danpenggunaan hasilmonitoring untukperbaikan relevansiPkM secara kurangefektif.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                84
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">8.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) terkait kegiatan PkM DTPR.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>8.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan kegiatan PkM DTPR, termasuk survei kepuasan DTPR terhadap pengelolaan kegiatan PkM.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai389" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya evaluasisecara berkala dansangat efektifmengenai kebijakandan ketercapaianstandar (IKU dan IKT)sehingga dapatmenemu-kenalipraktik baik, praktikburuk dan praktik yangbaru yang berkaitandengan kegiatan PkMDTPR, termasuk surveikepuasan dosen terhadap pengelolaankegiatan PkM.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai389" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya evaluasisecara berkala danefektif mengenaikebijakan danketercapaian standar(IKU dan IKT) sehinggadapat menemu-kenalipraktik baik, praktikburuk dan praktik yangbaru yang berkaitandengan kegiatan PkMDTPR, termasuk surveikepuasan dosen terhadap pengelolaankegiatan PkM.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai389" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya evaluasisecara berkala dancukup efektifmengenai kebijakandan ketercapaianstandar (IKU dan IKT)sehingga dapatmenemu-kenalipraktik baik, praktikburuk dan praktik yangbaru yang berkaitandengan kegiatan PkMDTPR, termasuk surveikepuasan dosen terhadap pengelolaankegiatan PkM.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai389" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan kurang efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenalipraktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan kegiatan PkMDTPR, termasuk survei kepuasan dosen terhadap pengelolaan kegiatan PkM.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                85
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">8.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi terkait kegiatan PkM DTPR.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>8.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan kegiatan PkM DTPR.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3810" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Tersedianya dokumentindak lanjut danimplementasi yangsangat lengkap (revisidan rekomendasi)terhadap hasil evaluasiketercapaian standar(IKU dan IKT) yangberkaitan dengankegiatan PkM DTPR.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3810" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Tersedianya dokumentindak lanjut dan implementasi yang lengkap (revisi danrekomendasi)terhadap hasil evaluasi ketercapaian standar(IKU dan IKT) yang berkaitan denga nkegiatan PkM DTPR.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3810" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup lengkap (revisidan rekomendasi)terhadap hasil evaluasi ketercapaian standar(IKU dan IKT) yang berkaitan dengan kegiatan PkM DTPR.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3810" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Tersedianya dokumentindak lanjut danimplementasi yangkurang lengkap (revisidan rekomendasi)terhadap hasil evaluasiketercapaian standar(IKU dan IKT) yangberkaitan dengankegiatan PkM DTPR.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="8">
+                                8</td>{{-- SKOR MAKS --}}
+                        </tr>
+                        <tr>
+                            <td>
+                                86
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">8.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) terkait kegiatan PkM DTPR.
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>8.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan kegiatan PkM DTPR.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3811" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">Terlaksananya prosesoptimalisasi secara sangat efektif(peningkatan,penyesuaian, danpenyelarasan) terhadap standar (IKUdan IKT) yang berkaitan dengan kegiatan PkM DTPR disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3811" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara efektif (peningkatan,penyesuaian, danpenyelarasan)terhadap standar (IKUdan IKT) yang berkaitan dengan kegiatan PkM DTPR disertai bukti yang sahih.x  </span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3811" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">Terlaksananya prosesoptimalisasi secara cukup efektif(peningkatan,penyesuaian, danpenyelarasan)terhadap standar (IKUdan IKT) yang berkaitan dengan kegiatan PkM DTPR disertai bukti yang sahih.</span>
+                            </td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input type="radio" name="nilai3811" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">Terlaksananya prosesoptimalisasi secara kurang efektif(peningkatan,penyesuaian, danpenyelarasan)terhadap standar (IKUdan IKT) yang berkaitan dengan kegiatan PkM DTPR disertai bukti yang sahih.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
+                            <td data-target="#skor_penilaian" data-skor="4">
+                                4</td>{{-- SKOR MAKS --}}
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
         <!-- /.card -->
     </section>
-    <div class="modal fade" id="text_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Alasan penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/101">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan alasan penilaian
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            class="form-control @error('textPenilaian') is-invalid @enderror"
-                                            name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {{ $prodi->alamat }}</textarea>
-                                        <div class="invalid-feedback">
-                                            @error('textPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="skor_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Skor Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/305">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Berikan skor
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input id="input_skor" required type="number" min="0" max="100"
-                                                name="skorPenilaian" class="fieldInsertInput form-control rupiah"
-                                                placeholder="0" @error('skorPenilaian') is-invalid @enderror" value="">
-                                        </div> </textarea>
-                                        <div class="invalid-feedback">
-                                            @error('skorPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
 
 @endsection
 
-@push('scripts')
-    <script>
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
-    </script>
-@endpush
+@include('matriks.scripts')

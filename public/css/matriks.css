@@ -166,7 +166,7 @@ span.caption:before {
 
 .penilaian_check_field .tooltiptext {
     visibility: hidden;
-    width: 320px;
+    width: 280px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -178,7 +178,7 @@ span.caption:before {
     z-index: 1;
     /* top: -100%; */
     bottom: calc(51% + 84px);
-    opacity: 65%;
+    opacity: 70%;
 }
 
 .penilaian_check_field:hover .tooltiptext {

@@ -40,7 +40,7 @@
                             </th>
                             <th rowspan="2">Bobot
                             </th>
-                            <th rowspan="2">Bukti
+                            <th rowspan="2">Skor
                             </th>
                         </tr>
                         <tr>
@@ -51,12 +51,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">1.1 [PENETAPAN]</th>
-                        </tr>
-                        </div>
-                        <tr class="warna">
+                        <tr>
                             <td>
                                 3
                             </td>{{-- NO BUTIR --}}
@@ -93,13 +88,7 @@
                             <td class="nilai"></td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
                             <td data-target="#skor_penilaian" data-skor="2">
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    <label for="bukti">
-                                        <a class="btn btn-warning btn-sm"><span class='glyphicon glyphicon-paperclip'></span>Upload Bukti</a>
-                                    </label> 
-                                </form>
-                                {{-- 2<input type="file" name="userImage" id="userImage"> --}}
-                                </td>{{-- SKOR MAKS --}}
+                                2</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
@@ -137,16 +126,7 @@
                            <td class="nilai"></td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="0.25">0.25</td>{{-- BOBOT --}}
                             <td data-target="#skor_penilaian" data-skor="1">
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    <label for="bukti">
-                                        <a class="btn btn-primary btn-sm"><span class='glyphicon glyphicon-paperclip'></span>Lihat Bukti</a>
-                                    </label> 
-                                    <label for="bukti">
-                                        <a class="btn btn-warning btn-sm"><span class='glyphicon glyphicon-paperclip'></span>Upload Bukti</a>
-                                    </label> 
-                                </form>
-                                {{-- 1 --}}
-                            </td>{{-- SKOR MAKS --}}
+                                1</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
@@ -184,16 +164,7 @@
                            <td class="nilai"></td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="0.25">0.25</td>{{-- BOBOT --}}
                             <td data-target="#skor_penilaian" data-skor="1">
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    <label for="bukti">
-                                        <a class="btn btn-warning btn-sm"><span class='glyphicon glyphicon-paperclip'></span>Upload Bukti</a>
-                                    </label> 
-                                </form>    
-                                {{-- 1 --}}
-                            </td>{{-- SKOR MAKS --}}
-                        </tr>
-                        <tr>
-                            <th colspan="11">1.2 [PELAKSANAAN]</th>
+                                1</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
                             <td>
@@ -310,9 +281,6 @@
                                 1</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
-                            <th colspan="11">1.3 [EVALUASI]</th>
-                        </tr>
-                        <tr>
                             <td>
                                 9
                             </td>{{-- NO BUTIR --}}
@@ -351,9 +319,6 @@
                                 4</td>{{-- SKOR MAKS --}}
                         </tr>
                         <tr>
-                            <th colspan="11">1.4 [PENGENDALIAN]</th>
-                        </tr>
-                        <tr>
                             <td>
                                 10
                             </td>{{-- NO BUTIR --}}
@@ -390,9 +355,6 @@
                             <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
                             <td data-target="#skor_penilaian" data-skor="2">
                                 2</td>{{-- SKOR MAKS --}}
-                        </tr>
-                        <tr>
-                            <th colspan="11">1.5 [PENINGKATAN]</th>
                         </tr>
                         <tr>
                             <td>
