@@ -34,48 +34,155 @@
 
 
         <!-- /.card -->
-        <div class="card card-info">
-            <div class="card-header">
-                <h3 class="card-title">Rata-rata Masa tunggu Lulusan untuk bekerja pertama kali</h3>
+        <div class="card card-info card-tabs">
+            <div class="card-header p-0">
+                <ul class="nav nav-tabs  p-0 pt-1 pb-2" id="custom-tabs-tab" role="tablist">
+                    <li class="pt-2 px-3">
+                        <h3 class="card-title">Tahun Lulus : </h3>
+                    </li>
+                </ul>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
+            <div class="card-header p-0 ">
+                <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
+                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">TS-4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
+                            aria-controls="custom-tabs-2" aria-selected="false">TS-3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
+                            aria-controls="custom-tabs-3" aria-selected="false">TS-2</a>
+                    </li>
 
-            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Tahun Lulus</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="custom-tabs-two-tabContent">
+                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
+                        aria-labelledby="custom-tabs-1-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">TS-4</h3>
+                            <hr>
                         </div>
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+                            <div class="form-group">
+                                
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
+                                        Terlacak</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
+                                        (Bulan)</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">TS-3</h3>
+                            <hr>
                         </div>
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+                            <div class="form-group">
+                               
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
+                                        Terlacak</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
+                                        (Bulan)</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang Terlacak</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
+                        <div class="card-body pb-0 pt-0">
+                            <h3 class="col-form-label text-center m-0 p-0">TS-2</h3>
+                            <hr>
                         </div>
+                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+                            <div class="form-group">
+                               
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
+                                        Terlacak</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
+                                        (Bulan)</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu (Bulan)</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
+
+
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
-                </div>
-                <!-- /.card-footer -->
-            </form>
+            </div>
+            <!-- /.card -->
         </div>
+
     </section>
 @endsection
 
