@@ -200,6 +200,6 @@ class LedController extends Controller
             );
             Led::create($data);
         }
-        return redirect()->route('viewLed', $request->table_id . ((Auth::user()->level == 1) ? "?id=" . $request->prod_id : ''));
+        return redirect()->route('viewLed', $request->form_id . ((Auth::user()->level == 1) ? "?id=" . $request->prod_id : ''));
     }
 }
