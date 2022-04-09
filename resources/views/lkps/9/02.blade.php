@@ -48,9 +48,7 @@
                             <th>Akhir TS</th>
 
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
+                         <tr>
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -63,9 +61,10 @@
                             <td>10</td>
                             <td>11</td>
                             <td>12</td>
-
-
                         </tr>
+                    </thead>
+                    <tbody>
+                       
                         <tr>
                             <td>TS-6</td>
                             <td colspan="12">

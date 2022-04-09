@@ -38,8 +38,6 @@
                             <th>Rata-rata</th>
                             <th>Maks</th>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>2</td>
@@ -49,6 +47,9 @@
                             <td>6</td>
 
                         </tr>
+                    </thead>
+                    <tbody>
+                        
                         <tr>
                             <td>1</td>
                             <td>
