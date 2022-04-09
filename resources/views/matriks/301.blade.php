@@ -56,7 +56,7 @@
                             <th colspan="11" class="nilai">1.1 [PENETAPAN]</th>
                         </tr>
                         </div>
-                        <tr class="warna">
+                        <tr>
                             <td>
                                 3
                             </td>{{-- NO BUTIR --}}

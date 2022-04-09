@@ -22,7 +22,7 @@
                 switch (score) {
                     case '4':
                         console.log(nilai);
-                        nilai.css("background-color", "green");
+                        nilai.css("background-color", "rgb(0, 255, 21)");
                         break;
                     case '3':
                         nilai.css("background-color", "orange");
@@ -31,7 +31,7 @@
                         nilai.css("background-color", "yellow");
                         break;
                     case '1':
-                        nilai.css("background-color", "red");
+                        nilai.css("background-color", "rgb(255, 68, 68)");
                         break;
 
                     default:
@@ -41,34 +41,6 @@
                 score *= bobot / 4
                 nilai.text(score)
             }
-
-        });
-        $('.penilaian_check_field').click(function(event) {
-            var score;
-            var nilai = $(this).parent(".warna")
-            if (event.target.type !== 'radio') {
-                $(':radio', this).trigger('click');
-                score = $(':radio', this).val()
-                switch (score) {
-                    case '4':
-                        console.log(nilai);
-                        nilai.css("background-color", "green");
-                        break;
-                    case '3':
-                        nilai.css("background-color", "orange");
-                        break;
-                    case '2':
-                        nilai.css("background-color", "yellow");
-                        break;
-                    case '1':
-                        nilai.css("background-color", "red");
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-
         });
         $('.penilaian_check_field').hover(function(event) {
             $(this).find('.tooltiptext').addClass("active")

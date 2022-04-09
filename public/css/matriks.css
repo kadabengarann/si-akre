@@ -187,3 +187,7 @@ span.caption:before {
 .tooltiptext.active {
     visibility: visible;
 }
+
+.hijau{
+    color: rgb(255, 68, 68);
+}
