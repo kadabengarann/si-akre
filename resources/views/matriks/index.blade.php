@@ -52,6 +52,8 @@
                                 </th>
                                 <th class="mt-1 mb-1">Skor R-1
                                 </th>
+                                <th class="mt-1 mb-1">Bobot dari 400
+                                </th>
                                 <th class="mt-1 mb-1">Jml butir
                                 </th>
                                 <th>
@@ -64,7 +66,7 @@
                                 <th class="mt-1 mb-1 text-start" colspan="2">
                                     INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
                                 </th>
-                                <th colspan="7">
+                                <th colspan="8">
 
                                 </th>
                             </tr>
@@ -79,6 +81,9 @@
                                 </td>
                                 <td>
                                     6(1,5%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -110,6 +115,9 @@
                                 </td>
                                 <td>
                                     6(1,5%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -156,6 +164,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     3
                                 </td>
                                 <td>
@@ -174,6 +185,9 @@
                                 </td>
                                 <td>
                                     24 (6%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -219,6 +233,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     7
                                 </td>
                                 <td>
@@ -236,6 +253,9 @@
                                 </td>
                                 <td>
                                     31 (7,8%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -281,6 +301,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     10
                                 </td>
                                 <td>
@@ -298,6 +321,9 @@
                                 </td>
                                 <td>
                                     32 (8%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -343,6 +369,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     5
                                 </td>
                                 <td>
@@ -360,6 +389,9 @@
                                 </td>
                                 <td>
                                     17 (4,3%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -405,6 +437,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     26
                                 </td>
                                 <td>
@@ -422,6 +457,9 @@
                                 </td>
                                 <td>
                                     25(6,3%)
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
@@ -468,6 +506,9 @@
 
                                 </td>
                                 <td>
+
+                                </td>
+                                <td>
                                     4
                                 </td>
                                 <td>
@@ -483,7 +524,7 @@
                                 <td>
                                     400 (100%)
                                 </td>
-                                <td colspan="4"></td>
+                                <td colspan="5"></td>
                                 <td>
                                     99
                                 </td>
