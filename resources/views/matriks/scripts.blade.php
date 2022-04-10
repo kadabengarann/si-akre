@@ -33,6 +33,7 @@
             console.log(_prodi_id);
             if (event.target.type !== 'radio') {
                 $(':radio', this).trigger('click');
+
                 _grade = $(':radio', this).val()
                 _skor = _grade * bobot
                 $.ajax({
@@ -48,7 +49,6 @@
                     type: "POST",
                     dataType: 'json',
                     success: function(data) {
-
                         console.log(data.success);
                         showSuccess(data.success)
                         updateContent(radio, _skor)
@@ -60,7 +60,6 @@
                     }
                 });
             }
-
         });
 
         function updateContent(params, _skor) {
@@ -70,19 +69,19 @@
             switch (_grade) {
                 case '4':
                     console.log(skor_parent);
-                    skor_parent.css("background-color", "#0c9");
+                    skor_parent.css("background-color", "rgb(0, 255, 21)");
                     skor_parent.css("color", "#fff");
                     break;
                 case '3':
-                    skor_parent.css("background-color", "#ffb300");
+                    skor_parent.css("background-color", "orange");
                     skor_parent.css("color", "#fff");
                     break;
                 case '2':
                     skor_parent.css("background-color", "yellow");
-                    skor_parent.css("color", "#000");
+                    skor_parent.css("color", "#fff");
                     break;
                 case '1':
-                    skor_parent.css("background-color", "red");
+                    skor_parent.css("background-color", "rgb(255, 68, 68)");
                     skor_parent.css("color", "#fff");
                     break;
 
@@ -91,7 +90,8 @@
             }
             skor_parent.text(_skor)
 
-        }
+        
+        };
         $('.penilaian_check_field').hover(function(event) {
             $(this).find('.tooltiptext').addClass("active")
         }, function(event) {
