@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
+use App\Models\Matriks;
+use DeepCopy\Matcher\Matcher;
 
 class MatriksController extends Controller
 {
@@ -52,12 +54,14 @@ class MatriksController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
+        $matriks = Matriks::all()->where('prodi_id', $prodi->id);
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
-            'prodi' => $prodi
+            'prodi' => $prodi,
+            'matriks' => $matriks,
         ];
-        // return $tables;
+        // return $matriks;
         return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
     }
     public function prev_num($id)
@@ -126,5 +130,48 @@ class MatriksController extends Controller
             }
         }
         return 0;
+    }
+    public function updateMatriks(Request $request)
+    {
+        if (Matriks::find($request->id)) {
+            $matriks = Matriks::find($request->id);
+            $matriks->row_id = $request->row_id;
+            $matriks->grade = $request->grade;
+            $matriks->skor = $request->skor;
+            $matriks->prodi_id = $request->prodi_id;
+            $matriks->save();
+        } else {
+            $data = array_merge(
+                [
+                    'id' => $request->id,
+                    'row_id' => $request->row_id,
+                    'grade' => $request->grade,
+                    'skor' => $request->skor,
+                    'prodi_id' => $request->prodi_id,
+                ]
+            );
+            Matriks::create($data);
+        }
+        return response()->json(['success' => 'Nilai matriks berhasil disimpan!']);
+    }
+    public function updateMatriksBukti(Request $request)
+    {
+        if (Matriks::find($request->id)) {
+            $matriks = Matriks::find($request->id);
+            $matriks->bukti = $request->bukti;
+            $matriks->save();
+        } else {
+            $data = array_merge(
+                [
+                    'id' => $request->id,
+                    'bukti' => $request->bukti,
+                ]
+            );
+            Matriks::create($data);
+        }
+        $data =
+        Matriks::find($request->id)->bukti;
+        return response()->json(['success' => 'Bukti matriks berhasil disimpan!',
+    'data' => $data]);
     }
 }

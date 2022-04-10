@@ -25,6 +25,7 @@ mix.scripts([
     'node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js',
     'node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js',  
     'node_modules/summernote/dist/summernote-bs4.min.js',
+    'node_modules/sweetalert2/dist/sweetalert2.all.min.js',
     // 'node_modules/datatables.net/js/jquery.dataTables.js',
 // other scripts
 ], 'public/js/all.min.js');
