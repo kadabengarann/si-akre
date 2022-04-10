@@ -64,6 +64,7 @@ Route::name('matriks')
     ->middleware('level:1,2')
     ->group(function () {
         Route::post('/update', [MatriksController::class, 'updateMatriks']);
+        Route::post('/update-bukti', [MatriksController::class, 'updateMatriksBukti']);
         Route::get('/', [MatriksController::class, 'index']);
         Route::get('/{id}', [MatriksController::class, 'form'])->name('viewLed');
     });

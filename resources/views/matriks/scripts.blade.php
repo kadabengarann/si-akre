@@ -90,13 +90,71 @@
             }
             skor_parent.text(_skor)
 
-        
+
         };
         $('.penilaian_check_field').hover(function(event) {
             $(this).find('.tooltiptext').addClass("active")
         }, function(event) {
             $(this).find('.tooltiptext').removeClass("active")
         })
+        $('#bukti_submit').click(function(event) {
+            event.preventDefault();
+
+
+            let id_temp = parseInt($('#bukti_penilaian').find('#input_row_id').val());
+            let row = $(`.matriks_id[data-id="${311}"]`).parent()
+
+            let _prodi_id = {{ $prodi->id }};
+            let _row_id = id_temp
+            const _id = parseInt(`${id_temp}${_prodi_id}`);
+            let _bukti = $(input_bukti).val()
+
+            let _token = $('meta[name="csrf-token"]').attr('content');
+
+            console.log(row);
+
+            $.ajax({
+                data: {
+                    id: _id,
+                    bukti: _bukti,
+                    _token: _token
+                },
+                url: "/matriks/update-bukti",
+                type: "POST",
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data.success);
+                    showSuccess(data.success)
+                    $('#bukti_penilaian').modal('hide')
+                    updateBukti(row, data.data)
+
+                },
+                error: function(data) {
+                    showError("Gagal mengupdate data")
+                    console.log('Error:', data);
+                }
+            });
+        });
+        $('#bukti_penilaian').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('row') // Extract info from data-* attributes
+            var url_data = button.data('url') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('#input_row_id').val(recipient)
+            modal.find('#input_bukti').val(url_data)
+            // modal.find('.modal-body input').val(recipient)
+        })
+
+        function updateBukti(params, _data) {
+            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
+
+            let lihat_bukti_btn = $(params).find('#lihat_bukti')
+            lihat_bukti_btn.attr("href", _data)
+
+
+        };
 
         function showSuccess(message) {
             Toast.fire({

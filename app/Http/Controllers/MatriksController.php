@@ -154,4 +154,24 @@ class MatriksController extends Controller
         }
         return response()->json(['success' => 'Nilai matriks berhasil disimpan!']);
     }
+    public function updateMatriksBukti(Request $request)
+    {
+        if (Matriks::find($request->id)) {
+            $matriks = Matriks::find($request->id);
+            $matriks->bukti = $request->bukti;
+            $matriks->save();
+        } else {
+            $data = array_merge(
+                [
+                    'id' => $request->id,
+                    'bukti' => $request->bukti,
+                ]
+            );
+            Matriks::create($data);
+        }
+        $data =
+        Matriks::find($request->id)->bukti;
+        return response()->json(['success' => 'Bukti matriks berhasil disimpan!',
+    'data' => $data]);
+    }
 }

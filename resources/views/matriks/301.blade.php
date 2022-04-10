@@ -57,8 +57,9 @@
                                 <th colspan="11" class="nilai">1.1 [PENETAPAN]</th>
                             </tr>
                         </div>
-                        <tr>{{ $row_id = 311 }}
-                            <td class="matriks_id" data-id="{{ $row_id  }}">
+                        <tr>
+                            @php($row_id = 311)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 3
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">1.1 [PENETAPAN] A. Ketersediaan dokumen kebijakan, standar, IKU, dan
@@ -72,8 +73,8 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 4 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id  }}" value="4">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sangat sesuai dengan
                                     VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku kepentingan
@@ -81,8 +82,8 @@
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 3 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id  }}" value="3">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
                                     PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang sesuai
@@ -92,8 +93,8 @@
                             <td class="penilaian_check_field">
                                 <label>
 
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 2 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id  }}" value="2">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2 </span>
                                 </label>
                                 <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
@@ -103,8 +104,8 @@
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 1 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id  }}" value="1">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
                                     PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang kurang
@@ -114,30 +115,33 @@
 
                             <td
                                 class="nilai 
-                            {{ getMatriksGrade($row_id , $matriks) == 4
+                            {{ getMatriksGrade($row_id, $matriks) == 4
                                 ? 'skor_a'
-                                : (getMatriksGrade($row_id , $matriks) == 3
+                                : (getMatriksGrade($row_id, $matriks) == 3
                                     ? 'skor_b'
-                                    : (getMatriksGrade($row_id , $matriks) == 2
+                                    : (getMatriksGrade($row_id, $matriks) == 2
                                         ? 'skor_c'
-                                        : (getMatriksGrade($row_id , $matriks) == 1
+                                        : (getMatriksGrade($row_id, $matriks) == 1
                                             ? 'skor_d'
                                             : ''))) }}">
-                                {{ getMatriksSkor($row_id , $matriks) }}
+                                {{ getMatriksSkor($row_id, $matriks) }}
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="0.5">0.5</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                    <label for="bukti">
-                                        <a class="btn btn-primary btn-sm" href="" >Lihat Bukti</a>
-                                    </label> 
-                                    <label for="bukti">
-                                        <a class="btn btn-outline-primary btn-sm input_bukti_trigg alasan_pen" data-toggle="modal" data-target="#bukti_penilaian" data-skor="">Upload Bukti</a>
-                                    </label> 
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
                                 {{-- 2<input type="file" name="userImage" id="userImage"> --}}
                             </td>{{-- SKOR MAKS --}}
                         </tr>
-                        <tr>{{ $row_id  = 312 }}
-                            <td  class="matriks_id" data-id="{{ $row_id  }}">
+                        <tr>@php($row_id = 312)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 4
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">B. Rumusan strategi pencapaian VMTS UPPS dan PS.
@@ -148,7 +152,8 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 4 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id  }}" value="4">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan strategi pencapaian VMTS UPPS dan PS sangat
                                     memenuhi tahapan yang jelas, dokumen yang lengkap dan terkait pencapaian visi
@@ -156,7 +161,8 @@
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 3 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id  }}" value="3">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan strategi pencapaian VMTS UPPS dan PS
                                     memenuhi tahapan yang jelas, dokumen yang lengkap dan terkait pencapaian visi
@@ -164,7 +170,8 @@
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 2 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id  }}" value="2">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan strategi pencapaian VMTS UPPS dan PS cukup
                                     memenuhi tahapan yang jelas, dokumen yang lengkap dan terkait pencapaian visi
@@ -172,31 +179,34 @@
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input {{ getMatriksGrade($row_id , $matriks) == 1 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id  }}" value="1">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya rumusan strategi pencapaian VMTS UPPS dan PS kurang
                                     memenuhi tahapan yang jelas, dokumen yang lengkap dan terkait pencapaian visi
                                     misi.</span>
                             </td>{{-- ALASAN PENILAIAN 1 --}}
-                            <td class="nilai {{ getMatriksGrade($row_id , $matriks) == 4
-                                ? 'skor_a'
-                                : (getMatriksGrade($row_id , $matriks) == 3
-                                    ? 'skor_b'
-                                    : (getMatriksGrade($row_id , $matriks) == 2
-                                        ? 'skor_c'
-                                        : (getMatriksGrade($row_id , $matriks) == 1
-                                            ? 'skor_d'
-                                            : ''))) }}">
-                                {{ getMatriksSkor($row_id , $matriks)}}
+                            <td
+                                class="nilai {{ getMatriksGrade($row_id, $matriks) == 4
+                                    ? 'skor_a'
+                                    : (getMatriksGrade($row_id, $matriks) == 3
+                                        ? 'skor_b'
+                                        : (getMatriksGrade($row_id, $matriks) == 2
+                                            ? 'skor_c'
+                                            : (getMatriksGrade($row_id, $matriks) == 1
+                                                ? 'skor_d'
+                                                : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="0.25">0.25</td>{{-- BOBOT --}}
                             <td data-target="#skor_penilaian" data-skor="1">
                                 <label for="bukti">
-                                    <a class="btn btn-primary btn-sm" href="" >Lihat Bukti</a>
-                                </label> 
+                                    <a class="btn btn-primary btn-sm" href="">Lihat Bukti</a>
+                                </label>
                                 <label for="bukti">
-                                    <a class="btn btn-outline-primary btn-sm input_bukti_trigg alasan_pen" data-toggle="modal" data-target="#bukti_penilaian" data-skor="">Upload Bukti</a>
-                                </label> 
+                                    <a class="btn btn-outline-primary btn-sm input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-skor="">Upload Bukti</a>
+                                </label>
                                 {{-- 1 --}}
                             </td>{{-- SKOR MAKS --}}
                         </tr>
@@ -242,12 +252,13 @@
                             <td data-target="#skor_penilaian" data-skor="1">
                                 <form action="" method="post" enctype="multipart/form-data">
                                     <label for="bukti">
-                                        <a class="btn btn-primary btn-sm" href="" >Lihat Bukti</a>
-                                    </label> 
+                                        <a class="btn btn-primary btn-sm" href="">Lihat Bukti</a>
+                                    </label>
                                     <label for="bukti">
-                                        <a class="btn btn-outline-primary btn-sm input_bukti_trigg alasan_pen" data-toggle="modal" data-target="#bukti_penilaian" data-skor="">Upload Bukti</a>
-                                    </label> 
-                                </form>    
+                                        <a class="btn btn-outline-primary btn-sm input_bukti_trigg alasan_pen"
+                                            data-toggle="modal" data-target="#bukti_penilaian" data-skor="">Upload Bukti</a>
+                                    </label>
+                                </form>
                                 {{-- 1 --}}
                             </td>{{-- SKOR MAKS --}}
                         </tr>
@@ -575,7 +586,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="/penilaian/101">
+                <form class="form-horizontal" action="/penilaian/101" id="bukti_form">
 
                     <div class="modal-body">
                         <div class="card-body">
@@ -586,10 +597,14 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
-                                            <input id="input_bukti" required type="link"
-                                                name="buktiPenilaian" class="fieldInsertInput form-control bukti"
-                                                placeholder="https://" @error('buktiPenilaian') is-invalid @enderror value="">
-                                        </div> </textarea>
+                                            <input type="hidden" id="input_row_id" name="row_id" value="">
+                                            <input id="input_bukti" type="url" name="buktiPenilaian"
+                                                class="fieldInsertInput form-control bukti"
+                                                pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                required placeholder="https://"
+                                                @error('buktiPenilaian') is-invalid @enderror value="">
+
+                                        </div>
                                         <div class="invalid-feedback">
                                             @error('buktiPenilaian')
                                                 {{ $message }}
@@ -603,7 +618,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" id="bukti_submit" class="btn btn-info">Submit</button>
                     </div>
                 </form>
             </div>

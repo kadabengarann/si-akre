@@ -18,3 +18,12 @@ function getMatriksSkor($id, $arr)
     }
     return null;
 }
+function getMatriksBukti($id, $arr)
+{
+    foreach ($arr as $n) {
+        if ($n->row_id == $id) {
+            return $n->bukti;
+        }
+    }
+    return "#";
+}
