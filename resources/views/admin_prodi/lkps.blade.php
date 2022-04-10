@@ -30,37 +30,29 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-                    <div class="card">
-                        <div class="card-header">
+
+                    <a href="/lkps/view/101" class="card text-dark" role="button" aria-pressed="true">
+                        <div class="card-body d-flex align-items-center pt-2 pb-2">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
                                 Identitas Pengusul
                             </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/101">Isi</a>
-                                    </li>
-                                </ul>
+                            <div class="btn btn-primary ml-auto">
+                                Isi
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
+                    </a>
+                    <a href="/lkps/view/102" class="card text-dark" role="button" aria-pressed="true">
+                        <div class="card-body d-flex align-items-center pt-2 pb-2">
                             <h3 class="card-title">
                                 <i class="fas fa-list-ul mr-1"></i>
                                 Daftar Program Studi di Unit Pengelola Program Studi (UPPS)
                             </h3>
-                            <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="/lkps/view/102">Isi</a>
-                                    </li>
-                                </ul>
+                            <div class="btn btn-primary ml-auto">
+                                Isi
                             </div>
                         </div>
-                    </div>
-
+                    </a>
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <h3 class="profile-username text-center">Kriteria kinerja</h3>
@@ -83,58 +75,44 @@
                         </div>
                     </div>
                     @if (array_key_exists(3, $tables))
-                        <div class="card">
-                            <div class="card-header">
+                        <a href="/lkps/view/{{ $tables[3][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                            <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
                                     3. Mahasiswa
                                 </h3>
-                                <div class="card-tools">
-                                    <ul class="nav nav-pills ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[3][0] }}">Isi
-                                                kriteria</a>
-                                        </li>
-                                    </ul>
+                                <div class="btn btn-primary ml-auto">
+                                    Isi kriteria
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endif
+
                     @if (array_key_exists(4, $tables))
-                        <div class="card">
-                            <div class="card-header">
+                        <a href="/lkps/view/{{ $tables[4][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                            <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
                                     4. Sumber Daya Manusia
                                 </h3>
-                                <div class="card-tools">
-                                    <ul class="nav nav-pills ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[4][0] }}">Isi
-                                                kriteria</a>
-                                        </li>
-                                    </ul>
+                                <div class="btn btn-primary ml-auto">
+                                    Isi kriteria
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endif
                     @if (array_key_exists(5, $tables))
-                        <div class="card">
-                            <div class="card-header">
+                        <a href="/lkps/view/{{ $tables[5][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                            <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
                                     5. Keuangan, Sarana, dan Prasarana
                                 </h3>
-                                <div class="card-tools">
-                                    <ul class="nav nav-pills ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[5][0] }}">Isi
-                                                kriteria</a>
-                                        </li>
-                                    </ul>
+                                <div class="btn btn-primary ml-auto">
+                                    Isi kriteria
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endif
                     <div class="card">
                         <div class="card-header">
@@ -182,22 +160,17 @@
                         </div>
                     </div>
                     @if (array_key_exists(9, $tables))
-                        <div class="card">
-                            <div class="card-header">
+                        <a href="/lkps/view/{{ $tables[9][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                            <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
                                     9. Luaran dan Capaian Tridharma
                                 </h3>
-                                <div class="card-tools">
-                                    <ul class="nav nav-pills ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/lkps/view/{{ $tables[9][0] }}">Isi
-                                                kriteria</a>
-                                        </li>
-                                    </ul>
+                                <div class="btn btn-primary ml-auto">
+                                    Isi kriteria
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endif
                 </section>
             </div>

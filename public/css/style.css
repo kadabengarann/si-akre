@@ -20,3 +20,13 @@ td {
     border-radius: 10px;
     margin-top: 1rem;
 }
+
+input[type=number].hide_num{
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
