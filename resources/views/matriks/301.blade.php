@@ -137,7 +137,7 @@
                                         data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
                                         data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
                                 </label>
-                            </td>{{-- BUKTI PENILAIAN --}}
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>@php($row_id = 312)
                             <td class="matriks_id" data-id="{{ $row_id }}">

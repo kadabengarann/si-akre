@@ -53,7 +53,8 @@
                     <tbody>
 
                         <tr>
-                            <td>
+                            @php($row_id = 341)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 32
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">4.1 [PENETAPAN] A. Ketersediaan dokumen kebijakan, standar, IKU, dan IKT yang berkaitan dengan SDM terkait ketersediaan Profil DTPR.
@@ -63,36 +64,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai341" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja EWMP, kenggotaan dalam organisasi, dan sertifikasi profesi) disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai341" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja EWMP, kenggotaan dalam organisasi, dan sertifikasi profesi) disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai341" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja EWMP, kenggotaan dalam organisasi, dan sertifikasi profesi) disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai341" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja EWMP, kenggotaan dalam organisasi, dan sertifikasi profesi) disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="8">
-                                8</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 342)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 33
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">B. Ketersediaan kebijakan pengembangan DTPR.
@@ -102,36 +125,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai342" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan dosen tetap DTPR disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai342" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan dosen tetap DTPR disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai342" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan dosen tetap DTPR disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai342" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan dosen tetap DTPR disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="8">
-                                8</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 343)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 34
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">C. Ketersediaan kebijakan pengembangan tenaga kependidikan.
@@ -141,36 +186,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai343" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan tenaga kependidikan disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai343" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan tenaga kependidikan disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai343" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan tenaga kependidikan disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai343" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengembangan tenaga kependidikan disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="4">
-                                4</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 344)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 35
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">D. Ketersediaan kebijakan pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR
@@ -185,36 +252,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai344" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR disertai bukti sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai344" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR disertai bukti sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai344" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR disertai bukti sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai344" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya kebijakan pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR disertai bukti sahih dan cukup lengkap.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="4">
-                                4</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 345)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 36
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">4.2 [PELAKSANAAN]
@@ -225,36 +314,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai345" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan DTPR yang mencakup beban tugas (EWMP), pembimbingan, keanggotaan dalam organisasi profesi dan kepemilikan sertifikasi profesi secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai345" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan DTPR yang mencakup beban tugas (EWMP), pembimbingan, keanggotaan dalam organisasi profesi dan kepemilikan sertifikasi profesi secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai345" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan DTPR yang mencakup beban tugas (EWMP), pembimbingan, keanggotaan dalam organisasi profesi dan kepemilikan sertifikasi profesi secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai345" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan DTPR yang mencakup beban tugas (EWMP), pembimbingan, keanggotaan dalam organisasi profesi dan kepemilikan sertifikasi profesi secara efektif disertai bukti yang sahih.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="4">4</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="16">
-                                16</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 346)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 37
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">B. Keterlaksanaan kegiatan untuk pengembangan DTPR.
@@ -264,36 +375,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai346" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan DTPR secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai346" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan DTPR secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai346" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan DTPR secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai346" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan DTPR secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="12">
-                                12</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 347)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 38
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">C. Keterlaksanaan pengembangan tenaga kependidikan.
@@ -303,36 +436,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai347" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan tenaga kependidikan secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai347" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan tenaga kependidikan secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai347" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan tenaga kependidikan secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai347" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya pengembangan tenaga kependidikan secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="12">
-                                12</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 348)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 39
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">D. Keterlaksanaan kegiatan terkait pengakuan/rekognisi atas kepakaran/prestasi/ki nerja DTPR. 
@@ -342,36 +497,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai348" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan terkait pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR secara sangat efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai348" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan terkait pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR secara efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai348" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan terkait pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR secara cukup efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai348" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya kegiatan terkait pengakuan/rekognisi atas kepakaran/prestasi/kinerja DTPR secara kurang efektif disertai bukti sahih.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="8">
-                                8</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 349)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 40
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">4.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) terkait SDM.
@@ -381,36 +558,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai349" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan sangat efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan SDM, termasuk evaluasi tingkat kepuasan dosen dan tenaga kependidikan terhadap sistem pengelolaan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai349" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan SDM, termasuk evaluasi tingkat kepuasan dosen dan tenaga kependidikan terhadap sistem pengelolaan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai349" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan cukup efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan SDM, termasuk evaluasi tingkat kepuasan dosen dan tenaga kependidikan terhadap sistem pengelolaan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai349" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan kurang efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan sSDM, termasuk evaluasi tingkat kepuasan dosen dan tenaga kependidikan terhadap sistem pengelolaan SDM.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="8">8</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="32">
-                                32</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 3410)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 41
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">4.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) terkait SDM.
@@ -420,36 +619,58 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3410" value="4">
+                                    <input type="radio"  {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang sangat lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3410" value="3">
+                                    <input type="radio"  {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3410" value="2">
+                                    <input type="radio"  {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan SDM.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3410" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang kurang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan SDM.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="8">
-                                8</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 3411)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 42
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">4.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi terkait SDM.
@@ -459,33 +680,54 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3411" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya proses optimalisasi secara sangat efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan SDM disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3411" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya proses optimalisasi secara efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan SDM disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3411" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya proses optimalisasi secara cukup efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan SDM disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai3411" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya proses optimalisasi secara kurang efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan SDM disertai bukti yang sahih.</span>
                             </td>
 
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td
+                                class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}
+                            </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="8">
-                                8</td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
 
                     </tbody>
