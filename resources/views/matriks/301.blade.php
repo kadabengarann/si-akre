@@ -2,119 +2,114 @@
 @section('title', 'Dashboard')
 @include('matriks.form_header')
 @section('content')
-    <section class="content">
-        <div class="card card-primary card-outline">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <p><b>Matriks : </b>C.1. VISI, MISI, TUJUAN DAN STRATEGI</p> {{-- Judul --}}
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        {{-- <p><b>Sub-kriteria : </b></p> --}}
-                    </div>
+<section class="content">
+    <div class="card card-primary card-outline">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <p><b>Matriks : </b>C.1. VISI, MISI, TUJUAN DAN STRATEGI</p> {{-- Judul --}}
                 </div>
-
+                <div class="col-12 col-lg-6">
+                    {{-- <p><b>Sub-kriteria : </b></p> --}}
+                </div>
             </div>
-            <!-- /.card-body -->
-            @include('matriks.form_nav')
 
         </div>
-        <div class="card card-primary card-outline">
-            <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">1. VISI, MISI, TUJUAN DAN STRATEGI
-                </h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                <table id="tbl_list" class="table table-bordered table-center-text">
-                    <thead>
-                        <tr>
-                            <th rowspan="2">No Butir</th>
-                            <th rowspan="2" class="p_elem">Elemen</th>
-                            <th rowspan="2">Lokasi
-                            </th>
-                            <th rowspan="2" class="p_indi">Deskriptor
-                            </th>
-                            <th colspan="4" class="p_indi">Alasan Penilaian
-                            </th>
-                            <th rowspan="2">Nilai
-                            </th>
-                            <th rowspan="2">Bobot
-                            </th>
-                            <th rowspan="2">Bukti
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Sangat Baik</th>
-                            <th>Baik</th>
-                            <th>Cukup</th>
-                            <th>Kurang</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <div class="nilai">
-                            <tr class="nilai">
-                                <th colspan="11" class="nilai">1.1 [PENETAPAN]</th>
-                            </tr>
-                        </div>
-                        <tr>
-                            @php($row_id = 311)
-                            <td class="matriks_id" data-id="{{ $row_id }}">
-                                3
-                            </td>{{-- NO BUTIR --}}
-                            <td class="text-start">1.1 [PENETAPAN] A. Ketersediaan dokumen kebijakan, standar, IKU, dan
-                                IKT yang berkaitan dengan Visi, Misi, Tujuan, Strategi (VMTS) UPPS dan PS
-                            </td>{{-- ELEMEN --}}
-                            <td></td>{{-- LOKASI --}}
-                            <td>1.1[PENETAPAN] Ketersediaan dokumen kebijakan, standar, IKU, dan IKT yang berkaitan dengan
-                                Visi, Misi, Tujuan,Strategi (VMTS) UPPS dan PS yang mencakup: A. Rumusan VMTS UPPS dan PS
-                                yang sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
-                                kepentingan internal dan eksternal.
-                            </td>{{-- DESKRIPTOR --}}
-                            <td class="penilaian_check_field">
-                                <label>
-                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id }}" value="4">
-                                    <span class="caption">4</span></label>
-                                <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sangat sesuai dengan
-                                    VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku kepentingan
-                                    internal dan eksternal.</span>
-                            </td>
-                            <td class="penilaian_check_field">
-                                <label>
-                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id }}" value="3">
-                                    <span class="caption">3</span></label>
-                                <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
-                                    PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang sesuai
-                                    dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
-                                    kepentingan internal dan eksternal</span>
-                            </td>
-                            <td class="penilaian_check_field">
-                                <label>
+        <!-- /.card-body -->
+        @include('matriks.form_nav')
 
-                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id }}" value="2">
-                                    <span class="caption">2 </span>
-                                </label>
-                                <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
-                                    PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang cukup
-                                    sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
-                                    kepentingan internal dan eksternal</span>
-                            </td>
-                            <td class="penilaian_check_field">
-                                <label>
-                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
-                                        name="nilai{{ $row_id }}" value="1">
-                                    <span class="caption">1</span></label>
-                                <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
-                                    PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang kurang
-                                    sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
-                                    kepentingan internal dan eksternal</span>
-                            </td>
+    </div>
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="text-center card-title" style="float: none; font-weight:500">1. VISI, MISI, TUJUAN DAN STRATEGI
+            </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="tbl_list" class="table table-bordered table-center-text">
+                <thead>
+                    <tr>
+                        <th rowspan="2">No Butir</th>
+                        <th rowspan="2" class="p_elem">Elemen</th>
+                        <th rowspan="2">Lokasi
+                        </th>
+                        <th rowspan="2" class="p_indi">Deskriptor
+                        </th>
+                        <th colspan="4" class="p_indi">Alasan Penilaian
+                        </th>
+                        <th rowspan="2">Nilai
+                        </th>
+                        <th rowspan="2">Bobot
+                        </th>
+                        <th rowspan="2">Bukti
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sangat Baik</th>
+                        <th>Baik</th>
+                        <th>Cukup</th>
+                        <th>Kurang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">1.1 [PENETAPAN]</th>
+                        </tr>
+                    </div>
+                    <tr>
+                        @php($row_id = 311)
+                        <td class="matriks_id" data-id="{{ $row_id }}">
+                            3
+                        </td>{{-- NO BUTIR --}}
+                        <td class="text-start">1.1 [PENETAPAN] A. Ketersediaan dokumen kebijakan, standar, IKU, dan
+                            IKT yang berkaitan dengan Visi, Misi, Tujuan, Strategi (VMTS) UPPS dan PS
+                        </td>{{-- ELEMEN --}}
+                        <td></td>{{-- LOKASI --}}
+                        <td>1.1[PENETAPAN] Ketersediaan dokumen kebijakan, standar, IKU, dan IKT yang berkaitan dengan
+                            Visi, Misi, Tujuan,Strategi (VMTS) UPPS dan PS yang mencakup: A. Rumusan VMTS UPPS dan PS
+                            yang sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
+                            kepentingan internal dan eksternal.
+                        </td>{{-- DESKRIPTOR --}}
+                        <td class="penilaian_check_field">
+                            <label>
+                                <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id }}" value="4">
+                                <span class="caption">4</span></label>
+                            <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sangat sesuai dengan
+                                VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku kepentingan
+                                internal dan eksternal.</span>
+                        </td>
+                        <td class="penilaian_check_field">
+                            <label>
+                                <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id }}" value="3">
+                                <span class="caption">3</span></label>
+                            <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
+                                PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang sesuai
+                                dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
+                                kepentingan internal dan eksternal</span>
+                        </td>
+                        <td class="penilaian_check_field">
+                            <label>
 
-                            <td
-                                class="nilai 
+                                <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id }}" value="2">
+                                <span class="caption">2 </span>
+                            </label>
+                            <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
+                                PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang cukup
+                                sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
+                                kepentingan internal dan eksternal</span>
+                        </td>
+                        <td class="penilaian_check_field">
+                            <label>
+                                <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio" name="nilai{{ $row_id }}" value="1">
+                                <span class="caption">1</span></label>
+                            <span class="tooltiptext">Tersedianya rumusan VMTS UPPS dan PS yang sesuai dengan VMTS
+                                PT, memayungi visi keilmuan program Tersedianya rumusan VMTS UPPS dan PS yang kurang
+                                sesuai dengan VMTS PT, memayungi visi keilmuan program studi dan melibatkan pemangku
+                                kepentingan internal dan eksternal</span>
+                        </td>
+
+                        <td class="nilai 
                             {{ getMatriksGrade($row_id, $matriks) == 4
                                 ? 'skor_a'
                                 : (getMatriksGrade($row_id, $matriks) == 3
@@ -729,56 +724,52 @@
                 </table>
             </div>
         </div>
-        <!-- /.card -->
-    </section>
-    <div class="modal fade" id="bukti_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Bukti Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/penilaian/101" id="bukti_form">
+    </div>
+    <!-- /.card -->
+</section>
+<div class="modal fade" id="bukti_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Bukti Penilaian</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="form-horizontal" action="/penilaian/101" id="bukti_form">
 
-                    <div class="modal-body">
-                        <div class="card-body">
+                <div class="modal-body">
+                    <div class="card-body">
 
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan Link
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input type="hidden" id="input_row_id" name="row_id" value="">
-                                            <input id="input_bukti" type="url" name="buktiPenilaian"
-                                                class="fieldInsertInput form-control bukti"
-                                                pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
-                                                required placeholder="https://"
-                                                @error('buktiPenilaian') is-invalid @enderror value="">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-12 col-form-label">Masukkan Link
+                            </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                        <input id="input_bukti" type="url" name="buktiPenilaian" class="fieldInsertInput form-control bukti" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" required placeholder="https://" @error('buktiPenilaian') is-invalid @enderror value="">
 
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            @error('buktiPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        @error('buktiPenilaian')
+                                        {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-body -->
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" id="bukti_submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-            </div>
+                    <!-- /.card-body -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="bukti_submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 @endsection
 
 @include('matriks.scripts')
