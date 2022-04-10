@@ -1,5 +1,11 @@
 @push('scripts')
     <script>
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
         $(".input_skor_trigg").click(function() {
             var text = $(this).data('skor');
             console.log($('#skor_penilaian').find('.modal-body input'));
@@ -13,67 +19,97 @@
         });
 
         $('.penilaian_check_field').click(function(event) {
-            var score;
-            var bobot = parseFloat($(this).siblings(".bobot").data('bobot'))
-            var nilai = $(this).siblings(".nilai")
+            event.preventDefault();
+            let _grade;
+            let _skor;
+            let _prodi_id = {{ $prodi->id }};
+            let radio = this
+            let bobot = parseFloat($(this).siblings(".bobot").data('bobot'))
+            let id_temp = parseInt($(this).siblings(".matriks_id").data('id'));
+            let _row_id = id_temp
+            const _id = parseInt(`${id_temp}${_prodi_id}`);
+            let _token = $('meta[name="csrf-token"]').attr('content');
+
+            console.log(_prodi_id);
             if (event.target.type !== 'radio') {
                 $(':radio', this).trigger('click');
-                score = $(':radio', this).val()
-                switch (score) {
-                    case '4':
-                        console.log(nilai);
-                        nilai.css("background-color", "green");
-                        break;
-                    case '3':
-                        nilai.css("background-color", "orange");
-                        break;
-                    case '2':
-                        nilai.css("background-color", "yellow");
-                        break;
-                    case '1':
-                        nilai.css("background-color", "red");
-                        break;
+                _grade = $(':radio', this).val()
+                _skor = _grade * bobot
+                $.ajax({
+                    data: {
+                        id: _id,
+                        row_id: _row_id,
+                        grade: _grade,
+                        skor: _skor,
+                        prodi_id: _prodi_id,
+                        _token: _token
+                    },
+                    url: "/matriks/update",
+                    type: "POST",
+                    dataType: 'json',
+                    success: function(data) {
 
-                    default:
-                        break;
-                }
+                        console.log(data.success);
+                        showSuccess(data.success)
+                        updateContent(radio, _skor)
 
-                score *= bobot / 4
-                nilai.text(score)
+                    },
+                    error: function(data) {
+                        showError("Gagal mengupdate data")
+                        console.log('Error:', data);
+                    }
+                });
             }
 
         });
-        $('.penilaian_check_field').click(function(event) {
-            var score;
-            var nilai = $(this).parent(".warna")
-            if (event.target.type !== 'radio') {
-                $(':radio', this).trigger('click');
-                score = $(':radio', this).val()
-                switch (score) {
-                    case '4':
-                        console.log(nilai);
-                        nilai.css("background-color", "green");
-                        break;
-                    case '3':
-                        nilai.css("background-color", "orange");
-                        break;
-                    case '2':
-                        nilai.css("background-color", "yellow");
-                        break;
-                    case '1':
-                        nilai.css("background-color", "red");
-                        break;
 
-                    default:
-                        break;
-                }
+        function updateContent(params, _skor) {
+            let bobot = parseFloat($(params).siblings(".bobot").data('bobot'))
+            let skor_parent = $(params).siblings(".nilai")
+            _grade = $(':radio', params).val()
+            switch (_grade) {
+                case '4':
+                    console.log(skor_parent);
+                    skor_parent.css("background-color", "#0c9");
+                    skor_parent.css("color", "#fff");
+                    break;
+                case '3':
+                    skor_parent.css("background-color", "#ffb300");
+                    skor_parent.css("color", "#fff");
+                    break;
+                case '2':
+                    skor_parent.css("background-color", "yellow");
+                    skor_parent.css("color", "#000");
+                    break;
+                case '1':
+                    skor_parent.css("background-color", "red");
+                    skor_parent.css("color", "#fff");
+                    break;
+
+                default:
+                    break;
             }
+            skor_parent.text(_skor)
 
-        });
+        }
         $('.penilaian_check_field').hover(function(event) {
             $(this).find('.tooltiptext').addClass("active")
         }, function(event) {
             $(this).find('.tooltiptext').removeClass("active")
         })
+
+        function showSuccess(message) {
+            Toast.fire({
+                icon: 'success',
+                title: message
+            })
+        }
+
+        function showError(message) {
+            Toast.fire({
+                icon: 'error',
+                title: message
+            })
+        }
     </script>
 @endpush

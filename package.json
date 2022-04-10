@@ -24,6 +24,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "admin-lte": "^3.1.0",
-        "summernote": "^0.8.20"
+        "summernote": "^0.8.20",
+        "sweetalert2": "^11.4.8"
     }
 }
