@@ -137,8 +137,7 @@
                                         data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
                                         data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
                                 </label>
-                                {{-- 2<input type="file" name="userImage" id="userImage"> --}}
-                            </td>{{-- SKOR MAKS --}}
+                            </td>{{--BUKTI PENILAIAN --}}
                         </tr>
                         <tr>@php($row_id = 312)
                             <td class="matriks_id" data-id="{{ $row_id }}">
