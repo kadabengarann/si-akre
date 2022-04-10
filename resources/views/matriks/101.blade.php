@@ -28,185 +28,163 @@
                 <table id="tbl_list" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
-                            <th>No Butir</th>
-                            <th class="p_elem">Elemen</th>
-                            <th>Lokasi
+                            <th rowspan="2">No Butir</th>
+                            <th rowspan="2" class="p_elem">Elemen</th>
+                            <th rowspan="2">Lokasi
                             </th>
-                            <th class="p_indi">Indikator
+                            <th rowspan="2" class="p_indi">Deskriptor
                             </th>
-                            <th class="p_indi">Alasan Penilaian
+                            <th colspan="4" class="p_indi">Alasan Penilaian
                             </th>
-                            <th>Perhitungan
-
+                            <th rowspan="2">Nilai
                             </th>
-                            <th>Skor
-
+                            <th rowspan="2">Bobot
                             </th>
-                            <th>BOBOT
+                            <th rowspan="2">Bukti
                             </th>
+                        </tr>
+                        <tr>
+                            <th>Sangat Baik</th>
+                            <th>Baik</th>
+                            <th>Cukup</th>
+                            <th>Kurang</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr>
-                            <td>
+                            @php($row_id = 111)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 1
-                            </td>
+                            </td>{{-- NO BUTIR --}}
                             <td class="text-start">A. Kondisi Eksternal
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Kemampuan UPPS dalam menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro
+                                yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio" 
+                                    name="nilai{{ $row_id }}" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS dengan sangat komprehensif.</span>
                             </td>
-                            <td></td>
-                            <td>Konsistensi dengan hasil analisis SWOT dan/atau analisis lain serta rencana pengembangan ke
-                                depan.
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}"  value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara komprehensif.</span>
                             </td>
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara cukup komprehensif.</span>
                             </td>
-                            <td></td>
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
-
-                                42 </td>
-                            <td>6</td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara kurang komprehensif.</span>
+                            </td>
+                            <td class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}</td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 211)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 2
+                            </td>{{-- NO BUTIR --}}
+                            <td class="text-start">B. Profil Unit Pengelola Program Studi / Analisis Internal
+                            </td>{{-- ELEMEN --}}
+                            <td></td>{{-- LOKASI --}}
+                            <td>Kemampuan UPPS dan PS dalam menyajikan seluruh informasi secara ringkas, komprehensif, serta
+                                konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.
+                            </td>{{-- DESKRIPTOR --}}
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="4">
+                                    <span class="caption">4</span></label>
+                                <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, sangat komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
                             </td>
-                            <td class="text-start">B. Profil Unit Pengelola Program Studi
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="3">
+                                    <span class="caption">3</span></label>
+                                <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, komprehensif dan konsisten terhadap data dan informasi yang disampaikan padamasing-masing kriteria.</span>
                             </td>
-                            <td></td>
-                            <td>Keserbacakupan informasi dalam profil dan konsistensi antara profil dengan data dan
-                                informasi yang disampaikan pada masing-masing kriteria, serta menunjukkan iklim yang
-                                kondusif untuk pengembangan dan reputasi sebagai rujukan di bidang keilmuannya.
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="2">
+                                    <span class="caption">2</span></label>
+                                <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, cukup komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
                             </td>
-                            <td class="input_alasan_trigg alasan_pen" data-toggle="modal" data-target="#text_penilaian"
-                                data-penilaian="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis debitis labore laudantium praesentium officia quasi sint magni earum?">
-                                <i class="edit_mark fas fa-pen"></i>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque nemo perferendis
-                                debitis labore laudantium praesentium officia quasi sint magni earum?
-                            </td>
-                            <td></td>
-                            <td class="input_skor_trigg alasan_pen" data-toggle="modal" data-target="#skor_penilaian"
-                                data-skor="42"> <i class="edit_mark fas fa-pen"></i>
-
-                                42 </td>
-
-                            <td>6</td>
+                            <td class="penilaian_check_field">
+                                <label>
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="1">
+                                    <span class="caption">1</span></label>
+                                <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, kurang komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
+                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                           <td class="nilai {{ getMatriksGrade($row_id, $matriks) == 4
+                            ? 'skor_a'
+                            : (getMatriksGrade($row_id, $matriks) == 3
+                                ? 'skor_b'
+                                : (getMatriksGrade($row_id, $matriks) == 2
+                                    ? 'skor_c'
+                                    : (getMatriksGrade($row_id, $matriks) == 1
+                                        ? 'skor_d'
+                                        : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}</td>{{-- NILAI --}}
+                            <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
         <!-- /.card -->
     </section>
-    <div class="modal fade" id="text_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Alasan penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/101">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Masukkan alasan penilaian
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            class="form-control @error('textPenilaian') is-invalid @enderror"
-                                            name="textPenilaian">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ $prodi->alamat }}</textarea>
-                                        <div class="invalid-feedback">
-                                            @error('textPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="skor_penilaian" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Skor Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="form-horizontal" action="/matriks/101">
-
-                    <div class="modal-body">
-                        <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-12 col-form-label">Berikan skor
-                                </label>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input id="input_skor" required type="number" min="0" max="100"
-                                                name="skorPenilaian" class="fieldInsertInput form-control rupiah"
-                                                placeholder="0" @error('skorPenilaian') is-invalid @enderror" value="">
-                                        </div> </textarea>
-                                        <div class="invalid-feedback">
-                                            @error('skorPenilaian')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
+    
 @endsection
 
-@push('scripts')
-    <script>
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
-    </script>
-@endpush
+@include('matriks.scripts')
