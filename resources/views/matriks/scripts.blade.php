@@ -35,7 +35,7 @@
                 $(':radio', this).trigger('click');
 
                 _grade = $(':radio', this).val()
-                _skor = _grade * bobot
+                _skor = _grade * bobot / 4
                 $.ajax({
                     data: {
                         id: _id,
@@ -69,7 +69,7 @@
             switch (_grade) {
                 case '4':
                     console.log(skor_parent);
-                    skor_parent.css("background-color", "rgb(0, 255, 21)");
+                    skor_parent.css("background-color", "#0c9");
                     skor_parent.css("color", "#fff");
                     break;
                 case '3':
