@@ -55,7 +55,7 @@
                         <tr>
                             @php($row_id = 361)
                             <td class="matriks_id" data-id="{{ $row_id }}">
-                                5
+                                50
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">6.1 [PENETAPAN] A. Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan pendidikan.                                
                             </td>{{-- ELEMEN --}}
@@ -267,25 +267,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme integrasi topik penelitian dan kegiatan PkM ke dalam proses pembelajaran disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
@@ -328,25 +328,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses evaluasi dan pemutakhiran kurikulum disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
@@ -389,25 +389,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya mekanisme proses penyelesaian tugas akhir/ tesis/ disertasi disertai bukti yang sahih dan kurang lengkap.</span>
                             </td>
@@ -450,25 +450,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara sangat efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara cukup efektif disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran sesuai Profil Lulusan, Capaian Pembelajaran Lulusan (CPL) sesuai dengan Profil Lulusan dan jenjang KKNI/SKKNI, secara kurang efektif disertai bukti sahih.</span>
                             </td>
@@ -511,25 +511,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya proses pembelajaran yang sesuai dengan Struktur Kurikulum berbasis KKNI/OBE/SKKNI, sesuai dengan Profil Lulusan, Capaian Pembelajaran Lulusan (CPL), memiliki Struktur Matakuliah, Capaian Pembelajaran Mata Kuliah (CPMK), Asesmen Pembelajaran dan RPS, proses pembelajaran yang isi materi pembelajaran sesuai dengan RPS, memiliki kedalaman dan keluasan yang relevan untuk mencapai Capaian Pembelajaran Lulusan dengan Asesmen Pembelajaran yang relevan secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
@@ -572,25 +572,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya suasana akademik meliputi: (1) Bentuk interaksi antara dosen, mahasiswa dan sumber belajar; (2) Pemantauan kesesuaian proses terhadap rencana pembelajaran; (3) Keterlibatan pemangku kepentingan dalam proses evaluasi dan pemutakhiran kurikulum; (4) Penciptaan suasana akademik melalui kegiatan ilmiah yang terjadwal, secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
@@ -633,25 +633,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya integrasi topik penelitian dan kegiatan PkM dalam proses pembelajaran, secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
@@ -694,25 +694,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya proses evaluasi dan pemutakhiran kurikulum, dan keterlibatan pemangku kepentingan secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
@@ -755,25 +755,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara sangat efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir secara cukup efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksananya proses penyelesaian tugas akhir, secara kurang efektif disertai bukti yang sahih.</span>
                             </td>
@@ -816,25 +816,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan sangat efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan cukup efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Terlaksannya evaluasi secara berkala dan kurang efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan pendidikan/ pembelajaran, termasuk evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
@@ -877,25 +877,25 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }} value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang sangat lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }} value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }} value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }} value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang kurang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan pendidikan/ pembelajaran, termasuk analisis dan tindak lanjut dari evaluasi kepuasan mahasiswa terhadap proses pembelajaran.</span>
                             </td>

@@ -32,9 +32,13 @@ class MatriksController extends Controller
             return view('matriks.index', $data);
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
+            $matriks = Matriks::all()->where('prodi_id', $prodi->id)->count();
+
             $data = [
                 'prodi' => $prodi,
+                'dataMatriks' => $matriks,
             ];
+            return $matriks;
             return view('matriks.index', $data);
         }
     }
@@ -170,8 +174,10 @@ class MatriksController extends Controller
             Matriks::create($data);
         }
         $data =
-        Matriks::find($request->id)->bukti;
-        return response()->json(['success' => 'Bukti matriks berhasil disimpan!',
-    'data' => $data]);
+            Matriks::find($request->id)->bukti;
+        return response()->json([
+            'success' => 'Bukti matriks berhasil disimpan!',
+            'data' => $data
+        ]);
     }
 }

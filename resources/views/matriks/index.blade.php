@@ -95,7 +95,11 @@
 
                                 </td>
                                 <td>
-
+                                    @php
+                                        if ($dataMatriks){
+                                            
+                                        }
+                                    @endphp                                    
                                 </td>
                                 <td>
                                     1
