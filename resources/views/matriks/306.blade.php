@@ -994,6 +994,7 @@
         </div>
         <!-- /.card -->
     </section>
+@include('matriks.modal_bukti_penilaian')
 
 @endsection
 

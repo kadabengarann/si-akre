@@ -102,7 +102,7 @@
 
 
             let id_temp = parseInt($('#bukti_penilaian').find('#input_row_id').val());
-            let row = $(`.matriks_id[data-id="${311}"]`).parent()
+            let row = $(`.matriks_id[data-id="${id_temp}"]`).parent()
 
             let _prodi_id = {{ $prodi->id }};
             let _row_id = id_temp
@@ -152,6 +152,8 @@
 
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
             lihat_bukti_btn.attr("href", _data)
+            let bukti_btn = $(params).find('.input_bukti_trigg')
+            bukti_btn.data('url', _data)
 
 
         };
