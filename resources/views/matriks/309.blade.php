@@ -3,7 +3,7 @@
 @include('matriks.form_header')
 @section('content')
 <section class="content">
-    <div class="card card-primary card-outline">
+    <div class="card card-primary card-outline header_stick">
         <div class="card-body">
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -222,7 +222,7 @@
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
                     <tr>
-                        @php($row_id = 394)
+                        @php($row_id = 3914)
                         <td class="matriks_id" data-id="{{ $row_id }}">
                             90
                         </td>{{-- NO BUTIR --}}
@@ -996,7 +996,7 @@
                                             : ''))) }}">
                             {{ getMatriksSkor($row_id, $matriks) }}
                         </td>{{-- NILAI --}}
-                        <td class="bobot" data-bobot="5">5</td>{{-- BOBOT --}}
+                        <td class="bobot" data-bobot="4">4</td>{{-- BOBOT --}}
                         <td class="bukti_penilaian">
                             <label for="bukti" class="row ">
                                 <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti" href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
