@@ -95,11 +95,7 @@
 
                                 </td>
                                 <td>
-                                    @php
-                                        if ($dataMatriks){
-                                            
-                                        }
-                                    @endphp                                    
+                                    {{ getMatriksSum(11, $dataMatriks)?:'-' }}                                
                                 </td>
                                 <td>
                                     1
@@ -133,6 +129,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(21, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -153,7 +150,7 @@
                                     1. VISI, MISI, TUJUAN DAN STRATEGI
                                 </td>
                                 <td>
-                                    6(1,5%)
+                                    4(1,0%)
                                 </td>
                                 <td>
 
@@ -168,6 +165,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(31, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -188,7 +186,7 @@
                                     2. TATA PAMONG, TATA KELOLA, DAN KERJASAMA
                                 </td>
                                 <td>
-                                    24 (6%)
+                                    20 (5,0%)
                                 </td>
                                 <td>
 
@@ -203,6 +201,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(32, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -222,7 +221,7 @@
                                     3. MAHASISWA
                                 </td>
                                 <td>
-                                    18 (4,5%)
+                                    14 (3,5%)
                                 </td>
                                 <td>
 
@@ -237,6 +236,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(33, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -256,7 +256,7 @@
                                     4. SUMBER DAYA MANUSIA
                                 </td>
                                 <td>
-                                    31 (7,8%)
+                                    30 (7,5%)
                                 </td>
                                 <td>
 
@@ -271,6 +271,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(34, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -305,6 +306,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(35, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -324,7 +326,7 @@
                                     6. PENDIDIKAN
                                 </td>
                                 <td>
-                                    32 (8%)
+                                    30 (7,5%)
                                 </td>
                                 <td>
 
@@ -339,6 +341,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(36, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -358,7 +361,7 @@
                                     7. PENELITIAN
                                 </td>
                                 <td>
-                                    13 (3,3 %)
+                                    16 (4,0 %)
                                 </td>
                                 <td>
 
@@ -373,6 +376,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(37, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -392,7 +396,7 @@
                                     8. PENGABDIAN KEPADA MASYARAKAT
                                 </td>
                                 <td>
-                                    17 (4,3%)
+                                    12 (3,0%)
                                 </td>
                                 <td>
 
@@ -407,6 +411,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(38, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -426,7 +431,7 @@
                                     9. LUARAN DAN CAPAIAN TRIDHARMA
                                 </td>
                                 <td>
-                                    188 (47%)
+                                    208 (52%)
                                 </td>
                                 <td>
 
@@ -441,6 +446,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(39, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -460,7 +466,7 @@
                                     SUPLEMEN PROGRAM STUDI
                                 </td>
                                 <td>
-                                    25(6,3%)
+                                    20(5,0%)
                                 </td>
                                 <td>
 
@@ -475,6 +481,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(41, $dataMatriks)?:'-' }}                                
 
                                 </td>
                                 <td>
@@ -495,7 +502,7 @@
                                     ANALISIS DAN PENETAPAN PROGRAM PENGEMBANGAN
                                 </td>
                                 <td>
-                                    12(3%)
+                                    12(3,0%)
                                 </td>
                                 <td>
 
@@ -510,6 +517,7 @@
 
                                 </td>
                                 <td>
+                                    {{ getMatriksSum(51, $dataMatriks)?:'-'}}                                
 
                                 </td>
                                 <td>
@@ -528,7 +536,8 @@
                                 <td>
                                     400 (100%)
                                 </td>
-                                <td colspan="5"></td>
+                                <td colspan="4"></td>
+                                <td>{{ $matriksSumAll }}</td>
                                 <td>
                                     99
                                 </td>
