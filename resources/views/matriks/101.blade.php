@@ -2,8 +2,8 @@
 @section('title', 'Dashboard')
 @include('matriks.form_header')
 @section('content')
-    <section class="content">
-        <div class="card card-primary card-outline">
+    <section class="content ">
+        <div class="card header_stick card-primary card-outline">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
