@@ -18,31 +18,26 @@ class MatriksController extends Controller
     public function index(Request $request)
     {
         if (Auth::user()->level == 1) {
-            $data = [
-                'prodi' =>
-                Prodi::find(
-                    $request->query('id')
-                ),
-
-            ];
+            $prodi =
+            Prodi::find(
+                $request->query('id')
+            );
             if (null == $request->query('id')) {
                 return redirect('/admin/iaps');
             }
-
-            return view('matriks.index', $data);
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
-            $matriksSum = Matriks::getSummary($prodi->id);
-            $matriksSumAll = Matriks::getSummaryAll($prodi->id);
-
-            $data = [
-                'prodi' => $prodi,
-                'dataMatriks' => $matriksSum,
-                'matriksSumAll' => $matriksSumAll,
-            ];
-            // return $matriksSum;
-            return view('matriks.index', $data);
         }
+        $matriksSum = Matriks::getSummary($prodi->id);
+        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+
+        $data = [
+            'prodi' => $prodi,
+            'dataMatriks' => $matriksSum,
+            'matriksSumAll' => $matriksSumAll,
+        ];
+        return view('matriks.index', $data);
+
     }
     public function form($id, Request $request)
     {
