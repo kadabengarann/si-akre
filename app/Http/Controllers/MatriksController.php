@@ -32,9 +32,15 @@ class MatriksController extends Controller
             return view('matriks.index', $data);
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
+            $matriksSum = Matriks::getSummary($prodi->id);
+            $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+
             $data = [
                 'prodi' => $prodi,
+                'dataMatriks' => $matriksSum,
+                'matriksSumAll' => $matriksSumAll,
             ];
+            // return $matriksSum;
             return view('matriks.index', $data);
         }
     }
@@ -133,9 +139,11 @@ class MatriksController extends Controller
     }
     public function updateMatriks(Request $request)
     {
+        $t_group = (int)substr($request->row_id, 0, 2);
         if (Matriks::find($request->id)) {
             $matriks = Matriks::find($request->id);
             $matriks->row_id = $request->row_id;
+            $matriks->t_group = $t_group;
             $matriks->grade = $request->grade;
             $matriks->skor = $request->skor;
             $matriks->prodi_id = $request->prodi_id;
@@ -145,6 +153,7 @@ class MatriksController extends Controller
                 [
                     'id' => $request->id,
                     'row_id' => $request->row_id,
+                    't_group' => $t_group,
                     'grade' => $request->grade,
                     'skor' => $request->skor,
                     'prodi_id' => $request->prodi_id,
@@ -170,8 +179,10 @@ class MatriksController extends Controller
             Matriks::create($data);
         }
         $data =
-        Matriks::find($request->id)->bukti;
-        return response()->json(['success' => 'Bukti matriks berhasil disimpan!',
-    'data' => $data]);
+            Matriks::find($request->id)->bukti;
+        return response()->json([
+            'success' => 'Bukti matriks berhasil disimpan!',
+            'data' => $data
+        ]);
     }
 }

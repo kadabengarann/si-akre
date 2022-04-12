@@ -16,6 +16,7 @@ class CreateMatriksTable extends Migration
         Schema::create('matriks', function (Blueprint $table) {
             $table->id();
             $table->integer('row_id')->nullable();
+            $table->integer('t_group')->nullable();
             $table->integer('grade')->nullable();
             $table->float('skor')->nullable();
             $table->string('bukti')->nullable();

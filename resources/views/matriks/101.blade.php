@@ -40,7 +40,7 @@
                             </th>
                             <th rowspan="2">Bobot
                             </th>
-                            <th rowspan="2">Skor
+                            <th rowspan="2">Bukti
                             </th>
                         </tr>
                         <tr>
@@ -53,7 +53,8 @@
                     <tbody>
 
                         <tr>
-                            <td>
+                            @php($row_id = 111)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 1
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">A. Kondisi Eksternal
@@ -64,36 +65,59 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai111" value="4">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio" 
+                                    name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS dengan sangat komprehensif.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai111" value="3">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}"  value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara komprehensif.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai111" value="2">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara cukup komprehensif.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai111" value="1">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">UPPS mampu menganalisis aspek-aspek dalam lingkungan makro dan lingkungan mikro yang relevan dan dapat mempengaruhi eksistensi dan pengembangan PS maupun UPPS secara kurang komprehensif.</span>
                             </td>
-
-                            <td class="nilai"></td>{{-- NILAI --}}
+                            <td class="nilai 
+                            {{ getMatriksGrade($row_id, $matriks) == 4
+                                ? 'skor_a'
+                                : (getMatriksGrade($row_id, $matriks) == 3
+                                    ? 'skor_b'
+                                    : (getMatriksGrade($row_id, $matriks) == 2
+                                        ? 'skor_c'
+                                        : (getMatriksGrade($row_id, $matriks) == 1
+                                            ? 'skor_d'
+                                            : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}</td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="24">
-                                24 </td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row ">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <tr>
-                            <td>
+                            @php($row_id = 211)
+                            <td class="matriks_id" data-id="{{ $row_id }}">
                                 2
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">B. Profil Unit Pengelola Program Studi / Analisis Internal
@@ -104,32 +128,54 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai211" value="4">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
                                 <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, sangat komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai211" value="3">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
                                 <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, komprehensif dan konsisten terhadap data dan informasi yang disampaikan padamasing-masing kriteria.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai211" value="2">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
                                 <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, cukup komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" name="nilai211" value="1">
+                                    <input {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} type="radio"
+                                    name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
                                 <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, kurang komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada masing-masing kriteria.</span>
                             </td>{{-- ALASAN PENILAIAN 1 --}}
-                           <td class="nilai"></td>{{-- NILAI --}}
+                           <td class="nilai {{ getMatriksGrade($row_id, $matriks) == 4
+                            ? 'skor_a'
+                            : (getMatriksGrade($row_id, $matriks) == 3
+                                ? 'skor_b'
+                                : (getMatriksGrade($row_id, $matriks) == 2
+                                    ? 'skor_c'
+                                    : (getMatriksGrade($row_id, $matriks) == 1
+                                        ? 'skor_d'
+                                        : ''))) }}">
+                                {{ getMatriksSkor($row_id, $matriks) }}</td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
-                            <td data-target="#skor_penilaian" data-skor="24">
-                                24 </td>{{-- SKOR MAKS --}}
+                            <td class="bukti_penilaian">
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
+                                </label>
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                </label>
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
 
                     </tbody>
@@ -138,7 +184,8 @@
         </div>
         <!-- /.card -->
     </section>
-    
+    @include('matriks.modal_bukti_penilaian')
+
 @endsection
 
 @include('matriks.scripts')

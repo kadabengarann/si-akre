@@ -27,3 +27,12 @@ function getMatriksBukti($id, $arr)
     }
     return "#";
 }
+function getMatriksSum($id, $arr)
+{
+    foreach ($arr as $n) {
+        if ($n->t_group == $id) {
+            return $n->skor;
+        }
+    }
+    return false;
+}
