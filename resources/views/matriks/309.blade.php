@@ -450,7 +450,7 @@
                         <td class="matriks_id" data-id="{{ $row_id }}">
                             94
                         </td>
-                        Z{{-- NO BUTIR --}}
+                        {{-- NO BUTIR --}}
                         <td class="text-start">9.2 [PELAKSANAAN] A. Keterlaksanaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan luaran dan capaian terkait pendidikan.
                         </td>{{-- ELEMEN --}}
                         <td></td>{{-- LOKASI --}}
@@ -724,7 +724,7 @@
                             <label for="bukti" class="row">
                                 <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen" data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}" data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
                             </label>
-                        </td>{{-- BUKTI PENILAIAN --}}}
+                        </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
                     <tr>
                         @php($row_id = 3913)
@@ -783,7 +783,7 @@
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
                     <tr>
-                        @php($row_id = 394)
+                        @php($row_id = 3914)
                         <td class="matriks_id" data-id="{{ $row_id }}">
                             100
                         </td>{{-- NO BUTIR --}}

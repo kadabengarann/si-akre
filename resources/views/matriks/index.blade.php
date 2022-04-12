@@ -96,8 +96,8 @@
                                 </td>
                                 <td>
                                     @php
-                                        if ($dataMatriks){
-                                            
+                                        if ($dataMatriks->row_id==111){
+123
                                         }
                                     @endphp                                    
                                 </td>

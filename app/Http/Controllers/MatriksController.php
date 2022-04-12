@@ -38,7 +38,7 @@ class MatriksController extends Controller
                 'prodi' => $prodi,
                 'dataMatriks' => $matriks,
             ];
-            return $matriks;
+            // return $matriks;
             return view('matriks.index', $data);
         }
     }

@@ -222,7 +222,7 @@
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
                     <tr>
-                        @php($row_id = 394)
+                        @php($row_id = 514)
                         <td class="matriks_id" data-id="{{ $row_id }}">
                             132
                         </td>{{-- NO BUTIR --}}
