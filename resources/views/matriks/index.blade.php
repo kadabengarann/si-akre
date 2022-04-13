@@ -169,7 +169,7 @@
 
                                 </td>
                                 <td>
-                                    3
+                                    9
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -205,7 +205,7 @@
 
                                 </td>
                                 <td>
-                                    7
+                                    11
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -240,7 +240,7 @@
 
                                 </td>
                                 <td>
-                                    7
+                                    9
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -310,7 +310,7 @@
 
                                 </td>
                                 <td>
-                                    10
+                                    7
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -345,7 +345,7 @@
 
                                 </td>
                                 <td>
-                                    12
+                                    15
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -380,7 +380,7 @@
 
                                 </td>
                                 <td>
-                                    5
+                                    11
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -415,7 +415,7 @@
 
                                 </td>
                                 <td>
-                                    7
+                                    11
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -450,7 +450,7 @@
 
                                 </td>
                                 <td>
-                                    26
+                                    17
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
@@ -539,7 +539,7 @@
                                 <td colspan="4"></td>
                                 <td>{{ $matriksSumAll }}</td>
                                 <td>
-                                    99
+                                    112
                                 </td>
                             </tr>
                         </tbody>
