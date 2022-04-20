@@ -514,10 +514,10 @@
                                         if($matriksSumAll >= 361){
                                             echo "Unggul";
                                         }
-                                        elseif ($matriksSumAll <= 301 && $matriksSumAll < 361) {
+                                        elseif ($matriksSumAll >= 301 && $matriksSumAll < 361) {
                                             echo "Baik Sekali";
                                         }
-                                        elseif ($matriksSumAll <= 200 && $matriksSumAll < 301) {
+                                        elseif ($matriksSumAll >= 200 && $matriksSumAll < 301) {
                                             echo "Baik";
                                         }
                                         else {

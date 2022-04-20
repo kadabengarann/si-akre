@@ -108,7 +108,7 @@
                                     <label for="bukti" class="row">
                                         <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
                                             href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                    </label>    
+                                    </label>
                                     @endif
                                 <label for="bukti" class="row">
                                     <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
