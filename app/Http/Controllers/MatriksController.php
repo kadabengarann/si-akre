@@ -19,9 +19,9 @@ class MatriksController extends Controller
     {
         if (Auth::user()->level == 1) {
             $prodi =
-            Prodi::find(
-                $request->query('id')
-            );
+                Prodi::find(
+                    $request->query('id')
+                );
             if (null == $request->query('id')) {
                 return redirect('/admin/iaps');
             }
@@ -31,13 +31,13 @@ class MatriksController extends Controller
         $matriksSum = Matriks::getSummary($prodi->id);
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
 
+        // return $matriksSum;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
             'matriksSumAll' => $matriksSumAll,
         ];
         return view('matriks.index', $data);
-
     }
     public function form($id, Request $request)
     {
