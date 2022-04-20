@@ -41,16 +41,14 @@
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
-                                <th class="mt-1 mb-1">"Nilai Hasil
-                                    R-2"
-
+                                <th class="mt-1 mb-1">Nilai Hasil
+                                    R-3
                                 </th>
-                                <th class="mt-1 mb-1">"Nilai Hasil
-                                    R-1"
+                                <th class="mt-1 mb-1">Nilai Hasil
+                                    R-2
                                 </th>
-                                <th class="mt-1 mb-1">Skor R-1
-                                </th>
-                                <th class="mt-1 mb-1">Skor R-1
+                                <th class="mt-1 mb-1">Nilai Hasil
+                                    R-1
                                 </th>
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
@@ -85,9 +83,7 @@
                                 <td>
 
                                 </td>
-                                <td>
 
-                                </td>
                                 <td>
 
                                 </td>
@@ -115,9 +111,6 @@
                                 </td>
                                 <td>
                                     6(1,5%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -162,9 +155,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(31, $dataMatriks)?:'-' }}                                
 
                                 </td>
@@ -187,9 +177,6 @@
                                 </td>
                                 <td>
                                     20 (5,0%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -233,9 +220,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(33, $dataMatriks)?:'-' }}                                
 
                                 </td>
@@ -257,9 +241,6 @@
                                 </td>
                                 <td>
                                     30 (7,5%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -303,9 +284,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(35, $dataMatriks)?:'-' }}                                
 
                                 </td>
@@ -327,9 +305,6 @@
                                 </td>
                                 <td>
                                     30 (7,5%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -373,9 +348,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(37, $dataMatriks)?:'-' }}                                
 
                                 </td>
@@ -397,9 +369,6 @@
                                 </td>
                                 <td>
                                     12 (3,0%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -443,9 +412,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(39, $dataMatriks)?:'-' }}                                
 
                                 </td>
@@ -467,9 +433,6 @@
                                 </td>
                                 <td>
                                     20(5,0%)
-                                </td>
-                                <td>
-
                                 </td>
                                 <td>
 
@@ -514,9 +477,6 @@
 
                                 </td>
                                 <td>
-
-                                </td>
-                                <td>
                                     {{ getMatriksSum(51, $dataMatriks)?:'-'}}                                
 
                                 </td>
@@ -532,17 +492,42 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
+                                    Nilai Hasil
                                 </td>
                                 <td>
                                     400 (100%)
                                 </td>
-                                <td colspan="4"></td>
+                                <td colspan="3"></td>
                                 <td>{{ $matriksSumAll }}</td>
                                 <td>
                                     112
                                 </td>
+                                <td></td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Nilai Akreditasi</td>
+                                <td colspan="7">
+                                    <b>
+                                    @php
+                                        if($matriksSumAll >= 361){
+                                            echo "Unggul";
+                                        }
+                                        elseif ($matriksSumAll <= 301 && $matriksSumAll < 361) {
+                                            echo "Baik Sekali";
+                                        }
+                                        elseif ($matriksSumAll <= 200 && $matriksSumAll < 301) {
+                                            echo "Baik";
+                                        }
+                                        else {
+                                            echo "Tidak memenuhi syarat peringkat";
+                                        }
+                                    @endphp
+                                    </b>
+                                </td>
+                              </tr>                              
+                        </tfoot>
                     </table>
                 </div>
                 <!-- /.card-body -->

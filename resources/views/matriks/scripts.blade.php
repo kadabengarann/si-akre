@@ -62,6 +62,35 @@
             }
         });
 
+        function notField(params, _skor) {
+            let bobot = parseFloat($(params).siblings(".bobot").data('bobot'))
+            let skor_parent = $(params).siblings(".nilai")
+            _grade = $(':radio', params).val()
+            switch (_grade) {
+                case '4':
+                    console.log(skor_parent);
+                    skor_parent.css("background-color", "#0c9");
+                    skor_parent.css("color", "#fff");
+                    break;
+                case '3':
+                    skor_parent.css("background-color", "orange");
+                    skor_parent.css("color", "#fff");
+                    break;
+                case '2':
+                    skor_parent.css("background-color", "yellow");
+                    skor_parent.css("color", "#fff");
+                    break;
+                case '1':
+                    skor_parent.css("background-color", "rgb(255, 68, 68)");
+                    skor_parent.css("color", "#fff");
+                    break;
+
+                default:
+                    break;
+            }
+            skor_parent.text(_skor)
+        };
+
         function updateContent(params, _skor) {
             let bobot = parseFloat($(params).siblings(".bobot").data('bobot'))
             let skor_parent = $(params).siblings(".nilai")
