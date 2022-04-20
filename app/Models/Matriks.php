@@ -30,15 +30,16 @@ class Matriks extends Model
     {
         $matriks = DB::table('matriks')
             ->where('prodi_id', $prodi_id)
-            ->select(DB::raw('t_group, sum(skor) as skor'))
+            ->select(DB::raw('t_group, sum(skor) as skor , count(*) - count(skor) + count(*) - count(bukti) as remainingField'))
             ->groupBy("t_group")
             ->get();
+
         return $matriks;
     }
     public static function getSummaryAll($prodi_id)
     {
         $matriks = Matriks::all()
-        ->where('prodi_id', $prodi_id)
+            ->where('prodi_id', $prodi_id)
             ->sum('skor');
         return $matriks;
     }

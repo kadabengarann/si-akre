@@ -27,12 +27,16 @@ function getMatriksBukti($id, $arr)
     }
     return "#";
 }
-function getMatriksSum($id, $arr)
+function getArrayItem($id, $arr)
 {
+    $x = (object) [
+        "skor" => null,
+        "remainingField" => 1,
+    ];
     foreach ($arr as $n) {
         if ($n->t_group == $id) {
-            return $n->skor;
+            return $n;
         }
     }
-    return false;
+    return $x;
 }

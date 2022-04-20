@@ -32,6 +32,7 @@ class MatriksController extends Controller
         $matriksSum = Matriks::getSummary($prodi->id);
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
 
+        // return $matriksSum;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,

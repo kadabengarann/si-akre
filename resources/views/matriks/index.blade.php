@@ -73,7 +73,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            @php
+                                $row_id = 11;
+                            @endphp
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     A
                                 </td>
@@ -94,7 +98,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(11, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
                                 </td>
                                 <td>
                                     1
@@ -105,7 +109,12 @@
                                             class="fas fa-pen"></i></a>
                                 </td>
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 21;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : 'haiya' }}">
                                 <td>
                                     B
                                 </td>
@@ -125,7 +134,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(21, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -138,7 +147,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 31;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     C
                                 </td>
@@ -158,7 +172,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(31, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -171,7 +185,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 32;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
 
                                 </td>
@@ -191,7 +210,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(32, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -204,7 +223,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 33;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -223,7 +247,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(33, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -236,7 +260,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 34;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -255,7 +284,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(34, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -268,7 +297,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 35;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -287,7 +321,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(35, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -300,7 +334,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 36;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -319,7 +358,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(36, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -332,7 +371,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 37;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -351,7 +395,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(37, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -364,7 +408,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 38;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -383,7 +432,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(38, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -396,7 +445,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 39;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -415,7 +469,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(39, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -428,7 +482,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 41;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     D </td>
                                 <td class="text-start">
@@ -447,7 +506,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(41, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -460,7 +519,12 @@
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 51;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     E
                                 </td>
@@ -480,7 +544,7 @@
 
                                 </td>
                                 <td>
-                                    {{ getMatriksSum(51, $dataMatriks)?:'-'}}                                
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -513,23 +577,20 @@
                                 <td colspan="2">Nilai Akreditasi</td>
                                 <td colspan="7">
                                     <b>
-                                    @php
-                                        if($matriksSumAll >= 361){
-                                            echo "Unggul";
-                                        }
-                                        elseif ($matriksSumAll >= 301 && $matriksSumAll < 361) {
-                                            echo "Baik Sekali";
-                                        }
-                                        elseif ($matriksSumAll >= 200 && $matriksSumAll < 301) {
-                                            echo "Baik";
-                                        }
-                                        else {
-                                            echo "Tidak memenuhi syarat peringkat";
-                                        }
-                                    @endphp
+                                        @php
+                                            if ($matriksSumAll >= 361) {
+                                                echo 'Unggul';
+                                            } elseif ($matriksSumAll >= 301 && $matriksSumAll < 361) {
+                                                echo 'Baik Sekali';
+                                            } elseif ($matriksSumAll >= 200 && $matriksSumAll < 301) {
+                                                echo 'Baik';
+                                            } else {
+                                                echo 'Tidak memenuhi syarat peringkat';
+                                            }
+                                        @endphp
                                     </b>
                                 </td>
-                              </tr>                              
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
