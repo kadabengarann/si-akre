@@ -205,20 +205,24 @@ span.caption:before {
 .tooltiptext.active {
     visibility: visible;
 }
-.nilai.skor_a{
+
+.nilai.skor_a {
     background-color: #0c9;
     color: #fff;
 }
-.nilai.skor_b{
-    
+
+.nilai.skor_b {
+
     background-color: #ffb300;
     color: #fff;
 }
-.nilai.skor_c{
+
+.nilai.skor_c {
     background-color: yellow;
     color: #000;
-    }
-.nilai.skor_d{
+}
+
+.nilai.skor_d {
     background-color: red;
     color: #fff;
 }
