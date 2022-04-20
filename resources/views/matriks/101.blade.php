@@ -104,12 +104,11 @@
                                 {{ getMatriksSkor($row_id, $matriks) }}</td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                    @if(getMatriksBukti($row_id, $matriks) == !null)
-                                    <label for="bukti" class="row">
-                                        <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                            href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                    </label>
-                                    @endif
+                                <label for="bukti" class="row">
+                                    <a class="btn btn-primary col-10 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriks) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti" href="{{ getMatriksBukti($row_id, $matriks) }}"
+                                        target="_blank">Lihat Bukti</a>
+                                </label>
                                 <label for="bukti" class="row">
                                     <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
                                         data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"

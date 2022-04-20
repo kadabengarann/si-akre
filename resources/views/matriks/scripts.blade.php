@@ -178,9 +178,13 @@
 
         function updateBukti(params, _data) {
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
-
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
             lihat_bukti_btn.attr("href", _data)
+            if (_data == null) {
+                lihat_bukti_btn.hide()
+            } else {
+                lihat_bukti_btn.show()
+            }
             let bukti_btn = $(params).find('.input_bukti_trigg')
             bukti_btn.data('url', _data)
 
