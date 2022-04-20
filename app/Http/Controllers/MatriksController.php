@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Matriks;
 use DeepCopy\Matcher\Matcher;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MatriksController extends Controller
 {
@@ -38,6 +39,33 @@ class MatriksController extends Controller
             'matriksSumAll' => $matriksSumAll,
         ];
         return view('matriks.index', $data);
+    }
+    public function cetak_pdf(Request $request)
+    {
+        // return "satu";
+        if (Auth::user()->level == 1) {
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
+            if (null == $request->query('id')) {
+                return redirect('/admin/iaps');
+            }
+        } elseif (Auth::user()->level == 2) {
+            $prodi = Prodi::find(Auth::user()->prodi->id);
+        }
+        $matriksSum = Matriks::getSummary($prodi->id);
+        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+
+        $data = [
+            'prodi' => $prodi,
+            'dataMatriks' => $matriksSum,
+            'matriksSumAll' => $matriksSumAll,
+        ];
+        $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
+        return $pdf->stream();
+        // return $pdf->download('laporan-pegawai.pdf');
+        // return view('matriks.index', $data);
     }
     public function form($id, Request $request)
     {

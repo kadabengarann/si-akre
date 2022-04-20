@@ -24,6 +24,9 @@
                         <div class="col-12 col-lg-6">
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                         </div>
+                        <div class="col-12 col-lg-6 text-right">
+                            <a class="btn btn-info" href="cetak_pdf" target="_blank">Export PDF</a>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->
