@@ -122,7 +122,7 @@
                                 </label>
                                 @if (Auth::user()->level != 5)
                                     <label for="bukti" class="row">
-                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
                                             data-toggle="modal" data-target="#bukti_penilaian"
                                             data-row="{{ $row_id }}"
                                             data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
@@ -131,8 +131,8 @@
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
-                            @php($row_id = 211)
+                        @php($row_id = 211)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 2
                             </td>{{-- NO BUTIR --}}
@@ -177,7 +177,7 @@
                                 <span class="tooltiptext">UPPS mampu menyajikan seluruh informasi secara ringkas, kurang
                                     komprehensif dan konsisten terhadap data dan informasi yang disampaikan pada
                                     masing-masing kriteria.</span>
-                            </td>{{-- ALASAN PENILAIAN 1 --}}
+                            </td>{{-- ALASAN PENILAIAN --}}
                             <td
                                 class="nilai {{ getMatriksGrade($row_id, $matriks) == 4
                                     ? 'skor_a'
@@ -192,13 +192,16 @@
                             <td class="bobot" data-bobot="6">6</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-primary btn-sm col-14 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
-                                        id="lihat_bukti" href="{{ getMatriksBukti($row_id, $matriksBukti) }}"
-                                        target="_blank">Lihat Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
                                 @if (Auth::user()->level != 5)
                                     <label for="bukti" class="row">
-                                        <a class="btn btn-outline-primary btn-sm col-14 ml-auto mr-auto input_bukti_trigg alasan_pen"
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
                                             data-toggle="modal" data-target="#bukti_penilaian"
                                             data-row="{{ $row_id }}"
                                             data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload

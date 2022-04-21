@@ -105,7 +105,7 @@
                             @endphp
 
                             <tr
-                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : 'haiya' }}">
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : '' }}">
                                 <td>
                                     B
                                 </td>
