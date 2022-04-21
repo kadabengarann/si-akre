@@ -41,7 +41,16 @@ class Matriks extends Model implements Auditable
             ->select(DB::raw('t_group as id, sum(skor) as skor , count(*) - count(skor) + count(*) - count(bukti) as remainingField'))
             ->groupBy("t_group")
             ->get();
-
+        return $matriks;
+    }
+    public static function getSummaryRev($prodi_id, $rev_id)
+    {
+        $matriks = DB::table('matriks')
+            ->where('prodi_id', $prodi_id)
+            ->where('user_id', $rev_id)
+            ->select(DB::raw('t_group as id, sum(skor) as skor , count(*) - count(skor) as remainingField'))
+            ->groupBy("t_group")
+            ->get();
         return $matriks;
     }
     public static function getSummaryRow($prodi_id, $rev_id)
@@ -66,7 +75,7 @@ class Matriks extends Model implements Auditable
 
         return $matriks;
     }
-    public static function getSummaryRev($prodi_id)
+    public static function getSummaryAllRev($prodi_id)
     {
         $array1 = array();
         $revs = DB::table('reviewer')
