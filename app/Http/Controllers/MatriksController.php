@@ -8,6 +8,9 @@ use App\Models\Prodi;
 use App\Models\Matriks;
 use DeepCopy\Matcher\Matcher;
 use Barryvdh\DomPDF\Facade\Pdf;
+// use Barryvdh\Snappy\Facades\SnappyPdf;
+// use PDF; //import Fungsi PDF
+// use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 
 class MatriksController extends Controller
 {
@@ -62,10 +65,18 @@ class MatriksController extends Controller
             'dataMatriks' => $matriksSum,
             'matriksSumAll' => $matriksSumAll,
         ];
+        // $pdf = PDF::loadView('/matriks/matriks_pdf', $data);
+        //Aktifkan Local File Access supaya bisa pakai file external ( cth File .CSS )
+        // $pdf->setOption('enable-local-file-access', true);
+        // Stream untuk menampilkan tampilan PDF pada browser
+        // $pdf->inline('Matriks.pdf');
+        // return $pdf->inline('Matriks.pdf');
+
+        // DOMPDF
         $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
-        return $pdf->stream();
-        // return $pdf->download('laporan-pegawai.pdf');
-        // return view('matriks.index', $data);
+        return $pdf->stream('Matriks.pdf');
+        // ->setOptions(['defaultFont' => 'sans-serif']);;
+        // return $pdf->download('Matriks Teknologi Informasi.pdf');
     }
     public function form($id, Request $request)
     {

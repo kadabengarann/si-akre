@@ -178,6 +178,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         OwenIt\Auditing\AuditingServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        // Barryvdh\Snappy\ServiceProvider::class,
     ],
 
     /*
@@ -235,6 +236,9 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         // 'PDF' => Barryvdh\DomPDF\Facade::class,
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class
+        // 'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        // 'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+
     ],
 
 ];
