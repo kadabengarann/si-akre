@@ -1,33 +1,36 @@
 @push('scripts')
     <script>
+        $(document).ready(function() {
+            let bukti_field = document.querySelectorAll("td.bukti_penilaian");
+            bukti_field.forEach(element => {
+                if (element.querySelector(".row .hidden")) {
+                    console.log(element);
+                    element.querySelector(".row").innerHTML += '<p class="font-weight-normal m-0">Tidak ada bukti penilaian</p>';
+                }
+
+            });
+
+
+        });
         var Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
             timer: 3000
         });
-        $(".input_skor_trigg").click(function() {
-            var text = $(this).data('skor');
-            console.log($('#skor_penilaian').find('.modal-body input'));
-            console.log(parseInt(text));
-            $('#skor_penilaian').find('.modal-body input').attr('value', parseInt(text))
-        });
-        $(".input_alasan_trigg").click(function() {
-            var text = $(this).data('penilaian');
-            console.log($('#text_penilaian').find('.modal-body textarea'));
-            $('#text_penilaian').find('.modal-body textarea').text($.trim(text))
-        });
 
         $('.penilaian_check_field').click(function(event) {
             event.preventDefault();
             let _grade;
             let _skor;
+            let _rev_id = {{ $reffer_id }};
             let _prodi_id = {{ $prodi->id }};
             let radio = this
             let bobot = parseFloat($(this).siblings(".bobot").data('bobot'))
             let id_temp = parseInt($(this).siblings(".matriks_id").data('id'));
             let _row_id = id_temp
-            const _id = parseInt(`${id_temp}${_prodi_id}`);
+            const _id = parseInt(`${id_temp}${_prodi_id}${_rev_id}`);
+            console.log(_id);
             let _token = $('meta[name="csrf-token"]').attr('content');
 
             console.log(_prodi_id);
@@ -43,6 +46,7 @@
                         grade: _grade,
                         skor: _skor,
                         prodi_id: _prodi_id,
+                        rev_id: _rev_id,
                         _token: _token
                     },
                     url: "/matriks/update",
@@ -133,9 +137,11 @@
             let id_temp = parseInt($('#bukti_penilaian').find('#input_row_id').val());
             let row = $(`.matriks_id[data-id="${id_temp}"]`).parent()
 
+            let _rev_id = {{ $reffer_id }};
             let _prodi_id = {{ $prodi->id }};
             let _row_id = id_temp
-            const _id = parseInt(`${id_temp}${_prodi_id}`);
+            const _id = parseInt(`${id_temp}${_prodi_id}${_rev_id}`);
+            console.log(_id);
             let _bukti = $(input_bukti).val()
 
             let _token = $('meta[name="csrf-token"]').attr('content');
@@ -146,6 +152,9 @@
                 data: {
                     id: _id,
                     bukti: _bukti,
+                    row_id: _row_id,
+                    prodi_id: _prodi_id,
+                    rev_id: _rev_id,
                     _token: _token
                 },
                 url: "/matriks/update-bukti",

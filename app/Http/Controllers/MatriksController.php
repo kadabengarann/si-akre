@@ -18,38 +18,58 @@ class MatriksController extends Controller
 
     public function index(Request $request)
     {
-        if (Auth::user()->level == 1) {
+        if (Auth::user()->level == 1 || Auth::user()->level == 5) {
             $prodi =
                 Prodi::find(
                     $request->query('id')
                 );
             if (null == $request->query('id')) {
-                return redirect('/admin/iaps');
+                return redirect('/matriks/prodi');
+            }
+            if (Auth::user()->level == 1) {
+                $rev_id = $prodi->id;
+            } elseif (Auth::user()->level == 5) {
+                $rev_id = Auth::user()->id;
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
+            $rev_id = $prodi->id;
         }
-        $matriksSum = Matriks::getSummary($prodi->id);
-        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
 
-        // return $matriksSum;
+        $matriksSum = Matriks::getSummary($prodi->id,$rev_id);
+        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+        $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
+        $matriksSumReviewers = Matriks::getSummaryRev($prodi->id);
+
+        // return $matriksSumReviewers;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
+            'dataMatriksReviewer' => $matriksSumReviewers,
+            'dataMatriksProdi' => $matriksSumProdi,
             'matriksSumAll' => $matriksSumAll,
         ];
         return view('matriks.index', $data);
     }
+    public function index_prodi(Request $request)
+    {
+        $data = [
+            'prodi' => Prodi::get(),
+        ];
+        return view('matriks.index_prodi', $data);
+    }
     public function cetak_pdf(Request $request)
     {
         // return "satu";
-        if (Auth::user()->level == 1) {
+        if (
+            Auth::user()->level == 1 || Auth::user()->level == 5
+        ) {
             $prodi =
                 Prodi::find(
                     $request->query('id')
                 );
             if (null == $request->query('id')) {
-                return redirect('/admin/iaps');
+                return redirect('/matriks/prodi');
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
@@ -69,28 +89,39 @@ class MatriksController extends Controller
     }
     public function form($id, Request $request)
     {
-        if (Auth::user()->level == 1) {
+        if (Auth::user()->level == 1 || Auth::user()->level == 5) {
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
             if (null == $request->query('id')) {
-                return redirect('/admin/iaps');
+                return redirect('/matriks/prodi');
             }
-            $prodi = Prodi::find(
-                $request->query('id')
-            );
+            if (Auth::user()->level == 1) {
+                $rev_id = $prodi->id;
+            } elseif (Auth::user()->level == 5) {
+                $rev_id = Auth::user()->id;
+            }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
-        } elseif (Auth::user()->level == 3) {
-            $prodi = Prodi::find(Auth::user()->dosen->prodi_id);
-        } elseif (Auth::user()->level == 4) {
-            $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
+            $rev_id = $prodi->id;
         }
-        $matriks = Matriks::all()->where('prodi_id', $prodi->id);
+
+        // $matriks = Matriks::all()->where([
+        //     ['prodi_id', 1],
+        //     ['user_id', 1],
+        // ]);
+        $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
+        $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
             'prodi' => $prodi,
             'matriks' => $matriks,
+            'matriksBukti' => $matriksBuktiList,
+            'reffer_id' => $rev_id,
         ];
-        // return $matriks;
+        // return $matriksBuktiList;
         return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
     }
     public function prev_num($id)
@@ -170,6 +201,7 @@ class MatriksController extends Controller
             $matriks->grade = $request->grade;
             $matriks->skor = $request->skor;
             $matriks->prodi_id = $request->prodi_id;
+            $matriks->user_id = $request->rev_id;
             $matriks->save();
         } else {
             $data = array_merge(
@@ -180,23 +212,32 @@ class MatriksController extends Controller
                     'grade' => $request->grade,
                     'skor' => $request->skor,
                     'prodi_id' => $request->prodi_id,
+                    'user_id' => $request->rev_id,
                 ]
             );
             Matriks::create($data);
         }
-        return response()->json(['success' => 'Nilai matriks berhasil disimpan!']);
+        return response()->json(['success' => $request->rev_id . 'Nilai matriks berhasil disimpan!']);
     }
     public function updateMatriksBukti(Request $request)
     {
+        $t_group = (int)substr($request->row_id, 0, 2);
+
         if (Matriks::find($request->id)) {
             $matriks = Matriks::find($request->id);
+            $matriks->row_id = $request->row_id;
+            $matriks->t_group = $t_group;
             $matriks->bukti = $request->bukti;
             $matriks->save();
         } else {
             $data = array_merge(
                 [
                     'id' => $request->id,
+                    'row_id' => $request->row_id,
+                    't_group' => $t_group,
                     'bukti' => $request->bukti,
+                    'prodi_id' => $request->prodi_id,
+                    'user_id' => $request->rev_id,
                 ]
             );
             Matriks::create($data);

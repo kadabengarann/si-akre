@@ -25,7 +25,7 @@ function getMatriksBukti($id, $arr)
             return $n->bukti;
         }
     }
-    return "#";
+    return false;
 }
 function getArrayItem($id, $arr)
 {

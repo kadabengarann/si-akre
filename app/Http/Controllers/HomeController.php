@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\Reviewer;
 
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\DB;
@@ -112,6 +113,24 @@ class HomeController extends Controller
             ];
 
             return view('mhs.dashboard', $data);
+        } elseif (Auth::user()->level == 5) {
+            $id_user = auth()->user()->rev_id;
+
+            $data = Reviewer::find($id_user);
+            $isComplete = true;
+            foreach ($data->toArray() as $key => $value) {
+                if (!($key == 'created_at' || $key == 'updated_at')) {
+                    if ($value == NULL) {
+                        $isComplete = false;
+                    }
+                }
+            }
+            // $prodi = new Mahasiswa;
+            $data = [
+                'isComplete' => $isComplete
+            ];
+
+            return view('reviewer.dashboard', $data);
         }
     }
 }

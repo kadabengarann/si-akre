@@ -21,7 +21,9 @@ class CreateMatriksTable extends Migration
             $table->float('skor')->nullable();
             $table->string('bukti')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('prodi_id')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('prodi_id');
             $table->foreign('prodi_id')->references('id')->on('prodi')->onDelete('cascade');
         });
     }
