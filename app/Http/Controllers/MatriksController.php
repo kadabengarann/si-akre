@@ -31,15 +31,20 @@ class MatriksController extends Controller
             }
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
+                $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id);
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
+                $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id);
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
+            $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
         }
 
-        $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryRev($prodi->id);
@@ -53,6 +58,7 @@ class MatriksController extends Controller
             'matriksSumAll' => $matriksSumAll,
         ];
         return view('matriks.index', $data);
+        // return $matriksSumReviewers;
     }
     public function index_prodi(Request $request)
     {
@@ -112,12 +118,15 @@ class MatriksController extends Controller
             }
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
+                $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
+                $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
+            $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
         }
 
         // $matriks = Matriks::all()->where([
@@ -126,7 +135,8 @@ class MatriksController extends Controller
         // ]);
         $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
         $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
-        $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
+
+
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),

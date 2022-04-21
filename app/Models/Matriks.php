@@ -55,6 +55,17 @@ class Matriks extends Model implements Auditable
 
         return $matriks;
     }
+    public static function getSummaryRowRev($prodi_id, $rev_id)
+    {
+        $matriks = DB::table('matriks')
+            ->where('prodi_id', $prodi_id)
+            ->where('user_id', $rev_id)
+            ->select(DB::raw('row_id as id, count(*) - count(skor) as remainingField'))
+            ->groupBy("row_id")
+            ->get();
+
+        return $matriks;
+    }
     public static function getSummaryRev($prodi_id)
     {
         $array1 = array();

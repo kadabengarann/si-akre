@@ -126,7 +126,9 @@
                     break;
             }
             skor_parent.text(_skor)
-
+            @if (Auth::user()->level != 5)
+                updateRowColor(row)
+            @endif
 
         };
 
@@ -138,7 +140,8 @@
             let skor = skor_parent.text()
             let bukti = lihat_bukti_btn.attr('href')
             console.log(bukti + 'bisa');
-            console.log(bukti == null)
+            console.log(skor == null || bukti == null)
+
             if (skor == null || bukti == null) {
                 params.addClass("incomplete");
             } else {
@@ -185,7 +188,9 @@
                     showSuccess(data.success)
                     $('#bukti_penilaian').modal('hide')
                     updateBukti(row, data.data)
-                    updateRowColor(row)
+                    @if (Auth::user()->level != 5)
+                        updateRowColor(row)
+                    @endif
                 },
                 error: function(data) {
                     showError("Gagal mengupdate data")
