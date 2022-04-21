@@ -111,7 +111,7 @@
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
                 paging: true,
-                searching: false,
+                searching: true,
                 processing: true,
                 serverSide: true,
                 autoWidth: false,
