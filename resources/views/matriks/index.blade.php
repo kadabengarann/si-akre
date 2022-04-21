@@ -44,15 +44,11 @@
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
-                                <th class="mt-1 mb-1">Nilai Hasil
-                                    R-3
-                                </th>
-                                <th class="mt-1 mb-1">Nilai Hasil
-                                    R-2
-                                </th>
-                                <th class="mt-1 mb-1">Nilai Hasil
-                                    R-1
-                                </th>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <th class="mt-1 mb-1">Nilai Hasil
+                                        R-{{ $column + 1 }}
+                                    </th>
+                                @endforeach
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
@@ -87,25 +83,20 @@
                                 <td>
                                     6(1,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
                                 </td>
                                 <td>
                                     1
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
                             </tr>
@@ -124,17 +115,13 @@
                                 <td>
                                     6(1,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -142,7 +129,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -162,17 +149,13 @@
                                 <td>
                                     4(1,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -180,7 +163,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/301{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/301{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -200,17 +183,13 @@
                                 <td>
                                     20 (5,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -218,7 +197,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/302{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/302{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -237,17 +216,13 @@
                                 <td>
                                     14 (3,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -255,7 +230,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/303{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/303{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -274,17 +249,13 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -292,7 +263,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/304{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/304{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -311,17 +282,13 @@
                                 <td>
                                     22 (5,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -329,7 +296,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/305{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/305{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -348,17 +315,13 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -366,7 +329,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/306{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/306{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -385,17 +348,13 @@
                                 <td>
                                     16 (4,0 %)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -403,7 +362,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/307{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/307{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -422,17 +381,13 @@
                                 <td>
                                     12 (3,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -440,7 +395,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/308{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/308{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -459,17 +414,13 @@
                                 <td>
                                     208 (52%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -477,7 +428,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/309{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/309{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -496,17 +447,13 @@
                                 <td>
                                     20(5,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -514,7 +461,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/401{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/401{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
@@ -534,17 +481,13 @@
                                 <td>
                                     12(3,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -552,7 +495,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/501{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/501{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 

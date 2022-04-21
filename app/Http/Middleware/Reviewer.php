@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Level
+class Reviewer
 {
     /**
      * Handle an incoming request.
@@ -14,13 +14,9 @@ class Level
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, $role1, $role2, $role3 = false)
+    public function handle(Request $request, Closure $next)
     {
-        if (
-            $request->user()->level == $role1 ||
-            $request->user()->level == $role2 ||
-            $request->user()->level == $role3 
-        ) {
+        if (auth()->user()->level == 5) {
             return $next($request);
         }
         return redirect('/');

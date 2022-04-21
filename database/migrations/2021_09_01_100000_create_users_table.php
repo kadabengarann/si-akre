@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('prodi_id')->nullable()->unique();
             $table->unsignedBigInteger('dosen_id')->nullable()->unique();
             $table->unsignedBigInteger('mhs_id')->nullable()->unique();
+            $table->unsignedBigInteger('rev_id')->nullable()->unique();
             $table->timestamps();
             $table->foreign('dosen_id')->references('id')->on('dosen')->onDelete('cascade');
         });
