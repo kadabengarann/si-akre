@@ -51,6 +51,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">2.1 [PENETAPAN]</th>
+                        </tr>
+                    </div>
                     @php($row_id = 321)
                     <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                         <td class="matriks_id" data-id="{{ $row_id }}">
@@ -288,6 +293,11 @@
                             @endif
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">2.2 [PELAKSANAAN]</th>
+                        </tr>
+                    </div>
                     @php($row_id = 325)
                     <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                         <td class="matriks_id" data-id="{{ $row_id }}">
@@ -524,6 +534,11 @@
                             @endif
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">2.3 [EVALUASI]</th>
+                        </tr>
+                    </div>
                     @php($row_id = 329)
                     <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                         <td class="matriks_id" data-id="{{ $row_id }}">
@@ -583,6 +598,11 @@
                             @endif
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">2.4 [PENGENDALIAN]</th>
+                        </tr>
+                    </div>
                     @php($row_id = 3210)
                     <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                         <td class="matriks_id" data-id="{{ $row_id }}">
@@ -642,6 +662,11 @@
                             @endif
                         </td>{{-- BUKTI PENILAIAN --}}
                     </tr>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">2.5 [PENINGKATAN]</th>
+                        </tr>
+                    </div>
                     @php($row_id = 3211)
                     <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                         <td class="matriks_id" data-id="{{ $row_id }}">
