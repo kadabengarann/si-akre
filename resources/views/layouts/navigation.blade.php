@@ -68,7 +68,16 @@
      <div class="sidebar">
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-             @if (Auth::user()->level == 4)
+             @if (Auth::user()->level == 5)
+                 <div class="image d-flex align-items-center">
+                     <img src="{{ url('img/mhs/' . Auth::user()->reviewer->img_url) }}" class="img-circle elevation-2"
+                         alt="User Image">
+                 </div>
+                 <div class="info">
+
+                     <a href="/profile" class="d-block">{{ Auth::user()->reviewer->nama }}</a>
+                 </div>
+             @elseif (Auth::user()->level == 4)
                  <div class="image d-flex align-items-center">
                      <img src="{{ url('img/mhs/' . Auth::user()->mhs->img_url) }}" class="img-circle elevation-2"
                          alt="User Image">
@@ -138,7 +147,9 @@
                      </a>
                  </li>
                  @unless(request()->is('lkps/*') || request()->is('led/*') || request()->is('matriks/*'))
-                     @if (Auth::user()->level == 4)
+                     @if (Auth::user()->level == 5)
+                         @include('layouts.nav.rev_nav')
+                     @elseif (Auth::user()->level == 4)
                          @include('layouts.nav.mhs_nav')
                      @elseif (Auth::user()->level == 3)
                          @include('layouts.nav.dosen_nav')
@@ -156,7 +167,7 @@
                  @if (request()->is('led/*'))
                      @include('layouts.nav.led')
                  @endif
-                 @if (request()->is('matriks/*'))
+                 @if (request()->is('matriks/view*'))
                      @include('layouts.nav.matriks')
                  @endif
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\Reviewer;
 
 class UserProfileController extends Controller
 {
@@ -97,6 +98,15 @@ class UserProfileController extends Controller
             ];
 
             return view('mhs.edit_profile', $data);
+        } elseif (Auth::user()->level == 5) {
+
+            $id_user = auth()->user()->rev_id;
+
+            $data = [
+                'reviewer' => Reviewer::find($id_user),
+            ];
+
+            return view('reviewer.edit_profile', $data);
         }
     }
 }

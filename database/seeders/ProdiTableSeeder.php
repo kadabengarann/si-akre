@@ -16,24 +16,6 @@ class ProdiTableSeeder extends Seeder
     public function run()
     {
         DB::table('prodi')->insert([
-            'nama' => 'Teknik Sipil'
-        ]);
-        DB::table('prodi')->insert([
-            'nama' => 'Arsitektur'
-        ]);
-        DB::table('prodi')->insert([
-            'nama' => 'Teknik Pertambangan'
-        ]);
-        DB::table('prodi')->insert([
-            'nama' => 'Teknik Kimia'
-        ]);
-        DB::table('prodi')->insert([
-            'nama' => 'Teknik Lingkungan'
-        ]);
-        DB::table('prodi')->insert([
-            'nama' => 'Teknik Mesin'
-        ]);
-        DB::table('prodi')->insert([
             'nama' => 'Teknologi Informasi'
         ]);
         // $faker = Faker::create('en_US');

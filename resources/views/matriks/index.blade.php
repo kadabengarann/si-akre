@@ -24,6 +24,11 @@
                         <div class="col-12 col-lg-6">
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                         </div>
+                        <div class="col-12 col-lg-6 text-right">
+                            <a class="btn btn-info"
+                                href="/matriks/cetak_pdf{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"
+                                target="_blank">Export PDF</a>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->
@@ -41,17 +46,11 @@
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
-                                <th class="mt-1 mb-1">"Nilai Hasil
-                                    R-2"
-
-                                </th>
-                                <th class="mt-1 mb-1">"Nilai Hasil
-                                    R-1"
-                                </th>
-                                <th class="mt-1 mb-1">Skor R-1
-                                </th>
-                                <th class="mt-1 mb-1">Skor R-1
-                                </th>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <th class="mt-1 mb-1">Nilai Hasil
+                                        R-{{ $column + 1 }}
+                                    </th>
+                                @endforeach
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
@@ -72,7 +71,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            @php
+                                $row_id = 11;
+                            @endphp
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     A
                                 </td>
@@ -82,31 +85,29 @@
                                 <td>
                                     6(1,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(11, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
                                 </td>
                                 <td>
                                     1
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 21;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : '' }}">
                                 <td>
                                     B
                                 </td>
@@ -116,20 +117,13 @@
                                 <td>
                                     6(1,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(21, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -137,12 +131,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 31;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     C
                                 </td>
@@ -152,20 +151,13 @@
                                 <td>
                                     4(1,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(31, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -173,12 +165,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/301{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/301{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 32;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
 
                                 </td>
@@ -188,20 +185,13 @@
                                 <td>
                                     20 (5,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(32, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -209,12 +199,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/302{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/302{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 33;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -223,20 +218,13 @@
                                 <td>
                                     14 (3,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(33, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -244,12 +232,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/303{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/303{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 34;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -258,20 +251,13 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(34, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -279,12 +265,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/304{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/304{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 35;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -293,20 +284,13 @@
                                 <td>
                                     22 (5,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(35, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -314,12 +298,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/305{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/305{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 36;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -328,20 +317,13 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(36, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -349,12 +331,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/306{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/306{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 37;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -363,20 +350,13 @@
                                 <td>
                                     16 (4,0 %)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(37, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -384,12 +364,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/307{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/307{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 38;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -398,20 +383,13 @@
                                 <td>
                                     12 (3,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(38, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -419,12 +397,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/308{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/308{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 39;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                 </td>
                                 <td class="text-start">
@@ -433,20 +416,13 @@
                                 <td>
                                     208 (52%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(39, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -454,12 +430,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/309{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/309{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 41;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     D </td>
                                 <td class="text-start">
@@ -468,20 +449,13 @@
                                 <td>
                                     20(5,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(41, $dataMatriks)?:'-' }}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -489,12 +463,17 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/401{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/401{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
-                            <tr>
+                            @php
+                                $row_id = 51;
+                            @endphp
+
+                            <tr
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     E
                                 </td>
@@ -504,20 +483,13 @@
                                 <td>
                                     12(3,0%)
                                 </td>
+                                @foreach ($dataMatriksReviewer as $column => $value)
+                                    <td>
+                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
+                                    </td>
+                                @endforeach
                                 <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    {{ getMatriksSum(51, $dataMatriks)?:'-'}}                                
+                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
 
                                 </td>
                                 <td>
@@ -525,24 +497,46 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info"
-                                        href="/matriks/501{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                                        href="/matriks/view/501{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
                                             class="fas fa-pen"></i></a>
                                 </td>
 
                             </tr>
                             <tr>
                                 <td colspan="2">
+                                    Nilai Hasil
                                 </td>
                                 <td>
                                     400 (100%)
                                 </td>
-                                <td colspan="4"></td>
+                                <td colspan="3"></td>
                                 <td>{{ $matriksSumAll }}</td>
                                 <td>
                                     112
                                 </td>
+                                <td></td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Nilai Akreditasi</td>
+                                <td colspan="7">
+                                    <b>
+                                        @php
+                                            if ($matriksSumAll >= 361) {
+                                                echo 'Unggul';
+                                            } elseif ($matriksSumAll >= 301 && $matriksSumAll < 361) {
+                                                echo 'Baik Sekali';
+                                            } elseif ($matriksSumAll >= 200 && $matriksSumAll < 301) {
+                                                echo 'Baik';
+                                            } else {
+                                                echo 'Tidak memenuhi syarat peringkat';
+                                            }
+                                        @endphp
+                                    </b>
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
                 <!-- /.card-body -->

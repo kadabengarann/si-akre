@@ -51,9 +51,13 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
+                    <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">4.1 [PENETAPAN]</th>
+                        </tr>
+                        
                             @php($row_id = 341)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 32
                             </td>{{-- NO BUTIR --}}
@@ -102,19 +106,28 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
                             @php($row_id = 342)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 33
                             </td>{{-- NO BUTIR --}}
@@ -163,19 +176,28 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
                             @php($row_id = 343)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 34
                             </td>{{-- NO BUTIR --}}
@@ -224,19 +246,28 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
                             @php($row_id = 344)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 35
                             </td>{{-- NO BUTIR --}}
@@ -290,19 +321,31 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="1">1</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">4.2 [PELAKSANAAN]</th>
+                        </tr>
                             @php($row_id = 345)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 36
                             </td>{{-- NO BUTIR --}}
@@ -352,19 +395,29 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="4">4</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
+                        
                             @php($row_id = 346)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 37
                             </td>{{-- NO BUTIR --}}
@@ -413,19 +466,28 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
                             @php($row_id = 347)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 38
                             </td>{{-- NO BUTIR --}}
@@ -474,19 +536,28 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="3">3</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        
                             @php($row_id = 348)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 39
                             </td>{{-- NO BUTIR --}}
@@ -535,19 +606,31 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">4.3 [EVALUASI]</th>
+                        </tr>
                             @php($row_id = 349)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 40
                             </td>{{-- NO BUTIR --}}
@@ -596,19 +679,32 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="8">8</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">4.4 [PENGENDALIAN]</th>
+                        </tr>
+                        
                             @php($row_id = 3410)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 41
                             </td>{{-- NO BUTIR --}}
@@ -657,19 +753,32 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        <tr>
+                        <div class="nilai">
+                        <tr class="nilai">
+                            <th colspan="11" class="nilai">4.5 [PENINGKATAN]</th>
+                        </tr>
+                    
                             @php($row_id = 3411)
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 42
                             </td>{{-- NO BUTIR --}}
@@ -718,16 +827,24 @@
                             </td>{{-- NILAI --}}
                             <td class="bobot" data-bobot="2">2</td>{{-- BOBOT --}}
                             <td class="bukti_penilaian">
-                                <label for="bukti" class="row ">
-                                    <a class="btn btn-primary col-10 ml-auto mr-auto" id="lihat_bukti"
-                                        href="{{ getMatriksBukti($row_id, $matriks) }}" target="_blank">Lihat Bukti</a>
-                                </label>
                                 <label for="bukti" class="row">
-                                    <a class="btn btn-outline-primary col-10 ml-auto mr-auto input_bukti_trigg alasan_pen"
-                                        data-toggle="modal" data-target="#bukti_penilaian" data-row="{{ $row_id }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriks) }}" data-skor="">Upload Bukti</a>
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_bukti"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Bukti</a>
                                 </label>
-                            </td>{{--BUKTI PENILAIAN --}}
+                                @if (Auth::user()->level != 5)
+                                    <label for="bukti" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_bukti_trigg"
+                                            data-toggle="modal" data-target="#bukti_penilaian"
+                                            data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Upload
+                                            Bukti</a>
+                                    </label>
+                                @endif
+                            </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
 
                     </tbody>
