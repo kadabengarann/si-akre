@@ -79,20 +79,24 @@ class MatriksController extends Controller
             }
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
+                $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id);
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
+                $matriksSum = Matriks::getSummaryRev($prodi->id, $rev_id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id);
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
+            $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
         }
 
-        $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryAllRev($prodi->id);
 
-        // return $matriksSumReviewers;
+        // return $matriksSum;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
