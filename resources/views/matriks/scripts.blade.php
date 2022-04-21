@@ -5,7 +5,9 @@
             bukti_field.forEach(element => {
                 if (element.querySelector(".row .hidden")) {
                     console.log(element);
-                    element.querySelector(".row").innerHTML += '<p class="font-weight-normal m-0">Tidak ada bukti penilaian</p>';
+                    @if (Auth::user()->level == 5)
+                        element.querySelector(".row").innerHTML += '<p class="font-weight-normal m-0">Tidak ada bukti penilaian</p>';
+                    @endif
                 }
 
             });
@@ -26,6 +28,7 @@
             let _rev_id = {{ $reffer_id }};
             let _prodi_id = {{ $prodi->id }};
             let radio = this
+            let row = $(this).parent()
             let bobot = parseFloat($(this).siblings(".bobot").data('bobot'))
             let id_temp = parseInt($(this).siblings(".matriks_id").data('id'));
             let _row_id = id_temp
@@ -34,6 +37,7 @@
             let _token = $('meta[name="csrf-token"]').attr('content');
 
             console.log(_prodi_id);
+            console.log(row);
             if (event.target.type !== 'radio') {
                 $(':radio', this).trigger('click');
 
@@ -56,7 +60,7 @@
                         console.log(data.success);
                         showSuccess(data.success)
                         updateContent(radio, _skor)
-
+                        updateRowColor(row)
                     },
                     error: function(data) {
                         showError("Gagal mengupdate data")
@@ -125,6 +129,22 @@
 
 
         };
+
+        function updateRowColor(params) {
+            let skor_parent = $(params).parent(".nilai")
+            let lihat_bukti_btn = $(params).find('#lihat_bukti')
+            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
+            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
+            let skor = skor_parent.text()
+            let bukti = lihat_bukti_btn.attr('href')
+            console.log(bukti + 'bisa');
+            console.log(bukti == null)
+            if (skor == null || bukti == null) {
+                params.addClass("incomplete");
+            } else {
+                params.removeClass("incomplete");
+            }
+        };
         $('.penilaian_check_field').hover(function(event) {
             $(this).find('.tooltiptext').addClass("active")
         }, function(event) {
@@ -165,7 +185,7 @@
                     showSuccess(data.success)
                     $('#bukti_penilaian').modal('hide')
                     updateBukti(row, data.data)
-
+                    updateRowColor(row)
                 },
                 error: function(data) {
                     showError("Gagal mengupdate data")
@@ -196,8 +216,6 @@
             }
             let bukti_btn = $(params).find('.input_bukti_trigg')
             bukti_btn.data('url', _data)
-
-
         };
 
         function showSuccess(message) {

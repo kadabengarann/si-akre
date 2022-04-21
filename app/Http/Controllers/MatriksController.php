@@ -39,7 +39,7 @@ class MatriksController extends Controller
             $rev_id = $prodi->id;
         }
 
-        $matriksSum = Matriks::getSummary($prodi->id,$rev_id);
+        $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryRev($prodi->id);
@@ -63,10 +63,7 @@ class MatriksController extends Controller
     }
     public function cetak_pdf(Request $request)
     {
-        // return "satu";
-        if (
-            Auth::user()->level == 1 || Auth::user()->level == 5
-        ) {
+        if (Auth::user()->level == 1 || Auth::user()->level == 5) {
             $prodi =
                 Prodi::find(
                     $request->query('id')
@@ -74,24 +71,29 @@ class MatriksController extends Controller
             if (null == $request->query('id')) {
                 return redirect('/matriks/prodi');
             }
+            if (Auth::user()->level == 1) {
+                $rev_id = $prodi->id;
+            } elseif (Auth::user()->level == 5) {
+                $rev_id = Auth::user()->id;
+            }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
+            $rev_id = $prodi->id;
         }
-        $matriksSum = Matriks::getSummary($prodi->id);
-        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
 
+        $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+        $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
+        $matriksSumReviewers = Matriks::getSummaryRev($prodi->id);
+
+        // return $matriksSumReviewers;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
+            'dataMatriksReviewer' => $matriksSumReviewers,
+            'dataMatriksProdi' => $matriksSumProdi,
             'matriksSumAll' => $matriksSumAll,
         ];
-        // $pdf = PDF::loadView('/matriks/matriks_pdf', $data);
-        //Aktifkan Local File Access supaya bisa pakai file external ( cth File .CSS )
-        // $pdf->setOption('enable-local-file-access', true);
-        // Stream untuk menampilkan tampilan PDF pada browser
-        // $pdf->inline('Matriks.pdf');
-        // return $pdf->inline('Matriks.pdf');
-
         // DOMPDF
         $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
         return $pdf->stream('Matriks.pdf');
@@ -124,6 +126,7 @@ class MatriksController extends Controller
         // ]);
         $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
         $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
+        $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
@@ -131,6 +134,7 @@ class MatriksController extends Controller
             'matriks' => $matriks,
             'matriksBukti' => $matriksBuktiList,
             'reffer_id' => $rev_id,
+            'dataMatriks' => $matriksSum,
         ];
         // return $matriksBuktiList;
         return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
@@ -228,7 +232,7 @@ class MatriksController extends Controller
             );
             Matriks::create($data);
         }
-        return response()->json(['success' => $request->rev_id . 'Nilai matriks berhasil disimpan!']);
+        return response()->json(['success' => 'Nilai matriks berhasil disimpan!']);
     }
     public function updateMatriksBukti(Request $request)
     {

@@ -34,7 +34,7 @@ function getArrayItem($id, $arr)
         "remainingField" => 1,
     ];
     foreach ($arr as $n) {
-        if ($n->t_group == $id) {
+        if ($n->id == $id) {
             return $n;
         }
     }
