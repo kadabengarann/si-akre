@@ -111,7 +111,7 @@ class AdminController extends Controller
     }
     public function audit_log_detail($id)
     {
-        $roles = array("Super Admin", "Admin Prodi", "Dosen", "Mahasiswa");
+        $roles = array("Super Admin", "Admin Prodi", "Dosen","Mahasiswa", "Reviewer");
         $audit = DB::table('audits')->where('id', '=', $id)->first();
         $user = User::find($audit->user_id);
         $user_role = $roles[$user->level - 1];
@@ -125,6 +125,9 @@ class AdminController extends Controller
         } elseif ($user->level == 4) {
             $user_url =
                 '/manage/mhs/' . $user->id;
+        } elseif ($user->level == 5) {
+            $user_url =
+                '#';
         }
         $user_role = $roles[$user->level - 1];
         // $audit = DB::table('audits')->where('id', '=', $id)->first();
