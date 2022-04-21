@@ -25,7 +25,9 @@
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                         </div>
                         <div class="col-12 col-lg-6 text-right">
-                            <a class="btn btn-info" href="/matriks/cetak_pdf" target="_blank">Export PDF</a>
+                            <a class="btn btn-info"
+                                href="/matriks/cetak_pdf{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"
+                                target="_blank">Export PDF</a>
                         </div>
                     </div>
                 </div>
