@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 use App\Models\Permission;
 use App\Models\Prodi;
@@ -99,12 +101,17 @@ class LkpsController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
+        $tableData = DataLkpsController::getLkpsData($prodi->id);
+
+        // return $tableData;
         $formMatriks  = null;
         if ($id[0] != 1 && $id[0] != 2) {
             $formMatriks = '30' . $id[0];
         }
 
-
+        $ts_year_id = "ts_" . $prodi->id;
+        $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
+        // return $ts_year;
         $data = [
             'tables' => $this->allowedTable(),
             'prev' => $this->prev_num($id),
@@ -112,7 +119,9 @@ class LkpsController extends Controller
             'idTable' => $id,
             'idTableMatriks' => $formMatriks,
             'prodi' => $prodi,
-            'permit' => $form
+            'tsYear' => $ts_year ? $ts_year->value : null,
+            'permit' => $form,
+            'tableData' => $tableData
         ];
         // return $tables;
         if (in_array(Auth::user()->level, $permit)) {
@@ -177,14 +186,33 @@ class LkpsController extends Controller
     {
         $form = Permission::find($id);
         $permit = json_decode($form->access, true);
+        if (Auth::user()->level == 1) {
+            if (null == $request->query('id')) {
+                return redirect('/admin/iaps');
+            }
+
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
+        } elseif (Auth::user()->level == 2) {
+            $prodi = Prodi::find(Auth::user()->prodi->id);
+        } elseif (Auth::user()->level == 3) {
+            $prodi = Prodi::find(Auth::user()->dosen->prodi_id);
+        } elseif (Auth::user()->level == 4) {
+            $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
+        }
+        $ts_year_id = "ts_" . $prodi->id;
+        $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
+        $tableData = DataLkpsController::getLkpsData($prodi->id);
 
         $data = [
             'tables' => $this->allowedTable(),
             'idTable' => $id,
+            'tsYear' => $ts_year ? $ts_year->value : null,
+            'tableData' => $tableData,
             'prodi' =>
-            Prodi::find(
-                $request->query('id')
-            ),
+            $prodi
 
         ];
         if (in_array(Auth::user()->level, $permit)) {
