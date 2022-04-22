@@ -112,6 +112,7 @@
             let _token = $('meta[name="csrf-token"]').attr('content');
 
             console.log(row);
+         if (isValidHttpUrl(_bukti)) {
 
             $.ajax({
                 data: {
@@ -134,6 +135,9 @@
                     console.log('Error:', data);
                 }
             });
+            } else {
+                showError("Invalid url bukti")
+            }  
         });
         $('#bukti_penilaian').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -146,7 +150,17 @@
             modal.find('#input_bukti').val(url_data)
             // modal.find('.modal-body input').val(recipient)
         })
+        function isValidHttpUrl(string) {
+            let url;
+  
+            try {
+                url = new URL(string);
+            } catch (_) {
+                return false;  
+            }
 
+            return url.protocol === "http:" || url.protocol === "https:";
+        }
         function updateBukti(params, _data) {
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
 
