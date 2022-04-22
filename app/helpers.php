@@ -25,5 +25,18 @@ function getMatriksBukti($id, $arr)
             return $n->bukti;
         }
     }
-    return "#";
+    return false;
+}
+function getArrayItem($id, $arr)
+{
+    $x = (object) [
+        "skor" => null,
+        "remainingField" => 1,
+    ];
+    foreach ($arr as $n) {
+        if ($n->id == $id) {
+            return $n;
+        }
+    }
+    return $x;
 }

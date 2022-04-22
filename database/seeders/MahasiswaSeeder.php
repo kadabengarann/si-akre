@@ -26,7 +26,7 @@ class MahasiswaSeeder extends Seeder
                 'tgl_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'tmp_lahir' => $faker->city,
                 'img_url' =>  $x . '.jpg',
-                'prodi_id' =>  $faker->biasedNumberBetween($min = 1, $max = 6, $function = 'sqrt')
+                'prodi_id' =>  $faker->biasedNumberBetween($min = 1, $max = 1, $function = 'sqrt')
             ]);
         }
         for ($x = 1; $x <= 4; $x++) {
@@ -38,7 +38,7 @@ class MahasiswaSeeder extends Seeder
                 'tgl_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'tmp_lahir' => $faker->city,
                 'img_url' =>  $x . '.jpg',
-                'prodi_id' =>  7
+                'prodi_id' =>  1
             ]);
         }
     }

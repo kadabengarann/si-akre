@@ -100,7 +100,7 @@ tr td:nth-child(3) {
 tr td:nth-last-child(1),
 tr td:nth-last-child(2),
 tr td:nth-last-child(3),
-tr td:nth-last-child(8) {
+tr td:nth-last-child(7) {
     text-align: center !important;
 }
 
@@ -205,24 +205,33 @@ span.caption:before {
 .tooltiptext.active {
     visibility: visible;
 }
-.nilai.skor_a{
+
+.nilai.skor_a {
     background-color: #0c9;
     color: #fff;
 }
-.nilai.skor_b{
-    
+
+.nilai.skor_b {
+
     background-color: #ffb300;
     color: #fff;
 }
-.nilai.skor_c{
+
+.nilai.skor_c {
     background-color: yellow;
     color: #000;
-    }
-.nilai.skor_d{
+}
+
+.nilai.skor_d {
     background-color: red;
     color: #fff;
 }
 
 .hijau {
     color: rgb(255, 68, 68);
+}
+
+.incomplete{
+    background-color: #ffb300;
+    color: #fff;
 }

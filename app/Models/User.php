@@ -63,4 +63,8 @@ class User extends Authenticatable implements Auditable
     {
         return $this->belongsTo(Mahasiswa::class, 'mhs_id');
     }
+    public function reviewer()
+    {
+        return $this->belongsTo(Reviewer::class, 'rev_id');
+    }
 }

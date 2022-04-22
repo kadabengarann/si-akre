@@ -65,7 +65,18 @@ class UserTableSeeder extends Seeder
 
             ]);
         }
-        for ($x = 1; $x <= 7; $x++) {
+        for ($x = 1; $x <= 3; $x++) {
+
+            DB::table('users')->insert([
+                'email' => $faker->unique()->safeEmail,
+                'username' => sprintf('rev%03d', $x),
+                'level' => '5',
+                'password' => bcrypt('rev'),
+                'remember_token' => Str::random(10),
+                'rev_id' =>  $x
+            ]);
+        }
+        for ($x = 1; $x <= 1; $x++) {
             DB::table('users')->insert([
                 'email' => 'admin0' . $x . '@admin',
                 'username' => sprintf('pr%03d', $x),
