@@ -60,7 +60,7 @@
                         console.log(data.success);
                         showSuccess(data.success)
                         updateContent(radio, _skor)
-                        updateRowColor(row)
+                         setTimeout(updateRowColor(row), 500);
                     },
                     error: function(data) {
                         showError("Gagal mengupdate data")
@@ -126,24 +126,28 @@
                     break;
             }
             skor_parent.text(_skor)
-            @if (Auth::user()->level != 5)
-                updateRowColor(row)
-            @endif
+            // @if (Auth::user()->level != 5)
+            //     updateRowColor(row)
+            // @endif
 
         };
 
         function updateRowColor(params) {
-            let skor_parent = $(params).parent(".nilai")
+            let skor_parent = $(params).children(".nilai")
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
-            let skor = skor_parent.text()
+            let skor
+            if (isEmpty(skor_parent))
+              skor = "";
+            else
+                skor = skor_parent.text();
             let bukti = lihat_bukti_btn.attr('href')
+            console.log(skor);
             console.log(bukti + 'bisa');
-            console.log(skor == null || bukti == null)
-
-            if (skor == null || bukti == null) {
-                params.addClass("incomplete");
+            console.log(skor == "" ||  (bukti == ""||bukti == undefined))
+            if (skor == "" || (bukti == ""||bukti == undefined)) {
+                params.addClass("incomplete")
             } else {
                 params.removeClass("incomplete");
             }
@@ -170,7 +174,7 @@
             let _token = $('meta[name="csrf-token"]').attr('content');
 
             console.log(row);
-         if (isValidHttpUrl(_bukti)) {
+         if (_bukti.length ==0||isValidHttpUrl(_bukti)) {
 
             $.ajax({
                 data: {
@@ -213,9 +217,12 @@
             modal.find('#input_bukti').val(url_data)
             // modal.find('.modal-body input').val(recipient)
         })
+        function isEmpty( el ){
+            return !$.trim(el.html())
+        }
+        
         function isValidHttpUrl(string) {
             let url;
-  
             try {
                 url = new URL(string);
             } catch (_) {
