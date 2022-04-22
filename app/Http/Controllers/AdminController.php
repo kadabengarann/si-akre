@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+// use App\Http\Middleware\Reviewer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\User;
+use App\Models\Reviewer;
 use App\Models\Permission;
 
 use Illuminate\Support\Facades\DB;
@@ -111,7 +113,7 @@ class AdminController extends Controller
     }
     public function audit_log_detail($id)
     {
-        $roles = array("Super Admin", "Admin Prodi", "Dosen","Mahasiswa", "Reviewer");
+        $roles = array("Super Admin", "Admin Prodi", "Dosen", "Mahasiswa", "Reviewer");
         $audit = DB::table('audits')->where('id', '=', $id)->first();
         $user = User::find($audit->user_id);
         $user_role = $roles[$user->level - 1];
@@ -733,5 +735,186 @@ class AdminController extends Controller
         $user->password = Hash::make(Request()->new_password);
         $user->save();
         return redirect()->route('dosenDetail', $id)->with('pesan', 'Password changed!');
+    }
+
+    public function index_reviewer(Request $request)
+    {
+        if ($request->ajax()) {
+            return Datatables::of(Reviewer::all())
+                ->addColumn('action', function (Reviewer $reviewer) {
+                    $btn = '
+                <a class="btn btn-info" href="/manage/reviewer/' . $reviewer->id . '"><i class="fas fa-info-circle"></i> Detail</a>
+                <a class="btn btn-secondary" href="/manage/reviewer/edit/' . $reviewer->id . '"><i class="far fa-edit"></i> Edit</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete' . $reviewer->id . '">
+                <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+                ';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->toJson();
+        }
+        $data = [
+            'reviewer' => Reviewer::get(),
+        ];
+        return view('admin.reviewer.v_reviewer', $data);
+    }
+
+    public function detailReviewer($id)
+    {
+
+        if (!Reviewer::find($id)) {
+            abort(404);
+        }
+
+        $data = [
+            'reviewer' => Reviewer::find($id),
+        ];
+        return view('admin.reviewer.v_reviewer_detail', $data);
+    }
+
+    public function addReviewer()
+    {
+        $data = [
+            'reviewer' => Reviewer::all(),
+        ];
+
+        return view('admin.reviewer.v_add_reviewer', $data);
+    }
+    public function insertReviewer()
+    {
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'nama' => 'required',
+            'rev_id' => 'required',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+
+            'password' =>  ['required', 'min:8', 'max:16'],
+            're-password' => ['required', 'min:8', 'max:16', 'same:password'],
+        ]);
+        if (Request()->foto_rev <> "") {
+            $file = Request()->file('foto_rev');
+            $nama_file = time() . Request()->name . "." . $file->extension();
+
+            $tujuan_upload = 'img/rev';
+            $file->move($tujuan_upload, $nama_file);
+            $img_url = $nama_file;
+        } else {
+            $img_url  = 'user.jpg';
+        }
+        $reviewer = Reviewer::create([
+            'nama' => Request()->name,
+            'nip' => Request()->username,
+            'img_url' =>  $img_url,
+            'prodi_id' => Request()->id_prodi,
+        ]);
+
+        User::create([
+            'username' => Request()->username,
+            'password' => Hash::make(
+                Request()->password
+            ),
+            'level' => 5,
+            'reviewer_id' => $reviewer->id,
+
+        ]);
+
+        return redirect()->route('reviewerList')->with('pesan', 'Added new data !1!1');
+    }
+
+    public function deleteReviewer($id)
+    {
+        $reviewer = Reviewer::find($id);
+        $user = User::where('reviewer_id', $id);
+        File::delete('img/reviewer/' . $reviewer->img_url);
+
+        $reviewer->delete();
+        $user->delete();
+        return redirect()->route('reviewerList')->with('pesan', 'Deleted a data !1!1');
+    }
+    public function editReviewer($id)
+    {
+
+        if (!Reviewer::find($id)) {
+            abort(404);
+        }
+        $data = [
+            'reviewer' => Reviewer::find($id),
+            'prodi' => Prodi::all(),
+        ];
+        return view('admin.reviewer.v_edit_reviewer', $data);
+    }
+
+    public function updateReviewer($id)
+    {
+        $reviewer = Reviewer::find($id);
+        $user = $reviewer->user;
+
+        Request()->validate([
+            'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:16',
+            // 'id_prodi' => 'required',
+            'nama' => 'required',
+            'address' => 'required',
+            'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+
+        ]);
+        if (Request()->foto_rev <> "") {
+            $file = Request()->file('foto_rev');
+            $nama_file = time() . Request()->nama . "." . $file->extension();
+
+            $tujuan_upload = 'img/rev';
+            $file->move($tujuan_upload, $nama_file);
+
+            $reviewer = Reviewer::find($id);
+            File::delete('img/rev/' . $reviewer->img_url);
+
+            $reviewer->nama = Request()->nama;
+            // $reviewer->prodi_id = Request()->id_prodi;
+            $reviewer->alamat = Request()->address;
+            $reviewer->tgl_lahir = Request()->date;
+            $reviewer->tmp_lahir = Request()->birthplace;
+            $reviewer->img_url = $nama_file;
+            $reviewer->save();
+        } else {
+            $reviewer->nama = Request()->nama;
+            // $reviewer->prodi_id = Request()->id_prodi;
+            $reviewer->alamat = Request()->address;
+            $reviewer->tgl_lahir = Request()->date;
+            $reviewer->tmp_lahir = Request()->birthplace;
+            $reviewer->save();
+        }
+
+        if (Request()->username != $user->username) {
+            $user->username = Request()->username;
+            $reviewer->nip = Request()->username;
+            $user->save();
+        }
+        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Updated a data !1!1');
+    }
+    public function editReviewerPassword($id)
+    {
+        $data = [
+            'reviewer' => Reviewer::find($id),
+        ];
+
+        return view('admin.reviewer.v_edit_password', $data);
+    }
+    public function updateReviewerCredential($id)
+    {
+        $reviewer = Reviewer::find($id);
+        $user = $reviewer->user;
+
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'admin-password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Password changed!');
     }
 }

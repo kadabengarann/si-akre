@@ -44,7 +44,7 @@ class MatriksController extends Controller
             $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
         }
 
-
+        $reviewer = Matriks::getAllRev();
         $matriksSumAll = Matriks::getSummaryAll($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryAllRev($prodi->id);
@@ -56,7 +56,9 @@ class MatriksController extends Controller
             'dataMatriksReviewer' => $matriksSumReviewers,
             'dataMatriksProdi' => $matriksSumProdi,
             'matriksSumAll' => $matriksSumAll,
+            'reviewer' => $reviewer
         ];
+
         return view('matriks.index', $data);
         // return $matriksSumReviewers;
     }

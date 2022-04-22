@@ -81,6 +81,7 @@ class Matriks extends Model implements Auditable
         $revs = DB::table('reviewer')
             ->join('users', 'users.rev_id', '=', 'reviewer.id')
             ->select('users.id')
+            ->limit(1)
             ->get();
 
         foreach ($revs as $n) {
@@ -100,10 +101,19 @@ class Matriks extends Model implements Auditable
 
         return $array1;
     }
+    public static function getAllRev()
+    {
+        $revs = DB::table('reviewer')
+            ->join('users', 'users.rev_id', '=', 'reviewer.id')
+            ->limit(1)
+            ->get();
+
+        return $revs;
+    }
     public static function getSummaryAll($prodi_id)
     {
         $matriks = Matriks::all()
-            ->where('prodi_id', $prodi_id)
+            ->where('user_id', $prodi_id)
             ->sum('skor');
         return $matriks;
     }
