@@ -10,7 +10,9 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <p><b>Kriteria : </b>3. Mahasiswa</p>
-                        <p><b>TS : </b>{{ $tsYear }} <a href='#' id="ts_change" class='badge badge-info'>Change</a>
+                        <p><b>TS : </b>
+                            <span id="ts-year">{{ $tsYear }}</span> <a href='#' id="ts_change"
+                                class='badge badge-info'>Change</a>
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">
@@ -70,7 +72,7 @@
                             @for ($x = $count; $x >= 0; $x--)
                                 @if ($row->id == 'ts_' . ($tsYear - $count) . '_' . $prodi->id)
                                     <tr>
-                                        <td>
+                                        <td class="ts-row">
                                             @if ($countYear == $tsYear)
                                                 TS ({{ $countYear }}
                                             @else
@@ -125,11 +127,11 @@
                         @endforeach
                         @for ($x = $count; $x >= 0; $x--)
                             <tr>
-                                <td>
+                                <td class="ts-row">
                                     @if ($x == 0)
                                         TS ({{ $tsYear - $x }})
                                     @else
-                                        TS- {{ $x }} ({{ $tsYear - $x }})
+                                        TS - {{ $x }} ({{ $tsYear - $x }})
                                     @endif
                                 </td>
                                 <td colspan="8">

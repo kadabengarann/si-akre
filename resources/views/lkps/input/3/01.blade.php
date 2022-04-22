@@ -41,32 +41,150 @@
                     <li class="pt-2 px-3">
                         <h3 class="card-title">Seleksi Mahasiswa</h3>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#ts-4" role="tab"
-                            aria-controls="ts-4" aria-selected="true">TS-4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#ts-3" role="tab"
-                            aria-controls="ts-3" aria-selected="false">TS-3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#ts-2" role="tab"
-                            aria-controls="ts-2" aria-selected="false">TS-2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-4-tab" data-toggle="pill" href="#ts-1" role="tab"
-                            aria-controls="ts-1" aria-selected="false">TS-1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-5-tab" data-toggle="pill" href="#ts" role="tab"
-                            aria-controls="ts" aria-selected="false">TS</a>
-                    </li>
-
+                    @php
+                        $count = 4;
+                        $countYear = $tsYear - 4;
+                    @endphp
+                    @for ($i = $count; $i >= 0; $i--)
+                        @if ($i == 0)
+                            <li class="nav-item">
+                                <a class="nav-link" id="ts-tab" data-toggle="pill" href="#ts" role="tab"
+                                    aria-controls="ts" aria-selected="false">TS
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link  {{ $i == 4 ? 'active' : '' }}" id="ts-{{ $i }}-tab"
+                                    data-toggle="pill" href="#ts-{{ $i }}" role="tab"
+                                    aria-controls="ts-{{ $i }}"
+                                    aria-selected="{{ $i == $count ? true : false }}">TS-{{ $i }}
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @endif
+                        @php
+                            $countYear++;
+                        @endphp
+                    @endfor
                 </ul>
             </div>
             <div class="card-body">
-                <div class="tab-content" id="custom-tabs-two-tabContent">
+                <div class="tab-content" id="ts-{{ $i }}-tabContent">
                     @php
+                        $count = 4;
+                    @endphp
+                    @for ($i = $count; $i >= 0; $i--)
+                        <div class="tab-pane fade show {{ $i == 4 ? 'active' : '' }}" id="ts{{ $i == 0 ? '' : '-'.$i }}"
+                            role="tabpanel" aria-labelledby="tabs-{{ $i }}-tab">
+                            <div class="card-body pb-0 pt-0">
+                                <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa
+                                    TS{{ $i == 0 ? '' : '-' . $i }}
+                                    ({{ $tsYear - $i }})
+                                </h3>
+                                <hr>
+                            </div>
+                            <form method="POST" class="form-horizontal" action="/lkps/update/jcmb">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Daya Tampung</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" name="dy_tmpng" class="form-control hide_num" id="dy_tmpng"
+                                                placeholder="" min="0" value="">
+                                            <input type="hidden" name="id_ta" class="form-control" id="id_ta"
+                                                value="ts_{{ $tsYear - $i }}_{{ $prodi->id }}">
+                                            <input type="hidden" name="ta_year" class="form-control" id="ta_year"
+                                                value="{{ $tsYear - $i }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon
+                                            Mahasiswa</label>
+
+                                        <div class="col-sm-10">
+                                            <div class="form-group row">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="jcm_pendftr" class="col-sm-2 col-form-label">Pendaftar</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jcm_pendftr" class="form-control hide_num"
+                                                        id="jcm_pendftr" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label for="jcm_lulus" class="col-sm-2 col-form-label">Lulus
+                                                    Sleksi</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jcm_lulus" class="form-control hide_num"
+                                                        id="jcm_lulus" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa
+                                            Baru</label>
+
+                                        <div class="col-sm-10">
+                                            <div class="form-group row">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jmb_reg" class="form-control hide_num"
+                                                        id="jmb_reg" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label for="jmb_transfer" class="col-sm-2 col-form-label">Transfer</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jmb_transfer" class="form-control hide_num"
+                                                        id="jmb_transfer" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa
+                                            Aktif</label>
+
+                                        <div class="col-sm-10">
+                                            <div class="form-group row">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jma_reg" class="form-control hide_num"
+                                                        id="jma_reg" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label for="jma_transfer" class="col-sm-2 col-form-label">Transfer</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" name="jma_transfer" class="form-control hide_num"
+                                                        id="jma_transfer" placeholder="" min="0" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
+                        </div>
+                        @php
+                            $countYear++;
+                        @endphp
+                    @endfor
+                    {{-- @php
                         $count = 4;
                     @endphp
                     @foreach ($tableData as $row)
@@ -74,11 +192,12 @@
                             if ($count < 0) {
                                 break;
                             }
-                            $idasdsa = 'ts_' . ($tsYear - $count).'_'.$prodi->id;
+                            $idasdsa = 'ts_' . ($tsYear - $count) . '_' . $prodi->id;
                         @endphp
-                        @if ($row->id == 'ts_' . ($tsYear - $count).'_'.$prodi->id)
-                            <div class="tab-pane fade show {{ $count == 4 ? 'active' : '' }}" id="ts-{{ $count }}"
-                                role="tabpanel" aria-labelledby="custom-tabs-{{ $count }}-tab">
+                        @if ($row->id == 'ts_' . ($tsYear - $count) . '_' . $prodi->id)
+                            <div class="tab-pane fade show {{ $count == 4 ? 'active' : '' }}"
+                                id="ts-{{ $count }}" role="tabpanel"
+                                aria-labelledby="custom-tabs-{{ $count }}-tab">
                                 <div class="card-body pb-0 pt-0">
                                     <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-{{ $count }}
                                         ({{ $tsYear - $count }})
@@ -123,7 +242,8 @@
                                                         Sleksi</label>
                                                     <div class="col-sm-4">
                                                         <input type="number" name="jcm_lulus" class="form-control hide_num"
-                                                            id="jcm_lulus" placeholder="" min="0" value="{{ $row->jcm_lulus }}">
+                                                            id="jcm_lulus" placeholder="" min="0"
+                                                            value="{{ $row->jcm_lulus }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,7 +260,8 @@
                                                     <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                     <div class="col-sm-4">
                                                         <input type="number" name="jmb_reg" class="form-control hide_num"
-                                                            id="jmb_reg" placeholder="" min="0" value="{{ $row->jmb_reg }}">
+                                                            id="jmb_reg" placeholder="" min="0"
+                                                            value="{{ $row->jmb_reg }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -166,7 +287,8 @@
                                                     <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                     <div class="col-sm-4">
                                                         <input type="number" name="jma_reg" class="form-control hide_num"
-                                                            id="jma_reg" placeholder="" min="0" value="{{ $row->jma_reg }}">
+                                                            id="jma_reg" placeholder="" min="0"
+                                                            value="{{ $row->jma_reg }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -194,8 +316,7 @@
                                 $count--;
                             @endphp
                         @endif
-                    @endforeach
-
+                    @endforeach --}}
 
                 </div>
             </div>

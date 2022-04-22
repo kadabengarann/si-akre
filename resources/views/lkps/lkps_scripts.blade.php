@@ -56,9 +56,10 @@
                     console.log(data.success);
                     showSuccess(data.success)
                     $("#ts_modal").modal('hide');
-                    // delay("slow").fadeIn();
-                    setTimeout(location.reload.bind(location), 500);
-                    // delay("slow").location.reload();
+                    @if (request()->is('lkps/input*'))
+                        setTimeout(location.reload.bind(location), 500);
+                    @endif
+                    updateContent(_value)
 
                 },
                 error: function(data) {
@@ -70,6 +71,26 @@
         $("#ts_change").click(function() {
             $("#ts_modal").modal('show');
         });
+
+        function updateContent(_data) {
+            let ts_row = document.querySelectorAll('td.ts-row');
+            let ts_year = document.querySelector('#ts-year');
+
+            console.log(ts_year);
+            ts_year.innerHTML = _data
+            _data -= 4
+            _index = 4
+            ts_row.forEach(function(element, index) {
+                console.log(element);
+                console.log(index);
+                if (index == 4) {
+                    element.innerHTML = "TS (" + _data + ")";
+                } else {
+                    element.innerHTML = "TS - " + (_index - index) + " (" + _data + ")";
+                }
+                _data++
+            });
+        }
 
         function showSuccess(message) {
             Toast.fire({
