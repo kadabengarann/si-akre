@@ -32,6 +32,11 @@
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
+                            @if (Auth::user()->level == 5)
+                                {{-- @foreach ($reviewer as $column) --}}
+                                <b>Nama Reviewer : </b>{{ Auth::user()->reviewer->nama }}
+                                {{-- @endforeach --}}
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -50,11 +55,12 @@
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <th class="mt-1 mb-1">Nilai Hasil
-                                        R-{{ $column + 1 }}
-                                    </th>
-                                @endforeach
+                                {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
+                                {{-- @foreach ($reviewer as $column) --}}
+                                {{-- <th class="mt-1 mb-1">Nilai Hasil
+                                        R-1<br>({{ $reviewer->nama }})
+                                    </th> --}}
+                                {{-- @endforeach --}}
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
@@ -64,7 +70,7 @@
                                 <th class="mt-1 mb-1 text-start" colspan="2">
                                     INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
                                 </th>
-                                <th colspan="6">
+                                <th colspan="3">
 
                                 </th>
                             </tr>
@@ -74,7 +80,7 @@
                                 $row_id = 11;
                             @endphp
                             <tr
-                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                                class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     A
                                 </td>
@@ -84,24 +90,21 @@
                                 <td>
                                     6(1,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
                                 </td>
                                 <td>
                                     1
                                 </td>
+
                             </tr>
                             @php
                                 $row_id = 21;
                             @endphp
 
                             <tr
-                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : 'haiya' }}">
+                                class=" {{ getArrayItem($row_id, $dataMatriks)->remainingField > 0 ? 'incomplete' : '' }}">
                                 <td>
                                     B
                                 </td>
@@ -111,18 +114,16 @@
                                 <td>
                                     6(1,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     1
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 31;
@@ -139,18 +140,16 @@
                                 <td>
                                     4(1,0%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     9
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 32;
@@ -167,18 +166,16 @@
                                 <td>
                                     20 (5,0%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     11
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 33;
@@ -194,18 +191,16 @@
                                 <td>
                                     14 (3,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     9
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 34;
@@ -221,18 +216,16 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     11
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 35;
@@ -248,18 +241,16 @@
                                 <td>
                                     22 (5,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     7
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 36;
@@ -275,18 +266,16 @@
                                 <td>
                                     30 (7,5%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     15
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 37;
@@ -302,18 +291,16 @@
                                 <td>
                                     16 (4,0 %)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     11
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 38;
@@ -329,18 +316,16 @@
                                 <td>
                                     12 (3,0%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     11
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 39;
@@ -356,18 +341,16 @@
                                 <td>
                                     208 (52%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     17
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 41;
@@ -383,18 +366,16 @@
                                 <td>
                                     20(5,0%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     5
                                 </td>
+
+
                             </tr>
                             @php
                                 $row_id = 51;
@@ -411,28 +392,26 @@
                                 <td>
                                     12(3,0%)
                                 </td>
-                                @foreach ($dataMatriksReviewer as $column => $value)
-                                    <td>
-                                        {{ getArrayItem($row_id, $value)->skor ?: '-' }}
-                                    </td>
-                                @endforeach
+
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
+                                    {{ getArrayItem($row_id, $dataMatriks)->skor ?: '-' }}
 
                                 </td>
                                 <td>
                                     4
                                 </td>
+
+
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     Nilai Hasil
                                 </td>
-                                <td>
+                                <td style="text-align: center!important">
                                     400 (100%)
                                 </td>
-                                <td colspan="3"></td>
-                                <td>{{ $matriksSumAll }}</td>
+                                <td>{{ $matriksSumAll }}
+                                    ({{ number_format(($matriksSumAll / 400) * 100, 2, '.', '') }}%)</td>
                                 <td>
                                     112
                                 </td>
@@ -441,7 +420,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="6">
+                                <td colspan="3">
                                     <b>
                                         @php
                                             if ($matriksSumAll >= 361) {

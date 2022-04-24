@@ -79,7 +79,7 @@ Route::name('matriks')
         Route::post('/update', [MatriksController::class, 'updateMatriks']);
         Route::get('/cetak_pdf', [MatriksController::class, 'cetak_pdf']);
         Route::post('/update-bukti', [MatriksController::class, 'updateMatriksBukti']);
-        Route::get('/', [MatriksController::class, 'index']);
+        Route::get('/', [MatriksController::class, 'index'])->name('indexMatriks');
         Route::get('/view/{id}', [MatriksController::class, 'form'])->name('viewLed');
     });
 Route::name('lkps')
@@ -143,6 +143,16 @@ Route::middleware('admin')
             Route::post('/manage/dosen/update/{id}', [AdminController::class, 'updateDosen']);
             Route::get('/manage/dosen/edit-password/{id}', [AdminController::class, 'editDosenPassword'])->name('pageDosenEditPassword');
             Route::post('/manage/dosen/update-credential/{id}', [AdminController::class, 'updateDosenCredential']);
+
+            Route::get('/manage/reviewer', [AdminController::class, 'index_reviewer'])->name('reviewerList');
+            Route::get('/manage/reviewer/{id}', [AdminController::class, 'detailReviewer'])->name('reviewerDetail');
+            Route::get('/manage/add-reviewer', [AdminController::class, 'addReviewer']);
+            Route::post('/manage/reviewer/insert', [AdminController::class, 'insertReviewer']);
+            Route::get('/manage/reviewer/delete/{id}', [AdminController::class, 'deleteReviewer']);
+            Route::get('/manage/reviewer/edit/{id}', [AdminController::class, 'editReviewer']);
+            Route::post('/manage/reviewer/update/{id}', [AdminController::class, 'updateReviewer']);
+            Route::get('/manage/reviewer/edit-password/{id}', [AdminController::class, 'editReviewerPassword'])->name('pageReviewerEditPassword');
+            Route::post('/manage/reviewer/update-credential/{id}', [AdminController::class, 'updateReviewerCredential']);
 
             Route::get('/lkps/prodi', [LkpsController::class, 'index']);
             Route::get('/lkps/prodi/view/{id}', [LkpsController::class, 'admin_form']);

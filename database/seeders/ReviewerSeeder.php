@@ -22,6 +22,7 @@ class ReviewerSeeder extends Seeder
             DB::table('reviewer')->insert([
                 'rev_id' => sprintf('rev%03d', $x),
                 'nama' => $faker->name,
+                'instansi' => $faker->city,
                 'alamat' => $faker->address,
                 'tgl_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'tmp_lahir' => $faker->city,

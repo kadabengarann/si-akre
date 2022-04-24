@@ -45,6 +45,12 @@
                 <p>Prodi</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/manage/reviewer" class="nav-link {{ request()->is('manage/reviewer*') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Reviewer</p>
+            </a>
+        </li>
     </ul>
 </li>
 <li class="nav-item">

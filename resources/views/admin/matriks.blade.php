@@ -25,7 +25,7 @@
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                             @if (Auth::user()->level == 5)
                                 {{-- @foreach ($reviewer as $column) --}}
-                                    <b>Nama Reviewer : </b>{{ $reviewer->nama }}
+                                <b>Nama Reviewer : </b>{{ $reviewer->nama }}
                                 {{-- @endforeach --}}
                             @endif
                         </div>
@@ -52,12 +52,13 @@
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
                                 {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
-                                {{-- @foreach ($reviewer as $column) --}}
+                                @foreach ($reviewer as $column => $value)
                                     <th class="mt-1 mb-1">Nilai Hasil
-                                        {{-- R-{{ $column + 1 $reviewer->nama}} --}}
-                                        R-1<br>({{ $reviewer->nama }})
+                                        R-{{ $column + 1 }} <br>
+                                        ({{ $value->nama }})
+                                        {{-- R-1<br>({{ $reviewer->nama }}) --}}
                                     </th>
-                                {{-- @endforeach --}}
+                                @endforeach
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
@@ -511,11 +512,16 @@
                                 <td colspan="2">
                                     Nilai Hasil
                                 </td>
-                                <td>
+                                <td style="text-align: center!important" >
                                     400 (100%)
                                 </td>
-                                <td class="text-center"></td>
-                                <td>{{ $matriksSumAll }}</td>
+                                @foreach ($matriksSumAllRevs as $column => $value)
+                                    <td class="text-center">
+                                        {{ $value }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
+                                    </td>
+                                @endforeach
+                                <td>{{ $matriksSumAll }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
+                                </td>
                                 <td>
                                     112
                                 </td>
@@ -524,7 +530,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="5">
+                                <td style="text-align: center!important" colspan="7">
                                     <b>
                                         @php
                                             if ($matriksSumAll >= 361) {

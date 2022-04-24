@@ -1,17 +1,26 @@
-@extends('layouts.apps')
-@section('title', 'Dashboard')
-@section('header')
-    <div class="col-sm-6">
-        <h1 class="m-0">Penilaian Kinerja Program Studi</h1>
-    </div><!-- /.col -->
-    <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Penilaian Kinerja Program Studi</li>
-        </ol>
-    </div><!-- /.col -->
-@endsection
-@section('content')
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>SI - Akre | Matriks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{{ public_path('css/style.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ public_path('css/matriks.css') }}" rel="stylesheet" rel="stylesheet" type="text/css" media="all">
+    <style>
+        @page {
+            margin: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
     <div class="row justify-content-center">
         <section class="col-lg-12 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
@@ -25,14 +34,9 @@
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                             @if (Auth::user()->level == 5)
                                 {{-- @foreach ($reviewer as $column) --}}
-                                    <b>Nama Reviewer : </b>{{ $reviewer->nama }}
+                                <b>Nama Reviewer : </b>{{ $reviewer->nama }}
                                 {{-- @endforeach --}}
                             @endif
-                        </div>
-                        <div class="col-12 col-lg-6 text-right">
-                            <a class="btn btn-info"
-                                href="/matriks/cetak_pdf{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"
-                                target="_blank">Export PDF</a>
                         </div>
                     </div>
                 </div>
@@ -52,25 +56,23 @@
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
                                 {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
-                                {{-- @foreach ($reviewer as $column) --}}
+                                @foreach ($reviewer as $column => $value)
                                     <th class="mt-1 mb-1">Nilai Hasil
-                                        {{-- R-{{ $column + 1 $reviewer->nama}} --}}
-                                        R-1<br>({{ $reviewer->nama }})
+                                        R-{{ $column + 1 }} <br>
+                                        ({{ $value->nama }})
+                                        {{-- R-1<br>({{ $reviewer->nama }}) --}}
                                     </th>
-                                {{-- @endforeach --}}
+                                @endforeach
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
-                                </th>
-                                <th>
-                                    Action
                                 </th>
                             </tr>
                             <tr>
                                 <th class="mt-1 mb-1 text-start" colspan="2">
                                     INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
                                 </th>
-                                <th colspan="5">
+                                <th colspan="6">
 
                                 </th>
                             </tr>
@@ -101,11 +103,7 @@
                                 <td>
                                     1
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
                             </tr>
                             @php
                                 $row_id = 21;
@@ -134,11 +132,7 @@
                                 <td>
                                     1
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/101{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -168,11 +162,7 @@
                                 <td>
                                     9
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/301{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -202,11 +192,7 @@
                                 <td>
                                     11
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/302{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -235,11 +221,7 @@
                                 <td>
                                     9
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/303{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -268,11 +250,7 @@
                                 <td>
                                     11
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/304{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -301,11 +279,7 @@
                                 <td>
                                     7
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/305{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -334,11 +308,7 @@
                                 <td>
                                     15
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/306{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -367,11 +337,7 @@
                                 <td>
                                     11
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/307{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -400,11 +366,7 @@
                                 <td>
                                     11
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/308{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -433,11 +395,7 @@
                                 <td>
                                     17
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/309{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -466,11 +424,7 @@
                                 <td>
                                     5
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/401{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             @php
@@ -500,22 +454,23 @@
                                 <td>
                                     4
                                 </td>
-                                <td>
-                                    <a class="btn btn-info"
-                                        href="/matriks/view/501{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"><i
-                                            class="fas fa-pen"></i></a>
-                                </td>
+
 
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     Nilai Hasil
                                 </td>
-                                <td>
+                                <td style="text-align: center!important" >
                                     400 (100%)
                                 </td>
-                                <td class="text-center"></td>
-                                <td>{{ $matriksSumAll }}</td>
+                                @foreach ($matriksSumAllRevs as $column => $value)
+                                    <td class="text-center">
+                                        {{ $value }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
+                                    </td>
+                                @endforeach
+                                <td>{{ $matriksSumAll }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
+                                </td>
                                 <td>
                                     112
                                 </td>
@@ -524,7 +479,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="5">
+                                <td colspan="6" style="text-align: center!important" >
                                     <b>
                                         @php
                                             if ($matriksSumAll >= 361) {
@@ -547,4 +502,6 @@
             </div>
         </section>
     </div>
-@endsection
+</body>
+
+</html>

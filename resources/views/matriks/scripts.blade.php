@@ -86,7 +86,7 @@
                     break;
                 case '2':
                     skor_parent.css("background-color", "yellow");
-                    skor_parent.css("color", "#fff");
+                    skor_parent.css("color", "#000");
                     break;
                 case '1':
                     skor_parent.css("background-color", "rgb(255, 68, 68)");
@@ -115,7 +115,7 @@
                     break;
                 case '2':
                     skor_parent.css("background-color", "yellow");
-                    skor_parent.css("color", "#fff");
+                    skor_parent.css("color", "#000");
                     break;
                 case '1':
                     skor_parent.css("background-color", "rgb(255, 68, 68)");
