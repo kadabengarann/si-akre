@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'level',
         'prodi_id',
+        'rev_id',
         'dosen_id',
         'mhs_id',
     ];

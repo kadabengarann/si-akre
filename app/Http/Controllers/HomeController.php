@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
+use App\Models\User;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\Reviewer;
@@ -34,24 +35,39 @@ class HomeController extends Controller
     {
         if (Auth::user()->level == 1) {
             if ($request->ajax()) {
-                return Datatables::of(DB::table('audits')->latest()->take(5)->get())
-                    ->addColumn('user', function ($audit) {
-                        $user = DB::table('users')->where('id', '=', $audit->user_id)->first();
-                        return  $user->username;
-                    })
-                    ->addColumn('log_event', function ($audit) {
-                        $badge = '<span class=" badge rounded-pill '
-                            . (($audit->event == 'created') ? ' bg-green '  : ($audit->event == 'deleted' ? ' bg-red ' : ($audit->event == 'updated' ? ' bg-yellow ' : '')))
-                            . '">' . $audit->event . '</span>';
-                        return  $badge;
-                    })
-                    ->addColumn('action', function ($audit) {
-                        $btn = '
+                return Datatables::of(DB::table('audits')->orderBy('id', 'ASC')->get())
+                ->addColumn('model', function ($audit) {
+                    $words = explode('\\', $audit->auditable_type);
+                    return $words[count($words) - 1];
+                })
+                ->addColumn('user', function ($audit) {
+                    $user = User::get()->where('id', '=', $audit->user_id)->first();
+                    if ($user->level == 1) {
+                        $name = 'admin';
+                    } elseif ($user->level == 2) {
+                        $name = $user->prodi->nama;
+                    } elseif ($user->level == 3) {
+                        $name = $user->dosen->nama;
+                    } elseif ($user->level == 4) {
+                        $name = $user->mhs->nama;
+                    } elseif ($user->level == 5) {
+                        $name = $user->reviewer->nama;
+                    }
+                    return  $name;
+                })
+                ->addColumn('log_event', function ($audit) {
+                    $badge = '<span class=" badge rounded-pill '
+                    . (($audit->event == 'created') ? ' bg-green '  : ($audit->event == 'deleted' ? ' bg-red ' : ($audit->event == 'updated' ? ' bg-yellow ' : '')))
+                    . '">' . $audit->event . '</span>';
+                    return  $badge;
+                })
+                ->addColumn('action', function ($audit) {
+                    $btn = '
                     <a class="btn btn-info" href="/audit-log/' . $audit->id . '"><i class="fas fa-info-circle"></i> Detail</a>                    ';
-                        return $btn;
-                    })
-                    ->rawColumns(['log_event', 'action'])
-                    ->toJson();
+                    return $btn;
+                })
+                ->rawColumns(['log_event', 'action'])
+                ->toJson();
             }
 
             $data = [
