@@ -135,17 +135,20 @@
                  data-accordion="false">
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                 <li class="nav-header">HOME</li>
-                 <li class="nav-item">
-                     <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                 @if (Auth::user()->level == 5)
+                 @else
+                     <li class="nav-header">HOME</li>
+                     <li class="nav-item">
+                         <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
 
-                         <i class="nav-icon fas fa-tachometer-alt fa-fw"></i>
-                         {{-- <i class="nav-icon fas fa-user fa-fw"></i> --}}
-                         <p>
-                             Dashboard
-                         </p>
-                     </a>
-                 </li>
+                             <i class="nav-icon fas fa-tachometer-alt fa-fw"></i>
+                             {{-- <i class="nav-icon fas fa-user fa-fw"></i> --}}
+                             <p>
+                                 Dashboard
+                             </p>
+                         </a>
+                     </li>
+                 @endif
                  @unless(request()->is('lkps/*') || request()->is('led/*') || request()->is('matriks/*'))
                      @if (Auth::user()->level == 5)
                          @include('layouts.nav.rev_nav')

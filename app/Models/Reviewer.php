@@ -14,6 +14,7 @@ class Reviewer extends Model implements Auditable
     protected $table = 'reviewer';
     protected $fillable = [
         'nama',
+        'instansi',
         'rev_id',
         'tgl_lahir',
         'tmp_lahir',

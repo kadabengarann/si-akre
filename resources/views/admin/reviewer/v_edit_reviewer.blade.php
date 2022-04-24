@@ -48,6 +48,16 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <label class="labels">Instansi</label><input type="text"
+                                    class="form-control @error('instansi') is-invalid @enderror" placeholder="Nama instansi"
+                                    value="{{ $reviewer->instansi }}" name="instansi">
+                                <div class="invalid-feedback">
+                                    @error('instansi')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
                             {{-- <div class="col-md-12"><label class="labels">Program Studi</label>
                                 <select class="form-control @error('id_prodi') is-invalid @enderror" id="subject"
                                     name="id_prodi">

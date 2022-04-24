@@ -17,6 +17,7 @@ class CreateReviewerTable extends Migration
             $table->id();
             $table->string('rev_id')->unique();
             $table->string('nama')->nullable();
+            $table->string('instansi')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->string('tmp_lahir')->nullable();
             $table->text('alamat')->nullable();

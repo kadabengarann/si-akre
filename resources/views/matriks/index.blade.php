@@ -24,9 +24,9 @@
                         <div class="col-12 col-lg-6">
                             <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                             @if (Auth::user()->level == 5)
-                                @foreach ($reviewer as $column)
-                                    <b>Nama Reviewer : </b>{{ $column->nama }}
-                                @endforeach
+                                {{-- @foreach ($reviewer as $column) --}}
+                                    <b>Nama Reviewer : </b>{{ $reviewer->nama }}
+                                {{-- @endforeach --}}
                             @endif
                         </div>
                         <div class="col-12 col-lg-6 text-right">
@@ -52,12 +52,12 @@
                                 <th class="mt-1 mb-1">Skor Maksimal
                                 </th>
                                 {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
-                                @foreach ($reviewer as $column)
+                                {{-- @foreach ($reviewer as $column) --}}
                                     <th class="mt-1 mb-1">Nilai Hasil
                                         {{-- R-{{ $column + 1 $reviewer->nama}} --}}
-                                        R-1<br>({{ $column->nama }})
+                                        R-1<br>({{ $reviewer->nama }})
                                     </th>
-                                @endforeach
+                                {{-- @endforeach --}}
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir

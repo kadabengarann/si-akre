@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prodi;
 use App\Models\Matriks;
+use App\Models\Reviewer;
 use DeepCopy\Matcher\Matcher;
 use Barryvdh\DomPDF\Facade\Pdf;
 // use Barryvdh\Snappy\Facades\SnappyPdf;
@@ -32,35 +33,47 @@ class MatriksController extends Controller
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
                 $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+                $reviewer = Matriks::getAllRev();
                 // $matriksSum = Matriks::getSummaryRev($prodi->id);
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
                 $matriksSum = Matriks::getSummaryRev($prodi->id, $rev_id);
-                // $matriksSum = Matriks::getSummaryRev($prodi->id);
+                $reviewer = Reviewer::find(Auth::user()->reviewer->id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id)
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
             $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+            $reviewer = Matriks::getAllRev();
+            $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
         }
 
-        $reviewer = Matriks::getAllRev();
-        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+        $matriksSumEveryRev = Matriks::getSummaryEveryReviewers($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryAllRev($prodi->id);
 
-        // return $matriksSum;
+        // return $matriksSumEveryRev;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
             'dataMatriksReviewer' => $matriksSumReviewers,
             'dataMatriksProdi' => $matriksSumProdi,
             'matriksSumAll' => $matriksSumAll,
+            'matriksSumAllRevs' => $matriksSumEveryRev,
             'reviewer' => $reviewer
         ];
-
-        return view('matriks.index', $data);
         // return $matriksSumReviewers;
+
+        if (Auth::user()->level == 1) {
+            return view('admin.matriks', $data);
+        } else if (Auth::user()->level == 2) {
+            return view('admin_prodi.matriks', $data);
+        } else if (Auth::user()->level == 5) {
+            return view('reviewer.matriks', $data);
+        }
     }
     public function index_prodi(Request $request)
     {
@@ -82,32 +95,50 @@ class MatriksController extends Controller
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
                 $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+                $reviewer = Matriks::getAllRev();
                 // $matriksSum = Matriks::getSummaryRev($prodi->id);
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
+
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
                 $matriksSum = Matriks::getSummaryRev($prodi->id, $rev_id);
-                // $matriksSum = Matriks::getSummaryRev($prodi->id);
+                $reviewer = Reviewer::find(Auth::user()->reviewer->id);
+                // $matriksSum = Matriks::getSummaryRev($prodi->id)
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
+
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
             $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
+            $reviewer = Matriks::getAllRev();
+            $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
         }
 
-        $matriksSumAll = Matriks::getSummaryAll($prodi->id);
+        $matriksSumEveryRev = Matriks::getSummaryEveryReviewers($prodi->id);
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryAllRev($prodi->id);
 
-        // return $matriksSum;
+        // return $matriksSumEveryRev;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
             'dataMatriksReviewer' => $matriksSumReviewers,
             'dataMatriksProdi' => $matriksSumProdi,
             'matriksSumAll' => $matriksSumAll,
+            'matriksSumAllRevs' => $matriksSumEveryRev,
+            'reviewer' => $reviewer
         ];
         // DOMPDF
-        $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
+        // $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
+
+        if (Auth::user()->level == 1) {
+            $pdf = PDF::loadview('/matriks/matriks_prodi_pdf', $data);
+        } else if (Auth::user()->level == 2) {
+            $pdf = PDF::loadview('/matriks/matriks_prodi_pdf', $data);
+        } else if (Auth::user()->level == 5) {
+            $pdf = PDF::loadview('/matriks/matriks_pdf', $data);
+        }
         return $pdf->stream('Matriks.pdf');
         // ->setOptions(['defaultFont' => 'sans-serif']);;
         // return $pdf->download('Matriks Teknologi Informasi.pdf');

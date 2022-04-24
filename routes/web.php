@@ -73,7 +73,7 @@ Route::name('matriks')
         Route::post('/update', [MatriksController::class, 'updateMatriks']);
         Route::get('/cetak_pdf', [MatriksController::class, 'cetak_pdf']);
         Route::post('/update-bukti', [MatriksController::class, 'updateMatriksBukti']);
-        Route::get('/', [MatriksController::class, 'index']);
+        Route::get('/', [MatriksController::class, 'index'])->name('indexMatriks');
         Route::get('/view/{id}', [MatriksController::class, 'form'])->name('viewLed');
     });
 Route::name('lkps')

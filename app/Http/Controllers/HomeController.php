@@ -130,7 +130,7 @@ class HomeController extends Controller
                 'isComplete' => $isComplete
             ];
 
-            return view('reviewer.dashboard', $data);
+            return redirect('/matriks?id=1');
         }
     }
 }

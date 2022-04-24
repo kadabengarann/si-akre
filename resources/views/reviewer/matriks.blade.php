@@ -458,10 +458,10 @@
                                 <td colspan="2">
                                     Nilai Hasil
                                 </td>
-                                <td>
+                                <td style="text-align: center!important">
                                     400 (100%)
                                 </td>
-                                <td>{{ $matriksSumAll }}</td>
+                                <td>{{ $matriksSumAll }} ({{ number_format(($matriksSumAll / 400) * 100, 2, '.', '') }}%)</td>
                                 <td>
                                     112
                                 </td>

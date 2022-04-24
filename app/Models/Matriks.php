@@ -25,6 +25,9 @@ class Matriks extends Model implements Auditable
         'user_id',
     ];
 
+    protected $auditExclude = [
+        'id',
+    ];
     public function prodi()
     {
         return $this->belongsTo(Prodi::class);
@@ -75,13 +78,35 @@ class Matriks extends Model implements Auditable
 
         return $matriks;
     }
+    public static function getSummarySingleRev($prodi_id, $rev_id)
+    {
+        $array1 = array();
+        $revs = DB::table('reviewer')
+        ->join('users', 'users.rev_id', '=', 'reviewer.id')
+        ->select('users.id')
+        ->limit(1)
+            ->get();
+
+            $matriks = DB::table('matriks')
+            ->where('prodi_id', $prodi_id)
+                ->where('user_id', $rev_id)
+                ->select(DB::raw('t_group as id, sum(skor) as skor , count(*) - count(skor) + count(*) - count(bukti) as remainingField'))
+                ->groupBy("t_group")
+                ->get();
+        // $matriks = DB::table('matriks')
+        //     ->where('prodi_id', $prodi_id)
+        //     ->select(DB::raw('t_group, sum(skor) as skor , count(*) - count(skor) + count(*) - count(bukti) as remainingField'))
+        //     ->groupBy("t_group")
+        //     ->get();
+
+        return $array1;
+    }
     public static function getSummaryAllRev($prodi_id)
     {
         $array1 = array();
         $revs = DB::table('reviewer')
             ->join('users', 'users.rev_id', '=', 'reviewer.id')
             ->select('users.id')
-            ->limit(1)
             ->get();
 
         foreach ($revs as $n) {
@@ -105,16 +130,32 @@ class Matriks extends Model implements Auditable
     {
         $revs = DB::table('reviewer')
             ->join('users', 'users.rev_id', '=', 'reviewer.id')
-            ->limit(1)
             ->get();
 
         return $revs;
     }
-    public static function getSummaryAll($prodi_id)
+    public static function getSummaryAll($prodi_id, $rev_id)
     {
         $matriks = Matriks::all()
-            ->where('user_id', $prodi_id)
+            ->where('prodi_id', $prodi_id)
+            ->where('user_id', $rev_id)
             ->sum('skor');
         return $matriks;
+    }
+    public static function getSummaryEveryReviewers($prodi_id)
+    {
+        $array1 = array();
+        $revs = DB::table('reviewer')
+        ->join('users', 'users.rev_id', '=', 'reviewer.id')
+        ->select('users.id')
+        ->get();
+
+        foreach ($revs as $n) {
+            $matriks = Matriks::all()
+                ->where('user_id', $n->id)
+                ->sum('skor');
+            array_push($array1, $matriks);
+        }
+        return $array1;
     }
 }

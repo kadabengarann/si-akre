@@ -24,7 +24,6 @@
                         <th>Event</th>
                         <th>User</th>
                         <th>Auditable type</th>
-                        <th>Host</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -57,7 +56,6 @@
                         <th>Event</th>
                         <th>User</th>
                         <th>Auditable type</th>
-                        <th>Host</th>
                         <th></th>
                     </tr>
                 </tfoot>
@@ -135,12 +133,8 @@
                         data: 'user',
                         name: 'user'
                     }, {
-                        data: 'auditable_type',
-                        name: 'auditable_type'
-                    },
-                    {
-                        data: 'ip_address',
-                        name: 'ip_address'
+                        data: 'model',
+                        name: 'model'
                     },
                     {
                         data: 'action',
@@ -150,5 +144,4 @@
             });
         });
     </script>
-
 @endpush

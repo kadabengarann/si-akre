@@ -91,9 +91,39 @@ class AdminController extends Controller
     {
         if ($request->ajax()) {
             return Datatables::of(DB::table('audits')->orderBy('id', 'ASC')->get())
+                ->addColumn('model', function ($audit) {
+                    $words = explode('\\', $audit->auditable_type);
+                    return $words[count($words) - 1];
+                    $showword = trim($words[count($words) - 1], "\\");
+                    return  "hah";
+                    return $audit->auditable_type;
+                })
                 ->addColumn('user', function ($audit) {
-                    $user = DB::table('users')->where('id', '=', $audit->user_id)->first();
-                    return  $user->username;
+                    $user = User::get()->where('id', '=', $audit->user_id)->first();
+                    if ($user->level == 1) {
+                        $name = 'admin';
+                    } elseif ($user->level == 2) {
+                        $name =$user->prodi->nama;
+                    } elseif ($user->level == 3) {
+                    $name = $user->dosen->nama;
+                } elseif ($user->level == 4) {
+                    $name = $user->mhs->nama;
+                } elseif ($user->level == 5) {
+                    $name = $user->reviewer->nama;
+                }
+                    // } elseif ($user->level == 2) {
+                    // $name =$user->prodi->name;
+                    // } elseif ($user->level == 3) {
+                    // $name =
+                    //         '/manage/dosen/' . $user->id;
+                    // } elseif ($user->level == 4) {
+                    // $name =
+                    //         '/manage/mhs/' . $user->id;
+                    // } elseif ($user->level == 5) {
+                    // $name =
+                    //         '/manage/reviewer/' . $user->reviewer->id;
+                    // }
+                    return  $name;
                 })
                 ->addColumn('log_event', function ($audit) {
                     $badge = '<span class=" badge rounded-pill '
@@ -120,7 +150,7 @@ class AdminController extends Controller
         if ($user->level == 1) {
             $user_url = '#';
         } elseif ($user->level == 2) {
-            $user_url = '/manage/prodi/' . $user->id;
+            $user_url = '/manage/prodi/' . $user->prodi->id;
         } elseif ($user->level == 3) {
             $user_url =
                 '/manage/dosen/' . $user->id;
@@ -129,7 +159,7 @@ class AdminController extends Controller
                 '/manage/mhs/' . $user->id;
         } elseif ($user->level == 5) {
             $user_url =
-                '#';
+                '/manage/reviewer/' . $user->reviewer->id;
         }
         $user_role = $roles[$user->level - 1];
         // $audit = DB::table('audits')->where('id', '=', $id)->first();
@@ -786,6 +816,7 @@ class AdminController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'nama' => 'required',
+            'instansi' => 'required',
             'rev_id' => 'required',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
@@ -806,9 +837,9 @@ class AdminController extends Controller
         }
         $reviewer = Reviewer::create([
             'nama' => Request()->name,
-            'nip' => Request()->username,
+            'instansi' => Request()->instansi,
+            'rev_id' => Request()->username,
             'img_url' =>  $img_url,
-            'prodi_id' => Request()->id_prodi,
         ]);
 
         User::create([
@@ -852,10 +883,12 @@ class AdminController extends Controller
         $reviewer = Reviewer::find($id);
         $user = $reviewer->user;
 
+        // return $reviewer;
         Request()->validate([
             'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:16',
             // 'id_prodi' => 'required',
             'nama' => 'required',
+            // 'instansi' => 'required',
             'address' => 'required',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
@@ -871,6 +904,7 @@ class AdminController extends Controller
             File::delete('img/rev/' . $reviewer->img_url);
 
             $reviewer->nama = Request()->nama;
+            // $reviewer->instansi = Request()->instansi;
             // $reviewer->prodi_id = Request()->id_prodi;
             $reviewer->alamat = Request()->address;
             $reviewer->tgl_lahir = Request()->date;
@@ -879,6 +913,7 @@ class AdminController extends Controller
             $reviewer->save();
         } else {
             $reviewer->nama = Request()->nama;
+            // $reviewer->instansi = Request()->instansi;
             // $reviewer->prodi_id = Request()->id_prodi;
             $reviewer->alamat = Request()->address;
             $reviewer->tgl_lahir = Request()->date;
