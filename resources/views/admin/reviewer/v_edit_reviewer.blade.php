@@ -58,21 +58,6 @@
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col-md-12"><label class="labels">Program Studi</label>
-                                <select class="form-control @error('id_prodi') is-invalid @enderror" id="subject"
-                                    name="id_prodi">
-                                    <option value="{{ $reviewer->prodi_id }}" selected disabled hidden>
-                                        {{ $reviewer->prodi->nama }}</option>
-                                    @foreach ($prodi as $m)
-                                        <option value="{{ $m->id }}">{{ $m->nama }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    @error('id_prodi')
-                                        {{ $message }}
-                                    @enderror
-                                </div>
-                            </div> --}}
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6"><label class="labels">Tempat Lahir</label><input type="text"
@@ -112,9 +97,9 @@
                         <img src="{{ url('img/rev/' . $reviewer->img_url) }}" alt="" srcset="" width="200px">
                         <div class="form-group">
                             <b>Edit Foto Profile</b><br />
-                            <input type="file" class="form-control" name="foto_reviewer">
+                            <input type="file" class="form-control" name="foto_rev">
                             <div class="text-danger">
-                                @error('foto_reviewer')
+                                @error('foto_rev')
                                     {{ $message }}
                                 @enderror
                             </div>

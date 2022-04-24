@@ -11,6 +11,7 @@ use App\Http\Controllers\{
     LedController,
     MatriksController,
     AdminProdiController,
+    ReviewerController,
     DosenController,
     MahasiswaController,
     AdminController
@@ -41,6 +42,14 @@ Route::name('prodi')
     ->group(function () {
         Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
     });
+Route::middleware('reviewer')
+->prefix('reviewer')
+->group(
+    function () {
+        Route::post('/profile/update', [ReviewerController::class, 'updateProfile']);
+        Route::post('/profile/update-credential', [ReviewerController::class, 'updateCredential']);
+    }
+);
 Route::middleware('dosen')
     ->prefix('dosen')
     ->group(

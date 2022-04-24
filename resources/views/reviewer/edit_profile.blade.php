@@ -15,7 +15,7 @@
 @section('content')
 
     <div class="card p-4">
-        <form method="POST" enctype="multipart/form-data" action="/mhs/profile/update">
+        <form method="POST" enctype="multipart/form-data" action="/reviewer/profile/update">
             @csrf
             <div class="row">
                 <div class="col-md-5 border-right form-group">
@@ -24,11 +24,12 @@
                             <h4 class="text-right">Profile</h4>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-12"><label class="labels">ID</label><input type="text"
-                                    class="form-control @error('id') is-invalid @enderror" placeholder="ID Number"
-                                    value="{{ $mhs->nim }}" name="id" maxlength="10" readonly>
+                            <div class="col-md-8"><label class="labels">ID</label><input type="text"
+                                    id="username-input" class="form-control @error('username') is-invalid @enderror"
+                                    placeholder="ID Number" value="{{ $reviewer->user->username }}" name="username"
+                                    readonly>
                                 <div class="invalid-feedback">
-                                    @error('id')
+                                    @error('username')
                                         {{ $message }}
                                     @enderror
                                 </div>
@@ -36,9 +37,19 @@
                             <div class="col-md-12">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
-                                    value="{{ $mhs->nama }}" name="name">
+                                    value="{{ $reviewer->nama }}" name="name">
                                 <div class="invalid-feedback">
                                     @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Instansi</label><input type="text"
+                                    class="form-control @error('instansi') is-invalid @enderror" placeholder="Nama instansi"
+                                    value="{{ $reviewer->instansi }}" name="instansi">
+                                <div class="invalid-feedback">
+                                    @error('instansi')
                                         {{ $message }}
                                     @enderror
                                 </div>
@@ -47,7 +58,7 @@
                         <div class="row mt-3">
                             <div class="col-md-6"><label class="labels">Tempat Lahir</label><input type="text"
                                     class="form-control @error('birthplace') is-invalid @enderror"
-                                    value="{{ $mhs->tmp_lahir }}" placeholder="" name="birthplace">
+                                    value="{{ $reviewer->tmp_lahir }}" placeholder="" name="birthplace">
                                 <div class="invalid-feedback">
                                     @error('birthplace')
                                         {{ $message }}
@@ -56,7 +67,7 @@
                             </div>
                             <div class="col-md-6"><label class="labels">Tanggal Lahir</label><input
                                     type="date" class="form-control @error('date') is-invalid @enderror"
-                                    value="{{ $mhs->tgl_lahir }}" name="date">
+                                    value="{{ $reviewer->tgl_lahir }}" name="date">
                                 <div class="invalid-feedback">
                                     @error('date')
                                         {{ $message }}
@@ -65,9 +76,9 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Address</label><textarea
-                                    class="form-control @error('address') is-invalid @enderror" rows="3"
-                                    placeholder="Alamat" name="address">{{ $mhs->alamat }}</textarea>
+                            <div class="col-md-12"><label class="labels">Address</label>
+                                <textarea class="form-control @error('address') is-invalid @enderror" rows="3" placeholder="Alamat"
+                                    name="address">{{ $reviewer->alamat }}</textarea>
                                 <div class="invalid-feedback">
                                     @error('address')
                                         {{ $message }}
@@ -79,12 +90,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="p-3 py-5">
-                        <img src="{{ url('img/mhs/' . $mhs->img_url) }}" alt="" srcset="" width="200px">
+                        <img src="{{ url('img/rev/' . $reviewer->img_url) }}" alt="" srcset="" width="200px">
                         <div class="form-group">
                             <b>Edit Foto Profile</b><br />
-                            <input type="file" class="form-control" name="foto_mhs">
+                            <input type="file" class="form-control" name="foto_rev">
                             <div class="text-danger">
-                                @error('foto_mhs')
+                                @error('foto_rev')
                                     {{ $message }}
                                 @enderror
                             </div>
