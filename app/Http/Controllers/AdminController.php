@@ -97,6 +97,9 @@ class AdminController extends Controller
                 })
                 ->addColumn('user', function ($audit) {
                     $user = User::get()->where('id', '=', $audit->user_id)->first();
+                    if ($user == null) {
+                        return "deleted user";
+                    }
                     if ($user->level == 1) {
                         $name = 'admin';
                     } elseif ($user->level == 2) {
@@ -131,23 +134,31 @@ class AdminController extends Controller
         $roles = array("Super Admin", "Admin Prodi", "Dosen", "Mahasiswa", "Reviewer");
         $audit = DB::table('audits')->where('id', '=', $id)->first();
         $user = User::find($audit->user_id);
-        $user_role = $roles[$user->level - 1];
-        if ($user->level == 1) {
+        if ($user == null) {
             $user_url = '#';
-        } elseif ($user->level == 2) {
-            $user_url = '/manage/prodi/' . $user->prodi->id;
-        } elseif ($user->level == 3) {
-            $user_url =
-                '/manage/dosen/' . $user->id;
-        } elseif ($user->level == 4) {
-            $user_url =
-                '/manage/mhs/' . $user->id;
-        } elseif ($user->level == 5) {
-            $user_url =
-                '/manage/reviewer/' . $user->reviewer->id;
+            $user_role = '-';
+            $user = (object) [
+                "id" => null,
+                "username" => "deleted user",
+            ];
+        }else{
+            $user_role = $roles[$user->level - 1];
+            if ($user->level == 1) {
+                $user_url = '#';
+            } elseif ($user->level == 2) {
+                $user_url = '/manage/prodi/' . $user->prodi->id;
+            } elseif ($user->level == 3) {
+                $user_url =
+                    '/manage/dosen/' . $user->id;
+            } elseif ($user->level == 4) {
+                $user_url =
+                    '/manage/mhs/' . $user->id;
+            } elseif ($user->level == 5) {
+                $user_url =
+                    '/manage/reviewer/' . $user->reviewer->id;
+            }
+            $user_role = $roles[$user->level - 1];
         }
-        $user_role = $roles[$user->level - 1];
-        // $audit = DB::table('audits')->where('id', '=', $id)->first();
         if ($audit->event == 'updated' || $audit->event == 'created') {
             $data_modified = json_decode($audit->new_values);
             $data_modified2 = json_decode($audit->old_values);
@@ -844,7 +855,9 @@ class AdminController extends Controller
         $reviewer = Reviewer::find($id);
         $user = User::where('rev_id', $id);
         try {
-            File::delete('img/rev/' . $reviewer->img_url);
+            if ($reviewer->img_url <> 'default.jpg') { //jika foto lama tidak user.jpg maka hapus foto lama
+                File::delete('img/rev/' . $reviewer->img_url);
+            }
         } catch (\Throwable $th) {
             //throw $th;
         }
