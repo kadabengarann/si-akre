@@ -209,6 +209,17 @@
             modal.find('#input_bukti').val(url_data)
             // modal.find('.modal-body input').val(recipient)
         })
+        $('#comment').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('row') // Extract info from data-* attributes
+            var comment_data = button.data('value') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('#input_row_id').val(recipient)
+            modal.find('#input_comment').val(comment_data)
+            // modal.find('.modal-body input').val(recipient)
+        })
 
         function updateBukti(params, _data) {
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
@@ -221,6 +232,19 @@
             }
             let bukti_btn = $(params).find('.input_bukti_trigg')
             bukti_btn.data('url', _data)
+        };
+
+        function updateComment(params, _data) {
+            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
+            let lihat_comment_btn = $(params).find('#lihat_comment')
+            lihat_comment_btn.attr("value", _data)
+            if (_data == null) {
+                lihat_comment_btn.hide()
+            } else {
+                lihat_comment_btn.show()
+            }
+            let comment_btn = $(params).find('.input_comment_trigg')
+            comment_btn.data('value', _data)
         };
 
         function showSuccess(message) {

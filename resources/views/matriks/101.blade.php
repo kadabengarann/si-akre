@@ -42,6 +42,8 @@
                             </th>
                             <th rowspan="2">Bukti
                             </th>
+                            <th rowspan="2">Komentar
+                            </th>
                         </tr>
                         <tr>
                             <th>Sangat Baik</th>
@@ -130,6 +132,24 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                <label for="comment" class="row">
+                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
+                                        id="lihat_comment"
+                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
+                                        target="_blank">Lihat
+                                        Komentar</a>
+                                </label>
+                                @if (Auth::user()->level == 5 || Auth::user()->level == 1)
+                                    <label for="comment" class="row">
+                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Beri
+                                            Komentar</a>
+                                    </label>
+                                @endif
+                            </td>{{-- Komentar --}}
                         </tr>
                         @php($row_id = 211)
                         <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
@@ -217,6 +237,7 @@
         </div>
         <!-- /.card -->
     </section>
+    @include('matriks.modal_comment')
     @include('matriks.modal_bukti_penilaian')
 
 @endsection

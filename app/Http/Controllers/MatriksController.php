@@ -97,22 +97,20 @@ class MatriksController extends Controller
                 $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
                 $reviewer = Matriks::getAllRev();
                 // $matriksSum = Matriks::getSummaryRev($prodi->id);
-                $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
-
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
                 $matriksSum = Matriks::getSummaryRev($prodi->id, $rev_id);
                 $reviewer = Reviewer::find(Auth::user()->reviewer->id);
                 // $matriksSum = Matriks::getSummaryRev($prodi->id)
-                $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
-
+                $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
             }
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
             $matriksSum = Matriks::getSummary($prodi->id, $rev_id);
             $reviewer = Matriks::getAllRev();
-            $matriksSumAll = Matriks::getSummaryAll($prodi->id,$rev_id);
+            $matriksSumAll = Matriks::getSummaryAll($prodi->id, $rev_id);
         }
 
         $matriksSumEveryRev = Matriks::getSummaryEveryReviewers($prodi->id);
