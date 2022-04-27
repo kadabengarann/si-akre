@@ -311,7 +311,7 @@ class AdminController extends Controller
             'prodi_id' => $prodi->id,
         ]);
 
-        return redirect()->route('prodiList')->with('pesan', 'Added new data !1!1');
+        return redirect()->route('prodiList')->with('pesan', 'Added new data !');
     }
 
     public function deleteProdi($id)
@@ -320,7 +320,7 @@ class AdminController extends Controller
         $user = User::where('prodi_id', $id);
         $prodi->delete();
         $user->delete();
-        return redirect()->route('prodiList')->with('pesan', 'Deleted a data !1!1');
+        return redirect()->route('prodiList')->with('pesan', 'Deleted a data !');
     }
     public function editProdi($id)
     {
@@ -370,7 +370,7 @@ class AdminController extends Controller
             $user->username = Request()->username;
             $user->save();
         }
-        return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !1!1');
+        return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !');
     }
     public function editProdiPassword($id)
     {
@@ -483,7 +483,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('mhsList')->with('pesan', 'Added new data !1!1');
+        return redirect()->route('mhsList')->with('pesan', 'Added new data !');
     }
 
     public function deleteMhs($id)
@@ -494,7 +494,7 @@ class AdminController extends Controller
 
         $mhs->delete();
         $user->delete();
-        return redirect()->route('mhsList')->with('pesan', 'Deleted a data !1!1');
+        return redirect()->route('mhsList')->with('pesan', 'Deleted a data !');
     }
     public function editMhs($id)
     {
@@ -553,7 +553,7 @@ class AdminController extends Controller
             $user->username = Request()->username;
             $user->save();
         }
-        return redirect()->route('mhsDetail', $id)->with('pesan', 'Updated a data !1!1');
+        return redirect()->route('mhsDetail', $id)->with('pesan', 'Updated a data !');
     }
     public function editMhsPassword($id)
     {
@@ -669,7 +669,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('dosenList')->with('pesan', 'Added new data !1!1');
+        return redirect()->route('dosenList')->with('pesan', 'Added new data !');
     }
 
     public function deleteDosen($id)
@@ -680,7 +680,7 @@ class AdminController extends Controller
 
         $dosen->delete();
         $user->delete();
-        return redirect()->route('dosenList')->with('pesan', 'Deleted a data !1!1');
+        return redirect()->route('dosenList')->with('pesan', 'Deleted a data !');
     }
     public function editDosen($id)
     {
@@ -740,7 +740,7 @@ class AdminController extends Controller
             $dosen->nip = Request()->username;
             $user->save();
         }
-        return redirect()->route('dosenDetail', $id)->with('pesan', 'Updated a data !1!1');
+        return redirect()->route('dosenDetail', $id)->with('pesan', 'Updated a data !');
     }
     public function editDosenPassword($id)
     {
@@ -852,7 +852,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('reviewerList')->with('pesan', 'Added new data !1!1');
+        return redirect()->route('reviewerList')->with('pesan', 'Added new data !');
     }
 
     public function deleteReviewer($id)
@@ -863,7 +863,7 @@ class AdminController extends Controller
 
         $reviewer->delete();
         $user->delete();
-        return redirect()->route('reviewerList')->with('pesan', 'Deleted a data !1!1');
+        return redirect()->route('reviewerList')->with('pesan', 'Deleted a data !');
     }
     public function editReviewer($id)
     {
@@ -926,7 +926,7 @@ class AdminController extends Controller
             $reviewer->nip = Request()->username;
             $user->save();
         }
-        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Updated a data !1!1');
+        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Updated a data !');
     }
     public function editReviewerPassword($id)
     {

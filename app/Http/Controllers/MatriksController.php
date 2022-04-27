@@ -127,9 +127,6 @@ class MatriksController extends Controller
             'matriksSumAllRevs' => $matriksSumEveryRev,
             'reviewer' => $reviewer
         ];
-        // DOMPDF
-        // $pdf = PDF::loadview('/matriks/matriks_pdf',  $data);
-
         if (Auth::user()->level == 1) {
             $pdf = PDF::loadview('/matriks/matriks_prodi_pdf', $data);
         } else if (Auth::user()->level == 2) {
@@ -138,8 +135,6 @@ class MatriksController extends Controller
             $pdf = PDF::loadview('/matriks/matriks_pdf', $data);
         }
         return $pdf->stream('Matriks.pdf');
-        // ->setOptions(['defaultFont' => 'sans-serif']);;
-        // return $pdf->download('Matriks Teknologi Informasi.pdf');
     }
     public function form($id, Request $request)
     {
@@ -154,24 +149,27 @@ class MatriksController extends Controller
             if (Auth::user()->level == 1) {
                 $rev_id = $prodi->id;
                 $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
+                $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
+
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
                 $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
+                $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id, $rev_id);
+
             }
+
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
             $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
+            //get Allcomment
+            $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
+ 
         }
-
-        // $matriks = Matriks::all()->where([
-        //     ['prodi_id', 1],
-        //     ['user_id', 1],
-        // ]);
         $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
         $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
 
-
+        // return $matriksKomentarCount;
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
@@ -180,10 +178,45 @@ class MatriksController extends Controller
             'matriksBukti' => $matriksBuktiList,
             'reffer_id' => $rev_id,
             'dataMatriks' => $matriksSum,
+            'jmlKomentarMatriks' => $matriksKomentarCount,
         ];
         // return $matriksBuktiList;
         return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
     }
+    public function komentar(Request $request)
+    {
+        $rev_id = $request->query('rev');
+        $row_id =  $request->query('id');
+        $prodi_id =  $request->query('prodi');
+
+        $matriksComments = Matriks::getAllComment($row_id ,$prodi_id, $rev_id);
+        return $matriksComments;
+
+    }
+
+    public function postKomentar(Request $request)
+    {
+        $t_group = (int)substr($request->row_id, 0, 2);
+
+        if (Matriks::find($request->id)) {
+            $matriks = Matriks::find($request->id);
+            $matriks->komentar = $request->comment;
+            $matriks->save();
+        } else {
+            $data = array_merge(
+                [
+                    'id' => $request->id,
+                    'row_id' => $request->row_id,
+                    't_group' => $t_group,
+                    'komentar' => $request->comment,
+                    'prodi_id' => $request->prodi_id,
+                    'user_id' => $request->rev_id,
+                ]
+            );
+            Matriks::create($data);
+        }
+        return response()->json(['success' => 'Nilai matriks berhasil disimpan!',
+            'value' => $request->comment]);    }
     public function prev_num($id)
     {
         $is = $id[0];

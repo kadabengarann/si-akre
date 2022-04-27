@@ -40,3 +40,17 @@ function getArrayItem($id, $arr)
     }
     return $x;
 }
+function getArrayItemWithId($row_key, $id, $arr)
+{
+    $x = (object) [
+        $row_key => null,
+        "remainingField" => 1,
+    ];
+    // return $row_key;
+    foreach ($arr as $n) {
+        if ($n->{$row_key} == $id) {
+            return $n;
+        }
+    }
+    return $x;
+}

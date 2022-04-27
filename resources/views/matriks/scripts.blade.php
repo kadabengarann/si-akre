@@ -9,9 +9,8 @@
                         element.querySelector(".row").innerHTML += '<p class="font-weight-normal m-0">Tidak ada bukti penilaian</p>';
                     @endif
                 }
-
             });
-
+            // showComment()
 
         });
         var Toast = Swal.mixin({
@@ -20,6 +19,31 @@
             showConfirmButton: false,
             timer: 3000
         });
+
+        function showComment() {
+            let matriks_row = document.querySelectorAll("tbody>tr.matriks_row");
+
+            let comment_filed = document.createElement('td');
+            let comment_btn = document.createElement('div');
+            let edit_comment_btn = document.createElement('div');
+            matriks_row.forEach(element => {
+                let td_first = element.querySelector(".matriks_id")
+                console.log(td_first);
+                let row_id = td_first.getAttribute('data-id')
+                console.log("row ids :" + row_id);
+                console.log(element);
+
+                comment_btn.innerHTML = ` <a class="btn btn-primary col-12 ml-auto mr-auto` + ` "
+                                        id="lihat_comment"
+                                        href="#"
+                                        data-url=""
+                                        target="_blank">Lihat
+                                        Komentar` + row_id + `</a>`
+                comment_filed.appendChild(comment_btn)
+                element.appendChild(comment_filed.cloneNode(true))
+
+            });
+        };
 
         $('.penilaian_check_field').click(function(event) {
             event.preventDefault();
@@ -202,27 +226,211 @@
             var button = $(event.relatedTarget) // Button that triggered the modal
             var recipient = button.data('row') // Extract info from data-* attributes
             var url_data = button.data('url') // Extract info from data-* attributes
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+
             var modal = $(this)
             modal.find('#input_row_id').val(recipient)
             modal.find('#input_bukti').val(url_data)
-            // modal.find('.modal-body input').val(recipient)
         })
         $('#comment').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
-            var recipient = button.data('row') // Extract info from data-* attributes
-            var comment_data = button.data('value') // Extract info from data-* attributes
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this)
-            modal.find('#input_row_id').val(recipient)
-            modal.find('#input_comment').val(comment_data)
-            // modal.find('.modal-body input').val(recipient)
+            var row_id = button.data('row') // Extract info from data-* attributes
+            var prodi_id = button.data('prodi') // Extract info from data-* attributes
+            var rev_id = button.data('rev') // Extract info from data-* attributes
+            var url_data = button.data('url') // Extract info from data-* attributes
+
+            console.log(rev_id);
+            let comments = []
+            $.ajax({
+                url: "/matriks/komentar?id=" + row_id + "&prodi=" + prodi_id + "&rev=" + rev_id,
+                type: "GET",
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    showComments(data)
+                },
+                error: function(data) {
+                    showError("Gagal mendapatkan data")
+                    console.log('Error:', data);
+                }
+            });
         })
 
+        function showComments(data) {
+            let modal_body = document.querySelector('.comment-section')
+            modal_body.innerHTML = ""
+            let name = document.createElement('div');
+            name.classList.add("user-block")
+
+            let comment = document.createElement('p');
+            comment.classList.add('comment_preview')
+            let comment_input = document.createElement('TEXTAREA');
+            comment_input.classList.add('form-control', 'hidden', 'mb-3')
+
+            let comment_wrapper = document.createElement('div');
+            comment_wrapper.classList.add("post")
+
+
+            let btn_wrapper = document.createElement('div');
+            btn_wrapper.classList.add("btn_wrapper")
+
+
+            data.comments.forEach((element, i) => {
+                if (element.comment != null) {
+                    console.log(element.id);
+                    if (i >= 1)
+                        comment_wrapper.classList.add('mt-5')
+
+                    name.innerHTML = `<span class="username ml-0">
+                                <a href="#">` + element.user.nama + `</a>
+                            </span>
+                            <span class="` + element.user.instansi + `</span>`
+                    comment.innerHTML = element.comment
+                    comment_input.innerHTML = element.comment
+                    btn_wrapper.innerHTML =
+                        `<button id="edit_comment_btn" class=" edit_comment_btn btn btn-primary" type="button">
+                            <i class="fas fa-edit"></i>
+                            Edit
+                        </button>` +
+                        `<button id="cancel_comment_btn" style="display: none; margin-bottom: 1rem;" class="cancel_comment_btn btn btn-warning"
+                        type="button">
+                                <i class="fas fa-times"></i>
+                                Cancel</button>` +
+                        `<button type="submit" style="display: none; margin-bottom: 1rem;" id="save_comment_btn"
+                            class="save_comment_btn btn btn-success ml-2" type="button" data-id="` + element.id +
+                        `" data-row="` + data.row_id + `" data-user="` + element.user_id + `">
+                            <i class="fas fa-save"></i>
+                            Save</button>`
+                    @if (Auth::user()->level == 5 || Auth::user()->level == 1)
+                        comment_wrapper.append(name, comment, comment_input, btn_wrapper)
+                    @else
+                        comment_wrapper.append(name, comment, comment_input)
+                    @endif
+
+                    modal_body.appendChild(comment_wrapper.cloneNode(true))
+                }
+            })
+            @if (Auth::user()->level == 5)
+                if (data.comments.length == 0) {
+                console.log("KOSONGGNGNGNG");
+                name.innerHTML = `<span class="username ml-0">
+                    <a href="#"> ` + data.user.nama + ` </a>
+                </span>
+                <span> ` + data.user.instansi + `</span>`
+                comment.innerHTML = `<i>no comment yet</i>`
+            
+                btn_wrapper.innerHTML =
+                `<button id="edit_comment_btn" class=" edit_comment_btn btn btn-primary" type="button">
+                    <i class="fas fa-edit"></i>
+                    Add Comment
+                </button>` +
+                `<button id="cancel_comment_btn" style="display: none; margin-bottom: 1rem;"
+                    class="cancel_comment_btn btn btn-warning" type="button">
+                    <i class="fas fa-times"></i>
+                    Cancel</button>` +
+                `<button type="submit" style="display: none; margin-bottom: 1rem;" id="save_comment_btn"
+                    class="save_comment_btn btn btn-success ml-2" type="button" data-id="` + data.row_id + data
+                                            .prodi_id + data.rev_id +
+                                            `" data-row="` + data.row_id + `" data-user="` + data.rev_id + `">
+                    <i class="fas fa-save"></i>
+                    Save</button>`
+                comment_wrapper.append(name, comment, comment_input, btn_wrapper)
+            
+                modal_body.appendChild(comment_wrapper.cloneNode(true))
+            
+                }
+            @else
+                if (data.comments.length == 0) {
+                modal_body.innerHTML = `<i>no comment yet</i>`
+                }
+            @endif
+
+            $('.edit_comment_btn').click(function(event) {
+                $(this).parent().parent().find('TEXTAREA').show()
+                $(this).parent().parent().find('.comment_preview').hide()
+                $(this).parent().find('#cancel_comment_btn').show()
+                $(this).parent().find('#save_comment_btn').show()
+
+                $(this).hide()
+            });
+
+            $('.cancel_comment_btn').click(function(event) {
+                $(this).parent().parent().find('TEXTAREA').hide()
+                $(this).parent().parent().find('.comment_preview').show()
+                $(this).parent().find('#edit_comment_btn').show()
+                $(this).parent().find('#save_comment_btn').hide()
+
+                $(this).hide()
+            });
+            $('.save_comment_btn').click(function(event) {
+                let id_temp = $(this).data('row')
+                let comment_wrapper = $(this).parent().parent()
+
+                let _rev_id = $(this).data('user')
+                let _prodi_id = {{ $prodi->id }};
+                let _row_id = id_temp
+                const _id = parseInt(`${id_temp}${_prodi_id}${_rev_id}`);
+                console.log(_id);
+                let _bukti = $(input_bukti).val()
+
+                let _token = $('meta[name="csrf-token"]').attr('content');
+                let _comment = $(this).parent().parent().find('TEXTAREA').val()
+                _comment = encodeHTML(_comment)
+                $.ajax({
+                    data: {
+                        id: _id,
+                        row_id: _row_id,
+                        prodi_id: _prodi_id,
+                        rev_id: _rev_id,
+                        comment: _comment,
+                        _token: _token
+                    },
+                    url: "/matriks/komentar",
+                    type: "POST",
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data.value);
+                        showSuccess(data.success)
+
+                        updateComment(comment_wrapper, data.value)
+                        console.log(this);
+
+                    },
+                    error: function(data) {
+                        showError("Gagal mengupdate data komentar")
+                        console.log('Error:', data);
+                    }
+                });
+            });
+
+            function updateComment(comment_row, data) {
+                $(comment_row).find('TEXTAREA').hide()
+                $(comment_row).find('#edit_comment_btn').show()
+                $(comment_row).find('#cancel_comment_btn').hide()
+                $(comment_row).find('#save_comment_btn').hide()
+                $(comment_row).find('.comment_preview').html(data)
+                $(comment_row).find('.comment_preview').show()
+
+
+                @if (Auth::user()->level == 5)
+                    if (data==null) {
+                    $(comment_row).find('#comment_preview').html(`<i>no comment yet</i>`)
+                    $(comment_row).find('#edit_comment_btn').html(`<i class="fas fa-edit"></i> Add Comment`)
+                    }else{
+                    $(comment_row).find('#edit_comment_btn').html(`<i class="fas fa-edit"></i> Edit`)
+                    }
+                @else
+                    if (data==null) {
+                    $(comment_row).hide()
+                    }
+                @endif
+            }
+        }
+        $('#comment').on('hide.bs.modal', function(event) {
+            $(this).find('.comment-section').empty()
+        })
+
+
         function updateBukti(params, _data) {
-            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
             lihat_bukti_btn.attr("href", _data)
             if (_data == null) {
@@ -235,7 +443,6 @@
         };
 
         function updateComment(params, _data) {
-            // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
             let lihat_comment_btn = $(params).find('#lihat_comment')
             lihat_comment_btn.attr("value", _data)
             if (_data == null) {
@@ -259,6 +466,10 @@
                 icon: 'error',
                 title: message
             })
+        }
+
+        function encodeHTML(s) {
+            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
         }
     </script>
 @endpush

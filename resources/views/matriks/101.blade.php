@@ -54,7 +54,8 @@
                     </thead>
                     <tbody>
                         @php($row_id = 111)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 1
                             </td>{{-- NO BUTIR --}}
@@ -133,23 +134,20 @@
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
                             <td class="comment">
-                                <label for="comment" class="row">
-                                    <a class="btn btn-primary col-12 ml-auto mr-auto {{ getMatriksBukti($row_id, $matriksBukti) == null ? 'hidden' : '' }}"
-                                        id="lihat_comment"
-                                        href="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
-                                        data-url="{{ getMatriksBukti($row_id, $matriksBukti) != null ? getMatriksBukti($row_id, $matriksBukti) : '' }}"
-                                        target="_blank">Lihat
-                                        Komentar</a>
-                                </label>
-                                @if (Auth::user()->level == 5 || Auth::user()->level == 1)
-                                    <label for="comment" class="row">
-                                        <a class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
                                             data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
-                                            data-url="{{ getMatriksBukti($row_id, $matriksBukti) }}" data-skor="">Beri
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ (getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id) ? 'Lihat' : 'Beri' }}
                                             Komentar</a>
-                                    </label>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
                                 @endif
-                            </td>{{-- Komentar --}}
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
                         @php($row_id = 211)
                         <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
@@ -237,8 +235,7 @@
         </div>
         <!-- /.card -->
     </section>
-    @include('matriks.modal_comment')
-    @include('matriks.modal_bukti_penilaian')
+    @include('matriks.modal_parts')
 
 @endsection
 

@@ -86,7 +86,7 @@ class AdminProdiController extends Controller
         $dosen = Prodi::find($id);
         $dosen->nama = Request()->name;
         $dosen->save();
-        return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !1!1');
+        return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !');
     }
 
     public function index_penilaian()

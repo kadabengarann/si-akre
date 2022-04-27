@@ -21,7 +21,8 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">5. KEUANGAN, SARANA DAN PRASARANA</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">5. KEUANGAN, SARANA DAN PRASARANA
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -51,46 +52,71 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">5.1 [PENETAPAN]</th>
-                        </tr>
-                    </div>
+                        <div class="nilai">
+                            <tr class="nilai">
+                                <th colspan="11" class="nilai">5.1 [PENETAPAN]</th>
+                            </tr>
+                        </div>
 
-                        
-                            @php($row_id = 351)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+
+                        @php($row_id = 351)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 43
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">5.1 [PENETAPAN] A. Ketersediaan kebijakan, standar, IKU, dan IKT terkait keuangan, sarana, dan prasarana mendukung penyelenggaraan tridarma.
+                            <td class="text-start">5.1 [PENETAPAN] A. Ketersediaan kebijakan, standar, IKU, dan IKT
+                                terkait keuangan, sarana, dan prasarana mendukung penyelenggaraan tridarma.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>5.1 [PENETAPAN] Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan keuangan, sarana, dan prasarana mencakup: A. Sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan keberlanjutan keuangan, sarana, dan prasarana.
+                            <td>5.1 [PENETAPAN] Ketersediaan kebijakan, standar, IKU, dan IKT yang berkaitan dengan
+                                keuangan, sarana, dan prasarana mencakup: A. Sistem pengelolaan dana dan pembiayaan untuk
+                                proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan
+                                prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan
+                                keberlanjutan keuangan, sarana, dan prasarana.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan sangat lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana)
+                                    yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan
+                                    keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan sangat
+                                    lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana)
+                                    yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan
+                                    keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan
+                                    lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan cukup lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana)
+                                    yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan
+                                    keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan cukup
+                                    lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan kurang lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, pembiayaan untuk investasi (SDM, sarana dan prasarana)
+                                    yang mendukung penyelenggaraan tridarma disertai dasar perhitungan kecukupan dan
+                                    keberlanjutan keuangan, sarana, dan prasarana, disertai bukti yang sahih dan kurang
+                                    lengkap.</span>
                             </td>
 
                             <td
@@ -127,11 +153,11 @@
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                        
-                
-                        
-                            @php($row_id = 352)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+
+
+
+                        @php($row_id = 352)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 44
                             </td>{{-- NO BUTIR --}}
@@ -142,27 +168,35 @@
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio"{{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Tersedianya pengelolaan sarana dan prasarana, disertai bukti yang sahih dan sangat lengkap.</span>
+                                <span class="tooltiptext">Tersedianya pengelolaan sarana dan prasarana, disertai bukti
+                                    yang sahih dan sangat lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai bukti yang sahih dan lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai
+                                    bukti yang sahih dan lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai bukti yang sahih dan cukup lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai
+                                    bukti yang sahih dan cukup lengkap.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai bukti yang sahih dan kurang lengkap.</span>
+                                <span class="tooltiptext">Tersedianya sistem pengelolaan sarana dan prasarana, disertai
+                                    bukti yang sahih dan kurang lengkap.</span>
                             </td>
 
                             <td
@@ -200,44 +234,63 @@
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">5.2 [PELAKSANAAN]</th>
-                        </tr>
-                    </div>
-                    
-                            @php($row_id = 353)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                            <tr class="nilai">
+                                <th colspan="11" class="nilai">5.2 [PELAKSANAAN]</th>
+                            </tr>
+                        </div>
+
+                        @php($row_id = 353)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 45
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">5.2 [PELAKSANAAN] A. Keterlaksanaan sistem pengelolaan dana dan pembiayaan mendukung penyelenggaraan tridarma.
+                            <td class="text-start">5.2 [PELAKSANAAN] A. Keterlaksanaan sistem pengelolaan dana dan
+                                pembiayaan mendukung penyelenggaraan tridarma.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>5.2 [PELAKSANAAN] Keterlaksanaan kebijakan dan standar yang berkaitan dengan keuangan, sarana, dan prasarana yang mencakup: A. Sistem pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma.
+                            <td>5.2 [PELAKSANAAN] Keterlaksanaan kebijakan dan standar yang berkaitan dengan keuangan,
+                                sarana, dan prasarana yang mencakup: A. Sistem pengelolaan dana dan pembiayaan untuk proses
+                                pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang
+                                mendukung penyelenggaraan tridarma.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma secara sangat efektif disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang
+                                    mendukung penyelenggaraan tridarma secara sangat efektif disertai bukti yang
+                                    sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma secara efektif disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang
+                                    mendukung penyelenggaraan tridarma secara efektif disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma secara cukup efektif disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang
+                                    mendukung penyelenggaraan tridarma secara cukup efektif disertai bukti yang
+                                    sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang mendukung penyelenggaraan tridarma secara kurang efektif disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan dana dan pembiayaan untuk proses
+                                    pembelajaran, penelitian dan PkM, serta untuk investasi (SDM, sarana dan prasarana) yang
+                                    mendukung penyelenggaraan tridarma secara kurang efektif disertai bukti yang
+                                    sahih.</span>
                             </td>
 
                             <td
@@ -274,40 +327,59 @@
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
-                    
-                            @php($row_id = 354)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+
+                        @php($row_id = 354)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 46
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">B. Keterlaksanaan pengelolaan sarana dan prasarana menunjang proses pembelajaran, penelitian dan PkM.
+                            <td class="text-start">B. Keterlaksanaan pengelolaan sarana dan prasarana menunjang proses
+                                pembelajaran, penelitian dan PkM.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>B. Keterlaksanaan pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka.
+                            <td>B. Keterlaksanaan pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang
+                                proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat
+                                lunak, bandwidth, dan bahan pustaka.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara sangat efektif dan disertai bukti sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta
+                                    kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi
+                                    laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara
+                                    sangat efektif dan disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara efektif dan disertai bukti sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta
+                                    kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi
+                                    laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara
+                                    efektif dan disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio"{{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara cukup dan disertai bukti sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta
+                                    kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi
+                                    laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara
+                                    cukup dan disertai bukti sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara kurang dan disertai bukti sahih.</span>
+                                <span class="tooltiptext">Terlaksananya pengelolaan sarana dan prasarana, serta
+                                    kecukupannya untuk menunjang proses pembelajaran, penelitian dan PkM, meliputi
+                                    laboratorium, perangkat keras, perangkat lunak, bandwidth, dan bahan pustaka secara
+                                    kurang dan disertai bukti sahih.</span>
                             </td>
 
                             <td
@@ -345,44 +417,68 @@
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">5.3 [EVALUASI]</th>
-                        </tr>
-                    </div>
-                        
-                            @php($row_id = 355)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                            <tr class="nilai">
+                                <th colspan="11" class="nilai">5.3 [EVALUASI]</th>
+                            </tr>
+                        </div>
+
+                        @php($row_id = 355)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 47
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">5.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) terkait keuangan, sarana, dan prasarana.
+                            <td class="text-start">5.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan
+                                ketercapaian standar (IKU dan IKT) terkait keuangan, sarana, dan prasarana.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>5.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana. 
+                            <td>5.3 [EVALUASI] Keterlaksanaan evaluasi mengenai kebijakan dan ketercapaian standar (IKU dan
+                                IKT) sehingga menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan
+                                dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga
+                                kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan sangat efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.</span>
+                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan sangat efektif
+                                    mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali
+                                    praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan,
+                                    sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan
+                                    mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.</span>
+                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan efektif mengenai
+                                    kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik
+                                    baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan
+                                    prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap
+                                    ketersediaan dan keteraksesan sarana prasarana.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan cukup efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana</span>
+                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan cukup efektif
+                                    mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali
+                                    praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan,
+                                    sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan
+                                    mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan kurang efektif mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan, sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.</span>
+                                <span class="tooltiptext">Terlaksananya evaluasi secara berkala dan kurang efektif
+                                    mengenai kebijakan dan ketercapaian standar (IKU dan IKT) sehingga dapat menemu-kenali
+                                    praktik baik, praktik buruk dan praktik yang baru yang berkaitan dengan keuangan,
+                                    sarana, dan prasarana, termasuk evaluasi kepuasan dosen, tenaga kependidikan dan
+                                    mahasiswa terhadap ketersediaan dan keteraksesan sarana prasarana.</span>
                             </td>
 
                             <td
@@ -420,44 +516,60 @@
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">5.4 [PENGENDALIAN]</th>
-                        </tr>
-                    </div>
-                        
-                            @php($row_id = 356)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                            <tr class="nilai">
+                                <th colspan="11" class="nilai">5.4 [PENGENDALIAN]</th>
+                            </tr>
+                        </div>
+
+                        @php($row_id = 356)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 48
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">5.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) terkait keuangan, sarana, dan prasarana.
+                            <td class="text-start">5.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan
+                                implementasi terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) terkait keuangan,
+                                sarana, dan prasarana.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>5.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.
+                            <td>5.4 [PENGENDALIAN] Ketersediaan dokumen tindak lanjut dan implementasi (revisi dan
+                                rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan
+                                dengan keuangan, sarana, dan prasarana.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang sangat lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang sangat
+                                    lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan
+                                    IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang
+                                    lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan
+                                    IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang cukup
+                                    lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan
+                                    IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang kurang lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
+                                <span class="tooltiptext">Tersedianya dokumen tindak lanjut dan implementasi yang kurang
+                                    lengkap (revisi dan rekomendasi) terhadap hasil evaluasi ketercapaian standar (IKU dan
+                                    IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.</span>
                             </td>
 
                             <td
@@ -495,45 +607,60 @@
                             </td>{{-- BUKTI PENILAIAN --}}
                         </tr>
                         <div class="nilai">
-                        <tr class="nilai">
-                            <th colspan="11" class="nilai">5.5 [PENINGKATAN]</th>
-                        </tr>
-                    </div>
-                        
-                            @php($row_id = 357)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
-                            
+                            <tr class="nilai">
+                                <th colspan="11" class="nilai">5.5 [PENINGKATAN]</th>
+                            </tr>
+                        </div>
+
+                        @php($row_id = 357)
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 49
                             </td>{{-- NO BUTIR --}}
-                            <td class="text-start">5.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi terhadap standar (IKU dan IKT) terkait keuangan, sarana, dan prasarana.
+                            <td class="text-start">5.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi terhadap
+                                standar (IKU dan IKT) terkait keuangan, sarana, dan prasarana.
                             </td>{{-- ELEMEN --}}
                             <td></td>{{-- LOKASI --}}
-                            <td>5.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana.
+                            <td>5.5 [PENINGKATAN] Keterlaksanaan proses optimalisasi (peningkatan, penyesuaian, dan
+                                penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan
+                                prasarana.
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="4">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 4 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="4">
                                     <span class="caption">4</span></label>
-                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara sangat efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara sangat efektif
+                                    (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang
+                                    berkaitan dengan keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="3">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 3 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="3">
                                     <span class="caption">3</span></label>
-                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara efektif (peningkatan,
+                                    penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan
+                                    keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="2">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="2">
                                     <span class="caption">2</span></label>
-                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara cukup efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara cukup efektif
+                                    (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang
+                                    berkaitan dengan keuangan, sarana, dan prasarana disertai bukti yang sahih.</span>
                             </td>
                             <td class="penilaian_check_field">
                                 <label>
-                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }} name="nilai{{ $row_id }}" value="1">
+                                    <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        name="nilai{{ $row_id }}" value="1">
                                     <span class="caption">1</span></label>
-                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara kurang efektif (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang berkaitan dengan keuangan, sarana, dan prasarana tanpa disertai bukti yang sahih.</span>
+                                <span class="tooltiptext">Terlaksananya proses optimalisasi secara kurang efektif
+                                    (peningkatan, penyesuaian, dan penyelarasan) terhadap standar (IKU dan IKT) yang
+                                    berkaitan dengan keuangan, sarana, dan prasarana tanpa disertai bukti yang sahih.</span>
                             </td>
 
                             <td
@@ -577,7 +704,7 @@
         </div>
         <!-- /.card -->
     </section>
-@include('matriks.modal_bukti_penilaian')
+    @include('matriks.modal_parts')
 
 @endsection
 
