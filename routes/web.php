@@ -7,9 +7,11 @@ use App\Http\Controllers\{
     HomeController,
     UserProfileController,
     LkpsController,
+    DataLkpsController,
     LedController,
     MatriksController,
     AdminProdiController,
+    ReviewerController,
     DosenController,
     MahasiswaController,
     AdminController
@@ -29,12 +31,25 @@ use App\Http\Controllers\{
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::name('utils')
+    ->middleware('level:1,2,3')
+    ->group(function () {
+        Route::post('/utils/update', [DataLkpsController::class, 'updateTsYear']);
+    });
 
 Route::name('prodi')
     ->middleware('prodi')
     ->group(function () {
         Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
     });
+Route::middleware('reviewer')
+->prefix('reviewer')
+->group(
+    function () {
+        Route::post('/profile/update', [ReviewerController::class, 'updateProfile']);
+        Route::post('/profile/update-credential', [ReviewerController::class, 'updateCredential']);
+    }
+);
 Route::middleware('dosen')
     ->prefix('dosen')
     ->group(
@@ -85,6 +100,9 @@ Route::name('lkps')
         Route::get('/view/{id}', [LkpsController::class, 'form']);
         Route::get('/input/{id}', [LkpsController::class, 'input']);
         Route::get('/', [LkpsController::class, 'index']);
+
+        Route::post('/update/jcmb', [DataLkpsController::class, 'updateJCMB']);
+
     });
 
 Route::get('/profile', [UserProfileController::class, 'index'])->name('pageProfile');

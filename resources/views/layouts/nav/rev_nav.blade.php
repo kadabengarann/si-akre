@@ -1,5 +1,5 @@
 <li class="nav-header">MENU</li>
-{{-- <li class="nav-item">
+<li class="nav-item">
     <a href="/profile"
         class="nav-link {{ request()->is('profile') ? 'active' : '' }} {{ request()->is('profile') ? 'nav-gray' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
@@ -7,10 +7,10 @@
             Biodata
         </p>
     </a>
-</li> --}}
+</li>
 <li class="nav-item">
     <a href="/matriks"
-        class="nav-link {{ request()->is('matriks') ? 'active' : '' }} {{ request()->is('matriks') ? 'nav-gray' : '' }}">
+        class="nav-link {{ request()->is('matriks*') ? 'active' : '' }} {{ request()->is('matriks*') ? 'nav-gray' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>
             Isi Form

@@ -70,12 +70,14 @@
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
              @if (Auth::user()->level == 5)
                  <div class="image d-flex align-items-center">
-                     <img src="{{ url('img/mhs/' . Auth::user()->reviewer->img_url) }}" class="img-circle elevation-2"
+                     <img src="{{ url('img/rev/' . Auth::user()->reviewer->img_url) }}" class="img-circle elevation-2"
                          alt="User Image">
                  </div>
                  <div class="info">
 
                      <a href="/profile" class="d-block">{{ Auth::user()->reviewer->nama }}</a>
+                     <a class="d-block" disabled>{{ Auth::user()->reviewer->instansi }}</a>
+
                  </div>
              @elseif (Auth::user()->level == 4)
                  <div class="image d-flex align-items-center">
@@ -161,8 +163,10 @@
                      @elseif (Auth::user()->level == 1)
                          @include('layouts.nav.admin_nav')
                      @endif
-
                  @endunless
+                 @if (request()->is('matriks/prodi'))
+                     @include('layouts.nav.rev_nav')
+                 @endif
 
                  @if (request()->is('lkps/*'))
                      @include('layouts.nav.lkps')

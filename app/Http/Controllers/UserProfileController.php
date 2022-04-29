@@ -44,6 +44,14 @@ class UserProfileController extends Controller
             ];
 
             return view('mhs.profile', $data);
+        } elseif (Auth::user()->level == 5) {
+            $id_user = auth()->user()->rev_id;
+
+            $data = [
+                'reviewer' => Reviewer::find($id_user),
+            ];
+
+            return view('reviewer.profile', $data);
         }
     }
     public function editProfile()
@@ -71,6 +79,15 @@ class UserProfileController extends Controller
             ];
 
             return view('mhs.edit_profile', $data);
+        } elseif (Auth::user()->level == 5) {
+
+            $id_user = auth()->user()->rev_id;
+
+            $data = [
+                'reviewer' => Reviewer::find($id_user),
+            ];
+
+            return view('reviewer.edit_profile', $data);
         }
     }
     public function editPassword()
@@ -106,7 +123,7 @@ class UserProfileController extends Controller
                 'reviewer' => Reviewer::find($id_user),
             ];
 
-            return view('reviewer.edit_profile', $data);
+            return view('reviewer.edit_password', $data);
         }
     }
 }

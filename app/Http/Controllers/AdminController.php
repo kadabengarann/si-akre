@@ -94,35 +94,23 @@ class AdminController extends Controller
                 ->addColumn('model', function ($audit) {
                     $words = explode('\\', $audit->auditable_type);
                     return $words[count($words) - 1];
-                    $showword = trim($words[count($words) - 1], "\\");
-                    return  "hah";
-                    return $audit->auditable_type;
                 })
                 ->addColumn('user', function ($audit) {
                     $user = User::get()->where('id', '=', $audit->user_id)->first();
+                    if ($user == null) {
+                        return "deleted user";
+                    }
                     if ($user->level == 1) {
                         $name = 'admin';
                     } elseif ($user->level == 2) {
-                        $name =$user->prodi->nama;
+                        $name = $user->prodi->nama;
                     } elseif ($user->level == 3) {
-                    $name = $user->dosen->nama;
-                } elseif ($user->level == 4) {
-                    $name = $user->mhs->nama;
-                } elseif ($user->level == 5) {
-                    $name = $user->reviewer->nama;
-                }
-                    // } elseif ($user->level == 2) {
-                    // $name =$user->prodi->name;
-                    // } elseif ($user->level == 3) {
-                    // $name =
-                    //         '/manage/dosen/' . $user->id;
-                    // } elseif ($user->level == 4) {
-                    // $name =
-                    //         '/manage/mhs/' . $user->id;
-                    // } elseif ($user->level == 5) {
-                    // $name =
-                    //         '/manage/reviewer/' . $user->reviewer->id;
-                    // }
+                        $name = $user->dosen->nama;
+                    } elseif ($user->level == 4) {
+                        $name = $user->mhs->nama;
+                    } elseif ($user->level == 5) {
+                        $name = $user->reviewer->nama;
+                    }
                     return  $name;
                 })
                 ->addColumn('log_event', function ($audit) {
@@ -146,23 +134,31 @@ class AdminController extends Controller
         $roles = array("Super Admin", "Admin Prodi", "Dosen", "Mahasiswa", "Reviewer");
         $audit = DB::table('audits')->where('id', '=', $id)->first();
         $user = User::find($audit->user_id);
-        $user_role = $roles[$user->level - 1];
-        if ($user->level == 1) {
+        if ($user == null) {
             $user_url = '#';
-        } elseif ($user->level == 2) {
-            $user_url = '/manage/prodi/' . $user->prodi->id;
-        } elseif ($user->level == 3) {
-            $user_url =
-                '/manage/dosen/' . $user->id;
-        } elseif ($user->level == 4) {
-            $user_url =
-                '/manage/mhs/' . $user->id;
-        } elseif ($user->level == 5) {
-            $user_url =
-                '/manage/reviewer/' . $user->reviewer->id;
+            $user_role = '-';
+            $user = (object) [
+                "id" => null,
+                "username" => "deleted user",
+            ];
+        }else{
+            $user_role = $roles[$user->level - 1];
+            if ($user->level == 1) {
+                $user_url = '#';
+            } elseif ($user->level == 2) {
+                $user_url = '/manage/prodi/' . $user->prodi->id;
+            } elseif ($user->level == 3) {
+                $user_url =
+                    '/manage/dosen/' . $user->id;
+            } elseif ($user->level == 4) {
+                $user_url =
+                    '/manage/mhs/' . $user->id;
+            } elseif ($user->level == 5) {
+                $user_url =
+                    '/manage/reviewer/' . $user->reviewer->id;
+            }
+            $user_role = $roles[$user->level - 1];
         }
-        $user_role = $roles[$user->level - 1];
-        // $audit = DB::table('audits')->where('id', '=', $id)->first();
         if ($audit->event == 'updated' || $audit->event == 'created') {
             $data_modified = json_decode($audit->new_values);
             $data_modified2 = json_decode($audit->old_values);
@@ -815,9 +811,8 @@ class AdminController extends Controller
     {
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
-            'nama' => 'required',
+            'name' => 'required',
             'instansi' => 'required',
-            'rev_id' => 'required',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
@@ -848,7 +843,7 @@ class AdminController extends Controller
                 Request()->password
             ),
             'level' => 5,
-            'reviewer_id' => $reviewer->id,
+            'rev_id' => $reviewer->id,
 
         ]);
 
@@ -858,8 +853,14 @@ class AdminController extends Controller
     public function deleteReviewer($id)
     {
         $reviewer = Reviewer::find($id);
-        $user = User::where('reviewer_id', $id);
-        File::delete('img/reviewer/' . $reviewer->img_url);
+        $user = User::where('rev_id', $id);
+        try {
+            if ($reviewer->img_url <> 'default.jpg') { //jika foto lama tidak user.jpg maka hapus foto lama
+                File::delete('img/rev/' . $reviewer->img_url);
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
         $reviewer->delete();
         $user->delete();
@@ -873,7 +874,6 @@ class AdminController extends Controller
         }
         $data = [
             'reviewer' => Reviewer::find($id),
-            'prodi' => Prodi::all(),
         ];
         return view('admin.reviewer.v_edit_reviewer', $data);
     }
@@ -883,38 +883,36 @@ class AdminController extends Controller
         $reviewer = Reviewer::find($id);
         $user = $reviewer->user;
 
-        // return $reviewer;
         Request()->validate([
             'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:16',
-            // 'id_prodi' => 'required',
-            'nama' => 'required',
+            // 'name' => 'required',
             // 'instansi' => 'required',
-            'address' => 'required',
+            // 'address' => 'required',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
         ]);
         if (Request()->foto_rev <> "") {
             $file = Request()->file('foto_rev');
-            $nama_file = time() . Request()->nama . "." . $file->extension();
+            $nama_file = time() . Request()->name . "." . $file->extension();
 
             $tujuan_upload = 'img/rev';
             $file->move($tujuan_upload, $nama_file);
 
             $reviewer = Reviewer::find($id);
-            File::delete('img/rev/' . $reviewer->img_url);
+            if ($reviewer->img_url <> 'default.jpg') { //jika foto lama tidak user.jpg maka hapus foto lama
+                File::delete('img/rev/' . $reviewer->img_url);
+            }
 
-            $reviewer->nama = Request()->nama;
-            // $reviewer->instansi = Request()->instansi;
-            // $reviewer->prodi_id = Request()->id_prodi;
+            $reviewer->nama = Request()->name;
+            $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;
             $reviewer->tgl_lahir = Request()->date;
             $reviewer->tmp_lahir = Request()->birthplace;
             $reviewer->img_url = $nama_file;
             $reviewer->save();
         } else {
-            $reviewer->nama = Request()->nama;
-            // $reviewer->instansi = Request()->instansi;
-            // $reviewer->prodi_id = Request()->id_prodi;
+            $reviewer->nama = Request()->name;
+            $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;
             $reviewer->tgl_lahir = Request()->date;
             $reviewer->tmp_lahir = Request()->birthplace;

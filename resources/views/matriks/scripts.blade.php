@@ -84,7 +84,7 @@
                         console.log(data.success);
                         showSuccess(data.success)
                         updateContent(radio, _skor)
-                        updateRowColor(row)
+                        setTimeout(updateRowColor(row), 500);
                     },
                     error: function(data) {
                         showError("Gagal mengupdate data")
@@ -151,23 +151,32 @@
             }
             skor_parent.text(_skor)
             @if (Auth::user()->level != 5)
-                updateRowColor(row)
+                // updateRowColor(row)
+                //
             @endif
 
         };
 
         function updateRowColor(params) {
-            let skor_parent = $(params).parent(".nilai")
+            let skor_parent = $(params).children(".nilai")
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
             // let bukti = parseFloat($(params).siblings(".bobot").data('bobot'))
-            let skor = skor_parent.text()
+            let skor
+            if (isEmpty(skor_parent))
+                skor = "";
+            else
+                skor = skor_parent.text();
             let bukti = lihat_bukti_btn.attr('href')
+            console.log(skor);
             console.log(bukti + 'bisa');
-            console.log(skor == null || bukti == null)
-
-            if (skor == null || bukti == null) {
-                params.addClass("incomplete");
+            console.log(skor == "" || (bukti == "" || bukti == undefined))
+            @if (Auth::user()->level != 5)
+            if (skor == "" || (bukti == ""||bukti == undefined)) {
+            @elseif (Auth::user()->level == 5)
+            if (skor == "") {
+            @endif
+                params.addClass("incomplete")
             } else {
                 params.removeClass("incomplete");
             }
@@ -194,33 +203,37 @@
             let _token = $('meta[name="csrf-token"]').attr('content');
 
             console.log(row);
+            if (_bukti.length == 0 || isValidHttpUrl(_bukti)) {
 
-            $.ajax({
-                data: {
-                    id: _id,
-                    bukti: _bukti,
-                    row_id: _row_id,
-                    prodi_id: _prodi_id,
-                    rev_id: _rev_id,
-                    _token: _token
-                },
-                url: "/matriks/update-bukti",
-                type: "POST",
-                dataType: 'json',
-                success: function(data) {
-                    console.log(data.success);
-                    showSuccess(data.success)
-                    $('#bukti_penilaian').modal('hide')
-                    updateBukti(row, data.data)
-                    @if (Auth::user()->level != 5)
-                        updateRowColor(row)
-                    @endif
-                },
-                error: function(data) {
-                    showError("Gagal mengupdate data")
-                    console.log('Error:', data);
-                }
-            });
+                $.ajax({
+                    data: {
+                        id: _id,
+                        bukti: _bukti,
+                        row_id: _row_id,
+                        prodi_id: _prodi_id,
+                        rev_id: _rev_id,
+                        _token: _token
+                    },
+                    url: "/matriks/update-bukti",
+                    type: "POST",
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data.success);
+                        showSuccess(data.success)
+                        $('#bukti_penilaian').modal('hide')
+                        updateBukti(row, data.data)
+                        @if (Auth::user()->level != 5)
+                            updateRowColor(row)
+                        @endif
+                    },
+                    error: function(data) {
+                        showError("Gagal mengupdate data")
+                        console.log('Error:', data);
+                    }
+                });
+            } else {
+                showError("Invalid url bukti")
+            }
         });
         $('#bukti_penilaian').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -428,7 +441,20 @@
         $('#comment').on('hide.bs.modal', function(event) {
             $(this).find('.comment-section').empty()
         })
+        function isEmpty(el) {
+            return !$.trim(el.html())
+        }
 
+        function isValidHttpUrl(string) {
+            let url;
+            try {
+                url = new URL(string);
+            } catch (_) {
+                return false;
+            }
+
+            return url.protocol === "http:" || url.protocol === "https:";
+        }
 
         function updateBukti(params, _data) {
             let lihat_bukti_btn = $(params).find('#lihat_bukti')
