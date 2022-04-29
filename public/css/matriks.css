@@ -230,3 +230,12 @@ span.caption:before {
     background-color: #ffb300;
     color: #fff;
 }
+
+label[for='bukti']:nth-child(1)
+{
+    margin-bottom: 0;
+}
+label[for='bukti']:nth-child(2)
+{
+    margin-top: 0.5rem;
+}
