@@ -35,13 +35,16 @@ class HomeController extends Controller
     {
         if (Auth::user()->level == 1) {
             if ($request->ajax()) {
-                return Datatables::of(DB::table('audits')->orderBy('id', 'ASC')->get())
+                return Datatables::of(DB::table('audits')->latest()->take(5)->get())
                 ->addColumn('model', function ($audit) {
                     $words = explode('\\', $audit->auditable_type);
                     return $words[count($words) - 1];
                 })
                 ->addColumn('user', function ($audit) {
                     $user = User::get()->where('id', '=', $audit->user_id)->first();
+                    if ($user == null) {
+                        return "deleted user";
+                    }
                     if ($user->level == 1) {
                         $name = 'admin';
                     } elseif ($user->level == 2) {
