@@ -89,6 +89,9 @@ Route::name('matriks')
         Route::get('/cetak_pdf', [MatriksController::class, 'cetak_pdf']);
         Route::post('/update-bukti', [MatriksController::class, 'updateMatriksBukti']);
         Route::get('/', [MatriksController::class, 'index'])->name('indexMatriks');
+        Route::get('/komentar', [MatriksController::class, 'komentar']);
+        Route::post('/komentar', [MatriksController::class, 'postKomentar']);
+
         Route::get('/view/{id}', [MatriksController::class, 'form'])->name('viewLed');
     });
 Route::name('lkps')
