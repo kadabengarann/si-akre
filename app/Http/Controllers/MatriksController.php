@@ -215,7 +215,7 @@ class MatriksController extends Controller
             );
             Matriks::create($data);
         }
-        return response()->json(['success' => 'Nilai matriks berhasil disimpan!',
+        return response()->json(['success' => 'Komentar matriks berhasil disimpan!',
             'value' => $request->comment]);    }
     public function prev_num($id)
     {
