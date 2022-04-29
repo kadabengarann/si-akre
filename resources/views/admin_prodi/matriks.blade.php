@@ -71,7 +71,7 @@
                                 <th class="mt-1 mb-1 text-start" colspan="2">
                                     INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
                                 </th>
-                                <th colspan="5">
+                                <th colspan="{{ 4 + count($reviewer) }}">
 
                                 </th>
                             </tr>

@@ -71,7 +71,7 @@
                                 <th class="mt-1 mb-1 text-start" colspan="2">
                                     INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
                                 </th>
-                                <th colspan="5">
+                                <th colspan="{{ 4 + count($reviewer) }}">
 
                                 </th>
                             </tr>
@@ -512,7 +512,7 @@
                                 <td colspan="2">
                                     Nilai Hasil
                                 </td>
-                                <td style="text-align: center!important" >
+                                <td style="text-align: center!important">
                                     400 (100%)
                                 </td>
                                 @foreach ($matriksSumAllRevs as $column => $value)
