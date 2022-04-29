@@ -58,7 +58,8 @@
                             </tr>
                         </div>
                         @php($row_id = 391)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 87
                             </td>{{-- NO BUTIR --}}
@@ -154,10 +155,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 392)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 88
                             </td>{{-- NO BUTIR --}}
@@ -236,10 +253,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 393)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 89
                             </td>{{-- NO BUTIR --}}
@@ -318,10 +351,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 3914)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 90
                             </td>{{-- NO BUTIR --}}
@@ -400,10 +449,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 395)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 91
                             </td>{{-- NO BUTIR --}}
@@ -487,10 +552,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 396)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 92
                             </td>{{-- NO BUTIR --}}
@@ -570,10 +651,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 397)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             @php($row_id = 397)
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 93
@@ -658,6 +755,21 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         <div class="nilai">
@@ -666,7 +778,8 @@
                             </tr>
                         </div>
                         @php($row_id = 398)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 94
                             </td>
@@ -757,10 +870,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 399)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 95
                             </td>{{-- NO BUTIR --}}
@@ -839,10 +968,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 3910)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 96
                             </td>{{-- NO BUTIR --}}
@@ -921,10 +1066,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 3911)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 97
                             </td>{{-- NO BUTIR --}}
@@ -1003,10 +1164,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 3912)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 98
                             </td>{{-- NO BUTIR --}}
@@ -1090,10 +1267,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 3913)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 99
                             </td>{{-- NO BUTIR --}}
@@ -1173,10 +1366,26 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         @php($row_id = 394)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 100
                             </td>{{-- NO BUTIR --}}
@@ -1259,6 +1468,21 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         <div class="nilai">
@@ -1267,7 +1491,8 @@
                             </tr>
                         </div>
                         @php($row_id = 3915)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 101
                             </td>{{-- NO BUTIR --}}
@@ -1352,6 +1577,21 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         <div class="nilai">
@@ -1360,7 +1600,8 @@
                             </tr>
                         </div>
                         @php($row_id = 3916)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 102
                             </td>{{-- NO BUTIR --}}
@@ -1442,6 +1683,21 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
                         <div class="nilai">
@@ -1450,7 +1706,8 @@
                             </tr>
                         </div>
                         @php($row_id = 3917)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 103
                             </td>{{-- NO BUTIR --}}
@@ -1535,6 +1792,21 @@
                                     </label>
                                 @endif
                             </td>{{-- BUKTI PENILAIAN --}}
+                            <td class="comment">
+                                @if (Auth::user()->level == 5 || getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id != null)
+                                    <div class="row">
+                                        <a id="lihat_comment"
+                                            class="btn btn-outline-primary col-12 ml-auto mr-auto input_comment_trigg"
+                                            data-toggle="modal" data-target="#comment" data-row="{{ $row_id }}"
+                                            data-prodi="{{ $prodi->id }}"
+                                            data-rev="{{ Auth::user()->level == 5 ? Auth::user()->id : '' }}">{{ getArrayItemWithId('row_id', $row_id, $jmlKomentarMatriks)->row_id ? 'Lihat' : 'Beri' }}
+                                            Komentar</a>
+                                    </div>
+                                @else
+                                    <i>Tidak ada komentar</i>
+                                @endif
+                            </td>
+                            {{-- Komentar --}}
                         </tr>
 
 
