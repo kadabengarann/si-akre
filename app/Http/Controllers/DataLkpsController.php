@@ -9,7 +9,8 @@ use App\Models\Permission;
 use App\Models\Prodi;
 use App\Models\Lkps\{
     Reratadtpr,
-    Sarpra
+    Sarpra,
+    Pnpkm
 };
 class DataLkpsController extends Controller
 {
@@ -57,6 +58,9 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->insertSarpra($request);
                 break;
+            case '906':
+                return $this->insertPnpkm($request);
+                break;
             default:
                 # code...
                 break;
@@ -74,6 +78,9 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->deleteSarpra($id, $request);
                 break;
+            case '906':
+                return $this->deletePnpkm($id, $request);
+                break;
             default:
                 # code...
                 break;
@@ -90,6 +97,9 @@ class DataLkpsController extends Controller
                 break;
             case '503':
                 return $this->editSarpra($id, $request);
+                break;
+            case '906':
+                return $this->editPnpkm($id, $request);
                 break;
             default:
                 # code...
@@ -146,7 +156,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Deleted a data !');
+        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data deleted successfully !');
 
     }
     private function editReretadtpr($id, Request $request)
@@ -196,7 +206,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Berhasil menambah data!');
+        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data updated successfully!');
     }
     private function deleteSarpra($id, Request $request)
     {
@@ -206,7 +216,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Deleted a data !');
+        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data deleted successfully !');
     }
     private function editSarpra($id, Request $request)
     {
@@ -230,6 +240,66 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
+
+    // -------------------------PNPKM------------------------------
+    private function insertPnpkm(Request $request)
+    {
+        $request->validate([
+            'dtpr' => 'required',
+        ]);
+        Pnpkm::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'dtpr' => $request->dtpr,
+                'pub_infokom' => ($request->pub_infokom ? $request->pub_infokom : 0),
+                'pen_infokom' => ($request->pen_infokom ? $request->pen_infokom : 0),
+                'pen_infokomHKI' => ($request->pen_infokomHKI ? $request->pen_infokomHKI : 0),
+                'pkm_infokomadop' => ($request->pkm_infokomadop ? $request->pkm_infokomadop : 0),
+                'pkm_infokomhki' => ($request->pkm_infokomhki ? $request->pkm_infokomhki : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data updated successfully!');
+    }
+    private function deletePnpkm($id, Request $request)
+    {
+        $data = Pnpkm::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data deleted successfully !');
+    }
+    private function editPnpkm($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Pnpkm::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+    
     public function updateJCMB(Request $request)
     {
         DB::table('jcmb')

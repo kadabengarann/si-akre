@@ -73,15 +73,15 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Daya Tampung</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->dy_tamp ?? '' }}" class="form-control"
-                            placeholder="0" name="dy_tamp">
+                        <input type="number" value="{{ $dataItem->dy_tamp ?? '' }}" class="form-control" placeholder="0"
+                            name="dy_tamp">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Luas Ruang</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->luasr ?? '' }}" class="form-control"
-                            placeholder="0" name="luasr">
+                        <input type="number" value="{{ $dataItem->luasr ?? '' }}" class="form-control" placeholder="0"
+                            name="luasr">
                         <div class="input-group-append">
                             <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
                         </div>
@@ -92,15 +92,15 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah Mahasiswa yang Dilayani Lab</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->jmd ?? '' }}" class="form-control"
-                            placeholder="0" name="jmd">
+                        <input type="number" value="{{ $dataItem->jmd ?? '' }}" class="form-control" placeholder="0"
+                            name="jmd">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jam Layanan</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->jam_lay ?? '' }}" class="form-control"
-                            placeholder="0" name="jam_lay">
+                        <input type="number" value="{{ $dataItem->jam_lay ?? '' }}" class="form-control" placeholder="0"
+                            name="jam_lay">
                     </div>
                 </div>
             </div>
@@ -108,11 +108,11 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Perangkat yang Dimiliki</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->prngkt ?? '' }}" class="form-control"
-                            placeholder="0" name="prngkt">
+                        <input type="number" value="{{ $dataItem->prngkt ?? '' }}" class="form-control" placeholder="0"
+                            name="prngkt">
                     </div>
                 </div>
-                
+
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
