@@ -44,105 +44,154 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+            <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                @csrf
+                <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                    value="{{ $prodi->id }}" min="0">
+                @if (request()->is('lkps/edit*') ? 'active' : '')
+                    <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                        value="{{ $dataItem->id }}" />
+                @else
+                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                        value="-1" />
+                @endif
                 <div class="card-body">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen Tetap</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                            <input type="text" class="form-control @error('nm_dosen') is-invalid @enderror" name="nm_dosen"
+                                placeholder=""
+                                @if (request()->is('lkps/edit*') ? 'active' : '') value="{{ $dataItem->nm_dosen }}">
+                                 @else
+                                 value="{{ old('nm_dosen') }}"> @endif
+                                <div class="invalid-feedback">
+                            @error('nm_dosen')
+                                {{ $message }}
+                            @enderror
                         </div>
                     </div>
-                    <hr>
-                    <div class="form-group">
-                        <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">
-                                SKS Pengajaran<sup>1)</sup> Pada
-                            </label>
-                            <label class="col-sm-3 form-label">
-                                :
-                            </label>
 
-                        </div>
-                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-4 col-form-label">PS Sendiri</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-4 col-form-label">PS Lain, PT Sendiri</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <label for="inputPassword3" class="col-sm-3 form-label">
+                            SKS Pengajaran<sup>1)</sup> Pada
+                        </label>
+                        <label class="col-sm-3 form-label">
+                            :
+                        </label>
 
-                    <hr>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">SKS
-                            Penelitian<sup>2)</sup></label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
                     </div>
-
-                    <hr>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">SKS
-                            Pengabdian
-                            pada Masy<sup>2)</sup></label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                        <div class="row">
-                            <label for="inputPassword3" class="col-sm-3 form-label">
-                                SKS Manajemen<sup>3)</sup>
-                            </label>
-                            <label class="col-sm-3 form-label">
-                                :
-                            </label>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-4 col-form-label">PT Sendiri</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9">
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">PS Sendiri</label>
+                            <div class="input-group col-sm-3">
+                                <input type="number" value="{{ $dataItem->sks_pss ?? '' }}" class="form-control"
+                                    placeholder="0" name="sks_pss">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">SKS</span>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">PS Lain, PT Sendiri</label>
+                            <div class="input-group col-sm-3">
+                                <input type="number" value="{{ $dataItem->skd_psl_pts ?? '' }}" class="form-control"
+                                    placeholder="0" name="skd_psl_pts">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">SKS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
+                            <div class="input-group col-sm-3">
+                                <input type="number" value="{{ $dataItem->skd_ptl ?? '' }}" class="form-control"
+                                    placeholder="0" name="skd_ptl">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">SKS</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+
+                <hr>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS
+                        Penelitian<sup>2)</sup></label>
+                    <div class="input-group col-sm-3">
+                        <input type="number" value="{{ $dataItem->skd_penelitian ?? '' }}" class="form-control"
+                            placeholder="0" name="skd_penelitian">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">SKS</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.card-footer -->
-            </form>
+
+                <hr>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS
+                        Pengabdian
+                        pada Masy<sup>2)</sup></label>
+                    <div class="input-group col-sm-3">
+                        <input type="number" value="{{ $dataItem->skd_pengmas ?? '' }}" class="form-control"
+                            placeholder="0" name="skd_pengmas">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">SKS</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="row">
+                        <label for="inputPassword3" class="col-sm-3 form-label">
+                            SKS Manajemen<sup>3)</sup>
+                        </label>
+                        <label class="col-sm-3 form-label">
+                            :
+                        </label>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9">
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">PT Sendiri</label>
+                            <div class="input-group col-sm-3">
+                                <input type="number" value="{{ $dataItem->sksmen_pts ?? '' }}" class="form-control"
+                                    placeholder="0" name="sksmen_pts">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">SKS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
+
+                            <div class="input-group col-sm-3">
+                                <input type="number" value="{{ $dataItem->sksmen_ptl ?? '' }}" class="form-control"
+                                    placeholder="0" name="sksmen_ptl">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">SKS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-info">Submit</button>
+            <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+        </div>
+        <!-- /.card-footer -->
+        </form>
         </div>
     </section>
 @endsection
