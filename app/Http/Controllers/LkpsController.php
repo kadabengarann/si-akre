@@ -81,7 +81,6 @@ class LkpsController extends Controller
     }
     public function form($id, Request $request)
     {
-
         // return Permission::find($id);
         $form = Permission::find($id);
         $permit = json_decode($form->access, true);

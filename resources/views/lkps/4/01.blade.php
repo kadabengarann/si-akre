@@ -100,9 +100,7 @@
 
 @push('scripts')
     <script type="text/javascript">
-        console.log($('#tbl_list'));
         $(document).ready(function() {
-            console.log('ready');
             $('#tbl_lists').DataTable({
                 "footerCallback": function(row, data, start, end, display) {
                     var api = this.api()
@@ -180,7 +178,7 @@
                 serverSide: true,
                 autoWidth: false,
                 responsive: true,
-                ajax: '{{ url('/lkps/view/401?id=1') }}',
+                ajax: '{{ url('/lkps/view/401?id='. $prodi->id ) }}',
                 columns: [{
                         "data": "id",
                         render: function(data, type, row, meta) {

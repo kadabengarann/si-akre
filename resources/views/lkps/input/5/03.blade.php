@@ -40,64 +40,88 @@
                 <h3 class="card-title">Tabel 5.3. Pendayagunaan Sarana Utama Laboratorium
                 </h3>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Sarana/ Prasarana</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+            <div class="card-body">
+
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                    @csrf
+                    <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                        value="{{ $prodi->id }}" min="0">
+                    @if (request()->is('lkps/edit*') ? 'active' : '')
+                        <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                            value="{{ $dataItem->id }}" />
+                    @else
+                        <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                    @endif
+                    <div class="row p-2">
+                        <label for="inputEmail3" class="pl-2 col-sm-3 col-form-label">Sarana/ Prasarana</label>
+                        <div class="pl-0 col-sm-9">
+                            <input type="text" class=" form-control @error('sar_pra') is-invalid @enderror" name="sar_pra"
+                                placeholder=""
+                                @if (request()->is('lkps/edit*') ? 'active' : '') value="{{ $dataItem->sar_pra }}">
+                                 @else
+                                 value="{{ old('sar_pra') }}"> @endif
+                                <div class="invalid-feedback">
+                            @error('sar_pra')
+                                {{ $message }}
+                            @enderror
+                        </div>
+                    </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 col-lg-6 row p-2">
+                    <label for="inputEmail3" class="pl-2 col-sm-6">Daya Tampung</label>
+                    <div class="col-sm-6 input-group">
+                        <input type="number" value="{{ $dataItem->dy_tamp ?? '' }}" class="form-control"
+                            placeholder="0" name="dy_tamp">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 row p-2">
+                    <label for="inputEmail3" class="pl-2 col-sm-6">Luas Ruang</label>
+                    <div class="col-sm-6 input-group">
+                        <input type="number" value="{{ $dataItem->luasr ?? '' }}" class="form-control"
+                            placeholder="0" name="luasr">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Daya Tampung</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 col-lg-6 row p-2">
+                    <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah Mahasiswa yang Dilayani Lab</label>
+                    <div class="col-sm-6 input-group">
+                        <input type="number" value="{{ $dataItem->jmd ?? '' }}" class="form-control"
+                            placeholder="0" name="jmd">
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Luas Ruang (m2)</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
+                <div class="col-12 col-lg-6 row p-2">
+                    <label for="inputEmail3" class="pl-2 col-sm-6">Jam Layanan</label>
+                    <div class="col-sm-6 input-group">
+                        <input type="number" value="{{ $dataItem->jam_lay ?? '' }}" class="form-control"
+                            placeholder="0" name="jam_lay">
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa yang Dilayani Lab</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 col-lg-6 row p-2">
+                    <label for="inputEmail3" class="pl-2 col-sm-6">Perangkat yang Dimiliki</label>
+                    <div class="col-sm-6 input-group">
+                        <input type="number" value="{{ $dataItem->prngkt ?? '' }}" class="form-control"
+                            placeholder="0" name="prngkt">
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jam Layanan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Perangkat yang Dimiliki</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                        </div>
-                    </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
-                </div>
-                <!-- /.card-footer -->
+                
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info">Submit</button>
+                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+            </div>
+            <!-- /.card-footer -->
             </form>
+        </div>
         </div>
     </section>
 @endsection
