@@ -46,60 +46,77 @@
             <div class="card-header p-0 ">
                 <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
-                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">Mahasiswa</a>
+                        <a class="nav-link active" id="mahasiswa-tab" data-toggle="pill" href="#mahasiswa" role="tab"
+                            aria-controls="mahasiswa" aria-selected="true">Mahasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
-                            aria-controls="custom-tabs-2" aria-selected="false">Kartu Rencana Studi (KRS)</a>
+                        <a class="nav-link" id="krs-tab" data-toggle="pill" href="#krs" role="tab" aria-controls="krs"
+                            aria-selected="false">Kartu Rencana Studi (KRS)</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
-                            aria-controls="custom-tabs-3" aria-selected="false">Jadwal Mata Kuliah</a>
+                        <a class="nav-link" id="jadwal_mk-tab" data-toggle="pill" href="#jadwal_mk" role="tab"
+                            aria-controls="jadwal_mk" aria-selected="false">Jadwal Mata Kuliah</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-4-tab" data-toggle="pill" href="#custom-tabs-4" role="tab"
-                            aria-controls="custom-tabs-4" aria-selected="false">Nilai Mata Kuliah</a>
+                        <a class="nav-link" id="nilai_mk-tab" data-toggle="pill" href="#nilai_mk" role="tab"
+                            aria-controls="nilai_mk" aria-selected="false">Nilai Mata Kuliah</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-5-tab" data-toggle="pill" href="#custom-tabs-5" role="tab"
-                            aria-controls="custom-tabs-5" aria-selected="false">Transkrip Akademik</a>
+                        <a class="nav-link" id="transkrip_akademik-tab" data-toggle="pill" href="#transkrip_akademik"
+                            role="tab" aria-controls="transkrip_akademik" aria-selected="false">Transkrip Akademik</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-6-tab" data-toggle="pill" href="#custom-tabs-6" role="tab"
-                            aria-controls="custom-tabs-6" aria-selected="false">Lulusan</a>
+                        <a class="nav-link" id="lulusan-tab" data-toggle="pill" href="#lulusan" role="tab"
+                            aria-controls="lulusan" aria-selected="false">Lulusan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-7-tab" data-toggle="pill" href="#custom-tabs-7" role="tab"
-                            aria-controls="custom-tabs-7" aria-selected="false">Dosen</a>
+                        <a class="nav-link" id="dosen-tab" data-toggle="pill" href="#dosen" role="tab"
+                            aria-controls="dosen" aria-selected="false">Dosen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-8-tab" data-toggle="pill" href="#custom-tabs-8" role="tab"
-                            aria-controls="custom-tabs-8" aria-selected="false">Pegawai</a>
+                        <a class="nav-link" id="pegawai-tab" data-toggle="pill" href="#pegawai" role="tab"
+                            aria-controls="pegawai" aria-selected="false">Pegawai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-9-tab" data-toggle="pill" href="#custom-tabs-9" role="tab"
-                            aria-controls="custom-tabs-9" aria-selected="false">Keuangan</a>
+                        <a class="nav-link" id="keuangan-tab" data-toggle="pill" href="#keuangan" role="tab"
+                            aria-controls="keuangan" aria-selected="false">Keuangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-10-tab" data-toggle="pill" href="#custom-tabs-10"
-                            role="tab" aria-controls="custom-tabs-10" aria-selected="false">Inventaris</a>
+                        <a class="nav-link" id="inventaris-tab" data-toggle="pill" href="#inventaris" role="tab"
+                            aria-controls="inventaris" aria-selected="false">Inventaris</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-11-tab" data-toggle="pill" href="#custom-tabs-11"
-                            role="tab" aria-controls="custom-tabs-11" aria-selected="false">Perpustakaan</a>
+                        <a class="nav-link" id="perpustakaan-tab" data-toggle="pill" href="#perpustakaan" role="tab"
+                            aria-controls="perpustakaan" aria-selected="false">Perpustakaan</a>
                     </li>
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
-                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
-                        aria-labelledby="custom-tabs-1-tab">
+                    <div class="tab-pane fade show active" id="mahasiswa" role="tabpanel" aria-labelledby="mahasiswa-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Mahasiswa</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+                        @php
+                            $key = 'jns_data';
+                            
+                            $keyVal = 'mahasiswa';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control" id="{{ $key }}"
+                                value="{{ $keyVal }}">
+
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="row">
@@ -113,41 +130,45 @@
                                     <div class="row">
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                    Manual</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                    Tanpa
-                                                    Jaringan</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                    serta dapat
-                                                    diakses melalui Jaringan Lokal (LAN)</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                    serta dapat
-                                                    diakses melalui Jaringan Luas (WAN)</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -155,63 +176,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
+                    <div class="tab-pane fade" id="krs" role="tabpanel" aria-labelledby="krs-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Kartu Rencana Studi (KRS)</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'krs';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -219,63 +262,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
+                    <div class="tab-pane fade" id="jadwal_mk" role="tabpanel" aria-labelledby="jadwal_mk-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Jadwal Mata Kuliah</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'jadwal_mk';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -283,63 +348,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-4" role="tabpanel" aria-labelledby="custom-tabs-4-tab">
+                    <div class="tab-pane fade" id="nilai_mk" role="tabpanel" aria-labelledby="nilai_mk-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Nilai Mata Kuliah</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'nilai_mk';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -347,63 +434,86 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-5" role="tabpanel" aria-labelledby="custom-tabs-5-tab">
+                    <div class="tab-pane fade" id="transkrip_akademik" role="tabpanel"
+                        aria-labelledby="transkrip_akademik-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Transkrip Akademik </h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'transkrip_akademik';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -411,63 +521,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-6" role="tabpanel" aria-labelledby="custom-tabs-6-tab">
+                    <div class="tab-pane fade" id="lulusan" role="tabpanel" aria-labelledby="lulusan-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Lulusan</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'lulusan';
+$tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -475,63 +607,84 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-7" role="tabpanel" aria-labelledby="custom-tabs-7-tab">
+                        </form>                    </div>
+                    <div class="tab-pane fade" id="dosen" role="tabpanel" aria-labelledby="dosen-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Dosen</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'dosen';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -539,63 +692,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-8" role="tabpanel" aria-labelledby="custom-tabs-8-tab">
+                    <div class="tab-pane fade" id="pegawai" role="tabpanel" aria-labelledby="pegawai-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Pegawai</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'pegawai';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -603,63 +778,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-9" role="tabpanel" aria-labelledby="custom-tabs-9-tab">
+                    <div class="tab-pane fade" id="keuangan" role="tabpanel" aria-labelledby="keuangan-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Keuangan</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'keuangan';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -667,63 +864,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-10" role="tabpanel" aria-labelledby="custom-tabs-10-tab">
+                    <div class="tab-pane fade" id="inventaris" role="tabpanel" aria-labelledby="inventaris-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Inventaris</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'inventaris';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -731,63 +950,85 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="custom-tabs-11" role="tabpanel" aria-labelledby="custom-tabs-11-tab">
+                    <div class="tab-pane fade" id="perpustakaan" role="tabpanel" aria-labelledby="perpustakaan-tab">
                         <div class="card-body pb-0 pt-0">
                             <h3 class="col-form-label text-center m-0 p-0">Perpustakaan</h3>
                             <hr>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="row">
-                                    <label for="inputPassword3" class="col-sm-3 form-label">
-                                        Sistem Pengolahan Data Ditangani</label>
-                                    <label class="col-sm-3 form-label">
-                                        :
-                                    </label>
+                        @php
+                            $keyVal = 'perpustakaan';
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                        @endphp
+                        <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                            @csrf
+                            @if ($tabData->{$key})
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                    value="{{ $tabData->id }}" />
+                            @else
+                                <input type="hidden" name="id" class="form-control hide_num" placeholder="" value="-1" />
+                            @endif
+                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                id="{{ $key }}" value="{{ $keyVal }}">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Secara
-                                                Manual</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                                value="{{ $prodi->id }}" min="0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="inputPassword3" class="col-sm-3 form-label">
+                                            Sistem Pengolahan Data Ditangani</label>
+                                        <label class="col-sm-3 form-label">
+                                            :
+                                        </label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Secara
+                                                        Manual</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        Tanpa
+                                                        Jaringan</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                Tanpa
-                                                Jaringan</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
+                                            <div class="row p-2">
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
+                                                        dapat diakses melalui Jaringan Lokal (LAN) </label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 row p-2">
+                                                    <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer
+                                                        serta dapat
+                                                        diakses melalui Jaringan Luas (WAN)</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Lokal (LAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-3 col-form-label">Dengan Komputer
-                                                serta dapat
-                                                diakses melalui Jaringan Luas (WAN)</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputPassword3"
-                                                    placeholder="">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -795,7 +1036,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -808,17 +1049,33 @@
     </section>
 @endsection
 
-@section('script')
+
+@push('scripts')
     <script>
-        $(function() {
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
-                timePicker: true,
-                timePickerIncrement: 30,
-                locale: {
-                    format: 'MM/DD/YYYY hh:mm A'
+        $(document).ready(() => {
+            let url = location.href.replace(/\/$/, "");
+            console.log(url);
+            if (location.hash) {
+                console.log("wryyy");
+                const hash = url.split("#");
+                $('#custom-tabs-tab a[href="#' + hash[1] + '"]').tab("show");
+                url = location.href.replace(/\/#/, "#");
+                history.replaceState(null, null, url);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+            }
+
+            $('a[data-toggle="pill"]').on("click", function() {
+                let newUrl;
+                const hash = $(this).attr("href");
+                if (hash == "#ts-4") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + hash;
                 }
-            })
-        })
+                history.replaceState(null, null, newUrl);
+            });
+        });
     </script>
-@endsection
+@endpush

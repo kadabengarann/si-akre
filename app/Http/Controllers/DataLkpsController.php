@@ -10,7 +10,10 @@ use App\Models\Prodi;
 use App\Models\Lkps\{
     Reratadtpr,
     Sarpra,
-    Pnpkm
+    Pnpkm,
+    Ktk,
+    Addsi,
+    Kpl,
 };
 class DataLkpsController extends Controller
 {
@@ -55,8 +58,17 @@ class DataLkpsController extends Controller
             case '401':
                 return $this->insertReretadtpr($request);
                 break;
+            case '402':
+                return $this->insertKtk($request);
+                break;
+            case '502':
+                return $this->insertAddsi($request);
+                break;
             case '503':
                 return $this->insertSarpra($request);
+                break;
+            case '903':
+                return $this->insertKpl($request);
                 break;
             case '906':
                 return $this->insertPnpkm($request);
@@ -75,8 +87,17 @@ class DataLkpsController extends Controller
             case '401':
                 return $this->deleteReretadtpr($id, $request);
                 break;
+            case '402':
+                return $this->deleteKtk($id, $request);
+                break;
+            case '502':
+                return $this->deleteAddsi($id, $request);
+                break;
             case '503':
                 return $this->deleteSarpra($id, $request);
+                break;
+            case '903':
+                return $this->deleteKpl($id, $request);
                 break;
             case '906':
                 return $this->deletePnpkm($id, $request);
@@ -95,8 +116,17 @@ class DataLkpsController extends Controller
             case '401':
                 return $this->editReretadtpr($id, $request);
                 break;
+            case '402':
+                return $this->editKtk($id, $request);
+                break;
+            case '402':
+                return $this->editAddsi($id, $request);
+                break;
             case '503':
                 return $this->editSarpra($id, $request);
+                break;
+            case '903':
+                return $this->editKpl($id, $request);
                 break;
             case '906':
                 return $this->editPnpkm($id, $request);
@@ -122,7 +152,7 @@ class DataLkpsController extends Controller
         }
     }
 
-    // -------------------------RERETADTPR------------------------------
+    // -------------------------401 RERETADTPR------------------------------
     private function insertReretadtpr(Request $request){
         $request->validate([
             'nm_dosen' => 'required',
@@ -147,7 +177,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/401' . $admin_path);
+        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data updated successfully !');
     }
     private function deleteReretadtpr($id, Request $request){
         $data = Reratadtpr::find($id);
@@ -181,7 +211,131 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
-    // -------------------------SARPRA------------------------------
+
+    // -------------------------402 KTK------------------------------
+    private function insertKtk(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Ktk::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'jtk' => $request->jtk,
+                'jtk_s3' => ($request->jtk_s3 ? $request->jtk_s3 : 0),
+                'jtk_s2' => ($request->jtk_s2 ? $request->jtk_s2 : 0),
+                'jtk_s1' => ($request->jtk_s1 ? $request->jtk_s1 : 0),
+                'jtk_d4' => ($request->jtk_d4 ? $request->jtk_d4 : 0),
+                'jtk_d3' => ($request->jtk_d3 ? $request->jtk_d3 : 0),
+                'jtk_d2' => ($request->jtk_d2 ? $request->jtk_d2 : 0),
+                'jtk_d1' => ($request->jtk_d1 ? $request->jtk_d1 : 0),
+                'jtk_sm' => ($request->jtk_sm ? $request->jtk_sm : 0),
+                'uk' => ($request->uk ? $request->uk : 0),
+                
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data updated successfully !');
+    }
+    private function deleteKtk($id, Request $request)
+    {
+        $data = Ktk::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data deleted successfully !');
+    }
+    private function editKtk($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Sarpra::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+
+    // -------------------------502 ADDSI------------------------------
+    private function insertAddsi(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Addsi::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'jns_data' => $request->jns_data,
+                'sppdd_sm' => ($request->sppdd_sm ? $request->sppdd_sm : 0),
+                'sppdd_komtj' => ($request->sppdd_komtj ? $request->sppdd_komtj : 0),
+                'sppdd_komlan' => ($request->sppdd_komlan ? $request->sppdd_komlan : 0),
+                'sppdd_komwan' => ($request->sppdd_komwan ? $request->sppdd_komwan : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data updated successfully !');
+    }
+    private function deleteAddsi($id, Request $request)
+    {
+        $data = Addsi::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data deleted successfully !');
+    }
+    private function editAddsi($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Addsi::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+    // -------------------------503 SARPRA------------------------------
     private function insertSarpra(Request $request)
     {
         $request->validate([
@@ -241,7 +395,66 @@ class DataLkpsController extends Controller
         }
     }
 
-    // -------------------------PNPKM------------------------------
+    // ------------------------- 903 KPL------------------------------
+    private function insertKpl(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Kpl::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'jns_kemp' => $request->jns_kemp,
+                'tkp_ps' => ($request->tkp_ps ? $request->tkp_ps : 0),
+                'tkp_b' => ($request->tkp_b ? $request->tkp_b : 0),
+                'tkp_c' => ($request->tkp_c ? $request->tkp_c : 0),
+                'tkp_k' => ($request->tkp_k ? $request->tkp_k : 0),
+                'rnc_tndlnjt' => ($request->rnc_tndlnjt ? $request->rnc_tndlnjt : '-'),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data updated successfully !');
+    }
+    private function deleteKpl($id, Request $request)
+    {
+        $data = Kpl::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data deleted successfully !');
+    }
+    private function editKpl($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Kpl::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+    // ------------------------- 906 PNPKM------------------------------
     private function insertPnpkm(Request $request)
     {
         $request->validate([
