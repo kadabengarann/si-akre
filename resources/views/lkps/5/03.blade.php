@@ -3,13 +3,7 @@
 @include('lkps.form_header')
 @section('content')
     <section class="content">
-                @if (session('pesan'))
-            <div class="alert alert-success" role="alert">
-                {{ session('pesan') }}
-            </div>
-        @endif
-
-        <div class="card card-primary card-outline">
+        <div class="card card-primary card-outline header_stick">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
@@ -57,14 +51,16 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                           
+
                         </tr>
-                    
+
                     </tfoot>
                 </table>
             </div>
             <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary" href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i class="fas fa-plus-circle"></i> Input
+                <a class="btn btn-primary"
+                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                        class="fas fa-plus-circle"></i> Input
                     data</a>
             </div>
 
@@ -74,6 +70,12 @@
 </section> @endsection
 @push('scripts')
     <script type="text/javascript">
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 6000
+        });
         $(document).ready(function() {
             $('#tbl_lists').DataTable({
                 "footerCallback": function(row, data, start, end, display) {
@@ -118,7 +120,7 @@
                         .reduce(function(a, b) {
                             return intVal(a) + intVal(b);
                         }, 0);
-                    
+
                     // Update footer by showing the total with the reference of the column index 
                     $(api.column(1).footer()).html('Jumlah *');
                     $(api.column(2).footer()).html(sum_1);
@@ -211,6 +213,12 @@
                     }
                 });
             });
+            @if (session('pesan'))
+                Toast.fire({
+                    icon: 'success',
+                    title: "{{ session('pesan') }}"
+                })
+            @endif
         });
     </script>
 @endpush

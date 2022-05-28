@@ -3,12 +3,7 @@
 @include('lkps.form_header')
 @section('content')
     <section class="content">
-        @if (session('pesan'))
-            <div class="alert alert-success" role="alert">
-                {{ session('pesan') }}
-            </div>
-        @endif
-        <div class="card card-primary card-outline">
+        <div class="card card-primary card-outline header_stick">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
@@ -75,6 +70,12 @@
 </section> @endsection
 @push('scripts')
     <script type="text/javascript">
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 6000
+        });
         $(document).ready(function() {
             $('#tbl_lists').DataTable({
                 "footerCallback": function(row, data, start, end, display) {
@@ -211,6 +212,12 @@
                     }
                 });
             });
+            @if (session('pesan'))
+                Toast.fire({
+                    icon: 'success',
+                    title: "{{ session('pesan') }}"
+                })
+            @endif
         });
     </script>
 @endpush
