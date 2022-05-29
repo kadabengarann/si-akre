@@ -101,6 +101,9 @@ Route::name('lkps')
         Route::get('/input/{id}', [LkpsController::class, 'input']);
         Route::get('/', [LkpsController::class, 'index']);
 
+        Route::get('/edit/{id}', [DataLkpsController::class, 'edit']);
+        Route::get('/delete/{tableId}/{id}', [DataLkpsController::class, 'deleteLkps']);
+        Route::post('/insert/{id}', [DataLkpsController::class, 'insertLkps']);
         Route::post('/update/jcmb', [DataLkpsController::class, 'updateJCMB']);
 
     });

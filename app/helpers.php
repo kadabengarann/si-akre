@@ -54,3 +54,9 @@ function getArrayItemWithId($row_key, $id, $arr)
     }
     return $x;
 }
+
+function toDashed($str)
+{
+    $str = strtolower($str);
+    return str_replace(' ', '-', $str);
+}

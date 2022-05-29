@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 
 use App\Models\Permission;
@@ -80,7 +81,6 @@ class LkpsController extends Controller
     }
     public function form($id, Request $request)
     {
-
         // return Permission::find($id);
         $form = Permission::find($id);
         $permit = json_decode($form->access, true);
@@ -101,9 +101,8 @@ class LkpsController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
-        $tableData = DataLkpsController::getLkpsData($prodi->id);
+        $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
 
-        // return $tableData;
         $formMatriks  = null;
         if ($id[0] != 1 && $id[0] != 2) {
             $formMatriks = '30' . $id[0];
@@ -111,7 +110,30 @@ class LkpsController extends Controller
 
         $ts_year_id = "ts_" . $prodi->id;
         $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
-        // return $ts_year;
+
+        if ($request->ajax()) {
+            return
+                Datatables::of($tableData)
+                ->addColumn('action', function ($tableData) use ($id) {
+                    $button = '';
+                    if (Auth::user()->level == 1) {
+                        $button .= '<a href="' . $tableData->id . '" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                    }
+                    $btn = '
+                    <a class="btn btn-sm btn-secondary mb-2" href="/lkps/edit/' . $id . '?id=' .  $tableData->id . '"><i class="far fa-edit"></i></a>
+                    <form method="POST" action="/lkps/delete/' . $id . '/' .  $tableData->id . '">
+                            <input name="_method" type="hidden" value="GET">
+                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id" placeholder=""
+                            value="' . $tableData->prodi_id . '" min="0">
+                            <button type="submit" class="btn btn-sm btn-danger delete_confirm" data-toggle="tooltip"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                ';
+                    return $btn;
+                })
+
+                ->rawColumns(['action'])
+                ->toJson();
+        }
         $data = [
             'tables' => $this->allowedTable(),
             'prev' => $this->prev_num($id),
@@ -123,9 +145,8 @@ class LkpsController extends Controller
             'permit' => $form,
             'tableData' => $tableData
         ];
-        // return $tables;
+
         if (in_array(Auth::user()->level, $permit)) {
-            # code...
             return view('lkps.' . $id[0] . '.' . $id[1] . $id[2], $data);
         } else {
             return redirect('/lkps');
@@ -204,8 +225,7 @@ class LkpsController extends Controller
         }
         $ts_year_id = "ts_" . $prodi->id;
         $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
-        $tableData = DataLkpsController::getLkpsData($prodi->id);
-
+        $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
         $data = [
             'tables' => $this->allowedTable(),
             'idTable' => $id,

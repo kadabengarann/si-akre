@@ -37,6 +37,6 @@ class CreateTableJcmb extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_jcmb');
+        Schema::dropIfExists('jcmb');
     }
 }
