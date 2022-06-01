@@ -2,7 +2,7 @@
 <li class="nav-item">
     <a href="/profile"
         class="nav-link {{ request()->is('profile') ? 'active' : '' }} {{ request()->is('profile') ? 'nav-gray' : '' }}">
-        <i class="nav-icon fas fa-chart-bar"></i>
+        <i class="nav-icon fas fa-user"></i>
         <p>
             Biodata
         </p>

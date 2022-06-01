@@ -58,19 +58,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-6 offset-md-4">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-            
-                                                <label class="form-check-label" for="remember">
-                                                    {{ __('Remember Me') }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-            
+                                    </div>            
                               <div
                                 class="
                                   form-group
@@ -81,9 +69,7 @@
                                   mb-0
                                 "
                               >
-                                <a class="small" href="#"
-                                  >Forgot Password?</a
-                                >
+                                <a class="small" href="password/reset">Forgot Password?</a>
                                 <button type="submit" class="btn btn-primary">
                                   Login
                                 </button>
@@ -115,7 +101,7 @@
                       "
                     >
                       <div class="text-muted">
-                        Copyright &copy; SI - Akre 2021
+                        Copyright &copy; SI - Akre 2022
                       </div>
                       <div>
                         <a href="#">Privacy Policy</a>

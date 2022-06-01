@@ -113,7 +113,7 @@
                  </div>
                  <div class="info">
 
-                     <a href="#" class="d-block">{{ Auth::user()->username }}</a>
+                     <a href="/profile" class="d-block">{{ Auth::user()->username }}</a>
                      <a class="d-block" disabled>Super Admin</a>
                  </div>
              @endif

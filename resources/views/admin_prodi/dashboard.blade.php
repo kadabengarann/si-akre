@@ -64,7 +64,7 @@
                                     </label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                            value="{{ $prodi->email }}" placeholder="Alamat" name="email">
+                                            value="{{ old('email') ? old('email'): $prodi->email}}" placeholder="Alamat" name="email">
                                         <div class="invalid-feedback">
                                             @error('email')
                                                 {{ $message }}

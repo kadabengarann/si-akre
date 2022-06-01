@@ -2,13 +2,13 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Profile</h1>
+        <h1 class="m-0">Ubah Password</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
-            <li class="breadcrumb-item active">Change Password</li>
+            <li class="breadcrumb-item"><a href="/profile">Profil</a></li>
+            <li class="breadcrumb-item active">Ubah Password</li>
         </ol>
     </div><!-- /.col -->
 @endsection
@@ -18,12 +18,6 @@
         <form name="frmUserUpdt" method="POST" enctype="multipart/form-data" action="/dosen/profile/update-credential">
             @csrf
             <div class="col-xs-5">
-                {{-- <div class="row mt-2">
-                                                <div class="col-md-7"><label
-                                                        class="labels">E-Mail</label><input name="email" type="text"
-                                                        class="form-control" value="" readonly="readonly">
-                                                </div>
-                                            </div> --}}
                 <div class="row mt-2">
                     <div class="col-md-7"><label class="labels">Konfirmasi
                             Password</label><input name="oldpass" type="password"

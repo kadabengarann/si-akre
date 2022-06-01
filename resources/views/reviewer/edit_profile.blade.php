@@ -2,13 +2,13 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Profile</h1>
+        <h1 class="m-0">Edit Profil</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
-            <li class="breadcrumb-item active">Edit</li>
+            <li class="breadcrumb-item"><a href="/profile">Profil</a></li>
+            <li class="breadcrumb-item active">Edit Profil</li>
         </ol>
     </div><!-- /.col -->
 @endsection
@@ -34,7 +34,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
                                     value="{{ $reviewer->nama }}" name="name">
@@ -44,7 +44,17 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Nama"
+                                    value="{{old('email') ? old('email'): $userData->email }}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Instansi</label><input type="text"
                                     class="form-control @error('instansi') is-invalid @enderror" placeholder="Nama instansi"
                                     value="{{ $reviewer->instansi }}" name="instansi">

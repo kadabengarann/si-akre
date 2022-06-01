@@ -37,11 +37,22 @@ Route::name('utils')
         Route::post('/utils/update', [DataLkpsController::class, 'updateTsYear']);
     });
 
-Route::name('prodi')
-    ->middleware('prodi')
-    ->group(function () {
-        Route::post('/prodi/profile/update', [AdminProdiController::class, 'updateProfile']);
-    });
+Route::middleware('admin')
+->prefix('admin')
+->group(
+    function () {
+        Route::post('/profile/update', [AdminController::class, 'updateProfile']);
+        Route::post('/profile/update-credential', [AdminController::class, 'updateCredential']);
+    }
+);
+Route::middleware('prodi')
+->prefix('prodi')
+->group(
+    function () {
+        Route::post('/profile/update', [AdminProdiController::class, 'updateProfile']);
+        Route::post('/profile/update-credential', [AdminProdiController::class, 'updateCredential']);
+    }
+);
 Route::middleware('reviewer')
 ->prefix('reviewer')
 ->group(
@@ -63,6 +74,7 @@ Route::middleware('mahasiswa')
     ->group(
         function () {
             Route::post('/profile/update', [MahasiswaController::class, 'updateProfile']);
+            Route::post('/profile/update-credential', [MahasiswaController::class, 'updateCredential']);
         }
     );
 

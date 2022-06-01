@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
+use App\Rules\MatchOldPassword;
+use App\Models\User;
 use App\Models\Prodi;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 use File;
 
@@ -24,11 +28,13 @@ class AdminProdiController extends Controller
     public function updateProfile()
     {
         $id = auth()->user()->prodi_id;
+        $idUser = auth()->user()->id;
+
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'nama' => 'required',
             'alamat' => 'required',
-            'email' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
             'website' => 'required',
             // 'no_sk_pembukaan' => 'required',
             // 'tgl_sk_pembukaan' => 'required',
@@ -37,6 +43,10 @@ class AdminProdiController extends Controller
             // 'akreditasi' => 'required',
             // 'no_sk_ban_pt' => 'required',
         ]);
+
+        $userData = User::find($idUser);
+        $userData->email = Request()->email;
+        $userData->save();
 
         $prodi = Prodi::find($id);
         $prodi->nama = Request()->nama;
@@ -52,6 +62,23 @@ class AdminProdiController extends Controller
         $prodi->save();
         return redirect()->route('pageProfile')->with('pesan', 'Profile updated successfully!');
     }
+
+    public function updateCredential()
+    {
+        $id = auth()->user()->id;
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'old_password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user = User::find($id);
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('pageProfile')->with('pesan', 'Password changed!');
+    }
+
     public function detailProdi()
     {
         $id_user = auth()->user()->dosen->prodi->id;
