@@ -36,12 +36,6 @@
 
                                             </div>
                                             <div class="card-body">
-                                                @if (session('status'))
-                                                    <div class="alert alert-success" role="alert">
-                                                        {{ session('status') }}
-                                                    </div>
-                                                @endif
-
                                                 <form method="POST" action="{{ route('password.email') }}">
                                                     @csrf
 
@@ -106,6 +100,20 @@
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/all.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript">
+        var Toast = Swal.mixin({
+            icon: 'info',
+            confirmButtonText: 'OK'
+        });
+        
+        @if (session('status'))
+            Toast.fire({
+                title: "{{ session('status') }}"
+            })
+        @endif
+    </script>
 </body>
 
 </html>
