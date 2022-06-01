@@ -27,7 +27,7 @@
     </a>
 </li>
 <li class="nav-header">ADMIN</li>
-<li class="nav-item {{ request()->is('lkps/*/0*') ? 'menu-open' : '' }}">
+<li class="nav-item {{ request()->is('profile*') ? 'menu-open' : '' }}">
     <a href="" class="nav-link {{ request()->is('lkps/*/0*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-cog"></i>
         <p>Pengaturan
@@ -36,15 +36,9 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="#" class="nav-link {{ request()->is('lkps/*/001') ? 'active' : '' }}">
+            <a href="/profile" class="nav-link {{ request()->is('profile*') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Prodi</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link {{ request()->is('lkps/*/002') ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dosen</p>
+                <p>Profil Prodi</p>
             </a>
         </li>
     </ul>
