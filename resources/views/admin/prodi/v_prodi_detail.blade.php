@@ -211,14 +211,14 @@
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-secondary"
                                                     href='/manage/prodi/edit/{{ $prodi->id }}'><i
-                                                        class="far fa-edit"></i> Edit Profile</a>
+                                                        class="far fa-edit"></i> Ubah Detail</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-warning"
                                                     href='/manage/prodi/edit-password/{{ $prodi->id }}'><i
-                                                        class="fas fa-key"></i> Change Password</a>
+                                                        class="fas fa-key"></i> Ubah Password</a>
                                             </div>
                                         </div>
                                     </div>

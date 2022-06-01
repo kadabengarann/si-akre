@@ -2,14 +2,14 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Password</h1>
+        <h1 class="m-0">Ubah Password</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/manage/dosen">Dosen</a></li>
-            <li class="breadcrumb-item"><a href="/manage/dosen/detail/{{ $dosen->id }}">{{ $dosen->nama }}</a></li>
-            <li class="breadcrumb-item active">Edit Password</li>
+            <li class="breadcrumb-item"><a href="/manage/dosen/{{ $dosen->id }}">{{ $dosen->nama }}</a></li>
+            <li class="breadcrumb-item active">Ubah Password</li>
         </ol>
     </div><!-- /.col -->
 @endsection
@@ -20,12 +20,6 @@
             action="/manage/dosen/update-credential/{{ $dosen->id }}">
             @csrf
             <div class="col-xs-5">
-                {{-- <div class="row mt-2">
-                                                <div class="col-md-7"><label
-                                                        class="labels">E-Mail</label><input name="email" type="text"
-                                                        class="form-control" value="" readonly="readonly">
-                                                </div>
-                                            </div> --}}
                 <div class="row mt-2">
                     <div class="col-md-7"><label class="labels">Konfirmasi
                             Password</label><input name="admin-password" type="password"
@@ -69,16 +63,6 @@
                     </div>
 
                 </div>
-                {{-- <div class="col-md-6"><label class="labels">Tempat
-                                                    Lahir</label><input type="text"
-                                                    class="form-control @error('birthplace') is-invalid @enderror"
-                                                    value="{{ $dosen->tmp_lahir }}" placeholder="" name="birthplace">
-                                                <div class="invalid-feedback">
-                                                    @error('birthplace')
-                                                        {{ $message }}
-                                                    @enderror
-                                                </div>
-                                            </div> --}}
             </div>
             <div class="mt-5 text-left">
                 {{-- <button class="btn btn-success profile-button" name="save_password"

@@ -48,7 +48,18 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Nama"
+                                    value="{{old('email') ? old('email'): $userData->email }}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Instansi</label><input type="text"
                                     class="form-control @error('instansi') is-invalid @enderror" placeholder="Nama instansi"
                                     value="{{ $reviewer->instansi }}" name="instansi">

@@ -324,9 +324,12 @@ class AdminController extends Controller
         if (!Prodi::find($id)) {
             abort(404);
         }
+        $prodi = Prodi::find($id);
+        $userData = $prodi->user;
+
         $data = [
-            'prodi' => Prodi::find($id),
-            // 'user' => Prodi::find($id)->user,
+            'prodi' => $prodi,
+            'userData' => $userData,
         ];
         return view('admin.prodi.v_edit_prodi', $data);
     }
@@ -340,7 +343,7 @@ class AdminController extends Controller
             'username' => 'required|unique:users,username,' . $prodi->user->id . 'max:5|max:10',
             'name' => 'required',
             'alamat' => 'required',
-            'email' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . $prodi->user->id,
             'website' => 'required',
             // 'no_sk_pembukaan' => 'required',
             // 'tgl_sk_pembukaan' => 'required',
@@ -349,6 +352,8 @@ class AdminController extends Controller
             // 'akreditasi' => 'required',
             // 'no_sk_ban_pt' => 'required',
         ]);
+        $user->email = Request()->email;
+        $user->save();
 
         $prodi->nama = Request()->name;
         $prodi->alamat = Request()->alamat;
@@ -424,9 +429,11 @@ class AdminController extends Controller
         if (!Mahasiswa::find($id)) {
             abort(404);
         }
-
+        $mhs = Mahasiswa::find($id);
+        $userData = $mhs->user;
         $data = [
-            'mhs' => Mahasiswa::find($id),
+            'mhs' => $mhs,
+            'userData' => $userData,
         ];
         return view('admin.mhs.v_mhs_detail', $data);
     }
@@ -498,8 +505,11 @@ class AdminController extends Controller
         if (!Mahasiswa::find($id)) {
             abort(404);
         }
+        $mhs = Mahasiswa::find($id);
+        $userData = $mhs->user;
         $data = [
-            'mhs' => Mahasiswa::find($id),
+            'mhs' => $mhs,
+            'userData' => $userData,
             'prodi' => Prodi::all(),
             // 'user' => Mahasiswa::find($id)->user,
         ];
@@ -513,7 +523,10 @@ class AdminController extends Controller
 
         Request()->validate([
             'username' => 'required|unique:users,username,' . $mhs->user->id . 'max:5|max:16',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . $mhs->user->id,
+
             'name' => 'required',
+            'id_prodi' => 'required',
             'address' => 'required',
             'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
@@ -528,6 +541,9 @@ class AdminController extends Controller
             $mhs = Mahasiswa::find($id);
             File::delete('img/mhs/' . $mhs->img_url);
 
+            $user->email = Request()->email;
+            $user->save();
+
             $mhs->nama = Request()->name;
             $mhs->prodi_id = Request()->id_prodi;
             $mhs->alamat = Request()->address;
@@ -536,6 +552,9 @@ class AdminController extends Controller
             $mhs->img_url = $nama_file;
             $mhs->save();
         } else {
+            $user->email = Request()->email;
+            $user->save();
+
             $mhs->nama = Request()->name;
             $mhs->prodi_id = Request()->id_prodi;
 
@@ -610,9 +629,11 @@ class AdminController extends Controller
         if (!Dosen::find($id)) {
             abort(404);
         }
-
+        $dosen = Dosen::find($id);
+        $userData = $dosen->user;
         $data = [
-            'dosen' => Dosen::find($id),
+            'dosen' => $dosen,
+            'userData' => $userData,
         ];
         return view('admin.dosen.v_dosen_detail', $data);
     }
@@ -684,8 +705,12 @@ class AdminController extends Controller
         if (!Dosen::find($id)) {
             abort(404);
         }
+        $dosen = Dosen::find($id);
+        $userData = $dosen->user;
+
         $data = [
-            'dosen' => Dosen::find($id),
+            'dosen' => $dosen,
+            'userData' => $userData,
             'prodi' => Prodi::all(),
             // 'user' => Dosen::find($id)->user,
         ];
@@ -699,7 +724,8 @@ class AdminController extends Controller
 
         Request()->validate([
             'username' => 'required|unique:users,username,' . $dosen->user->id . 'max:5|max:16',
-            // 'id_prodi' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . $dosen->user->id,
+
             'name' => 'required',
             'address' => 'required',
             'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
@@ -715,6 +741,9 @@ class AdminController extends Controller
             $dosen = Dosen::find($id);
             File::delete('img/dos/' . $dosen->img_url);
 
+            $user->email = Request()->email;
+            $user->save();
+
             $dosen->nama = Request()->name;
             // $dosen->prodi_id = Request()->id_prodi;
             $dosen->alamat = Request()->address;
@@ -723,6 +752,9 @@ class AdminController extends Controller
             $dosen->img_url = $nama_file;
             $dosen->save();
         } else {
+            $user->email = Request()->email;
+            $user->save();
+
             $dosen->nama = Request()->name;
             // $dosen->prodi_id = Request()->id_prodi;
             $dosen->alamat = Request()->address;
@@ -792,9 +824,13 @@ class AdminController extends Controller
         if (!Reviewer::find($id)) {
             abort(404);
         }
+        $reviewer = Reviewer::find($id);
+        $userData = $reviewer->user;
 
         $data = [
-            'reviewer' => Reviewer::find($id),
+            'reviewer' => $reviewer,
+            'userData' => $userData,
+
         ];
         return view('admin.reviewer.v_reviewer_detail', $data);
     }
@@ -872,8 +908,12 @@ class AdminController extends Controller
         if (!Reviewer::find($id)) {
             abort(404);
         }
+        $reviewer = Reviewer::find($id);
+        $userData = $reviewer->user;
+
         $data = [
-            'reviewer' => Reviewer::find($id),
+            'reviewer' => $reviewer,
+            'userData' => $userData,
         ];
         return view('admin.reviewer.v_edit_reviewer', $data);
     }
@@ -885,8 +925,10 @@ class AdminController extends Controller
 
         Request()->validate([
             'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:16',
-            // 'name' => 'required',
-            // 'instansi' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . $reviewer->user->id,
+
+            'name' => 'required',
+            'instansi' => 'required',
             // 'address' => 'required',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
@@ -903,6 +945,9 @@ class AdminController extends Controller
                 File::delete('img/rev/' . $reviewer->img_url);
             }
 
+            $user->email = Request()->email;
+            $user->save();
+
             $reviewer->nama = Request()->name;
             $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;
@@ -911,6 +956,9 @@ class AdminController extends Controller
             $reviewer->img_url = $nama_file;
             $reviewer->save();
         } else {
+            $user->email = Request()->email;
+            $user->save();
+
             $reviewer->nama = Request()->name;
             $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;

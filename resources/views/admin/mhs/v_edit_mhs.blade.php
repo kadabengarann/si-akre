@@ -2,13 +2,13 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Profile</h1>
+        <h1 class="m-0">Ubah Profil</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/manage/mhs">Mahasiswa</a></li>
-            <li class="breadcrumb-item active">Edit Detail Mahasiswa</li>
+            <li class="breadcrumb-item active">Ubah Profil Mahasiswa</li>
         </ol>
     </div><!-- /.col -->
 @endsection
@@ -21,7 +21,7 @@
                 <div class="col-md-5 border-right form-group">
                     <div class="p-3 pb-2">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Profile</h4>
+                            <h4 class="text-right"></h4>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-8"><label class="labels">ID</label><input type="text"
@@ -37,7 +37,7 @@
                                 <a id="toggle-disable-form" class="btn btn-secondary btn-sm"> Edit
                                     ID</a>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
                                     value="{{ $mhs->nama }}" name="name">
@@ -47,10 +47,21 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12"><label class="labels">Program Studi</label>
+                            
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Nama"
+                                    value="{{old('email') ? old('email'): $userData->email }}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3"><label class="labels">Program Studi</label>
                                 <select class="form-control @error('id_prodi') is-invalid @enderror" id="subject"
                                     name="id_prodi">
-                                    <option value="{{ $mhs->prodi_id }}" selected disabled hidden>
+                                    <option value="{{ $mhs->prodi->id }}" selected hidden>
                                         {{ $mhs->prodi->nama }}</option>
                                     @foreach ($prodi as $m)
                                         <option value="{{ $m->id }}">{{ $m->nama }}</option>

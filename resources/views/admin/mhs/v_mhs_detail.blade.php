@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/mhs">Mahasiswa</a></li>
+            <li class="breadcrumb-item"><a href="/manage/mhs">Mahasiswa</a></li>
             <li class="breadcrumb-item active">{{ $mhs->nama }}</li>
         </ol>
     </div><!-- /.col -->
@@ -61,6 +61,16 @@
                                         </div>
                                     </div>
                                     <hr>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Alamat email</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            {{ $userData->email }}
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <h6 class="mb-0">Tempat Tanggal Lahir</h6>
@@ -83,14 +93,14 @@
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-secondary" href='/manage/mhs/edit/{{ $mhs->id }}'><i
-                                                        class="far fa-edit"></i> Edit Profile</a>
+                                                        class="far fa-edit"></i> Ubah Profil</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-warning"
                                                     href='/manage/mhs/edit-password/{{ $mhs->id }}'><i
-                                                        class="fas fa-key"></i> Change Password</a>
+                                                        class="fas fa-key"></i> Ubah Password</a>
                                             </div>
                                         </div>
                                     </div>

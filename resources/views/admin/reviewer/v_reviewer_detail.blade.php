@@ -36,7 +36,7 @@
                                     <p class="text-muted font-size-sm">
                                         <i class="fas fa-university">
                                         </i>
-                                        {{-- {{ $reviewer->nama }} --}}
+                                        {{ $reviewer->instansi ? $reviewer->instansi : '-' }}
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,17 @@
                                             <h6 class="mb-0">Nama Lengkap</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{ $reviewer->nama }}
+                                            {{ $reviewer->nama? $reviewer->nama : '-' }}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Alamat email</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            {{ $userData->email }}
                                         </div>
                                     </div>
                                     <hr>
@@ -68,7 +78,7 @@
                                             <h6 class="mb-0">Instansi</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{ $reviewer->instansi }}
+                                            {{ $reviewer->instansi ? $reviewer->instansi : '-' }}
                                         </div>
                                     </div>
                                     <hr>
@@ -77,7 +87,7 @@
                                             <h6 class="mb-0">Tempat Tanggal Lahir</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{ $reviewer->tmp_lahir }} , {{ $reviewer->tgl_lahir }}
+                                            {{ $reviewer->tmp_lahir ? $reviewer->tmp_lahir : "-"}} , {{ $reviewer->tgl_lahir ? $reviewer->tgl_lahir : "-" }}
                                         </div>
                                     </div>
                                     <hr>
@@ -86,7 +96,7 @@
                                             <h6 class="mb-0">Alamat</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{ $reviewer->alamat }}
+                                            {{ $reviewer->alamat ? $reviewer->alamat : "-" }}
                                         </div>
                                     </div>
                                     <hr>
@@ -95,14 +105,14 @@
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-secondary"
                                                     href='/manage/reviewer/edit/{{ $reviewer->id }}'><i
-                                                        class="far fa-edit"></i> Edit Profile</a>
+                                                        class="far fa-edit"></i> Ubah Detail</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-warning"
                                                     href='/manage/reviewer/edit-password/{{ $reviewer->id }}'><i
-                                                        class="fas fa-key"></i> Change Password</a>
+                                                        class="fas fa-key"></i> Ubah Password</a>
                                             </div>
                                         </div>
                                     </div>
