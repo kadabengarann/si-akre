@@ -47,11 +47,14 @@ class ReviewerController extends Controller
     public function updateProfile()
     {
         $id = auth()->user()->rev_id;
+        $idUser = auth()->user()->id;
+        $userData = User::find($idUser);
         $reviewer = Reviewer::find($id);
 
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
             'instansi' => 'required',
             // 'address' => 'required',
             'date' => 'required',
@@ -70,6 +73,9 @@ class ReviewerController extends Controller
                 File::delete('img/rev/' . $reviewer->img_url);
             }
 
+            $userData->email = Request()->email;
+            $userData->save();
+
             $reviewer->nama = Request()->name;
             $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;
@@ -78,6 +84,9 @@ class ReviewerController extends Controller
             $reviewer->img_url = $nama_file;
             $reviewer->save();
         } else {
+            $userData->email = Request()->email;
+            $userData->save();
+            
             $reviewer->nama = Request()->name;
             $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;

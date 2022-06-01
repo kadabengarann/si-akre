@@ -2,12 +2,12 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Profile</h1>
+        <h1 class="m-0">Ubah Profil</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
+            <li class="breadcrumb-item"><a href="/profile">Profil</a></li>
             <li class="breadcrumb-item active">Edit</li>
         </ol>
     </div><!-- /.col -->
@@ -33,12 +33,22 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
                                     value="{{ $dosen->nama }}" name="name">
                                 <div class="invalid-feedback">
                                     @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Nama"
+                                    value="{{ old('email') ? old('email'): $userData->email }}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
                                         {{ $message }}
                                     @enderror
                                 </div>
@@ -65,9 +75,9 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Address</label><textarea
-                                    class="form-control @error('address') is-invalid @enderror" rows="3"
-                                    placeholder="Alamat" name="address">{{ $dosen->alamat }}</textarea>
+                            <div class="col-md-12"><label class="labels">Address</label>
+                                <textarea class="form-control @error('address') is-invalid @enderror" rows="3" placeholder="Alamat"
+                                    name="address">{{ $dosen->alamat }}</textarea>
                                 <div class="invalid-feedback">
                                     @error('address')
                                         {{ $message }}

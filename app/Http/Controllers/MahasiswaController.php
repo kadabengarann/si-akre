@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rules\MatchOldPassword;
+
+use App\Models\User;
 use App\Models\Mahasiswa;
 
+use Illuminate\Support\Facades\Hash;
 use File;
 
 class MahasiswaController extends Controller
@@ -43,9 +47,12 @@ class MahasiswaController extends Controller
     public function updateProfile()
     {
         $id = auth()->user()->mhs_id;
+        $idUser = auth()->user()->id;
+
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
             // 'address' => 'required',
             'date' => 'required',
             'birthplace' => 'required',
@@ -61,6 +68,10 @@ class MahasiswaController extends Controller
             $mhs = Mahasiswa::find($id);
             File::delete('img/mhs/' . $mhs->img_url);
 
+            $userData = User::find($idUser);
+            $userData->email = Request()->email;
+            $userData->save();
+
             $mhs->nama = Request()->name;
             $mhs->alamat = Request()->address;
             $mhs->tgl_lahir = Request()->date;
@@ -69,12 +80,32 @@ class MahasiswaController extends Controller
             $mhs->save();
         } else {
             $mhs = Mahasiswa::find($id);
+
+            $userData = User::find($idUser);
+            $userData->email = Request()->email;
+
             $mhs->nama = Request()->name;
             $mhs->alamat = Request()->address;
             $mhs->tgl_lahir = Request()->date;
             $mhs->tmp_lahir = Request()->birthplace;
             $mhs->save();
+            $userData->save();
         }
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+        return redirect()->route('pageProfile')->with('pesan', 'Profile updated !'. $userData->email);
+    }
+    public function updateCredential()
+    {
+        $id = auth()->user()->id;
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'old_password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user = User::find($id);
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('pageProfile')->with('pesan', 'Password changed!');
     }
 }

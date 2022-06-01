@@ -2,13 +2,13 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Edit Profile</h1>
+        <h1 class="m-0">Ubah Profil</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
-            <li class="breadcrumb-item active">Edit</li>
+            <li class="breadcrumb-item"><a href="/profile">Profil</a></li>
+            <li class="breadcrumb-item active">Ubah Profil</li>
         </ol>
     </div><!-- /.col -->
 @endsection
@@ -54,7 +54,7 @@
                         </label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                value="{{ $prodi->email }}" placeholder="Alamat" name="email">
+                                value="{{old('email') ? old('email'):  $prodi->email }}" placeholder="Alamat" name="email">
                             <div class="invalid-feedback">
                                 @error('email')
                                     {{ $message }}

@@ -2,12 +2,12 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0">Profile</h1>
+        <h1 class="m-0">Profil Program Studi</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Profile</li>
+            <li class="breadcrumb-item active">Profil Program Studi</li>
         </ol>
     </div><!-- /.col -->
     <div class="col-sm-12 mt-2">
@@ -15,7 +15,8 @@
             <div class="alert alert-success" role="alert">
                 {{ session('pesan') }}
             </div>
-        @endif<!-- /.container-fluid -->
+        @endif
+        <!-- /.container-fluid -->
     </div><!-- /.col -->
 @endsection
 @section('content')
@@ -154,10 +155,19 @@
                 </li>
             </ul>
         </div>
-
         <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-            <a class="btn btn-primary" href="/profile/edit"><i class="fas fa-plus-circle"></i> Ubah data</a>
-        </div>
+                <div class="col-sm-3">
+                    <div class="mt-5 text-left">
+                        <a class="btn btn-secondary" href='/profile/edit'><i class="far fa-edit"></i> Ubah Profil</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="mt-5 text-left">
+                        <a class="btn btn-warning" href='/profile/edit-password'><i class="fas fa-key"></i> Ubah
+                            Password</a>
+                    </div>
+                </div>
+                    </div>
 
         <!-- /.card-body -->
     </div>

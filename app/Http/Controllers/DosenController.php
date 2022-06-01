@@ -47,10 +47,11 @@ class DosenController extends Controller
     public function updateProfile()
     {
         $id = auth()->user()->dosen_id;
+        $idUser = auth()->user()->id;
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
-            // 'address' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
             'date' => 'required',
             'birthplace' => 'required',
             'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
@@ -65,19 +66,28 @@ class DosenController extends Controller
             $dosen = Dosen::find($id);
             File::delete('img/dos/' . $dosen->img_url);
 
+            $userData = User::find($idUser);
+            $userData->email = Request()->email;
+
             $dosen->nama = Request()->name;
             $dosen->alamat = Request()->address;
             $dosen->tgl_lahir = Request()->date;
             $dosen->tmp_lahir = Request()->birthplace;
             $dosen->img_url = $nama_file;
             $dosen->save();
+            $userData->save();
         } else {
             $dosen = Dosen::find($id);
+
+            $userData = User::find($idUser);
+            $userData->email = Request()->email;
+
             $dosen->nama = Request()->name;
             $dosen->alamat = Request()->address;
             $dosen->tgl_lahir = Request()->date;
             $dosen->tmp_lahir = Request()->birthplace;
             $dosen->save();
+            $userData->save();
         }
         return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
     }

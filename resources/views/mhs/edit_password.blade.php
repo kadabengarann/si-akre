@@ -15,7 +15,7 @@
 @section('content')
 
     <div class="card p-4">
-        <form name="frmUserUpdt" method="POST" enctype="multipart/form-data" action="/reviewer/profile/update-credential">
+        <form name="frmUserUpdt" method="POST" enctype="multipart/form-data" action="/mhs/profile/update-credential">
             @csrf
             <div class="col-xs-5">
                 <div class="row mt-2">
