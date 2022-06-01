@@ -998,4 +998,48 @@ class AdminController extends Controller
         $user->save();
         return redirect()->route('reviewerDetail', $id)->with('pesan', 'Password changed!');
     }
+
+
+    public function editProfile()
+    {
+        $id_user = auth()->user()->rev_id;
+
+        $data = [
+            'mhs' => Reviewer::find($id_user),
+        ];
+
+        return view('reviewer.edit_profile', $data);
+    }
+    public function updateProfile()
+    {
+        $idUser = auth()->user()->id;
+        $userData = User::find($idUser);
+
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
+        ]);
+        
+            $userData->name = Request()->name;
+            $userData->email = Request()->email;
+            $userData->save();
+
+        return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+    }
+    public function updateCredential()
+    {
+        $id = auth()->user()->id;
+        Request()->validate([
+            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            'old_password' => ['required', new MatchOldPassword],
+            'new_password' =>  ['required', 'min:8', 'max:16'],
+            'retype_new_password' => ['required', 'min:8', 'max:16', 'same:new_password'],
+        ]);
+
+        $user = User::find($id);
+        $user->password = Hash::make(Request()->new_password);
+        $user->save();
+        return redirect()->route('pageProfile')->with('pesan', 'Password changed!');
+    }
 }

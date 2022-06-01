@@ -37,6 +37,14 @@ Route::name('utils')
         Route::post('/utils/update', [DataLkpsController::class, 'updateTsYear']);
     });
 
+Route::middleware('admin')
+->prefix('admin')
+->group(
+    function () {
+        Route::post('/profile/update', [AdminController::class, 'updateProfile']);
+        Route::post('/profile/update-credential', [AdminController::class, 'updateCredential']);
+    }
+);
 Route::middleware('prodi')
 ->prefix('prodi')
 ->group(

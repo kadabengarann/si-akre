@@ -19,7 +19,14 @@ class UserProfileController extends Controller
 
     public function index()
     {
-        if (Auth::user()->level == 2) {
+        if (Auth::user()->level == 1) {
+            $id_user = auth()->user()->id;
+            $user = User::find($id_user);
+            $data = [
+                'user' => $user,
+            ];
+            return view('admin.admin.v_profile', $data);
+        } elseif (Auth::user()->level == 2) {
             $id_prodi = auth()->user()->prodi_id;
             $id_user = auth()->user()->id;
             $prodi = new Prodi;
@@ -65,7 +72,14 @@ class UserProfileController extends Controller
     }
     public function editProfile()
     {
-        if (Auth::user()->level == 2) {
+        if (Auth::user()->level == 1) {
+            $id_user = auth()->user()->id;
+            $data = [
+                'user' => User::find($id_user),
+            ];
+
+            return view('admin.admin.edit_profile', $data);
+        } elseif (Auth::user()->level == 2) {
             $id_prodi = auth()->user()->prodi_id;
             $id_user = auth()->user()->id;
 
@@ -109,7 +123,13 @@ class UserProfileController extends Controller
     }
     public function editPassword()
     {
-        if (Auth::user()->level == 2) {
+        if (Auth::user()->level == 1) {
+            $id_user = auth()->user()->id;
+            $data = [
+                'user' => User::find($id_user),
+            ];
+            return view('admin.admin.edit_password', $data);
+        } elseif (Auth::user()->level == 2) {
             $id_user = auth()->user()->prodi_id;
             $data = [
                 'prodi' => Prodi::find($id_user),
