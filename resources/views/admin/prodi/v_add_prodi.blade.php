@@ -33,16 +33,6 @@
                             <h4 class="text-right">Data Program Studi</h4>
                         </div>
                         <div class="row mt-2">
-                            {{-- <div class="col-md-12">
-                                <label class="labels">Jenis Program</label><input type="text"
-                                    class="form-control @error('name') is-invalid @enderror" placeholder="Nama"
-                                    name="jenis">
-                                <div class="invalid-feedback">
-                                    @error('name')
-                                        {{ $message }}
-                                    @enderror
-                                </div>
-                            </div> --}}
                             <div class="col-md-12">
                                 <label class="labels">Nama Program Studi</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name"
@@ -56,7 +46,7 @@
                         </div>
                         <hr>
                         <div class="row mt-2">
-                            <div class="col-md-12">
+                            <div class="col-md-12  mt-3">
                                 <label class="labels">Username akun</label><input type="text"
                                     class="form-control @error('username') is-invalid @enderror" placeholder="Username"
                                     name="username" value="{{ old('username') }}">
@@ -66,7 +56,17 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Email"
+                                    value="{{old('email')}}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12  mt-3">
                                 <label class="labels">Password</label><input type="password"
                                     class="form-control @error('password') is-invalid @enderror" placeholder="Password"
                                     name="password" value="{{ old('password') }}">

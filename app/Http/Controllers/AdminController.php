@@ -289,6 +289,7 @@ class AdminController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'password' =>  ['required', 'min:8', 'max:16'],
             're-password' => ['required', 'min:8', 'max:16', 'same:password'],
@@ -296,10 +297,12 @@ class AdminController extends Controller
 
         $prodi = Prodi::create([
             'nama' => Request()->name,
+            'email' => Request()->email,
         ]);
 
         User::create([
             'username' => Request()->username,
+            'email' => Request()->email,
             'password' => Hash::make(
                 Request()->password
             ),
@@ -307,7 +310,7 @@ class AdminController extends Controller
             'prodi_id' => $prodi->id,
         ]);
 
-        return redirect()->route('prodiList')->with('pesan', 'Added new data !');
+        return redirect()->route('prodiList')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
     public function deleteProdi($id)
@@ -316,7 +319,7 @@ class AdminController extends Controller
         $user = User::where('prodi_id', $id);
         $prodi->delete();
         $user->delete();
-        return redirect()->route('prodiList')->with('pesan', 'Deleted a data !');
+        return redirect()->route('prodiList')->with('pesan', 'Data berhasil dihapus !');
     }
     public function editProdi($id)
     {
@@ -371,7 +374,7 @@ class AdminController extends Controller
             $user->username = Request()->username;
             $user->save();
         }
-        return redirect()->route('prodiDetail', $id)->with('pesan', 'Updated a data !');
+        return redirect()->route('prodiDetail', $id)->with('pesan', 'Data berhasil diubah!');
     }
     public function editProdiPassword($id)
     {
@@ -449,12 +452,11 @@ class AdminController extends Controller
     public function insertMhs()
     {
         Request()->validate([
-            // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,',
             'id_prodi' => 'required',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',
-
 
             'password' =>  ['required', 'min:8', 'max:16'],
             're-password' => ['required', 'min:8', 'max:16', 'same:password'],
@@ -472,12 +474,16 @@ class AdminController extends Controller
         $mhs = Mahasiswa::create([
             'nama' => Request()->name,
             'nim' => Request()->username,
+            'tmp_lahir' => Request()->birthplace,
+            'tgl_lahir' => Request()->date,
+            'alamat' => Request()->address,
             'img_url' =>  $img_url,
             'prodi_id' => Request()->id_prodi,
         ]);
 
         User::create([
             'username' => Request()->username,
+            'email' => Request()->email,
             'password' => Hash::make(
                 Request()->password
             ),
@@ -486,7 +492,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('mhsList')->with('pesan', 'Added new data !');
+        return redirect()->route('mhsList')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
     public function deleteMhs($id)
@@ -497,7 +503,7 @@ class AdminController extends Controller
 
         $mhs->delete();
         $user->delete();
-        return redirect()->route('mhsList')->with('pesan', 'Deleted a data !');
+        return redirect()->route('mhsList')->with('pesan', 'Data berhasil dihapus !');
     }
     public function editMhs($id)
     {
@@ -568,7 +574,7 @@ class AdminController extends Controller
             $user->username = Request()->username;
             $user->save();
         }
-        return redirect()->route('mhsDetail', $id)->with('pesan', 'Updated a data !');
+        return redirect()->route('mhsDetail', $id)->with('pesan', 'Data berhasil diubah!');
     }
     public function editMhsPassword($id)
     {
@@ -651,6 +657,7 @@ class AdminController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,',
             'id_prodi' => 'required',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
@@ -672,12 +679,16 @@ class AdminController extends Controller
         $dosen = Dosen::create([
             'nama' => Request()->name,
             'nip' => Request()->username,
+            'tmp_lahir' => Request()->birthplace,
+            'tgl_lahir' => Request()->date,
+            'alamat' => Request()->address,
             'img_url' =>  $img_url,
             'prodi_id' => Request()->id_prodi,
         ]);
 
         User::create([
             'username' => Request()->username,
+            'email' => Request()->email,
             'password' => Hash::make(
                 Request()->password
             ),
@@ -686,7 +697,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('dosenList')->with('pesan', 'Added new data !');
+        return redirect()->route('dosenList')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
     public function deleteDosen($id)
@@ -697,7 +708,7 @@ class AdminController extends Controller
 
         $dosen->delete();
         $user->delete();
-        return redirect()->route('dosenList')->with('pesan', 'Deleted a data !');
+        return redirect()->route('dosenList')->with('pesan', 'Data berhasil dihapus !');
     }
     public function editDosen($id)
     {
@@ -768,7 +779,7 @@ class AdminController extends Controller
             $dosen->nip = Request()->username;
             $user->save();
         }
-        return redirect()->route('dosenDetail', $id)->with('pesan', 'Updated a data !');
+        return redirect()->route('dosenDetail', $id)->with('pesan', 'Data berhasil diubah!');
     }
     public function editDosenPassword($id)
     {
@@ -848,6 +859,7 @@ class AdminController extends Controller
         Request()->validate([
             // 'id' => 'required|unique:teacher,id|min:10|max:10',
             'name' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email,',
             'instansi' => 'required',
             'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
@@ -870,11 +882,16 @@ class AdminController extends Controller
             'nama' => Request()->name,
             'instansi' => Request()->instansi,
             'rev_id' => Request()->username,
+            'tmp_lahir' => Request()->birthplace,
+            'tgl_lahir' => Request()->date,
+            'alamat' => Request()->address,
+
             'img_url' =>  $img_url,
         ]);
 
         User::create([
             'username' => Request()->username,
+            'email' => Request()->email,
             'password' => Hash::make(
                 Request()->password
             ),
@@ -883,7 +900,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect()->route('reviewerList')->with('pesan', 'Added new data !');
+        return redirect()->route('reviewerList')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
     public function deleteReviewer($id)
@@ -900,7 +917,7 @@ class AdminController extends Controller
 
         $reviewer->delete();
         $user->delete();
-        return redirect()->route('reviewerList')->with('pesan', 'Deleted a data !');
+        return redirect()->route('reviewerList')->with('pesan', 'Data berhasil dihapus !');
     }
     public function editReviewer($id)
     {
@@ -972,7 +989,7 @@ class AdminController extends Controller
             $reviewer->nip = Request()->username;
             $user->save();
         }
-        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Updated a data !');
+        return redirect()->route('reviewerDetail', $id)->with('pesan', 'Data berhasil diubah!');
     }
     public function editReviewerPassword($id)
     {
