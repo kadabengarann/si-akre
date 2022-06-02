@@ -28,7 +28,7 @@
                                     id="username-input" class="form-control @error('username') is-invalid @enderror"
                                     placeholder="ID Number" name="username" value="{{ old('username') }}">
                                 <small id="passwordHelpBlock" class="form-text text-muted">
-                                    ID digunakan untuk username login user.
+                                    *NIM/NIP <br> digunakan untuk username login user.
                                 </small>
                                 <div class="invalid-feedback">
                                     @error('username')
@@ -36,7 +36,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name"
                                     value="{{ old('name') }}">
@@ -46,12 +46,22 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Email"
+                                    value="{{old('email')}}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">Program Studi</label>
                                 <select class="form-control @error('id_prodi') is-invalid @enderror" id="subject"
                                     name="id_prodi" value="{{ old('id_prodi') }}">
-                                    <option value="" selected disabled hidden>Choose here</option>
+                                    <option value="" selected hidden>Choose here</option>
                                     @foreach ($prodi as $m)
                                         <option value="{{ $m->id }}">{{ $m->nama }}</option>
                                     @endforeach
@@ -85,7 +95,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Address</label><textarea
+                            <div class="col-md-12"><label class="labels">Alamat</label><textarea
                                     class="form-control @error('address') is-invalid @enderror" rows="3"
                                     placeholder="Alamat" name="address">{{ old('address') }}</textarea>
                                 <div class="invalid-feedback">
@@ -125,7 +135,7 @@
                     <div class="p-3 py-5">
                         <img src="" alt="" srcset="" width="200px">
                         <div class="form-group">
-                            <b>Edit Foto Profile</b><br />
+                            <b>Foto Profil</b><br />
                             <input type="file" class="form-control" name="foto_mhs">
                             <div class="text-danger">
                                 @error('foto_mhs')
@@ -135,7 +145,7 @@
                         </div>
                         <div class="mt-5 text-center">
                             <button class="btn btn-success profile-button" name="save_record" type="submit"
-                                value="save_record"><i class="far fa-user-plus"></i> Add</button>
+                                value="save_record"><i class="fas fa-user-plus"></i> Add</button>
                         </div>
 
                     </div>

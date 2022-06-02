@@ -50,7 +50,7 @@
                             
                             <div class="col-md-12 mt-3">
                                 <label class="labels">Alamat email</label><input type="text"
-                                    class="form-control @error('email') is-invalid @enderror" placeholder="Nama"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Email"
                                     value="{{old('email') ? old('email'): $userData->email }}" name="email">
                                 <div class="invalid-feedback">
                                     @error('email')

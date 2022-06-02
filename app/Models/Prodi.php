@@ -12,7 +12,10 @@ class Prodi extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     protected $table = 'prodi';
-    protected $fillable = ['nama'];
+    protected $fillable = [
+        'nama',
+        'email'
+    ];
 
 
     public function getProdiID()

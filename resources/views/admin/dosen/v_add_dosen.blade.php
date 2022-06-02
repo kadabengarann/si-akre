@@ -28,7 +28,7 @@
                                     id="username-input" class="form-control @error('username') is-invalid @enderror"
                                     placeholder="ID Number" name="username" value="{{ old('username') }}">
                                 <small id="passwordHelpBlock" class="form-text text-muted">
-                                    ID digunakan untuk username login user.
+                                   *NIM/NIP <br> digunakan untuk username login user.
                                 </small>
                                 <div class="invalid-feedback">
                                     @error('username')
@@ -36,12 +36,22 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <label class="labels">Nama</label><input type="text"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name"
                                     value="{{ old('name') }}">
                                 <div class="invalid-feedback">
                                     @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="labels">Alamat email</label><input type="text"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Email"
+                                    value="{{old('email')}}" name="email">
+                                <div class="invalid-feedback">
+                                    @error('email')
                                         {{ $message }}
                                     @enderror
                                 </div>
@@ -135,7 +145,7 @@
                         </div>
                         <div class="mt-5 text-center">
                             <button class="btn btn-success profile-button" name="save_record" type="submit"
-                                value="save_record"><i class="far fa-user-plus"></i> Add</button>
+                                value="save_record"><i class="fas fa-user-plus"></i> Add</button>
                         </div>
 
                     </div>

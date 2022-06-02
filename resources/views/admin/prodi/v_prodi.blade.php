@@ -21,7 +21,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Table Program Studi</h3>
+            <h3 class="card-title">Tabel Program Studi</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -57,13 +57,13 @@
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="confirmModalLabel">Delete confirmation</h5>
+                        <h5 class="modal-title" id="confirmModalLabel">Konfirmasi hapus</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        Are you sure want to delete {{ $data->name }} ??
+                        Apakah Anda yakin ingin menghapus <b>{{ $data->nama }}</b> ??
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
@@ -85,7 +85,7 @@
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
                 paging: true,
-                searching: false,
+                searching: true,
                 processing: true,
                 serverSide: true,
                 autoWidth: false,
