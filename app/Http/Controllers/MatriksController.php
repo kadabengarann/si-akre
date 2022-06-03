@@ -55,7 +55,7 @@ class MatriksController extends Controller
         $matriksSumProdi = Matriks::getSummary($prodi->id, $prodi->id);
         $matriksSumReviewers = Matriks::getSummaryAllRev($prodi->id);
 
-        // return $matriksSumEveryRev;
+        // return $matriksSumReviewers;
         $data = [
             'prodi' => $prodi,
             'dataMatriks' => $matriksSum,
@@ -150,21 +150,17 @@ class MatriksController extends Controller
                 $rev_id = $prodi->id;
                 $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
                 $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
-
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
                 $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
                 $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id, $rev_id);
-
             }
-
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
             $rev_id = $prodi->id;
             $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
             //get Allcomment
             $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
- 
         }
         $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
         $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
@@ -189,9 +185,8 @@ class MatriksController extends Controller
         $row_id =  $request->query('id');
         $prodi_id =  $request->query('prodi');
 
-        $matriksComments = Matriks::getAllComment($row_id ,$prodi_id, $rev_id);
+        $matriksComments = Matriks::getAllComment($row_id, $prodi_id, $rev_id);
         return $matriksComments;
-
     }
 
     public function postKomentar(Request $request)
@@ -215,8 +210,11 @@ class MatriksController extends Controller
             );
             Matriks::create($data);
         }
-        return response()->json(['success' => 'Komentar matriks berhasil disimpan!',
-            'value' => $request->comment]);    }
+        return response()->json([
+            'success' => 'Komentar matriks berhasil disimpan!',
+            'value' => $request->comment
+        ]);
+    }
     public function prev_num($id)
     {
         $is = $id[0];

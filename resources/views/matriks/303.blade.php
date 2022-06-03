@@ -345,6 +345,7 @@
                             </tr>
                         </div>
                         @php($row_id = 334)
+                        @php($lkps = 301)
                         <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
