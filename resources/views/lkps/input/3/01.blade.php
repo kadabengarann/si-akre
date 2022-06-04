@@ -88,7 +88,7 @@
                                     <div class="form-group row">
                                         <label for="dy_tmpng" class="col-sm-2 col-form-label">Daya Tampung</label>
                                         <div class="col-sm-10">
-                                            <input type="number" name="dy_tmpng" class="form-control hide_num" id="dy_tmpng"
+                                            <input type="number" max="2147483647" min="0" name="dy_tmpng" class="form-control hide_num" id="dy_tmpng"
                                                 placeholder="" min="0" value="">
                                             <input type="hidden" name="id_ta" class="form-control" id="id_ta"
                                                 value="ts_{{ $tsYear - $i }}_{{ $prodi->id }}">
@@ -109,7 +109,7 @@
                                             <div class="form-group row">
                                                 <label for="jcm_pendftr" class="col-sm-2 col-form-label">Pendaftar</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jcm_pendftr" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jcm_pendftr" class="form-control hide_num"
                                                         id="jcm_pendftr" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
@@ -117,7 +117,7 @@
                                                 <label for="jcm_lulus" class="col-sm-2 col-form-label">Lulus
                                                     Sleksi</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jcm_lulus" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jcm_lulus" class="form-control hide_num"
                                                         id="jcm_lulus" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
@@ -134,14 +134,14 @@
                                             <div class="form-group row">
                                                 <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jmb_reg" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jmb_reg" class="form-control hide_num"
                                                         id="jmb_reg" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <label for="jmb_transfer" class="col-sm-2 col-form-label">Transfer</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jmb_transfer" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jmb_transfer" class="form-control hide_num"
                                                         id="jmb_transfer" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
@@ -158,14 +158,14 @@
                                             <div class="form-group row">
                                                 <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jma_reg" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jma_reg" class="form-control hide_num"
                                                         id="jma_reg" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <label for="jma_transfer" class="col-sm-2 col-form-label">Transfer</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" name="jma_transfer" class="form-control hide_num"
+                                                    <input type="number" max="2147483647" min="0" name="jma_transfer" class="form-control hide_num"
                                                         id="jma_transfer" placeholder="" min="0" value="">
                                                 </div>
                                             </div>
@@ -210,7 +210,7 @@
                                         <div class="form-group row">
                                             <label for="dy_tmpng" class="col-sm-2 col-form-label">Daya Tampung</label>
                                             <div class="col-sm-10">
-                                                <input type="number" name="dy_tmpng" class="form-control hide_num"
+                                                <input type="number" max="2147483647" min="0" name="dy_tmpng" class="form-control hide_num"
                                                     id="dy_tmpng" placeholder="" min="0" value="{{ $row->dy_tmpng }}">
                                                 <input type="hidden" name="id_ta" class="form-control" id="id_ta"
                                                     value="ts_{{ $tsYear - $count }}_{{ $prodi->id }}">
@@ -232,7 +232,7 @@
                                                     <label for="jcm_pendftr"
                                                         class="col-sm-2 col-form-label">Pendaftar</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jcm_pendftr"
+                                                        <input type="number" max="2147483647" min="0" max="2147483647" min="0" name="jcm_pendftr"
                                                             class="form-control hide_num" id="jcm_pendftr" placeholder=""
                                                             min="0" value="{{ $row->jcm_pendftr }}">
                                                     </div>
@@ -241,7 +241,7 @@
                                                     <label for="jcm_lulus" class="col-sm-2 col-form-label">Lulus
                                                         Sleksi</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jcm_lulus" class="form-control hide_num"
+                                                        <input type="number" max="2147483647" min="0" name="jcm_lulus" class="form-control hide_num"
                                                             id="jcm_lulus" placeholder="" min="0"
                                                             value="{{ $row->jcm_lulus }}">
                                                     </div>
@@ -259,7 +259,7 @@
                                                 <div class="form-group row">
                                                     <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jmb_reg" class="form-control hide_num"
+                                                        <input type="number" max="2147483647" min="0" name="jmb_reg" class="form-control hide_num"
                                                             id="jmb_reg" placeholder="" min="0"
                                                             value="{{ $row->jmb_reg }}">
                                                     </div>
@@ -268,7 +268,7 @@
                                                     <label for="jmb_transfer"
                                                         class="col-sm-2 col-form-label">Transfer</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jmb_transfer"
+                                                        <input type="number" max="2147483647" min="0" name="jmb_transfer"
                                                             class="form-control hide_num" id="jmb_transfer" placeholder=""
                                                             min="0" value="{{ $row->jmb_transfer }}">
                                                     </div>
@@ -286,7 +286,7 @@
                                                 <div class="form-group row">
                                                     <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jma_reg" class="form-control hide_num"
+                                                        <input type="number" max="2147483647" min="0" name="jma_reg" class="form-control hide_num"
                                                             id="jma_reg" placeholder="" min="0"
                                                             value="{{ $row->jma_reg }}">
                                                     </div>
@@ -295,7 +295,7 @@
                                                     <label for="jma_transfer"
                                                         class="col-sm-2 col-form-label">Transfer</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" name="jma_transfer"
+                                                        <input type="number" max="2147483647" min="0" name="jma_transfer"
                                                             class="form-control hide_num" id="jma_transfer" placeholder=""
                                                             min="0" value="{{ $row->jma_transfer }}">
                                                     </div>
