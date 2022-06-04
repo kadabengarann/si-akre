@@ -206,7 +206,7 @@
                     <div class="icon">
                         <i class="far fa-chart-bar"></i>
                     </div>
-                    <a href="/lkps" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/lkps" class="small-box-footer">Info selanjutnya <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4">
@@ -220,7 +220,7 @@
                     <div class="icon">
                         <i class="far fa-chart-bar"></i>
                     </div>
-                    <a href="/led" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/led" class="small-box-footer">Info selanjutnya <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4">
@@ -234,7 +234,7 @@
                     <div class="icon">
                         <i class="nav-icon fas fa-pen"></i>
                     </div>
-                    <a href="/matriks" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/matriks" class="small-box-footer">Info selanjutnya <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
