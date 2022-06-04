@@ -355,7 +355,9 @@
             @endif
             $('#tbl_lists').DataTable({
                 responsive: true,
-
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
             });
             $('#tbl_lists tbody').on('click', ' tr .delete_confirm', function() {
                 event.preventDefault();

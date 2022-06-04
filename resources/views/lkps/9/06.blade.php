@@ -135,6 +135,9 @@
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
                 paging: true,
                 searching: true,
                 processing: true,
