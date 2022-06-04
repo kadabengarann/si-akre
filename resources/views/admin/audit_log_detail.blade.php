@@ -107,9 +107,9 @@
                     <table id="tbl_list" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Attribute</th>
-                                <th>Old value</th>
-                                <th>New value</th>
+                                <th>Atribut</th>
+                                <th>Nilai lama</th>
+                                <th>Nilai baru</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -140,9 +140,9 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Attribute</th>
-                                <th>Old value</th>
-                                <th>New value</th>
+                                <th>Atribut</th>
+                                <th>Nilai lama</th>
+                                <th>Nilai baru</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -193,6 +193,9 @@
         // console.log($('#tbl_list'));
         $(document).ready(function() {
             $('#tbl_list').DataTable({
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,
