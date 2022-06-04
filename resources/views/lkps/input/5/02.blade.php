@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
         </ol>
     </div><!-- /.col -->
@@ -176,7 +176,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -262,7 +262,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -348,7 +348,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -434,7 +434,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -521,7 +521,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -607,7 +607,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>                    </div>
@@ -692,7 +692,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -778,7 +778,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -864,7 +864,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -950,7 +950,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -1036,7 +1036,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>

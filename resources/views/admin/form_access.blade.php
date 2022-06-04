@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
-        <h1 class="m-0 font-weight-normal">Form Access</h1>
+        <h1 class="m-0 font-weight-normal">Akses Form</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item active">Beranda</li>
         </ol>
     </div><!-- /.col -->
 @endsection

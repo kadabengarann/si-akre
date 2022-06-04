@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
         </ol>
     </div><!-- /.col -->
@@ -119,7 +119,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -180,7 +180,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -241,7 +241,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>

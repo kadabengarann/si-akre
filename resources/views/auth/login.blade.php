@@ -69,20 +69,13 @@
                                   mb-0
                                 "
                               >
-                                <a class="small" href="password/reset">Forgot Password?</a>
+                                <a class="small" href="password/reset">Lupa Password?</a>
                                 <button type="submit" class="btn btn-primary">
                                   Login
                                 </button>
                               </div>
                             </form>
                           </div>
-                          {{-- <div class="card-footer text-center">
-                            <div class="small">
-                              <a href="{{ route('register') }}"
-                                >Need an account? Register now!</a
-                              >
-                            </div>
-                          </div> --}}
                         </div>
                       </div>
                     </div>
@@ -102,11 +95,6 @@
                     >
                       <div class="text-muted">
                         Copyright &copy; SI - Akre 2022
-                      </div>
-                      <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
                       </div>
                     </div>
                   </div>
