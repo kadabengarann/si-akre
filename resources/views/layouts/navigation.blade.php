@@ -139,7 +139,7 @@
                with font-awesome or any other icon font library -->
                  @if (Auth::user()->level == 5 || Auth::user()->level == 3 || Auth::user()->level == 4)
                  @else
-                     <li class="nav-header">HOME</li>
+                     <li class="nav-header">Beranda</li>
                      <li class="nav-item">
                          <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
 
