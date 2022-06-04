@@ -101,7 +101,7 @@
                  </div>
              @elseif (Auth::user()->level == 2)
                  <div class="image d-flex align-items-center">
-                     <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
+                     <img src="{{ asset('img') }}/logo.png" class="img-circle elevation-2" alt="User Image">
                  </div>
                  <div class="info">
 

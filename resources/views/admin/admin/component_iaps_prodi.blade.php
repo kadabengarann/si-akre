@@ -34,13 +34,13 @@
                         </div>
                         <div class="card-body">
                             <div class="row m-1">
-                                <a href="/lkps?id={{ $p->id }}" class="btn btn-success col-md-4">LKPS</a>
+                                <a href="/lkps?id={{ $p->id }}" class="btn btn-success col-md-12">LKPS</a>
                             </div>
                             <div class="row m-1">
-                                <a href="/led?id={{ $p->id }}" class="btn btn-secondary col-md-4">LED</a>
+                                <a href="/led?id={{ $p->id }}" class="btn btn-secondary col-md-12">LED</a>
                             </div>
                             <div class="row m-1">
-                                <a href="/matriks?id={{ $p->id }}" class="btn btn-primary col-md-4">Matriks
+                                <a href="/matriks?id={{ $p->id }}" class="btn btn-primary col-md-12">Matriks
                                     Penilaian</a>
                             </div>
 
