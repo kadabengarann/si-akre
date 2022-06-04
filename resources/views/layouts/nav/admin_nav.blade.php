@@ -59,7 +59,7 @@
 
         <i class="nav-icon fas fa-user-lock"></i>
         <p>
-            Form Access
+            Akses Form
         </p>
     </a>
 </li>
