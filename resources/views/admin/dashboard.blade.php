@@ -24,10 +24,10 @@
                     <table id="tbl_list" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Timestamp</th>
+                                <th>Waktu</th>
                                 <th>Event</th>
-                                <th>User</th>
-                                <th>Auditable type</th>
+                                <th>Pengguna</th>
+                                <th>Nama tabel</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -35,10 +35,10 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Timestamp</th>
+                                <th>Waktu</th>
                                 <th>Event</th>
-                                <th>User</th>
-                                <th>Auditable type</th>
+                                <th>Pengguna</th>
+                                <th>Nama tabel</th>
                                 <th></th>
                             </tr>
                         </tfoot>
@@ -60,6 +60,9 @@
         // console.log($('#tbl_list'));
         $(document).ready(function() {
             $('#tbl_list').DataTable({
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
                 "aLengthMenu": [
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
