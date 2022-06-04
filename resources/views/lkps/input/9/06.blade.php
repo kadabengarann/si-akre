@@ -72,14 +72,14 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah Publikasi bertema INFOKOM</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->pub_infokom ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->pub_infokom ?? '' }}" class="form-control" placeholder="0"
                             name="pub_infokom">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah Penelitian bertema INFOKOM</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->pen_infokom ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->pen_infokom ?? '' }}" class="form-control" placeholder="0"
                             name="pen_infokom">
                     </div>
                 </div>
@@ -88,14 +88,14 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah Penelitian bertema INFOKOM yang mendapat HKI</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->pen_infokomHKI ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->pen_infokomHKI ?? '' }}" class="form-control" placeholder="0"
                             name="pen_infokomHKI">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah PkM bertema INFOKOM yang diadopsi masyarakat</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->pkm_infokomadop ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->pkm_infokomadop ?? '' }}" class="form-control" placeholder="0"
                             name="pkm_infokomadop">
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Jumlah PKM bertema INFOKOM yang mendapat HKI</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->pkm_infokomhki ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->pkm_infokomhki ?? '' }}" class="form-control" placeholder="0"
                             name="pkm_infokomhki">
                     </div>
                 </div>
