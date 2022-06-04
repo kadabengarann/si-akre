@@ -39,7 +39,7 @@
                               <div class="form-group">
                                 <div class="form-group">
                                 <label class="small mb-1" for="username">Username</label>
-                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="Enter NIP" required autocomplete="email" autofocus>
+                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="Masukkan username" autocomplete="email" autofocus>
     
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                                     <label class="small mb-1" for="password"
                                     >Password</label
                                   >
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter password" required autocomplete="current-password">
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan password" autocomplete="current-password">
         
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">

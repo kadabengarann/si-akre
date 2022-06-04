@@ -111,8 +111,10 @@ class Matriks extends Model implements Auditable
         $revs = DB::table('reviewer')
             ->join('users', 'users.rev_id', '=', 'reviewer.id')
             ->select('users.id')
+            ->orderBy('id', 'ASC')
             ->get();
 
+        // return $revs;
         foreach ($revs as $n) {
             $matriks = DB::table('matriks')
                 ->where('prodi_id', $prodi_id)
@@ -122,6 +124,7 @@ class Matriks extends Model implements Auditable
                 ->get();
             array_push($array1, $matriks);
         }
+
         // $matriks = DB::table('matriks')
         //     ->where('prodi_id', $prodi_id)
         //     ->select(DB::raw('t_group, sum(skor) as skor , count(*) - count(skor) + count(*) - count(bukti) as remainingField'))
@@ -168,7 +171,7 @@ class Matriks extends Model implements Auditable
             $rows = DB::table('matriks')
                 ->where('prodi_id', $prodi_id)
                 ->where('user_id', $rev_id)
-                -> where('komentar', '!=', '')
+                ->where('komentar', '!=', '')
                 ->whereNotNull('komentar')
                 ->select('row_id')
                 ->groupBy('row_id')

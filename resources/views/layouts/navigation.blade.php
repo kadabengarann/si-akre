@@ -137,7 +137,7 @@
                  data-accordion="false">
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                 @if (Auth::user()->level == 5)
+                 @if (Auth::user()->level == 5 || Auth::user()->level == 3 || Auth::user()->level == 4)
                  @else
                      <li class="nav-header">HOME</li>
                      <li class="nav-item">

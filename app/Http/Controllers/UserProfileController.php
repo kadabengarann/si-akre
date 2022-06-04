@@ -110,15 +110,7 @@ class UserProfileController extends Controller
 
             return view('mhs.edit_profile', $data);
         } elseif (Auth::user()->level == 5) {
-            $id_rev = auth()->user()->rev_id;
-            $id_user = auth()->user()->id;
-
-            $data = [
-                'reviewer' => Reviewer::find($id_rev),
-                'userData' => User::find($id_user),
-            ];
-
-            return view('reviewer.edit_profile', $data);
+            return redirect('/');
         }
     }
     public function editPassword()
