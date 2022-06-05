@@ -44,7 +44,7 @@
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
                              @csrf
                              <button class=" btn btn-flat" type="submit">
-                                 <i class="fas fa-sign-out-alt"></i> Logout
+                                 <i class="fas fa-sign-out-alt"></i> Keluar
                              </button>
                          </form>
                      </div>
@@ -101,7 +101,7 @@
                  </div>
              @elseif (Auth::user()->level == 2)
                  <div class="image d-flex align-items-center">
-                     <img src="{{ asset('img') }}/profile.jpg" class="img-circle elevation-2" alt="User Image">
+                     <img src="{{ asset('img') }}/logo.png" class="img-circle elevation-2" alt="User Image">
                  </div>
                  <div class="info">
 
@@ -137,9 +137,9 @@
                  data-accordion="false">
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                 @if (Auth::user()->level == 5)
+                 @if (Auth::user()->level == 5 || Auth::user()->level == 3 || Auth::user()->level == 4)
                  @else
-                     <li class="nav-header">HOME</li>
+                     <li class="nav-header">Beranda</li>
                      <li class="nav-item">
                          <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
 

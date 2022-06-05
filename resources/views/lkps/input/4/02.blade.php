@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
         </ol>
     </div><!-- /.col -->
@@ -87,14 +87,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s2">
                                                 </div>
                                             </div>
@@ -103,14 +103,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D4</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d4 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d4 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d4">
                                                 </div>
                                             </div>
@@ -119,14 +119,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d2">
                                                 </div>
                                             </div>
@@ -135,14 +135,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">SMA/SMK</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_sm ?? '' }}"
+                                                    <input  type="number" max="2147483647" min="0" max="2147483647" min="0" value="{{ $tabData->jtk_sm ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_sm">
                                                 </div>
                                             </div>
@@ -163,7 +163,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -199,14 +199,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s3 ?? '' }}"
+                                                    <input  type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s2 ?? '' }}"
+                                                    <input  type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s2">
                                                 </div>
                                             </div>
@@ -215,14 +215,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D4</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d4 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d4 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d4">
                                                 </div>
                                             </div>
@@ -231,14 +231,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d2">
                                                 </div>
                                             </div>
@@ -247,14 +247,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">SMA/SMK</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_sm ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_sm ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_sm">
                                                 </div>
                                             </div>
@@ -275,7 +275,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -311,14 +311,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s2">
                                                 </div>
                                             </div>
@@ -327,14 +327,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D4</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d4 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d4 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d4">
                                                 </div>
                                             </div>
@@ -343,14 +343,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d2">
                                                 </div>
                                             </div>
@@ -359,14 +359,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">SMA/SMK</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_sm ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_sm ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_sm">
                                                 </div>
                                             </div>
@@ -387,7 +387,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -423,14 +423,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s2">
                                                 </div>
                                             </div>
@@ -439,14 +439,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">S1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_s1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_s1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_s1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D4</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d4 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d4 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d4">
                                                 </div>
                                             </div>
@@ -455,14 +455,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D3</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d3 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d3 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d3">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D2</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d2 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d2 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d2">
                                                 </div>
                                             </div>
@@ -471,14 +471,14 @@
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">D1</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_d1 ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_d1 ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_d1">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6 row p-2">
                                                 <label for="inputEmail3" class="pl-2 col-sm-6">SMA/SMK</label>
                                                 <div class="col-sm-6 input-group">
-                                                    <input type="number" value="{{ $tabData->jtk_sm ?? '' }}"
+                                                    <input type="number" max="2147483647" min="0" value="{{ $tabData->jtk_sm ?? '' }}"
                                                         class="form-control" placeholder="0" name="jtk_sm">
                                                 </div>
                                             </div>
@@ -499,7 +499,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>

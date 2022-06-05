@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Laporan Kinerja Program Studi</li>
         </ol>
     </div><!-- /.col -->
@@ -135,7 +135,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -144,7 +144,7 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -154,7 +154,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -163,7 +163,7 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -176,7 +176,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -221,7 +221,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -230,7 +230,7 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -240,7 +240,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -249,7 +249,7 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -262,7 +262,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -307,7 +307,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -316,7 +316,7 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -326,7 +326,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -335,7 +335,7 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -348,7 +348,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -393,7 +393,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -402,7 +402,7 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -412,7 +412,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -421,7 +421,7 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -434,7 +434,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -480,7 +480,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -489,7 +489,7 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -499,7 +499,7 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -508,7 +508,7 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -521,7 +521,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -566,7 +566,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -575,7 +575,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -585,7 +585,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -594,7 +594,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -607,7 +607,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>                    </div>
@@ -651,7 +651,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -660,7 +660,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -670,7 +670,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -679,7 +679,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -692,7 +692,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -737,7 +737,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -746,7 +746,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -756,7 +756,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -765,7 +765,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -778,7 +778,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -823,7 +823,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -832,7 +832,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -842,7 +842,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -851,7 +851,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -864,7 +864,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -909,7 +909,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -918,7 +918,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -928,7 +928,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -937,7 +937,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -950,7 +950,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>
@@ -995,7 +995,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_sm ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_sm">
                                                     </div>
                                                 </div>
@@ -1004,7 +1004,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komtj ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komtj">
                                                     </div>
                                                 </div>
@@ -1014,7 +1014,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komlan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komlan">
                                                     </div>
                                                 </div>
@@ -1023,7 +1023,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" value="{{ $tabData->sppdd_komwan ?? '' }}"
+                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
                                                             class="form-control" placeholder="0" name="sppdd_komwan">
                                                     </div>
                                                 </div>
@@ -1036,7 +1036,7 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Cancel</a>
+                                <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}" class="btn btn-default float-right">Batal</a>
                             </div>
                             <!-- /.card-footer -->
                         </form>

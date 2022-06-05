@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Profil Akun</li>
         </ol>
     </div><!-- /.col -->
@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-sm-3">
                                             <div class="mt-5 text-left">
                                                 <a class="btn btn-secondary" href='/profile/edit'><i
@@ -103,7 +103,7 @@
                                                         class="fas fa-key"></i> Ubah Password</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
