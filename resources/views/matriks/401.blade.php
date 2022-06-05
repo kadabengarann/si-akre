@@ -30,7 +30,7 @@
                         <tr>
                             <th rowspan="2">No Butir</th>
                             <th rowspan="2" class="p_elem">Elemen</th>
-                            <th rowspan="2">Lokasi
+                            <th rowspan="2">Dokumen Borang
                             </th>
                             <th rowspan="2" class="p_indi">Deskriptor
                             </th>
