@@ -57,7 +57,7 @@
                             </tr>
 
                             @php($row_id = 341)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     32
@@ -160,7 +160,7 @@
                             </tr>
 
                             @php($row_id = 342)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     33
@@ -259,7 +259,7 @@
                             </tr>
 
                             @php($row_id = 343)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     34
@@ -358,7 +358,7 @@
                             </tr>
 
                             @php($row_id = 344)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     35
@@ -472,7 +472,7 @@
                                     <th colspan="11" class="nilai">4.2 [PELAKSANAAN]</th>
                                 </tr>
                                 @php($row_id = 345)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         36
@@ -581,7 +581,7 @@
 
 
                                 @php($row_id = 346)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         37
@@ -680,7 +680,7 @@
                                 </tr>
 
                                 @php($row_id = 347)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         38
@@ -780,7 +780,7 @@
                                 </tr>
 
                                 @php($row_id = 348)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         39
