@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Permission;
 use App\Models\Prodi;
 use App\Models\Lkps\{
+    Jcmb,
     Reratadtpr,
     Sarpra,
     Pnpkm,
@@ -53,7 +54,7 @@ class DataLkpsController extends Controller
     public function insertLkps($id, Request $request){
         switch ($id) {
             case '301':
-                # code...
+                return $this->insertJcmb($request);
                 break;
             case '401':
                 return $this->insertReretadtpr($request);
@@ -82,7 +83,7 @@ class DataLkpsController extends Controller
     public function deleteLkps($tableId, $id, Request $request){
         switch ($tableId) {
             case '301':
-                # code...
+                return $this->deleteJcmb($id, $request);
                 break;
             case '401':
                 return $this->deleteReretadtpr($id, $request);
@@ -111,7 +112,7 @@ class DataLkpsController extends Controller
     {
         switch ($id) {
             case '301':
-                # code...
+                return $this->editJcmb($id, $request);
                 break;
             case '401':
                 return $this->editReretadtpr($id, $request);
@@ -141,6 +142,67 @@ class DataLkpsController extends Controller
 
         $data = [
             'idTable' => $id
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+    // -------------------------301 JCMB------------------------------
+    private function insertJcmb(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Jcmb::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'ta' => $request->ta,
+                'dy_tmpng' => ($request->dy_tmpng ? $request->dy_tmpng : 0),
+                'jcm_pendftr' => ($request->jcm_pendftr ? $request->jcm_pendftr : 0),
+                'jcm_lulus' => ($request->jcm_lulus ? $request->jcm_lulus : 0),
+                'jmb_reg' => ($request->jmb_reg ? $request->jmb_reg : 0),
+                'jmb_transfer' => ($request->jmb_transfer ? $request->jmb_transfer : 0),
+                'jma_reg' => ($request->jma_reg ? $request->jma_reg : 0),
+                'jma_transfer' => ($request->jma_transfer ? $request->jma_transfer : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/301' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteJcmb($id, Request $request)
+    {
+        $data = Jcmb::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/301' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editJcmb($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Jcmb::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
         ];
         if (in_array(Auth::user()->level, $permit)) {
             if ($id < 111) {
@@ -258,7 +320,7 @@ class DataLkpsController extends Controller
     {
         $form = Permission::find($id);
         $permit = json_decode($form->access, true);
-        $dataItem = Sarpra::find($request->id);
+        $dataItem = Ktk::find($request->id);
         $prodi = $dataItem->prodi_id;
         // return $dataItem->nm_dosen;
         $data = [

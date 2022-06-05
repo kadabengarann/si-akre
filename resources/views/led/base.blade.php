@@ -194,7 +194,7 @@
 
 
         function cancel() {
-            $('#input_value').summernote('destroy');
+            $('#area-input').hide();
             $('#edit_btn').show();
             $('#save_btn').hide();
             $('#cancel_btn').hide();
