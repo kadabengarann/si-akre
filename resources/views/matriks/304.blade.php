@@ -894,7 +894,7 @@
                                         <th colspan="11" class="nilai">4.3 [EVALUASI]</th>
                                     </tr>
                                     @php($row_id = 349)
-                                    <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                    <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                         data-id="{{ $row_id }}">
                                         <td class="matriks_id" data-id="{{ $row_id }}">
                                             40
@@ -1013,7 +1013,7 @@
                                         </tr>
 
                                         @php($row_id = 3410)
-                                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                             data-id="{{ $row_id }}">
                                             <td class="matriks_id" data-id="{{ $row_id }}">
                                                 41
@@ -1129,7 +1129,7 @@
                                             </tr>
 
                                             @php($row_id = 3411)
-                                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} "
+                                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                                 data-id="{{ $row_id }}">
                                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                                     42
