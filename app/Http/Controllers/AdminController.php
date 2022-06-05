@@ -141,7 +141,7 @@ class AdminController extends Controller
                 "id" => null,
                 "username" => "deleted user",
             ];
-        }else{
+        } else {
             $user_role = $roles[$user->level - 1];
             if ($user->level == 1) {
                 $user_url = '#';
@@ -1037,12 +1037,12 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc,dns|unique:users,email,' . auth()->user()->id,
         ]);
-        
-            $userData->name = Request()->name;
-            $userData->email = Request()->email;
-            $userData->save();
 
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+        $userData->name = Request()->name;
+        $userData->email = Request()->email;
+        $userData->save();
+
+        return redirect()->route('pageProfile')->with('pesan', 'Profil diubah!');
     }
     public function updateCredential()
     {

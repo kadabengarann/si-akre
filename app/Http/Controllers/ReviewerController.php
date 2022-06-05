@@ -86,7 +86,7 @@ class ReviewerController extends Controller
         } else {
             $userData->email = Request()->email;
             $userData->save();
-            
+
             $reviewer->nama = Request()->name;
             $reviewer->instansi = Request()->instansi;
             $reviewer->alamat = Request()->address;
@@ -95,7 +95,7 @@ class ReviewerController extends Controller
             $reviewer->save();
         }
 
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+        return redirect()->route('pageProfile')->with('pesan', 'Profil diubah!');
     }
     public function updateCredential()
     {
