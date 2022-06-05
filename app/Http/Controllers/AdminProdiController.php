@@ -60,7 +60,7 @@ class AdminProdiController extends Controller
         $prodi->akreditasi = Request()->akreditasi;
         $prodi->no_sk_ban_pt = Request()->no_sk_ban_pt;
         $prodi->save();
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated successfully!');
+        return redirect()->route('pageProfile')->with('pesan', 'Profil berhasil diubah!');
     }
 
     public function updateCredential()

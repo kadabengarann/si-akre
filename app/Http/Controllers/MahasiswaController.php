@@ -91,7 +91,7 @@ class MahasiswaController extends Controller
             $mhs->save();
             $userData->save();
         }
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated !'. $userData->email);
+        return redirect()->route('pageProfile')->with('pesan', 'Profil diubah !'. $userData->email);
     }
     public function updateCredential()
     {

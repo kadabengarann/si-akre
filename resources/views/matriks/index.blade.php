@@ -32,7 +32,7 @@
                         <div class="col-12 col-lg-6 text-right">
                             <a class="btn btn-info"
                                 href="/matriks/cetak_pdf{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}"
-                                target="_blank">Export PDF</a>
+                                target="_blank">Ubah PDF</a>
                         </div>
                     </div>
                 </div>

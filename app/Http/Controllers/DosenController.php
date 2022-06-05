@@ -89,7 +89,7 @@ class DosenController extends Controller
             $dosen->save();
             $userData->save();
         }
-        return redirect()->route('pageProfile')->with('pesan', 'Profile updated!');
+        return redirect()->route('pageProfile')->with('pesan', 'Profil diubah!');
     }
     public function updateCredential()
     {

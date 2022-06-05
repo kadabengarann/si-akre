@@ -46,7 +46,7 @@
 
                 </div>
                 <div class="card-footer clearfix">
-                    <a href="/audit-log" class="btn btn-primary float-right"><i class="fas fa-eye"></i> Show more</a>
+                    <a href="/audit-log" class="btn btn-primary float-right"><i class="fas fa-eye"></i> Tampilkan lebih banyak</a>
                 </div>
             </div>
         </section>

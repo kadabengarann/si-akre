@@ -177,7 +177,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data updated successfully !');
+        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deleteReretadtpr($id, Request $request){
         $data = Reratadtpr::find($id);
@@ -186,7 +186,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
 
     }
     private function editReretadtpr($id, Request $request)
@@ -242,7 +242,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data updated successfully !');
+        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deleteKtk($id, Request $request)
     {
@@ -252,7 +252,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/402' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
     }
     private function editKtk($id, Request $request)
     {
@@ -301,7 +301,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data updated successfully !');
+        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deleteAddsi($id, Request $request)
     {
@@ -311,7 +311,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/502' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
     }
     private function editAddsi($id, Request $request)
     {
@@ -360,7 +360,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data updated successfully!');
+        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deleteSarpra($id, Request $request)
     {
@@ -370,7 +370,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/503' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
     }
     private function editSarpra($id, Request $request)
     {
@@ -420,7 +420,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data updated successfully !');
+        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deleteKpl($id, Request $request)
     {
@@ -430,7 +430,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/903' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
     }
     private function editKpl($id, Request $request)
     {
@@ -478,7 +478,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data updated successfully!');
+        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
     private function deletePnpkm($id, Request $request)
     {
@@ -488,7 +488,7 @@ class DataLkpsController extends Controller
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
-        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data deleted successfully !');
+        return redirect('/lkps/view/906' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
     }
     private function editPnpkm($id, Request $request)
     {
