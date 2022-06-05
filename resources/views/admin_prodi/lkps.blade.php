@@ -30,29 +30,6 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-
-                    <a href="/lkps/view/101" class="card text-dark" role="button" aria-pressed="true">
-                        <div class="card-body d-flex align-items-center pt-2 pb-2">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                Identitas Pengusul
-                            </h3>
-                            <div class="btn btn-primary ml-auto">
-                                Isi
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/lkps/view/102" class="card text-dark" role="button" aria-pressed="true">
-                        <div class="card-body d-flex align-items-center pt-2 pb-2">
-                            <h3 class="card-title">
-                                <i class="fas fa-list-ul mr-1"></i>
-                                Daftar Program Studi di Unit Pengelola Program Studi (UPPS)
-                            </h3>
-                            <div class="btn btn-primary ml-auto">
-                                Isi
-                            </div>
-                        </div>
-                    </a>
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <h3 class="profile-username text-center">Kriteria kinerja</h3>
