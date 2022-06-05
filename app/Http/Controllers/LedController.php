@@ -109,13 +109,7 @@ class LedController extends Controller
         }
         return null;
     }
-    private function testGetInfo($id, $json)
-    {
-        if ($json[$id[0] - 1]['bab_value'][$id[1] - 1]) {
-            # code...
-        }
-        return null;
-    }
+
     public function prev_num($id)
     {
         $ledValues = json_decode(file_get_contents(storage_path() . "/led.json"), true);
@@ -183,19 +177,17 @@ class LedController extends Controller
     }
     public function updateLed(Request $request)
     {
-        // $this->validate($request, [
-        //     'value_text' => 'required',
-        // ]);
         if (Led::find($request->id)) {
             $led = Led::find($request->id);
             $led->value = $request->value_text;
+            $led->prodi_id = $request->prod_id;
             $led->save();
         } else {
             $data = array_merge(
-
                 [
                     'id' => $request->id,
                     'value' => $request->value_text,
+                    'prod_id' => $request->prod_id,
                 ]
             );
             Led::create($data);
