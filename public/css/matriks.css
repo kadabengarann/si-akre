@@ -239,3 +239,19 @@ label[for='bukti']:nth-child(2)
 {
     margin-top: 0.5rem;
 }
+.disable-input-radio .penilaian_check_field{
+    background-color: rgb(184, 184, 184);
+    cursor: not-allowed !important;
+}
+.disable-input-radio .penilaian_check_field>*{
+    cursor: not-allowed !important;
+}
+
+.view-only .penilaian_check_field{
+    /* pointer-events: none; */
+    cursor: not-allowed !important;
+}
+.view-only .penilaian_check_field *{
+    pointer-events: none;
+    cursor: not-allowed !important;
+}

@@ -6,7 +6,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
             <li class="breadcrumb-item active">Mahasiswa</li>
         </ol>
     </div><!-- /.col -->
@@ -30,7 +30,7 @@
                     <tr>
                         <th>NIM</th>
                         <th>Nama</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                     <tr>
                         <th>Kode Prodi</th>
                         <th>Nama</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                     </tr>
                 </tfoot>
             </table>
@@ -66,8 +66,8 @@
                         Apakah Anda yakin ingin menghapus <b>{{ $data->nama }}</b> ??
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <a href="/manage/mhs/delete/{{ $data->id }}" class="btn btn-danger">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <a href="/manage/mhs/delete/{{ $data->id }}" class="btn btn-danger">Hapus</a>
                     </div>
                 </div>
             </div>
@@ -84,6 +84,9 @@
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
                 paging: true,
                 searching: true,
                 processing: true,

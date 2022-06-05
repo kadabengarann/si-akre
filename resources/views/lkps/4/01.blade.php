@@ -172,6 +172,9 @@
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
+                "language":  {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                },
                 paging: true,
                 searching: true,
                 processing: true,
@@ -247,13 +250,14 @@
                 var form = $(this).closest("form");
                 var name = $(this).data("name");
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Apa kamu yakin?',
+                    text: "Anda tidak akan dapat mengembalikan ini!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    cancelButtonText: 'Batal',
+                    confirmButtonText: 'Ya, hapus!!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         form.submit();
