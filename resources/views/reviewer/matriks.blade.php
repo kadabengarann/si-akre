@@ -49,7 +49,7 @@
                         <thead>
                             <tr>
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
-                                <th class="mt-1 mb-1">Skor Maksimal
+                                <th class="mt-1 mb-1">Bobot(Skor Maksimal)
                                 </th>
                                 {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
                                 {{-- @foreach ($reviewer as $column) --}}
@@ -57,7 +57,7 @@
                                         R-1<br>({{ $reviewer->nama }})
                                     </th> --}}
                                 {{-- @endforeach --}}
-                                <th class="mt-1 mb-1">Bobot dari 400
+                                <th class="mt-1 mb-1">Nilai
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
                                 </th>
