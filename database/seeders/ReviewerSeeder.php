@@ -21,6 +21,7 @@ class ReviewerSeeder extends Seeder
 
             DB::table('reviewer')->insert([
                 'rev_id' => sprintf('rev%03d', $x),
+                'nama' => 'Reviewer '. $x,
                 'img_url' =>  'default.jpg',
             ]);
         }
