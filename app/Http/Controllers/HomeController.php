@@ -131,7 +131,7 @@ class HomeController extends Controller
                 'isComplete' => $isComplete
             ];
 
-            return view('mhs.dashboard', $data);
+            return redirect('/lkps');
         } elseif (Auth::user()->level == 5) {
             $id_user = auth()->user()->rev_id;
 
