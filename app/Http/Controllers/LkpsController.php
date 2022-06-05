@@ -102,7 +102,7 @@ class LkpsController extends Controller
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
         $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
-
+        // return $tableData;
         $formMatriks  = null;
         if ($id[0] != 1 && $id[0] != 2) {
             $formMatriks = '30' . $id[0];
@@ -226,6 +226,7 @@ class LkpsController extends Controller
         $ts_year_id = "ts_" . $prodi->id;
         $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
         $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
+        // return $tableData;
         $data = [
             'tables' => $this->allowedTable(),
             'idTable' => $id,

@@ -68,32 +68,44 @@
                 </ul>
             </div>
             <div class="card-body">
-                <div class="tab-content" id="ts-{{ $i }}-tabContent">
-                    @php
-                        $count = 4;
-                    @endphp
-                    @for ($i = $count; $i >= 0; $i--)
-                        <div class="tab-pane fade show {{ $i == 4 ? 'active' : '' }}" id="ts{{ $i == 0 ? '' : '-'.$i }}"
-                            role="tabpanel" aria-labelledby="tabs-{{ $i }}-tab">
+                <div class="tab-content" id="ts-tabContent">
+                    @for ($i = 4; $i >= 0; $i--)
+                        @php
+                            $taCount = $i;
+                            $key = 'ta';
+                            $tabData = getArrayItemWithId($key, $tsYear - $taCount, $tableData);
+                        @endphp
+                        <div class="tab-pane fade {{ $taCount == 4 ? 'show active' : '' }}"
+                            id="{{ $taCount != 0 ? 'ts-' . $taCount : 'ts' }}" role="tabpanel"
+                            aria-labelledby="{{ $taCount != 0 ? 'tabs-' . $taCount . '-tab' : 'tabs-tab' }}">
                             <div class="card-body pb-0 pt-0">
                                 <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa
-                                    TS{{ $i == 0 ? '' : '-' . $i }}
-                                    ({{ $tsYear - $i }})
+                                    {{ $taCount != 0 ? 'TS-' . $taCount : 'TS' }}
+                                    ({{ $tsYear - $taCount }})
                                 </h3>
                                 <hr>
                             </div>
-                            <form method="POST" class="form-horizontal" action="/lkps/update/jcmb">
+                            <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group row">
                                         <label for="dy_tmpng" class="col-sm-2 col-form-label">Daya Tampung</label>
                                         <div class="col-sm-10">
-                                            <input type="number" max="2147483647" min="0" name="dy_tmpng" class="form-control hide_num" id="dy_tmpng"
-                                                placeholder="" min="0" value="">
-                                            <input type="hidden" name="id_ta" class="form-control" id="id_ta"
-                                                value="ts_{{ $tsYear - $i }}_{{ $prodi->id }}">
-                                            <input type="hidden" name="ta_year" class="form-control" id="ta_year"
-                                                value="{{ $tsYear - $i }}">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="dy_tmpng"
+                                                class="form-control hide_num" id="dy_tmpng" placeholder="" min="0"
+                                                value="{{ $tabData->dy_tmpng ?? '' }}">
+                                            <input type="hidden" name="ta" class="form-control" id="ta"
+                                                value="{{ $tsYear - $taCount }}">
                                             <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
                                                 placeholder="" value="{{ $prodi->id }}" min="0">
                                         </div>
@@ -109,16 +121,18 @@
                                             <div class="form-group row">
                                                 <label for="jcm_pendftr" class="col-sm-2 col-form-label">Pendaftar</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jcm_pendftr" class="form-control hide_num"
-                                                        id="jcm_pendftr" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jcm_pendftr"
+                                                        class="form-control hide_num" id="jcm_pendftr" placeholder=""
+                                                        min="0" value="{{ $tabData->jcm_pendftr ?? '' }}">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <label for="jcm_lulus" class="col-sm-2 col-form-label">Lulus
                                                     Sleksi</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jcm_lulus" class="form-control hide_num"
-                                                        id="jcm_lulus" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jcm_lulus"
+                                                        class="form-control hide_num" id="jcm_lulus" placeholder="" min="0"
+                                                        value="{{ $tabData->jcm_lulus ?? '' }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -134,15 +148,17 @@
                                             <div class="form-group row">
                                                 <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jmb_reg" class="form-control hide_num"
-                                                        id="jmb_reg" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jmb_reg"
+                                                        class="form-control hide_num" id="jmb_reg" placeholder="" min="0"
+                                                        value="{{ $tabData->jmb_reg ?? '' }}">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <label for="jmb_transfer" class="col-sm-2 col-form-label">Transfer</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jmb_transfer" class="form-control hide_num"
-                                                        id="jmb_transfer" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jmb_transfer"
+                                                        class="form-control hide_num" id="jmb_transfer" placeholder=""
+                                                        min="0" value="{{ $tabData->jmb_transfer ?? '' }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -158,15 +174,17 @@
                                             <div class="form-group row">
                                                 <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jma_reg" class="form-control hide_num"
-                                                        id="jma_reg" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jma_reg"
+                                                        class="form-control hide_num" id="jma_reg" placeholder="" min="0"
+                                                        value="{{ $tabData->jma_reg ?? '' }}">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <label for="jma_transfer" class="col-sm-2 col-form-label">Transfer</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="jma_transfer" class="form-control hide_num"
-                                                        id="jma_transfer" placeholder="" min="0" value="">
+                                                    <input type="number" max="2147483647" min="0" name="jma_transfer"
+                                                        class="form-control hide_num" id="jma_transfer" placeholder=""
+                                                        min="0" value="{{ $tabData->jma_transfer ?? '' }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -175,150 +193,15 @@
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-info">Submit</button>
-                                    <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
+                                    <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                                        class="btn btn-default float-right">Batal</a>
                                 </div>
                                 <!-- /.card-footer -->
                             </form>
                         </div>
-                        @php
-                            $countYear++;
-                        @endphp
                     @endfor
-                    {{-- @php
-                        $count = 4;
-                    @endphp
-                    @foreach ($tableData as $row)
-                        @php
-                            if ($count < 0) {
-                                break;
-                            }
-                            $idasdsa = 'ts_' . ($tsYear - $count) . '_' . $prodi->id;
-                        @endphp
-                        @if ($row->id == 'ts_' . ($tsYear - $count) . '_' . $prodi->id)
-                            <div class="tab-pane fade show {{ $count == 4 ? 'active' : '' }}"
-                                id="ts-{{ $count }}" role="tabpanel"
-                                aria-labelledby="custom-tabs-{{ $count }}-tab">
-                                <div class="card-body pb-0 pt-0">
-                                    <h3 class="col-form-label text-center m-0 p-0">Seleksi Mahasiswa TS-{{ $count }}
-                                        ({{ $tsYear - $count }})
-                                    </h3>
-                                    <hr>
-                                </div>
-                                <form method="POST" class="form-horizontal" action="/lkps/update/jcmb">
-                                    @csrf
-                                    <div class="card-body">
-                                        <div class="form-group row">
-                                            <label for="dy_tmpng" class="col-sm-2 col-form-label">Daya Tampung</label>
-                                            <div class="col-sm-10">
-                                                <input type="number" max="2147483647" min="0" name="dy_tmpng" class="form-control hide_num"
-                                                    id="dy_tmpng" placeholder="" min="0" value="{{ $row->dy_tmpng }}">
-                                                <input type="hidden" name="id_ta" class="form-control" id="id_ta"
-                                                    value="ts_{{ $tsYear - $count }}_{{ $prodi->id }}">
-                                                <input type="hidden" name="ta_year" class="form-control" id="ta_year"
-                                                    value="{{ $tsYear - $count }}">
-                                                <input type="hidden" name="prodi_id" class="form-control hide_num"
-                                                    id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Calon
-                                                Mahasiswa</label>
-
-                                            <div class="col-sm-10">
-                                                <div class="form-group row">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="jcm_pendftr"
-                                                        class="col-sm-2 col-form-label">Pendaftar</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" max="2147483647" min="0" name="jcm_pendftr"
-                                                            class="form-control hide_num" id="jcm_pendftr" placeholder=""
-                                                            min="0" value="{{ $row->jcm_pendftr }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <label for="jcm_lulus" class="col-sm-2 col-form-label">Lulus
-                                                        Sleksi</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" name="jcm_lulus" class="form-control hide_num"
-                                                            id="jcm_lulus" placeholder="" min="0"
-                                                            value="{{ $row->jcm_lulus }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa
-                                                Baru</label>
-
-                                            <div class="col-sm-10">
-                                                <div class="form-group row">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="jmb_reg" class="col-sm-2 col-form-label">Reguler</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" name="jmb_reg" class="form-control hide_num"
-                                                            id="jmb_reg" placeholder="" min="0"
-                                                            value="{{ $row->jmb_reg }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <label for="jmb_transfer"
-                                                        class="col-sm-2 col-form-label">Transfer</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" name="jmb_transfer"
-                                                            class="form-control hide_num" id="jmb_transfer" placeholder=""
-                                                            min="0" value="{{ $row->jmb_transfer }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="form-group row">
-                                            <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa
-                                                Aktif</label>
-
-                                            <div class="col-sm-10">
-                                                <div class="form-group row">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="jma_reg" class="col-sm-2 col-form-label">Reguler</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" name="jma_reg" class="form-control hide_num"
-                                                            id="jma_reg" placeholder="" min="0"
-                                                            value="{{ $row->jma_reg }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <label for="jma_transfer"
-                                                        class="col-sm-2 col-form-label">Transfer</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="number" max="2147483647" min="0" name="jma_transfer"
-                                                            class="form-control hide_num" id="jma_transfer" placeholder=""
-                                                            min="0" value="{{ $row->jma_transfer }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-info">Submit</button>
-                                        <a href="/lkps/view/{{ $idTable }}"
-                                            class="btn btn-default float-right">Batal</a>
-                                    </div>
-                                    <!-- /.card-footer -->
-                                </form>
-                            </div>
-                            @php
-                                $count--;
-                            @endphp
-                        @endif
-                    @endforeach --}}
-
                 </div>
+
             </div>
             <!-- /.card -->
         </div>

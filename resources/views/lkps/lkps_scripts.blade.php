@@ -73,6 +73,7 @@
         });
 
         function updateContent(_data) {
+            window.location.reload(true)
             let ts_row = document.querySelectorAll('td.ts-row');
             let ts_year = document.querySelector('#ts-year');
 
