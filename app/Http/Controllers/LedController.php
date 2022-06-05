@@ -187,7 +187,7 @@ class LedController extends Controller
                 [
                     'id' => $request->id,
                     'value' => $request->value_text,
-                    'prod_id' => $request->prod_id,
+                    'prodi_id' => $request->prod_id,
                 ]
             );
             Led::create($data);

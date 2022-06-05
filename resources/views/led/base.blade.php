@@ -80,11 +80,14 @@
                                     No value
                                 @endif
                             </div>
-                            <textarea name="value_text" class="editor" id="input_value{{ $loop->iteration }}">
-                                @if (!($multi_value[$loop->iteration - 1] == null || $multi_value[$loop->iteration - 1]['value'] == ''))
+                            <div id="area-input{{ $loop->iteration }}">
+                                <textarea name="value_text" class="editor input_value_text" id="input_value{{ $loop->iteration }}">
+                                    @if (!($multi_value[$loop->iteration - 1] == null || $multi_value[$loop->iteration - 1]['value'] == ''))
 {!! $multi_value[$loop->iteration - 1]['value'] !!}
 @endif
-                    </textarea>
+                                </textarea>
+                            </div>
+
                         </form>
                     @endforeach
                 @else
@@ -115,11 +118,13 @@
                                 No value
                             @endif
                         </div>
-                        <textarea name="value_text" id="input_value" class="editor">
+                        <div id="area-input">
+                            <textarea name="value_text" id="input_value" class="editor input_value_text">
                         @if ($value)
 {{ $value->value }}
 @endif
                     </textarea>
+                        </div>
                     </form>
                 @endif
             </div>
@@ -132,16 +137,55 @@
 
 
 @push('scripts')
+    <script src="https://cdn.tiny.cloud/1/r25shxkzc5z7npgm5l5kmy3666vdso65340x7osixreouqfh/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <script>
-        $('#input_value').hide();
+        tinymce.init({
+            selector: '.input_value_text',
+            plugins: 'powerpaste print preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+            toolbar_sticky: true,
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            paste_data_images: true,
+            image_title: true,
+            automatic_uploads: true,
+            height : "480",
+            powerpaste_allow_local_images: true,
+            powerpaste_word_import: 'prompt',
+            powerpaste_html_import: 'prompt',
+            file_picker_types: 'image',
+            file_picker_callback: function(cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+
+                input.onchange = function() {
+                    var file = this.files[0];
+                    var reader = new FileReader();
+                    reader.onload = function() {
+
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+                        /* call the callback and populate the Title field with the file name */
+                        cb(blobInfo.blobUri(), {
+                            title: file.name
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                };
+                input.click();
+            },
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        });
+        $('#area-input').hide();
 
         function edit() {
-            $('#input_value').summernote({
-                placeholder: 'Enter Text',
-                tabsize: 2,
-                focus: true,
-                height: 600
-            });
+            $('#area-input').show();
             $('#edit_btn').hide();
             $('#preview_value').hide();
             $('#save_btn').show();
@@ -161,29 +205,27 @@
     </script>
     @if (isset($tableValue['multi_input']))
         <script>
+            
             @foreach ($tableValue['multi_input_value'] as $n)
                 console.log({{ $loop->iteration }});
+                
+                $('#area-input{{ $loop->iteration }}').hide();
                 function edit{{ $loop->iteration }}() {
-                $('#input_value{{ $loop->iteration }}').summernote({
-                placeholder: 'Enter Text',
-                tabsize: 2,
-                focus: true,
-                height: 600
-                });
-                $('#edit_btn{{ $loop->iteration }}').hide();
-                $('#preview_value{{ $loop->iteration }}').hide();
-                $('#save_btn{{ $loop->iteration }}').show();
-                $('#cancel_btn{{ $loop->iteration }}').show();
+                    $('#area-input{{ $loop->iteration }}').show();
+                    $('#edit_btn{{ $loop->iteration }}').hide();
+                    $('#preview_value{{ $loop->iteration }}').hide();
+                    $('#save_btn{{ $loop->iteration }}').show();
+                    $('#cancel_btn{{ $loop->iteration }}').show();
                 };
-            
+
                 function cancel{{ $loop->iteration }}() {
-                $('#input_value{{ $loop->iteration }}').summernote('destroy');
-                $('#edit_btn{{ $loop->iteration }}').show();
-                $('#save_btn{{ $loop->iteration }}').hide();
-                $('#cancel_btn{{ $loop->iteration }}').hide();
-                $('#preview_value{{ $loop->iteration }}').show();
-                $('#input_value{{ $loop->iteration }}').hide();
-            
+                    $('#edit_btn{{ $loop->iteration }}').show();
+                    $('#area-input{{ $loop->iteration }}').hide();
+                    $('#save_btn{{ $loop->iteration }}').hide();
+                    $('#cancel_btn{{ $loop->iteration }}').hide();
+                    $('#preview_value{{ $loop->iteration }}').show();
+                    $('#input_value{{ $loop->iteration }}').hide();
+
                 };
             @endforeach
         </script>

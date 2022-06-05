@@ -128,7 +128,7 @@
 
                                     <td class="text-start">
                                         @if ($audit->event == 'updated' || $audit->event == 'created')
-                                            {{ $node }}
+                                            {!! $node !!}
                                         @elseif ($audit->event == 'deleted')
                                             {!! !empty(json_decode($audit->old_values)->$m) ? json_decode($audit->old_values)->$m : '' !!}
                                         @endif
