@@ -147,12 +147,22 @@ class MatriksController extends Controller
                 return redirect('/matriks/prodi');
             }
             if (Auth::user()->level == 1) {
-                $rev_id = $prodi->id;
-                $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
+                if (null == $request->query('rev')) {
+                    $rev = new Reviewer;
+                    $rev_id = 0;
+                }else{
+                    $rev = Reviewer::find($request->query('rev'));
+                    $rev_id = $rev->user->id;
+                }
+                
+                $reviewer = Matriks::getAllRev();
+                $matriksSum = Matriks::getSummaryRowAdm($prodi->id, $rev_id);
                 $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
 
             } elseif (Auth::user()->level == 5) {
                 $rev_id = Auth::user()->id;
+                $rev = Auth::user()->reviewer;
+                $reviewer = [];
                 $matriksSum = Matriks::getSummaryRowRev($prodi->id, $rev_id);
                 $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id, $rev_id);
 
@@ -160,25 +170,36 @@ class MatriksController extends Controller
 
         } elseif (Auth::user()->level == 2) {
             $prodi = Prodi::find(Auth::user()->prodi->id);
-            $rev_id = $prodi->id;
-            $matriksSum = Matriks::getSummaryRow($prodi->id, $rev_id);
+            if (null == $request->query('rev')) {
+                $rev = new Reviewer;
+                $rev_id = 0;
+            } else {
+                $rev = Reviewer::find($request->query('rev'));
+                $rev_id = $rev->user->id;
+            }
+
+            $reviewer = Matriks::getAllRev();
+            $matriksSum = Matriks::getSummaryRow($prodi->id, $prodi->user->id);
             //get Allcomment
             $matriksKomentarCount = Matriks::getAllCommentCount($prodi->id);
  
         }
         $matriks = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $rev_id);
-        $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->id);
+        $matriksBuktiList = Matriks::all()->where('prodi_id', $prodi->id)->where('user_id', $prodi->user->id);
 
-        // return $matriksKomentarCount;
+        // return $matriksSum;
         $data = [
             'prev' => $this->prev_num($id),
             'next' => $this->next_num($id),
+            'idForm' => $id,
             'prodi' => $prodi,
             'matriks' => $matriks,
             'matriksBukti' => $matriksBuktiList,
             'reffer_id' => $rev_id,
+            'reviewer' => $rev,
             'dataMatriks' => $matriksSum,
             'jmlKomentarMatriks' => $matriksKomentarCount,
+            'reviewerAll' => $reviewer
         ];
         // return $matriksBuktiList;
         return view('matriks.' . $id[0]  . $id[1] . $id[2], $data);
