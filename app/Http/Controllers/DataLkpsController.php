@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Permission;
 use App\Models\Prodi;
 use App\Models\Lkps\{
@@ -19,6 +20,7 @@ use App\Models\Lkps\{
     Ktw,
     Mt,
     Ipk,
+    Spps,
 };
 
 class DataLkpsController extends Controller
@@ -38,9 +40,19 @@ class DataLkpsController extends Controller
             }
         }
         $tableName = $lkpsData['table'];
-        $tableData = DB::table($tableName)
+        $ts_year_id = "ts_" . $prodi_id;
+        $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
+        // return $ts_year;
+        if ($lkpsData['id'] == 501) {
+           $tableData = DB::table($tableName)
             ->where('prodi_id', '=', $prodi_id)
+            ->where('ts', '=', $ts_year->value)
             ->get();
+        }else{
+            $tableData = DB::table($tableName)
+                ->where('prodi_id', '=', $prodi_id)
+                ->get();
+        }
         return $tableData;
     }
     public static function getLkpsDataRow($prodi_id, $id_row)
@@ -67,6 +79,9 @@ class DataLkpsController extends Controller
                 break;
             case '402':
                 return $this->insertKtk($request);
+                break;
+            case '501':
+                return $this->insertSpps($request);
                 break;
             case '502':
                 return $this->insertAddsi($request);
@@ -107,6 +122,9 @@ class DataLkpsController extends Controller
                 break;
             case '402':
                 return $this->deleteKtk($id, $request);
+                break;
+            case '501':
+                return $this->deleteSpps($id, $request);
                 break;
             case '502':
                 return $this->deleteAddsi($id, $request);
@@ -149,6 +167,9 @@ class DataLkpsController extends Controller
                 break;
             case '402':
                 return $this->editAddsi($id, $request);
+                break;
+            case '501':
+                return $this->editSpps($id, $request);
                 break;
             case '503':
                 return $this->editSarpra($id, $request);
@@ -378,6 +399,92 @@ class DataLkpsController extends Controller
         }
     }
 
+    // -------------------------501 SPPS------------------------------
+    private function insertSpps(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'bukti' => 'required',
+            'bukti_link' => 'required',
+            'sumber_dana' => 'required',
+        ]);
+        switch ($request->sd_type) {
+            case 1:
+                if ($validator->fails()) {
+                    return
+                    redirect(url()->previous() . '#tabs-1')->withInput()->withErrors($validator);
+                }
+                break;
+            case 2:
+                if ($validator->fails()) {
+                    return
+                        redirect(url()->previous() . '#tabs-2')->withInput()->withErrors($validator);
+                }
+                break;
+            case 3:
+                if ($validator->fails()) {
+                    return
+                        redirect(url()->previous() . '#tabs-3')->withInput()->withErrors($validator);
+                }
+                break;
+            
+            default:
+                break;
+        }
+        
+        // return $request->id;
+        Spps::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'ts' => $request->ts,
+                'sd' => ($request->sumber_dana),
+                'sd_type' => ($request->sd_type),
+                'jml' => ($request->jml ? $request->jml : 0),
+                'bukti' => ($request->bukti ),
+                'bukti_link' => ($request->bukti_link),
+                'ket' => ($request->ket ? $request->ket : ''),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/501' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteSpps($id, Request $request)
+    {
+        $data = Spps::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/501' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editSpps($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Spps::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
     // -------------------------502 ADDSI------------------------------
     private function insertAddsi(Request $request)
     {

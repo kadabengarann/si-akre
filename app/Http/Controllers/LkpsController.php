@@ -223,15 +223,20 @@ class LkpsController extends Controller
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
         }
+        if (null == $request->query('edit')) {
+            $editId = null;
+        }else {
+            $editId = $request->query('edit');
+        }
         $ts_year_id = "ts_" . $prodi->id;
         $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
         $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
-        // return $tableData;
         $data = [
             'tables' => $this->allowedTable(),
             'idTable' => $id,
             'tsYear' => $ts_year ? $ts_year->value : null,
             'tableData' => $tableData,
+            'editId' => $editId,
             'prodi' =>
             $prodi
 
