@@ -54,14 +54,23 @@
                     <tbody>
                         @php
                             $taCount = 4;
+                            $arrayTotal = array(0,0,0,0,0,0,0);     
+                        @endphp
+
+                        @for ($taCount; 0 <= $taCount; $taCount--)
+                        @php
+                            
                             $keyVal = $tsYear-$taCount;
                             $key = 'ta';
                             $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                            $arrayTotal = array(0,0,0,0,0,0,0); 
                         @endphp
                         <tr>
                             <td class="ts-row">
-                                    TS-{{$taCount}} ({{ $keyVal }})
+                                    @if ($taCount == 0)
+                                        TS ({{ $keyVal }})
+                                        @else
+                                        TS-{{$taCount}} ({{ $keyVal }})
+                                    @endif
                             </td>
                             <td>
                                 {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
@@ -86,7 +95,7 @@
                                 {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
                             </td>
                             <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts-{{ $taCount }}"
+                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{$taCount ==0 ? '':'-'.$taCount}}"
                                     class="btn btn-sm btn-info">
                                     @if ($rowData->{$key})
                                         <i class="fas fa-pen"></i>
@@ -115,254 +124,7 @@
                             $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
                             $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
                         @endphp
-                        @php
-                            $taCount = 3;
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'ta';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
-                                    TS-{{$taCount}} ({{ $keyVal }})
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->jcm_pendftr : 0}}
-
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jcm_lulus : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_transfer : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts-{{ $taCount }}"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
-                                    @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
-                        </tr>
-                        @php
-                            $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
-                            $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
-                            $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
-                            $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
-                            $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
-                            $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
-                            $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
-                        @endphp
-                        @php
-                            $taCount = 2;
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'ta';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
-                                    TS-{{$taCount}} ({{ $keyVal }})
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->jcm_pendftr : 0}}
-
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jcm_lulus : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_transfer : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts-{{ $taCount }}"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
-                                    @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
-                        </tr>
-                        @php
-                            $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
-                            $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
-                            $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
-                            $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
-                            $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
-                            $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
-                            $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
-                        @endphp
-                        @php
-                            $taCount = 1;
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'ta';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
-                                    TS-{{$taCount}} ({{ $keyVal }})
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->jcm_pendftr : 0}}
-
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jcm_lulus : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_transfer : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts-{{ $taCount }}"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
-                                    @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
-                        </tr>
-                        @php
-                            $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
-                            $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
-                            $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
-                            $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
-                            $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
-                            $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
-                            $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
-                        @endphp
-                        @php
-                            $taCount = 0;
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'ta';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
-                                    TS ({{ $keyVal }})
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->jcm_pendftr : 0}}
-
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jcm_lulus : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_transfer : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
-                                    @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
-                        </tr>
-                        @php
-                            $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
-                            $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
-                            $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
-                            $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
-                            $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
-                            $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
-                            $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
-                        @endphp
+                        @endfor
                     </tbody>
                     <tfoot>
                         <tr>
