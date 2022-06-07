@@ -46,7 +46,7 @@ class DataLkpsController extends Controller
         if ($lkpsData['id'] == 501) {
            $tableData = DB::table($tableName)
             ->where('prodi_id', '=', $prodi_id)
-            ->where('ts', '=', $ts_year->value)
+            ->where('ts', '=', $ts_year ? $ts_year->value : null,)
             ->get();
         }else{
             $tableData = DB::table($tableName)
