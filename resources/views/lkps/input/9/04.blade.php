@@ -1,5 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@include('lkps.lkps_header')
 @section('header')
     <div class="col-sm-6">
         <h1 class="m-0">Input Data</h1>
@@ -44,140 +45,135 @@
             </div>
             <div class="card-header p-0 ">
                 <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
-                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">TS-4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
-                            aria-controls="custom-tabs-2" aria-selected="false">TS-3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
-                            aria-controls="custom-tabs-3" aria-selected="false">TS-2</a>
-                    </li>
+                    @php
+                        $count = 4;
+                        $countYear = $tsYear - $count;
+                    @endphp
+                    @for ($i = $count; $i >= 2; $i--)
+                        @if ($i == 0)
+                            <li class="nav-item">
+                                <a class="nav-link" id="ts-tab" data-toggle="pill" href="#ts" role="tab"
+                                    aria-controls="ts" aria-selected="false">TS
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link  {{ $i == 4 ? 'active' : '' }}" id="ts-{{ $i }}-tab"
+                                    data-toggle="pill" href="#ts-{{ $i }}" role="tab"
+                                    aria-controls="ts-{{ $i }}"
+                                    aria-selected="{{ $i == $count ? true : false }}">TS-{{ $i }}
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @endif
+                        @php
+                            $countYear++;
+                        @endphp
+                    @endfor
+                </ul>
 
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
-                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
-                        aria-labelledby="custom-tabs-1-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-4</h3>
-                            <hr>
+                    @php
+                        $count = 4;
+                    @endphp
+                    @for ($i = $count; $i >= 2; $i--)
+                        @php
+                            $taCount = $i;
+                            $key = 'tl';
+                            $tabData = getArrayItemWithId($key, $tsYear - $taCount, $tableData);
+                        @endphp
+                        <div class="tab-pane fade {{ $taCount == $count ? 'show active' : '' }}"
+                            id="{{ $taCount != 0 ? 'ts-' . $taCount : 'ts' }}" role="tabpanel"
+                            aria-labelledby="{{ $taCount != 0 ? 'tabs-' . $taCount . '-tab' : 'tabs-tab' }}">
+                            <div class="card-body pb-0 pt-0">
+                                <h3 class="col-form-label text-center m-0 p-0">Jumlah Lulusan
+                                    {{ $taCount != 0 ? 'TS-' . $taCount : 'TS' }}
+                                    ({{ $tsYear - $taCount }})
+                                </h3>
+                                <hr>
+                            </div>
+                            <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Jumlah Lulusan</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="jml_lus"
+                                                class="form-control hide_num" id="jml_lus" placeholder="" min="0"
+                                                value="{{ $tabData->jml_lus ?? '' }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Jumlah Lulusan yang
+                                            Terlacak</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="jml_lust"
+                                                class="form-control hide_num" id="jml_lust" placeholder="" min="0"
+                                                value="{{ $tabData->jml_lust ?? '' }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Rata- rata Waktu Tunggu
+                                            (Bulan)</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="rerata_tunggu"
+                                                class="form-control hide_num" id="rerata_tunggu" placeholder="" min="0"
+                                                value="{{ $tabData->rerata_tunggu ?? '' }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                                        class="btn btn-default float-right">Batal</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
-                                        (Bulan)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-3</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                               
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
-                                        (Bulan)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-2</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                               
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Rata- rata Waktu Tunggu
-                                        (Bulan)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-
-
+                    @endfor
                 </div>
             </div>
             <!-- /.card -->
@@ -186,17 +182,34 @@
     </section>
 @endsection
 
-@section('script')
+@include('lkps.lkps_scripts')
+@push('scripts')
     <script>
-        $(function() {
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
-                timePicker: true,
-                timePickerIncrement: 30,
-                locale: {
-                    format: 'MM/DD/YYYY hh:mm A'
+        $(document).ready(() => {
+            let url = location.href.replace(/\/$/, "");
+            console.log(url);
+            if (location.hash) {
+                console.log("wryyy");
+                const hash = url.split("#");
+                $('#custom-tabs-tab a[href="#' + hash[1] + '"]').tab("show");
+                url = location.href.replace(/\/#/, "#");
+                history.replaceState(null, null, url);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+            }
+
+            $('a[data-toggle="pill"]').on("click", function() {
+                let newUrl;
+                const hash = $(this).attr("href");
+                if (hash == "#ts-4") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + hash;
                 }
-            })
-        })
+                history.replaceState(null, null, newUrl);
+            });
+        });
     </script>
-@endsection
+@endpush
+

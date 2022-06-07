@@ -15,7 +15,9 @@ use App\Models\Lkps\{
     Ktk,
     Addsi,
     Kpl,
+    Mt,
 };
+
 class DataLkpsController extends Controller
 {
     public function __construct()
@@ -51,7 +53,8 @@ class DataLkpsController extends Controller
         return null;
     }
 
-    public function insertLkps($id, Request $request){
+    public function insertLkps($id, Request $request)
+    {
         switch ($id) {
             case '301':
                 return $this->insertJcmb($request);
@@ -71,6 +74,9 @@ class DataLkpsController extends Controller
             case '903':
                 return $this->insertKpl($request);
                 break;
+            case '904':
+                return $this->insertMt($request);
+                break;
             case '906':
                 return $this->insertPnpkm($request);
                 break;
@@ -78,9 +84,9 @@ class DataLkpsController extends Controller
                 # code...
                 break;
         }
-        
     }
-    public function deleteLkps($tableId, $id, Request $request){
+    public function deleteLkps($tableId, $id, Request $request)
+    {
         switch ($tableId) {
             case '301':
                 return $this->deleteJcmb($id, $request);
@@ -99,6 +105,9 @@ class DataLkpsController extends Controller
                 break;
             case '903':
                 return $this->deleteKpl($id, $request);
+                break;
+            case '904':
+                return $this->deleteMt($id, $request);
                 break;
             case '906':
                 return $this->deletePnpkm($id, $request);
@@ -128,6 +137,9 @@ class DataLkpsController extends Controller
                 break;
             case '903':
                 return $this->editKpl($id, $request);
+                break;
+            case '904':
+                return $this->editMt($id, $request);
                 break;
             case '906':
                 return $this->editPnpkm($id, $request);
@@ -215,7 +227,8 @@ class DataLkpsController extends Controller
     }
 
     // -------------------------401 RERETADTPR------------------------------
-    private function insertReretadtpr(Request $request){
+    private function insertReretadtpr(Request $request)
+    {
         $request->validate([
             'nm_dosen' => 'required',
         ]);
@@ -225,23 +238,25 @@ class DataLkpsController extends Controller
                 'id'   => $request->id,
             ],
             [
-            'nm_dosen' => $request->nm_dosen,
-            'sks_pss' => ($request->sks_pss ? $request->sks_pss : 0),
-            'skd_psl_pts' => ($request->skd_psl_pts ? $request->skd_psl_pts : 0),
-            'skd_ptl' => ($request->skd_ptl ? $request->skd_ptl : 0),
-            'skd_penelitian' => ($request->skd_penelitian ? $request->skd_penelitian : 0),
-            'skd_pengmas' => ($request->skd_pengmas ? $request->skd_pengmas : 0),
-            'sksmen_pts' => ($request->sksmen_pts ? $request->sksmen_pts : 0),
-            'sksmen_ptl' => ($request->sksmen_ptl ? $request->sksmen_ptl : 0),
-            'prodi_id' => (int)($request->prodi_id),
-        ]);
+                'nm_dosen' => $request->nm_dosen,
+                'sks_pss' => ($request->sks_pss ? $request->sks_pss : 0),
+                'skd_psl_pts' => ($request->skd_psl_pts ? $request->skd_psl_pts : 0),
+                'skd_ptl' => ($request->skd_ptl ? $request->skd_ptl : 0),
+                'skd_penelitian' => ($request->skd_penelitian ? $request->skd_penelitian : 0),
+                'skd_pengmas' => ($request->skd_pengmas ? $request->skd_pengmas : 0),
+                'sksmen_pts' => ($request->sksmen_pts ? $request->sksmen_pts : 0),
+                'sksmen_ptl' => ($request->sksmen_ptl ? $request->sksmen_ptl : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
         $admin_path = '';
         if (Auth::user()->level == 1) {
             $admin_path = '?id=' . $request->prodi_id;
         }
         return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
     }
-    private function deleteReretadtpr($id, Request $request){
+    private function deleteReretadtpr($id, Request $request)
+    {
         $data = Reratadtpr::find($id);
         $data->delete();
         $admin_path = '';
@@ -249,7 +264,6 @@ class DataLkpsController extends Controller
             $admin_path = '?id=' . $request->prodi_id;
         }
         return redirect('/lkps/view/401' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
-
     }
     private function editReretadtpr($id, Request $request)
     {
@@ -296,7 +310,7 @@ class DataLkpsController extends Controller
                 'jtk_d1' => ($request->jtk_d1 ? $request->jtk_d1 : 0),
                 'jtk_sm' => ($request->jtk_sm ? $request->jtk_sm : 0),
                 'uk' => ($request->uk ? $request->uk : 0),
-                
+
                 'prodi_id' => (int)($request->prodi_id),
             ]
         );
@@ -516,6 +530,64 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
+    // -------------------------904 MT------------------------------
+    private function insertMt(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Mt::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'tl' => $request->tl,
+                'jml_lus' => ($request->jml_lus ? $request->jml_lus : 0),
+                'jml_lust' => ($request->jml_lust ? $request->jml_lust : 0),
+                'rerata_tunggu' => ($request->rerata_tunggu ? $request->rerata_tunggu : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/904' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteMt($id, Request $request)
+    {
+        $data = Mt::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/904' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editMt($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Mt::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+
     // ------------------------- 906 PNPKM------------------------------
     private function insertPnpkm(Request $request)
     {
@@ -574,7 +646,7 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
-    
+
     public function updateJCMB(Request $request)
     {
         DB::table('jcmb')
