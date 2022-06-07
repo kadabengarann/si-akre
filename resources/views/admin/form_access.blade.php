@@ -228,11 +228,32 @@
                                     </button>
                                 </div>
                             </div>
+                            
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="inputPassword3"
-                                        class="col-sm-6 col-form-label font-weight-normal border-right pr-4">Tabel 9.2. IPK
-                                        Lulusan
+                                        class="col-sm-6 col-form-label font-weight-normal border-right pr-4">Tabel 9.1. IPK Lulusan
+                                    </label>
+                                    <div class="col-sm-6 custom-checkbox d-flex align-items-center row pl-4">
+                                        <div class="custom-control custom-checkbox col-3">
+                                            <input class="custom-control-input" type="checkbox" id="dos901"
+                                                name='form901[]' value=3
+                                                @if (in_array(3, json_decode($permission_controller->getPermission(901)->access))) checked="checked" @endif>
+                                            <label for="dos901"
+                                                class="custom-control-label font-weight-normal">Dosen</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox col">
+                                            <input class="custom-control-input" type="checkbox" id="mhs901"
+                                                name='form901[]' value=4
+                                                @if (in_array(4, json_decode($permission_controller->getPermission(901)->access))) checked="checked" @endif>
+                                            <label for="mhs901"
+                                                class="custom-control-label font-weight-normal">Mahasiswa</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3"
+                                        class="col-sm-6 col-form-label font-weight-normal border-right pr-4">Tabel 9.2. Kelulusan Tepat Waktu
                                     </label>
                                     <div class="col-sm-6 custom-checkbox d-flex align-items-center row pl-4">
                                         <div class="custom-control custom-checkbox col-3">
@@ -269,6 +290,27 @@
                                                 name='form903[]' value=4
                                                 @if (in_array(4, json_decode($permission_controller->getPermission(903)->access))) checked="checked" @endif>
                                             <label for="mhs903"
+                                                class="custom-control-label font-weight-normal">Mahasiswa</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword3"
+                                        class="col-sm-6 col-form-label font-weight-normal border-right pr-4">Tabel 9.4. Rata-rata Masa Tunggu Lulusan untuk Bekerja Pertama Kali
+                                    </label>
+                                    <div class="col-sm-6 custom-checkbox d-flex align-items-center row pl-4">
+                                        <div class="custom-control custom-checkbox col-3">
+                                            <input class="custom-control-input" type="checkbox" id="dos904"
+                                                name='form904[]' value=3
+                                                @if (in_array(3, json_decode($permission_controller->getPermission(904)->access))) checked="checked" @endif>
+                                            <label for="dos904"
+                                                class="custom-control-label font-weight-normal">Dosen</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox col">
+                                            <input class="custom-control-input" type="checkbox" id="mhs904"
+                                                name='form904[]' value=4
+                                                @if (in_array(4, json_decode($permission_controller->getPermission(904)->access))) checked="checked" @endif>
+                                            <label for="mhs904"
                                                 class="custom-control-label font-weight-normal">Mahasiswa</label>
                                         </div>
                                     </div>
@@ -316,8 +358,7 @@
                                                 class="custom-control-label font-weight-normal">Mahasiswa</label>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>  
                             </div>
                         </div>
                         <div class="mt-5 text-center">
