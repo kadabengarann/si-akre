@@ -44,6 +44,7 @@
                     <h3 class="text-center card-title" style="float: none; font-weight:500">Penilaian Kinerja
                         Program Studi</h3>
                 </div>
+                <h6 class="text-left" style="margin: 15px; margin-bottom: 0;">INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI</h6>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="tbl_list" class="table table-bordered table-center-text">
@@ -61,14 +62,6 @@
                                 <th class="mt-1 mb-1">Bobot dari 400
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="mt-1 mb-1 text-start" colspan="2">
-                                    INSTRUMEN SUPLEMEN KONVERSI PERINGKAT AKREDITASI
-                                </th>
-                                <th colspan="3">
-
                                 </th>
                             </tr>
                         </thead>
