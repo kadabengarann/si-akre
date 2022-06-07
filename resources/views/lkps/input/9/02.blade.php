@@ -1,5 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@include('lkps.lkps_header')
 @section('header')
     <div class="col-sm-6">
         <h1 class="m-0">Input Data</h1>
@@ -18,6 +19,10 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
+                        <p><b>TS : </b>
+                            <span id="ts-year">{{ $tsYear }}</span> <a href='#' id="ts_change"
+                                class='badge badge-info'>Change</a>
+                        </p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Sub-kriteria : </b>a. Capaian Pembelajaran</p>
@@ -43,538 +48,229 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-header p-0 ">
+            <div class="card-header p-0 pt-1">
                 <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
-                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">TS-6</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
-                            aria-controls="custom-tabs-2" aria-selected="false">TS-5</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
-                            aria-controls="custom-tabs-3" aria-selected="false">TS-4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-4-tab" data-toggle="pill" href="#custom-tabs-4" role="tab"
-                            aria-controls="custom-tabs-4" aria-selected="false">TS-3</a>
-                    </li>
-
+                    @php
+                        $count = 6;
+                        $countYear = $tsYear - 6;
+                    @endphp
+                    @for ($i = $count; $i >= 3; $i--)
+                        @if ($i == 0)
+                            <li class="nav-item">
+                                <a class="nav-link" id="ts-tab" data-toggle="pill" href="#ts" role="tab"
+                                    aria-controls="ts" aria-selected="false">TS
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link  {{ $i == 6 ? 'active' : '' }}" id="ts-{{ $i }}-tab"
+                                    data-toggle="pill" href="#ts-{{ $i }}" role="tab"
+                                    aria-controls="ts-{{ $i }}"
+                                    aria-selected="{{ $i == $count ? true : false }}">TS-{{ $i }}
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @endif
+                        @php
+                            $countYear++;
+                        @endphp
+                    @endfor
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
-                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
-                        aria-labelledby="custom-tabs-1-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-6</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa
-                                        Diterima</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Mahasiswa yang lulus
-                                            pada
-                                        </label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
+                    @php
+                        $count = 6;
+                    @endphp
+                    @for ($i = $count; $i >= 3; $i--)
+                        @php
+                            $taCount = $i;
+                            $key = 'ta';
+                            $tabData = getArrayItemWithId($key, $tsYear - $taCount, $tableData);
+                        @endphp
+                        <div class="tab-pane fade {{ $taCount == 6 ? 'show active' : '' }}"
+                            id="{{ $taCount != 0 ? 'ts-' . $taCount : 'ts' }}" role="tabpanel"
+                            aria-labelledby="{{ $taCount != 0 ? 'tabs-' . $taCount . '-tab' : 'tabs-tab' }}">
+                            <div class="card-body pb-0 pt-0">
+                                <h3 class="col-form-label text-center m-0 p-0">
+                                    {{ $taCount != 0 ? 'TS-' . $taCount : 'TS' }}
+                                    ({{ $tsYear - $taCount }})
+                                </h3>
+                                <hr>
+                            </div>
+                            <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Jumlah Mahasiswa Diterima</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
+                                            <input type="number" max="2147483647" min="0" name="jmd"
+                                                class="form-control hide_num" id="jmd" placeholder="" min="0"
+                                                value="{{ $tabData->jmd ?? '' }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label for="inputtext3" class="col-sm-2 col-form-label">Jumlah Mahasiswa yang lulus pada</label>
+
+                                        <div class="col-sm-10">
                                             <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-6
-                                                </label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
+                                                    TS-6</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input disabled type="number" max="2147483647" min="0" name="jml_6"
+                                                        class="form-control hide_num" id="jml_6" placeholder=""
+                                                        min="0">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
                                                     TS-5</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input disabled type="number" max="2147483647" min="0" name="jml_5"
+                                                        class="form-control hide_num" id="jml_5" placeholder="" min="0"
+                                                        >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
                                                     TS-4</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input disabled type="number" max="2147483647" min="0" name="jml_4"
+                                                        class="form-control hide_num" id="jml_4" placeholder="" min="0"
+                                                        >
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
                                             <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-3
-                                                </label>
+                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
+                                                    TS-3</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input {{$taCount >= 6 ? '':'disabled'}} type="number" max="2147483647" min="0" name="jml_3"
+                                                        class="form-control hide_num" id="jml_3" placeholder="" min="0"
+                                                        value="{{ $taCount >= 6 ? $tabData->jml_3 ?? '' : '' }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
                                                     TS-2</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input {{$taCount >= 5 ? '':'disabled'}} type="number" max="2147483647" min="0" name="jml_2"
+                                                        class="form-control hide_num" id="jml_2" placeholder="" min="0"
+                                                        value="{{ $taCount >= 5 ? $tabData->jml_2 ?? '' : '' }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
                                                     TS-1</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input {{$taCount >= 4 ? '':'disabled'}} type="number" max="2147483647" min="0" name="jml_1"
+                                                        class="form-control hide_num" id="jml_1" placeholder="" min="0"
+                                                        value="{{ $taCount >= 4 ? $tabData->jml_1 ?? '' : '' }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
                                                     TS</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                    <input {{$taCount >= 3 ? '':'disabled'}} type="number" max="2147483647" min="0" name="akhir_ts"
+                                                        class="form-control hide_num" id="akhir_ts" placeholder="" min="0"
+                                                        value="{{ $taCount >= 3 ? $tabData->akhir_ts ?? '' : '' }}">
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
-
+                                    <hr>
                                     <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan s.d. Akhir
-                                            TS</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Jumlah Lulusan s.d. Akhir TS</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="jl_ats"
+                                                class="form-control hide_num" id="jl_ats" placeholder="" min="0"
+                                                value="{{ $tabData->jl_ats ?? '' }}">
+                                            <input type="hidden" name="ta" class="form-control" id="ta"
+                                                value="{{ $tsYear - $taCount }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rata-rata Masa
-                                            Studi</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Rata-rata Masa Studi</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
+
+                                            <input type="number" max="2147483647" min="0" name="rerata_masastudi"
+                                                class="form-control hide_num" id="rerata_masastudi" placeholder="" min="0"
+                                                value="{{ $tabData->rerata_masastudi ?? '' }}">
+                                            <input type="hidden" name="ta" class="form-control" id="ta"
+                                                value="{{ $tsYear - $taCount }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah mhs. Yang masih
-                                            aktif</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
+                                        <label for="dy_tmpng" class="col-sm-2 col-form-label">Jumlah mhs. Yang masih aktif</label>
+                                        <div class="col-sm-10">
+                                            @if ($tabData->{$key})
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="{{ $tabData->id }}" />
+                                            @else
+                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                    value="-1" />
+                                            @endif
+                                            <input type="hidden" name="{{ $key }}" class="form-control"
+                                                id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
+                                            <input type="number" max="2147483647" min="0" name="jml_mhs"
+                                                class="form-control hide_num" id="jml_mhs" placeholder="" min="0"
+                                                value="{{ $tabData->jml_mhs ?? '' }}">
+                                            <input type="hidden" name="ta" class="form-control" id="ta"
+                                                value="{{ $tsYear - $taCount }}">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-5</h3>
-                            <hr>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                                        class="btn btn-default float-right">Batal</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa
-                                        Diterima</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Mahasiswa yang lulus
-                                            pada
-                                        </label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-6
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-5</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-4</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-3
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-2</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-1</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan s.d. Akhir
-                                            TS</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rata-rata Masa
-                                            Studi</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah mhs. Yang masih
-                                            aktif</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-4</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa
-                                        Diterima</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Mahasiswa yang lulus
-                                            pada
-                                        </label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-6
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-5</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-4</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-3
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-2</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-1</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan s.d. Akhir
-                                            TS</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rata-rata Masa
-                                            Studi</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah mhs. Yang masih
-                                            aktif</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-4"4 role="tabpanel" aria-labelledby="custom-tabs-4-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-3</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Mahasiswa
-                                        Diterima</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Jumlah Mahasiswa yang lulus
-                                            pada
-                                        </label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-6
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-5</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-4</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir TS-3
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-2</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS-1</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Akhir
-                                                    TS</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan s.d. Akhir
-                                            TS</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rata-rata Masa
-                                            Studi</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah mhs. Yang masih
-                                            aktif</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-
-
+                    @endfor
                 </div>
-            </div>
             <!-- /.card -->
         </div>
 
@@ -584,17 +280,33 @@
     </section>
 @endsection
 
-@section('script')
+@include('lkps.lkps_scripts')
+@push('scripts')
     <script>
-        $(function() {
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
-                timePicker: true,
-                timePickerIncrement: 30,
-                locale: {
-                    format: 'MM/DD/YYYY hh:mm A'
+        $(document).ready(() => {
+            let url = location.href.replace(/\/$/, "");
+            console.log(url);
+            if (location.hash) {
+                console.log("wryyy");
+                const hash = url.split("#");
+                $('#custom-tabs-tab a[href="#' + hash[1] + '"]').tab("show");
+                url = location.href.replace(/\/#/, "#");
+                history.replaceState(null, null, url);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+            }
+
+            $('a[data-toggle="pill"]').on("click", function() {
+                let newUrl;
+                const hash = $(this).attr("href");
+                if (hash == "#ts-4") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + hash;
                 }
-            })
-        })
+                history.replaceState(null, null, newUrl);
+            });
+        });
     </script>
-@endsection
+@endpush

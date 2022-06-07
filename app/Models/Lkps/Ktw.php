@@ -26,6 +26,7 @@ class Ktw extends Model implements Auditable
         'jl_ats',
         'rerata_masastudi',
         'jml_mhs',
+        'prodi_id',
     ];
 
     protected $auditExclude = [
