@@ -39,12 +39,6 @@
                             <th>Rata- rata Waktu Tunggu (Bulan)
                             </th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
                     </thead>
                     <tbody>
                         <tr>
