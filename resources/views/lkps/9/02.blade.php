@@ -32,7 +32,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tbl_list" class="table table-striped table-bordered table-center-text">
+                <table id="tbl_lists" class="table table-bordered table-center-text">
                     <thead>
                         <tr>
                             <th rowspan="2">Tahun Masuk</th>
@@ -79,24 +79,30 @@
                                 <td>
                                     {{ $rowData->{$key} ? $rowData->jmd : 0}}
                                 </td>
-                                <td>
-                                    {{$rowData->{$key} ? $rowData->jml_6 : 0}}
+                                <td class="table-isi">
+                                   
     
                                 </td>
-                                <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_5: 0}}
+                                <td class="table-isi">
+                                    
                                 </td>
-                                <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_4: 0}}
+                                <td class="table-isi">
+                                    
                                 </td>
-                                <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_3: 0}}
+                                <td class= "{{$taCount >= 6 ? '':'table-isi'}}">
+                                    @if ($taCount >= 6)
+                                        {{ $rowData->{$key} ? $rowData->jml_3: 0}}
+                                    @endif
                                 </td>
-                                <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_2: 0}}
+                                <td class= "{{$taCount >= 5 ? '':'table-isi'}}">
+                                    @if ($taCount >= 5)
+                                        {{ $rowData->{$key} ? $rowData->jml_2: 0}}
+                                    @endif
                                 </td>
-                                <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_1: 0}}
+                                <td class= "{{$taCount >= 4 ? '':'table-isi'}}">
+                                    @if ($taCount >= 4)
+                                        {{ $rowData->{$key} ? $rowData->jml_1: 0}}
+                                    @endif
                                 </td>
                                 <td>
                                     {{ $rowData->{$key} ? $rowData->akhir_ts : 0}}
