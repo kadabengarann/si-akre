@@ -19,6 +19,8 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
+                        <p><b>TS : </b>{{ $tsYear }} <a href='#' id="ts_change" class='badge badge-info'>Change</a>
+                        </p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p><b>Tabel : </b>9.4. Rata-rata Masa tunggu Lulusan untuk bekerja pertama kali</p>
