@@ -15,8 +15,9 @@
     <style>
         @page {
             margin: 50px;
+            font-size: 82%;
         }
-
+        
     </style>
 </head>
 
@@ -25,20 +26,16 @@
         <section class="col-lg-12 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card card-primary card-outline">
-                <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">IDENTITAS</h3>
-                </div>
-                <div class="card-body">
-                    <div class="row">
+                <div class="box-profile">
+                    <h3 class="profile-username text-center" style="margin-top: 15px">IDENTITAS</h3>
                         <div class="col-12 col-lg-6">
-                            <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
+                            <b>Program Studi : </b>{{ $prodi->nama }}
                             @if (Auth::user()->level == 5)
                                 {{-- @foreach ($reviewer as $column) --}}
-                                <b>Nama Reviewer : </b>{{ Auth::user()->reviewer->nama }}
+                                <p><b>Nama Reviewer : </b>{{ Auth::user()->reviewer->nama }}</p>
                                 {{-- @endforeach --}}
                             @endif
                         </div>
-                    </div>
                 </div>
                 <!-- /.card-body -->
             </div>
