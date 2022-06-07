@@ -1,32 +1,5 @@
 @if (array_key_exists(1, $tables))
 @endif
-<li class="nav-header">LKPS</li>
-@if (Auth::user()->level == 1 || Auth::user()->level == 2)
-    <li class="nav-item {{ request()->is('lkps/*/1*') ? 'menu-open' : '' }}">
-        <a href="" class="nav-link {{ request()->is('lkps/*/1*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-list-ul"></i>
-            <p>1. Identitas Pengusul
-                <i class="right fas fa-angle-left"></i>
-            </p>
-        </a>
-        <ul class="nav nav-treeview">
-            <li class="nav-item">
-                <a href="/lkps/view/101{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
-                    class="nav-link {{ request()->is('lkps/*/101') ? 'active' : '' }}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Identitas Pengusul</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/lkps/view/102{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
-                    class="nav-link {{ request()->is('lkps/*/102') ? 'active' : '' }}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Daftar Program Studi di UPPS</p>
-                </a>
-            </li>
-        </ul>
-    </li>
-@endif
 <li class="nav-header">KRITERIA KINERJA</li>
 @if (array_key_exists(2, $tables))
     <li class="nav-item {{ request()->is('lkps/*/2*') ? 'menu-open' : '' }}">
