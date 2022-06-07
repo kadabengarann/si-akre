@@ -470,7 +470,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="6" style="text-align: center!important" >
+                                <td colspan="7" style="text-align: center!important" >
                                     <b>
                                         @php
                                             if ($matriksSumAll >= 361) {
