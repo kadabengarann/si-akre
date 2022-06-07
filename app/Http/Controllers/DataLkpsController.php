@@ -15,6 +15,7 @@ use App\Models\Lkps\{
     Ktk,
     Addsi,
     Kpl,
+    Ktw
     Mt,
     Ipk,
 };
@@ -72,6 +73,8 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->insertSarpra($request);
                 break;
+            case '902':
+                return $this->insertKtw($request);
             case '901':
                 return $this->insertIpk($request);
                 break;
@@ -107,6 +110,8 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->deleteSarpra($id, $request);
                 break;
+            case '902':
+                return $this->deleteKtw($id, $request);
             case '901':
                 return $this->deleteIpk($id, $request);
                 break;
@@ -142,6 +147,8 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->editSarpra($id, $request);
                 break;
+            case '902':
+                return $this->editKtw($id, $request);
             case '901':
                 return $this->editIpk($id, $request);
                 break;
@@ -539,6 +546,72 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
+  // -------------------------902 KTW------------------------------
+    private function insertKtw(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Ktw::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'ta' => $request->ta,
+                'jmd' => ($request->jmd ? $request->jmd : 0),
+                'jml_6' => ($request->jml_6 ? $request->jml_6 : 0),
+                'jml_5' => ($request->jml_5 ? $request->jml_5 : 0),
+                'jml_4' => ($request->jml_4 ? $request->jml_4 : 0),
+                'jml_3' => ($request->jml_3 ? $request->jml_3 : 0),
+                'jml_2' => ($request->jml_2 ? $request->jml_2 : 0),
+                'jml_1' => ($request->jml_1 ? $request->jml_1 : 0),
+                'akhir_ts' => ($request->akhir_ts ? $request->akhir_ts : 0),
+                'jl_ats' => ($request->jl_ats ? $request->jl_ats : 0),
+                'rerata_masastudi' => ($request->rerata_masastudi ? $request->rerata_masastudi : 0),
+                'jml_mhs' => ($request->jml_mhs ? $request->jml_mhs : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/902' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteKtw($id, Request $request)
+    {
+        $data = Ktw::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/902' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editKtw($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Ktw::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
+  
     // ------------------------- 903 KPL------------------------------
     private function insertKpl(Request $request)
     {
