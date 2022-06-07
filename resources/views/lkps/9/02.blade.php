@@ -28,7 +28,7 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="text-center card-title" style="float: none; font-weight:500">IPK Lulusan</h3>
+                <h3 class="text-center card-title" style="float: none; font-weight:500">Kelulusan Tepat Waktu</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
