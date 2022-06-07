@@ -15,6 +15,7 @@ use App\Models\Lkps\{
     Ktk,
     Addsi,
     Kpl,
+    Ipk,
 };
 class DataLkpsController extends Controller
 {
@@ -68,6 +69,9 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->insertSarpra($request);
                 break;
+            case '901':
+                return $this->insertIpk($request);
+                break;
             case '903':
                 return $this->insertKpl($request);
                 break;
@@ -97,6 +101,9 @@ class DataLkpsController extends Controller
             case '503':
                 return $this->deleteSarpra($id, $request);
                 break;
+            case '901':
+                return $this->deleteIpk($id, $request);
+                break;
             case '903':
                 return $this->deleteKpl($id, $request);
                 break;
@@ -125,6 +132,9 @@ class DataLkpsController extends Controller
                 break;
             case '503':
                 return $this->editSarpra($id, $request);
+                break;
+            case '901':
+                return $this->editIpk($id, $request);
                 break;
             case '903':
                 return $this->editKpl($id, $request);
@@ -456,7 +466,65 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
-
+    // -------------------------901 IPK------------------------------
+    private function insertIpk(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Ipk::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'tl' => $request->tl,
+                'jml_lulusan' => ($request->jml_lulusan ? $request->jml_lulusan : 0),
+                'ipk_min' => ($request->ipk_min ? $request->ipk_min : 0),
+                'ipk_rerata' => ($request->ipk_rerata ? $request->ipk_rerata : 0),
+                'ipk_maks' => ($request->ipk_maks ? $request->ipk_maks : 0),
+                
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/901' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteIpk($id, Request $request)
+    {
+        $data = Ipk::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/901' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editIpk($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Ipk::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
     // ------------------------- 903 KPL------------------------------
     private function insertKpl(Request $request)
     {
