@@ -16,7 +16,7 @@
         @page {
             margin-top: 20px;
             margin-left: 20px;
-            font-size: 72%;
+            font-size: 68%;
         }
 
     </style>
