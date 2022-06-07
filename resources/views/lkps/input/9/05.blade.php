@@ -1,4 +1,5 @@
 @extends('layouts.apps')
+@include('lkps.lkps_header')
 @section('title', 'Dashboard')
 @section('header')
     <div class="col-sm-6">
@@ -26,10 +27,6 @@
                 </div>
             </div>
             <!-- /.card-body -->
-            {{-- <div class="d-flex align-items-center justify-content-between mb-4 ml-4 mr-4">
-            <a class="btn btn-info disabled" href="#"><i class="fas fa-arrow-circle-left"></i> Prev</a>
-            <a class="btn btn-success" href="/lkps/view/{{ $idTable }}">Next <i class="fas fa-arrow-circle-right"></i></a>
-        </div> --}}
 
         </div>
 
@@ -42,298 +39,163 @@
                     <li class="pt-2 px-3">
                         <h3 class="card-title">Tahun Lulus : </h3>
                     </li>
-                </ul>
-            </div>
-            <div class="card-header p-0 ">
-                <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="custom-tabs-1-tab" data-toggle="pill" href="#custom-tabs-1"
-                            role="tab" aria-controls="custom-tabs-1" aria-selected="true">TS-4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-2-tab" data-toggle="pill" href="#custom-tabs-2" role="tab"
-                            aria-controls="custom-tabs-2" aria-selected="false">TS-3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-3-tab" data-toggle="pill" href="#custom-tabs-3" role="tab"
-                            aria-controls="custom-tabs-3" aria-selected="false">TS-2</a>
-                    </li>
-
+                    @php
+                        $count = 4;
+                        $countYear = $tsYear - 4;
+                    @endphp
+                    @for ($i = $count; $i >= 0; $i--)
+                        @if ($i == 0)
+                            <li class="nav-item">
+                                <a class="nav-link" id="ts-tab" data-toggle="pill" href="#ts" role="tab"
+                                    aria-controls="ts" aria-selected="false">TS
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link  {{ $i == 4 ? 'active' : '' }}" id="ts-{{ $i }}-tab"
+                                    data-toggle="pill" href="#ts-{{ $i }}" role="tab"
+                                    aria-controls="ts-{{ $i }}"
+                                    aria-selected="{{ $i == $count ? true : false }}">TS-{{ $i }}
+                                    ({{ $countYear }})</a>
+                            </li>
+                        @endif
+                        @php
+                            $countYear++;
+                        @endphp
+                    @endfor
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
-                    <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
-                        aria-labelledby="custom-tabs-1-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang NON
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Lingkup tempat kerja</label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
+                    @for ($i = 4; $i >= 0; $i--)
+                        @php
+                            $taCount = $i;
+                            $key = 'tl';
+                            $tabData = getArrayItemWithId($key, $tsYear - $taCount, $tableData);
+                        @endphp
+                        <div class="tab-pane fade show active" id="custom-tabs-1" role="tabpanel"
+                            aria-labelledby="custom-tabs-1-tab">
+                            <div class="card-body pb-0 pt-0">
+                                <h3 class="col-form-label text-center m-0 p-0">TS
+                                    {{ $taCount != 0 ? 'TS-' . $taCount : 'TS' }}
+                                    ({{ $tsYear - $taCount }})
+                                </h3>
+                                <hr>
+                            </div>
+                            <form method="POST" class="form-horizontal" action="/lkps/view/{{ $idTable }}">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
                                         <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Multinasional/
-                                                    Internasional
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
+                                            Terlacak</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang
+                                            Infokom</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang NON
+                                            Infokom</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label for="inputPassword3" class="col-sm-3 form-label">Lingkup tempat kerja</label>
+                                            <label class="col-sm-3 form-label">
+                                                :
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3"></div>
+                                            <div class="col-sm-9">
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Multinasional/
+                                                        Internasional
+                                                    </label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" id="inputPassword3"
+                                                            placeholder="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Nasional</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3"
+                                                        class="col-sm-3 col-form-label">Nasional</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" id="inputPassword3"
+                                                            placeholder="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Wirausaha</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3"
+                                                        class="col-sm-3 col-form-label">Wirausaha</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" id="inputPassword3"
+                                                            placeholder="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-2" role="tabpanel" aria-labelledby="custom-tabs-2-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-3</h3>
-                            <hr>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <a href="/lkps/view/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                                            class="btn btn-default float-right">Batal</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
                         </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang NON
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Lingkup tempat kerja</label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Multinasional/
-                                                    Internasional
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Nasional</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Wirausaha</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-3" role="tabpanel" aria-labelledby="custom-tabs-3-tab">
-                        <div class="card-body pb-0 pt-0">
-                            <h3 class="col-form-label text-center m-0 p-0">TS-2</h3>
-                            <hr>
-                        </div>
-                        <form class="form-horizontal" action="/lkps/view/{{ $idTable }}">
-                            <div class="form-group">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Jumlah Lulusan yang
-                                        Terlacak</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Profesi kerja bidang NON
-                                        Infokom</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="inputPassword3" class="col-sm-3 form-label">Lingkup tempat kerja</label>
-                                        <label class="col-sm-3 form-label">
-                                            :
-                                        </label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group row">
-                                                <label for="inputPassword3" class="col-sm-3 col-form-label">Multinasional/
-                                                    Internasional
-                                                </label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Nasional</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputPassword3"
-                                                    class="col-sm-3 col-form-label">Wirausaha</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="inputPassword3"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                                <a href="/lkps/view/{{ $idTable }}" class="btn btn-default float-right">Batal</a>
-                            </div>
-                            <!-- /.card-footer -->
-                        </form>
-                    </div>
-
-
+                    @endfor
                 </div>
-            </div>
             <!-- /.card -->
         </div>
 
     </section>
 @endsection
 
-@section('script')
+include('lkps.lkps_scripts')
+@push('scripts')
     <script>
-        $(function() {
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
-                timePicker: true,
-                timePickerIncrement: 30,
-                locale: {
-                    format: 'MM/DD/YYYY hh:mm A'
+        $(document).ready(() => {
+            let url = location.href.replace(/\/$/, "");
+            console.log(url);
+            if (location.hash) {
+                console.log("wryyy");
+                const hash = url.split("#");
+                $('#custom-tabs-tab a[href="#' + hash[1] + '"]').tab("show");
+                url = location.href.replace(/\/#/, "#");
+                history.replaceState(null, null, url);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+            }
+
+            $('a[data-toggle="pill"]').on("click", function() {
+                let newUrl;
+                const hash = $(this).attr("href");
+                if (hash == "#ts-4") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + hash;
                 }
-            })
-        })
+                history.replaceState(null, null, newUrl);
+            });
+        });
     </script>
-@endsection
+@endpush
+
