@@ -65,21 +65,14 @@
                             $keyVal = 'mahasiswa';
                             $key = 'jns_data';
                             $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                            $arrayTotal = [0, 0, 0, 0];
                         @endphp
                         <tr>
                             <td>1</td>
                             <td class="text-left">Mahasiswa</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -108,16 +101,10 @@
                         <tr>
                             <td>2</td>
                             <td class="text-left">Kartu Rencana Studi (KRS)</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -148,16 +135,10 @@
                             <td>3</td>
                             <td class="text-left"> Jadwal Mata Kuliah
                             </td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -187,16 +168,10 @@
                         <tr>
                             <td>4</td>
                             <td class="text-left">Nilai Mata Kuliah</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -225,16 +200,10 @@
                         <tr>
                             <td>5</td>
                             <td class="text-left">Transkrip Akademik</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -264,16 +233,10 @@
                             <td>6</td>
                             <td class="text-left">Lulusan
                             </td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -301,17 +264,11 @@
                         @endphp
                         <tr>
                             <td>7</td>
-                            <td class="text-left"> Dosen</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="text-left">Dosen</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -340,16 +297,10 @@
                         <tr>
                             <td>8</td>
                             <td class="text-left">Pegawai</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -378,16 +329,10 @@
                         <tr>
                             <td>9</td>
                             <td class="text-left">Keuangan</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -416,16 +361,10 @@
                         <tr>
                             <td>10</td>
                             <td class="text-left">Inventaris</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">
@@ -454,16 +393,10 @@
                         <tr>
                             <td>11</td>
                             <td class="text-left">Perpustakaan</td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->sppdd_sm : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->sppdd_komtj : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->sppdd_komlan : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->sppdd_komwan : 0;
-                            @endphp
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_sm : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komtj : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komlan : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->sppdd_komwan : 0 }}</td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
                             <td>
                                 <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
                                     class="btn btn-sm btn-info">

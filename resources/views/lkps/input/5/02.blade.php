@@ -100,7 +100,6 @@
                         </div>
                         @php
                             $key = 'jns_data';
-                            
                             $keyVal = 'mahasiswa';
                             $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                         @endphp
@@ -135,8 +134,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -144,8 +152,17 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,8 +171,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -163,8 +189,17 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,8 +256,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -230,8 +274,17 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,8 +293,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -249,8 +311,17 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -307,8 +378,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -316,8 +396,17 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -326,8 +415,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -335,8 +433,17 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -393,8 +500,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -402,8 +518,17 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -412,8 +537,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -421,8 +555,17 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -480,8 +623,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -489,8 +641,17 @@
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -499,8 +660,17 @@
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -508,8 +678,17 @@
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -533,7 +712,7 @@
                         </div>
                         @php
                             $keyVal = 'lulusan';
-$tabData = getArrayItemWithId($key, $keyVal, $tableData);
+                            $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                         @endphp
                         <form method="POST" class="form-horizontal" action="/lkps/insert/{{ $idTable }}">
                             @csrf
@@ -566,8 +745,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -575,8 +763,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -585,8 +782,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -594,8 +800,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -651,8 +866,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -660,8 +884,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -670,8 +903,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -679,8 +921,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -737,8 +988,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -746,8 +1006,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -756,8 +1025,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -765,8 +1043,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -823,8 +1110,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -832,8 +1128,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -842,8 +1147,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -851,8 +1165,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -909,8 +1232,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -918,8 +1250,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -928,8 +1269,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -937,8 +1287,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -995,8 +1354,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Secara
                                                         Manual</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_sm ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_sm">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_sm"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_sm ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -1004,8 +1372,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         Tanpa
                                                         Jaringan</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komtj ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komtj">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komtj"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komtj ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -1014,8 +1391,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Dengan Komputer serta
                                                         dapat diakses melalui Jaringan Lokal (LAN) </label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komlan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komlan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komlan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komlan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6 row p-2">
@@ -1023,8 +1409,17 @@ $tabData = getArrayItemWithId($key, $keyVal, $tableData);
                                                         serta dapat
                                                         diakses melalui Jaringan Luas (WAN)</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->sppdd_komwan ?? '' }}"
-                                                            class="form-control" placeholder="0" name="sppdd_komwan">
+                                                        <input type="hidden" id="input_row_id" name="row_id" value="">
+                                                        <input id="input_bukti" type="url" name="sppdd_komwan"
+                                                            class="fieldInsertInput form-control bukti"
+                                                            pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
+                                                            required placeholder="https://"
+                                                            @error('buktiPenilaian') is-invalid @enderror value="{{ $tabData->sppdd_komwan ?? '' }}">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        @error('buktiPenilaian')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
