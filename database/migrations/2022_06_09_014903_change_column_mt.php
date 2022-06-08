@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnsKbkl extends Migration
+class ChangeColumnMt extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class AddColumnsKbkl extends Migration
     public function up()
     {
         //
-        Schema::table('kbkl', function (Blueprint $table) {
-            $table->integer('lus_trlck')->change();
-            $table->integer('prfsi_non_info')->change();
+        Schema::table('mt', function (Blueprint $table) {
+            $table->decimal('rerata_tunggu', 11, 2)->change();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnsKbkl extends Migration
+class ChangeColumnKpl extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,11 @@ class AddColumnsKbkl extends Migration
     public function up()
     {
         //
-        Schema::table('kbkl', function (Blueprint $table) {
-            $table->integer('lus_trlck')->change();
-            $table->integer('prfsi_non_info')->change();
+        Schema::table('kpl', function (Blueprint $table) {
+            $table->decimal('tkp_ps', 11, 2)->change();
+            $table->decimal('tkp_b', 11, 2)->change();
+            $table->decimal('tkp_c', 11, 2)->change();
+            $table->decimal('tkp_k', 11, 2)->change();
         });
     }
 
