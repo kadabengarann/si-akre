@@ -61,11 +61,11 @@
                         @php
                             $taCount = 6;
                             $arrayTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                            $Do = 0;
                         @endphp
 
                         @for ($taCount; 3 <= $taCount; $taCount--)
                             @php
-                                
                                 $keyVal = $tsYear - $taCount;
                                 $key = 'ta';
                                 $rowData = getArrayItemWithId($key, $keyVal, $tableData);
@@ -82,7 +82,6 @@
                                     {{ $rowData->{$key} ? $rowData->jmd : 0 }}
                                 </td>
                                 <td class="table-isi">
-
 
                                 </td>
                                 <td class="table-isi">
@@ -142,9 +141,20 @@
                                     </td>
                                 @endif
                             </tr>
+                            @php
+                            // menjumlahkan data pada kolom jmd
+                            $Do += $rowData->{$key} ? $rowData->jmd : 0;
+                            $Do -= $rowData->{$key} ? $rowData->jl_ats : 0;
+                            $Do -= $rowData->{$key} ? $rowData->jml_mhs : 0;
+                            @endphp
                         @endfor
 
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="13" class="text-end"><b>DO: &nbsp; {{$Do}}</b></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             @if (Auth::user()->level != 5)

@@ -806,7 +806,7 @@ class DataLkpsController extends Controller
               'prfsi_non_info' => ($request->prfsi_non_info ? $request->prfsi_non_info : 0),
               'ltk_multi' => ($request->ltk_multi ? $request->ltk_multi : 0),
               'ltk_nas' => ($request->ltk_nas ? $request->ltk_nas : 0),
-              'ltk_wir' => ($request->jma_reg ? $request->jma_reg : 0),
+              'ltk_wir' => ($request->ltk_wir ? $request->ltk_wir : 0),
               'prodi_id' => (int)($request->prodi_id),
           ]
       );

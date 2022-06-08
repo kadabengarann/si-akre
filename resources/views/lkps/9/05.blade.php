@@ -53,12 +53,11 @@
                     <tbody>
                         @php
                             $taCount = 4;
-                            $arrayTotal = [0, 0, 0, 0, 0, 0];
+                            $arrayTotal = [0, 0, 0, 0, 0, 0, 0];
                         @endphp
 
                         @for ($taCount; 0 <= $taCount; $taCount--)
                             @php
-                                
                                 $keyVal = $tsYear - $taCount;
                                 $key = 'tl';
                                 $rowData = getArrayItemWithId($key, $keyVal, $tableData);
@@ -116,8 +115,25 @@
                                     </td>
                                 @endif
                             </tr>
+                            @php
+                                $arrayTotal[0] += $rowData->{$key} ? $rowData->jml_lus : 0;
+                                $arrayTotal[1] += $rowData->{$key} ? $rowData->lus_trlck : 0;
+                                $arrayTotal[2] += $rowData->{$key} ? $rowData->prfsi_infokom : 0;
+                                $arrayTotal[3] += $rowData->{$key} ? $rowData->prfsi_non_info : 0;
+                                $arrayTotal[4] += $rowData->{$key} ? $rowData->ltk_multi : 0;
+                                $arrayTotal[5] += $rowData->{$key} ? $rowData->ltk_nas : 0;
+                                $arrayTotal[6] += $rowData->{$key} ? $rowData->ltk_wir : 0;
+                            @endphp
                         @endfor
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><b>Jumlah</b></td>
+                            @for ($i = 0; $i < count($arrayTotal); $i++)
+                                <td><b>{{ $arrayTotal[$i] }}</b></td>
+                            @endfor
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             @if (Auth::user()->level != 5)
