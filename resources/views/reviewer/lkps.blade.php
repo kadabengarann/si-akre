@@ -54,7 +54,7 @@
                         </div>
                     @endif
                     @if (array_key_exists(3, $tables))
-                        <a href="/lkps/view/{{ $tables[3][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                        <a href="/lkps/view/{{ $tables[3][0] }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}" class="card text-dark" role="button" aria-pressed="true">
                             <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
@@ -67,7 +67,7 @@
                         </a>
                     @endif
                     @if (array_key_exists(4, $tables))
-                        <a href="/lkps/view/{{ $tables[4][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                        <a href="/lkps/view/{{ $tables[4][0] }} {{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}" class="card text-dark" role="button" aria-pressed="true">
                             <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
@@ -80,7 +80,7 @@
                         </a>
                     @endif
                     @if (array_key_exists(5, $tables))
-                        <a href="/lkps/view/{{ $tables[5][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                        <a href="/lkps/view/{{ $tables[5][0] }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}" class="card text-dark" role="button" aria-pressed="true">
                             <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
@@ -144,7 +144,7 @@
                         </div>
                     @endif
                     @if (array_key_exists(9, $tables))
-                        <a href="/lkps/view/{{ $tables[9][0] }}" class="card text-dark" role="button" aria-pressed="true">
+                        <a href="/lkps/view/{{ $tables[9][0] }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}" class="card text-dark" role="button" aria-pressed="true">
                             <div class="card-body d-flex align-items-center pt-2 pb-2">
                                 <h3 class="card-title">
                                     <i class="fas fa-list-ul mr-1"></i>
