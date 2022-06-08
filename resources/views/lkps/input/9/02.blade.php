@@ -219,16 +219,16 @@
                                         <label for="dy_tmpng" class="col-sm-2 col-form-label">Rata-rata Masa Studi</label>
                                         <div class="col-sm-10">
                                             @if ($tabData->{$key})
-                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                <input type="hidden"  name="id" class="form-control hide_num" placeholder=""
                                                     value="{{ $tabData->id }}" />
                                             @else
-                                                <input type="hidden" name="id" class="form-control hide_num" placeholder=""
+                                                <input type="hidden"  name="id" class="form-control hide_num" placeholder=""
                                                     value="-1" />
                                             @endif
                                             <input type="hidden" name="{{ $key }}" class="form-control"
                                                 id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
-                                            <input type="number" max="2147483647" min="0" name="rerata_masastudi"
+                                            <input type="number" step="any" max="2147483647" min="0" name="rerata_masastudi"
                                                 class="form-control hide_num" id="rerata_masastudi" placeholder="" min="0"
                                                 value="{{ $tabData->rerata_masastudi ?? '' }}">
                                             <input type="hidden" name="ta" class="form-control" id="ta"
@@ -250,7 +250,7 @@
                                             <input type="hidden" name="{{ $key }}" class="form-control"
                                                 id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
-                                            <input type="number" max="2147483647" min="0" name="jml_mhs"
+                                            <input type="number" step="any" max="2147483647" min="0" name="jml_mhs"
                                                 class="form-control hide_num" id="jml_mhs" placeholder="" min="0"
                                                 value="{{ $tabData->jml_mhs ?? '' }}">
                                             <input type="hidden" name="ta" class="form-control" id="ta"

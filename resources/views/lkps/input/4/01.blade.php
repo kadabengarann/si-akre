@@ -90,7 +90,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-4 col-form-label">PS Sendiri</label>
                             <div class="input-group col-sm-3">
-                                <input type="number" max="2147483647" min="0" value="{{ $dataItem->sks_pss ?? '' }}" class="form-control"
+                                <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->sks_pss ?? '' }}" class="form-control"
                                     placeholder="0" name="sks_pss">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -100,7 +100,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-4 col-form-label">PS Lain, PT Sendiri</label>
                             <div class="input-group col-sm-3">
-                                <input type="number" max="2147483647" min="0" value="{{ $dataItem->skd_psl_pts ?? '' }}" class="form-control"
+                                <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->skd_psl_pts ?? '' }}" class="form-control"
                                     placeholder="0" name="skd_psl_pts">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -110,7 +110,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
                             <div class="input-group col-sm-3">
-                                <input type="number" max="2147483647" min="0" value="{{ $dataItem->skd_ptl ?? '' }}" class="form-control"
+                                <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->skd_ptl ?? '' }}" class="form-control"
                                     placeholder="0" name="skd_ptl">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -125,7 +125,7 @@
                     <label for="inputEmail3" class="col-sm-3 col-form-label">SKS
                         Penelitian<sup>2)</sup></label>
                     <div class="input-group col-sm-3">
-                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->skd_penelitian ?? '' }}" class="form-control"
+                        <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->skd_penelitian ?? '' }}" class="form-control"
                             placeholder="0" name="skd_penelitian">
                         <div class="input-group-append">
                             <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -139,7 +139,7 @@
                         Pengabdian
                         pada Masy<sup>2)</sup></label>
                     <div class="input-group col-sm-3">
-                        <input type="number" max="2147483647" min="0" value="{{ $dataItem->skd_pengmas ?? '' }}" class="form-control"
+                        <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->skd_pengmas ?? '' }}" class="form-control"
                             placeholder="0" name="skd_pengmas">
                         <div class="input-group-append">
                             <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -164,7 +164,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-4 col-form-label">PT Sendiri</label>
                             <div class="input-group col-sm-3">
-                                <input type="number" max="2147483647" min="0" value="{{ $dataItem->sksmen_pts ?? '' }}" class="form-control"
+                                <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->sksmen_pts ?? '' }}" class="form-control"
                                     placeholder="0" name="sksmen_pts">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">SKS</span>
@@ -175,7 +175,7 @@
                             <label for="inputPassword3" class="col-sm-4 col-form-label">PT Lain</label>
 
                             <div class="input-group col-sm-3">
-                                <input type="number" max="2147483647" min="0" value="{{ $dataItem->sksmen_ptl ?? '' }}" class="form-control"
+                                <input type="number" max="2147483647" step="any" min="0" value="{{ $dataItem->sksmen_ptl ?? '' }}" class="form-control"
                                     placeholder="0" name="sksmen_ptl">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">SKS</span>

@@ -80,7 +80,7 @@
                 <div class="col-12 col-lg-6 row p-2">
                     <label for="inputEmail3" class="pl-2 col-sm-6">Luas Ruang</label>
                     <div class="col-sm-6 input-group">
-                        <input type="number" value="{{ $dataItem->luasr ?? '' }}" class="form-control" placeholder="0"
+                        <input type="number" step="any" value="{{ $dataItem->luasr ?? '' }}" class="form-control" placeholder="0"
                             name="luasr">
                         <div class="input-group-append">
                             <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>

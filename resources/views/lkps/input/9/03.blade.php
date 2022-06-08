@@ -122,7 +122,7 @@
                                                 <div class="col-12 col-lg-6 row p-2">
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Sangat Baik</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->tkp_ps ?? '' }}"
+                                                        <input type="number" step="any" max="2147483647" min="0" value="{{ $tabData->tkp_ps ?? '' }}"
                                                             class="form-control" placeholder="0" name="tkp_ps">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="basic-addon2">%</span>
@@ -132,7 +132,7 @@
                                                 <div class="col-12 col-lg-6 row p-2">
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Baik</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->tkp_b ?? '' }}"
+                                                        <input type="number" step="any" max="2147483647" min="0" value="{{ $tabData->tkp_b ?? '' }}"
                                                             class="form-control" placeholder="0" name="tkp_b">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="basic-addon2">%</span>
@@ -144,7 +144,7 @@
                                                 <div class="col-12 col-lg-6 row p-2">
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Cukup</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->tkp_c ?? '' }}"
+                                                        <input type="number" step="any" max="2147483647" min="0" value="{{ $tabData->tkp_c ?? '' }}"
                                                             class="form-control" placeholder="0" name="tkp_c">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="basic-addon2">%</span>
@@ -154,7 +154,7 @@
                                                 <div class="col-12 col-lg-6 row p-2">
                                                     <label for="inputEmail3" class="pl-2 col-sm-6">Kurang</label>
                                                     <div class="col-sm-6 input-group">
-                                                        <input type="number" max="2147483647" min="0" value="{{ $tabData->tkp_k ?? '' }}"
+                                                        <input type="number"step="any"  max="2147483647" min="0" value="{{ $tabData->tkp_k ?? '' }}"
                                                             class="form-control" placeholder="0" name="tkp_k">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="basic-addon2">%</span>
