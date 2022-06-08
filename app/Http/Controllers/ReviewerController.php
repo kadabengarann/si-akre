@@ -7,6 +7,7 @@ use App\Rules\MatchOldPassword;
 use App\Models\Reviewer;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Prodi;
 
 
 use File;
@@ -23,6 +24,13 @@ class ReviewerController extends Controller
 
 
         return view('reviewer.dashboard');
+    }
+    public function index_lkps()
+    {
+        $data = [
+            'prodi' => Prodi::get(),
+        ];
+        return view('reviewer.lkps_prodi', $data);
     }
     public function profile()
     {

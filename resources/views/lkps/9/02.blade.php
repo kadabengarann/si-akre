@@ -41,7 +41,9 @@
                             <th rowspan="2">Jumlah Lulusan s.d. Akhir TS</th>
                             <th rowspan="2">Rata-rata Masa Studi</th>
                             <th rowspan="2">Jumlah mhs. Yang masih aktif </th>
-                            <th rowspan="2">Aksi</th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Aksi</th>
+                            @endif
 
                         </tr>
                         <tr>
@@ -56,99 +58,103 @@
                         </tr>
                     </thead>
                     <tbody>
-                            @php
-                                $taCount = 6;
-                                $arrayTotal = array(0,0,0,0,0,0,0,0,0,0,0);     
-                            @endphp
-    
-                            @for ($taCount; 3 <= $taCount; $taCount--)
+                        @php
+                            $taCount = 6;
+                            $arrayTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                        @endphp
+
+                        @for ($taCount; 3 <= $taCount; $taCount--)
                             @php
                                 
-                                $keyVal = $tsYear-$taCount;
+                                $keyVal = $tsYear - $taCount;
                                 $key = 'ta';
                                 $rowData = getArrayItemWithId($key, $keyVal, $tableData);
                             @endphp
                             <tr>
                                 <td class="ts-row">
-                                        @if ($taCount == 0)
-                                            TS ({{ $keyVal }})
-                                            @else
-                                            TS-{{$taCount}} ({{ $keyVal }})
-                                        @endif
+                                    @if ($taCount == 0)
+                                        TS ({{ $keyVal }})
+                                    @else
+                                        TS-{{ $taCount }} ({{ $keyVal }})
+                                    @endif
                                 </td>
                                 <td>
-                                    {{ $rowData->{$key} ? $rowData->jmd : 0}}
+                                    {{ $rowData->{$key} ? $rowData->jmd : 0 }}
                                 </td>
                                 <td class="table-isi">
-                                   
-    
+
+
                                 </td>
                                 <td class="table-isi">
-                                    
+
                                 </td>
                                 <td class="table-isi">
-                                    
+
                                 </td>
-                                <td class= "{{$taCount >= 6 ? '':'table-isi'}}">
+                                <td class="{{ $taCount >= 6 ? '' : 'table-isi' }}">
                                     @if ($taCount >= 6)
-                                        {{ $rowData->{$key} ? $rowData->jml_3: 0}}
+                                        {{ $rowData->{$key} ? $rowData->jml_3 : 0 }}
                                     @endif
                                 </td>
-                                <td class= "{{$taCount >= 5 ? '':'table-isi'}}">
+                                <td class="{{ $taCount >= 5 ? '' : 'table-isi' }}">
                                     @if ($taCount >= 5)
-                                        {{ $rowData->{$key} ? $rowData->jml_2: 0}}
+                                        {{ $rowData->{$key} ? $rowData->jml_2 : 0 }}
                                     @endif
                                 </td>
-                                <td class= "{{$taCount >= 4 ? '':'table-isi'}}">
+                                <td class="{{ $taCount >= 4 ? '' : 'table-isi' }}">
                                     @if ($taCount >= 4)
-                                        {{ $rowData->{$key} ? $rowData->jml_1: 0}}
+                                        {{ $rowData->{$key} ? $rowData->jml_1 : 0 }}
                                     @endif
                                 </td>
                                 <td>
-                                    {{ $rowData->{$key} ? $rowData->akhir_ts : 0}}
+                                    {{ $rowData->{$key} ? $rowData->akhir_ts : 0 }}
                                 </td>
                                 <td>
-                                    {{ $rowData->{$key} ? $rowData->jl_ats : 0}}
+                                    {{ $rowData->{$key} ? $rowData->jl_ats : 0 }}
                                 </td>
                                 <td>
-                                    {{ $rowData->{$key} ? $rowData->rerata_masastudi : 0}}
+                                    {{ $rowData->{$key} ? $rowData->rerata_masastudi : 0 }}
                                 </td>
                                 <td>
-                                    {{ $rowData->{$key} ? $rowData->jml_mhs : 0}}
+                                    {{ $rowData->{$key} ? $rowData->jml_mhs : 0 }}
                                 </td>
-                                <td>
-                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{$taCount ==0 ? '':'-'.$taCount}}"
-                                        class="btn btn-sm btn-info">
+                                @if (Auth::user()->level != 5)
+                                    <td>
+                                        <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{ $taCount == 0 ? '' : '-' . $taCount }}"
+                                            class="btn btn-sm btn-info">
+                                            @if ($rowData->{$key})
+                                                <i class="fas fa-pen"></i>
+                                            @else
+                                                <i class="fas fa-plus"></i>
+                                            @endif
+                                        </a>
                                         @if ($rowData->{$key})
-                                            <i class="fas fa-pen"></i>
-                                        @else
-                                            <i class="fas fa-plus"></i>
+                                            <form method="POST"
+                                                action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                                style="display: inline">
+                                                <input name="_method" type="hidden" value="GET">
+                                                <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                    id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                                <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                    data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                            </form>
                                         @endif
-                                    </a>
-                                    @if ($rowData->{$key})
-                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                            style="display: inline">
-                                            <input name="_method" type="hidden" value="GET">
-                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                                placeholder="" value="{{ $prodi->id }}" min="0">
-                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                        </form>
-                                    @endif
-                                </td>
+                                    </td>
+                                @endif
                             </tr>
-                            @endfor
-                       
+                        @endfor
+
                     </tbody>
                 </table>
             </div>
-
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>

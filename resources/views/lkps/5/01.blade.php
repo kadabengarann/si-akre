@@ -40,7 +40,9 @@
                             <th>Jumlah (dalam Juta rupiah)</th>
                             <th>Bukti</th>
                             <th>Keterangan</th>
-                            <th>Aksi</th>
+                            @if (Auth::user()->level != 5)
+                                <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -66,26 +68,29 @@
                             <td>
                                 {{ $rowData->{$key} ? $rowData->ket : '-' }}
                             </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-1"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-1"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 2;
@@ -109,26 +114,28 @@
                             <td>
                                 {{ $rowData->{$key} ? $rowData->ket : '-' }}
                             </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-2"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-2"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         <tr>
                             <td>3</td>
@@ -136,10 +143,14 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td> <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-3"
-                                    class="btn btn-sm btn-info">
-                                    <i class="fas fa-plus"></i>
-                                </a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#tabs-3"
+                                        class="btn btn-sm btn-info">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 3;
@@ -164,30 +175,35 @@
                                 <td>
                                     {{ $rowDataItem->ket }}
                                 </td>
-                                <td>
-                                    <a href="/lkps/input/{{ $idTable }}?edit={{ $rowDataItem->id }}{{ Auth::user()->level == 1 ? '&id=' . $prodi->id : '' }}#tabs-3"
-                                        class="btn btn-sm btn-info">
-                                        <i class="fas fa-pen"></i>
-                                    </a>
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowDataItem->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                </td>
+                                @if (Auth::user()->level != 5)
+                                    <td>
+                                        <a href="/lkps/input/{{ $idTable }}?edit={{ $rowDataItem->id }}{{ Auth::user()->level == 1 ? '&id=' . $prodi->id : '' }}#tabs-3"
+                                            class="btn btn-sm btn-info">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <form method="POST"
+                                            action="/lkps/delete/{{ $idTable }}/{{ $rowDataItem->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
+                                    </td>
+                                @endif
                             </tr>
                         @endforeach
                 </table>
             </div>
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>

@@ -1,8 +1,10 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@php
+$matriks = 303;
+@endphp
 @include('lkps.form_header')
 @include('lkps.lkps_header')
-
 @section('content')
     <section class="content">
         <div class="card card-primary card-outline header_stick">
@@ -40,7 +42,9 @@
                             <th colspan="2">Jumlah Calon Mahasiswa</th>
                             <th colspan="2">Jumlah Mahasiswa Baru</th>
                             <th colspan="2">Jumlah Mahasiswa Aktif</th>
-                            <th rowspan="2">Aksi</th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Aksi</th>
+                            @endif
                         </tr>
                         <tr>
                             <th>Pendaftar</th>
@@ -54,76 +58,79 @@
                     <tbody>
                         @php
                             $taCount = 4;
-                            $arrayTotal = array(0,0,0,0,0,0,0);     
+                            $arrayTotal = [0, 0, 0, 0, 0, 0, 0];
                         @endphp
 
                         @for ($taCount; 0 <= $taCount; $taCount--)
-                        @php
-                            
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'ta';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
+                            @php
+                                
+                                $keyVal = $tsYear - $taCount;
+                                $key = 'ta';
+                                $rowData = getArrayItemWithId($key, $keyVal, $tableData);
+                            @endphp
+                            <tr>
+                                <td class="ts-row">
                                     @if ($taCount == 0)
                                         TS ({{ $keyVal }})
-                                        @else
-                                        TS-{{$taCount}} ({{ $keyVal }})
-                                    @endif
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->dy_tmpng : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->jcm_pendftr : 0}}
-
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jcm_lulus : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jmb_transfer : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_reg : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jma_transfer : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{$taCount ==0 ? '':'-'.$taCount}}"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
                                     @else
-                                        <i class="fas fa-plus"></i>
+                                        TS-{{ $taCount }} ({{ $keyVal }})
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->dy_tmpng : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jcm_pendftr : 0 }}
+
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jcm_lulus : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jmb_reg : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jmb_transfer : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jma_reg : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jma_transfer : 0 }}
+                                </td>
+                                @if (Auth::user()->level != 5)
+                                    <td>
+                                        <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{ $taCount == 0 ? '' : '-' . $taCount }}"
+                                            class="btn btn-sm btn-info">
+                                            @if ($rowData->{$key})
+                                                <i class="fas fa-pen"></i>
+                                            @else
+                                                <i class="fas fa-plus"></i>
+                                            @endif
+                                        </a>
+                                        @if ($rowData->{$key})
+                                            <form method="POST"
+                                                action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                                style="display: inline">
+                                                <input name="_method" type="hidden" value="GET">
+                                                <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                    id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                                <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                    data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                            </form>
+                                        @endif
+                                    </td>
                                 @endif
-                            </td>
-                        </tr>
-                        @php
-                            $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
-                            $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
-                            $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
-                            $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
-                            $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
-                            $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
-                            $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
-                        @endphp
+                            </tr>
+                            @php
+                                $arrayTotal[0] += $rowData->{$key} ? $rowData->dy_tmpng : 0;
+                                $arrayTotal[1] += $rowData->{$key} ? $rowData->jcm_pendftr : 0;
+                                $arrayTotal[2] += $rowData->{$key} ? $rowData->jcm_lulus : 0;
+                                $arrayTotal[3] += $rowData->{$key} ? $rowData->jmb_reg : 0;
+                                $arrayTotal[4] += $rowData->{$key} ? $rowData->jmb_transfer : 0;
+                                $arrayTotal[5] += $rowData->{$key} ? $rowData->jma_reg : 0;
+                                $arrayTotal[6] += $rowData->{$key} ? $rowData->jma_transfer : 0;
+                            @endphp
                         @endfor
                     </tbody>
                     <tfoot>
@@ -132,19 +139,22 @@
                             @foreach ($arrayTotal as $n)
                                 <th>{{ $n }}</th>
                             @endforeach
-                            <th></th>
+                            @if (Auth::user()->level != 5)
+                                <th></th>
+                            @endif
                         </tr>
-
                     </tfoot>
                 </table>
             </div>
 
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>

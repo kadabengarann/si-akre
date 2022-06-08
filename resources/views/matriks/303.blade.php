@@ -1,5 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@php($lkps = 301)
 @include('matriks.form_header')
 @section('content')
     <section class="content">
@@ -41,6 +42,8 @@
                             <th rowspan="2">Bobot
                             </th>
                             <th rowspan="2">Bukti
+                            </th>
+                            <th rowspan="2">Komentar
                             </th>
                         </tr>
                         <tr>
@@ -345,7 +348,6 @@
                             </tr>
                         </div>
                         @php($row_id = 334)
-                        @php($lkps = 301)
                         <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
@@ -354,7 +356,7 @@
                             <td class="text-start">3.2 [PELAKSANAAN] A. Keterlaksanaan atas kebijakan, standar, IKU, dan
                                 IKT yang berkaitan dengan mahasiswa terkait sistem rekrutmen.
                             </td>{{-- ELEMEN --}}
-                            <td><a href="/lkps/view/301{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}">3.1</a>
+                            <td><a href="/lkps/view/301{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}">3.1</a>
                             </td>{{-- LOKASI --}}
                             <td>3.2 [PELAKSANAAN] Keterlaksanaan atas kebijakan, standar, IKU, dan IKT yang berkaitan dengan
                                 mahasiswa mencakup: A. Sistem rekrutmen dan seleksi calon mahasiswa serta pertumbuhan jumlah
