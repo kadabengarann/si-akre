@@ -58,7 +58,7 @@ $matriks = 304;
                     <tbody></tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="2" class="text-right">Jumlah *</th>
+                            <th colspan="2" id="jumlah" class="text-right">Jumlah *</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -71,7 +71,7 @@ $matriks = 304;
                             @endif
                         </tr>
                         <tr>
-                            <th colspan="2" class="text-right">Rata-rata **</th>
+                            <th colspan="2" id="rata-rata" class="text-right">Rata-rata **</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -140,14 +140,12 @@ $matriks = 304;
                         .reduce(function(a, b) {
                             return intVal(a) + intVal(b);
                         }, 0);
-
                     var sum_4 = api
                         .column(5)
                         .data()
                         .reduce(function(a, b) {
                             return intVal(a) + intVal(b);
                         }, 0);
-
                     var sum_5 = api
                         .column(6)
                         .data()
@@ -167,17 +165,95 @@ $matriks = 304;
                             return intVal(a) + intVal(b);
                         }, 0);
 
-                    // Update footer by showing the total with the reference of the column index 
-                    $(api.column(1).footer()).html('Jumlah *');
-                    $(api.column(2).footer()).html(sum_1);
-                    $(api.column(3).footer()).html(sum_2);
-                    $(api.column(4).footer()).html(sum_3);
-                    $(api.column(5).footer()).html(sum_4);
-                    $(api.column(6).footer()).html(sum_5);
-                    $(api.column(7).footer()).html(sum_6);
-                    $(api.column(8).footer()).html(sum_7);
+                         // menghitung rata-rata tiap baris
+                    var avg_1 = api
+                        .column(2)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(2)
+                        .data()
+                        .length;
+                    var avg_2 = api
+                        .column(3)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(3)
+                        .data()
+                        .length;
 
+                    var avg_3 = api
+                        .column(4)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(4)
+                        .data()
+                        .length;
+
+                    var avg_4 = api
+                        .column(5)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(5)
+                        .data()
+                        .length;
+
+                    var avg_5 = api
+                        .column(6)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(6)
+                        .data()
+                        .length;
+                    var avg_6 = api
+                        .column(7)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(7)
+                        .data()
+                        .length;
+                    var avg_7 = api
+                        .column(8)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0) / api
+                        .column(8)
+                        .data()
+                        .length;
+
+                    // Update footer by showing the total with the reference of the column index 
+                    $('tr:eq(0) th:eq(0)', api.column(1).table().footer()).html('Jumlah *');
+                    $('tr:eq(0) th:eq(1)', api.column(2).table().footer()).html(sum_1);
+                    $('tr:eq(0) th:eq(2)', api.column(3).table().footer()).html(sum_2);
+                    $('tr:eq(0) th:eq(3)', api.column(4).table().footer()).html(sum_3);
+                    $('tr:eq(0) th:eq(4)', api.column(5).table().footer()).html(sum_4);
+                    $('tr:eq(0) th:eq(5)', api.column(6).table().footer()).html(sum_5);
+                    $('tr:eq(0) th:eq(6)', api.column(7).table().footer()).html(sum_6);
+                    $('tr:eq(0) th:eq(7)', api.column(8).table().footer()).html(sum_7);
+
+                    // Update footer by showing the average with the reference of the column index
+                    $('tr:eq(1) th:eq(0)', api.table().footer()).html('Rata-rata **');
+                    $('tr:eq(1) th:eq(1)', api.column(2).table().footer()).html(avg_1);
+                    $('tr:eq(1) th:eq(2)', api.column(3).table().footer()).html(avg_2);
+                    $('tr:eq(1) th:eq(3)', api.column(4).table().footer()).html(avg_3);
+                    $('tr:eq(1) th:eq(4)', api.column(5).table().footer()).html(avg_4);
+                    $('tr:eq(1) th:eq(5)', api.column(6).table().footer()).html(avg_5);
+                    $('tr:eq(1) th:eq(6)', api.column(7).table().footer()).html(avg_6);
+                    $('tr:eq(1) th:eq(7)', api.column(8).table().footer()).html(avg_7);
                 },
+                
                 "aLengthMenu": [
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
@@ -254,9 +330,8 @@ $matriks = 304;
                 order: [
                     [1, 'asc']
                 ],
-
-
             });
+
 
             $('#tbl_lists tbody').on('click', ' tr .delete_confirm', function() {
                 event.preventDefault();
