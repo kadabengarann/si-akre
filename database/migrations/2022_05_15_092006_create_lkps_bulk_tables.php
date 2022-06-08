@@ -141,7 +141,9 @@ class CreateLkpsBulkTables extends Migration
             $table->string('id')->unique()->primary();
             $table->integer('tl')->nullable();
             $table->integer('jml_lus')->nullable();
+            $table->integer('lus_trlck')->nullable();
             $table->integer('prfsi_infokom')->nullable();
+            $table->integer('prfsi_non_info')->nullable();
             $table->integer('ltk_multi')->nullable();
             $table->integer('ltk_nas')->nullable();
             $table->integer('ltk_wir')->nullable();
