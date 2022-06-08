@@ -1,7 +1,7 @@
 @if (array_key_exists(1, $tables))
 @endif
 <li class="nav-header">KRITERIA KINERJA</li>
-@if (array_key_exists(2, $tables))
+{{-- @if (array_key_exists(2, $tables))
     <li class="nav-item {{ request()->is('lkps/*/2*') ? 'menu-open' : '' }}">
         <a href="" class="nav-link {{ request()->is('lkps/*/2*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-list-ul"></i>
@@ -22,7 +22,7 @@
             @endforeach
         </ul>
     </li>
-@endif
+@endif --}}
 @if (array_key_exists(3, $tables))
 
     <li class="nav-item {{ request()->is('lkps/*/3*') ? 'menu-open' : '' }}">

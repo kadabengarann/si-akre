@@ -17,11 +17,11 @@
         </p>
     </a>
 </li>
-<li class="nav-header">MANAGE</li>
+<li class="nav-header">KELOLA</li>
 <li class="nav-item {{ request()->is('manage*') ? 'menu-open' : '' }}">
     <a href="" class="nav-link {{ request()->is('manage*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user"></i>
-        <p>User
+        <p>Pengguna
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>

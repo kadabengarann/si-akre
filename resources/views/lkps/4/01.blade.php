@@ -58,7 +58,7 @@ $matriks = 304;
                     <tbody></tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="2" id="jumlah" class="text-right">Jumlah *</th>
+                            <th colspan="2" class="text-right">Jumlah *</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -71,7 +71,7 @@ $matriks = 304;
                             @endif
                         </tr>
                         <tr>
-                            <th colspan="2" id="rata-rata" class="text-right">Rata-rata **</th>
+                            <th colspan="2" class="text-right">Rata-rata **</th>
                             <th></th>
                             <th></th>
                             <th></th>
