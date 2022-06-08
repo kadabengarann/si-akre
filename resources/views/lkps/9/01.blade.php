@@ -110,7 +110,9 @@
                                     </td>
                                 @endif
                             </tr>
-
+                            @php
+                                $no++;
+                            @endphp
                         @endfor
                     </tbody>
                 </table>

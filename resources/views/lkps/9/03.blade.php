@@ -50,6 +50,10 @@
                         @php
                             $key = 'jns_kemp';
                             $arrayTotal = [0, 0, 0, 0];
+                            $s = 0;
+                            $b = 0;
+                            $c = 0;
+                            $k = 0;
                             
                             $keyVal = 'Kerjasama Tim';
                             $rowData = getArrayItemWithId($key, $keyVal, $tableData);
@@ -71,7 +75,14 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -106,17 +117,19 @@
                             </td>
                             <td class="text-left">Keahlian di bidang TI
                             </td>
-                            @php
-                                $arrayTotal[0] += $rowData->{$key} ? $rowData->tkp_ps : 0;
-                                $arrayTotal[1] += $rowData->{$key} ? $rowData->tkp_b : 0;
-                                $arrayTotal[2] += $rowData->{$key} ? $rowData->tkp_c : 0;
-                                $arrayTotal[3] += $rowData->{$key} ? $rowData->tkp_k : 0;
-                            @endphp
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_ps : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+                            
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -155,7 +168,15 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#kemampuan-berbahasa-inggris"
@@ -193,7 +214,15 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -231,7 +260,15 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -269,7 +306,15 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -308,7 +353,15 @@
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_b : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_c : 0 }}</td>
                             <td class="table-isi">{{ $rowData->{$key} ? $rowData->tkp_k : 0 }}</td>
-                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : 0 }}</td>
+                            <td class="table-isi">{{ $rowData->{$key} ? $rowData->rnc_tndlnjt : '-' }}</td>
+
+                            @php
+                            $s += $rowData->{$key} ? $rowData->tkp_ps : 0;
+                            $b += $rowData->{$key} ? $rowData->tkp_b : 0;
+                            $c += $rowData->{$key} ? $rowData->tkp_c : 0;
+                            $k += $rowData->{$key} ? $rowData->tkp_k : 0;
+                            @endphp
+
                             @if (Auth::user()->level != 5)
                                 <td>
                                     <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ toDashed($keyVal) }}"
@@ -336,7 +389,12 @@
                     <tfoot>
                         <tr>
                             <th colspan="2">Jumlah</th>
-                            <th colspan="6"></th>
+                            <th>{{$s}}</th>
+                            <th>{{$b}}</th>
+                            <th>{{$c}}</th>
+                            <th>{{$k}}</th>
+                            <th class="table-isi"></th>
+                            <th></th>
                         </tr>
                     </tfoot>
                 </table>
