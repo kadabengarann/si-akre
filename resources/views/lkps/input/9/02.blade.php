@@ -250,7 +250,7 @@
                                             <input type="hidden" name="{{ $key }}" class="form-control"
                                                 id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
-                                            <input type="number" step="any" max="2147483647" min="0" name="jml_mhs"
+                                            <input type="number" max="2147483647" min="0" name="jml_mhs"
                                                 class="form-control hide_num" id="jml_mhs" placeholder="" min="0"
                                                 value="{{ $tabData->jml_mhs ?? '' }}">
                                             <input type="hidden" name="ta" class="form-control" id="ta"
