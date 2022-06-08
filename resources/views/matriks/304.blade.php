@@ -1,5 +1,6 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@php($lkps = 401)
 @include('matriks.form_header')
 @section('content')
     <section class="content">
@@ -42,6 +43,8 @@
                             </th>
                             <th rowspan="2">Skor
                             </th>
+                            <th rowspan="2">Komentar
+                            </th>
                         </tr>
                         <tr>
                             <th>Sangat Baik</th>
@@ -57,7 +60,7 @@
                             </tr>
 
                             @php($row_id = 341)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     32
@@ -65,7 +68,9 @@
                                 <td class="text-start">4.1 [PENETAPAN] A. Ketersediaan dokumen kebijakan, standar, IKU,
                                     dan IKT yang berkaitan dengan SDM terkait ketersediaan Profil DTPR.
                                 </td>{{-- ELEMEN --}}
-                                <td>4.1</td>{{-- LOKASI --}}
+                                <td><a
+                                        href="/lkps/view/401{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}">4.1</a>
+                                </td>{{-- DOKUMEN BORANG --}}
                                 <td>4.1 [PENETAPAN] Ketersediaan dokumen kebijakan, standar, IKU, dan IKT yang berkaitan
                                     dengan SDM mencakup: A. Ketersediaan Profil DTPR (kecukupan jumlah, jabfung,
                                     kualifikasi, keahlian, beban kerja EWMP, kenggotaan dalam organisasi, dan sertifikasi
@@ -91,7 +96,8 @@
                                 </td>
                                 <td class="penilaian_check_field">
                                     <label>
-                                        <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
+                                        <input type="radio"
+                                            {{ getMatriksGrade($row_id, $matriks) == 2 ? 'checked' : '' }}
                                             name="nilai{{ $row_id }}" value="2">
                                         <span class="caption">2</span></label>
                                     <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja
@@ -100,7 +106,8 @@
                                 </td>
                                 <td class="penilaian_check_field">
                                     <label>
-                                        <input type="radio" {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
+                                        <input type="radio"
+                                            {{ getMatriksGrade($row_id, $matriks) == 1 ? 'checked' : '' }}
                                             name="nilai{{ $row_id }}" value="1">
                                         <span class="caption">1</span></label>
                                     <span class="tooltiptext">Tersedianya profil DTPR (kualifikasi, keahlian, beban kerja
@@ -160,7 +167,7 @@
                             </tr>
 
                             @php($row_id = 342)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     33
@@ -259,7 +266,7 @@
                             </tr>
 
                             @php($row_id = 343)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     34
@@ -358,7 +365,7 @@
                             </tr>
 
                             @php($row_id = 344)
-                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                 data-id="{{ $row_id }}">
                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                     35
@@ -472,7 +479,7 @@
                                     <th colspan="11" class="nilai">4.2 [PELAKSANAAN]</th>
                                 </tr>
                                 @php($row_id = 345)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         36
@@ -481,7 +488,9 @@
                                         A. Keterlaksanaan atas kebijakan, standar, IKU, dan IKT yang berkaitan dengan SDM
                                         terkait Kegiatan DTPR.
                                     </td>{{-- ELEMEN --}}
-                                    <td>4.1</td>{{-- LOKASI --}}
+                                    <td><a
+                                            href="/lkps/view/401{{ Auth::user()->level == 1 || Auth::user()->level == 5 ? '?id=' . $prodi->id : '' }}">4.1</a>
+                                    </td>{{-- DOKUMEN BORANG --}}
                                     <td>4.2 [PELAKSANAAN] Keterlaksanaan atas kebijakan, standar, IKU, dan IKT yang
                                         berkaitan dengan SDM mencakup: A. Kegiatan DTPR yang mencakup rata-rata beban tugas
                                         (EWMP), pembimbingan, keanggotaan dalam organisasi profesi dan kepemilikan
@@ -581,7 +590,7 @@
 
 
                                 @php($row_id = 346)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         37
@@ -680,7 +689,7 @@
                                 </tr>
 
                                 @php($row_id = 347)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         38
@@ -780,7 +789,7 @@
                                 </tr>
 
                                 @php($row_id = 348)
-                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                     data-id="{{ $row_id }}">
                                     <td class="matriks_id" data-id="{{ $row_id }}">
                                         39
@@ -894,7 +903,7 @@
                                         <th colspan="11" class="nilai">4.3 [EVALUASI]</th>
                                     </tr>
                                     @php($row_id = 349)
-                                    <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                    <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                         data-id="{{ $row_id }}">
                                         <td class="matriks_id" data-id="{{ $row_id }}">
                                             40
@@ -1013,7 +1022,7 @@
                                         </tr>
 
                                         @php($row_id = 3410)
-                                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                             data-id="{{ $row_id }}">
                                             <td class="matriks_id" data-id="{{ $row_id }}">
                                                 41
@@ -1129,7 +1138,7 @@
                                             </tr>
 
                                             @php($row_id = 3411)
-                                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                                            <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                                                 data-id="{{ $row_id }}">
                                                 <td class="matriks_id" data-id="{{ $row_id }}">
                                                     42

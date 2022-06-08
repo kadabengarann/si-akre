@@ -35,7 +35,9 @@
                             <th rowspan="2">Jenis Data</th>
                             <th colspan="4">Sistem Pengolahan Data Ditangani
                             </th>
-                            <th rowspan="2">Action</th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Action</th>
+                            @endif
                         </tr>
                         <tr>
                             <th>Secara
@@ -69,30 +71,36 @@
                         <tr>
                             <td>1</td>
                             <td class="text-left">Mahasiswa</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'krs';
@@ -101,30 +109,36 @@
                         <tr>
                             <td>2</td>
                             <td class="text-left">Kartu Rencana Studi (KRS)</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'jadwal_mk';
@@ -135,30 +149,36 @@
                             <td>3</td>
                             <td class="text-left"> Jadwal Mata Kuliah
                             </td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'nilai_mk';
@@ -168,30 +188,36 @@
                         <tr>
                             <td>4</td>
                             <td class="text-left">Nilai Mata Kuliah</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'transkrip_akademik';
@@ -200,30 +226,36 @@
                         <tr>
                             <td>5</td>
                             <td class="text-left">Transkrip Akademik</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'lulusan';
@@ -233,30 +265,36 @@
                             <td>6</td>
                             <td class="text-left">Lulusan
                             </td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'dosen';
@@ -265,30 +303,36 @@
                         <tr>
                             <td>7</td>
                             <td class="text-left">Dosen</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'pegawai';
@@ -297,30 +341,37 @@
                         <tr>
                             <td>8</td>
                             <td class="text-left">Pegawai</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST"
+                                            action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'keuangan';
@@ -329,30 +380,37 @@
                         <tr>
                             <td>9</td>
                             <td class="text-left">Keuangan</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST"
+                                            action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'inventaris';
@@ -361,30 +419,37 @@
                         <tr>
                             <td>10</td>
                             <td class="text-left">Inventaris</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST"
+                                            action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $keyVal = 'perpustakaan';
@@ -393,40 +458,49 @@
                         <tr>
                             <td>11</td>
                             <td class="text-left">Perpustakaan</td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}" target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}" target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}" target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
-                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}" target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
-                                    class="btn btn-sm btn-info">
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_sm ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_sm ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komtj ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komtj ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komlan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komlan ?? '' }}</a></td>
+                            <td class="table-isi"><a href="{{ $rowData->sppdd_komwan ?? '' }}"
+                                    target="blank">{{ $rowData->sppdd_komwan ?? '' }}</a></td>
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#{{ $keyVal }}"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->{$key})
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST"
+                                            action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger m-2 delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>
@@ -453,7 +527,7 @@
                     [11, 25, 50, 100, 200, -1],
                     [11, 25, 50, 100, 200, "All"]
                 ],
-                "language":  {
+                "language": {
                     "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
                 },
             });

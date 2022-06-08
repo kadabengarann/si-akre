@@ -13,7 +13,7 @@
         class="nav-link {{ request()->is('matriks*') ? 'active' : '' }} {{ request()->is('matriks*') ? 'nav-gray' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>
-            Isi Form
+            Isi Penilaian
         </p>
     </a>
 </li>

@@ -38,7 +38,9 @@
                             <th colspan="8">Jumlah Tenaga Kependidikan dengan
                                 Pendidikan Terakhir</th>
                             <th rowspan="2">Unit Kerja</th>
-                            <th rowspan="2">Action</th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Aksi</th>
+                            @endif
                         </tr>
                         <tr>
                             <th>S3</th>
@@ -54,7 +56,7 @@
                     <tbody>
                         @php
                             $rowData = getArrayItemWithId('jtk', 'pustakawan', $tableData);
-                            $arrayTotal = array(0,0,0,0,0,0,0,0,0); 
+                            $arrayTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0];
                         @endphp
                         <tr>
                             <td>
@@ -82,26 +84,29 @@
                             <td>{{ $rowData->jtk ? $rowData->jtk_d1 : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->jtk_sm : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->uk : '' }}</td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#pustakawan"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#pustakawan"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->jtk)
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->jtk)
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->jtk)
-                                    <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                         @php
                             $rowData = getArrayItemWithId('jtk', 'laboran', $tableData);
@@ -132,28 +137,30 @@
                             <td>{{ $rowData->jtk ? $rowData->jtk_d1 : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->jtk_sm : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->uk : '' }}</td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#laboran"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#laboran"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->jtk)
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->jtk)
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->jtk)
-                                    <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
-                                                @php
+                        @php
                             $rowData = getArrayItemWithId('jtk', 'administrasi', $tableData);
                         @endphp
                         <tr>
@@ -181,28 +188,30 @@
                             <td>{{ $rowData->jtk ? $rowData->jtk_d1 : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->jtk_sm : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->uk : '' }}</td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#administrasi"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#administrasi"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->jtk)
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->jtk)
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->jtk)
-                                    <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
-                        
+
                         @php
                             $rowData = getArrayItemWithId('jtk', 'lainnya', $tableData);
                         @endphp
@@ -231,26 +240,28 @@
                             <td>{{ $rowData->jtk ? $rowData->jtk_d1 : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->jtk_sm : 0 }}</td>
                             <td>{{ $rowData->jtk ? $rowData->uk : '' }}</td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#lainnya"
-                                    class="btn btn-sm btn-info">
+                            @if (Auth::user()->level != 5)
+                                <td>
+                                    <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#lainnya"
+                                        class="btn btn-sm btn-info">
+                                        @if ($rowData->jtk)
+                                            <i class="fas fa-pen"></i>
+                                        @else
+                                            <i class="fas fa-plus"></i>
+                                        @endif
+                                    </a>
                                     @if ($rowData->jtk)
-                                        <i class="fas fa-pen"></i>
-                                    @else
-                                        <i class="fas fa-plus"></i>
+                                        <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
+                                            style="display: inline">
+                                            <input name="_method" type="hidden" value="GET">
+                                            <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
+                                                placeholder="" value="{{ $prodi->id }}" min="0">
+                                            <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                        </form>
                                     @endif
-                                </a>
-                                @if ($rowData->jtk)
-                                    <form method="POST" action="/lkps/delete/402/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
-                                @endif
-                            </td>
+                                </td>
+                            @endif
                         </tr>
                     </tbody>
                     <tfoot>
@@ -270,12 +281,14 @@
                 </table>
             </div>
 
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>

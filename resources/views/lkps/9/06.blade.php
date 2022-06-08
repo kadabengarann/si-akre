@@ -36,7 +36,9 @@
                             <th>Jumlah Penelitian bertema INFOKOM yang mendapat HKI</th>
                             <th>Jumlah PkM bertema INFOKOM yang diadopsi masyarakat</th>
                             <th>Jumlah PKM bertema INFOKOM yang mendapat HKI</th>
-                            <th>Action</th>
+                            @if (Auth::user()->level != 5)
+                                <th>Action</th>
+                            @endif
 
                         </tr>
                     </thead>
@@ -51,18 +53,22 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            @if (Auth::user()->level != 5)
+                                <th></th>
+                            @endif
                         </tr>
 
                     </tfoot>
                 </table>
             </div>
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>
@@ -135,7 +141,7 @@
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
-                "language":  {
+                "language": {
                     "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
                 },
                 paging: true,
@@ -183,12 +189,14 @@
                         name: 'pkm_infokomhki',
                         searchable: false
                     },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
+                    @if (Auth::user()->level != 5)
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        },
+                    @endif
                 ],
                 order: [
                     [0, 'asc']

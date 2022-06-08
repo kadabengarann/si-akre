@@ -12,8 +12,8 @@
                         <p><b>Kriteria : </b>9. Luaran dan Capaian Tridharma</p>
                     </div>
                     <p><b>TS : </b>
-                            <span id="ts-year">{{ $tsYear }}</span> <a href='#' id="ts_change"
-                                class='badge badge-info'>Change</a>
+                        <span id="ts-year">{{ $tsYear }}</span> <a href='#' id="ts_change"
+                            class='badge badge-info'>Change</a>
                     </p>
                     <div class="col-12 col-lg-6">
                         <p><b>Tabel : </b>9.5. Kesesuaian Bidang Kerja Lulusan</p>
@@ -39,7 +39,9 @@
                             <th rowspan="2">Profesi kerja bidang Infokom</th>
                             <th rowspan="2">Profesi kerja bidang NON Infokom</th>
                             <th colspan="3">Lingkup tempat kerja</th>
-                            <th rowspan="2">Aksi</th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Aksi</th>
+                            @endif
 
                         </tr>
                         <tr>
@@ -51,77 +53,81 @@
                     <tbody>
                         @php
                             $taCount = 4;
-                            $arrayTotal = array(0,0,0,0,0,0);     
+                            $arrayTotal = [0, 0, 0, 0, 0, 0];
                         @endphp
 
                         @for ($taCount; 0 <= $taCount; $taCount--)
-                        @php
-                            
-                            $keyVal = $tsYear-$taCount;
-                            $key = 'tl';
-                            $rowData = getArrayItemWithId($key, $keyVal, $tableData);
-                        @endphp
-                        <tr>
-                            <td class="ts-row">
+                            @php
+                                
+                                $keyVal = $tsYear - $taCount;
+                                $key = 'tl';
+                                $rowData = getArrayItemWithId($key, $keyVal, $tableData);
+                            @endphp
+                            <tr>
+                                <td class="ts-row">
                                     @if ($taCount == 0)
                                         TS ({{ $keyVal }})
-                                        @else
-                                        TS-{{$taCount}} ({{ $keyVal }})
-                                    @endif
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->jml_lus : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->lus_trlck : 0}}
-                            </td>
-                            <td>
-                                {{$rowData->{$key} ? $rowData->prfsi_infokom : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->prfsi_non_info : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->ltk_multi : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->ltk_nas : 0}}
-                            </td>
-                            <td>
-                                {{ $rowData->{$key} ? $rowData->ltk_wir : 0}}
-                            </td>
-                            <td>
-                                <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{$taCount ==0 ? '':'-'.$taCount}}"
-                                    class="btn btn-sm btn-info">
-                                    @if ($rowData->{$key})
-                                        <i class="fas fa-pen"></i>
                                     @else
-                                        <i class="fas fa-plus"></i>
+                                        TS-{{ $taCount }} ({{ $keyVal }})
                                     @endif
-                                </a>
-                                @if ($rowData->{$key})
-                                    <form method="POST" action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
-                                        style="display: inline">
-                                        <input name="_method" type="hidden" value="GET">
-                                        <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"
-                                            placeholder="" value="{{ $prodi->id }}" min="0">
-                                        <button type="submit" class="btn btn-sm btn-danger delete_confirm"
-                                            data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
-                                    </form>
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->jml_lus : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->lus_trlck : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->prfsi_infokom : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->prfsi_non_info : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->ltk_multi : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->ltk_nas : 0 }}
+                                </td>
+                                <td>
+                                    {{ $rowData->{$key} ? $rowData->ltk_wir : 0 }}
+                                </td>
+                                @if (Auth::user()->level != 5)
+                                    <td>
+                                        <a href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}#ts{{ $taCount == 0 ? '' : '-' . $taCount }}"
+                                            class="btn btn-sm btn-info">
+                                            @if ($rowData->{$key})
+                                                <i class="fas fa-pen"></i>
+                                            @else
+                                                <i class="fas fa-plus"></i>
+                                            @endif
+                                        </a>
+                                        @if ($rowData->{$key})
+                                            <form method="POST"
+                                                action="/lkps/delete/{{ $idTable }}/{{ $rowData->id }}"
+                                                style="display: inline">
+                                                <input name="_method" type="hidden" value="GET">
+                                                <input type="hidden" name="prodi_id" class="form-control hide_num"
+                                                    id="prodi_id" placeholder="" value="{{ $prodi->id }}" min="0">
+                                                <button type="submit" class="btn btn-sm btn-danger delete_confirm"
+                                                    data-toggle="tooltip"><i class="fas fa-minus-circle"></i></button>
+                                            </form>
+                                        @endif
+                                    </td>
                                 @endif
-                            </td>
-                        </tr>
+                            </tr>
                         @endfor
                     </tbody>
                 </table>
             </div>
-
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>

@@ -1,5 +1,8 @@
 @extends('layouts.apps')
 @section('title', 'Dashboard')
+@php
+$matriks = 304;
+@endphp
 @include('lkps.form_header')
 @section('content')
     <section class="content">
@@ -40,7 +43,9 @@
                                 Pengabdian
                                 pada Masy<sup>2)</sup></th>
                             <th colspan="2">SKS Manajemen<sup>3)</sup></th>
-                            <th rowspan="2">Action</sup></th>
+                            @if (Auth::user()->level != 5)
+                                <th rowspan="2">Aksi</th>
+                            @endif
                         </tr>
                         <tr>
                             <th>PS Sendiri</th>
@@ -61,7 +66,9 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            @if (Auth::user()->level != 5)
+                                <th></th>
+                            @endif
                         </tr>
                         <tr>
                             <th colspan="2" class="text-right">Rata-rata **</th>
@@ -72,18 +79,21 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            @if (Auth::user()->level != 5)
+                                <th></th>
+                            @endif
                         </tr>
                     </tfoot>
                 </table>
             </div>
-
-            <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-                <a class="btn btn-primary"
-                    href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
-                        class="fas fa-plus-circle"></i> Input
-                    data</a>
-            </div>
+            @if (Auth::user()->level != 5)
+                <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
+                    <a class="btn btn-primary"
+                        href="/lkps/input/{{ $idTable }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i
+                            class="fas fa-plus-circle"></i> Input
+                        data</a>
+                </div>
+            @endif
 
             <!-- /.card-body -->
         </div>
@@ -172,7 +182,7 @@
                     [5, 10, 25, 50, 100, 200, -1],
                     [5, 10, 25, 50, 100, 200, "All"]
                 ],
-                "language":  {
+                "language": {
                     "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
                 },
                 paging: true,
@@ -231,12 +241,15 @@
                         name: 'sksmen_ptl',
                         searchable: false
                     },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
+                    @if (Auth::user()->level != 5)
+
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        },
+                    @endif
                 ],
                 order: [
                     [1, 'asc']

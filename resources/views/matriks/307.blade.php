@@ -42,6 +42,8 @@
                             </th>
                             <th rowspan="2">Skor
                             </th>
+                            <th rowspan="2">Komentar
+                            </th>
                         </tr>
                         <tr>
                             <th>Sangat Baik</th>

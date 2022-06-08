@@ -60,6 +60,20 @@ class LkpsController extends Controller
             ];
 
             return view('v_user_lkps', $data);
+        } elseif (Auth::user()->level == 5) {
+            $data = [
+                'prodi' =>
+                Prodi::find(
+                    $request->query('id')
+                ),
+                'tables' => $this->allowedTable(),
+
+            ];
+            if (null == $request->query('id')) {
+                return redirect('/');
+            }
+
+            return view('reviewer.lkps', $data);
         }
     }
 
@@ -100,6 +114,14 @@ class LkpsController extends Controller
             $prodi = Prodi::find(Auth::user()->dosen->prodi_id);
         } elseif (Auth::user()->level == 4) {
             $prodi = Prodi::find(Auth::user()->mhs->prodi_id);
+        } elseif (Auth::user()->level == 5) {
+            if (null == $request->query('id')) {
+                return redirect('/matriks');
+            }
+            $prodi =
+                Prodi::find(
+                    $request->query('id')
+                );
         }
         $tableData = DataLkpsController::getLkpsData($id, $prodi->id);
         // return $tableData;

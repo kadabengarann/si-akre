@@ -13,7 +13,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[2] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/21*') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>2. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -36,7 +36,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[3] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>3. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -59,7 +59,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[4] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>4. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -81,7 +81,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[5] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>5. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -103,7 +103,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[6] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>6. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -125,7 +125,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[7] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>7. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -147,7 +147,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[8] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>8. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>
@@ -170,7 +170,7 @@
         <ul class="nav nav-treeview">
             @foreach ($tables[9] as $n)
                 <li class="nav-item">
-                    <a href="/lkps/view/{{ $n }}{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+                    <a href="/lkps/view/{{ $n }}{{ (Auth::user()->level == 1||Auth::user()->level == 5) ? '?id=' . $prodi->id : '' }}"
                         class="nav-link {{ request()->is('lkps/*/' . $n) ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>9. {{ (int) (strval($n)[1] . strval($n)[2]) }}</p>

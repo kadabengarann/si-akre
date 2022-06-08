@@ -42,6 +42,9 @@
                             </th>
                             <th rowspan="2">Skor
                             </th>
+                            <th rowspan="2">Komentar
+                            </th>
+
                         </tr>
                         <tr>
                             <th>Sangat Baik</th>
@@ -58,14 +61,14 @@
                             </tr>
                         </div>
                         @php($row_id = 411)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 109
                             </td>{{-- NO BUTIR --}}
                             <td class="text-start">[PENDIDIKAN] 1.1 Mata Kuliah Inti/Khas Teknologi Informasi.
                             </td>{{-- ELEMEN --}}
-                            <td>1.1</td>{{-- LOKASI --}}
+                            <td></td>{{-- LOKASI --}}
                             <td>[PENDIDIKAN] 1.1 Mata Kuliah Inti/Khas Teknologi Informasi Program Studi menguraikan
                                 Struktur Kurikulum yang memuat mata kuliah inti Teknologi Informasi yang mencakup: (1)
                                 Dasar-dasar Perangkat Lunak (2) Manajemen Informasi (3) Teknologi Platform (4) Paradigma
@@ -157,7 +160,7 @@
                         </tr>
 
                         @php($row_id = 412)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 110
@@ -165,7 +168,7 @@
                             <td class="text-start">1.2 Mata kuliah Pilihan Domain Spesifik dan Lingkungan Teknologi
                                 Informasi.
                             </td>{{-- ELEMEN --}}
-                            <td>1.2</td>{{-- LOKASI --}}
+                            <td></td>{{-- LOKASI --}}
                             <td>1.2 Mata kuliah Pilihan Domain Spesifik dan Lingkungan Teknologi Informasi Program Studi
                                 menguraikan Struktur Kurikulum yang memuat daftar mata kuliah pilihan domain Teknologi
                                 Informasi yang mencakup: (1) Bidang kompetensi: Aplikasi seluler (mobile), komputasi awan,
@@ -256,7 +259,7 @@
                         </tr>
 
                         @php($row_id = 413)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 111
@@ -267,7 +270,7 @@
                                 linier, statistik dan probabilitas, analitik data. (2)Dilengkapi RPS yang memuat CPMK yang
                                 relevan dengan CPL.
                             </td>{{-- ELEMEN --}}
-                            <td>1.3</td>{{-- LOKASI --}}
+                            <td></td>{{-- LOKASI --}}
                             <td>
                             </td>{{-- DESKRIPTOR --}}
                             <td class="penilaian_check_field">
@@ -353,7 +356,7 @@
                         </tr>
 
                         @php($row_id = 414)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 112
@@ -361,7 +364,7 @@
                             <td class="text-start">1.4 Proyek utama (Capstone project) yang Relevan dengan Bidang
                                 Teknologi Informasi.
                             </td>{{-- ELEMEN --}}
-                            <td>1.4</td>{{-- LOKASI --}}
+                            <td></td>{{-- LOKASI --}}
                             <td>1.4 Proyek utama (Capstone project) yang Relevan dengan Bidang Teknologi Informasi Program
                                 Studi menguraikan pelaksanaan proyek utama (Capstone Project) yang merupakan integrasi dan
                                 penerapan pengetahuan dan keterampilan yang diperoleh dari tugas-tugas mata kuliah
@@ -454,7 +457,7 @@
                         </tr>
 
                         @php($row_id = 415)
-                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null  ? 'disable-input-radio': '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
+                        <tr class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }} {{ $reviewer->id == null ? 'disable-input-radio' : '' }} {{ Auth::user()->level == 2 ? 'view-only' : '' }}"
                             data-id="{{ $row_id }}">
                             <td class="matriks_id" data-id="{{ $row_id }}">
                                 113
