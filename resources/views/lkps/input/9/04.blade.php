@@ -156,7 +156,7 @@
                                             <input type="hidden" name="{{ $key }}" class="form-control"
                                                 id="{{ $key }}" value="{{ $tsYear - $taCount }}">
 
-                                            <input type="number" max="2147483647" min="0" name="rerata_tunggu"
+                                            <input type="number" step="any" max="2147483647" min="0" name="rerata_tunggu"
                                                 class="form-control hide_num" id="rerata_tunggu" placeholder="" min="0"
                                                 value="{{ $tabData->rerata_tunggu ?? '' }}">
                                             <input type="hidden" name="prodi_id" class="form-control hide_num" id="prodi_id"

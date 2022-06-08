@@ -129,7 +129,7 @@
                                             <div class="form-group row">
                                                 <label for="ipk_min" class="col-sm-2 col-form-label">Min.</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="ipk_min"
+                                                    <input type="number" step="any" max="2147483647" min="0" name="ipk_min"
                                                         class="form-control hide_num" id="ipk_min" placeholder=""
                                                         min="0" value="{{ $tabData->ipk_min ?? '' }}">
                                                 </div>
@@ -137,7 +137,7 @@
                                             <div class="row">
                                                 <label for="ipk_rerata" class="col-sm-2 col-form-label">Rata-rata</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="ipk_rerata"
+                                                    <input type="number" step="any" max="2147483647" min="0" name="ipk_rerata"
                                                         class="form-control hide_num" id="ipk_rerata" placeholder="" min="0"
                                                         value="{{ $tabData->ipk_rerata ?? '' }}">
                                                 </div>
@@ -145,7 +145,7 @@
                                             <div class="row">
                                                 <label for="ipk_maks" class="col-sm-2 col-form-label">Maks.</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" max="2147483647" min="0" name="ipk_maks"
+                                                    <input type="number" step="any" max="2147483647" min="0" name="ipk_maks"
                                                         class="form-control hide_num" id="ipk_maks" placeholder="" min="0"
                                                         value="{{ $tabData->ipk_maks ?? '' }}">
                                                 </div>
