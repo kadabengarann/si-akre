@@ -52,7 +52,7 @@
                         <thead>
                             <tr>
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
-                                <th class="mt-1 mb-1">Skor Maksimal
+                                <th class="mt-1 mb-1">Bobot(Skor Maksimal) 
                                 </th>
                                 {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
                                 @foreach ($reviewer as $column => $value)
@@ -62,9 +62,7 @@
                                         {{-- R-1<br>({{ $reviewer->nama }}) --}}
                                     </th>
                                 @endforeach
-                                <th class="mt-1 mb-1">Bobot dari 400
-                                </th>
-                                <th class="mt-1 mb-1">Jml butir
+                                <th class="text-center mt-1 mb-1">Jml butir
                                 </th>
                             </tr>
                         </thead>
@@ -72,7 +70,7 @@
                             @php
                                 $row_id = 11;
                             @endphp
-                            <tr
+                            <tr>
                                 class="{{ getArrayItem($row_id, $dataMatriks)->remainingField != 0 ? 'incomplete' : '' }}">
                                 <td>
                                     A
@@ -88,12 +86,7 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-                                </td>
-                                <td>
-                                    1
-                                </td>
+                                <td class="text-center">1</td>
 
                             </tr>
                             @php
@@ -116,10 +109,6 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
                                 <td>
                                     1
                                 </td>
@@ -147,10 +136,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     9
                                 </td>
 
@@ -177,10 +162,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     11
                                 </td>
 
@@ -205,10 +186,6 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
                                 <td>
                                     9
                                 </td>
@@ -235,10 +212,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     11
                                 </td>
 
@@ -263,10 +236,6 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
                                 <td>
                                     7
                                 </td>
@@ -293,10 +262,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     15
                                 </td>
 
@@ -321,10 +286,6 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
                                 <td>
                                     11
                                 </td>
@@ -351,10 +312,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     11
                                 </td>
 
@@ -380,10 +337,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     17
                                 </td>
 
@@ -408,10 +361,6 @@
                                         {{ getArrayItem($row_id, $value)->skor ?: '-' }}
                                     </td>
                                 @endforeach
-                                <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
                                 <td>
                                     5
                                 </td>
@@ -439,10 +388,6 @@
                                     </td>
                                 @endforeach
                                 <td>
-                                    {{ getArrayItem($row_id, $dataMatriksProdi)->skor ?: '-' }}
-
-                                </td>
-                                <td>
                                     4
                                 </td>
 
@@ -460,31 +405,34 @@
                                         {{ $value }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
                                     </td>
                                 @endforeach
-                                <td>{{ $matriksSumAll }} ({{ number_format(($value / 400) * 100, 2, '.', '') }}%)
-                                </td>
-                                <td>
+                                <td class="text-center">
                                     112
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="7" style="text-align: center!important" >
-                                    <b>
-                                        @php
-                                            if ($matriksSumAll >= 361) {
-                                                echo 'Unggul';
-                                            } elseif ($matriksSumAll >= 301 && $matriksSumAll < 361) {
-                                                echo 'Baik Sekali';
-                                            } elseif ($matriksSumAll >= 200 && $matriksSumAll < 301) {
-                                                echo 'Baik';
-                                            } else {
-                                                echo 'Tidak memenuhi syarat peringkat';
-                                            }
-                                        @endphp
-                                    </b>
+                                <td colspan="2" >Nilai Akreditasi</td>
+                                <td style="text-align: center!important">
+                                    Kriteria
                                 </td>
+                                @foreach ($matriksSumAllRevs as $column => $value)
+                                <td class="text-center">
+                                <b>
+                                    @php
+                                        if ($value >= 361) {
+                                            echo 'Unggul';
+                                        } elseif ($value >= 301 && $value < 361) {
+                                            echo 'Baik Sekali';
+                                        } elseif ($value >= 200 && $value < 301) {
+                                            echo 'Baik';
+                                        } else {
+                                            echo 'Tidak memenuhi syarat peringkat';
+                                        }
+                                    @endphp
+                                </b>
+                                </td>
+                            @endforeach
                             </tr>
                         </tfoot>
                     </table>
