@@ -148,6 +148,7 @@ class Matriks extends Model implements Auditable
     {
         $revs = DB::table('reviewer')
             ->join('users', 'users.rev_id', '=', 'reviewer.id')
+            ->orderBy('reviewer.id', 'ASC')
             ->get();
 
         return $revs;
