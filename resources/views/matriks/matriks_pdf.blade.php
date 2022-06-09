@@ -51,15 +51,7 @@
                         <thead>
                             <tr>
                                 <th class="mt-1 mb-1" colspan="2">BAB/KRITERIA</th>
-                                <th class="mt-1 mb-1">Skor Maksimal
-                                </th>
-                                {{-- @foreach ($dataMatriksReviewer as $column => $value) --}}
-                                {{-- @foreach ($reviewer as $column) --}}
-                                {{-- <th class="mt-1 mb-1">Nilai Hasil
-                                        R-1<br>({{ $reviewer->nama }})
-                                    </th> --}}
-                                {{-- @endforeach --}}
-                                <th class="mt-1 mb-1">Bobot dari 400
+                                <th class="mt-1 mb-1">Bobot(Skor Maksimal) 
                                 </th>
                                 <th class="mt-1 mb-1">Jml butir
                                 </th>
@@ -410,7 +402,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="2">Nilai Akreditasi</td>
-                                <td colspan="3">
+                                <td colspan="3" class="text-center">
                                     <b>
                                         @php
                                             if ($matriksSumAll >= 361) {
