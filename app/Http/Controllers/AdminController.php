@@ -857,11 +857,11 @@ class AdminController extends Controller
     public function insertReviewer()
     {
         Request()->validate([
-            // 'id' => 'required|unique:teacher,id|min:10|max:10',
+            // 'id' => 'required|unique:reviewer,id|min:10|max:18',
             'name' => 'required',
             'email' => 'required|email:rfc,dns|unique:users,email,',
             'instansi' => 'required',
-            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:18',
             'foto_rev' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
 
@@ -941,7 +941,7 @@ class AdminController extends Controller
         $user = $reviewer->user;
 
         Request()->validate([
-            'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:16',
+            'username' => 'required|unique:users,username,' . $reviewer->user->id . 'max:5|max:18',
             'email' => 'required|email:rfc,dns|unique:users,email,' . $reviewer->user->id,
 
             'name' => 'required',
