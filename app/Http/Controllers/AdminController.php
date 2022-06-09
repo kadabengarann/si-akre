@@ -455,7 +455,7 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc,dns|unique:users,email,',
             'id_prodi' => 'required',
-            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:13',
             'foto_mhs' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
             'password' =>  ['required', 'min:8', 'max:16'],
@@ -528,7 +528,7 @@ class AdminController extends Controller
         $user = $mhs->user;
 
         Request()->validate([
-            'username' => 'required|unique:users,username,' . $mhs->user->id . 'max:5|max:16',
+            'username' => 'required|unique:users,username,' . $mhs->user->id . 'max:5|max:13',
             'email' => 'required|email:rfc,dns|unique:users,email,' . $mhs->user->id,
 
             'name' => 'required',
@@ -659,7 +659,7 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc,dns|unique:users,email,',
             'id_prodi' => 'required',
-            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:10',
+            'username' => 'required|regex:/^[A-Za-z0-9 ]+$/|unique:users,username|max:18',
             'foto_dos' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 
 
@@ -734,7 +734,7 @@ class AdminController extends Controller
         $user = $dosen->user;
 
         Request()->validate([
-            'username' => 'required|unique:users,username,' . $dosen->user->id . 'max:5|max:16',
+            'username' => 'required|unique:users,username,' . $dosen->user->id . 'max:5|max:18',
             'email' => 'required|email:rfc,dns|unique:users,email,' . $dosen->user->id,
 
             'name' => 'required',
