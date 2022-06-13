@@ -48,9 +48,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="password"
-                                    >Password</label
-                                  >
+                                    <label class="small mb-1" for="password">Password</label>
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan password" autocomplete="current-password">
         
                                         @error('password')
@@ -58,7 +56,16 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                    </div>            
+                                </div>
+                                <div class="form-group">
+                                        {!! NoCaptcha::display() !!}
+                                        {!! NoCaptcha::renderJs() !!}
+                                        @error('g-recaptcha-response')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                </div>            
                               <div
                                 class="
                                   form-group
