@@ -136,9 +136,15 @@
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Peringkat Terbaru
                             Akreditasi PS </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control @error('akreditasi') is-invalid @enderror"
-                                value="{{ $prodi->akreditasi }}" placeholder="Peringkat Terbaru
-                                                            Akreditasi PS" name="akreditasi">
+                            <!-- membuat dropdown -->
+                            <select class="form-control @error('peringkat_akreditasi') is-invalid @enderror"
+                                name="akreditasi">
+                                <option value="" style="background-color:#808080;" class="text-light">Pilih Peringkat Akreditasi PS</option>
+                                <option value="Unggul" {{ $prodi->akreditasi == 'Unggul' ? 'selected' : '' }}>Unggul</option>
+                                <option value="Baik Sekali" {{ $prodi->akreditasi == 'Baik Sekali' ? 'selected' : '' }}>Baik Sekali</option>
+                                <option value="Baik" {{ $prodi->akreditasi == 'Baik' ? 'selected' : '' }}>Baik</option>
+                                <option value="Tidak Terkakreditasi" {{ $prodi->akreditasi == 'Tidak Terkakreditasi' ? 'selected' : '' }}>Tidak Terkakreditasi</option>
+                            </select>
                             <div class="invalid-feedback">
                                 @error('akreditasi')
                                     {{ $message }}
