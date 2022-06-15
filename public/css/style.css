@@ -14,11 +14,13 @@ td {
 }
 .paper-preview {
     display: block;
-    width: 100%;
+    max-width: 871px;
     border: solid 1px rgba(0, 0, 0, 0.05);
     padding: 1rem;
     border-radius: 10px;
+    margin: auto;
     margin-top: 1rem;
+    padding: 1cm 2cm 2cm;
 }
 input[type=number].hide_num{
   -moz-appearance: textfield;
