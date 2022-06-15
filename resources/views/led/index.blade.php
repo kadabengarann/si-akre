@@ -27,6 +27,10 @@
                                     <p><b>Program Studi : </b>{{ $prodi->nama }}</p>
                                 </div>
                             </div>
+                            <div class="row d-flex align-items-right">
+                         <a class="btn btn-success "
+                             href="/led/all{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"><i class="fas fa-print"></i> Print semua</a>
+                        </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
