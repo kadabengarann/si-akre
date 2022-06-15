@@ -66,39 +66,88 @@ class LedController extends Controller
             $formPenilaian = '30' . $id[0];
         }
 
-        $tableValue = $this->getInfo($id, $ledValues['led']);
-        $multi_value = array();
-        if (isset($tableValue['multi_input'])) {
-            foreach ($tableValue['multi_input_value'] as
+        if ($id != 'all') {
+            $tableValue = $this->getInfo($id, $ledValues['led']);
+            $multi_value = array();
+            if (isset($tableValue['multi_input'])) {
+                foreach ($tableValue['multi_input_value'] as
                 $index => $key) {
-                if (Led::find($key['id'] . $prodi->id)) {
-                    array_push($multi_value, Led::find($key['id'] . $prodi->id));
-                } else {
-                    array_push($multi_value, null);
+                    if (Led::find($key['id'] . $prodi->id)) {
+                        array_push($multi_value, Led::find($key['id'] . $prodi->id));
+                    } else {
+                        array_push($multi_value, null);
+                    }
                 }
             }
-        }
-        $data = [
-            'tables' => $ledValues['led'],
-            'prev' => $this->prev_num($id),
-            'next' => $this->next_num($id),
-            'value' => Led::find($id . $prodi->id),
-            'multi_value' => $multi_value,
-            'idTable' => $id,
-            'tableValue' => $tableValue,
-            // 'led_nav' => $ledValuesNav,
-            'prodi' => $prodi,
-            // 'permit' => $form
-        ];
+            $prev = $this->prev_num($id);
+            $next = $this->next_num($id);
+            if ($next == 0) {
+                $next = 'all';
+                // return $next;
+            }
 
-        if ($tableValue) {
-            // return $prodi;
-            // return  $multi_value;
-            // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
-            return view('led.base', $data);
-        } else {
-            return redirect('/led');
+            $data = [
+                'tables' => $ledValues['led'],
+                'prev' =>  $prev,
+                'next' => $next,
+                'value' => Led::find($id . $prodi->id),
+                'multi_value' => $multi_value,
+                'idTable' => $id,
+                'tableValue' => $tableValue,
+                // 'led_nav' => $ledValuesNav,
+                'prodi' => $prodi,
+                // 'permit' => $form
+            ];
+
+            if ($tableValue) {
+                // return $prodi;
+                // return  $multi_value;
+                // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
+                return view('led.base', $data);
+            } else {
+                return redirect('/led');
+            }
+        }else {
+            $allValue = array();
+                foreach ($ledValues['led'] as
+                $index => $key) {
+                if (isset($key['multi_input'])) {
+                    foreach ($key['multi_input_value'] as
+                        $index => $key_multi) {
+                            if (Led::find($key_multi['id'] . $prodi->id)) {
+                                array_push($allValue, Led::find($key_multi['id'] . $prodi->id));
+                            } 
+                        }
+                } else {
+                    if (Led::find($key['id'] . $prodi->id)) {
+                        array_push($allValue, Led::find($key['id'] . $prodi->id));
+                    } 
+                }
+                }
+                // return $allValue;
+            $data = [
+                'tables' => $ledValues['led'],
+                'prev' => 311,
+                'next' => null,
+                'value' => Led::find($id . $prodi->id),
+                'allValue' => $allValue,
+                'idTable' => $id,
+                // 'led_nav' => $ledValuesNav,
+                'prodi' => $prodi,
+                // 'permit' => $form
+            ];
+
+            if ($allValue) {
+                // return $prodi;
+                // return  $multi_value;
+                // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
+                return view('led.all', $data);
+            } else {
+                return redirect('/led');
+            }
+                // return $allValue;
         }
+        
     }
     private function getInfo($id, $array)
     {

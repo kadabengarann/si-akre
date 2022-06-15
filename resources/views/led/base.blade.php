@@ -139,73 +139,27 @@
 @push('scripts')
     <script src="https://cdn.tiny.cloud/1/r25shxkzc5z7npgm5l5kmy3666vdso65340x7osixreouqfh/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '.input_value_text',
-            plugins: 'powerpaste print preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
-            menubar: 'file edit view insert format tools table help',
-            toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
-            toolbar_sticky: true,
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            paste_data_images: true,
-            image_title: true,
-            automatic_uploads: true,
-            height : "480",
-            powerpaste_allow_local_images: true,
-            powerpaste_word_import: 'prompt',
-            powerpaste_html_import: 'prompt',
-            file_picker_types: 'image',
-            file_picker_callback: function(cb, value, meta) {
-                var input = document.createElement('input');
-                input.setAttribute('type', 'file');
-                input.setAttribute('accept', 'image/*');
-
-                input.onchange = function() {
-                    var file = this.files[0];
-                    var reader = new FileReader();
-                    reader.onload = function() {
-
-                        var id = 'blobid' + (new Date()).getTime();
-                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
-                        var base64 = reader.result.split(',')[1];
-                        var blobInfo = blobCache.create(id, file, base64);
-                        blobCache.add(blobInfo);
-                        /* call the callback and populate the Title field with the file name */
-                        cb(blobInfo.blobUri(), {
-                            title: file.name
-                        });
-                    };
-                    reader.readAsDataURL(file);
-                };
-                input.click();
-            },
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-        });
-        $('#area-input').hide();
-
-        function edit() {
-            $('#area-input').show();
-            $('#edit_btn').hide();
-            $('#preview_value').hide();
-            $('#save_btn').show();
-            $('#cancel_btn').show();
-        };
-
-
-        function cancel() {
-            $('#area-input').hide();
-            $('#edit_btn').show();
-            $('#save_btn').hide();
-            $('#cancel_btn').hide();
-            $('#preview_value').show();
-            $('#input_value').hide();
-
-        };
-    </script>
+    
     @if (isset($tableValue['multi_input']))
         <script>
-            
+                CKEDITOR.addCss(
+                    'body.document-editor { margin: 0.5cm auto; border: 1px #D3D3D3 solid; border-radius: 5px; background: white; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }' +
+                    'body.document-editor, div.cke_editable { width: 700px; padding: 1cm 2cm 2cm; min-height: 1200px;} ' +
+                    'body.document-editor table td > p, div.cke_editable table td > p { margin-top: 0; margin-bottom: 0; padding: 4px 0 3px 5px;} ' +
+                    'blockquote { font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; } ');
+
+            $('.input_value_text').each(function () {
+
+                CKEDITOR.replace($(this).prop('id'),{
+                    height: 700,
+                    //   extraPlugins: 'colorbutton,font,justify,print,tableresize,liststyle,pagebreak,exportpdf,imageresizerowandcolumn',
+                    removePlugins: 'exportpdf,image,uploadimage',
+                    extraPlugins: 'wordcount,pastebase64,image2,base64image,imageresizerowandcolumn,tableresizerowandcolumn',
+                    bodyClass: 'document-editor',
+                    removeButtons: 'PasteFromWord',
+                });
+                editor.config.tabSpaces = 8;
+            });
             @foreach ($tableValue['multi_input_value'] as $n)
                 console.log({{ $loop->iteration }});
                 
@@ -229,6 +183,44 @@
                 };
             @endforeach
         </script>
+    @else
+    <script>
+        
+        $('#area-input').hide();
+        CKEDITOR.addCss(
+            'body.document-editor { margin: 0.5cm auto; border: 1px #D3D3D3 solid; border-radius: 5px; background: white; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }' +
+            'body.document-editor, div.cke_editable { width: 700px; padding: 1cm 2cm 2cm; min-height: 1200px;} ' +
+            'body.document-editor table td > p, div.cke_editable table td > p { margin-top: 0; margin-bottom: 0; padding: 4px 0 3px 5px;} ' +
+            'blockquote { font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; } ');
+
+        var editor = CKEDITOR.replace('input_value', {
+            height: 700,
+            //   extraPlugins: 'colorbutton,font,justify,print,tableresize,liststyle,pagebreak,exportpdf,imageresizerowandcolumn',
+            removePlugins: 'image,uploadimage',
+            extraPlugins: 'wordcount,pastebase64,image2,base64image,imageresizerowandcolumn,tableresizerowandcolumn',
+            bodyClass: 'document-editor',
+            removeButtons: 'PasteFromWord',
+        });
+        editor.config.tabSpaces = 8;
+        function edit() {
+            $('#area-input').show();
+            $('#edit_btn').hide();
+            $('#preview_value').hide();
+            $('#save_btn').show();
+            $('#cancel_btn').show();
+        };
+
+
+        function cancel() {
+            $('#area-input').hide();
+            $('#edit_btn').show();
+            $('#save_btn').hide();
+            $('#cancel_btn').hide();
+            $('#preview_value').show();
+            $('#input_value').hide();
+
+        };
+    </script>
     @endif
 
 @endpush
