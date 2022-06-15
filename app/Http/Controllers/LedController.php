@@ -137,15 +137,10 @@ class LedController extends Controller
                 // 'permit' => $form
             ];
 
-            if ($allValue) {
                 // return $prodi;
                 // return  $multi_value;
                 // return $ledValuesNav['led'][$id[0] - 1]['bab_value'][$id[1] - 1]['sub_kriteria'][$id[2] - 1];
                 return view('led.all', $data);
-            } else {
-                return redirect('/led');
-            }
-                // return $allValue;
         }
         
     }
