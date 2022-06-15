@@ -277,12 +277,13 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="/led/261{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
-                    class="nav-link {{ request()->is('led/26*') ? 'active' : '' }}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>F. Penutup</p>
-                </a>
-            </li>
         </ul>
+    </li>
+    <li class="nav-item {{ request()->is('led/3*') ? 'menu-open' : '' }}"> <a href="/led/311{{ Auth::user()->level == 1 ? '?id=' . $prodi->id : '' }}"
+            class="nav-link {{ request()->is('led/3*') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-list-ul"></i>
+            <p>
+                BAB III. Penutup
+            </p>
+        </a>
     </li>
