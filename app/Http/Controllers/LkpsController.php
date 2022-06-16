@@ -11,7 +11,6 @@ use Yajra\Datatables\Datatables;
 
 use App\Models\Permission;
 use App\Models\Prodi;
-use App\Models\Dosen;
 
 class LkpsController extends Controller
 {
@@ -263,13 +262,12 @@ class LkpsController extends Controller
             'prodi' =>
             $prodi
         ];
-        $dosen = Dosen::where('prodi_id', $prodi->id)->get();
 
         if (in_array(Auth::user()->level, $permit)) {
             if ($id < 111) {
-                return view('lkps.input.identitas.' . $id[1] . $id[2], $data, compact('dosen'));
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
             }
-            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data, compact('dosen'));
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
         } else {
             return redirect('/lkps');
         }

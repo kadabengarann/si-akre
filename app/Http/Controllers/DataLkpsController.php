@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Permission;
 use App\Models\Prodi;
-use App\Models\Dosen;
 use App\Models\Lkps\{
     Jcmb,
     Reratadtpr,
@@ -325,13 +324,12 @@ class DataLkpsController extends Controller
             'idTable' => $id,
             'prodi' => Prodi::find($prodi),
         ];
-        $dosen = Dosen::where('prodi_id', $prodi)->get();
 
         if (in_array(Auth::user()->level, $permit)) {
             if ($id < 111) {
-                return view('lkps.input.identitas.' . $id[1] . $id[2], $data, compact('dosen'));
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
             }
-            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data, compact('dosen'));
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
         } else {
             return redirect('/lkps');
         }

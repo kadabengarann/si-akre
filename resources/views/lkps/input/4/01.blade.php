@@ -57,16 +57,14 @@
                 @endif
                 <div class="card-body">
                     <div class="form-group row">
-                        {{-- dropdown nama dosen --}}
-                        <label for="nm_dosen" class="col-sm-2 col-form-label">Nama Dosen</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="nm_dosen" name="nm_dosen">
-                                <option value="">Pilih Dosen</option>
-                                @foreach ($dosen as $dataItem)
-                                    <option value="{{ $dataItem->nama}}">{{ $dataItem->nama}}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Dosen Tetap</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control @error('nm_dosen') is-invalid @enderror" name="nm_dosen"
+                                placeholder=""
+                                @if (request()->is('lkps/edit*') ? 'active' : '') value="{{ $dataItem->nm_dosen }}">
+                                 @else
+                                 value="{{ old('nm_dosen') }}"> @endif
+                                <div class="invalid-feedback">
                             @error('nm_dosen')
                                 {{ $message }}
                             @enderror
