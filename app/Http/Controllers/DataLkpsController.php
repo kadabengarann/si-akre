@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Permission;
 use App\Models\Prodi;
+use App\Models\Dosen;
 use App\Models\Lkps\{
     Jcmb,
     Reratadtpr,
@@ -44,11 +45,11 @@ class DataLkpsController extends Controller
         $ts_year = DB::table('utils')->where('id', '=', $ts_year_id)->first();
         // return $ts_year;
         if ($lkpsData['id'] == 501) {
-           $tableData = DB::table($tableName)
-            ->where('prodi_id', '=', $prodi_id)
-            ->where('ts', '=', $ts_year ? $ts_year->value : null,)
-            ->get();
-        }else{
+            $tableData = DB::table($tableName)
+                ->where('prodi_id', '=', $prodi_id)
+                ->where('ts', '=', $ts_year ? $ts_year->value : null,)
+                ->get();
+        } else {
             $tableData = DB::table($tableName)
                 ->where('prodi_id', '=', $prodi_id)
                 ->get();
@@ -99,7 +100,7 @@ class DataLkpsController extends Controller
                 break;
             case '905':
                 return $this->insertKbkl($request);
-                break;   
+                break;
             case '904':
                 return $this->insertMt($request);
                 break;
@@ -324,11 +325,13 @@ class DataLkpsController extends Controller
             'idTable' => $id,
             'prodi' => Prodi::find($prodi),
         ];
+        $dosen = Dosen::where('prodi_id', $prodi)->get();
+
         if (in_array(Auth::user()->level, $permit)) {
             if ($id < 111) {
-                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data, compact('dosen'));
             }
-            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data, compact('dosen'));
         } else {
             return redirect('/lkps');
         }
@@ -411,7 +414,7 @@ class DataLkpsController extends Controller
             case 1:
                 if ($validator->fails()) {
                     return
-                    redirect(url()->previous() . '#tabs-1')->withInput()->withErrors($validator);
+                        redirect(url()->previous() . '#tabs-1')->withInput()->withErrors($validator);
                 }
                 break;
             case 2:
@@ -426,11 +429,11 @@ class DataLkpsController extends Controller
                         redirect(url()->previous() . '#tabs-3')->withInput()->withErrors($validator);
                 }
                 break;
-            
+
             default:
                 break;
         }
-        
+
         // return $request->id;
         Spps::updateOrCreate(
             [
@@ -441,7 +444,7 @@ class DataLkpsController extends Controller
                 'sd' => ($request->sumber_dana),
                 'sd_type' => ($request->sd_type),
                 'jml' => ($request->jml ? $request->jml : 0),
-                'bukti' => ($request->bukti ),
+                'bukti' => ($request->bukti),
                 'bukti_link' => ($request->bukti_link),
                 'ket' => ($request->ket ? $request->ket : ''),
                 'prodi_id' => (int)($request->prodi_id),
@@ -619,7 +622,7 @@ class DataLkpsController extends Controller
                 'ipk_min' => ($request->ipk_min ? $request->ipk_min : 0),
                 'ipk_rerata' => ($request->ipk_rerata ? $request->ipk_rerata : 0),
                 'ipk_maks' => ($request->ipk_maks ? $request->ipk_maks : 0),
-                
+
                 'prodi_id' => (int)($request->prodi_id),
             ]
         );
@@ -661,7 +664,7 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
-  // -------------------------902 KTW------------------------------
+    // -------------------------902 KTW------------------------------
     private function insertKtw(Request $request)
     {
         $request->validate([
@@ -726,7 +729,7 @@ class DataLkpsController extends Controller
             return redirect('/lkps');
         }
     }
-  
+
     // ------------------------- 903 KPL------------------------------
     private function insertKpl(Request $request)
     {
@@ -787,67 +790,67 @@ class DataLkpsController extends Controller
         }
     }
 
-  // -------------------------905 KBKL------------------------------
-  private function insertKbkl(Request $request)
-  {
-      $request->validate([
-          // 'nm_dosen' => 'required',
-      ]);
-      // return $request->id;
-      Kbkl::updateOrCreate(
-          [
-              'id'   => $request->id,
-          ],
-          [
-              'tl' => $request->tl,
-              'jml_lus' => ($request->jml_lus ? $request->jml_lus : 0),
-              'lus_trlck' => ($request->lus_trlck ? $request->lus_trlck : 0),
-              'prfsi_infokom' => ($request->prfsi_infokom ? $request->prfsi_infokom : 0),
-              'prfsi_non_info' => ($request->prfsi_non_info ? $request->prfsi_non_info : 0),
-              'ltk_multi' => ($request->ltk_multi ? $request->ltk_multi : 0),
-              'ltk_nas' => ($request->ltk_nas ? $request->ltk_nas : 0),
-              'ltk_wir' => ($request->ltk_wir ? $request->ltk_wir : 0),
-              'prodi_id' => (int)($request->prodi_id),
-          ]
-      );
-      $admin_path = '';
-      if (Auth::user()->level == 1) {
-          $admin_path = '?id=' . $request->prodi_id;
-      }
-      return redirect('/lkps/view/905' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
-  }
-  private function deleteKbkl($id, Request $request)
-  {
-      $data = Kbkl::find($id);
-      $data->delete();
-      $admin_path = '';
-      if (Auth::user()->level == 1) {
-          $admin_path = '?id=' . $request->prodi_id;
-      }
-      return redirect('/lkps/view/905' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
-  }
-  private function editKbkl($id, Request $request)
-  {
-      $form = Permission::find($id);
-      $permit = json_decode($form->access, true);
-      $dataItem = Kbkl::find($request->id);
-      $prodi = $dataItem->prodi_id;
-      // return $dataItem->nm_dosen;
-      $data = [
-          'tables' => $this->allowedTable(),
-          'dataItem' => $dataItem,
-          'idTable' => $id,
-          'prodi' => Prodi::find($prodi),
-      ];
-      if (in_array(Auth::user()->level, $permit)) {
-          if ($id < 111) {
-              return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
-          }
-          return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
-      } else {
-          return redirect('/lkps');
-      }
-  }
+    // -------------------------905 KBKL------------------------------
+    private function insertKbkl(Request $request)
+    {
+        $request->validate([
+            // 'nm_dosen' => 'required',
+        ]);
+        // return $request->id;
+        Kbkl::updateOrCreate(
+            [
+                'id'   => $request->id,
+            ],
+            [
+                'tl' => $request->tl,
+                'jml_lus' => ($request->jml_lus ? $request->jml_lus : 0),
+                'lus_trlck' => ($request->lus_trlck ? $request->lus_trlck : 0),
+                'prfsi_infokom' => ($request->prfsi_infokom ? $request->prfsi_infokom : 0),
+                'prfsi_non_info' => ($request->prfsi_non_info ? $request->prfsi_non_info : 0),
+                'ltk_multi' => ($request->ltk_multi ? $request->ltk_multi : 0),
+                'ltk_nas' => ($request->ltk_nas ? $request->ltk_nas : 0),
+                'ltk_wir' => ($request->ltk_wir ? $request->ltk_wir : 0),
+                'prodi_id' => (int)($request->prodi_id),
+            ]
+        );
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/905' . $admin_path)->with('pesan', 'Data berhasil diperbaharui !');
+    }
+    private function deleteKbkl($id, Request $request)
+    {
+        $data = Kbkl::find($id);
+        $data->delete();
+        $admin_path = '';
+        if (Auth::user()->level == 1) {
+            $admin_path = '?id=' . $request->prodi_id;
+        }
+        return redirect('/lkps/view/905' . $admin_path)->with('pesan', 'Data berhasil dihapus !');
+    }
+    private function editKbkl($id, Request $request)
+    {
+        $form = Permission::find($id);
+        $permit = json_decode($form->access, true);
+        $dataItem = Kbkl::find($request->id);
+        $prodi = $dataItem->prodi_id;
+        // return $dataItem->nm_dosen;
+        $data = [
+            'tables' => $this->allowedTable(),
+            'dataItem' => $dataItem,
+            'idTable' => $id,
+            'prodi' => Prodi::find($prodi),
+        ];
+        if (in_array(Auth::user()->level, $permit)) {
+            if ($id < 111) {
+                return view('lkps.input.identitas.' . $id[1] . $id[2], $data);
+            }
+            return view('lkps.input.' . $id[0] . '.' . $id[1] . $id[2], $data);
+        } else {
+            return redirect('/lkps');
+        }
+    }
     // -------------------------904 MT------------------------------
     private function insertMt(Request $request)
     {
